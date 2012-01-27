@@ -9,6 +9,7 @@
 import os
 import sys
 import subprocess
+import shutil
 
 #
 # Build the standard command line arguments to the FT guy given
@@ -70,6 +71,26 @@ def doComboImpl (configInfo, html):
         print "consitancy check failed, stopping now..."
         return
 
+    #
+    # Finally, we are going to copy the root file over and build it with
+    # everything that is needed in it.
+    #
+
+    if not os.path.exists(configInfo.mcEffRootFile):
+        print "Can't find root file %s" % configInfo.mcEffRootFile
+    outputROOT = configInfo.CDIFile
+    shutil.copy (configInfo.mcEffRootFile, "output.root")
+
+    errcode, result = runProc("FTConvertToCDI.exe %s --update" % stdCmdArgs)
+    dumpResultSection (html, errcode, result, "Convert to CDI")
+
+    if errcode <> 0:
+        print "Failed to build CDI"
+        return
+
+    shutil.copy ("output.root", outputROOT)
+    print >> html, '<p><a href="%s">%s</a>' % (outputROOT, outputROOT)
+        
 #
 # Run the full thing
 #
