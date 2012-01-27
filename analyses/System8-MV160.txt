@@ -1,6 +1,6 @@
 Analysis(system8,bottom,MV1,0.905363,AntiKt4Topo)
 {
-	bin(20<pt<30,0<eta<2.5)
+	bin(20<pt<30,0<abseta<2.5)
 	{
 		central_value(0.969098,0.104286)
 		sys($p_T^{rel}$, 4.313%)
@@ -19,7 +19,7 @@ Analysis(system8,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(JESUncertainty, 1.773%)
 		sys(AngularResolution, 1.031%)
 	}
-	bin(30<pt<40,0<eta<2.5)
+	bin(30<pt<40,0<abseta<2.5)
 	{
 		central_value(0.9112,0.1023)
 		sys($p_T^{rel}$, 5.045%)
@@ -38,7 +38,7 @@ Analysis(system8,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(JESUncertainty, 3.816%)
 		sys(AngularResolution, 0.2771%)
 	}
-	bin(40<pt<50,0<eta<2.5)
+	bin(40<pt<50,0<abseta<2.5)
 	{
 		central_value(0.9716,0.1345)
 		sys($p_T^{rel}$, 6.371%)
@@ -57,7 +57,7 @@ Analysis(system8,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(JESUncertainty, 1.428%)
 		sys(AngularResolution, 1.414%)
 	}
-	bin(50<pt<60,0<eta<2.5)
+	bin(50<pt<60,0<abseta<2.5)
 	{
 		central_value(0.6996,0.1077)
 		sys($p_T^{rel}$, 11.28%)
@@ -76,7 +76,7 @@ Analysis(system8,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(JESUncertainty, 17.41%)
 		sys(AngularResolution, 1.029%)
 	}
-	bin(60<pt<75,0<eta<2.5)
+	bin(60<pt<75,0<abseta<2.5)
 	{
 		central_value(1.195,0.3741)
 		sys($p_T^{rel}$, 37.4%)
@@ -95,7 +95,7 @@ Analysis(system8,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(JESUncertainty, 33.65%)
 		sys(AngularResolution, 3.199%)
 	}
-	bin(75<pt<90,0<eta<2.5)
+	bin(75<pt<90,0<abseta<2.5)
 	{
 		central_value(0.9108,0.1229)
 		sys($p_T^{rel}$, 7.739%)
@@ -114,7 +114,7 @@ Analysis(system8,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(JESUncertainty, 3.009%)
 		sys(AngularResolution, 3.254%)
 	}
-	bin(90<pt<110,0<eta<2.5)
+	bin(90<pt<110,0<abseta<2.5)
 	{
 		central_value(1.116,0.1958)
 		sys($p_T^{rel}$, 12.34%)
@@ -133,7 +133,7 @@ Analysis(system8,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(JESUncertainty, 11.55%)
 		sys(AngularResolution, 8.481%)
 	}
-	bin(110<pt<140,0<eta<2.5)
+	bin(110<pt<140,0<abseta<2.5)
 	{
 		central_value(0.5897,0.1218)
 		sys($p_T^{rel}$, 8.864%)
@@ -152,7 +152,7 @@ Analysis(system8,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(JESUncertainty, 14.03%)
 		sys(AngularResolution, 3.063%)
 	}
-	bin(140<pt<200,0<eta<2.5)
+	bin(140<pt<200,0<abseta<2.5)
 	{
 		central_value(0.8295,0.2043)
 		sys($p_T^{rel}$, 7.626%)
@@ -171,7 +171,7 @@ Analysis(system8,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(JESUncertainty, 6.483%)
 		sys(AngularResolution, 7.758%)
 	}
-	bin(200<pt<250,0<eta<2.5)
+	bin(200<pt<250,0<abseta<2.5)
 	{
 		central_value(0.9696,0.341)
 		sys($p_T^{rel}$, 35.03%)

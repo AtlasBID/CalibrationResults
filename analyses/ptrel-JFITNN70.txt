@@ -1,6 +1,6 @@
 Analysis(pTrel,bottom,JetFitterCOMBNN, 0.35, AntiKt4Topo)
 {
-	bin(20<pt<140,0.0<eta<0.6)
+	bin(20<pt<140,0.0<abseta<0.6)
 	{
 		central_value(0.9357,0.0191)
 		sys(Light Template Contamination,-0.5331%)
@@ -19,7 +19,7 @@ Analysis(pTrel,bottom,JetFitterCOMBNN, 0.35, AntiKt4Topo)
 		sys(B-Decay (p* spectrum),-0.9756%)
 		sys(Jet Energy Resolution,0.0001%)
 	}
-	bin(20<pt<140,0.6<eta<1.2)
+	bin(20<pt<140,0.6<abseta<1.2)
 	{
 		central_value(0.9310,0.0224)
 		sys(Light Template Contamination,-0.4619%)
@@ -38,7 +38,7 @@ Analysis(pTrel,bottom,JetFitterCOMBNN, 0.35, AntiKt4Topo)
 		sys(B-Decay (p* spectrum),-0.5760%)
 		sys(Jet Energy Resolution,-0.0769%)
 	}
-	bin(20<pt<140,1.2<eta<1.8)
+	bin(20<pt<140,1.2<abseta<1.8)
 	{
 		central_value(0.9420,0.0262)
 		sys(Light Template Contamination,-0.4146%)
@@ -57,7 +57,7 @@ Analysis(pTrel,bottom,JetFitterCOMBNN, 0.35, AntiKt4Topo)
 		sys(B-Decay (p* spectrum),-0.7505%)
 		sys(Jet Energy Resolution,-0.1894%)
 	}
-	bin(20<pt<140,1.8<eta<2.5)
+	bin(20<pt<140,1.8<abseta<2.5)
 	{
 		central_value(1.0133,0.0324)
 		sys(Light Template Contamination,-0.3528%)
@@ -76,7 +76,7 @@ Analysis(pTrel,bottom,JetFitterCOMBNN, 0.35, AntiKt4Topo)
 		sys(B-Decay (p* spectrum),-1.2386%)
 		sys(Jet Energy Resolution,-0.0964%)
 	}
-	bin(20<pt<30,0<eta<2.5)
+	bin(20<pt<30,0<abseta<2.5)
 	{
 		central_value(0.9386,0.0164)
 		sys(Light Template Contamination,-0.2876%)
@@ -95,7 +95,7 @@ Analysis(pTrel,bottom,JetFitterCOMBNN, 0.35, AntiKt4Topo)
 		sys(B-Decay (p* spectrum),-4.2080%)
 		sys(Jet Energy Resolution,1.0422%)
 	}
-	bin(30<pt<60,0<eta<2.5)
+	bin(30<pt<60,0<abseta<2.5)
 	{
 		central_value(1.0212,0.0164)
 		sys(Light Template Contamination,-0.2017%)
@@ -114,7 +114,7 @@ Analysis(pTrel,bottom,JetFitterCOMBNN, 0.35, AntiKt4Topo)
 		sys(B-Decay (p* spectrum),-1.5203%)
 		sys(Jet Energy Resolution,-0.2281%)
 	}
-	bin(60<pt<90,0<eta<2.5)
+	bin(60<pt<90,0<abseta<2.5)
 	{
 		central_value(0.9487,0.0199)
 		sys(Light Template Contamination,-0.5026%)
@@ -133,7 +133,7 @@ Analysis(pTrel,bottom,JetFitterCOMBNN, 0.35, AntiKt4Topo)
 		sys(B-Decay (p* spectrum),-0.9786%)
 		sys(Jet Energy Resolution,-0.3898%)
 	}
-	bin(90<pt<140,0<eta<2.5)
+	bin(90<pt<140,0<abseta<2.5)
 	{
 		central_value(0.9984,0.0368)
 		sys(Light Template Contamination,-0.8815%)
@@ -152,7 +152,7 @@ Analysis(pTrel,bottom,JetFitterCOMBNN, 0.35, AntiKt4Topo)
 		sys(B-Decay (p* spectrum),-0.5827%)
 		sys(Jet Energy Resolution,-0.3764%)
 	}
-	bin(140<pt<200,0<eta<2.5)
+	bin(140<pt<200,0<abseta<2.5)
 	{
 		central_value(1.0473,0.0970)
 		sys(Light Template Contamination,-0.8008%)
