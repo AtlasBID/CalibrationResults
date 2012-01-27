@@ -10,6 +10,7 @@ import os
 import sys
 import subprocess
 import shutil
+import ROOT
 
 #
 # Build the standard command line arguments to the FT guy given
@@ -41,6 +42,28 @@ def dumpResultSection (html, err, text, title):
     print >> html, "<h1>%s</h1>" % title
     print >> html, "<PRE>%s</PRE>" % text
     print >> html, "result code: %d" % err
+
+
+def dumpROOTDir (html, dir, indent):
+    for k in dir.GetListOfKeys():
+        c = ROOT.TClass.GetClass(k.GetClassName())
+        isdir = c.InheritsFrom("TDirectory")
+        if isdir:
+            print >> html, "%s<b>%s</b>" % (indent, k.GetName())
+            dumpROOTDir(html, k.ReadObj(), "%s  " % indent)
+        else:
+            print >> html, "%s<b>%s</b> - <i>%s</i>" % (indent, k.GetName(), k.GetClassName())
+#
+# Dump out the directory contents of a root file
+# so that one can see what is going on in the ROOT file.
+#
+def dumpROOTFile (html, fname):
+    f = ROOT.TFile(fname, "READ")
+    print >> html, "<PRE>"
+    print >> html, "%s" % fname
+    dumpROOTDir (html, f, "  ")
+    f.Close()
+    print >> html, "</PRE>"
 
 #
 # Do the actual combo and root file building here
@@ -91,6 +114,9 @@ def doComboImpl (configInfo, html):
     shutil.copy ("output.root", outputROOT)
     print >> html, '<p><a href="%s">%s</a>' % (outputROOT, outputROOT)
         
+    print >> html, "<h2>File Contents</h2>"
+    dumpROOTFile(html, outputROOT)
+    
 #
 # Run the full thing
 #
