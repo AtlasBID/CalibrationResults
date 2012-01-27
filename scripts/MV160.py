@@ -8,8 +8,13 @@ title = "MV160 dijet Combination"
 # Input arguments
 #
 
-inputs = "analyses/System8-MV160.txt analyses/ptrel-MV160.txt"
+#inputs = "analyses/System8-MV160.txt analyses/ptrel-MV160.txt analyses/ptrel-JFITNN70.txt"
+inputs = "analyses/ptrel-JFITNN70.txt"
 ignore_analyses = [
+    "pTrel-bottom-JetFitterCOMBNN-0.35-AntiKt4Topo:20-pt-140:0-eta-0.6",
+    "pTrel-bottom-JetFitterCOMBNN-0.35-AntiKt4Topo:20-pt-140:0.6-eta-1.2",
+    "pTrel-bottom-JetFitterCOMBNN-0.35-AntiKt4Topo:20-pt-140:1.2-eta-1.8",
+    "pTrel-bottom-JetFitterCOMBNN-0.35-AntiKt4Topo:20-pt-140:1.8-eta-2.5",
     "kinsel_ljets-bottom-SV0-0.50-AntiKt4Topo:25-pt-30:0-eta-2.5",
     "kinsel_ljets-bottom-SV0-0.50-AntiKt4Topo:30-pt-60:0-eta-2.5",
     "kinsel_ljets-bottom-SV0-0.50-AntiKt4Topo:60-pt-90:0-eta-2.5",
