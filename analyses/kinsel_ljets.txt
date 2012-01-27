@@ -341,7 +341,7 @@ sys(Total Up,13%)
 sys(Total Down,-22%)
 }
 }
-Analysis(kinsel_ljets,bottom,MV1,0.60,AntiKt4Topo) {
+Analysis(kinsel_ljets,bottom,MV1,0.905363,AntiKt4Topo) {
 bin(25<pt<30,0<eta<2.5)
 {
 central_value(1.09784,0.0617738)
@@ -379,7 +379,7 @@ sys(Total Up,14%)
 sys(Total Down,-19%)
 }
 }
-Analysis(kinsel_ljets,bottom,MV1,0.70,AntiKt4Topo) {
+Analysis(kinsel_ljets,bottom,MV1,0.601713,AntiKt4Topo) {
 bin(25<pt<30,0<eta<2.5)
 {
 central_value(1.09961,0.0586476)
@@ -417,7 +417,7 @@ sys(Total Up,13.5%)
 sys(Total Down,-20%)
 }
 }
-Analysis(kinsel_ljets,bottom,MV1,0.75,AntiKt4Topo) {
+Analysis(kinsel_ljets,bottom,MV1,0.404219,AntiKt4Topo) {
 bin(25<pt<30,0<eta<2.5)
 {
 central_value(1.14855,0.0598209)
@@ -455,7 +455,7 @@ sys(Total Up,12.5%)
 sys(Total Down,-22%)
 }
 }
-Analysis(kinsel_ljets,bottom,MV1,0.85,AntiKt4Topo) {
+Analysis(kinsel_ljets,bottom,MV1,0.0714225,AntiKt4Topo) {
 bin(25<pt<30,0<eta<2.5)
 {
 central_value(1.09847,0.0617754)
