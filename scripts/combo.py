@@ -95,6 +95,13 @@ def doComboImpl (configInfo, html):
         return
 
     #
+    # Next, do the combination itself
+    #
+
+    errcode, result = runProc("FTCombine.exe %s" % stdCmdArgs);
+    dumpResultSection (html, errcode, result, "Combination")
+
+    #
     # Finally, we are going to copy the root file over and build it with
     # everything that is needed in it.
     #
