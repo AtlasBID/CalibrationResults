@@ -1,6 +1,6 @@
 Analysis(pTrel,bottom,MV1,0.905363,AntiKt4Topo)
 {
-	bin(20<pt<200,0.0<eta<0.6)
+	bin(20<pt<200,0.0<abseta<0.6)
 	{
 		central_value(0.9099,0.0154)
 		sys(jet vertex fraction,0.9625%)
@@ -21,7 +21,7 @@ Analysis(pTrel,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(scale factor for inclusive b-jets,4.0734%)
 		sys(fake muons in b-jets,-0.3013%)
 	}
-	bin(20<pt<200,0.6<eta<1.2)
+	bin(20<pt<200,0.6<abseta<1.2)
 	{
 		central_value(0.8684,0.0169)
 		sys(jet vertex fraction,0.9284%)
@@ -42,7 +42,7 @@ Analysis(pTrel,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(scale factor for inclusive b-jets,4.0539%)
 		sys(fake muons in b-jets,-0.2094%)
 	}
-	bin(20<pt<200,1.2<eta<1.8)
+	bin(20<pt<200,1.2<abseta<1.8)
 	{
 		central_value(0.8636,0.0198)
 		sys(jet vertex fraction,1.0284%)
@@ -63,7 +63,7 @@ Analysis(pTrel,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(scale factor for inclusive b-jets,4.0407%)
 		sys(fake muons in b-jets,-0.1087%)
 	}
-	bin(20<pt<200,1.8<eta<2.5)
+	bin(20<pt<200,1.8<abseta<2.5)
 	{
 		central_value(0.8595,0.0231)
 		sys(jet vertex fraction,0.7765%)
@@ -84,7 +84,7 @@ Analysis(pTrel,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(scale factor for inclusive b-jets,4.0292%)
 		sys(fake muons in b-jets,-0.2758%)
 	}
-	bin(20<pt<30,0<eta<2.5)
+	bin(20<pt<30,0<abseta<2.5)
 	{
 		central_value(0.8933,0.0197)
 		sys(jet vertex fraction,0.8773%)
@@ -105,7 +105,7 @@ Analysis(pTrel,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(scale factor for inclusive b-jets,4.0149%)
 		sys(fake muons in b-jets,0.0252%)
 	}
-	bin(30<pt<40,0<eta<2.5)
+	bin(30<pt<40,0<abseta<2.5)
 	{
 		central_value(0.9298,0.0216)
 		sys(jet vertex fraction,1.6373%)
@@ -126,7 +126,7 @@ Analysis(pTrel,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(scale factor for inclusive b-jets,4.0315%)
 		sys(fake muons in b-jets,-0.0260%)
 	}
-	bin(40<pt<50,0<eta<2.5)
+	bin(40<pt<50,0<abseta<2.5)
 	{
 		central_value(0.8789,0.0243)
 		sys(jet vertex fraction,0.7444%)
@@ -147,7 +147,7 @@ Analysis(pTrel,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(scale factor for inclusive b-jets,4.0519%)
 		sys(fake muons in b-jets,0.0160%)
 	}
-	bin(50<pt<60,0<eta<2.5)
+	bin(50<pt<60,0<abseta<2.5)
 	{
 		central_value(0.9188,0.0366)
 		sys(jet vertex fraction,0.6219%)
@@ -168,7 +168,7 @@ Analysis(pTrel,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(scale factor for inclusive b-jets,4.0547%)
 		sys(fake muons in b-jets,-0.0216%)
 	}
-	bin(60<pt<75,0<eta<2.5)
+	bin(60<pt<75,0<abseta<2.5)
 	{
 		central_value(0.8675,0.0203)
 		sys(jet vertex fraction,0.4694%)
@@ -189,7 +189,7 @@ Analysis(pTrel,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(scale factor for inclusive b-jets,4.0470%)
 		sys(fake muons in b-jets,0.0432%)
 	}
-	bin(75<pt<90,0<eta<2.5)
+	bin(75<pt<90,0<abseta<2.5)
 	{
 		central_value(0.9218,0.0346)
 		sys(jet vertex fraction,0.6111%)
@@ -210,7 +210,7 @@ Analysis(pTrel,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(scale factor for inclusive b-jets,4.0919%)
 		sys(fake muons in b-jets,0.0131%)
 	}
-	bin(90<pt<110,0<eta<2.5)
+	bin(90<pt<110,0<abseta<2.5)
 	{
 		central_value(0.9527,0.0529)
 		sys(jet vertex fraction,0.4197%)
@@ -231,7 +231,7 @@ Analysis(pTrel,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(scale factor for inclusive b-jets,4.0953%)
 		sys(fake muons in b-jets,0.0244%)
 	}
-	bin(110<pt<140,0<eta<2.5)
+	bin(110<pt<140,0<abseta<2.5)
 	{
 		central_value(0.9171,0.0726)
 		sys(jet vertex fraction,0.0859%)
@@ -252,7 +252,7 @@ Analysis(pTrel,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(scale factor for inclusive b-jets,4.0316%)
 		sys(fake muons in b-jets,-0.1859%)
 	}
-	bin(140<pt<200,0<eta<2.5)
+	bin(140<pt<200,0<abseta<2.5)
 	{
 		central_value(0.9452,0.1455)
 		sys(jet vertex fraction,0.7801%)
