@@ -104,3 +104,8 @@ ignore_analyses = [
 
 mcEffRootFile = "mceff/TopCalibrations_rel17_MC11b_Convert.root"
 CDIFile = "rel17_MC11b.root"
+
+#
+# Should we avoid the combination?
+#
+runCombination = 0

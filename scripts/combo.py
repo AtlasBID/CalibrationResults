@@ -98,8 +98,9 @@ def doComboImpl (configInfo, html):
     # Next, do the combination itself
     #
 
-    errcode, result = runProc("FTCombine.exe %s" % stdCmdArgs);
-    dumpResultSection (html, errcode, result, "Combination")
+    if configInfo.runCombination:
+        errcode, result = runProc("FTCombine.exe %s" % stdCmdArgs);
+        dumpResultSection (html, errcode, result, "Combination")
 
     #
     # Finally, we are going to copy the root file over and build it with
