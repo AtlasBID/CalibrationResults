@@ -16,7 +16,8 @@ Analysis(system8,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(system8 charm fraction, 0.6254%)
 		sys(jet energy resolution , 0%)
 		sys(jet energy scale, 0.257%)
-		sys(modelling the b-hadron direction, 0.6377%)
+		sys(scale factor for inclusive b-jets,4.0134%)
+		sys(modelling of the b-hadron direction, 0.6377%)
 	}
 	bin(30<pt<40,0<abseta<2.5)
 	{
@@ -34,7 +35,8 @@ Analysis(system8,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(system8 charm fraction, 0.6026%)
 		sys(jet energy resolution , 0%)
 		sys(jet energy scale, 1.049%)
-		sys(modelling the b-hadron direction, 0.6712%)
+		sys(modelling of the b-hadron direction, 0.6712%)
+		sys(scale factor for inclusive b-jets,4.0134%)
 	}
 	bin(40<pt<50,0<abseta<2.5)
 	{
@@ -52,7 +54,8 @@ Analysis(system8,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(system8 charm fraction, 1.397%)
 		sys(jet energy resolution , 0%)
 		sys(jet energy scale, 10.57%)
-		sys(modelling the b-hadron direction, 1.237%)
+		sys(modelling of the b-hadron direction, 1.237%)
+		sys(scale factor for inclusive b-jets,4.0134%)
 	}
 	bin(50<pt<60,0<abseta<2.5)
 	{
@@ -70,7 +73,8 @@ Analysis(system8,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(system8 charm fraction, 0.5814%)
 		sys(jet energy resolution , 0%)
 		sys(jet energy scale, 11.98%)
-		sys(modelling the b-hadron direction, 1.379%)
+		sys(modelling of the b-hadron direction, 1.379%)
+		sys(scale factor for inclusive b-jets,4.0134%)
 	}
 	bin(60<pt<75,0<abseta<2.5)
 	{
@@ -88,7 +92,8 @@ Analysis(system8,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(system8 charm fraction, 2.57%)
 		sys(jet energy resolution , 0%)
 		sys(jet energy scale, 27.94%)
-		sys(modelling the b-hadron direction, 5.654%)
+		sys(modelling of the b-hadron direction, 5.654%)
+		sys(scale factor for inclusive b-jets,4.0134%)
 	}
 	bin(75<pt<90,0<abseta<2.5)
 	{
@@ -106,7 +111,8 @@ Analysis(system8,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(system8 charm fraction, 4.341%)
 		sys(jet energy resolution , 0%)
 		sys(jet energy scale, 8.291%)
-		sys(modelling the b-hadron direction, 5.877%)
+		sys(modelling of the b-hadron direction, 5.877%)
+		sys(scale factor for inclusive b-jets,4.0134%)
 	}
 	bin(90<pt<110,0<abseta<2.5)
 	{
@@ -124,7 +130,8 @@ Analysis(system8,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(system8 charm fraction, 3.906%)
 		sys(jet energy resolution , 0%)
 		sys(jet energy scale, 9.416%)
-		sys(modelling the b-hadron direction, 8.923%)
+		sys(modelling of the b-hadron direction, 8.923%)
+		sys(scale factor for inclusive b-jets,4.0134%)
 	}
 	bin(110<pt<140,0<abseta<2.5)
 	{
@@ -142,7 +149,8 @@ Analysis(system8,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(system8 charm fraction, 1.56%)
 		sys(jet energy resolution , 0%)
 		sys(jet energy scale, 14.54%)
-		sys(modelling the b-hadron direction, 5.54%)
+		sys(modelling of the b-hadron direction, 5.54%)
+		sys(scale factor for inclusive b-jets,4.0134%)
 	}
 	bin(140<pt<200,0<abseta<2.5)
 	{
@@ -160,7 +168,8 @@ Analysis(system8,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(system8 charm fraction, 7.899%)
 		sys(jet energy resolution , 0%)
 		sys(jet energy scale, 15%)
-		sys(modelling the b-hadron direction, 4.635%)
+		sys(modelling of the b-hadron direction, 4.635%)
+		sys(scale factor for inclusive b-jets,4.0134%)
 	}
 	bin(200<pt<250,0<abseta<2.5)
 	{
@@ -178,6 +187,7 @@ Analysis(system8,bottom,MV1,0.905363,AntiKt4Topo)
 		sys(system8 charm fraction, 23.81%)
 		sys(jet energy resolution , 0%)
 		sys(jet energy scale, 10.58%)
-		sys(modelling the b-hadron direction, 29.43%)
+		sys(modelling of the b-hadron direction, 29.43%)
+		sys(scale factor for inclusive b-jets,4.0134%)
 	}
 }
