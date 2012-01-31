@@ -11,6 +11,7 @@ import sys
 import subprocess
 import shutil
 import ROOT
+import time
 
 #
 # Build the standard command line arguments to the FT guy given
@@ -27,21 +28,41 @@ def buildArgs(config):
 #
 # Run a command line and return the data
 #
-def runProc(cmdline):
+def runProc(cmdline, output, printtime):
     args = cmdline.split()
     p = subprocess.Popen(args, stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
-    text = p.communicate()[0]
+    while True:
+        line = p.stdout.readline()
+        if not line:
+            break
+        if printtime:
+            print >> output, "%s   %s" % (time.asctime(), line.rstrip())
+        else:
+            print >> output, line.rstrip()
+
+    p.communicate()
     errorcode = p.returncode
 
-    return errorcode, text
+    return errorcode
 
 #
-# Dump out some html about how it went
+# Run a command and dump the info in a section. Returns the process
+# error code
 #
-def dumpResultSection (html, err, text, title):
+def dumpCommandResult (html, cmdline, title, printtime=True):
+    print >> html, "<h1>%s</h1>" % title
+    print >> html, "<PRE>"
+    err = runProc(cmdline, html, printtime)
+    print >> html, "</PRE>"
+    print >> html, "result code: %d" % err
+    return err
+
+#
+# Dump out some html for a section
+#
+def dumpResultSection (html, text,  title):
     print >> html, "<h1>%s</h1>" % title
     print >> html, "<PRE>%s</PRE>" % text
-    print >> html, "result code: %d" % err
 
 
 def dumpROOTDir (html, dir, indent):
@@ -80,15 +101,13 @@ def doComboImpl (configInfo, html):
     # Get a list of the names
     #
 
-    errcode, result = runProc("FTDump.exe %s --names" % stdCmdArgs)
-    dumpResultSection (html, errcode, result, "All analyses to be processed")
+    errcode = dumpCommandResult (html, "FTDump.exe %s --names" % stdCmdArgs, "All analyses to be processed", printtime = False)
 
     #
     # First job is to "check" the file to make sure it is ok.
     #
 
-    errcode, result = runProc("FTDump.exe %s --check" % stdCmdArgs)
-    dumpResultSection (html, errcode, result, "Bin Consistency Check")
+    errcode = dumpCommandResult(html, "FTDump.exe %s --check" % stdCmdArgs, "Bin Consistency Check")
 
     if errcode <> 0:
         print "consitancy check failed, stopping now..."
@@ -99,8 +118,7 @@ def doComboImpl (configInfo, html):
     #
 
     if configInfo.runCombination:
-        errcode, result = runProc("FTCombine.exe %s" % stdCmdArgs);
-        dumpResultSection (html, errcode, result, "Combination")
+        errcode = dumpCommandResult(html, "FTCombine.exe %s" % stdCmdArgs, "Combination")
 
     #
     # Finally, we are going to copy the root file over and build it with
@@ -112,8 +130,7 @@ def doComboImpl (configInfo, html):
     outputROOT = configInfo.CDIFile
     shutil.copy (configInfo.mcEffRootFile, "output.root")
 
-    errcode, result = runProc("FTConvertToCDI.exe %s --update" % stdCmdArgs)
-    dumpResultSection (html, errcode, result, "Convert to CDI")
+    errcode = dumpCommandResult(html, "FTConvertToCDI.exe %s --update" % stdCmdArgs, "Convert to CDI")
 
     if errcode <> 0:
         print "Failed to build CDI"
