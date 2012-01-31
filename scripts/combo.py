@@ -120,8 +120,31 @@ def doComboImpl (configInfo, html):
     if configInfo.runCombination:
         errcode = dumpCommandResult(html, "FTCombine.exe %s" % stdCmdArgs, "Combination")
 
+        # Cache all the files we can for this run so they are easy to get at.
+        shutil.copy("output.root", "%s-diagnostics.root" % configInfo.name )
+        shutil.copy("combined.dot", "%s-combined.dot" % configInfo.name )
+        shutil.copy("combined.txt", "%s-sf.txt" % configInfo.name )
+    else:
+        dumpResultSection(html, "Config file turned off running the combination", "Combination")
+
+    print >> html, '<a href="%s-diagnostics.root">Diagnostics root file</a>' % configInfo.name
+    print >> html, '<a href="%s-combined.dot">graphviz input file</a>' % configInfo.name
+    print >> html, '<a href="%s-sf.txt">Scale Factor text file</a>' % configInfo.name
+    
+    combinedFilename = "%s-sf.txt" % configInfo.name
+    if os.path.exists(combinedFilename):
+        stdCmdArgs += " %s" % combinedFilename
+
     #
-    # Finally, we are going to copy the root file over and build it with
+    # Generate plots for this guy
+    #
+
+    dumpCommandResult(html, "FTPlot.exe %s" % stdCmdArgs, "SF Plots")
+    shutil.copy ("plots.root", "%s-plots.root" % configInfo.name)
+    print >> html, '<a href="%s-plots.root">Scale Factor Plots</a>' % configInfo.name
+
+    #
+    # We are going to copy the root file over and build it with
     # everything that is needed in it.
     #
 

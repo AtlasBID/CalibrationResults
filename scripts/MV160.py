@@ -3,6 +3,7 @@
 #
 
 title = "MV160 dijet Combination"
+name = "MV160"
 
 #
 # Input arguments
@@ -20,6 +21,7 @@ ignore_analyses = [
     "pTrel-bottom-JetFitterCOMBNN-0.35-AntiKt4Topo:20-pt-140:0.6-abseta-1.2",
     "pTrel-bottom-JetFitterCOMBNN-0.35-AntiKt4Topo:20-pt-140:1.2-abseta-1.8",
     "pTrel-bottom-JetFitterCOMBNN-0.35-AntiKt4Topo:20-pt-140:1.8-abseta-2.5",
+    "system8-bottom-MV1-0.905363-AntiKt4Topo:200-pt-250:0-abseta-2.5",
     "kinsel_ljets-bottom-SV0-0.50-AntiKt4Topo:25-pt-30:0-abseta-2.5",
     "kinsel_ljets-bottom-SV0-0.50-AntiKt4Topo:30-pt-60:0-abseta-2.5",
     "kinsel_ljets-bottom-SV0-0.50-AntiKt4Topo:60-pt-90:0-abseta-2.5",
