@@ -211,7 +211,7 @@ def doComboImpl (configInfo, html):
             errcode = dumpCommandResult(html, "FTCombine.exe %s" % cmd)
 
             # Cache all the files we can for this run so they are easy to get at.
-            if errcode <> 0:
+            if errcode == 0:
                 shutil.copy("output.root", "%s-diagnostics.root" % baseOutputName )
                 shutil.copy("combined.dot", "%s-combined.dot" % baseOutputName )
                 shutil.copy("combined.txt", "%s-sf.txt" % baseOutputName )
