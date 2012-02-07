@@ -211,13 +211,17 @@ def doComboImpl (configInfo, html):
             errcode = dumpCommandResult(html, "FTCombine.exe %s" % cmd)
 
             # Cache all the files we can for this run so they are easy to get at.
-            shutil.copy("output.root", "%s-diagnostics.root" % baseOutputName )
-            shutil.copy("combined.dot", "%s-combined.dot" % baseOutputName )
-            shutil.copy("combined.txt", "%s-sf.txt" % baseOutputName )
+            if errcode <> 0:
+                shutil.copy("output.root", "%s-diagnostics.root" % baseOutputName )
+                shutil.copy("combined.dot", "%s-combined.dot" % baseOutputName )
+                shutil.copy("combined.txt", "%s-sf.txt" % baseOutputName )
 
-            print >> html, '<a href="%s-diagnostics.root">Diagnostics root file</a>' % baseOutputName
-            print >> html, '<a href="%s-combined.dot">graphviz input file</a>' % baseOutputName
-            print >> html, '<a href="%s-sf.txt">Scale Factor text file</a>' % baseOutputName
+                print >> html, '<a href="%s-diagnostics.root">Diagnostics root file</a>' % baseOutputName
+                print >> html, '<a href="%s-combined.dot">graphviz input file</a>' % baseOutputName
+                print >> html, '<a href="%s-sf.txt">Scale Factor text file</a>' % baseOutputName
+            else:
+                print "The Combination failed"
+
     
         # if we have an output file, include it in things we do below.
         if os.path.exists(combinedFilename):
