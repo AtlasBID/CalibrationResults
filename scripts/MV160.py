@@ -11,6 +11,21 @@ name = "MV160"
 
 inputs = "analyses/System8-MV160.txt analyses/ptrel-MV160.txt analyses/ptrel-JFITNN70.txt analyses/stat_correlation_inputs.txt"
 #inputs = "analyses/pTrel-JFITNN70.txt"
+
+taggers = [
+    ["MV1", "0.905363"]
+    ]
+
+DoOnlyTaggers = []
+for t in taggers:
+    d = {
+        "flavor":"*",
+        "tagger":t[0],
+        "op":t[1],
+        "jet":"*"
+        }
+    DoOnlyTaggers.append(d)
+    
 ignore_analyses = [
     "pTrel-bottom-JetFitterCOMBNN-0.35-AntiKt4Topo:20-pt-30:0-abseta-2.5",
     "pTrel-bottom-JetFitterCOMBNN-0.35-AntiKt4Topo:30-pt-60:0-abseta-2.5",

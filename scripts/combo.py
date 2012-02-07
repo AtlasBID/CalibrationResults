@@ -15,14 +15,77 @@ import time
 
 #
 # Build the standard command line arguments to the FT guy given
-# the config file.
+# the config file. Since we can have several iterations, we need
+# to have some sort of class which can deal with this stuff.
+#
+class cmdSequences:
+    def __init__ (self, cmdline):
+        self._baseCommandLine = cmdline
+        self._configs = []
+
+    def addConfig (self, extraCmd):
+        self._configs.append(extraCmd)
+
+    def addToStandard (self, s):
+        self._baseCommandLine += " %s" % s
+
+    def GetNumberConfig (self):
+        return len(self._configs)
+
+    def GetConfig(self, index):
+        return "%s %s" % (self._baseCommandLine, self._configs[index])
+
+    def GetFullConfig (self):
+        cmd = self._baseCommandLine
+        for c in self._configs:
+            cmd += " " + c
+        return cmd
+
+    class cmdSequenceItr:
+        def __init__ (self, seq):
+            self._seq = seq;
+            self._index = 0
+
+        def __iter__ (self):
+            return self;
+
+        def next(self):
+            if self._index >= self._seq.GetNumberConfig():
+                if self._index == 0:
+                    self._index += 1
+                    return self._seq.GetFullConfig()
+
+                raise StopIteration
+
+            self._index += 1
+            return self._seq.GetConfig(self._index-1)
+
+    def __iter__ (self):
+        return cmdSequences.cmdSequenceItr(self)
+
+#
+# Create the configs for this run from the command line.
 #
 def buildArgs(config):
     badfiles = ""
     for ignoreAna in config.ignore_analyses:
         badfiles += " --ignore %s" % ignoreAna
 
-    cmdfile = "%s %s" % (config.inputs, badfiles)
+    cmdfile = cmdSequences ("%s %s" % (config.inputs, badfiles))
+
+    for g in config.DoOnlyTaggers:
+        onlyFlags = ""
+        if g["flavor"] != "*":
+            onlyFlags += " --flavor " + g["flavor"]
+        if g["tagger"] != "*":
+            onlyFlags += " --tagger " + g["tagger"]
+        if g["op"] != "*":
+            onlyFlags += " --operatingPoint " + g["op"]
+        if g["jet"] != "*":
+            onlyFlags += " --jetAlgorithm " + g["jet"]
+
+        cmdfile.addConfig (onlyFlags)
+        
     return cmdfile
 
 #
@@ -49,8 +112,9 @@ def runProc(cmdline, output, printtime):
 # Run a command and dump the info in a section. Returns the process
 # error code
 #
-def dumpCommandResult (html, cmdline, title, printtime=True):
-    print >> html, "<h1>%s</h1>" % title
+def dumpCommandResult (html, cmdline, title="", printtime=True):
+    if title <> "":
+        print >> html, "<h1>%s</h1>" % title
     print >> html, "<PRE>"
     err = runProc(cmdline, html, printtime)
     print >> html, "</PRE>"
@@ -92,7 +156,7 @@ def dumpROOTFile (html, fname):
 def doComboImpl (configInfo, html):
     
     #
-    # Build the standard command line
+    # Build the standard command line argument object.
     #
 
     stdCmdArgs = buildArgs(configInfo)
@@ -101,15 +165,21 @@ def doComboImpl (configInfo, html):
     # Get a list of the names
     #
 
-    errcode = dumpCommandResult (html, "FTDump.exe %s --names" % stdCmdArgs, "All analyses to be processed", printtime = False)
+    errcode = dumpCommandResult (html, "FTDump.exe %s --names" % stdCmdArgs.GetFullConfig(), "All analyses to be processed", printtime = False)
 
     #
     # First job is to "check" the file to make sure it is ok.
     #
 
-    errcode = dumpCommandResult(html, "FTDump.exe %s --check" % stdCmdArgs, "Bin Consistency Check")
+    print >> html, "<h1>Bin Consistency Check</h1>"
 
-    if errcode <> 0:
+    success = True
+    for cmd in stdCmdArgs:
+        errcode = dumpCommandResult(html, "FTDump.exe %s --check" % cmd)
+        if errcode <> 0:
+            success = False
+
+    if not success:
         print "consitancy check failed, stopping now..."
         return
 
@@ -117,29 +187,47 @@ def doComboImpl (configInfo, html):
     # Next, do the combination itself
     #
 
-    if configInfo.runCombination:
-        errcode = dumpCommandResult(html, "FTCombine.exe %s" % stdCmdArgs, "Combination")
+    print >> html, "<h1>Combination</h1>"
 
-        # Cache all the files we can for this run so they are easy to get at.
-        shutil.copy("output.root", "%s-diagnostics.root" % configInfo.name )
-        shutil.copy("combined.dot", "%s-combined.dot" % configInfo.name )
-        shutil.copy("combined.txt", "%s-sf.txt" % configInfo.name )
-    else:
-        dumpResultSection(html, "Config file turned off running the combination", "Combination")
+    for cmd in stdCmdArgs:
+        baseOutputName = "%s-%s" % (configInfo.name, hash(cmd))
+        combinedFilename = "%s-sf.txt" % configInfo.name
 
-    print >> html, '<a href="%s-diagnostics.root">Diagnostics root file</a>' % configInfo.name
-    print >> html, '<a href="%s-combined.dot">graphviz input file</a>' % configInfo.name
-    print >> html, '<a href="%s-sf.txt">Scale Factor text file</a>' % configInfo.name
+        # Should we run the combo?
+        dorun = True
+
+        if not configInfo.runCombination:
+            dorun = False
+
+        if os.path.exists(combinedFilename):
+            dorun = False
+
+        if not dorun:
+            dumpResultSection(html, "Config file turned off running the combination", "Combination")
+
+        else:
+            # Run the combo
+        
+            errcode = dumpCommandResult(html, "FTCombine.exe %s" % cmd)
+
+            # Cache all the files we can for this run so they are easy to get at.
+            shutil.copy("output.root", "%s-diagnostics.root" % baseOutputName )
+            shutil.copy("combined.dot", "%s-combined.dot" % baseOutputName )
+            shutil.copy("combined.txt", "%s-sf.txt" % baseOutputName )
+
+            print >> html, '<a href="%s-diagnostics.root">Diagnostics root file</a>' % baseOutputName
+            print >> html, '<a href="%s-combined.dot">graphviz input file</a>' % baseOutputName
+            print >> html, '<a href="%s-sf.txt">Scale Factor text file</a>' % baseOutputName
     
-    combinedFilename = "%s-sf.txt" % configInfo.name
-    if os.path.exists(combinedFilename):
-        stdCmdArgs += " %s" % combinedFilename
+        # if we have an output file, include it in things we do below.
+        if os.path.exists(combinedFilename):
+            stdCmdArgs.addToStandard(combinedFilename)
 
     #
-    # Generate plots for this guy
+    # Generate plots for everyone we've done.
     #
 
-    dumpCommandResult(html, "FTPlot.exe %s" % stdCmdArgs, "SF Plots")
+    dumpCommandResult(html, "FTPlot.exe %s" % stdCmdArgs.GetFullConfig(), "SF Plots")
     shutil.copy ("plots.root", "%s-plots.root" % configInfo.name)
     print >> html, '<a href="%s-plots.root">Scale Factor Plots</a>' % configInfo.name
 
@@ -153,7 +241,7 @@ def doComboImpl (configInfo, html):
     outputROOT = configInfo.CDIFile
     shutil.copy (configInfo.mcEffRootFile, "output.root")
 
-    errcode = dumpCommandResult(html, "FTConvertToCDI.exe %s --update" % stdCmdArgs, "Convert to CDI")
+    errcode = dumpCommandResult(html, "FTConvertToCDI.exe %s --update" % stdCmdArgs.GetFullConfig(), "Convert to CDI")
 
     if errcode <> 0:
         print "Failed to build CDI"
