@@ -1,4 +1,4 @@
-Analysis(negative tags,light,MV1,  0.07, AntiKt4Topo){ 
+Analysis(negative tags,light,MV1,  0.0714225, AntiKt4Topo){ 
   bin( 20<pt< 30,0.0<eta<1.2)
   {
     central_value(1.1193,0.0128)
