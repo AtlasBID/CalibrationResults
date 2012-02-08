@@ -1,0 +1,42 @@
+Analysis(DStar,charm,MV1,0.601713,AntiKt4Topo){
+  bin(20<pt<30,0<abseta<2.5)
+  { 
+     central_value(1.00781,0.131617)
+     sys(Dstar: b purity,2.71318%)
+     sys(Dstar: b SF,5.03876%)
+     sys(Dstar: bkg. param,0.775194%)
+     sys(Dstar: peak width,15.8915%)
+     sys(Dstar: pile-up,0%)
+     sys(Dstar: extrap,-15.1163%)
+  } 
+  bin(30<pt<60,0<abseta<2.5)
+  { 
+     central_value(0.993865,0.0955908)
+     sys(Dstar: b purity,2.9321%)
+     sys(Dstar: b SF,5.8642%)
+     sys(Dstar: bkg. param,0.925926%)
+     sys(Dstar: peak width,4.62963%)
+     sys(Dstar: pile-up,0%)
+     sys(Dstar: extrap,-13.7346%)
+  } 
+  bin(60<pt<90,0<abseta<2.5)
+  { 
+     central_value(1.14714,0.129613)
+     sys(Dstar: b purity,2.25653%)
+     sys(Dstar: b SF,5.22565%)
+     sys(Dstar: bkg. param,0.712589%)
+     sys(Dstar: peak width,4.75059%)
+     sys(Dstar: pile-up,0%)
+     sys(Dstar: extrap,-8.90736%)
+  } 
+  bin(90<pt<140,0<abseta<2.5)
+  { 
+     central_value(1.17277,0.145418)
+     sys(Dstar: b purity,2.56696%)
+     sys(Dstar: b SF,9.15179%)
+     sys(Dstar: bkg. param,1.78571%)
+     sys(Dstar: peak width,10.2679%)
+     sys(Dstar: pile-up,2.23214%)
+     sys(Dstar: extrap,-10.9375%)
+  } 
+} 
