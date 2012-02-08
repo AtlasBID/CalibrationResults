@@ -1,4 +1,4 @@
-Analysis(DStar,charm,JetFitterCOMBNN,2.20,AntiKt4Topo){
+Analysis(DStar,tau,JetFitterCOMBNN,2.20,AntiKt4Topo){
   bin(20<pt<30,0<abseta<2.5)
   { 
      central_value(1,0.158355)
@@ -8,6 +8,7 @@ Analysis(DStar,charm,JetFitterCOMBNN,2.20,AntiKt4Topo){
      sys(Dstar: peak width,4.96894%)
      sys(Dstar: pile-up,0%)
      sys(Dstar: extrap,-17.7019%)
+     sys(extrapolation from charm,22%) 
   } 
   bin(30<pt<60,0<abseta<2.5)
   { 
@@ -18,6 +19,7 @@ Analysis(DStar,charm,JetFitterCOMBNN,2.20,AntiKt4Topo){
      sys(Dstar: peak width,4.10256%)
      sys(Dstar: pile-up,0%)
      sys(Dstar: extrap,-17.4359%)
+     sys(extrapolation from charm,22%) 
   } 
   bin(60<pt<90,0<abseta<2.5)
   { 
@@ -28,6 +30,7 @@ Analysis(DStar,charm,JetFitterCOMBNN,2.20,AntiKt4Topo){
      sys(Dstar: peak width,13.0252%)
      sys(Dstar: pile-up,0%)
      sys(Dstar: extrap,-9.66387%)
+     sys(extrapolation from charm,22%) 
   } 
   bin(90<pt<140,0<abseta<2.5)
   { 
@@ -38,6 +41,7 @@ Analysis(DStar,charm,JetFitterCOMBNN,2.20,AntiKt4Topo){
      sys(Dstar: peak width,18.8482%)
      sys(Dstar: pile-up,6.80628%)
      sys(Dstar: extrap,-14.9215%)
+     sys(extrapolation from charm,22%) 
   } 
   bin(140<pt<200,0<abseta<2.5)
   { 
@@ -49,5 +53,6 @@ Analysis(DStar,charm,JetFitterCOMBNN,2.20,AntiKt4Topo){
      sys(Dstar: pile-up,6.80628%)
      sys(Dstar: extrap,-14.9215%)
      sys(Dstar: pT extrap,12%)
+     sys(extrapolation from charm,22%) 
   } 
-} 
+}
