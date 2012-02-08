@@ -12,6 +12,7 @@ import subprocess
 import shutil
 import ROOT
 import time
+import glob
 
 #
 # Build the standard command line arguments to the FT guy given
@@ -71,7 +72,23 @@ def buildArgs(config):
     for ignoreAna in config.ignore_analyses:
         badfiles += " --ignore %s" % ignoreAna
 
-    cmdfile = cmdSequences ("%s %s" % (config.inputs, badfiles))
+    #
+    # Do wild-card expansion
+    #
+
+    inputs = ""
+    if isinstance(config.inputs, str):
+        inputs = config.inputs
+    else:
+        flist = [f for fwild in config.inputs for f in glob.glob(fwild)]
+        for f in flist:
+            inputs += " %s" % f
+            
+    #
+    # Build the commands out of that.
+    #
+
+    cmdfile = cmdSequences ("%s %s" % (inputs, badfiles))
 
     for g in config.DoOnlyTaggers:
         onlyFlags = ""
@@ -293,5 +310,8 @@ def doCombo(name):
 #
 
 if __name__ == "__main__":
-    doCombo("MV160")
+    if len(sys.argv) <= 1:
+        print "Usage: combo.py <config-name>"
+        print "  config name must be in python's search path"
+    doCombo(sys.argv[1])
 
