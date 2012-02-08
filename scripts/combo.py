@@ -106,19 +106,25 @@ def buildArgs(config):
     return cmdfile
 
 #
-# Run a command line and return the data
+# Run a command line and return the data. Store to an output file if it is set.
 #
-def runProc(cmdline, output, printtime):
+def runProc(cmdline, output, printtime, store = None):
     args = cmdline.split()
+    fout = None
+    if store:
+        fout = open(store, 'w')
+        
     p = subprocess.Popen(args, stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
     while True:
         line = p.stdout.readline()
         if not line:
             break
+        line = line.rstrip()
         if printtime:
-            print >> output, "%s   %s" % (time.asctime(), line.rstrip())
-        else:
-            print >> output, line.rstrip()
+            line = "%s   %s" % (time.asctime(), line)
+        print >> output, line
+        if store:
+            print >> fout, line
 
     p.communicate()
     errorcode = p.returncode
@@ -127,13 +133,14 @@ def runProc(cmdline, output, printtime):
 
 #
 # Run a command and dump the info in a section. Returns the process
-# error code
+# error code. We will add the "time" to the output if requested, and
+# we can also tee the info to file 'store'
 #
-def dumpCommandResult (html, cmdline, title="", printtime=True):
+def dumpCommandResult (html, cmdline, title="", printtime=True, store = None):
     if title <> "":
         print >> html, "<h1>%s</h1>" % title
     print >> html, "<PRE>"
-    err = runProc(cmdline, html, printtime)
+    err = runProc(cmdline, html, printtime, store)
     print >> html, "</PRE>"
     print >> html, "result code: %d" % err
     return err
@@ -146,6 +153,19 @@ def dumpResultSection (html, text,  title):
     print >> html, "<PRE>%s</PRE>" % text
 
 
+#
+# Dump out a file into the html in a <PRE> section.
+#
+def dumpFile (html, fname):
+    f = open(fname, 'r')
+    print >> html, "<PRE>"
+    for l in f:
+        print >> html, l.rstrip()
+    print >> html, "</PRE>"
+
+#
+# Walk through a root tree and dump it out
+#
 def dumpROOTDir (html, dir, indent):
     for k in dir.GetListOfKeys():
         c = ROOT.TClass.GetClass(k.GetClassName())
@@ -208,7 +228,8 @@ def doComboImpl (configInfo, html):
 
     for cmd in stdCmdArgs:
         baseOutputName = "%s-%s" % (configInfo.name, hash(cmd))
-        combinedFilename = "%s-sf.txt" % configInfo.name
+        combinedFilename = "%s-sf.txt" % baseOutputName
+        cmdLog = "%s-cmb-log.txt" % baseOutputName
 
         # Should we run the combo?
         dorun = True
@@ -220,12 +241,17 @@ def doComboImpl (configInfo, html):
             dorun = False
 
         if not dorun:
-            dumpResultSection(html, "Config file turned off running the combination", "Combination")
+            print >> html, "Not running the combination."
+            if not os.path.exists(cmdLog):
+                print >> html, "<b>Log file is missing for this combination run! Delete %s to re-run</b>" % combinedFilename
+            else:
+                print >> html, " Dumping file from last run of combination and including those results in later calculations."
+                dumpFile(html, cmdLog)
 
         else:
             # Run the combo
         
-            errcode = dumpCommandResult(html, "FTCombine.exe %s" % cmd)
+            errcode = dumpCommandResult(html, "FTCombine.exe %s" % cmd, store=cmdLog)
 
             # Cache all the files we can for this run so they are easy to get at.
             if errcode == 0:
