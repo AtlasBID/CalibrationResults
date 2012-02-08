@@ -316,7 +316,7 @@ def doCombo(name):
     # Dump what happens to a html file as we go...
     #
 
-    html = open("%s.html" % name, "w")
+    html = open("%s.html" % configInfo.name, "w")
     print >> html, "<html><header><title>%s</title></header><body>" % configInfo.title
 
     #

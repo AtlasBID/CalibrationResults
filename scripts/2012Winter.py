@@ -17,8 +17,6 @@ inputs = [
     "analyses/2012-Winter/negativetag/*.txt",
     "analyses/2012-Winter/stat_correlation_inputs.txt"
     ]
-#inputs = "analyses/System8-MV160.txt analyses/ptrel-MV160.txt analyses/ptrel-JFITNN70.txt analyses/stat_correlation_inputs.txt"
-#inputs = "analyses/pTrel-JFITNN70.txt"
 
 taggers = [
     ["MV1", "0.905363"]
@@ -43,6 +41,7 @@ ignore_analyses = [
     "pTrel-bottom-.*-AntiKt4Topo:20-pt-200:0.6-abseta-1.2",
     "pTrel-bottom-.*-AntiKt4Topo:20-pt-200:1.2-abseta-1.8",
     "pTrel-bottom-.*-AntiKt4Topo:20-pt-200:1.8-abseta-2.5",
+    "pTrel-system8-bottom-.*-AntiKt4Topo:200-pt-250:0-abseta-2.5",
     ]
 
 #
