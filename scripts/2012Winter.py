@@ -14,12 +14,12 @@ inputs = [
     "analyses/2012-Winter/system8/*.txt",
     "analyses/2012-Winter/sv0mass/*.txt",
     "analyses/2012-Winter/ptrel/*.txt",
-    "analyses/2012-Winter/negativetag/*.txt",
+    #"analyses/2012-Winter/negativetag/*.txt",
     "analyses/2012-Winter/stat_correlation_inputs.txt"
     ]
 
 taggers = [
-    ["MV1", "0.905363"]
+    #["MV1", "0.905363"]
     ]
 
 DoOnlyTaggers = []

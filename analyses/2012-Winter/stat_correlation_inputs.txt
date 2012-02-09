@@ -1,149 +1,149 @@
-Correlation(pTrel, system8, bottom, COMBINED, 4.55, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
   bin(110<pt<140,0.0<abseta<2.5) {
     statistical(0.43089)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, 1.7, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, 1.70, AntiKt4Topo) {
   bin(110<pt<140,0.0<abseta<2.5) {
     statistical(0.152541)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, -0.8, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, -0.80, AntiKt4Topo) {
   bin(110<pt<140,0.0<abseta<2.5) {
     statistical(0.125207)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, 4.55, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
   bin(140<pt<200,0.0<abseta<2.5) {
     statistical(-0.017391)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, 1.7, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, 1.70, AntiKt4Topo) {
   bin(140<pt<200,0.0<abseta<2.5) {
     statistical(-0.0731431)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, -0.8, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, -0.80, AntiKt4Topo) {
   bin(140<pt<200,0.0<abseta<2.5) {
     statistical(0.0960383)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, 4.55, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
   bin(200<pt<250,0.0<abseta<2.5) {
     statistical(0.211582)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, 1.7, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, 1.70, AntiKt4Topo) {
   bin(200<pt<250,0.0<abseta<2.5) {
     statistical(0.0516131)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, -0.8, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, -0.80, AntiKt4Topo) {
   bin(200<pt<250,0.0<abseta<2.5) {
     statistical(-0.138647)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, 4.55, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
   bin(20<pt<30,0.0<abseta<2.5) {
     statistical(0.576474)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, 1.7, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, 1.70, AntiKt4Topo) {
   bin(20<pt<30,0.0<abseta<2.5) {
     statistical(0.513909)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, -0.8, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, -0.80, AntiKt4Topo) {
   bin(20<pt<30,0.0<abseta<2.5) {
     statistical(0.578812)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, 4.55, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
   bin(30<pt<40,0.0<abseta<2.5) {
     statistical(0.814148)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, 1.7, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, 1.70, AntiKt4Topo) {
   bin(30<pt<40,0.0<abseta<2.5) {
     statistical(0.761933)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, -0.8, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, -0.80, AntiKt4Topo) {
   bin(30<pt<40,0.0<abseta<2.5) {
     statistical(0.803121)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, 4.55, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
   bin(40<pt<50,0.0<abseta<2.5) {
     statistical(0.78761)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, 1.7, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, 1.70, AntiKt4Topo) {
   bin(40<pt<50,0.0<abseta<2.5) {
     statistical(0.771494)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, -0.8, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, -0.80, AntiKt4Topo) {
   bin(40<pt<50,0.0<abseta<2.5) {
     statistical(0.811921)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, 4.55, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
   bin(50<pt<60,0.0<abseta<2.5) {
     statistical(0.654631)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, 1.7, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, 1.70, AntiKt4Topo) {
   bin(50<pt<60,0.0<abseta<2.5) {
     statistical(0.607793)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, -0.8, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, -0.80, AntiKt4Topo) {
   bin(50<pt<60,0.0<abseta<2.5) {
     statistical(0.656878)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, 4.55, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
   bin(60<pt<75,0.0<abseta<2.5) {
     statistical(0.478191)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, 1.7, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, 1.70, AntiKt4Topo) {
   bin(60<pt<75,0.0<abseta<2.5) {
     statistical(0.34699)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, -0.8, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, -0.80, AntiKt4Topo) {
   bin(60<pt<75,0.0<abseta<2.5) {
     statistical(0.205976)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, 4.55, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
   bin(75<pt<90,0.0<abseta<2.5) {
     statistical(0.112055)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, 1.7, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, 1.70, AntiKt4Topo) {
   bin(75<pt<90,0.0<abseta<2.5) {
     statistical(0.211033)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, -0.8, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, -0.80, AntiKt4Topo) {
   bin(75<pt<90,0.0<abseta<2.5) {
     statistical(0.238265)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, 4.55, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
   bin(90<pt<110,0.0<abseta<2.5) {
     statistical(0.157836)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, 1.7, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, 1.70, AntiKt4Topo) {
   bin(90<pt<110,0.0<abseta<2.5) {
     statistical(0.109536)
   }
 }
-Correlation(pTrel, system8, bottom, COMBINED, -0.8, AntiKt4Topo) {
+Correlation(pTrel, system8, bottom, IP3DSV1, -0.80, AntiKt4Topo) {
   bin(90<pt<110,0.0<abseta<2.5) {
     statistical(-0.0142069)
   }
