@@ -1,4 +1,4 @@
-Analysis(system8,bottom,JetFitterCOMBNN,2.2,AntiKt4Topo)
+Analysis(system8,bottom,JetFitterCOMBNN,2.20,AntiKt4Topo)
 {
 	bin(20<pt<30,0<abseta<2.5)
 	{
