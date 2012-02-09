@@ -1,4 +1,4 @@
-Analysis(system8,bottom,IP3DSV1,1.7,AntiKt4Topo)
+Analysis(system8,bottom,IP3DSV1,1.70,AntiKt4Topo)
 {
 	bin(20<pt<30,0<abseta<2.5)
 	{
