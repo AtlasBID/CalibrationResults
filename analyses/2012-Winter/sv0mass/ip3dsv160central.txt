@@ -1,5 +1,5 @@
 Analysis(sv0mass,light,IP3DSV1,4.55, AntiKt4Topo) {
-   bin(20<pt<30,0<eta<1.2)
+   bin(20<pt<30,0<abseta<1.2)
    {
       central_value( 1.259,13.90%)
       usys(MC statistics,17.59%)
@@ -12,7 +12,7 @@ Analysis(sv0mass,light,IP3DSV1,4.55, AntiKt4Topo) {
       sys(sv0 mass pileup reweighting,-15.41%)
       sys(sv0 mass period dependence,-18.60%)
    }
-   bin(30<pt<60,0<eta<1.2)
+   bin(30<pt<60,0<abseta<1.2)
    {
       central_value( 2.280,3.47%)
       usys(MC statistics,9.93%)
@@ -25,7 +25,7 @@ Analysis(sv0mass,light,IP3DSV1,4.55, AntiKt4Topo) {
       sys(sv0 mass pileup reweighting,5.00%)
       sys(sv0 mass period dependence,0.84%)
    }
-   bin(60<pt<140,0<eta<1.2)
+   bin(60<pt<140,0<abseta<1.2)
    {
       central_value( 1.279,3.51%)
       usys(MC statistics,10.07%)
@@ -38,7 +38,7 @@ Analysis(sv0mass,light,IP3DSV1,4.55, AntiKt4Topo) {
       sys(sv0 mass pileup reweighting,0.80%)
       sys(sv0 mass period dependence,1.93%)
    }
-   bin(140<pt<300,0<eta<1.2)
+   bin(140<pt<300,0<abseta<1.2)
    {
       central_value( 1.452,1.23%)
       usys(MC statistics,6.55%)
