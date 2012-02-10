@@ -15,7 +15,8 @@ inputs = [
     "analyses/2012-Winter/sv0mass/*.txt",
     "analyses/2012-Winter/ptrel/*.txt",
     #"analyses/2012-Winter/negativetag/*.txt",
-    "analyses/2012-Winter/stat_correlation_inputs.txt"
+    "analyses/2012-Winter/stat_correlation_inputs.txt",
+    "analyses/2012-Winter/defaults.txt"
     ]
 
 taggers = [

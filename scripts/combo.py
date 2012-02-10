@@ -81,8 +81,12 @@ def buildArgs(config):
         inputs = config.inputs
     else:
         flist = [f for fwild in config.inputs for f in glob.glob(fwild)]
+        found = False
         for f in flist:
             inputs += " %s" % f
+            found = True
+        if not found:
+            raise "Unable to find any files for pattern '%s'" % fwild
             
     #
     # Build the commands out of that.
