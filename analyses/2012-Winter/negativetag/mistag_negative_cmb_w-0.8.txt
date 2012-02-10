@@ -1,5 +1,5 @@
 Analysis(negative tags,light,IP3DSV1, -0.80, AntiKt4Topo){ 
-  bin( 20<pt< 30,0.0<eta<1.2)
+  bin( 20<pt< 30, 0.0<abseta<1.2)
   {
     central_value(1.2140,0.0223)
     usys(MC statistics, 1.84%)
@@ -18,7 +18,7 @@ Analysis(negative tags,light,IP3DSV1, -0.80, AntiKt4Topo){
     sys(negative tag run period dependence,-10.49%)
     sys(d0 and z0 smearing,-1.42%)
   }
-  bin( 30<pt< 60,0.0<eta<1.2)
+  bin( 30<pt< 60, 0.0<abseta<1.2)
   {
     central_value(1.0830,0.0071)
     usys(MC statistics, 0.65%)
@@ -37,7 +37,7 @@ Analysis(negative tags,light,IP3DSV1, -0.80, AntiKt4Topo){
     sys(negative tag run period dependence, 0.45%)
     sys(d0 and z0 smearing, 2.04%)
   }
-  bin( 60<pt<140,0.0<eta<1.2)
+  bin( 60<pt<140, 0.0<abseta<1.2)
   {
     central_value(1.1153,0.0061)
     usys(MC statistics, 0.55%)
@@ -56,7 +56,7 @@ Analysis(negative tags,light,IP3DSV1, -0.80, AntiKt4Topo){
     sys(negative tag run period dependence, 1.60%)
     sys(d0 and z0 smearing, 4.15%)
   }
-  bin(140<pt<300,0.0<eta<1.2)
+  bin(140<pt<300, 0.0<abseta<1.2)
   {
     central_value(1.0990,0.0050)
     usys(MC statistics, 0.45%)
@@ -75,7 +75,7 @@ Analysis(negative tags,light,IP3DSV1, -0.80, AntiKt4Topo){
     sys(negative tag run period dependence,-2.17%)
     sys(d0 and z0 smearing, 5.66%)
   }
-  bin(300<pt<450,0.0<eta<1.2)
+  bin(300<pt<450, 0.0<abseta<1.2)
   {
     central_value(1.1142,0.0050)
     usys(MC statistics, 0.45%)
@@ -94,7 +94,7 @@ Analysis(negative tags,light,IP3DSV1, -0.80, AntiKt4Topo){
     sys(negative tag run period dependence,-2.18%)
     sys(d0 and z0 smearing, 3.61%)
   }
-  bin(450<pt<750,0.0<eta<1.2)
+  bin(450<pt<750, 0.0<abseta<1.2)
   {
     central_value(1.0229,0.0060)
     usys(MC statistics, 0.59%)
@@ -113,7 +113,7 @@ Analysis(negative tags,light,IP3DSV1, -0.80, AntiKt4Topo){
     sys(negative tag run period dependence, 2.23%)
     sys(d0 and z0 smearing, 0.28%)
   }
-  bin( 20<pt< 30,1.2<eta<2.5)
+  bin( 20<pt< 30, 1.2<abseta<2.5)
   {
     central_value(1.2190,0.0241)
     usys(MC statistics, 1.98%)
@@ -132,7 +132,7 @@ Analysis(negative tags,light,IP3DSV1, -0.80, AntiKt4Topo){
     sys(negative tag run period dependence,-9.67%)
     sys(d0 and z0 smearing,-0.13%)
   }
-  bin( 30<pt< 60,1.2<eta<2.5)
+  bin( 30<pt< 60, 1.2<abseta<2.5)
   {
     central_value(1.1077,0.0076)
     usys(MC statistics, 0.69%)
@@ -151,7 +151,7 @@ Analysis(negative tags,light,IP3DSV1, -0.80, AntiKt4Topo){
     sys(negative tag run period dependence, 0.70%)
     sys(d0 and z0 smearing, 3.86%)
   }
-  bin( 60<pt<140,1.2<eta<2.5)
+  bin( 60<pt<140, 1.2<abseta<2.5)
   {
     central_value(1.1650,0.0069)
     usys(MC statistics, 0.59%)
@@ -170,7 +170,7 @@ Analysis(negative tags,light,IP3DSV1, -0.80, AntiKt4Topo){
     sys(negative tag run period dependence,-0.30%)
     sys(d0 and z0 smearing, 3.89%)
   }
-  bin(140<pt<300,1.2<eta<2.5)
+  bin(140<pt<300, 1.2<abseta<2.5)
   {
     central_value(1.1980,0.0069)
     usys(MC statistics, 0.57%)
@@ -189,7 +189,7 @@ Analysis(negative tags,light,IP3DSV1, -0.80, AntiKt4Topo){
     sys(negative tag run period dependence, 2.09%)
     sys(d0 and z0 smearing, 1.68%)
   }
-  bin(300<pt<450,1.2<eta<2.5)
+  bin(300<pt<450, 1.2<abseta<2.5)
   {
     central_value(1.2582,0.0079)
     usys(MC statistics, 0.63%)
@@ -208,7 +208,7 @@ Analysis(negative tags,light,IP3DSV1, -0.80, AntiKt4Topo){
     sys(negative tag run period dependence,-3.06%)
     sys(d0 and z0 smearing,-1.05%)
   }
-  bin(450<pt<750,1.2<eta<2.5)
+  bin(450<pt<750, 1.2<abseta<2.5)
   {
     central_value(1.1491,0.0177)
     usys(MC statistics, 1.54%)
