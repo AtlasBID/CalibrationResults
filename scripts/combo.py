@@ -262,17 +262,19 @@ def doComboImpl (configInfo, html):
                 shutil.copy("output.root", "%s-diagnostics.root" % baseOutputName )
                 shutil.copy("combined.dot", "%s-combined.dot" % baseOutputName )
                 shutil.copy("combined.txt", "%s-sf.txt" % baseOutputName )
-
-                print >> html, '<a href="%s-diagnostics.root">Diagnostics root file</a>' % baseOutputName
-                print >> html, '<a href="%s-combined.dot">graphviz input file</a>' % baseOutputName
-                print >> html, '<a href="%s-sf.txt">Scale Factor text file</a>' % baseOutputName
             else:
+                print >> html, "<b>Combination failed with error code %s</b><p>" % errcode
                 print "The Combination failed"
 
     
         # if we have an output file, include it in things we do below.
         if os.path.exists(combinedFilename):
             stdCmdArgs.addToStandard(combinedFilename)
+
+            print >> html, '<a href="%s-diagnostics.root">Diagnostics root file</a>' % baseOutputName
+            print >> html, '<a href="%s-combined.dot">graphviz input file</a>' % baseOutputName
+            print >> html, '<a href="%s-sf.txt">Scale Factor text file</a>' % baseOutputName
+            print >> html, "<p>"
 
     #
     # Generate plots for everyone we've done.

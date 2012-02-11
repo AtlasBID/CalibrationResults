@@ -14,7 +14,7 @@ inputs = [
     "analyses/2012-Winter/system8/*.txt",
     "analyses/2012-Winter/sv0mass/*.txt",
     "analyses/2012-Winter/ptrel/*.txt",
-    #"analyses/2012-Winter/negativetag/*.txt",
+    "analyses/2012-Winter/negativetag/*.txt",
     "analyses/2012-Winter/stat_correlation_inputs.txt",
     "analyses/2012-Winter/defaults.txt"
     ]
@@ -56,6 +56,7 @@ ignore_analyses = [
     "pTrel-bottom-.*-AntiKt4Topo:20-pt-200:1.2-abseta-1.8",
     "pTrel-bottom-.*-AntiKt4Topo:20-pt-200:1.8-abseta-2.5",
     "pTrel-system8-bottom-.*-AntiKt4Topo:200-pt-250:0-abseta-2.5",
+    "sv0mass-light-MV1-0.601713-AntiKt4Topo.*",
     ]
 
 #
@@ -63,7 +64,7 @@ ignore_analyses = [
 #
 
 mcEffRootFile = "mceff/TopCalibrations_rel17_MC11b_Convert.root"
-CDIFile = "MV160-rel17_MC11b.root"
+CDIFile = "%s-rel17_MC11b.root" % name
 
 #
 # Should we avoid the combination?
