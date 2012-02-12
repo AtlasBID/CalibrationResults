@@ -2,6 +2,8 @@
 #
 #  take joe's input file and make something "sensible" out of them.
 #
+#  Mask off bins at 60-75, 110-140, 140-200.
+#
 
 import os
 import sys
@@ -21,8 +23,13 @@ def makefile (inputfile):
 
         ptrelCut = items[5]
 
-        if ptlow == "90" and pthigh == "11":
+        if ptlow == "60" and pthigh == "75":
             continue
+        if ptlow == "110" and pthigh == "140":
+            continue
+        if ptlow == "140" and pthigh == "200":
+            continue
+
         if ptrelCut != "690.7":
             continue
         
