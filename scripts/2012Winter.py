@@ -12,9 +12,13 @@ name = "2012-Winter"
 inputs = [
     "analyses/2012-Winter/DStar/*.txt",
     "analyses/2012-Winter/system8/*.txt",
+    #"/Projects/notes/Winter2012/negativetagsCOM/tables/NegativeTagCombine/uncorr/*.txt",
+    #"/Projects/notes/Winter2012/sv0massCOM/files/uncorr/*.txt",
+    #"/Projects/notes/Winter2012/negativetagsCOM/tables/NegativeTagCombine/binbybin/*.txt",
+    #"/Projects/notes/Winter2012/sv0massCOM/files/binbybin/*.txt",
     "analyses/2012-Winter/sv0mass/*.txt",
-    "analyses/2012-Winter/ptrel/*.txt",
     "analyses/2012-Winter/negativetag/*.txt",
+    "analyses/2012-Winter/ptrel/*.txt",
     "analyses/2012-Winter/stat_correlation_inputs.txt",
     "analyses/2012-Winter/defaults.txt"
     ]
