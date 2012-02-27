@@ -7,7 +7,10 @@ Analysis(DStar,charm,SV0,5.65,AntiKt4Topo){
      sys(Dstar: bkg. param,1.66667%)
      sys(Dstar: peak width,8.33333%)
      sys(Dstar: pile-up,0%)
-     sys(Dstar: extrap,-17.9167%)
+     sys(Dstar: extrap D0,2.91667%)
+     sys(Dstar: extrap baryons-HERA,7.08333%)
+     sys(Dstar: extrap baryons-LEP,2.91667%)
+     sys(Dstar: extrap others,4.58333%)
   } 
   bin(30<pt<60,0<abseta<2.5)
   { 
@@ -17,7 +20,10 @@ Analysis(DStar,charm,SV0,5.65,AntiKt4Topo){
      sys(Dstar: bkg. param,0.497512%)
      sys(Dstar: peak width,6.46766%)
      sys(Dstar: pile-up,0%)
-     sys(Dstar: extrap,-17.9104%)
+     sys(Dstar: extrap D0,4.47761%)
+     sys(Dstar: extrap baryons-HERA,6.21891%)
+     sys(Dstar: extrap baryons-LEP,2.48756%)
+     sys(Dstar: extrap others,3.9801%)
   } 
   bin(60<pt<90,0<abseta<2.5)
   { 
@@ -27,7 +33,10 @@ Analysis(DStar,charm,SV0,5.65,AntiKt4Topo){
      sys(Dstar: bkg. param,2.4735%)
      sys(Dstar: peak width,7.42049%)
      sys(Dstar: pile-up,0%)
-     sys(Dstar: extrap,-13.0742%)
+     sys(Dstar: extrap D0,3.35689%)
+     sys(Dstar: extrap baryons-HERA,5.12367%)
+     sys(Dstar: extrap baryons-LEP,1.94346%)
+     sys(Dstar: extrap others,2.65018%)
   } 
   bin(90<pt<140,0<abseta<2.5)
   { 
@@ -37,7 +46,10 @@ Analysis(DStar,charm,SV0,5.65,AntiKt4Topo){
      sys(Dstar: bkg. param,1.81818%)
      sys(Dstar: peak width,7.87879%)
      sys(Dstar: pile-up,2.42424%)
-     sys(Dstar: extrap,-13.3333%)
+     sys(Dstar: extrap D0,3.78788%)
+     sys(Dstar: extrap baryons-HERA,5.15152%)
+     sys(Dstar: extrap baryons-LEP,2.12121%)
+     sys(Dstar: extrap others,2.57576%)
   } 
   bin(140<pt<200,0<abseta<2.5)
   { 
@@ -47,7 +59,10 @@ Analysis(DStar,charm,SV0,5.65,AntiKt4Topo){
      sys(Dstar: bkg. param,1.81818%)
      sys(Dstar: peak width,7.87879%)
      sys(Dstar: pile-up,2.42424%)
-     sys(Dstar: extrap,-13.3333%)
+     sys(Dstar: extrap D0,3.78788%)
+     sys(Dstar: extrap baryons-HERA,5.15152%)
+     sys(Dstar: extrap baryons-LEP,2.12121%)
+     sys(Dstar: extrap others,2.57576%)
      sys(Dstar: pT extrap,12%)
   } 
-} 
+}

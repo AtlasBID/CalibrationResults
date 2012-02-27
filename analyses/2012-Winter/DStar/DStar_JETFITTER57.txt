@@ -7,7 +7,10 @@ Analysis(DStar,charm,JetFitterCOMBNN,2.20,AntiKt4Topo){
      sys(Dstar: bkg. param,0.621118%)
      sys(Dstar: peak width,4.96894%)
      sys(Dstar: pile-up,0%)
-     sys(Dstar: extrap,-17.7019%)
+     sys(Dstar: extrap D0,3.72671%)
+     sys(Dstar: extrap baryons-HERA,6.8323%)
+     sys(Dstar: extrap baryons-LEP,2.79503%)
+     sys(Dstar: extrap others,4.03727%)
   } 
   bin(30<pt<60,0<abseta<2.5)
   { 
@@ -17,7 +20,10 @@ Analysis(DStar,charm,JetFitterCOMBNN,2.20,AntiKt4Topo){
      sys(Dstar: bkg. param,1.02564%)
      sys(Dstar: peak width,4.10256%)
      sys(Dstar: pile-up,0%)
-     sys(Dstar: extrap,-17.4359%)
+     sys(Dstar: extrap D0,4.61538%)
+     sys(Dstar: extrap baryons-HERA,6.66667%)
+     sys(Dstar: extrap baryons-LEP,2.5641%)
+     sys(Dstar: extrap others,3.84615%)
   } 
   bin(60<pt<90,0<abseta<2.5)
   { 
@@ -27,7 +33,10 @@ Analysis(DStar,charm,JetFitterCOMBNN,2.20,AntiKt4Topo){
      sys(Dstar: bkg. param,3.78151%)
      sys(Dstar: peak width,13.0252%)
      sys(Dstar: pile-up,0%)
-     sys(Dstar: extrap,-9.66387%)
+     sys(Dstar: extrap D0,3.36134%)
+     sys(Dstar: extrap baryons-HERA,2.52101%)
+     sys(Dstar: extrap baryons-LEP,1.05042%)
+     sys(Dstar: extrap others,2.73109%)
   } 
   bin(90<pt<140,0<abseta<2.5)
   { 
@@ -37,7 +46,10 @@ Analysis(DStar,charm,JetFitterCOMBNN,2.20,AntiKt4Topo){
      sys(Dstar: bkg. param,1.04712%)
      sys(Dstar: peak width,18.8482%)
      sys(Dstar: pile-up,6.80628%)
-     sys(Dstar: extrap,-14.9215%)
+     sys(Dstar: extrap D0,3.66492%)
+     sys(Dstar: extrap baryons-HERA,6.02094%)
+     sys(Dstar: extrap baryons-LEP,2.35602%)
+     sys(Dstar: extrap others,2.87958%)
   } 
   bin(140<pt<200,0<abseta<2.5)
   { 
@@ -47,7 +59,10 @@ Analysis(DStar,charm,JetFitterCOMBNN,2.20,AntiKt4Topo){
      sys(Dstar: bkg. param,1.04712%)
      sys(Dstar: peak width,18.8482%)
      sys(Dstar: pile-up,6.80628%)
-     sys(Dstar: extrap,-14.9215%)
+     sys(Dstar: extrap D0,3.66492%)
+     sys(Dstar: extrap baryons-HERA,6.02094%)
+     sys(Dstar: extrap baryons-LEP,2.35602%)
+     sys(Dstar: extrap others,2.87958%)
      sys(Dstar: pT extrap,12%)
   } 
-} 
+}
