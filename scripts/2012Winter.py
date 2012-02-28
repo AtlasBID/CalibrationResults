@@ -18,9 +18,15 @@ inputs = [
     #"/Projects/notes/Winter2012/sv0massCOM/files/binbybin/*.txt",
     "analyses/2012-Winter/sv0mass/*.txt",
     "analyses/2012-Winter/negativetag/*.txt",
+    "analyses/2012-Winter/negativetag/TrigMediumBL1/*.txt",
+    "analyses/2012-Winter/negativetag/TrigMediumL2M/*.txt",
+    "analyses/2012-Winter/negativetag/TrigTightBL1/*.txt",
+    "analyses/2012-Winter/negativetag/TrigTightL2M/*.txt",
+
     "analyses/2012-Winter/ptrel/*.txt",
     "analyses/2012-Winter/stat_correlation_inputs.txt",
-    "analyses/2012-Winter/defaults.txt"
+    "analyses/2012-Winter/defaults.txt",
+    "analyses/2012-Winter/trigger_config.txt"
     ]
 
 taggers = [
@@ -39,6 +45,29 @@ taggers = [
     ["MV1", "0.0714225"],
     ["SV0", "5.65"],
     ]
+
+TrigTagBuilder = [
+    ["", "-999"],
+    ["JetFitterCOMBNN", "2.20"],
+    ["JetFitterCOMBNN", "-1.25"],
+    ]
+
+TrigTagDataInfo = [
+    "TrigTight%s_BE",
+    "TrigTight%s_KL1",
+    "TrigTight%s_L2M",
+    "TrigMedium%s_BE",
+    "TrigMedium%s_KL1",
+    "TrigMedium%s_L2M",
+    ]
+
+for tt in TrigTagDataInfo:
+    for tbld in TrigTagBuilder:
+        tname = tbld[0]
+        if len(tname) != 0:
+            tname = "_%s" % tname
+        s = [tt % tname, tbld[1]]
+        taggers.append(s)
 
 DoOnlyTaggers = []
 for t in taggers:
@@ -61,6 +90,10 @@ ignore_analyses = [
     "pTrel-bottom-.*-AntiKt4Topo:20-pt-200:1.8-abseta-2.5",
     "pTrel-system8-bottom-.*-AntiKt4Topo:200-pt-250:0-abseta-2.5",
     "sv0mass-light-MV1-0.601713-AntiKt4Topo.*",
+    "negative.*-light-TrigTight_JetFitterCOMBNN_.*-0.35-AntiKt4Topo:.*",
+    "negative.*-light-TrigMedium_JetFitterCOMBNN_.*-0.35-AntiKt4Topo:.*",
+    "negative.*-light-TrigTight_JetFitterCOMBNN_.*-1.80-AntiKt4Topo:.*",
+    "negative.*-light-TrigMedium_JetFitterCOMBNN_.*-1.80-AntiKt4Topo:.*",
     ]
 
 #

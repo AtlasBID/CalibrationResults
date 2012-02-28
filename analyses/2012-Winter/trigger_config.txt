@@ -1,0 +1,27 @@
+Copy(negative tags,light,TrigMedium_JetFitterCOMBNN_BL1,  2.20, AntiKt4Topo) {
+  Analysis(negative tags,light,TrigMedium_JetFitterCOMBNN_BE,  2.20, AntiKt4Topo)
+  Analysis(negative tags,light,TrigMedium_JetFitterCOMBNN_KL1,  2.20, AntiKt4Topo)
+}
+Copy(negative tags,light,TrigTight_JetFitterCOMBNN_BL1,  2.20, AntiKt4Topo) {
+  Analysis(negative tags,light,TrigTight_JetFitterCOMBNN_BE,  2.20, AntiKt4Topo)
+  Analysis(negative tags,light,TrigTight_JetFitterCOMBNN_KL1,  2.20, AntiKt4Topo)
+}
+
+Copy(negative tags,light,TrigMedium_JetFitterCOMBNN_BL1,  -1.25, AntiKt4Topo) {
+  Analysis(negative tags,light,TrigMedium_JetFitterCOMBNN_BE,  -1.25, AntiKt4Topo)
+  Analysis(negative tags,light,TrigMedium_JetFitterCOMBNN_KL1, -1.25, AntiKt4Topo)
+}
+Copy(negative tags,light,TrigTight_JetFitterCOMBNN_BL1,  -1.25, AntiKt4Topo) {
+  Analysis(negative tags,light,TrigTight_JetFitterCOMBNN_BE,  -1.25, AntiKt4Topo)
+  Analysis(negative tags,light,TrigTight_JetFitterCOMBNN_KL1, -1.25, AntiKt4Topo)
+}
+
+Copy(negative tags,light,TrigMedium_BL1, 0.93, AntiKt4Topo) {
+  Analysis(negative tags,light,TrigMedium_BE, -999, AntiKt4Topo)
+  Analysis(negative tags,light,TrigMedium_KL1, -999, AntiKt4Topo)
+}
+
+Copy(negative tags,light,TrigTight_BL1, 0.99, AntiKt4Topo) {
+  Analysis(negative tags,light,TrigTight_BE, -999, AntiKt4Topo)
+  Analysis(negative tags,light,TrigTight_KL1, -999, AntiKt4Topo)
+}
