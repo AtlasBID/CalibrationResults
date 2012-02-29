@@ -306,6 +306,8 @@ def doComboImpl (configInfo, html):
     print >> html, "<h2>File Contents</h2>"
     dumpROOTFile(html, outputROOT)
     
+    dumpCommandResult(html, "FTCheckOutput.exe %s" % outputROOT, "Output File Contents Check");
+
     # Finally, some info about when this was generated so it can be re-created.
 
     print >> html, "<h2>Package SVN Revision Information</h2>"
