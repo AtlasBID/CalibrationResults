@@ -84,10 +84,11 @@ for t in taggers:
 # running
 #
 ignore_analyses = [
-    "pTrel-bottom-.*-AntiKt4Topo:20-pt-200:0-abseta-0.6", 
-    "pTrel-bottom-.*-AntiKt4Topo:20-pt-200:0.6-abseta-1.2",
-    "pTrel-bottom-.*-AntiKt4Topo:20-pt-200:1.2-abseta-1.8",
-    "pTrel-bottom-.*-AntiKt4Topo:20-pt-200:1.8-abseta-2.5",
+    "pTrel-.*-AntiKt4Topo:20-pt-200:0-abseta-0.6", 
+    "pTrel-.*-AntiKt4Topo:20-pt-200:0.6-abseta-1.2",
+    "pTrel-.*-AntiKt4Topo:20-pt-200:1.2-abseta-1.8",
+    "pTrel-.*-AntiKt4Topo:20-pt-200:1.8-abseta-2.5",
+
     "pTrel-system8-bottom-.*-AntiKt4Topo:200-pt-250:0-abseta-2.5",
     "sv0mass-light-MV1-0.601713-AntiKt4Topo.*",
     "negative.*-light-TrigTight_JetFitterCOMBNN_.*-0.35-AntiKt4Topo:.*",
