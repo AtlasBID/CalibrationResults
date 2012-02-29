@@ -1,4 +1,4 @@
-Analysis(pTrel,bottom,TrigMedium_FK,-999,AntiKt4Topo)
+Analysis(pTrel,bottom,TrigMedium_KL1,-999,AntiKt4Topo)
 {
 	bin(20<pt<200,0.0<abseta<0.6)
 	{
