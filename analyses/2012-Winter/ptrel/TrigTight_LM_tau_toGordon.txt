@@ -1,4 +1,4 @@
-Analysis(pTrel,tau,TrigTight_LM,-999,AntiKt4Topo)
+Analysis(pTrel,tau,TrigTight_L2M,-999,AntiKt4Topo)
 {
 	bin(20<pt<200,0.0<abseta<0.6)
 	{

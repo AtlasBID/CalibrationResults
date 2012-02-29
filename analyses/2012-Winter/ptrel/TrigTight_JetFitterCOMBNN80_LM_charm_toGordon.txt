@@ -1,4 +1,4 @@
-Analysis(pTrel,charm,TrigTight_JetFitterCOMBNN_LM,-1.25,AntiKt4Topo)
+Analysis(pTrel,charm,TrigTight_JetFitterCOMBNN_L2M,-1.25,AntiKt4Topo)
 {
 	bin(20<pt<200,0.0<abseta<0.6)
 	{
