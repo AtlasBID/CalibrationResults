@@ -1,4 +1,4 @@
-Analysis(negative tags,light,TrigMedium_BL1, 0.93, AntiKt4Topo){ 
+Analysis(negative tags,light,TrigMedium_BL1, -999, AntiKt4Topo){ 
   bin( 50<pt<140,0.0<eta<2.5)
   {
     central_value(1.1595,0.0844)
