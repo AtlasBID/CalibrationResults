@@ -1,0 +1,30 @@
+Analysis(negative tags,light,TrigMedium_JetFitterCOMBNN_BL1,  1.80, AntiKt4Topo){ 
+  bin( 50<pt<140, 0.0<abseta<2.5)
+  {
+    central_value(1.4600,0.6646)
+    usys(MC statistics,45.52%)
+    sys(b-fractions, 0.74%)
+    sys(c-fractions,-0.10%)
+    sys(negative tag epsilon b, 4.86%)
+    sys(negative tag epsilon c, 4.78%)
+    sys(jet energy scale, 3.99%)
+    sys(jet energy resolution,13.65%)
+    sys(track multiplicity, 5.29%)
+    sys(long lived particles,-43.22%)
+    sys(jet vertex fraction,30.78%)
+  }
+  bin(140<pt<300, 0.0<abseta<2.5)
+  {
+    central_value(0.0000,0.0000)
+    usys(MC statistics,35.83%)
+    sys(b-fractions, 6.92%)
+    sys(c-fractions, 6.33%)
+    sys(negative tag epsilon b,21.91%)
+    sys(negative tag epsilon c,10.27%)
+    sys(jet energy scale,32.93%)
+    sys(jet energy resolution,-61.02%)
+    sys(track multiplicity,47.36%)
+    sys(long lived particles,-28.95%)
+    sys(jet vertex fraction, 0.08%)
+  }
+}

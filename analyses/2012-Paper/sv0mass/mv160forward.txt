@@ -1,0 +1,58 @@
+Analysis(sv0mass,light,MV1,0.905363,AntiKt4Topo) {
+   bin(20<pt<30,1.2<abseta<2.5)
+   {
+      central_value( 1.596,18.55%)
+      usys(MC statistics,12.01%)
+      sys(MC efficiency model,4.00%)
+      sys(jet vertex fraction,31.57%)
+      sys(jet energy scale,4.52%)
+      sys(jet energy resolution,-9.26%)
+      sys(template shape,3.72%)
+      sys(sv0 efficiency,29.47%)
+      sys(pretag light yield,-4.76%)
+      sys(sv0 mass pileup reweighting,11.39%)
+      sys(sv0 mass period dependence,-2.50%)
+   }
+   bin(30<pt<60,1.2<abseta<2.5)
+   {
+      central_value( 1.469,10.90%)
+      usys(MC statistics,29.44%)
+      sys(MC efficiency model,-12.17%)
+      sys(jet vertex fraction,12.80%)
+      sys(jet energy scale,2.39%)
+      sys(jet energy resolution,6.70%)
+      sys(template shape,14.04%)
+      sys(sv0 efficiency,47.32%)
+      sys(pretag light yield,-6.46%)
+      sys(sv0 mass pileup reweighting,0.84%)
+      sys(sv0 mass period dependence,24.88%)
+   }
+   bin(60<pt<140,1.2<abseta<2.5)
+   {
+      central_value( 1.675,6.02%)
+      usys(MC statistics,14.46%)
+      sys(MC efficiency model,-18.72%)
+      sys(jet vertex fraction,0.75%)
+      sys(jet energy scale,-1.50%)
+      sys(jet energy resolution,2.51%)
+      sys(template shape,6.19%)
+      sys(sv0 efficiency,29.22%)
+      sys(pretag light yield,-7.00%)
+      sys(sv0 mass pileup reweighting,9.35%)
+      sys(sv0 mass period dependence,-3.38%)
+   }
+   bin(140<pt<300,1.2<abseta<2.5)
+   {
+      central_value( 1.062,3.88%)
+      usys(MC statistics,22.76%)
+      sys(MC efficiency model,-9.89%)
+      sys(jet vertex fraction,3.46%)
+      sys(jet energy scale,2.01%)
+      sys(jet energy resolution,24.46%)
+      sys(template shape,5.32%)
+      sys(sv0 efficiency,17.12%)
+      sys(pretag light yield,-10.26%)
+      sys(sv0 mass pileup reweighting,-11.50%)
+      sys(sv0 mass period dependence,17.02%)
+   }
+}
