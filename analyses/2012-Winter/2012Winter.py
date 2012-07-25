@@ -10,23 +10,19 @@ name = "2012-Winter"
 #
 
 inputs = [
-    "analyses/2012-Winter/DStar/*.txt",
-    "analyses/2012-Winter/system8/*.txt",
-    #"/Projects/notes/Winter2012/negativetagsCOM/tables/NegativeTagCombine/uncorr/*.txt",
-    #"/Projects/notes/Winter2012/sv0massCOM/files/uncorr/*.txt",
-    #"/Projects/notes/Winter2012/negativetagsCOM/tables/NegativeTagCombine/binbybin/*.txt",
-    #"/Projects/notes/Winter2012/sv0massCOM/files/binbybin/*.txt",
-    "analyses/2012-Winter/sv0mass/*.txt",
-    "analyses/2012-Winter/negativetag/*.txt",
-    "analyses/2012-Winter/negativetag/TrigMediumBL1/*.txt",
-    "analyses/2012-Winter/negativetag/TrigMediumL2M/*.txt",
-    "analyses/2012-Winter/negativetag/TrigTightBL1/*.txt",
-    "analyses/2012-Winter/negativetag/TrigTightL2M/*.txt",
+    "DStar/*.txt",
+    "system8/*.txt",
+    "sv0mass/*.txt",
+    "negativetag/*.txt",
+    "negativetag/TrigMediumBL1/*.txt",
+    "negativetag/TrigMediumL2M/*.txt",
+    "negativetag/TrigTightBL1/*.txt",
+    "negativetag/TrigTightL2M/*.txt",
+    "ptrel/*.txt",
 
-    "analyses/2012-Winter/ptrel/*.txt",
-    "analyses/2012-Winter/stat_correlation_inputs.txt",
-    "analyses/2012-Winter/defaults.txt",
-    "analyses/2012-Winter/trigger_config.txt"
+    "stat_correlation_inputs.txt",
+    "defaults.txt",
+    "trigger_config.txt"
     ]
 
 taggers = [
@@ -101,10 +97,11 @@ ignore_analyses = [
 # The root file that we start everything with.
 #
 
-mcEffRootFile = "mceff/TopCalibrations_rel17_MC11b_Convert.root"
+mcEffRootFile = "TopCalibrations_rel17_MC11b_Convert.root"
 CDIFile = "%s-rel17_MC11b.root" % name
 
 #
 # Should we avoid the combination?
 #
+
 runCombination = True

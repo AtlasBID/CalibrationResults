@@ -65,6 +65,21 @@ class cmdSequences:
         return cmdSequences.cmdSequenceItr(self)
 
 #
+# Given a name, which may be a wildcard, see fi we can find it. First
+# on its own, and then relative to everythign in the sys.path variable.
+#
+def pathglob (name):
+    path_to_try = ["./"] + sys.path
+    for p in path_to_try:
+        flist = glob.glob(os.path.join(p, name))
+        if len(flist) > 0:
+            return flist
+
+    print 'Input file path "%s" had no matching files' % name
+    return []
+
+
+#
 # Create the configs for this run from the command line.
 #
 def buildArgs(config):
@@ -78,15 +93,15 @@ def buildArgs(config):
 
     inputs = ""
     if isinstance(config.inputs, str):
-        inputs = config.inputs
+        inputs = pathglob(config.inputs)
     else:
-        flist = [f for fwild in config.inputs for f in glob.glob(fwild)]
+        flist = [f for fwild in config.inputs for f in pathglob(fwild)]
         found = False
         for f in flist:
             inputs += " %s" % f
             found = True
         if not found:
-            raise "Unable to find any files for pattern '%s'" % fwild
+            raise "Unable to find any input files!"
             
     #
     # Build the commands out of that.
@@ -289,10 +304,11 @@ def doComboImpl (configInfo, html):
     # everything that is needed in it.
     #
 
-    if not os.path.exists(configInfo.mcEffRootFile):
+    sourceMCEff = pathglob(configInfo.mcEffRootFile)[0]
+    if not os.path.exists(sourceMCEff):
         print "Can't find root file %s" % configInfo.mcEffRootFile
     outputROOT = configInfo.CDIFile
-    shutil.copy (configInfo.mcEffRootFile, "output.root")
+    shutil.copy (sourceMCEff, "output.root")
 
     errcode = dumpCommandResult(html, "FTConvertToCDI.exe %s --update" % stdCmdArgs.GetFullConfig(), "Convert to CDI")
 
@@ -321,10 +337,17 @@ def doComboImpl (configInfo, html):
 def doCombo(name):
     #
     # load in the module for name so we can get all the config info
-    # it will search sys.path for the module...
+    # it will search sys.path for the module... If there is a directory
+    # specified then add it to the search path, and if this is a file name
+    # strip off the .py...
     #
     
-    configInfo = __import__ (name)
+    (n_dir, n_name) = os.path.split(name)
+    if n_dir != "":
+        sys.path = [n_dir] + sys.path
+    (n_module, n_ext) = os.path.splitext(n_name)
+
+    configInfo = __import__ (n_module)
     print configInfo.title
 
     #
