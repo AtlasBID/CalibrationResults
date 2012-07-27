@@ -2,8 +2,8 @@
 # Config for doing the MV180 combination and file generation for dijets only.
 #
 
-title = "Winter 2012 B-Tagging SF Results"
-name = "2012-Winter"
+title = "Summer 2012 B-Tagging SF Results"
+name = "2012-Summer"
 
 #
 # Input arguments
@@ -11,50 +11,36 @@ name = "2012-Winter"
 
 inputs = [
     "DStar/*.txt",
-    "system8/*.txt",
-    "sv0mass/*.txt",
-    "negativetag/*.txt",
-    "negativetag/TrigMediumBL1/*.txt",
-    "negativetag/TrigMediumL2M/*.txt",
-    "negativetag/TrigTightBL1/*.txt",
-    "negativetag/TrigTightL2M/*.txt",
+    #"system8/*.txt",
+    #"sv0mass/*.txt",
+    #"negativetag/*.txt",
+    #"negativetag/TrigMediumBL1/*.txt",
+    #"negativetag/TrigMediumL2M/*.txt",
+    #"negativetag/TrigTightBL1/*.txt",
+    #"negativetag/TrigTightL2M/*.txt",
     "ptrel/*.txt",
 
-    "stat_correlation_inputs.txt",
-    "defaults.txt",
-    "trigger_config.txt"
+    #"stat_correlation_inputs.txt",
+    #"defaults.txt",
+    #"trigger_config.txt"
     ]
 
 taggers = [
-    ["IP3DSV1", "4.55"],
-    ["IP3DSV1", "1.70"],
-    ["IP3DSV1", "-0.80"],
-    ["JetFitterCOMBNN", "2.20"],
-    ["JetFitterCOMBNN", "1.80"],
-    ["JetFitterCOMBNN", "0.35"],
-    ["JetFitterCOMBNN", "-1.25"],
-    ["JetFitterCOMBNNc", "1.33"],
-    ["JetFitterCOMBNNc", "0.98"],
-    ["MV1", "0.905363"], 
-    ["MV1", "0.601713"], 
-    ["MV1", "0.404219"],
-    ["MV1", "0.0714225"],
-    ["SV0", "5.65"],
+    ["JetFitterCOMBNN", "1.10"],
+    ["JetFitterCOMBNN", "0.65"],
+    ["JetFitterCOMBNN", "-0.95"],
+    ["JetFitterCOMBNN", "-2.60"],
+    ["MV1", "0.985"], 
+    ["MV1", "0.795"], 
+    ["MV1", "0.596"],
+    ["MV1", "0.148"],
+    ["SV0", "5.70"],
     ]
 
 TrigTagBuilder = [
-    ["", "-999"],
-    ["JetFitterCOMBNN", "2.20"],
-    ["JetFitterCOMBNN", "-1.25"],
     ]
 
 TrigTagDataInfo = [
-    "TrigTight%s_BE",
-    "TrigTight%s_KL1",
-    "TrigTight%s_L2M",
-    "TrigMedium%s_BE",
-    "TrigMedium%s_KL1",
-    "TrigMedium%s_L2M",
     ]
 
 for tt in TrigTagDataInfo:
@@ -80,10 +66,10 @@ for t in taggers:
 # running
 #
 ignore_analyses = [
-    "pTrel-.*-AntiKt4Topo:20-pt-200:0-abseta-0.6", 
-    "pTrel-.*-AntiKt4Topo:20-pt-200:0.6-abseta-1.2",
-    "pTrel-.*-AntiKt4Topo:20-pt-200:1.2-abseta-1.8",
-    "pTrel-.*-AntiKt4Topo:20-pt-200:1.8-abseta-2.5",
+    "pTrel-.*-AntiKt4Topo.*:20-pt-200:0-abseta-0.6", 
+    "pTrel-.*-AntiKt4Topo.*:20-pt-200:0.6-abseta-1.2",
+    "pTrel-.*-AntiKt4Topo.*:20-pt-200:1.2-abseta-1.8",
+    "pTrel-.*-AntiKt4Topo.*:20-pt-200:1.8-abseta-2.5",
 
     "pTrel-system8-bottom-.*-AntiKt4Topo:200-pt-250:0-abseta-2.5",
     "sv0mass-light-MV1-0.601713-AntiKt4Topo.*",

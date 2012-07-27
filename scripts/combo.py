@@ -272,6 +272,11 @@ def doComboImpl (configInfo, html):
         
             errcode = dumpCommandResult(html, "FTCombine.exe %s" % cmd, store=cmdLog)
 
+            # If no output file appeared, then we also failed.
+            if errcode == 0:
+                if not os.path.exists("output.root"):
+                    errcode = -1000
+
             # Cache all the files we can for this run so they are easy to get at.
             if errcode == 0:
                 shutil.copy("output.root", "%s-diagnostics.root" % baseOutputName )
@@ -279,6 +284,7 @@ def doComboImpl (configInfo, html):
                 shutil.copy("combined.txt", "%s-sf.txt" % baseOutputName )
             else:
                 print >> html, "<b>Combination failed with error code %s</b><p>" % errcode
+                print >> html, "Command line arguments: %s" % cmd
                 print "The Combination failed"
 
     
