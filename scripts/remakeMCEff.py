@@ -85,6 +85,9 @@ for t in taggers:
                 
                 #
                 # And copy over the flavors, etc.
+                # Now that we use the TKey name to write the items out - this is
+                # b/c the original file is often written with the GetName unchanged,
+                # but the key in the file changed.
                 #
 
                 for f in op_in.GetListOfKeys():
@@ -94,15 +97,13 @@ for t in taggers:
                     for h  in flavor_in.GetListOfKeys():
                         print "        ", h.GetName()
                         hist = h.ReadObj()
-                        print "          ", hist.GetName(), hist.IsA().GetName()
-                        flavor_out.WriteObject(hist, hist.GetName())
+                        flavor_out.WriteObject(hist, h.GetName())
                 
     
 
 #
 # Done!
 #
-fout.Write()
 fout.Close()
 fin.Close()
 
