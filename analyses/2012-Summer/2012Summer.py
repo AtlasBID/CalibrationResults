@@ -21,7 +21,7 @@ inputs = [
     "ptrel/*.txt",
 
     #"stat_correlation_inputs.txt",
-    #"defaults.txt",
+    "defaults.txt",
     #"trigger_config.txt"
     ]
 
