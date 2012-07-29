@@ -13,7 +13,7 @@ inputs = [
     "DStar/*.txt",
     #"system8/*.txt",
     #"sv0mass/*.txt",
-    #"negativetag/*.txt",
+    "negativetag/*.txt",
     #"negativetag/TrigMediumBL1/*.txt",
     #"negativetag/TrigMediumL2M/*.txt",
     #"negativetag/TrigTightBL1/*.txt",
@@ -30,11 +30,23 @@ taggers = [
     ["JetFitterCOMBNN", "0.65"],
     ["JetFitterCOMBNN", "-0.95"],
     ["JetFitterCOMBNN", "-2.60"],
+
+    ["JetFitterCOMBNN", "1.00"],
+    ["JetFitterCOMBNN", "0.55"],
+    ["JetFitterCOMBNN", "-2.55"],
+
     ["MV1", "0.985"], 
     ["MV1", "0.795"], 
     ["MV1", "0.596"],
     ["MV1", "0.148"],
+
+    ["MV1", "0.980"], 
+    ["MV1", "0.772"], 
+    ["MV1", "0.595"],
+    ["MV1", "0.122"],
+
     ["SV0", "5.70"],
+    ["SV0", "5.65"],
     ]
 
 TrigTagBuilder = [
@@ -83,7 +95,8 @@ ignore_analyses = [
 # The root file that we start everything with.
 #
 
-mcEffRootFile = "TopCalibrations_rel17_MC12a_Convert.root"
+#mcEffRootFile = "TopCalibrations_rel17_MC12a_Convert.root"
+mcEffRootFile = "Convert.root"
 CDIFile = "%s-rel17_MC12a.root" % name
 
 #
