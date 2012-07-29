@@ -95,7 +95,7 @@ for t in taggers:
                         print "        ", h.GetName()
                         hist = h.ReadObj()
                         print "          ", hist.GetName(), hist.IsA().GetName()
-                        flavor_out.Add(hist)
+                        flavor_out.WriteObject(hist, hist.GetName())
                 
     
 
