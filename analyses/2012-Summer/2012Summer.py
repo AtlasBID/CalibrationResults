@@ -83,8 +83,8 @@ ignore_analyses = [
 # The root file that we start everything with.
 #
 
-mcEffRootFile = "TopCalibrations_rel17_MC11b_Convert.root"
-CDIFile = "%s-rel17_MC11b.root" % name
+mcEffRootFile = "TopCalibrations_rel17_MC12a_Convert.root"
+CDIFile = "%s-rel17_MC12a.root" % name
 
 #
 # Should we avoid the combination?
