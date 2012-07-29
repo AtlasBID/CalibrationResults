@@ -53,15 +53,15 @@ for t in taggers:
                     for h  in flavor_in.GetListOfKeys():
                         print "        ", h.GetName()
                         hist = h.ReadObj()
-                        flavor_out.cd()
-                        hist.Write()
+                        print "          ", hist.GetName(), hist.IsA().GetName()
+                        flavor_out.Add(hist)
                 
     
 
 #
 # Done!
 #
-fin.Close()
 fout.Write()
 fout.Close()
+fin.Close()
 
