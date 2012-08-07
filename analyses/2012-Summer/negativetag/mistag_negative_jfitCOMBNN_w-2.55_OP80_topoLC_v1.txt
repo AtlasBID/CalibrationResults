@@ -3,7 +3,6 @@ Analysis(negative tags,light,JetFitterCOMBNN, -2.55, AntiKt4TopoLC){
   {
     central_value(1.2034,0.0200)
     usys(MC statistics, 3.52%)
-    sys(jet vertex fraction,-8.92%)
     sys(jet energy scale,-16.15%)
     sys(jet energy resolution, 0.34%)
     sys(b-fractions, 0.52%)
@@ -22,7 +21,6 @@ Analysis(negative tags,light,JetFitterCOMBNN, -2.55, AntiKt4TopoLC){
   {
     central_value(1.2613,0.0139)
     usys(MC statistics, 2.52%)
-    sys(jet vertex fraction,-1.37%)
     sys(jet energy scale,-4.84%)
     sys(jet energy resolution,-3.70%)
     sys(b-fractions, 0.20%)
@@ -41,7 +39,6 @@ Analysis(negative tags,light,JetFitterCOMBNN, -2.55, AntiKt4TopoLC){
   {
     central_value(1.2488,0.0076)
     usys(MC statistics, 0.94%)
-    sys(jet vertex fraction,-0.64%)
     sys(jet energy scale, 0.11%)
     sys(jet energy resolution,-0.26%)
     sys(b-fractions, 0.88%)
@@ -60,7 +57,6 @@ Analysis(negative tags,light,JetFitterCOMBNN, -2.55, AntiKt4TopoLC){
   {
     central_value(1.3158,0.0052)
     usys(MC statistics, 1.12%)
-    sys(jet vertex fraction,-0.13%)
     sys(jet energy scale, 0.37%)
     sys(jet energy resolution,-0.44%)
     sys(b-fractions, 1.43%)
@@ -79,7 +75,6 @@ Analysis(negative tags,light,JetFitterCOMBNN, -2.55, AntiKt4TopoLC){
   {
     central_value(1.3294,0.0048)
     usys(MC statistics, 0.74%)
-    sys(jet vertex fraction,-0.03%)
     sys(jet energy scale, 0.49%)
     sys(jet energy resolution, 0.49%)
     sys(b-fractions, 1.36%)
@@ -98,7 +93,6 @@ Analysis(negative tags,light,JetFitterCOMBNN, -2.55, AntiKt4TopoLC){
   {
     central_value(1.2882,0.0035)
     usys(MC statistics, 0.87%)
-    sys(jet vertex fraction,-0.09%)
     sys(jet energy scale, 0.52%)
     sys(jet energy resolution, 0.31%)
     sys(b-fractions, 1.11%)
@@ -117,7 +111,6 @@ Analysis(negative tags,light,JetFitterCOMBNN, -2.55, AntiKt4TopoLC){
   {
     central_value(1.2111,0.0196)
     usys(MC statistics, 3.68%)
-    sys(jet vertex fraction,-2.26%)
     sys(jet energy scale,-16.21%)
     sys(jet energy resolution, 1.54%)
     sys(b-fractions,-0.00%)
@@ -136,7 +129,6 @@ Analysis(negative tags,light,JetFitterCOMBNN, -2.55, AntiKt4TopoLC){
   {
     central_value(1.2518,0.0154)
     usys(MC statistics, 2.58%)
-    sys(jet vertex fraction, 1.34%)
     sys(jet energy scale,-4.19%)
     sys(jet energy resolution,-5.31%)
     sys(b-fractions, 0.13%)
@@ -155,7 +147,6 @@ Analysis(negative tags,light,JetFitterCOMBNN, -2.55, AntiKt4TopoLC){
   {
     central_value(1.2326,0.0099)
     usys(MC statistics, 1.24%)
-    sys(jet vertex fraction,-0.32%)
     sys(jet energy scale,-1.26%)
     sys(jet energy resolution,-0.44%)
     sys(b-fractions, 0.44%)
@@ -174,7 +165,6 @@ Analysis(negative tags,light,JetFitterCOMBNN, -2.55, AntiKt4TopoLC){
   {
     central_value(1.2642,0.0082)
     usys(MC statistics, 1.91%)
-    sys(jet vertex fraction,-0.02%)
     sys(jet energy scale, 1.89%)
     sys(jet energy resolution,-0.48%)
     sys(b-fractions, 0.83%)
@@ -193,7 +183,6 @@ Analysis(negative tags,light,JetFitterCOMBNN, -2.55, AntiKt4TopoLC){
   {
     central_value(1.3348,0.0097)
     usys(MC statistics, 1.38%)
-    sys(jet vertex fraction, 0.07%)
     sys(jet energy scale,-0.47%)
     sys(jet energy resolution, 0.50%)
     sys(b-fractions, 0.83%)
@@ -212,7 +201,6 @@ Analysis(negative tags,light,JetFitterCOMBNN, -2.55, AntiKt4TopoLC){
   {
     central_value(1.3041,0.0080)
     usys(MC statistics, 2.91%)
-    sys(jet vertex fraction,-0.59%)
     sys(jet energy scale, 3.13%)
     sys(jet energy resolution, 4.85%)
     sys(b-fractions, 0.55%)
