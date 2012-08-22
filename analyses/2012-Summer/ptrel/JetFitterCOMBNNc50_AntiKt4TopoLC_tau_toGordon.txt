@@ -1,4 +1,4 @@
-Analysis(pTrel,bottom,JetFitterCOMBNNc,1.00,AntiKt4TopoLC)
+Analysis(pTrel,tau,JetFitterCOMBNNc,1.00,AntiKt4TopoLC)
 {
 	bin(20<pt<200,0.0<abseta<0.6)
 	{
