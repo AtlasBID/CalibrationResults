@@ -35,6 +35,11 @@ taggers = [
     ["JetFitterCOMBNN", "0.55"],
     ["JetFitterCOMBNN", "-2.55"],
 
+    ["JetFitterCOMBNNc", "1.05"],
+    ["JetFitterCOMBNNc", "1.00"],
+    ["JetFitterCOMBNNc", "0.50"],
+    ["JetFitterCOMBNNc", "0.45"],
+
     ["MV1", "0.985"], 
     ["MV1", "0.795"], 
     ["MV1", "0.596"],
