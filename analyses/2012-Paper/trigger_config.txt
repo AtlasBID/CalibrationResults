@@ -1,0 +1,107 @@
+Copy(negative tags,light,TrigMedium_JetFitterCOMBNN_BL1,  2.20, AntiKt4Topo) {
+  Analysis(negative tags,light,TrigMedium_JetFitterCOMBNN_BE,  2.20, AntiKt4Topo)
+  Analysis(negative tags,light,TrigMedium_JetFitterCOMBNN_KL1,  2.20, AntiKt4Topo)
+}
+Copy(negative tags,light,TrigTight_JetFitterCOMBNN_BL1,  2.20, AntiKt4Topo) {
+  Analysis(negative tags,light,TrigTight_JetFitterCOMBNN_BE,  2.20, AntiKt4Topo)
+  Analysis(negative tags,light,TrigTight_JetFitterCOMBNN_KL1,  2.20, AntiKt4Topo)
+}
+
+Copy(negative tags,light,TrigMedium_JetFitterCOMBNN_BL1,  -1.25, AntiKt4Topo) {
+  Analysis(negative tags,light,TrigMedium_JetFitterCOMBNN_BE,  -1.25, AntiKt4Topo)
+  Analysis(negative tags,light,TrigMedium_JetFitterCOMBNN_KL1, -1.25, AntiKt4Topo)
+}
+Copy(negative tags,light,TrigTight_JetFitterCOMBNN_BL1,  -1.25, AntiKt4Topo) {
+  Analysis(negative tags,light,TrigTight_JetFitterCOMBNN_BE,  -1.25, AntiKt4Topo)
+  Analysis(negative tags,light,TrigTight_JetFitterCOMBNN_KL1, -1.25, AntiKt4Topo)
+}
+
+Copy(negative tags,light,TrigMedium_BL1, 0.93, AntiKt4Topo) {
+  Analysis(negative tags,light,TrigMedium_BE, -999, AntiKt4Topo)
+  Analysis(negative tags,light,TrigMedium_KL1, -999, AntiKt4Topo)
+}
+
+Copy(negative tags,light,TrigTight_BL1, 0.99, AntiKt4Topo) {
+  Analysis(negative tags,light,TrigTight_BE, -999, AntiKt4Topo)
+  Analysis(negative tags,light,TrigTight_KL1, -999, AntiKt4Topo)
+}
+
+Default(pTrel, bottom, TrigTight_BE, -999, AntiKt4Topo)
+Default(pTrel, bottom, TrigTight_KL1, -999, AntiKt4Topo)
+Default(pTrel, bottom, TrigTight_L2M, -999, AntiKt4Topo)
+Default(pTrel, charm, TrigTight_BE, -999, AntiKt4Topo)
+Default(pTrel, charm, TrigTight_KL1, -999, AntiKt4Topo)
+Default(pTrel, charm, TrigTight_L2M, -999, AntiKt4Topo)
+Default(pTrel, tau, TrigTight_BE, -999, AntiKt4Topo)
+Default(pTrel, tau, TrigTight_KL1, -999, AntiKt4Topo)
+Default(pTrel, tau, TrigTight_L2M, -999, AntiKt4Topo)
+Default(negative tags, light, TrigTight_BE, -999, AntiKt4Topo)
+Default(negative tags, light, TrigTight_KL1, -999, AntiKt4Topo)
+Default(negative tags, light, TrigTight_L2M, -999, AntiKt4Topo)
+
+Default(pTrel, bottom, TrigTight_JetFitterCOMBNN_BE, 2.20, AntiKt4Topo)
+Default(pTrel, bottom, TrigTight_JetFitterCOMBNN_KL1, 2.20, AntiKt4Topo)
+Default(pTrel, bottom, TrigTight_JetFitterCOMBNN_L2M, 2.20, AntiKt4Topo)
+Default(pTrel, charm, TrigTight_JetFitterCOMBNN_BE, 2.20, AntiKt4Topo)
+Default(pTrel, charm, TrigTight_JetFitterCOMBNN_KL1, 2.20, AntiKt4Topo)
+Default(pTrel, charm, TrigTight_JetFitterCOMBNN_L2M, 2.20, AntiKt4Topo)
+Default(pTrel, tau, TrigTight_JetFitterCOMBNN_BE, 2.20, AntiKt4Topo)
+Default(pTrel, tau, TrigTight_JetFitterCOMBNN_KL1, 2.20, AntiKt4Topo)
+Default(pTrel, tau, TrigTight_JetFitterCOMBNN_L2M, 2.20, AntiKt4Topo)
+Default(negative tags, light, TrigTight_JetFitterCOMBNN_BE, 2.20, AntiKt4Topo)
+Default(negative tags, light, TrigTight_JetFitterCOMBNN_KL1, 2.20, AntiKt4Topo)
+Default(negative tags, light, TrigTight_JetFitterCOMBNN_L2M, 2.20, AntiKt4Topo)
+
+Default(pTrel, bottom, TrigTight_JetFitterCOMBNN_BE, -1.25, AntiKt4Topo)
+Default(pTrel, bottom, TrigTight_JetFitterCOMBNN_KL1, -1.25, AntiKt4Topo)
+Default(pTrel, bottom, TrigTight_JetFitterCOMBNN_L2M, -1.25, AntiKt4Topo)
+Default(pTrel, charm, TrigTight_JetFitterCOMBNN_BE, -1.25, AntiKt4Topo)
+Default(pTrel, charm, TrigTight_JetFitterCOMBNN_KL1, -1.25, AntiKt4Topo)
+Default(pTrel, charm, TrigTight_JetFitterCOMBNN_L2M, -1.25, AntiKt4Topo)
+Default(pTrel, tau, TrigTight_JetFitterCOMBNN_BE, -1.25, AntiKt4Topo)
+Default(pTrel, tau, TrigTight_JetFitterCOMBNN_KL1, -1.25, AntiKt4Topo)
+Default(pTrel, tau, TrigTight_JetFitterCOMBNN_L2M, -1.25, AntiKt4Topo)
+Default(negative tags, light, TrigTight_JetFitterCOMBNN_BE, -1.25, AntiKt4Topo)
+Default(negative tags, light, TrigTight_JetFitterCOMBNN_KL1, -1.25, AntiKt4Topo)
+Default(negative tags, light, TrigTight_JetFitterCOMBNN_L2M, -1.25, AntiKt4Topo)
+
+Default(pTrel, bottom, TrigMedium_BE, -999, AntiKt4Topo)
+Default(pTrel, bottom, TrigMedium_KL1, -999, AntiKt4Topo)
+Default(pTrel, bottom, TrigMedium_L2M, -999, AntiKt4Topo)
+Default(pTrel, charm, TrigMedium_BE, -999, AntiKt4Topo)
+Default(pTrel, charm, TrigMedium_KL1, -999, AntiKt4Topo)
+Default(pTrel, charm, TrigMedium_L2M, -999, AntiKt4Topo)
+Default(pTrel, tau, TrigMedium_BE, -999, AntiKt4Topo)
+Default(pTrel, tau, TrigMedium_KL1, -999, AntiKt4Topo)
+Default(pTrel, tau, TrigMedium_L2M, -999, AntiKt4Topo)
+Default(negative tags, light, TrigMedium_BE, -999, AntiKt4Topo)
+Default(negative tags, light, TrigMedium_KL1, -999, AntiKt4Topo)
+Default(negative tags, light, TrigMedium_L2M, -999, AntiKt4Topo)
+
+Default(pTrel, bottom, TrigMedium_JetFitterCOMBNN_BE, 2.20, AntiKt4Topo)
+Default(pTrel, bottom, TrigMedium_JetFitterCOMBNN_KL1, 2.20, AntiKt4Topo)
+Default(pTrel, bottom, TrigMedium_JetFitterCOMBNN_L2M, 2.20, AntiKt4Topo)
+Default(pTrel, charm, TrigMedium_JetFitterCOMBNN_BE, 2.20, AntiKt4Topo)
+Default(pTrel, charm, TrigMedium_JetFitterCOMBNN_KL1, 2.20, AntiKt4Topo)
+Default(pTrel, charm, TrigMedium_JetFitterCOMBNN_L2M, 2.20, AntiKt4Topo)
+Default(pTrel, tau, TrigMedium_JetFitterCOMBNN_BE, 2.20, AntiKt4Topo)
+Default(pTrel, tau, TrigMedium_JetFitterCOMBNN_KL1, 2.20, AntiKt4Topo)
+Default(pTrel, tau, TrigMedium_JetFitterCOMBNN_L2M, 2.20, AntiKt4Topo)
+Default(negative tags, light, TrigMedium_JetFitterCOMBNN_BE, 2.20, AntiKt4Topo)
+Default(negative tags, light, TrigMedium_JetFitterCOMBNN_KL1, 2.20, AntiKt4Topo)
+Default(negative tags, light, TrigMedium_JetFitterCOMBNN_L2M, 2.20, AntiKt4Topo)
+
+Default(pTrel, bottom, TrigMedium_JetFitterCOMBNN_BE, -1.25, AntiKt4Topo)
+Default(pTrel, bottom, TrigMedium_JetFitterCOMBNN_KL1, -1.25, AntiKt4Topo)
+Default(pTrel, bottom, TrigMedium_JetFitterCOMBNN_L2M, -1.25, AntiKt4Topo)
+Default(pTrel, charm, TrigMedium_JetFitterCOMBNN_BE, -1.25, AntiKt4Topo)
+Default(pTrel, charm, TrigMedium_JetFitterCOMBNN_KL1, -1.25, AntiKt4Topo)
+Default(pTrel, charm, TrigMedium_JetFitterCOMBNN_L2M, -1.25, AntiKt4Topo)
+Default(pTrel, tau, TrigMedium_JetFitterCOMBNN_BE, -1.25, AntiKt4Topo)
+Default(pTrel, tau, TrigMedium_JetFitterCOMBNN_KL1, -1.25, AntiKt4Topo)
+Default(pTrel, tau, TrigMedium_JetFitterCOMBNN_L2M, -1.25, AntiKt4Topo)
+Default(negative tags, light, TrigMedium_JetFitterCOMBNN_BE, -1.25, AntiKt4Topo)
+Default(negative tags, light, TrigMedium_JetFitterCOMBNN_KL1, -1.25, AntiKt4Topo)
+Default(negative tags, light, TrigMedium_JetFitterCOMBNN_L2M, -1.25, AntiKt4Topo)
+
+
