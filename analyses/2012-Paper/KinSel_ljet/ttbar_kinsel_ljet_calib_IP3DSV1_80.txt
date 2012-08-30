@@ -1,5 +1,5 @@
 Analysis(ttbar_kinsel_ljet, bottom, IP3DSV1, -0.80, AntiKt4Topo){
-bin(25<pt<30,0<eta<2.5)
+bin(25<pt<30,0<abseta<2.5)
 {
 central_value(0.984472 , 0.0486563 )
 sys(ISR/FSR , 3.14445%)
@@ -30,7 +30,7 @@ sys(muon energy scaling , 0.0150092%)
 sys(muon reco ID , -0.00351406%)
 sys(luminosity , 0.431407%)
 }
-bin(30<pt<40,0<eta<2.5)
+bin(30<pt<40,0<abseta<2.5)
 {
 central_value(1.00584 , 0.0287096 )
 sys(ISR/FSR , 2.59625%)
@@ -61,7 +61,7 @@ sys(muon energy scaling , 0.007521%)
 sys(muon reco ID , -0.00507191%)
 sys(luminosity , 0.291722%)
 }
-bin(40<pt<50,0<eta<2.5)
+bin(40<pt<50,0<abseta<2.5)
 {
 central_value(0.987139 , 0.0246073 )
 sys(ISR/FSR , 2.14594%)
@@ -92,7 +92,7 @@ sys(muon energy scaling , 0.0174131%)
 sys(muon reco ID , -0.00406707%)
 sys(luminosity , 0.139069%)
 }
-bin(50<pt<60,0<eta<2.5)
+bin(50<pt<60,0<abseta<2.5)
 {
 central_value(1.01998 , 0.0235356 )
 sys(ISR/FSR , 2.46127%)
@@ -123,7 +123,7 @@ sys(muon energy scaling , 0.00322297%)
 sys(muon reco ID , -0.0111491%)
 sys(luminosity , 0.0499365%)
 }
-bin(60<pt<75,0<eta<2.5)
+bin(60<pt<75,0<abseta<2.5)
 {
 central_value(1.02191 , 0.0189544 )
 sys(ISR/FSR , 2.83853%)
@@ -154,7 +154,7 @@ sys(muon energy scaling , 0.00591123%)
 sys(muon reco ID , -0.0152968%)
 sys(luminosity , 0.0252551%)
 }
-bin(75<pt<90,0<eta<2.5)
+bin(75<pt<90,0<abseta<2.5)
 {
 central_value(1.01476 , 0.0196155 )
 sys(ISR/FSR , 3.27413%)
@@ -185,7 +185,7 @@ sys(muon energy scaling , 0.00963737%)
 sys(muon reco ID , -0.0138479%)
 sys(luminosity , -0.000965374%)
 }
-bin(90<pt<110,0<eta<2.5)
+bin(90<pt<110,0<abseta<2.5)
 {
 central_value(1.02734 , 0.0193868 )
 sys(ISR/FSR , 2.92398%)
@@ -216,7 +216,7 @@ sys(muon energy scaling , 0.00704009%)
 sys(muon reco ID , -0.0139707%)
 sys(luminosity , -0.042558%)
 }
-bin(110<pt<140,0<eta<2.5)
+bin(110<pt<140,0<abseta<2.5)
 {
 central_value(1.02049 , 0.0209441 )
 sys(ISR/FSR , 3.52894%)
@@ -247,7 +247,7 @@ sys(muon energy scaling , 0.00803761%)
 sys(muon reco ID , -0.0108464%)
 sys(luminosity , -0.0475358%)
 }
-bin(140<pt<200,0<eta<2.5)
+bin(140<pt<200,0<abseta<2.5)
 {
 central_value(1.00517 , 0.0260064 )
 sys(ISR/FSR , 4.61721%)
@@ -278,7 +278,7 @@ sys(muon energy scaling , 0.0100609%)
 sys(muon reco ID , -0.0152157%)
 sys(luminosity , -0.0737851%)
 }
-bin(200<pt<300,0<eta<2.5)
+bin(200<pt<300,0<abseta<2.5)
 {
 central_value(1.01524 , 0.0553354 )
 sys(ISR/FSR , 7.11218%)

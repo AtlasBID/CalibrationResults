@@ -1,5 +1,5 @@
-Analysis(ttbar_kinsel_dilep ,bottom ,JetFitterCOMBNN, 1.8 ,AntiKt4Topo){
-  bin(25<pt<30,0<eta<2.5)
+Analysis(ttbar_kinsel_dilep ,bottom ,JetFitterCOMBNN, 1.80 ,AntiKt4Topo){
+  bin(25<pt<30,0<abseta<2.5)
   {
 	central_value(1.103129 , 0.066160)
 	sys(MC generator , 1.435880%)
@@ -29,7 +29,7 @@ Analysis(ttbar_kinsel_dilep ,bottom ,JetFitterCOMBNN, 1.8 ,AntiKt4Topo){
 	sys(muon trigger , -0.092061%)
 	sys(muon reco ID , -0.037817%)
   }
-  bin(30<pt<40,0<eta<2.5)
+  bin(30<pt<40,0<abseta<2.5)
   {
 	central_value(0.975751 , 0.034350)
 	sys(MC generator , 0.459368%)
@@ -59,7 +59,7 @@ Analysis(ttbar_kinsel_dilep ,bottom ,JetFitterCOMBNN, 1.8 ,AntiKt4Topo){
 	sys(muon trigger , 0.020378%)
 	sys(muon reco ID , -0.015005%)
   }
-  bin(40<pt<50,0<eta<2.5)
+  bin(40<pt<50,0<abseta<2.5)
   {
 	central_value(1.026292 , 0.029669)
 	sys(MC generator , 0.579096%)
@@ -89,7 +89,7 @@ Analysis(ttbar_kinsel_dilep ,bottom ,JetFitterCOMBNN, 1.8 ,AntiKt4Topo){
 	sys(muon trigger , -0.009392%)
 	sys(muon reco ID , -0.022392%)
   }
-  bin(50<pt<60,0<eta<2.5)
+  bin(50<pt<60,0<abseta<2.5)
   {
 	central_value(1.011328 , 0.029048)
 	sys(MC generator , 0.780183%)
@@ -119,7 +119,7 @@ Analysis(ttbar_kinsel_dilep ,bottom ,JetFitterCOMBNN, 1.8 ,AntiKt4Topo){
 	sys(muon trigger , 0.008726%)
 	sys(muon reco ID , -0.026546%)
   }
-  bin(60<pt<75,0<eta<2.5)
+  bin(60<pt<75,0<abseta<2.5)
   {
 	central_value(1.027702 , 0.023608)
 	sys(MC generator , 0.714272%)
@@ -149,7 +149,7 @@ Analysis(ttbar_kinsel_dilep ,bottom ,JetFitterCOMBNN, 1.8 ,AntiKt4Topo){
 	sys(muon trigger , 0.007814%)
 	sys(muon reco ID , -0.018649%)
   }
-  bin(75<pt<90,0<eta<2.5)
+  bin(75<pt<90,0<abseta<2.5)
   {
 	central_value(1.015928 , 0.026938)
 	sys(MC generator , 1.557552%)
@@ -179,7 +179,7 @@ Analysis(ttbar_kinsel_dilep ,bottom ,JetFitterCOMBNN, 1.8 ,AntiKt4Topo){
 	sys(muon trigger , -0.005638%)
 	sys(muon reco ID , -0.021931%)
   }
-  bin(90<pt<110,0<eta<2.5)
+  bin(90<pt<110,0<abseta<2.5)
   {
 	central_value(1.023625 , 0.028706)
 	sys(MC generator , 1.385961%)
@@ -209,7 +209,7 @@ Analysis(ttbar_kinsel_dilep ,bottom ,JetFitterCOMBNN, 1.8 ,AntiKt4Topo){
 	sys(muon trigger , 0.023641%)
 	sys(muon reco ID , -0.019478%)
   }
-  bin(110<pt<140,0<eta<2.5)
+  bin(110<pt<140,0<abseta<2.5)
   {
 	central_value(0.967961 , 0.032490)
 	sys(MC generator , 0.416349%)
@@ -239,7 +239,7 @@ Analysis(ttbar_kinsel_dilep ,bottom ,JetFitterCOMBNN, 1.8 ,AntiKt4Topo){
 	sys(muon trigger , -0.012695%)
 	sys(muon reco ID , -0.010380%)
   }
-  bin(140<pt<200,0<eta<2.5)
+  bin(140<pt<200,0<abseta<2.5)
   {
 	central_value(1.042651 , 0.042994)
 	sys(MC generator , 2.672921%)
@@ -269,7 +269,7 @@ Analysis(ttbar_kinsel_dilep ,bottom ,JetFitterCOMBNN, 1.8 ,AntiKt4Topo){
 	sys(muon trigger , -0.013449%)
 	sys(muon reco ID , -0.017921%)
   }
-  bin(200<pt<300,0<eta<2.5)
+  bin(200<pt<300,0<abseta<2.5)
   {
 	central_value(0.896033 , 0.097032)
 	sys(MC generator , 8.651468%)
