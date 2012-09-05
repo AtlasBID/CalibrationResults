@@ -1,0 +1,30 @@
+Analysis(negative tags,light,TrigTight_L2M, -999, AntiKt4Topo){ 
+  bin( 50<pt<140,0.0<eta<2.5)
+  {
+    central_value(0.0000,0.0000)
+    usys(MC statistics, 6.16%)
+    sys(b-fractions, 1.15%)
+    sys(c-fractions, 1.95%)
+    sys(negative tag epsilon b, 4.38%)
+    sys(negative tag epsilon c, 6.16%)
+    sys(jet energy scale,-10.58%)
+    sys(jet energy resolution,-0.34%)
+    sys(track multiplicity,-1.45%)
+    sys(long lived particles,-20.09%)
+    sys(jet vertex fraction, 7.53%)
+  }
+  bin(140<pt<300,0.0<eta<2.5)
+  {
+    central_value(0.0000,0.0000)
+    usys(MC statistics, 6.57%)
+    sys(b-fractions, 2.09%)
+    sys(c-fractions, 2.11%)
+    sys(negative tag epsilon b, 7.25%)
+    sys(negative tag epsilon c, 6.45%)
+    sys(jet energy scale, 0.00%)
+    sys(jet energy resolution, 0.00%)
+    sys(track multiplicity, 3.41%)
+    sys(long lived particles, 0.00%)
+    sys(jet vertex fraction, 0.00%)
+  }
+}
