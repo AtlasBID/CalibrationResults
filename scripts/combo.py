@@ -362,6 +362,7 @@ def doCombo(name):
 
     html = open("%s.html" % configInfo.name, "w")
     print >> html, "<html><header><title>%s</title></header><body>" % configInfo.title
+    print >> html, "<h1>%s</h1>" % configInfo.title
     if configInfo.description:
         print >> html, "<p>%s</p>" % configInfo.description
 
