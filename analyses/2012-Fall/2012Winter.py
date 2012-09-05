@@ -2,7 +2,8 @@
 # Config for doing the MV180 combination and file generation for dijets only.
 #
 
-title = "Winter 2012 B-Tagging SF Results"
+title = "2011 full dataset B-Tagging SF Results"
+description = "Uses full 2011 5 fb-1 results for all inputs. The dijet are from Morion 2012 and the ttbar are the final results presented at ICHEP 2012."
 name = "2012-Winter"
 
 #
@@ -19,6 +20,8 @@ inputs = [
     "negativetag/TrigTightBL1/*.txt",
     "negativetag/TrigTightL2M/*.txt",
     "ptrel/*.txt",
+    "KinSel_ljet/*.txt",
+    "KinSel_dilet/*.txt",
 
     "stat_correlation_inputs.txt",
     "defaults.txt",
@@ -84,6 +87,9 @@ ignore_analyses = [
     "pTrel-.*-AntiKt4Topo:20-pt-200:0.6-abseta-1.2",
     "pTrel-.*-AntiKt4Topo:20-pt-200:1.2-abseta-1.8",
     "pTrel-.*-AntiKt4Topo:20-pt-200:1.8-abseta-2.5",
+
+    # Drop the first bin in the ttbar
+    ".*:25-pt-30:.*",
 
     "pTrel-system8-bottom-.*-AntiKt4Topo:200-pt-250:0-abseta-2.5",
     "sv0mass-light-MV1-0.601713-AntiKt4Topo.*",
