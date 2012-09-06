@@ -1,4 +1,4 @@
-Analysis(ttbar_kinsel_dilep ,bottom ,SV0, 5.6500000 ,AntiKt4Topo){
+Analysis(ttbar_kinsel_dilep ,bottom ,SV0, 5.65 ,AntiKt4Topo){
   bin(25<pt<30,0<abseta<2.5)
   {
 	central_value(0.965818 , 0.076399)
