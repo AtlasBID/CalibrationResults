@@ -109,6 +109,30 @@ def buildArgs(config):
 
     cmdfile = cmdSequences ("%s %s" % (inputs, badfiles))
 
+    #
+    # If the user wants, they may restrict the analyses that are looked
+    # at (do to multiple combinations, for example). We need a complete
+    # list of the flavors to fill in any missing gaps. However, to do that
+    # we need to walk through all the input files (using FTDump, actually, to
+    # get the listing).
+    #
+
+    analysisGroups = {}
+    if "analysisGroupings" in config.__dict__:
+        analysisGroups = config.analysisGroupings
+
+    allAnalysisNames = getCommandResult("FTDump.exe %s --qnames" % cmdfile.GetFullConfig())
+    listofflavors = list(set([l.split('//')[1] for l in allAnalysisNames]))
+
+    for f in listofflavors:
+        if f not in analysisGroups:
+            analysisGroups[f] = {}
+
+    #
+    # For each tagger in the list, generate a command sequence. Things are
+    # made a bit complex b/c the list of analysis groups applies to a single
+    #
+
     for g in config.DoOnlyTaggers:
         onlyFlags = ""
         if g["flavor"] != "*":
@@ -149,6 +173,38 @@ def runProc(cmdline, output, printtime, store = None):
     errorcode = p.returncode
 
     return errorcode
+
+#
+# Run a command, capture the output to a string. Strip off the &#&@ RooFit header
+# if it is in there.
+#
+def getCommandResult (cmdline):
+    args = cmdline.split()
+        
+    p = subprocess.Popen(args, stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
+    lines = []
+    headerDone = False
+    linecounter = 0
+    while True:
+        line = p.stdout.readline()
+        if not line:
+            break
+        line = line.rstrip()
+        if not headerDone:
+            if len(line) == 0:
+                continue
+            if line.find("RooFit") >= 0:
+                linecounter = 4
+            if linecounter > 0:
+                linecounter = linecounter - 1
+                continue
+            headerDone = True
+
+        lines.append(line)
+
+    p.communicate()
+
+    return lines
 
 #
 # Run a command and dump the info in a section. Returns the process

@@ -79,6 +79,22 @@ for t in taggers:
     DoOnlyTaggers.append(d)
     
 #
+# Optional analysis groupings. This is used if more than one
+# grouping of combination is desired. The results are all put in the
+# same final file, of course. If a flavor entry is missing, then everything
+# for that flavor is done. Otherwise, *only* what is listed is done. The empty
+# [], btw, means everything should be done.
+#
+
+analysisGroupings = {
+    'bottom': {
+      'all': [],
+      'dijet': ["pTrel", "system8"],
+      'ttbar': ["ttbar_kinsel_dilep", "ttbar_kinsel_ljet"],
+      }
+}
+
+#
 # List of guys that we are going to ignore during our
 # running
 #
