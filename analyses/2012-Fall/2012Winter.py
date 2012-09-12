@@ -4,7 +4,7 @@
 
 title = "2011 full dataset B-Tagging SF Results"
 description = "Uses full 2011 5 fb-1 results for all inputs. The dijet are from Morion 2012 and the ttbar are the final results presented at ICHEP 2012."
-name = "2012-Winter"
+name = "2012-Fall"
 
 #
 # Input arguments
@@ -12,18 +12,20 @@ name = "2012-Winter"
 
 inputs = [
     "DStar/*.txt",
-    "system8/*.txt",
     "sv0mass/*.txt",
     "negativetag/*.txt",
     "negativetag/TrigMediumBL1/*.txt",
     "negativetag/TrigMediumL2M/*.txt",
     "negativetag/TrigTightBL1/*.txt",
     "negativetag/TrigTightL2M/*.txt",
+
+    "system8/*.txt",
     "ptrel/*.txt",
+    "stat_correlation_inputs.txt",
+
     "KinSel_ljet/*.txt",
     "KinSel_dilet/*.txt",
 
-    "stat_correlation_inputs.txt",
     "defaults.txt",
     "trigger_config.txt"
     ]
