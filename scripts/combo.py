@@ -42,6 +42,9 @@ class cmdSequences:
             cmd += " " + c
         return cmd
 
+    def GetBaseConfig (self):
+        return self._baseCommandLine
+
     class cmdSequenceItr:
         def __init__ (self, seq):
             self._seq = seq;
@@ -126,25 +129,31 @@ def buildArgs(config):
 
     for f in listofflavors:
         if f not in analysisGroups:
-            analysisGroups[f] = {}
+            analysisGroups[f] = {'combined': []}
 
     #
     # For each tagger in the list, generate a command sequence. Things are
     # made a bit complex b/c the list of analysis groups applies to a single
     #
 
-    for g in config.DoOnlyTaggers:
-        onlyFlags = ""
-        if g["flavor"] != "*":
-            onlyFlags += " --flavor " + g["flavor"]
-        if g["tagger"] != "*":
-            onlyFlags += " --tagger " + g["tagger"]
-        if g["op"] != "*":
-            onlyFlags += " --operatingPoint " + g["op"]
-        if g["jet"] != "*":
-            onlyFlags += " --jetAlgorithm " + g["jet"]
+    for flavor in listofflavors:
+        for g in config.DoOnlyTaggers:
+            onlyFlagsBase = " --flavor %s" % flavor
+            for anaGroup in analysisGroups[flavor]:
+                onlyFlags = "%s --combinedName %s" % (onlyFlagsBase, anaGroup)
+                if len(analysisGroups[flavor][anaGroup]) > 0:
+                    for anaName in analysisGroups[flavor][anaGroup]:
+                        onlyFlags += "  --analysis %s" % anaName
+                
+                if g["flavor"] == "*" or g["flavor"] == flavor:
+                    if g["tagger"] != "*":
+                        onlyFlags += " --tagger " + g["tagger"]
+                    if g["op"] != "*":
+                        onlyFlags += " --operatingPoint " + g["op"]
+                    if g["jet"] != "*":
+                        onlyFlags += " --jetAlgorithm " + g["jet"]
 
-        cmdfile.addConfig (onlyFlags)
+                cmdfile.addConfig (onlyFlags)
         
     return cmdfile
 
@@ -372,7 +381,7 @@ def doComboImpl (configInfo, html):
     outputROOT = configInfo.CDIFile
     shutil.copy (sourceMCEff, "output.root")
 
-    errcode = dumpCommandResult(html, "FTConvertToCDI.exe %s --update" % stdCmdArgs.GetFullConfig(), "Convert to CDI")
+    errcode = dumpCommandResult(html, "FTConvertToCDI.exe %s --update" % stdCmdArgs.GetBaseConfig(), "Convert to CDI")
 
     if errcode <> 0:
         print "Failed to build CDI"
