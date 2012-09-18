@@ -366,7 +366,7 @@ def doComboImpl (configInfo, html):
     # Generate plots for everyone we've done.
     #
 
-    dumpCommandResult(html, "FTPlot.exe %s" % stdCmdArgs.GetFullConfig(), "SF Plots")
+    dumpCommandResult(html, "FTPlot.exe %s" % stdCmdArgs.GetBaseConfig(), "SF Plots")
     shutil.copy ("plots.root", "%s-plots.root" % configInfo.name)
     print >> html, '<a href="%s-plots.root">Scale Factor Plots</a>' % configInfo.name
 
