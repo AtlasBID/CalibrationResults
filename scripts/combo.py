@@ -314,6 +314,7 @@ def doComboImpl (configInfo, html):
         baseOutputName = "%s-%s" % (configInfo.name, hash(cmd))
         combinedFilename = "%s-sf.txt" % baseOutputName
         cmdLog = "%s-cmb-log.txt" % baseOutputName
+        cmdOpt = "%s-cmb-cmd.txt" % baseOutputName
 
         # Should we run the combo?
         dorun = True
@@ -333,6 +334,12 @@ def doComboImpl (configInfo, html):
                 dumpFile(html, cmdLog)
 
         else:
+            # Cache the options for later use
+
+            cout = open(cmdOpt, 'w')
+            print >> cout, cmd
+            cout.close()
+
             # Run the combo
         
             errcode = dumpCommandResult(html, "FTCombine.exe %s" % cmd, store=cmdLog)
@@ -360,6 +367,7 @@ def doComboImpl (configInfo, html):
             print >> html, '<a href="%s-diagnostics.root">Diagnostics root file</a>' % baseOutputName
             print >> html, '<a href="%s-combined.dot">graphviz input file</a>' % baseOutputName
             print >> html, '<a href="%s-sf.txt">Scale Factor text file</a>' % baseOutputName
+            print >> html, '<a href="%s-cmb-cmd.txt">Command Line</a>' % baseOutputName
             print >> html, "<p>"
 
     #
