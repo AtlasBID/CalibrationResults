@@ -1,10 +1,14 @@
 #
-# Config for doing the MV180 combination and file generation for dijets only.
+# This is the 2012 Data HCP version
+#  - Use MC12 MC Eff
+#  - Use ptrel from 2012 data run
+#  - Use neg tags from 2012 data run
+#  - Use ttbar results from 2011 run (not ready yet)
 #
 
-title = "2011 full dataset B-Tagging SF Results"
-description = "Uses full 2011 5 fb-1 results for all inputs. The dijet are from Morion 2012 and the ttbar are the final results presented at ICHEP 2012."
-name = "2012-Fall"
+title = "2012 full dataset B-Tagging SF Results"
+description = "Uses HCP 2012 results for all but ttbar inputs. ttbar calibration results are from 2011, the full run."
+name = "2012-Fall-MC12Data"
 
 #
 # Input arguments
@@ -12,22 +16,15 @@ name = "2012-Fall"
 
 inputs = [
     "DStar/*.txt",
-    "sv0mass/*.txt",
     "negativetag/*.txt",
-    "negativetag/TrigMediumBL1/*.txt",
-    "negativetag/TrigMediumL2M/*.txt",
-    "negativetag/TrigTightBL1/*.txt",
-    "negativetag/TrigTightL2M/*.txt",
 
-    "system8/*.txt",
     "ptrel/*.txt",
-    "stat_correlation_inputs.txt",
 
+    "KinFit_ljet/*.txt",
     "KinSel_ljet/*.txt",
     "KinSel_dilet/*.txt",
 
     "defaults.txt",
-    "trigger_config.txt"
     ]
 
 taggers = [
@@ -122,7 +119,7 @@ ignore_analyses = [
 #
 
 mcEffRootFile = "TopCalibrations_rel17_MC11b_Convert.root"
-CDIFile = "%s-rel17_MC11b.root" % name
+CDIFile = "%s-rel17_MC12a_DJ12a_tt11.root" % name
 
 #
 # Should we avoid the combination?
