@@ -1,5 +1,5 @@
 Analysis(ttbarTClepjet ,bottom, JetFitterCOMBNN, 2.20, AntiKt4Topo){
-bin(25<pt<30,0<eta<2.5)
+bin(25<pt<30,0<abseta<2.5)
 {
 central_value(1.042340 , 0.026092 )
 sys(jet energy scale , -9.127702%)
@@ -30,7 +30,7 @@ sys(IFSR , 4.574212%)
 sys( , 0.223861%)
 sys(ISR/FSR , -5.440155%)
 }
-bin(30<pt<40,0<eta<2.5)
+bin(30<pt<40,0<abseta<2.5)
 {
 central_value(1.004680 , 0.018007 )
 sys(jet energy scale , -7.259761%)
@@ -61,7 +61,7 @@ sys(IFSR , -0.677090%)
 sys( , -0.979351%)
 sys(ISR/FSR , -2.617792%)
 }
-bin(40<pt<50,0<eta<2.5)
+bin(40<pt<50,0<abseta<2.5)
 {
 central_value(1.040074 , 0.018904 )
 sys(jet energy scale , -4.279586%)
@@ -92,7 +92,7 @@ sys(IFSR , -4.707042%)
 sys( , -1.432846%)
 sys(ISR/FSR , 0.120638%)
 }
-bin(50<pt<60,0<eta<2.5)
+bin(50<pt<60,0<abseta<2.5)
 {
 central_value(0.965804 , 0.019699 )
 sys(jet energy scale , -2.253109%)
@@ -123,7 +123,7 @@ sys(IFSR , -4.707042%)
 sys( , -2.792398%)
 sys(ISR/FSR , 3.358066%)
 }
-bin(60<pt<75,0<eta<2.5)
+bin(60<pt<75,0<abseta<2.5)
 {
 central_value(1.055950 , 0.017338 )
 sys(jet energy scale , 0.160284%)
@@ -154,7 +154,7 @@ sys(IFSR , -4.367172%)
 sys( , -1.604240%)
 sys(ISR/FSR , 1.333549%)
 }
-bin(75<pt<90,0<eta<2.5)
+bin(75<pt<90,0<abseta<2.5)
 {
 central_value(1.027026 , 0.020591 )
 sys(jet energy scale , 2.488062%)
@@ -185,7 +185,7 @@ sys(IFSR , 0.188680%)
 sys( , -0.852358%)
 sys(ISR/FSR , -0.065945%)
 }
-bin(90<pt<110,0<eta<2.5)
+bin(90<pt<110,0<abseta<2.5)
 {
 central_value(0.989678 , 0.023089 )
 sys(jet energy scale , 3.843178%)
@@ -216,7 +216,7 @@ sys(IFSR , -3.927429%)
 sys( , 1.193782%)
 sys(ISR/FSR , -3.767459%)
 }
-bin(110<pt<140,0<eta<2.5)
+bin(110<pt<140,0<abseta<2.5)
 {
 central_value(0.974525 , 0.025361 )
 sys(jet energy scale , 5.586819%)
@@ -247,7 +247,7 @@ sys(IFSR , -3.927429%)
 sys( , 0.807140%)
 sys(ISR/FSR , -4.509266%)
 }
-bin(140<pt<200,0<eta<2.5)
+bin(140<pt<200,0<abseta<2.5)
 {
 central_value(1.001624 , 0.032201 )
 sys(jet energy scale , 7.983188%)
@@ -278,7 +278,7 @@ sys(IFSR , 3.134857%)
 sys( , 4.207182%)
 sys(ISR/FSR , -4.642599%)
 }
-bin(200<pt<300,0<eta<2.5)
+bin(200<pt<300,0<abseta<2.5)
 {
 central_value(0.846501 , 0.064774 )
 sys(jet energy scale , 10.557243%)

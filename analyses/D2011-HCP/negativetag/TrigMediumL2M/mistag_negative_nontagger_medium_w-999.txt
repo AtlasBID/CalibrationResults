@@ -1,5 +1,5 @@
 Analysis(negative tags,light,TrigMedium_L2M, -999, AntiKt4Topo){ 
-  bin( 50<pt<140,0.0<eta<2.5)
+  bin( 50<pt<140,0.0<abseta<2.5)
   {
     central_value(0.9033,0.0252)
     usys(MC statistics, 2.79%)
@@ -13,7 +13,7 @@ Analysis(negative tags,light,TrigMedium_L2M, -999, AntiKt4Topo){
     sys(long lived particles,-12.45%)
     sys(jet vertex fraction, 0.45%)
   }
-  bin(140<pt<300,0.0<eta<2.5)
+  bin(140<pt<300,0.0<abseta<2.5)
   {
     central_value(0.7527,0.0256)
     usys(MC statistics, 3.40%)

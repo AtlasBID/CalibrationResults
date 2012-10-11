@@ -1,5 +1,5 @@
 Analysis(ttbarTClepjet ,bottom, MV1, 0.404219 , AntiKt4Topo){
-bin(25<pt<30,0<eta<2.5)
+bin(25<pt<30,0<abseta<2.5)
 {
 central_value(0.852479 , 0.049213 )
 sys(jet energy scale , -17.792003%)
@@ -30,7 +30,7 @@ sys(parton shower , 3.590857%)
 sys(QCD fake normalization , -14.471394%)
 sys(ISR/FSR , 3.577567%)
 }
-bin(30<pt<40,0<eta<2.5)
+bin(30<pt<40,0<abseta<2.5)
 {
 central_value(0.989081 , 0.027819 )
 sys(jet energy scale , -5.797715%)
@@ -61,7 +61,7 @@ sys(parton shower , 9.044528%)
 sys(QCD fake normalization , 2.065361%)
 sys(ISR/FSR , 2.806240%)
 }
-bin(40<pt<50,0<eta<2.5)
+bin(40<pt<50,0<abseta<2.5)
 {
 central_value(0.958955 , 0.028097 )
 sys(jet energy scale , -3.489686%)
@@ -92,7 +92,7 @@ sys(parton shower , -3.103678%)
 sys(QCD fake normalization , -3.914384%)
 sys(ISR/FSR , 2.815789%)
 }
-bin(50<pt<60,0<eta<2.5)
+bin(50<pt<60,0<abseta<2.5)
 {
 central_value(0.956744 , 0.030754 )
 sys(jet energy scale , -0.560847%)
@@ -123,7 +123,7 @@ sys(parton shower , -3.258114%)
 sys(QCD fake normalization , 3.480821%)
 sys(ISR/FSR , 3.266455%)
 }
-bin(60<pt<75,0<eta<2.5)
+bin(60<pt<75,0<abseta<2.5)
 {
 central_value(0.963532 , 0.028081 )
 sys(jet energy scale , 2.266305%)
@@ -154,7 +154,7 @@ sys(parton shower , -2.021941%)
 sys(QCD fake normalization , -3.495257%)
 sys(ISR/FSR , 2.884164%)
 }
-bin(75<pt<90,0<eta<2.5)
+bin(75<pt<90,0<abseta<2.5)
 {
 central_value(0.954404 , 0.032751 )
 sys(jet energy scale , 5.887272%)
@@ -185,7 +185,7 @@ sys(parton shower , -2.988097%)
 sys(QCD fake normalization , -4.406478%)
 sys(ISR/FSR , 2.236635%)
 }
-bin(90<pt<110,0<eta<2.5)
+bin(90<pt<110,0<abseta<2.5)
 {
 central_value(1.006394 , 0.035669 )
 sys(jet energy scale , 3.974304%)
@@ -216,7 +216,7 @@ sys(parton shower , 3.122389%)
 sys(QCD fake normalization , 0.781333%)
 sys(ISR/FSR , 3.570106%)
 }
-bin(110<pt<140,0<eta<2.5)
+bin(110<pt<140,0<abseta<2.5)
 {
 central_value(1.050645 , 0.037703 )
 sys(jet energy scale , 6.236058%)
@@ -247,7 +247,7 @@ sys(parton shower , -5.032998%)
 sys(QCD fake normalization , 5.338694%)
 sys(ISR/FSR , 1.713873%)
 }
-bin(140<pt<200,0<eta<2.5)
+bin(140<pt<200,0<abseta<2.5)
 {
 central_value(0.977034 , 0.039897 )
 sys(jet energy scale , 6.831649%)
@@ -278,7 +278,7 @@ sys(parton shower , -4.217627%)
 sys(QCD fake normalization , -2.108049%)
 sys(ISR/FSR , 4.360241%)
 }
-bin(200<pt<300,0<eta<2.5)
+bin(200<pt<300,0<abseta<2.5)
 {
 central_value(1.064325 , 0.042341 )
 sys(jet energy scale , 16.924477%)
