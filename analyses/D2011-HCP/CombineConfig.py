@@ -23,9 +23,11 @@ inputs = [
     "ptrel/*.txt",
     "stat_correlation_inputs.txt",
 
+    "KinFit_ljet/*.txt",
     "KinSel_ljet/*.txt",
     "KinSel_dilet/*.txt",
-
+    "TagCount_ljet/*.txt",
+    
     "defaults.txt",
     "trigger_config.txt"
     ]
@@ -92,7 +94,10 @@ analysisGroupings = {
     'bottom': {
       'all': [],
       'dijet': ["pTrel", "system8"],
-      'ttbar': ["ttbar_kinsel_dilep", "ttbar_kinsel_ljet"],
+      'ttbar_ksdldflj' : ["ttbar_kinsel_dilep", "ttbarKFlepjet"],
+      'ttbar_ksdltclj' : ["ttbar_kinsel_dilep", "ttbarTClepjet"],
+      'ttbar_ksdlkflj_all' : ["pTrel", "system8", "ttbar_kinsel_dilep", "ttbarKFlepjet"],
+      'ttbar_ksdltclj_all' : ["pTrel", "system8", "ttbar_kinsel_dilep", "ttbarTClepjet"],
       }
 }
 

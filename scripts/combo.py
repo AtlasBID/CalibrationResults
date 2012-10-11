@@ -125,8 +125,12 @@ def buildArgs(config):
         analysisGroups = config.analysisGroupings
 
     allAnalysisNames = getCommandResult("FTDump.exe %s --qnames" % cmdfile.GetFullConfig())
-    listofflavors = list(set([l.split('//')[1] for l in allAnalysisNames]))
-
+    try:
+        listofflavors = list(set([l.split('//')[1] for l in allAnalysisNames]))
+    except:
+        print "Error parsing inputs:"
+        print allAnalysisNames
+        
     for f in listofflavors:
         if f not in analysisGroups:
             analysisGroups[f] = {'combined': []}
