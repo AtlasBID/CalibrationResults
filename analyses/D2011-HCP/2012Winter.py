@@ -3,8 +3,8 @@
 #
 
 title = "2011 full dataset B-Tagging SF Results"
-description = "Uses full 2011 5 fb-1 results for all inputs. The dijet are from Morion 2012 and the ttbar are the final results presented at ICHEP 2012."
-name = "2012-Fall"
+description = "Uses full 2011 5 fb-1 results for all inputs. The dijet are from Moriond 2012 and the ttbar are the final results presented at ICHEP 2012. Prepared for the 2012 HCP Conference and 2011 Data."
+name = "D2011-HCP"
 
 #
 # Input arguments
@@ -122,7 +122,7 @@ ignore_analyses = [
 #
 
 mcEffRootFile = "TopCalibrations_rel17_MC11b_Convert.root"
-CDIFile = "%s-rel17_MC11b.root" % name
+CDIFile = "%s-rel17_MC11b_D11.root" % name
 
 #
 # Should we avoid the combination?
