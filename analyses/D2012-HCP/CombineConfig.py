@@ -12,6 +12,10 @@ name = "D2012-HCP"
 
 inputs = [
     "ptrel/JVF/*.txt",
+    "DStar/*EM.txt",
+    "negativetag/*topoEM_v1.txt",
+
+    "ttbar_ksdlkflj_2011/MV1_70.txt"
 
     #"defaults.txt",
     ]
@@ -38,7 +42,11 @@ for t in taggers:
 # [], btw, means everything should be done.
 #
 
-analysisGroupings = {}
+analysisGroupings = {
+    'bottom': {
+    'all': ["ttbar_ksdlkflj", "pTrel"]
+    }
+    }
 
 #
 # List of guys that we are going to ignore during our
