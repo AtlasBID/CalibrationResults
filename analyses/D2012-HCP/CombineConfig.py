@@ -2,8 +2,8 @@
 # Config for doing the MV180 combination and file generation for dijets only.
 #
 
-title = "2012 dataset Frankenstien B-Tagging SF Results"
-description = "Uses full 2011 5 fb-1 results ttbar results. Uses HCP 2012 ptRel inputs."
+title = "2012 dataset Frankenstine B-Tagging SF Results"
+description = "Uses full 2011 5 fb-1 results ttbar results. Uses HCP 2012 ptRel inputs. Uses early 2012 DStar and negative tag results."
 name = "D2012-HCP"
 
 #
@@ -15,9 +15,9 @@ inputs = [
     "DStar/*EM.txt",
     "negativetag/*topoEM_v1.txt",
 
-    "ttbar_ksdlkflj_2011/MV1_70.txt"
+    "ttbar_ksdlkflj_2011/MV1_70.txt",
 
-    #"defaults.txt",
+    "defaults.txt",
     ]
 
 taggers = [
@@ -66,7 +66,7 @@ ignore_analyses = [
 #
 
 mcEffRootFile = "TopCalibrations_rel17_MC12a_EM_Eff_jvfCut_Convert.root"
-CDIFile = "%s-rel17_MC12b_D2012_HCP.root" % name
+CDIFile = "%s-rel17_MC12b_D2012_HCP_MV170ONLY.root" % name
 
 #
 # Should we avoid the combination?
