@@ -299,13 +299,14 @@ def doComboImpl (configInfo, html):
     print >> html, "<h1>Bin Consistency Check</h1>"
 
     success = True
-    if True:
+    doConsistencyCheck = False
+    if doConsistencyCheck:
         for cmd in stdCmdArgs:
             errcode = dumpCommandResult(html, "FTDump.exe %s --check" % cmd)
             if errcode <> 0:
                 success = False
     else:
-        print "  ** Warning: not doing x-check!"
+        print "** Warning - Bin Concistency Check Turned Off"
         
     if not success:
         print "consitancy check failed, stopping now..."
