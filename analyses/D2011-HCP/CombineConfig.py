@@ -23,7 +23,7 @@ inputs = [
     "ptrel/*.txt",
     "stat_correlation_inputs.txt",
 
-    "TagCount_ljet/*.txt",
+    #"TagCount_ljet/*.txt",
     "KinFit_ljet/*.txt",
 
     #"KinSel_ljet/*.txt",
@@ -93,11 +93,9 @@ for t in taggers:
 
 analysisGroupings = {
     'bottom': {
-    #'dijet': ["pTrel", "system8"],
+    'dijet': ["pTrel", "system8"],
     'ttbar_ksdlkflj' : ["ttbar_kinsel_dilep", "ttbarKFlepjet"],
-    'ttbar_ksdltclj' : ["ttbar_kinsel_dilep", "ttbarTClepjet"],
-    #'ttbar_ksdlkflj_all' : ["pTrel", "system8", "ttbar_kinsel_dilep", "ttbarKFlepjet"],
-    #'ttbar_ksdltclj_all' : ["pTrel", "system8", "ttbar_kinsel_dilep", "ttbarTClepjet"],
+    'ttbar_ksdlkflj_all' : ["pTrel", "system8", "ttbar_kinsel_dilep", "ttbarKFlepjet"],
     }
 }
 
@@ -110,6 +108,11 @@ ignore_analyses = [
     "pTrel-.*-AntiKt4Topo:20-pt-200:0.6-abseta-1.2",
     "pTrel-.*-AntiKt4Topo:20-pt-200:1.2-abseta-1.8",
     "pTrel-.*-AntiKt4Topo:20-pt-200:1.8-abseta-2.5",
+    
+    # Extra fits for various things
+    "ttbarKFlepjet.*SV060.*",
+    ".*JetProb.*",
+    ".*IP3DSV1-1.55.*",
 
     # Drop the first bin in the ttbar
     ".*:25-pt-30:.*",
