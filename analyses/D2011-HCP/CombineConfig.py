@@ -94,6 +94,8 @@ for t in taggers:
 analysisGroupings = {
     'bottom': {
     'dijet': ["pTrel", "system8"],
+    'ttbar_ksdl_dijet' : ["ttbar_kinsel_dilep", "pTrel", "system8"],
+    'ttbar_kflj_dijet' : ["ttbarKFlepjet", "pTrel", "system8"],
     'ttbar_ksdlkflj' : ["ttbar_kinsel_dilep", "ttbarKFlepjet"],
     'ttbar_ksdlkflj_all' : ["pTrel", "system8", "ttbar_kinsel_dilep", "ttbarKFlepjet"],
     }
