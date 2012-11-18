@@ -299,7 +299,7 @@ def doComboImpl (configInfo, html):
     print >> html, "<h1>Bin Consistency Check</h1>"
 
     success = True
-    doConsistencyCheck = False
+    doConsistencyCheck = True
     if doConsistencyCheck:
         for cmd in stdCmdArgs:
             errcode = dumpCommandResult(html, "FTDump.exe %s --check" % cmd)
@@ -354,14 +354,15 @@ def doComboImpl (configInfo, html):
 
             # If no output file appeared, then we also failed.
             if errcode == 0:
-                if not os.path.exists("output.root"):
+                if not os.path.exists("combined.txt"):
                     errcode = -1000
 
             # Cache all the files we can for this run so they are easy to get at.
             if errcode == 0:
-                shutil.copy("output.root", "%s-diagnostics.root" % baseOutputName )
-                shutil.copy("combined.dot", "%s-combined.dot" % baseOutputName )
                 shutil.copy("combined.txt", "%s-sf.txt" % baseOutputName )
+                if os.path.exists("output.root"):
+                    shutil.copy("output.root", "%s-diagnostics.root" % baseOutputName )
+                    shutil.copy("combined.dot", "%s-combined.dot" % baseOutputName )
             else:
                 print >> html, "<b>Combination failed with error code %s</b><p>" % errcode
                 print >> html, "Command line arguments: %s" % cmd
