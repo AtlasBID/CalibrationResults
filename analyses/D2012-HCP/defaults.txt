@@ -1,7 +1,7 @@
-Default(all, bottom, MV1, 0.795, AntiKt4TopoEM)
+Default(pTrel, bottom, *, *, *)
 
-Default(DStar, charm, MV1, 0.795, AntiKt4TopoEM)
+Default(DStar, charm, *, *, *)
 
-Default(DStar, tau, MV1, 0.795, AntiKt4TopoEM)
+Default(DStar, tau, *, *, *)
 
-Default(negative tags, light, MV1, 0.795, AntiKt4TopoEM)
+Default(negative tags, light, *, *, *)

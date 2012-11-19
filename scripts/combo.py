@@ -359,10 +359,11 @@ def doComboImpl (configInfo, html):
 
             # Cache all the files we can for this run so they are easy to get at.
             if errcode == 0:
-                shutil.copy("combined.txt", "%s-sf.txt" % baseOutputName )
+                shutil.move("combined.txt", "%s-sf.txt" % baseOutputName )
                 if os.path.exists("output.root"):
-                    shutil.copy("output.root", "%s-diagnostics.root" % baseOutputName )
-                    shutil.copy("combined.dot", "%s-combined.dot" % baseOutputName )
+                    shutil.move("output.root", "%s-diagnostics.root" % baseOutputName )
+                if os.path.exists("combined.dot"):
+                    shutil.move("combined.dot", "%s-combined.dot" % baseOutputName )
             else:
                 print >> html, "<b>Combination failed with error code %s</b><p>" % errcode
                 print >> html, "Command line arguments: %s" % cmd

@@ -73,6 +73,9 @@ ignore_analyses = [
     # Drop the extra bins in the pTrel analysis
     "pTrel-.*20-pt-200.*",
 
+    # Drop anything to do with the MV2 tagger
+    ".*MV2.*",
+
     ]
 
 #
