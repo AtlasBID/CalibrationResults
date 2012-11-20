@@ -3,7 +3,7 @@
 #
 
 title = "2012 dataset JVF B-Tagging SF Results"
-description = "Uses HCP 2012 ptRel inputs. Uses early 2012 DStar and negative tag results."
+description = "Uses HCP 2012 ptRel inputs. Uses early 2012 DStar and negative tag results. D* LC inputs are a straight copy of EM inputs."
 name = "D2012-HCP-JVF"
 
 #
