@@ -1,4 +1,4 @@
-Analysis(DStar,tau,SV0,5.70,AntiKt4TopoLC){
+Analysis(DStar,tau,SV0,5.65,AntiKt4TopoLC){
   bin(20<pt<30,0<abseta<2.5)
   { 
      central_value(1.5,0.357278)

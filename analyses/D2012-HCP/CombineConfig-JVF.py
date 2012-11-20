@@ -12,8 +12,9 @@ name = "D2012-HCP-JVF"
 
 inputs = [
     "ptrel/JVF/*.txt",
-    "DStar/JVF/*EM.txt",
+    "DStar/JVF/*.txt",
     "negativetag/JVF/*topoEM_v3.txt",
+    "negativetag/JVF/*topoLC_v3.txt",
 
     "defaults.txt",
     ]
