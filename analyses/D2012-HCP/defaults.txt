@@ -1,7 +1,13 @@
 Default(pTrel, bottom, *, *, *)
 
-Default(DStar, charm, *, *, *)
+Default(DStar, charm, MV1, *, *)
+Default(DStar, charm, SV0, *, *)
+Default(DStar, charm, JetFitterCOMBNN, *, *)
+Default(pTrel, charm, JetFitterCOMBNNc, *, *)
 
-Default(DStar, tau, *, *, *)
+Default(DStar, tau, MV1, *, *)
+Default(DStar, tau, SV0, *, *)
+Default(DStar, tau, JetFitterCOMBNN, *, *)
+Default(pTrel, tau, JetFitterCOMBNNc, *, *)
 
 Default(negative tags, light, *, *, *)
