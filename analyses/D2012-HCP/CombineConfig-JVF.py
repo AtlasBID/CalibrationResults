@@ -19,17 +19,9 @@ inputs = [
     ]
 
 taggersEM = [
-    ["MV1", "0.985"], 
-    ["MV1", "0.795"], 
-    ["MV1", "0.596"], 
-    ["MV1", "0.148"], 
     ]
 
 taggersLC = [
-    ["MV1", "0.980"], 
-    ["MV1", "0.772"], 
-    ["MV1", "0.595"], 
-    ["MV1", "0.122"], 
     ]
 
 DoOnlyTaggers = []
@@ -82,7 +74,10 @@ ignore_analyses = [
 # The root file that we start everything with.
 #
 
-mcEffRootFile = "TopCalibrations_rel17_MC12a_EM_Eff_jvfCut_Convert.root"
+mcEffRootFile = [
+    "TopCalibrations_rel17_MC12a_EM_Eff_jvfCut_Convert.root",
+    "TopCalibrations_rel17_MC12a_LC_Eff_jvfCut_Convert.root",
+    ]
 CDIFile = "%s-rel17_MC12a_D2012_HCP.root" % name
 
 #

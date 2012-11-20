@@ -389,22 +389,31 @@ def doComboImpl (configInfo, html):
     print >> html, '<a href="%s-plots.root">Scale Factor Plots</a>' % configInfo.name
 
     #
-    # We are going to copy the root file over and build it with
-    # everything that is needed in it.
+    # We have to start with MC files that have the efficiencies in them.
+    # We get the list of them here.
     #
 
-    sourceMCEff = pathglob(configInfo.mcEffRootFile)[0]
-    if not os.path.exists(sourceMCEff):
-        print "Can't find root file %s" % configInfo.mcEffRootFile
-    outputROOT = configInfo.CDIFile
-    shutil.copy (sourceMCEff, "output.root")
+    mcEffFiles = configInfo.mcEffRootFile
+    if not isinstance(mcEffFiles, list):
+        mcEffFiles = [mcEffFiles]
+    mcEffFiles = [pathglob(f)[0] for f in mcEffFiles]
+    mcEffFilesBad = [f for f in mcEffFiles if not os.path.exists(f)]
+    mcEffFilesGood = [f for f in mcEffFiles if os.path.exists(f)]
 
-    errcode = dumpCommandResult(html, "FTConvertToCDI.exe %s --update" % stdCmdArgs.GetBaseConfig(), "Convert to CDI")
+    for f in mcEffFilesBad:
+        print "Can't find root file %s" % f
+
+    addF = ""
+    for f in mcEffFilesGood:
+        addF += "--copy%s " % f
+        
+    errcode = dumpCommandResult(html, "FTConvertToCDI.exe %s %s" % (stdCmdArgs.GetBaseConfig(), addF), "Convert to CDI")
 
     if errcode <> 0:
         print "Failed to build CDI"
         return
 
+    outputROOT = configInfo.CDIFile
     shutil.copy ("output.root", outputROOT)
     print >> html, '<p><a href="%s">%s</a>' % (outputROOT, outputROOT)
         
