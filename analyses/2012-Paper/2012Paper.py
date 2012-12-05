@@ -5,6 +5,7 @@
 
 title = "Paper 2012 B-Tagging SF Results"
 name = "2012-Paper"
+description = "Final 2011 results for dijet and ttbar, for the b-tagging paper"
 
 #
 # Input arguments
@@ -20,10 +21,11 @@ inputs = [
     "negativetag/TrigTightBL1/*.txt",
     "negativetag/TrigTightL2M/*.txt",
     "ptrel/*.txt",
-    "KinSel_ljet/*.txt",
-    "KinSel_dilet/*.txt",
+#    "KinSel_ljet/*.txt",
+#    "KinSel_dilet/*.txt",
 
-    "stat_correlation_inputs.txt",
+#    "stat_correlation_inputs.txt",
+    "cc_MV1-test.txt",
     "defaults.txt",
     "trigger_config.txt"
     ]
@@ -78,6 +80,16 @@ for t in taggers:
         }
     DoOnlyTaggers.append(d)
     
+#
+# Analysis Groupings - how we want the combination to run
+#
+
+analysisGroupings = {
+    'bottom': {
+    'dijet': ["pTrel", "system8"],
+    },
+    }
+
 #
 # List of guys that we are going to ignore during our
 # running
