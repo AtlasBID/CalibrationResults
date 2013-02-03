@@ -3,9 +3,9 @@
 # for the 2012 Paper.
 #
 
-title = "Paper 2012 B-Tagging SF Results"
-name = "2012-Paper"
-description = "Final 2011 results for dijet and ttbar, for the b-tagging paper"
+title = "Winter 2013 B-Tagging SF Results"
+name = "2013-Winter"
+description = "Winter 2013 results for dijet and ttbar, based on 2012 data"
 
 #
 # Input arguments
@@ -20,14 +20,14 @@ inputs = [
     "negativetag/TrigMediumL2M/*.txt",
     "negativetag/TrigTightBL1/*.txt",
     "negativetag/TrigTightL2M/*.txt",
-    "ptrel/*.txt",
+    "pTRel/*.txt",
 #    "KinSel_ljet/*.txt",
 #    "KinSel_dilet/*.txt",
 
 #    "stat_correlation_inputs.txt",
-    "cc_MV1-test.txt",
-    "defaults.txt",
-    "trigger_config.txt"
+#    "cc_MV1-test.txt",
+#    "defaults.txt",
+#    "trigger_config.txt"
     ]
 
 taggers = [
@@ -43,7 +43,7 @@ taggers = [
     ["MV1", "0.905363"], 
 #    ["MV1", "0.601713"], 
 #    ["MV1", "0.404219"],
-    ["MV1", "0.0714225"],
+#    ["MV1", "0.0714225"],
 #    ["SV0", "5.65"],
     ]
 
