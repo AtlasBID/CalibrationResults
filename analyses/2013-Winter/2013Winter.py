@@ -13,6 +13,8 @@ description = "Winter 2013 results for dijet and ttbar, based on 2012 data"
 
 inputs = [
     "pTRel/*.txt",
+	"kinsel_dilepton/LC/*.txt",
+	"kinsel_dilepton/EM/*.txt",
 
 #    "negativetag/*.txt",
     
