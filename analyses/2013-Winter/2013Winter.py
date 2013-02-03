@@ -12,18 +12,19 @@ description = "Winter 2013 results for dijet and ttbar, based on 2012 data"
 #
 
 inputs = [
-    "DStar/*.txt",
-    "system8/*.txt",
-    "sv0mass/*.txt",
-    "negativetag/*.txt",
-    "negativetag/TrigMediumBL1/*.txt",
-    "negativetag/TrigMediumL2M/*.txt",
-    "negativetag/TrigTightBL1/*.txt",
-    "negativetag/TrigTightL2M/*.txt",
     "pTRel/*.txt",
+    
+#    "DStar/*.txt",
+#    "system8/*.txt",
+#    "sv0mass/*.txt",
+#    "negativetag/*.txt",
+#    "negativetag/TrigMediumBL1/*.txt",
+#    "negativetag/TrigMediumL2M/*.txt",
+#    "negativetag/TrigTightBL1/*.txt",
+#    "negativetag/TrigTightL2M/*.txt",
 #    "KinSel_ljet/*.txt",
 #    "KinSel_dilet/*.txt",
-
+    
 #    "stat_correlation_inputs.txt",
 #    "cc_MV1-test.txt",
 #    "defaults.txt",
@@ -95,11 +96,7 @@ analysisGroupings = {
 # running
 #
 ignore_analyses = [
-    "pTrel-.*-AntiKt4Topo:20-pt-200:0-abseta-0.6", 
-    "pTrel-.*-AntiKt4Topo:20-pt-200:0.6-abseta-1.2",
-    "pTrel-.*-AntiKt4Topo:20-pt-200:1.2-abseta-1.8",
-    "pTrel-.*-AntiKt4Topo:20-pt-200:1.8-abseta-2.5",
-
+    ".*:20-pt-200:.*", 
     ".*:25-pt-30:.*",
 
     "pTrel-system8-bottom-.*-AntiKt4Topo:200-pt-250:0-abseta-2.5",
@@ -114,7 +111,7 @@ ignore_analyses = [
 # The root file that we start everything with.
 #
 
-mcEffRootFile = "TopCalibrations_rel17.2.4_MC12c.root"
+mcEffRootFile = "TopCalibrations_rel17.2.4_MC12c.root.root"
 CDIFile = "%s-rel17.2.4_MC12c.root" % name
 
 #
