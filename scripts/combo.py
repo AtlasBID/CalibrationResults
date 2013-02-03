@@ -432,7 +432,7 @@ def doComboImpl (configInfo, html):
 #
 # Run the full thing
 #
-def doCombo(name):
+def doCombo(name, cleanFilesFirst=False, zipResults=False):
     #
     # load in the module for name so we can get all the config info
     # it will search sys.path for the module... If there is a directory
@@ -447,6 +447,14 @@ def doCombo(name):
 
     configInfo = __import__ (n_module)
     print configInfo.title
+
+    #
+    # Clean out any old results first
+    #
+
+    if cleanFilesFirst:
+        print "  Removing results of previous run"
+        [ os.remove(f) for f in os.listdir(".") if f.startswith(configInfo.name) ]
 
     #
     # Dump what happens to a html file as we go...
@@ -469,14 +477,30 @@ def doCombo(name):
     #
 
     print >> html, "</body></html>"
+    html.close()
+
+    #
+    # Zip up everything
+    #
+
+    if zipResults:
+        os.system("tar -czf %s.tar.gz %s*" % (configInfo.name, configInfo.name))
 
 #
 # If this is invoked from the command line..
 #
 
 if __name__ == "__main__":
-    if len(sys.argv) <= 1:
-        print "Usage: combo.py <config-name>"
-        print "  config name must be in python's search path"
-    doCombo(sys.argv[1])
+    from optparse import OptionParser
+    o = OptionParser()
+    o.add_option("--clean", default=False, action="store_true")
+    o.add_option("--zip", default=False, action="store_true")
 
+    (options, args) = o.parse_args()
+
+    if len(args) != 1:
+        print "Usage: combo.py [flags] <config-name>"
+        print "  --clean      Clean all result files first"
+        print "  --zip        Generate a tar.gz file of all results"
+        print "  config name must be in python's search path"
+    doCombo(args[0], cleanFilesFirst=options.clean, zipResults=options.zip)
