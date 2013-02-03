@@ -13,7 +13,8 @@ description = "Winter 2013 results for dijet and ttbar, based on 2012 data"
 
 inputs = [
     "pTRel/*.txt",
-    "negativetag/*.txt",
+
+#    "negativetag/*.txt",
     
 #    "DStar/*.txt",
 #    "system8/*.txt",
