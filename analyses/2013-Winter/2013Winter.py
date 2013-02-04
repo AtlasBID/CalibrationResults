@@ -126,7 +126,7 @@ ignore_analyses = [
 # calibration files.
 
 # MV1 LC 30%
-	"*994450*",
+	".*994450.*",
 
     ]
 
