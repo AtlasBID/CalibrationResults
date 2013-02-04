@@ -131,7 +131,6 @@ Analysis(negative tags,light,MV1c, 0.0836, AntiKt4TopoLCnoJVF){
     sys(negative tag run period dependence, 0.79%)
     sys(d0 and z0 smearing, 0.99%)
   }
-Analysis(negative tags,light,MV1c, 0.0836, AntiKt4TopoLCnoJVF){ 
   bin( 20<pt< 30, 1.2<abseta<2.5)
   {
     central_value(1.0227,0.0046)
@@ -264,3 +263,4 @@ Analysis(negative tags,light,MV1c, 0.0836, AntiKt4TopoLCnoJVF){
     sys(negative tag run period dependence, 1.35%)
     sys(d0 and z0 smearing,-5.53%)
   }
+}

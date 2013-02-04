@@ -16,7 +16,7 @@ inputs = [
 	"kinsel_dilepton/LC/*.txt",
 	"kinsel_dilepton/EM/*.txt",
 
-#    "negativetag/*.txt",
+    "negativetag/*.txt",
     
 #    "DStar/*.txt",
 #    "system8/*.txt",
