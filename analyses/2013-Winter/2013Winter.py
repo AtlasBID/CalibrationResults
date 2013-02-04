@@ -127,7 +127,15 @@ ignore_analyses = [
 
 # MV1 LC 30%
 	".*994450.*",
+	
+# Not doing no JVF yet
+	".*noJVF.*",
+	
+# Until they get tagger names straight
+	".*JetFitterLog.*",
 
+# No SV0 taggers!
+	".*SV0.*",
     ]
 
 #
