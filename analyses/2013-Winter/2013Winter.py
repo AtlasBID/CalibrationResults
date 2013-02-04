@@ -121,6 +121,13 @@ ignore_analyses = [
     "negative.*-light-TrigMedium_JetFitterCOMBNN_.*-0.35-AntiKt4Topo:.*",
     "negative.*-light-TrigTight_JetFitterCOMBNN_.*-1.80-AntiKt4Topo:.*",
     "negative.*-light-TrigMedium_JetFitterCOMBNN_.*-1.80-AntiKt4Topo:.*",
+
+# There are a number of OPs that are in the calibration files that shouldn't be in the
+# calibration files.
+
+# MV1 LC 30%
+	"*994450*,
+
     ]
 
 #
