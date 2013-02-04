@@ -38,6 +38,7 @@ Analysis(dilepton,bottom,MV1,0.993981,AntiKt4TopoLCJVF ) {
         sys(parton shower,5.48575%)
         sys(ZJetsShape,7.31067%)
         sys(jet energy scale,9.54285%)
+        sys(Z normalisation,-4.05877%) 
     }
     bin(30<pt<40,0<abseta<2.5)
     {
@@ -78,6 +79,7 @@ Analysis(dilepton,bottom,MV1,0.993981,AntiKt4TopoLCJVF ) {
         sys(parton shower,1.39452%)
         sys(ZJetsShape,4.12567%)
         sys(jet energy scale,5.41915%)
+        sys(Z normalisation,-2.08265%) 
     }
     bin(40<pt<50,0<abseta<2.5)
     {
@@ -118,6 +120,7 @@ Analysis(dilepton,bottom,MV1,0.993981,AntiKt4TopoLCJVF ) {
         sys(parton shower,3.17447%)
         sys(ZJetsShape,1.18204%)
         sys(jet energy scale,3.84475%)
+        sys(Z normalisation,-1.92863%) 
     }
     bin(50<pt<60,0<abseta<2.5)
     {
@@ -158,6 +161,7 @@ Analysis(dilepton,bottom,MV1,0.993981,AntiKt4TopoLCJVF ) {
         sys(parton shower,4.15534%)
         sys(ZJetsShape,1.98038%)
         sys(jet energy scale,2.2679%)
+        sys(Z normalisation,-1.50123%) 
     }
     bin(60<pt<75,0<abseta<2.5)
     {
@@ -198,6 +202,7 @@ Analysis(dilepton,bottom,MV1,0.993981,AntiKt4TopoLCJVF ) {
         sys(parton shower,2.66145%)
         sys(ZJetsShape,0.94738%)
         sys(jet energy scale,1.57045%)
+        sys(Z normalisation,-0.730624%) 
     }
     bin(75<pt<90,0<abseta<2.5)
     {
@@ -238,6 +243,7 @@ Analysis(dilepton,bottom,MV1,0.993981,AntiKt4TopoLCJVF ) {
         sys(parton shower,1.76874%)
         sys(ZJetsShape,1.50464%)
         sys(jet energy scale,-0.26755%)
+        sys(Z normalisation,-1.06565%) 
     }
     bin(90<pt<110,0<abseta<2.5)
     {
@@ -278,6 +284,7 @@ Analysis(dilepton,bottom,MV1,0.993981,AntiKt4TopoLCJVF ) {
         sys(parton shower,0.54635%)
         sys(ZJetsShape,0.5518%)
         sys(jet energy scale,0.28075%)
+        sys(Z normalisation,-1.23122%) 
     }
     bin(110<pt<140,0<abseta<2.5)
     {
@@ -318,6 +325,7 @@ Analysis(dilepton,bottom,MV1,0.993981,AntiKt4TopoLCJVF ) {
         sys(parton shower,2.20599%)
         sys(ZJetsShape,3.06005%)
         sys(jet energy scale,-1.03765%)
+        sys(Z normalisation,-1.5854%) 
     }
     bin(140<pt<200,0<abseta<2.5)
     {
@@ -358,6 +366,7 @@ Analysis(dilepton,bottom,MV1,0.993981,AntiKt4TopoLCJVF ) {
         sys(parton shower,0.197432%)
         sys(ZJetsShape,4.61989%)
         sys(jet energy scale,-1.1684%)
+        sys(Z normalisation,-2.22619%) 
     }
     bin(200<pt<300,0<abseta<2.5)
     {
@@ -398,5 +407,6 @@ Analysis(dilepton,bottom,MV1,0.993981,AntiKt4TopoLCJVF ) {
         sys(parton shower,7.0888%)
         sys(ZJetsShape,8.89303%)
         sys(jet energy scale,-4.89945%)
+        sys(Z normalisation,-4.64332%) 
     }
 }
