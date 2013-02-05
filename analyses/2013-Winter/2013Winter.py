@@ -15,10 +15,9 @@ inputs = [
     "pTRel/*.txt",
 	"kinsel_dilepton/LC/*.txt",
 	"kinsel_dilepton/EM/*.txt",
-
+    "DStar/*.txt",
     "negativetag/*.txt",
     
-#    "DStar/*.txt",
 #    "system8/*.txt",
 #    "sv0mass/*.txt",
 #    "negativetag/TrigMediumBL1/*.txt",
