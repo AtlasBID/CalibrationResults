@@ -103,7 +103,7 @@ for t in taggers:
 
 analysisGroupings = {
     'bottom': {
-    'all': ["pTrel", "dilepton"],
+    'all': ["pTrel", "KinSel_dilep"],
     },
     }
 
