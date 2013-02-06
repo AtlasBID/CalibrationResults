@@ -114,13 +114,6 @@ ignore_analyses = [
     ".*:20-pt-200:.*", 
     ".*:25-pt-30:.*",
 
-    "pTrel-system8-bottom-.*-AntiKt4Topo:200-pt-250:0-abseta-2.5",
-    "sv0mass-light-MV1-0.601713-AntiKt4Topo.*",
-    "negative.*-light-TrigTight_JetFitterCOMBNN_.*-0.35-AntiKt4Topo:.*",
-    "negative.*-light-TrigMedium_JetFitterCOMBNN_.*-0.35-AntiKt4Topo:.*",
-    "negative.*-light-TrigTight_JetFitterCOMBNN_.*-1.80-AntiKt4Topo:.*",
-    "negative.*-light-TrigMedium_JetFitterCOMBNN_.*-1.80-AntiKt4Topo:.*",
-
 # There are a number of OPs that are in the calibration files that shouldn't be in the
 # calibration files.
 
@@ -130,8 +123,9 @@ ignore_analyses = [
 # Not doing no JVF yet
 	".*noJVF.*",
 	
-# Until they get tagger names straight
-	".*JetFitterLog.*",
+# Negative tag JetFitterCOMBCharm for the tighest guy has some
+# systematic error problems. So ignore it until it is fixed.
+	".*-1.0_-1.0",
 
 # No SV0 taggers!
 	".*SV0.*",

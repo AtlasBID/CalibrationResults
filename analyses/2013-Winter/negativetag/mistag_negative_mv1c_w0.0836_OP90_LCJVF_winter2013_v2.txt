@@ -23,7 +23,7 @@ Analysis(negative tags,light,MV1c, 0.0836, AntiKt4TopoLCJVF){
   }
   bin( 30<pt< 60, 0.0<abseta<1.2)
   {
-    central_value(1.0764,0.0026)
+    central_value(1.0765,0.0026)
     meta_data(N jets tagged, 104336,323.0)
     meta_data(N jets total, 279474,528.7)
     usys(MC statistics, 0.45%)
@@ -37,7 +37,7 @@ Analysis(negative tags,light,MV1c, 0.0836, AntiKt4TopoLCJVF){
     sys(fake tracks,-0.12%)
     sys(photon conversions, 1.33%)
     sys(material interactions, 2.80%)
-    sys(trigger bias,-2.90%)
+    sys(trigger bias,-2.91%)
     sys(negative tag epsilon b, 0.60%)
     sys(negative tag epsilon c, 2.86%)
     sys(negative tag run period dependence, 0.76%)
@@ -45,7 +45,7 @@ Analysis(negative tags,light,MV1c, 0.0836, AntiKt4TopoLCJVF){
   }
   bin( 60<pt<140, 0.0<abseta<1.2)
   {
-    central_value(1.1470,0.0020)
+    central_value(1.1472,0.0020)
     meta_data(N jets tagged, 229933,479.5)
     meta_data(N jets total, 798382,893.5)
     usys(MC statistics, 0.35%)
@@ -59,7 +59,7 @@ Analysis(negative tags,light,MV1c, 0.0836, AntiKt4TopoLCJVF){
     sys(fake tracks, 0.32%)
     sys(photon conversions, 0.72%)
     sys(material interactions, 1.88%)
-    sys(trigger bias,-0.68%)
+    sys(trigger bias,-0.69%)
     sys(negative tag epsilon b, 1.24%)
     sys(negative tag epsilon c, 4.37%)
     sys(negative tag run period dependence, 0.60%)
@@ -67,7 +67,7 @@ Analysis(negative tags,light,MV1c, 0.0836, AntiKt4TopoLCJVF){
   }
   bin(140<pt<300, 0.0<abseta<1.2)
   {
-    central_value(1.1774,0.0014)
+    central_value(1.1775,0.0014)
     meta_data(N jets tagged, 513720,716.7)
     meta_data(N jets total,1680610,1296.4)
     usys(MC statistics, 0.47%)
@@ -80,8 +80,8 @@ Analysis(negative tags,light,MV1c, 0.0836, AntiKt4TopoLCJVF){
     sys(long lived particles,-0.72%)
     sys(fake tracks, 1.12%)
     sys(photon conversions, 1.61%)
-    sys(material interactions, 4.47%)
-    sys(trigger bias,-1.05%)
+    sys(material interactions, 4.46%)
+    sys(trigger bias,-1.06%)
     sys(negative tag epsilon b, 1.49%)
     sys(negative tag epsilon c, 5.14%)
     sys(negative tag run period dependence, 1.14%)
@@ -89,7 +89,7 @@ Analysis(negative tags,light,MV1c, 0.0836, AntiKt4TopoLCJVF){
   }
   bin(300<pt<450, 0.0<abseta<1.2)
   {
-    central_value(1.2070,0.0013)
+    central_value(1.2071,0.0013)
     meta_data(N jets tagged, 576023,759.0)
     meta_data(N jets total,1712041,1308.4)
     usys(MC statistics, 0.43%)
@@ -111,7 +111,7 @@ Analysis(negative tags,light,MV1c, 0.0836, AntiKt4TopoLCJVF){
   }
   bin(450<pt<750, 0.0<abseta<1.2)
   {
-    central_value(1.1758,0.0008)
+    central_value(1.1761,0.0009)
     meta_data(N jets tagged,1233981,1110.8)
     meta_data(N jets total,3472572,1863.5)
     usys(MC statistics, 0.53%)
@@ -121,11 +121,11 @@ Analysis(negative tags,light,MV1c, 0.0836, AntiKt4TopoLCJVF){
     sys(b-fractions, 0.36%)
     sys(c-fractions, 1.58%)
     sys(track multiplicity,-1.02%)
-    sys(long lived particles,-0.46%)
+    sys(long lived particles,-0.45%)
     sys(fake tracks, 0.49%)
     sys(photon conversions, 0.44%)
     sys(material interactions, 1.18%)
-    sys(trigger bias,-0.63%)
+    sys(trigger bias,-0.65%)
     sys(negative tag epsilon b, 1.49%)
     sys(negative tag epsilon c, 5.46%)
     sys(negative tag run period dependence, 0.79%)
@@ -155,7 +155,7 @@ Analysis(negative tags,light,MV1c, 0.0836, AntiKt4TopoLCJVF){
   }
   bin( 30<pt< 60, 1.2<abseta<2.5)
   {
-    central_value(1.1476,0.0050)
+    central_value(1.1478,0.0050)
     meta_data(N jets tagged,  42894,207.1)
     meta_data(N jets total, 213460,462.0)
     usys(MC statistics, 0.56%)
@@ -169,7 +169,7 @@ Analysis(negative tags,light,MV1c, 0.0836, AntiKt4TopoLCJVF){
     sys(fake tracks,-0.22%)
     sys(photon conversions, 0.93%)
     sys(material interactions, 2.11%)
-    sys(trigger bias,-2.91%)
+    sys(trigger bias,-2.92%)
     sys(negative tag epsilon b, 0.59%)
     sys(negative tag epsilon c, 2.69%)
     sys(negative tag run period dependence, 1.39%)
@@ -177,7 +177,7 @@ Analysis(negative tags,light,MV1c, 0.0836, AntiKt4TopoLCJVF){
   }
   bin( 60<pt<140, 1.2<abseta<2.5)
   {
-    central_value(1.1324,0.0032)
+    central_value(1.1325,0.0032)
     meta_data(N jets tagged, 103833,322.2)
     meta_data(N jets total, 536506,732.5)
     usys(MC statistics, 0.40%)
@@ -191,9 +191,9 @@ Analysis(negative tags,light,MV1c, 0.0836, AntiKt4TopoLCJVF){
     sys(fake tracks, 0.15%)
     sys(photon conversions, 0.58%)
     sys(material interactions, 1.69%)
-    sys(trigger bias,-0.81%)
+    sys(trigger bias,-0.82%)
     sys(negative tag epsilon b, 0.97%)
-    sys(negative tag epsilon c, 3.53%)
+    sys(negative tag epsilon c, 3.54%)
     sys(negative tag run period dependence, 1.18%)
     sys(d0 and z0 smearing,-1.64%)
   }
@@ -209,7 +209,7 @@ Analysis(negative tags,light,MV1c, 0.0836, AntiKt4TopoLCJVF){
     sys(b-fractions, 0.28%)
     sys(c-fractions, 1.17%)
     sys(track multiplicity, 1.61%)
-    sys(long lived particles,-0.36%)
+    sys(long lived particles,-0.35%)
     sys(fake tracks, 0.97%)
     sys(photon conversions, 1.74%)
     sys(material interactions, 4.94%)
@@ -234,7 +234,7 @@ Analysis(negative tags,light,MV1c, 0.0836, AntiKt4TopoLCJVF){
     sys(long lived particles,-0.21%)
     sys(fake tracks, 0.97%)
     sys(photon conversions, 1.27%)
-    sys(material interactions, 3.42%)
+    sys(material interactions, 3.41%)
     sys(trigger bias,-0.77%)
     sys(negative tag epsilon b, 0.95%)
     sys(negative tag epsilon c, 3.82%)

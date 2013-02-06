@@ -1,4 +1,4 @@
-Analysis(negative tags,light,JetFitterLog, 1.5, AntiKt4TopoLCJVF){ 
+Analysis(negative tags,light,JetFitterCOMBCharm, -1.0_-0.82, AntiKt4TopoLCJVF){ 
   bin( 20<pt< 30, 0.0<abseta<1.2)
   {
     central_value(1.1876,0.0401)
