@@ -1,0 +1,8 @@
+Default(all, bottom, MV1, *, *)
+Default(all, bottom, MV1c, *, *)
+Default(KinSel_dilep, bottom, JetFitterCOMBCharm, *, *)
+
+Default(DStar, charm, *, *, *)
+Default(DStar, tau, *, *, *)
+
+Default(negative tag, light, *, *, *)

@@ -18,6 +18,8 @@ inputs = [
     "DStar/*.txt",
     "negativetag/*.txt",
     
+    "defaults.txt",
+
 #    "system8/*.txt",
 #    "sv0mass/*.txt",
 #    "negativetag/TrigMediumBL1/*.txt",
@@ -29,7 +31,6 @@ inputs = [
     
 #    "stat_correlation_inputs.txt",
 #    "cc_MV1-test.txt",
-#    "defaults.txt",
 #    "trigger_config.txt"
     ]
 
