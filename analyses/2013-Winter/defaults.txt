@@ -5,4 +5,4 @@ Default(KinSel_dilep, bottom, JetFitterCOMBCharm, *, *)
 Default(DStar, charm, *, *, *)
 Default(DStar, tau, *, *, *)
 
-Default(negative tag, light, *, *, *)
+Default(negative tags, light, *, *, *)
