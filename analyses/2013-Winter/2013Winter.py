@@ -125,7 +125,7 @@ ignore_analyses = [
 	
 # Negative tag JetFitterCOMBCharm for the tighest guy has some
 # systematic error problems. So ignore it until it is fixed.
-	".*-1.0_-1.0",
+	".*-1.0_-1.0.*",
 
 # No SV0 taggers!
 	".*SV0.*",
