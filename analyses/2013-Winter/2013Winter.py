@@ -121,9 +121,6 @@ ignore_analyses = [
 # MV1 LC 30%
 	".*994450.*",
 	
-# Not doing no JVF yet
-	".*noJVF.*",
-	
 # Negative tag JetFitterCOMBCharm for the tighest guy has some
 # systematic error problems. So ignore it until it is fixed.
 	".*-1.0_1.0.*",
