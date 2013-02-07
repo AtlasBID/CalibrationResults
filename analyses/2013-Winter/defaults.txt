@@ -1,5 +1,15 @@
-Default(all, bottom, MV1, *, *)
-Default(all, bottom, MV1c, *, *)
+Default(all, bottom, MV1, *, AntiKt4TopoLCJVF)
+Default(all, bottom, MV1, *, AntiKt4TopoEMJVF)
+Default(pTrel, bottom, MV1, *, AntiKt4TopoLCnoJVF)
+Default(pTrel, bottom, MV1, *, AntiKt4TopoEMnoJVF)
+
+Default(all, bottom, MV1c, *, AntiKt4TopoLCJVF)
+Default(all, bottom, MV1c, *, AntiKt4TopoEMJVF)
+Default(pTrel, bottom, MV1c, *, AntiKt4TopoLCnoJVF)
+Default(pTrel, bottom, MV1c, *, AntiKt4TopoEMnoJVF)
+
+# There is nothing here for noJVF, so this will not match that, and there
+# will be no official noJVF operating point calibrations.
 Default(KinSel_dilep, bottom, JetFitterCOMBCharm, *, *)
 
 Default(DStar, charm, *, *, *)
