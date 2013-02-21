@@ -112,7 +112,12 @@ analysisGroupings = {
 # running
 #
 ignore_analyses = [
+# These are extra bins put in by ptrel, which we don't
+# want to use in a fit.
     ".*:20-pt-200:.*", 
+
+# Some ttbar analyses start funny, but all bins must match, so
+# we have to ignore the half bins.
     ".*:25-pt-30:.*",
 
 # There are a number of OPs that are in the calibration files that shouldn't be in the
@@ -121,10 +126,6 @@ ignore_analyses = [
 # MV1 LC 30%
 	".*994450.*",
 	
-# Negative tag JetFitterCOMBCharm for the tighest guy has some
-# systematic error problems. So ignore it until it is fixed.
-	".*-1.0_1.0.*",
-
 # No SV0 taggers!
 	".*SV0.*",
     ]
