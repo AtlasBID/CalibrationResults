@@ -31,20 +31,20 @@ inputs = [
     ]
 
 taggers = [
-#    ["IP3DSV1", "4.55"],
-#    ["IP3DSV1", "1.70"],
-#    ["IP3DSV1", "-0.80"],
-#    ["JetFitterCOMBNN", "2.20"],
-#    ["JetFitterCOMBNN", "1.80"],
-#    ["JetFitterCOMBNN", "0.35"],
-#    ["JetFitterCOMBNN", "-1.25"],
-#    ["JetFitterCOMBNNc", "1.33"],
-#    ["JetFitterCOMBNNc", "0.98"],
+    ["IP3DSV1", "4.55"],
+    ["IP3DSV1", "1.70"],
+    ["IP3DSV1", "-0.80"],
+    ["JetFitterCOMBNN", "2.20"],
+    ["JetFitterCOMBNN", "1.80"],
+    ["JetFitterCOMBNN", "0.35"],
+    ["JetFitterCOMBNN", "-1.25"],
+    ["JetFitterCOMBNNc", "1.33"],
+    ["JetFitterCOMBNNc", "0.98"],
     ["MV1", "0.905363"], 
-#    ["MV1", "0.601713"], 
-#    ["MV1", "0.404219"],
+    ["MV1", "0.601713"], 
+    ["MV1", "0.404219"],
     ["MV1", "0.0714225"],
-#    ["SV0", "5.65"],
+    ["SV0", "5.65"],
     ]
 
 TrigTagBuilder = [
