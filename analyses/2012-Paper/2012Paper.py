@@ -21,8 +21,8 @@ inputs = [
     "negativetag/TrigTightBL1/*.txt",
     "negativetag/TrigTightL2M/*.txt",
     "ptrel/*.txt",
-#    "KinSel_ljet/*.txt",
-#    "KinSel_dilet/*.txt",
+    "KinSel_ljet/*.txt",
+    "KinSel_dilet/*.txt",
 
 #    "stat_correlation_inputs.txt",
     "cc_MV1-test.txt",
