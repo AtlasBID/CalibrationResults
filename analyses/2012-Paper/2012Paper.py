@@ -86,8 +86,10 @@ for t in taggers:
 
 analysisGroupings = {
     'bottom': {
-    'dijet': ["pTrel", "system8"],
-    },
+		'dijet': ["pTrel", "system8"],
+		'ttbar': ["ttbarKFlepjet", "ttbar_kinsel_dilep"],
+		'all': ["ttbarKFlepjet", "ttbar_kinsel_dilep", "pTrel", "system8"],
+		},
     }
 
 #
