@@ -89,8 +89,8 @@ analysisGroupings = {
 		'ttbar': ["ttbarKFlepjet", "ttbar_kinsel_dilep"],
 		'all': ["ttbarKFlepjet", "ttbar_kinsel_dilep", "pTrel", "system8"],
 		},
-	'light': {}
-	'charm': {}
+	'light': {},
+	'charm': {},
 	'tau': {}
     }
 
