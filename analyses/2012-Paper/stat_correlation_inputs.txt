@@ -1,540 +1,540 @@
-Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
-  bin(20<pt<30,0.0<abseta<2.5) {
-    statistical(0.6665)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, 1.7, AntiKt4Topo) {
-  bin(20<pt<30,0.0<abseta<2.5) {
-    statistical(0.5730)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, -0.8, AntiKt4Topo) {
-  bin(20<pt<30,0.0<abseta<2.5) {
-    statistical(0.4334)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
-  bin(30<pt<40,0.0<abseta<2.5) {
-    statistical(0.7962)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, 1.7, AntiKt4Topo) {
-  bin(30<pt<40,0.0<abseta<2.5) {
-    statistical(0.7382)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, -0.8, AntiKt4Topo) {
-  bin(30<pt<40,0.0<abseta<2.5) {
-    statistical(0.6550)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
-  bin(40<pt<50,0.0<abseta<2.5) {
-    statistical(0.8036)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, 1.7, AntiKt4Topo) {
-  bin(40<pt<50,0.0<abseta<2.5) {
-    statistical(0.7930)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, -0.8, AntiKt4Topo) {
-  bin(40<pt<50,0.0<abseta<2.5) {
-    statistical(0.7528)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
-  bin(50<pt<60,0.0<abseta<2.5) {
-    statistical(0.8427)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, 1.7, AntiKt4Topo) {
-  bin(50<pt<60,0.0<abseta<2.5) {
-    statistical(0.8437)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, -0.8, AntiKt4Topo) {
-  bin(50<pt<60,0.0<abseta<2.5) {
-    statistical(0.8416)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
-  bin(60<pt<75,0.0<abseta<2.5) {
-    statistical(0.8329)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, 1.7, AntiKt4Topo) {
-  bin(60<pt<75,0.0<abseta<2.5) {
-    statistical(0.8031)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, -0.8, AntiKt4Topo) {
-  bin(60<pt<75,0.0<abseta<2.5) {
-    statistical(0.8081)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
-  bin(75<pt<90,0.0<abseta<2.5) {
-    statistical(0.8470)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, 1.7, AntiKt4Topo) {
-  bin(75<pt<90,0.0<abseta<2.5) {
-    statistical(0.8437)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, -0.8, AntiKt4Topo) {
-  bin(75<pt<90,0.0<abseta<2.5) {
-    statistical(0.8234)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
-  bin(90<pt<110,0.0<abseta<2.5) {
-    statistical(0.8111)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, 1.7, AntiKt4Topo) {
-  bin(90<pt<110,0.0<abseta<2.5) {
-    statistical(0.8030)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, -0.8, AntiKt4Topo) {
-  bin(90<pt<110,0.0<abseta<2.5) {
-    statistical(0.7833)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
-  bin(110<pt<140,0.0<abseta<2.5) {
-    statistical(0.6528)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, 1.7, AntiKt4Topo) {
-  bin(110<pt<140,0.0<abseta<2.5) {
-    statistical(0.6253)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, -0.8, AntiKt4Topo) {
-  bin(110<pt<140,0.0<abseta<2.5) {
-    statistical(0.6100)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
-  bin(140<pt<200,0.0<abseta<2.5) {
-    statistical(0.4910)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, 1.7, AntiKt4Topo) {
-  bin(140<pt<200,0.0<abseta<2.5) {
-    statistical(0.4891)
-  }
-}
-Correlation(pTrel, system8, bottom, IP3DSV1, -0.8, AntiKt4Topo) {
-  bin(140<pt<200,0.0<abseta<2.5) {
-    statistical(0.4560)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 2.2, AntiKt4Topo) {
-  bin(20<pt<30,0.0<abseta<2.5) {
-    statistical(0.6037)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 1.8, AntiKt4Topo) {
-  bin(20<pt<30,0.0<abseta<2.5) {
-    statistical(0.6068)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 0.35, AntiKt4Topo) {
-  bin(20<pt<30,0.0<abseta<2.5) {
-    statistical(0.5406)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, -1.25, AntiKt4Topo) {
-  bin(20<pt<30,0.0<abseta<2.5) {
-    statistical(0.3649)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 2.2, AntiKt4Topo) {
-  bin(30<pt<40,0.0<abseta<2.5) {
-    statistical(0.7749)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 1.8, AntiKt4Topo) {
-  bin(30<pt<40,0.0<abseta<2.5) {
-    statistical(0.7588)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 0.35, AntiKt4Topo) {
-  bin(30<pt<40,0.0<abseta<2.5) {
-    statistical(0.7131)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, -1.25, AntiKt4Topo) {
-  bin(30<pt<40,0.0<abseta<2.5) {
-    statistical(0.6794)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 2.2, AntiKt4Topo) {
-  bin(40<pt<50,0.0<abseta<2.5) {
-    statistical(0.7867)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 1.8, AntiKt4Topo) {
-  bin(40<pt<50,0.0<abseta<2.5) {
-    statistical(0.7916)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 0.35, AntiKt4Topo) {
-  bin(40<pt<50,0.0<abseta<2.5) {
-    statistical(0.7526)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, -1.25, AntiKt4Topo) {
-  bin(40<pt<50,0.0<abseta<2.5) {
-    statistical(0.7087)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 2.2, AntiKt4Topo) {
-  bin(50<pt<60,0.0<abseta<2.5) {
-    statistical(0.8525)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 1.8, AntiKt4Topo) {
-  bin(50<pt<60,0.0<abseta<2.5) {
-    statistical(0.8486)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 0.35, AntiKt4Topo) {
-  bin(50<pt<60,0.0<abseta<2.5) {
-    statistical(0.8243)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, -1.25, AntiKt4Topo) {
-  bin(50<pt<60,0.0<abseta<2.5) {
-    statistical(0.8281)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 2.2, AntiKt4Topo) {
-  bin(60<pt<75,0.0<abseta<2.5) {
-    statistical(0.8340)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 1.8, AntiKt4Topo) {
-  bin(60<pt<75,0.0<abseta<2.5) {
-    statistical(0.8294)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 0.35, AntiKt4Topo) {
-  bin(60<pt<75,0.0<abseta<2.5) {
-    statistical(0.8153)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, -1.25, AntiKt4Topo) {
-  bin(60<pt<75,0.0<abseta<2.5) {
-    statistical(0.7767)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 2.2, AntiKt4Topo) {
-  bin(75<pt<90,0.0<abseta<2.5) {
-    statistical(0.8416)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 1.8, AntiKt4Topo) {
-  bin(75<pt<90,0.0<abseta<2.5) {
-    statistical(0.8445)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 0.35, AntiKt4Topo) {
-  bin(75<pt<90,0.0<abseta<2.5) {
-    statistical(0.8373)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, -1.25, AntiKt4Topo) {
-  bin(75<pt<90,0.0<abseta<2.5) {
-    statistical(0.8142)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 2.2, AntiKt4Topo) {
-  bin(90<pt<110,0.0<abseta<2.5) {
-    statistical(0.7981)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 1.8, AntiKt4Topo) {
-  bin(90<pt<110,0.0<abseta<2.5) {
-    statistical(0.7988)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 0.35, AntiKt4Topo) {
-  bin(90<pt<110,0.0<abseta<2.5) {
-    statistical(0.7981)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, -1.25, AntiKt4Topo) {
-  bin(90<pt<110,0.0<abseta<2.5) {
-    statistical(0.7782)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 2.2, AntiKt4Topo) {
-  bin(110<pt<140,0.0<abseta<2.5) {
-    statistical(0.6538)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 1.8, AntiKt4Topo) {
-  bin(110<pt<140,0.0<abseta<2.5) {
-    statistical(0.6749)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 0.35, AntiKt4Topo) {
-  bin(110<pt<140,0.0<abseta<2.5) {
-    statistical(0.6128)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, -1.25, AntiKt4Topo) {
-  bin(110<pt<140,0.0<abseta<2.5) {
-    statistical(0.5963)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 2.2, AntiKt4Topo) {
-  bin(140<pt<200,0.0<abseta<2.5) {
-    statistical(0.4914)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 1.8, AntiKt4Topo) {
-  bin(140<pt<200,0.0<abseta<2.5) {
-    statistical(0.4610)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 0.35, AntiKt4Topo) {
-  bin(140<pt<200,0.0<abseta<2.5) {
-    statistical(0.4659)
-  }
-}
-Correlation(pTrel, system8, bottom, JetFitterCOMBNN, -1.25, AntiKt4Topo) {
-  bin(140<pt<200,0.0<abseta<2.5) {
-    statistical(0.4798)
-  }
-}
 Correlation(pTrel, system8, bottom, MV1, 0.905363, AntiKt4Topo) {
   bin(20<pt<30,0.0<abseta<2.5) {
-    statistical(0.6409)
+    statistical(0.4751)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.601713, AntiKt4Topo) {
   bin(20<pt<30,0.0<abseta<2.5) {
-    statistical(0.5572)
+    statistical(0.3664)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.404219, AntiKt4Topo) {
   bin(20<pt<30,0.0<abseta<2.5) {
-    statistical(0.5178)
+    statistical(0.3156)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.0714225, AntiKt4Topo) {
   bin(20<pt<30,0.0<abseta<2.5) {
-    statistical(0.3733)
+    statistical(0.1872)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.905363, AntiKt4Topo) {
   bin(30<pt<40,0.0<abseta<2.5) {
-    statistical(0.7784)
+    statistical(0.5222)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.601713, AntiKt4Topo) {
   bin(30<pt<40,0.0<abseta<2.5) {
-    statistical(0.7114)
+    statistical(0.4250)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.404219, AntiKt4Topo) {
   bin(30<pt<40,0.0<abseta<2.5) {
-    statistical(0.6756)
+    statistical(0.3775)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.0714225, AntiKt4Topo) {
   bin(30<pt<40,0.0<abseta<2.5) {
-    statistical(0.6016)
+    statistical(0.2832)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.905363, AntiKt4Topo) {
   bin(40<pt<50,0.0<abseta<2.5) {
-    statistical(0.7957)
+    statistical(0.5088)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.601713, AntiKt4Topo) {
   bin(40<pt<50,0.0<abseta<2.5) {
-    statistical(0.7431)
+    statistical(0.4279)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.404219, AntiKt4Topo) {
   bin(40<pt<50,0.0<abseta<2.5) {
-    statistical(0.7357)
+    statistical(0.3986)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.0714225, AntiKt4Topo) {
   bin(40<pt<50,0.0<abseta<2.5) {
-    statistical(0.7165)
+    statistical(0.3294)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.905363, AntiKt4Topo) {
   bin(50<pt<60,0.0<abseta<2.5) {
-    statistical(0.8454)
+    statistical(0.5318)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.601713, AntiKt4Topo) {
   bin(50<pt<60,0.0<abseta<2.5) {
-    statistical(0.8328)
+    statistical(0.4746)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.404219, AntiKt4Topo) {
   bin(50<pt<60,0.0<abseta<2.5) {
-    statistical(0.8331)
+    statistical(0.4459)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.0714225, AntiKt4Topo) {
   bin(50<pt<60,0.0<abseta<2.5) {
-    statistical(0.8154)
+    statistical(0.3750)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.905363, AntiKt4Topo) {
   bin(60<pt<75,0.0<abseta<2.5) {
-    statistical(0.8237)
+    statistical(0.5052)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.601713, AntiKt4Topo) {
   bin(60<pt<75,0.0<abseta<2.5) {
-    statistical(0.8249)
+    statistical(0.4594)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.404219, AntiKt4Topo) {
   bin(60<pt<75,0.0<abseta<2.5) {
-    statistical(0.7999)
+    statistical(0.4209)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.0714225, AntiKt4Topo) {
   bin(60<pt<75,0.0<abseta<2.5) {
-    statistical(0.7818)
+    statistical(0.3541)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.905363, AntiKt4Topo) {
   bin(75<pt<90,0.0<abseta<2.5) {
-    statistical(0.8389)
+    statistical(0.5154)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.601713, AntiKt4Topo) {
   bin(75<pt<90,0.0<abseta<2.5) {
-    statistical(0.8449)
+    statistical(0.4746)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.404219, AntiKt4Topo) {
   bin(75<pt<90,0.0<abseta<2.5) {
-    statistical(0.8258)
+    statistical(0.4391)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.0714225, AntiKt4Topo) {
   bin(75<pt<90,0.0<abseta<2.5) {
-    statistical(0.8167)
+    statistical(0.3781)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.905363, AntiKt4Topo) {
   bin(90<pt<110,0.0<abseta<2.5) {
-    statistical(0.7984)
+    statistical(0.4739)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.601713, AntiKt4Topo) {
   bin(90<pt<110,0.0<abseta<2.5) {
-    statistical(0.7844)
+    statistical(0.4221)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.404219, AntiKt4Topo) {
   bin(90<pt<110,0.0<abseta<2.5) {
-    statistical(0.7850)
+    statistical(0.4002)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.0714225, AntiKt4Topo) {
   bin(90<pt<110,0.0<abseta<2.5) {
-    statistical(0.7990)
+    statistical(0.3488)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.905363, AntiKt4Topo) {
   bin(110<pt<140,0.0<abseta<2.5) {
-    statistical(0.6699)
+    statistical(0.4057)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.601713, AntiKt4Topo) {
   bin(110<pt<140,0.0<abseta<2.5) {
-    statistical(0.6480)
+    statistical(0.3607)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.404219, AntiKt4Topo) {
   bin(110<pt<140,0.0<abseta<2.5) {
-    statistical(0.6276)
+    statistical(0.3330)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.0714225, AntiKt4Topo) {
   bin(110<pt<140,0.0<abseta<2.5) {
-    statistical(0.6080)
+    statistical(0.2751)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.905363, AntiKt4Topo) {
   bin(140<pt<200,0.0<abseta<2.5) {
-    statistical(0.5259)
+    statistical(0.3361)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.601713, AntiKt4Topo) {
   bin(140<pt<200,0.0<abseta<2.5) {
-    statistical(0.4805)
+    statistical(0.2767)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.404219, AntiKt4Topo) {
   bin(140<pt<200,0.0<abseta<2.5) {
-    statistical(0.4749)
+    statistical(0.2591)
   }
 }
 Correlation(pTrel, system8, bottom, MV1, 0.0714225, AntiKt4Topo) {
   bin(140<pt<200,0.0<abseta<2.5) {
-    statistical(0.4527)
+    statistical(0.2061)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
+  bin(20<pt<30,0.0<abseta<2.5) {
+    statistical(0.5109)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, 1.7, AntiKt4Topo) {
+  bin(20<pt<30,0.0<abseta<2.5) {
+    statistical(0.3911)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, -0.8, AntiKt4Topo) {
+  bin(20<pt<30,0.0<abseta<2.5) {
+    statistical(0.2436)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
+  bin(30<pt<40,0.0<abseta<2.5) {
+    statistical(0.5512)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, 1.7, AntiKt4Topo) {
+  bin(30<pt<40,0.0<abseta<2.5) {
+    statistical(0.4524)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, -0.8, AntiKt4Topo) {
+  bin(30<pt<40,0.0<abseta<2.5) {
+    statistical(0.3401)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
+  bin(40<pt<50,0.0<abseta<2.5) {
+    statistical(0.5230)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, 1.7, AntiKt4Topo) {
+  bin(40<pt<50,0.0<abseta<2.5) {
+    statistical(0.4620)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, -0.8, AntiKt4Topo) {
+  bin(40<pt<50,0.0<abseta<2.5) {
+    statistical(0.3751)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
+  bin(50<pt<60,0.0<abseta<2.5) {
+    statistical(0.5361)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, 1.7, AntiKt4Topo) {
+  bin(50<pt<60,0.0<abseta<2.5) {
+    statistical(0.4833)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, -0.8, AntiKt4Topo) {
+  bin(50<pt<60,0.0<abseta<2.5) {
+    statistical(0.4139)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
+  bin(60<pt<75,0.0<abseta<2.5) {
+    statistical(0.5098)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, 1.7, AntiKt4Topo) {
+  bin(60<pt<75,0.0<abseta<2.5) {
+    statistical(0.4446)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, -0.8, AntiKt4Topo) {
+  bin(60<pt<75,0.0<abseta<2.5) {
+    statistical(0.3891)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
+  bin(75<pt<90,0.0<abseta<2.5) {
+    statistical(0.5169)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, 1.7, AntiKt4Topo) {
+  bin(75<pt<90,0.0<abseta<2.5) {
+    statistical(0.4673)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, -0.8, AntiKt4Topo) {
+  bin(75<pt<90,0.0<abseta<2.5) {
+    statistical(0.4028)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
+  bin(90<pt<110,0.0<abseta<2.5) {
+    statistical(0.4768)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, 1.7, AntiKt4Topo) {
+  bin(90<pt<110,0.0<abseta<2.5) {
+    statistical(0.4259)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, -0.8, AntiKt4Topo) {
+  bin(90<pt<110,0.0<abseta<2.5) {
+    statistical(0.3658)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
+  bin(110<pt<140,0.0<abseta<2.5) {
+    statistical(0.3889)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, 1.7, AntiKt4Topo) {
+  bin(110<pt<140,0.0<abseta<2.5) {
+    statistical(0.3416)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, -0.8, AntiKt4Topo) {
+  bin(110<pt<140,0.0<abseta<2.5) {
+    statistical(0.2956)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, 4.55, AntiKt4Topo) {
+  bin(140<pt<200,0.0<abseta<2.5) {
+    statistical(0.3042)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, 1.7, AntiKt4Topo) {
+  bin(140<pt<200,0.0<abseta<2.5) {
+    statistical(0.2752)
+  }
+}
+Correlation(pTrel, system8, bottom, IP3DSV1, -0.8, AntiKt4Topo) {
+  bin(140<pt<200,0.0<abseta<2.5) {
+    statistical(0.2277)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 2.2, AntiKt4Topo) {
+  bin(20<pt<30,0.0<abseta<2.5) {
+    statistical(0.4424)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 1.8, AntiKt4Topo) {
+  bin(20<pt<30,0.0<abseta<2.5) {
+    statistical(0.4328)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 0.35, AntiKt4Topo) {
+  bin(20<pt<30,0.0<abseta<2.5) {
+    statistical(0.3422)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, -1.25, AntiKt4Topo) {
+  bin(20<pt<30,0.0<abseta<2.5) {
+    statistical(0.1956)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 2.2, AntiKt4Topo) {
+  bin(30<pt<40,0.0<abseta<2.5) {
+    statistical(0.5196)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 1.8, AntiKt4Topo) {
+  bin(30<pt<40,0.0<abseta<2.5) {
+    statistical(0.4939)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 0.35, AntiKt4Topo) {
+  bin(30<pt<40,0.0<abseta<2.5) {
+    statistical(0.4143)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, -1.25, AntiKt4Topo) {
+  bin(30<pt<40,0.0<abseta<2.5) {
+    statistical(0.3410)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 2.2, AntiKt4Topo) {
+  bin(40<pt<50,0.0<abseta<2.5) {
+    statistical(0.5061)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 1.8, AntiKt4Topo) {
+  bin(40<pt<50,0.0<abseta<2.5) {
+    statistical(0.4956)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 0.35, AntiKt4Topo) {
+  bin(40<pt<50,0.0<abseta<2.5) {
+    statistical(0.4249)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, -1.25, AntiKt4Topo) {
+  bin(40<pt<50,0.0<abseta<2.5) {
+    statistical(0.3506)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 2.2, AntiKt4Topo) {
+  bin(50<pt<60,0.0<abseta<2.5) {
+    statistical(0.5431)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 1.8, AntiKt4Topo) {
+  bin(50<pt<60,0.0<abseta<2.5) {
+    statistical(0.5265)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 0.35, AntiKt4Topo) {
+  bin(50<pt<60,0.0<abseta<2.5) {
+    statistical(0.4596)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, -1.25, AntiKt4Topo) {
+  bin(50<pt<60,0.0<abseta<2.5) {
+    statistical(0.4107)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 2.2, AntiKt4Topo) {
+  bin(60<pt<75,0.0<abseta<2.5) {
+    statistical(0.5189)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 1.8, AntiKt4Topo) {
+  bin(60<pt<75,0.0<abseta<2.5) {
+    statistical(0.5037)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 0.35, AntiKt4Topo) {
+  bin(60<pt<75,0.0<abseta<2.5) {
+    statistical(0.4510)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, -1.25, AntiKt4Topo) {
+  bin(60<pt<75,0.0<abseta<2.5) {
+    statistical(0.3835)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 2.2, AntiKt4Topo) {
+  bin(75<pt<90,0.0<abseta<2.5) {
+    statistical(0.5285)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 1.8, AntiKt4Topo) {
+  bin(75<pt<90,0.0<abseta<2.5) {
+    statistical(0.5182)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 0.35, AntiKt4Topo) {
+  bin(75<pt<90,0.0<abseta<2.5) {
+    statistical(0.4665)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, -1.25, AntiKt4Topo) {
+  bin(75<pt<90,0.0<abseta<2.5) {
+    statistical(0.4103)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 2.2, AntiKt4Topo) {
+  bin(90<pt<110,0.0<abseta<2.5) {
+    statistical(0.4863)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 1.8, AntiKt4Topo) {
+  bin(90<pt<110,0.0<abseta<2.5) {
+    statistical(0.4729)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 0.35, AntiKt4Topo) {
+  bin(90<pt<110,0.0<abseta<2.5) {
+    statistical(0.4284)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, -1.25, AntiKt4Topo) {
+  bin(90<pt<110,0.0<abseta<2.5) {
+    statistical(0.3720)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 2.2, AntiKt4Topo) {
+  bin(110<pt<140,0.0<abseta<2.5) {
+    statistical(0.4055)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 1.8, AntiKt4Topo) {
+  bin(110<pt<140,0.0<abseta<2.5) {
+    statistical(0.4080)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 0.35, AntiKt4Topo) {
+  bin(110<pt<140,0.0<abseta<2.5) {
+    statistical(0.3430)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, -1.25, AntiKt4Topo) {
+  bin(110<pt<140,0.0<abseta<2.5) {
+    statistical(0.2980)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 2.2, AntiKt4Topo) {
+  bin(140<pt<200,0.0<abseta<2.5) {
+    statistical(0.3222)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 1.8, AntiKt4Topo) {
+  bin(140<pt<200,0.0<abseta<2.5) {
+    statistical(0.2932)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, 0.35, AntiKt4Topo) {
+  bin(140<pt<200,0.0<abseta<2.5) {
+    statistical(0.2705)
+  }
+}
+Correlation(pTrel, system8, bottom, JetFitterCOMBNN, -1.25, AntiKt4Topo) {
+  bin(140<pt<200,0.0<abseta<2.5) {
+    statistical(0.2465)
   }
 }
 Correlation(pTrel, system8, bottom, SV0, 5.65, AntiKt4Topo) {
   bin(20<pt<30,0.0<abseta<2.5) {
-    statistical(0.7006)
+    statistical(0.5680)
   }
 }
 Correlation(pTrel, system8, bottom, SV0, 5.65, AntiKt4Topo) {
   bin(30<pt<40,0.0<abseta<2.5) {
-    statistical(0.8215)
+    statistical(0.6167)
   }
 }
 Correlation(pTrel, system8, bottom, SV0, 5.65, AntiKt4Topo) {
   bin(40<pt<50,0.0<abseta<2.5) {
-    statistical(0.8387)
+    statistical(0.5983)
   }
 }
 Correlation(pTrel, system8, bottom, SV0, 5.65, AntiKt4Topo) {
   bin(50<pt<60,0.0<abseta<2.5) {
-    statistical(0.8589)
+    statistical(0.5942)
   }
 }
 Correlation(pTrel, system8, bottom, SV0, 5.65, AntiKt4Topo) {
   bin(60<pt<75,0.0<abseta<2.5) {
-    statistical(0.8403)
+    statistical(0.5658)
   }
 }
 Correlation(pTrel, system8, bottom, SV0, 5.65, AntiKt4Topo) {
   bin(75<pt<90,0.0<abseta<2.5) {
-    statistical(0.8424)
+    statistical(0.5636)
   }
 }
 Correlation(pTrel, system8, bottom, SV0, 5.65, AntiKt4Topo) {
   bin(90<pt<110,0.0<abseta<2.5) {
-    statistical(0.8190)
+    statistical(0.5319)
   }
 }
 Correlation(pTrel, system8, bottom, SV0, 5.65, AntiKt4Topo) {
   bin(110<pt<140,0.0<abseta<2.5) {
-    statistical(0.6694)
+    statistical(0.4371)
   }
 }
 Correlation(pTrel, system8, bottom, SV0, 5.65, AntiKt4Topo) {
   bin(140<pt<200,0.0<abseta<2.5) {
-    statistical(0.5333)
+    statistical(0.3687)
   }
 }

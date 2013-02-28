@@ -24,7 +24,7 @@ inputs = [
     "KinFit_ljet/*.txt",
     "KinSel_dilet/*.txt",
 
-    "cc_MV1-test.txt",
+    "stat_correlation_inputs.txt",
     "defaults.txt",
     "trigger_config.txt"
     ]
