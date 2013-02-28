@@ -105,6 +105,14 @@ ignore_analyses = [
     "pTrel-.*-AntiKt4Topo:20-pt-200:1.8-abseta-2.5",
 
     ".*:25-pt-30:.*",
+	
+# left over from some folks adding stuff that shouldn't be in here.
+	".*JetProb.*",
+	".*IP3DSV1-1.55.*",
+	".*SV060-1e-06.*",
+
+# Some other things that should be left out because it was easy to put the files
+# in.
 
     "pTrel-system8-bottom-.*-AntiKt4Topo:200-pt-250:0-abseta-2.5",
     "sv0mass-light-MV1-0.601713-AntiKt4Topo.*",
