@@ -21,10 +21,9 @@ inputs = [
     "negativetag/TrigTightBL1/*.txt",
     "negativetag/TrigTightL2M/*.txt",
     "ptrel/*.txt",
-    "KinSel_ljet/*.txt",
+    "KinFit_ljet/*.txt",
     "KinSel_dilet/*.txt",
 
-#    "stat_correlation_inputs.txt",
     "cc_MV1-test.txt",
     "defaults.txt",
     "trigger_config.txt"
@@ -90,6 +89,9 @@ analysisGroupings = {
 		'ttbar': ["ttbarKFlepjet", "ttbar_kinsel_dilep"],
 		'all': ["ttbarKFlepjet", "ttbar_kinsel_dilep", "pTrel", "system8"],
 		},
+	'light': {}
+	'charm': {}
+	'tau': {}
     }
 
 #
