@@ -1,12 +1,5 @@
 Default(PDFmethod_dilepton_emu_2and3jets, bottom, *, *, *)
 
-Default(all, bottom, MV1c, *, AntiKt4TopoLCJVF)
-Default(all, bottom, MV1c, *, AntiKt4TopoEMJVF)
-Default(pTrel, bottom, MV1c, *, AntiKt4TopoLCnoJVF)
-Default(pTrel, bottom, MV1c, *, AntiKt4TopoEMnoJVF)
-
-Default(KinSel_dilep, bottom, JetFitterCOMBCharm, *, *)
-
 Default(DStar, charm, *, *, *)
 Default(DStar, tau, *, *, *)
 
