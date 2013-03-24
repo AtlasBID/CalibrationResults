@@ -4,7 +4,7 @@
 #
 
 title = "Winter 2013 B-Tagging SF Results (Giacinto) - PLHC"
-name = "2013-Winter"
+name = "2013-PLHC"
 description = "Winter 2013 results for dijet and ttbar (pdf method from Giacinto), based on 2012 data"
 
 #
