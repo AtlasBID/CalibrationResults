@@ -95,7 +95,7 @@ analysisGroupings = {
     }
 
 CombinationTypeInfo = [
-    { "type": "binbybin", "prefix" : "bbb_" }
+    { "type": "binbybin", "prefix" : "bbb_" },
     { "type": "profile", "prefix" : "" }
     ]
 
