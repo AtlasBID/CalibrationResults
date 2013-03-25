@@ -313,72 +313,86 @@ def doComboImpl (configInfo, html):
         return
 
     #
+    # Figure out what types of combination we are going to run.
+    #
+
+    comboTypeInfo = [{"type" : "profile", "prefix" : ""}]
+    if "CombinationTypeInfo" in configInfo.__dict__:
+        comboTypeInfo = configInfo.CombinationTypeInfo
+
+    #
     # Next, do the combination itself
     #
 
     print >> html, "<h1>Combination</h1>"
 
     for cmd in stdCmdArgs:
-        baseOutputName = "%s-%s" % (configInfo.name, hash(cmd))
-        combinedFilename = "%s-sf.txt" % baseOutputName
-        cmdLog = "%s-cmb-log.txt" % baseOutputName
-        cmdOpt = "%s-cmb-cmd.txt" % baseOutputName
+        for comboType in comboTypeInfo:
+            cmd = cmd + " --%s" % comboType["type"]
+            if len(comboType["prefix"]) > 0:
+                cmd = cmd + " --prefix%s" % comboType["prefix"]
+                
+            baseOutputName = "%s-%s" % (configInfo.name, hash(cmd))
+            combinedFilename = "%s-sf.txt" % baseOutputName
+            cmdLog = "%s-cmb-log.txt" % baseOutputName
+            cmdOpt = "%s-cmb-cmd.txt" % baseOutputName
 
-        # Should we run the combo?
-        dorun = True
+            # Should we run the combo?
+            dorun = True
 
-        if not configInfo.runCombination:
-            dorun = False
+            if not configInfo.runCombination:
+                dorun = False
 
-        if os.path.exists(combinedFilename):
-            dorun = False
-
-        if not dorun:
-            print >> html, "Not running the combination."
-            if not os.path.exists(cmdLog):
-                print >> html, "<b>Log file is missing for this combination run! Delete %s to re-run</b>" % combinedFilename
-            else:
-                print >> html, " Dumping file from last run of combination and including those results in later calculations."
-                dumpFile(html, cmdLog)
-
-        else:
-            # Cache the options for later use
-
-            cout = open(cmdOpt, 'w')
-            print >> cout, cmd
-            cout.close()
-
-            # Run the combo
+            if os.path.exists(combinedFilename):
+                dorun = False
+                    
+            if not dorun:
+                print >> html, "Not running the combination."
         
-            errcode = dumpCommandResult(html, "FTCombine.exe %s" % cmd, store=cmdLog)
+                if not os.path.exists(cmdLog):
+                    print >> html, "<b>Log file is missing for this combination run! Delete %s to re-run</b>" % combinedFilename
+                else:
+                    print >> html, " Dumping file from last run of combination and including those results in later calculations."
+                    dumpFile(html, cmdLog)
 
-            # If no output file appeared, then we also failed.
-            if errcode == 0:
-                if not os.path.exists("combined.txt"):
-                    errcode = -1000
-
-            # Cache all the files we can for this run so they are easy to get at.
-            if errcode == 0:
-                shutil.move("combined.txt", "%s-sf.txt" % baseOutputName )
-                if os.path.exists("output.root"):
-                    shutil.move("output.root", "%s-diagnostics.root" % baseOutputName )
-                if os.path.exists("combined.dot"):
-                    shutil.move("combined.dot", "%s-combined.dot" % baseOutputName )
             else:
-                print >> html, "<b>Combination failed with error code %s</b><p>" % errcode
-                print >> html, "Command line arguments: %s" % cmd
-                print "The Combination failed"
+                # Cache the options for later use
+
+                cout = open(cmdOpt, 'w')
+                print >> cout, cmd
+                cout.close()
+
+                # Run the combo
+        
+                errcode = dumpCommandResult(html, "FTCombine.exe %s" % cmd, store=cmdLog)
+
+                # If no output file appeared, then we also failed.
+                if errcode == 0:
+                    if not os.path.exists("combined.txt"):
+                        errcode = -1000
+
+                # Cache all the files we can for this run so they are easy to get at.
+                if errcode == 0:
+                    shutil.move("combined.txt", "%s-sf.txt" % baseOutputName )
+                    if os.path.exists("output.root"):
+                        shutil.move("output.root", "%s-diagnostics.root" % baseOutputName )
+                        if os.path.exists("combined.dot"):
+                            shutil.move("combined.dot", "%s-combined.dot" % baseOutputName )
+                else:
+                    print >> html, "<b>Combination failed with error code %s</b><p>" % errcode
+                    print >> html, "Command line arguments: %s" % cmd
+                    print "The Combination failed"
 
     
-        # if we have an output file, include it in things we do below.
-        if os.path.exists(combinedFilename):
-            stdCmdArgs.addToStandard(combinedFilename)
+            # if we have an output file, include it in things we do below.
+            if os.path.exists(combinedFilename):
+                stdCmdArgs.addToStandard(combinedFilename)
 
-            print >> html, '<a href="%s-diagnostics.root">Diagnostics root file</a>' % baseOutputName
-            print >> html, '<a href="%s-combined.dot">graphviz input file</a>' % baseOutputName
-            print >> html, '<a href="%s-sf.txt">Scale Factor text file</a>' % baseOutputName
-            print >> html, '<a href="%s-cmb-cmd.txt">Command Line</a>' % baseOutputName
-            print >> html, "<p>"
+                print >> html, '<a href="%s-diagnostics.root">Diagnostics root file</a>' % baseOutputName
+                print >> html, '<a href="%s-combined.dot">graphviz input file</a>' % baseOutputName
+                print >> html, '<a href="%s-sf.txt">Scale Factor text file</a>' % baseOutputName
+                print >> html, '<a href="%s-cmb-cmd.txt">Command Line</a>' % baseOutputName
+                print >> html, "<p>"
 
     #
     # Generate plots for everyone we've done.

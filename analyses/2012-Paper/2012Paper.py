@@ -94,6 +94,11 @@ analysisGroupings = {
 	'tau': {}
     }
 
+CombinationTypeInfo = [
+    { "type": "binbybin", "prefix" : "bbb_" }
+    { "type": "profile", "prefix" : "" }
+    ]
+
 #
 # List of guys that we are going to ignore during our
 # running
