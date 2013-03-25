@@ -326,9 +326,9 @@ def doComboImpl (configInfo, html):
 
     print >> html, "<h1>Combination</h1>"
 
-    for cmd in stdCmdArgs:
+    for cmdg in stdCmdArgs:
         for comboType in comboTypeInfo:
-            cmd = cmd + " --%s" % comboType["type"]
+            cmd = cmdg + " --%s" % comboType["type"]
             if len(comboType["prefix"]) > 0:
                 cmd = cmd + " --prefix%s" % comboType["prefix"]
                 
