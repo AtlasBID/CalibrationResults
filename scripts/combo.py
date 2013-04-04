@@ -164,7 +164,7 @@ def buildArgs(config):
 #
 # Run a command line and return the data. Store to an output file if it is set.
 #
-def runProc(cmdline, output, printtime, store = None):
+def runProc(cmdline, output, printtime, store = None, printoutput = True):
     args = cmdline.split()
     fout = None
     if store:
@@ -178,7 +178,8 @@ def runProc(cmdline, output, printtime, store = None):
         line = line.rstrip()
         if printtime:
             line = "%s   %s" % (time.asctime(), line)
-        print >> output, line
+        if printoutput:
+            print >> output, line
         if store:
             print >> fout, line
 
@@ -224,11 +225,11 @@ def getCommandResult (cmdline):
 # error code. We will add the "time" to the output if requested, and
 # we can also tee the info to file 'store'
 #
-def dumpCommandResult (html, cmdline, title="", printtime=True, store = None):
+def dumpCommandResult (html, cmdline, title="", printtime=True, store = None, printoutput=True):
     if title <> "":
         print >> html, "<h1>%s</h1>" % title
     print >> html, "<PRE>"
-    err = runProc(cmdline, html, printtime, store)
+    err = runProc(cmdline, html, printtime, store, printoutput)
     print >> html, "</PRE>"
     print >> html, "result code: %d" % err
     return err
@@ -393,6 +394,13 @@ def doComboImpl (configInfo, html):
                 print >> html, '<a href="%s-sf.txt">Scale Factor text file</a>' % baseOutputName
                 print >> html, '<a href="%s-cmb-cmd.txt">Command Line</a>' % baseOutputName
                 print >> html, "<p>"
+
+    #
+    # Generate the meta data
+    #
+
+    dumpCommandResult(html, "FTDump.exe --meta --metaBins %s" % stdCmdArgs.GetBaseConfig(), "SF Metadata", store="%s-metadata.txt"%configInfo.name, printoutput=False, printtime=False)
+    print >> html, '<a href="%s-metadata.txt">Metadata</a>' % configInfo.name
 
     #
     # Generate plots for everyone we've done.
