@@ -107,10 +107,19 @@ def buildArgs(config):
             raise "Unable to find any input files!"
             
     #
+    # Are there any systematic errors they don't wnat looked at?
+    #
+
+    dropSysErrorFlags = ""
+    if "droppedSystematicErrors" in config.__dict__:
+        for sys in config.droppedSystematicErrors:
+            dropSysErrorFlags += '--ignoreSysError "%s" '%sys
+
+    #
     # Build the commands out of that.
     #
 
-    cmdfile = cmdSequences ("%s %s" % (inputs, badfiles))
+    cmdfile = cmdSequences ("%s %s %s" % (inputs, badfiles, dropSysErrorFlags))
 
     #
     # If the user wants, they may restrict the analyses that are looked
@@ -170,7 +179,7 @@ def runProc(cmdline, output, printtime, store = None, printoutput = True):
     if store:
         fout = open(store, 'w')
         
-    p = subprocess.Popen(args, stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
+    p = subprocess.Popen(cmdline, stderr=subprocess.STDOUT, stdout=subprocess.PIPE, shell=True)
     while True:
         line = p.stdout.readline()
         if not line:
@@ -310,7 +319,8 @@ def doComboImpl (configInfo, html):
         print "** Warning - Bin Concistency Check Turned Off"
         
     if not success:
-        print "consitancy check failed, stopping now..."
+        print "consistancy check failed, stopping now..."
+        html.close()
         return
 
     #
