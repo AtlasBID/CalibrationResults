@@ -29,7 +29,7 @@ inputs = [
     "trigger_config.txt"
     ]
     
-droppedSystematicErrors = ["semileptonic correction"]
+droppedSystematicErrors = ["scale factor for inclusive b-jets"]
 
 taggers = [
     ["IP3DSV1", "4.55"],
