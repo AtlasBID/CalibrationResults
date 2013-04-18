@@ -12,8 +12,8 @@ description = "Spring 2013 results, based on the full 2012 data, for LHCP"
 #
 
 inputs = [
-    "system8/*.txt",
-    "pdfmethod_ttdilep/*.txt",
+#    "system8/*.txt",
+#    "pdfmethod_ttdilep/*.txt",
     "topo_ttemu/*.txt",
 
 #   "pTRel/*.txt",

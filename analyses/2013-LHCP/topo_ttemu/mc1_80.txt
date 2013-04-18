@@ -1,4 +1,4 @@
-Analysis(ttbar_topo_emu,bottom,MV1,0.8,AntiKt4Topo){
+Analysis(ttbar_topo_emu,bottom,MV1,0.7892,AntiKt4Topo){
   bin(25<pt<30,0<abseta<2.5)
   {
     central_value(0.992,0.052)
