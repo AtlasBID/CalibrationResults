@@ -12,8 +12,8 @@ description = "Spring 2013 results, based on the full 2012 data, for LHCP"
 #
 
 inputs = [
-#    "system8/*.txt",
-#    "pdfmethod_ttdilep/*.txt",
+    "system8/*.txt",
+    "pdfmethod_ttdilep/*.txt",
     "topo_ttemu/*.txt",
 
 #   "pTRel/*.txt",
@@ -126,8 +126,8 @@ ignore_analyses = [
 # The root file that we start everything with.
 #
 
-mcEffRootFile = "TopCalibrations_rel17.2.1.4_MC12.root"
-CDIFile = "%s-rel17.2.1.4_MC12-LHCP.root" % name
+mcEffRootFile = "MCefficiencies_for_CDI_14.4.2013.root"
+CDIFile = "%s-MC12-CDI.root" % name
 
 #
 # Should we avoid the combination?
