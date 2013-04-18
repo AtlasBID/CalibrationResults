@@ -12,14 +12,15 @@ description = "Spring 2013 results, based on the full 2012 data, for LHCP"
 #
 
 inputs = [
+    "system8/*.txt",
+    "pdfmethod_ttdilep/*.txt",
+
 #   "pTRel/*.txt",
-#	"PDFmethod_dilepton/*.txt",
 #    "DStar/*.txt",
 #    "negativetag/*.txt",
     
 #    "defaults.txt",
 
-#    "system8/*.txt",
 #    "sv0mass/*.txt",
 #    "negativetag/TrigMediumBL1/*.txt",
 #    "negativetag/TrigMediumL2M/*.txt",
