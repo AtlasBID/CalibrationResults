@@ -1,6 +1,0 @@
-Default(PDFmethod_dilepton_emu_2and3jets, bottom, *, *, *)
-
-Default(DStar, charm, *, *, *)
-Default(DStar, tau, *, *, *)
-
-Default(negative tags, light, *, *, *)

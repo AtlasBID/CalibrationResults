@@ -3,21 +3,21 @@
 # for the 2012 Paper.
 #
 
-title = "Winter 2013 B-Tagging SF Results (Giacinto) - PLHC"
-name = "2013-PLHC"
-description = "Winter 2013 results for dijet and ttbar (pdf method from Giacinto), based on 2012 data"
+title = "Spring 2013 B-Tagging SF Results - LHCP"
+name = "2013-LHCP"
+description = "Spring 2013 results, based on the full 2012 data, for LHCP"
 
 #
 # Input arguments
 #
 
 inputs = [
-    "pTRel/*.txt",
-	"PDFmethod_dilepton/*.txt",
-    "DStar/*.txt",
-    "negativetag/*.txt",
+#   "pTRel/*.txt",
+#	"PDFmethod_dilepton/*.txt",
+#    "DStar/*.txt",
+#    "negativetag/*.txt",
     
-    "defaults.txt",
+#    "defaults.txt",
 
 #    "system8/*.txt",
 #    "sv0mass/*.txt",
@@ -63,9 +63,9 @@ taggers = [
     ]
 
 TrigTagBuilder = [
-    ["", "-999"],
-    ["JetFitterCOMBNN", "2.20"],
-    ["JetFitterCOMBNN", "-1.25"],
+#    ["", "-999"],
+#    ["JetFitterCOMBNN", "2.20"],
+#    ["JetFitterCOMBNN", "-1.25"],
     ]
 
 TrigTagDataInfo = [
@@ -86,6 +86,7 @@ for tt in TrigTagDataInfo:
         taggers.append(s)
 
 DoOnlyTaggers = []
+
 for t in taggers:
     d = {
         "flavor":"*",
@@ -117,12 +118,6 @@ ignore_analyses = [
 
 # There are a number of OPs that are in the calibration files that shouldn't be in the
 # calibration files.
-
-# MV1 LC 30%
-	".*994450.*",
-	
-# No SV0 taggers!
-	".*SV0.*",
     ]
 
 #
@@ -130,7 +125,7 @@ ignore_analyses = [
 #
 
 mcEffRootFile = "TopCalibrations_rel17.2.1.4_MC12.root"
-CDIFile = "%s-rel17.2.1.4_MC12-LPLHC-Giacinto.root" % name
+CDIFile = "%s-rel17.2.1.4_MC12-LHCP.root" % name
 
 #
 # Should we avoid the combination?
