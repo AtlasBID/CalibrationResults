@@ -146,7 +146,6 @@ def buildArgs(config):
 
     try:
         listofflavors = list(set([l.split('//')[1] for l in allAnalysisNames]))
-        print "got it", listofflavors
     except:
         print "Error parsing inputs:"
         print allAnalysisNames
@@ -332,7 +331,7 @@ def doComboImpl (configInfo, html):
     if not success:
         print "consistancy check failed, stopping now..."
         html.close()
-        return
+        raise BaseException("Consistency check faild, stopping now");
 
     #
     # Figure out what types of combination we are going to run.
