@@ -134,8 +134,19 @@ def buildArgs(config):
         analysisGroups = config.analysisGroupings
 
     allAnalysisNames = getCommandResult("FTDump.exe %s --qnames" % cmdfile.GetFullConfig())
+
+    # Check this for errors first - this is where it will show up
+
+    errs = [l for l in allAnalysisNames if l.startswith("Error")]
+    if len(errs) > 0:
+        print "Error parsing input files:"
+        for l in errs:
+            print " -->", l
+        raise BaseException("failed to parse input files")
+
     try:
         listofflavors = list(set([l.split('//')[1] for l in allAnalysisNames]))
+        print "got it", listofflavors
     except:
         print "Error parsing inputs:"
         print allAnalysisNames
