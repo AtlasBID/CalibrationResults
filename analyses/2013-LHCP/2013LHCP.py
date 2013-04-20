@@ -103,7 +103,16 @@ for t in taggers:
 #
 
 analysisGroupings = {
-    }
+    'bottom': {
+		'ttbar_dilep_emu': ["PDFmethod_dilepton_emu_2jets", "PDFmethod_dilepton_emu_3jets"],
+		'ttbar_ll': ["PDFmethod_dilepton_ll_2jets", "PDFmethod_dilepton_ll_3jets"],
+	},
+}
+
+CombinationTypeInfo = [
+    { "type": "binbybin", "prefix" : "bbb_" },
+    { "type": "profile", "prefix" : "" }
+]
 
 #
 # List of guys that we are going to ignore during our
