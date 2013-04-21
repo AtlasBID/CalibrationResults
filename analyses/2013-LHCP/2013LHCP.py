@@ -104,15 +104,25 @@ for t in taggers:
 
 analysisGroupings = {
     'bottom': {
-		'ttbar_dilep_emu': ["PDFmethod_dilepton_emu_2jets", "PDFmethod_dilepton_emu_3jets"],
+		'ttbar_dilep_emu_fit': ["PDFmethod_dilepton_emu_2jets", "PDFmethod_dilepton_emu_3jets"],
 		'ttbar_ll': ["PDFmethod_dilepton_ll_2jets", "PDFmethod_dilepton_ll_3jets"],
 	},
 }
 
+# DO both a bin-by-bin fit and a profile fit.
 CombinationTypeInfo = [
     { "type": "binbybin", "prefix" : "bbb_" },
     { "type": "profile", "prefix" : "" }
 ]
+
+# Use the bin-by-bin fit, and the difference in the error
+DifferenceAsError = [
+    { "ResultCalib" : "ttbar_dilep_emu",
+      "BaselineCalib" : "bbb_ttbar_dilep_emu_fit",
+      "DeltaCalib" : "ttbar_dilep_emu_fit",
+      "SystematicError" : "Correlated Uncorrelated Fit Delta"
+      }
+    ]
 
 #
 # List of guys that we are going to ignore during our

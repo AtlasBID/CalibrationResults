@@ -416,6 +416,19 @@ def doComboImpl (configInfo, html):
                 print >> html, "<p>"
 
     #
+    # See if we need to combine w/out fit any of these guys
+    #
+
+    if "DifferenceAsError" in configInfo.__dict__:
+        for spec in configInfo.DifferenceAsError:
+            sysCmdError = "outputAna %s calcRelDiff %s %s \"%s\" %s" % (spec["ResultCalib"], spec["BaselineCalib"], spec["DeltaCalib"], spec["SystematicError"], stdCmdArgs.GetBaseConfig())
+            baseOutputName = "%s-%s" % (configInfo.name, hash(sysCmdError))
+            outputFilename = "%s-sf.txt" % baseOutputName
+            dumpCommandResult(html, "FTManipSys.exe %s output %s" % (sysCmdError, outputFilename), "Delta Fit Errors to %s" % spec["ResultCalib"])
+            stdCmdArgs.addToStandard(outputFilename)
+            
+    
+    #
     # Generate the meta data
     #
 
