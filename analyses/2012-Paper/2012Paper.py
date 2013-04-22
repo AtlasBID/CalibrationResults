@@ -99,6 +99,15 @@ CombinationTypeInfo = [
     { "type": "profile", "prefix" : "" }
     ]
 
+# Use the bin-by-bin fit, and the difference in the error
+DifferenceAsError = [
+    { "ResultCalib" : "all_final",
+      "BaselineCalib" : "bbb_all",
+      "DeltaCalib" : "all",
+      "SystematicError" : "Correlated Uncorrelated Fit Delta"
+      }
+    ]
+
 #
 # List of guys that we are going to ignore during our
 # running
