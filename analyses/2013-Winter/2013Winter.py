@@ -106,6 +106,19 @@ analysisGroupings = {
     'all': ["pTrel", "KinSel_dilep"],
     },
     }
+    
+CombinationTypeInfo = [
+    { "type": "binbybin", "prefix" : "bbb_" },
+    { "type": "profile", "prefix" : "" }
+    ]
+
+DifferenceAsError = [
+    { "ResultCalib" : "all_final",
+      "BaselineCalib" : "bbb_all",
+      "DeltaCalib" : "all",
+      "SystematicError" : "Correlated Uncorrelated Fit Delta"
+      }
+    ]
 
 #
 # List of guys that we are going to ignore during our
