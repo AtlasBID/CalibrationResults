@@ -23,8 +23,6 @@ ttdilep_emu_pdf = files("pdfmethod_ttdilep/*.txt") \
 ttdilep_ll_pdf = files("pdfmethod_ttdilep/*.txt") \
                   .filter(["PDFmethod_dilepton_ll_3jets", "PDFmethod_dilepton_ll_2jets"])
 
-ttdilep_emu_pdf = files("topo_ttemu/*.txt")
-
 #
 # Fit the guys
 #
@@ -37,7 +35,8 @@ fit_ttdilep_emu_pdf = ttdilep_emu_pdf.fit("PDFmethod_dilepton_emu_fit")
 # Plots
 #
 
-fit_ttdilep_ll_pdf.plot("pdf_method")
+(fit_ttdilep_ll_pdf + fit_ttdilep_emu_pdf).plot("pdf_method_fits")
+(ttdilep_ll_pdf + ttdilep_emu_pdf + fit_ttdilep_ll_pdf + fit_ttdilep_emu_pdf).plot("pdf_method_all")
 s8.plot("system8")
 
 taggers = [
