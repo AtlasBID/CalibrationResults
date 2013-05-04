@@ -30,7 +30,7 @@ class files (sfObject):
         sfObject.__init__(self)
         self._file_list = pathglob(files)
         if len(self._file_list) == 0:
-            raise "no files for %s" % files
+            raise BaseException("no files for %s" % files)
         
     # We hold only files, so when we are called to resovle to files, it is
     # a pretty simple thing.

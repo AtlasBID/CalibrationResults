@@ -32,12 +32,19 @@ fit_ttdilep_ll_pdf = ttdilep_ll_pdf.fit("PDFmethod_dilepton_ll_fit")
 fit_ttdilep_emu_pdf = ttdilep_emu_pdf.fit("PDFmethod_dilepton_emu_fit")
 
 #
+# Put the fit_ttdilep and S8 on equal footing - for plotting purposes only.
+#
+s8template = files("analyses/2013-LHCP/system8/Combination-AntiKt4TopoLCJVF0_5-MV1_7892.txt")
+fit_ttdilep_s8_binning = (fit_ttdilep_ll_pdf + s8template) \
+                         .rebin("system8", "PDFmethod_dilepton_ll_fit_rebin")
+
+#
 # Plots
 #
 
 (fit_ttdilep_ll_pdf + fit_ttdilep_emu_pdf).plot("pdf_method_fits")
 (ttdilep_ll_pdf + ttdilep_emu_pdf + fit_ttdilep_ll_pdf + fit_ttdilep_emu_pdf).plot("pdf_method_all")
-s8.plot("system8")
+(fit_ttdilep_s8_binning + s8).plot("system8")
 
 taggers = [
 #    ["IP3DSV1", "4.55"],

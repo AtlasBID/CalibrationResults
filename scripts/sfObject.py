@@ -16,12 +16,12 @@ class sfObject:
         try:
             m = __import__(name)
             if name in m.__dict__:
-                f = lambda args: m.__dict__[name](self, args)
+                f = lambda *args: m.__dict__[name](self, *args)
                 return f
             else:
-                raise AttributeError
+                raise AttributeError("The python files with the name %s.py did not have a function called %s." % (name, name))
         except:
-            raise AttributeError
+            raise AttributeError("Unable to load a file called %s.py" % name)
     
     # Combine two sets of files
     def __add__ (self, other):
