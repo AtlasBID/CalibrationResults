@@ -18,38 +18,27 @@ description = "Spring 2013 results, based on the full 2012 data, for LHCP"
 #
 
 s8 = files("system8/*.txt")
-ttdilep_pdf = files("pdfmethod_ttdilep/*.txt")
+ttdilep_emu_pdf = files("pdfmethod_ttdilep/*.txt") \
+                  .filter(["PDFmethod_dilepton_emu_3jets", "PDFmethod_dilepton_emu_2jets"])
+ttdilep_ll_pdf = files("pdfmethod_ttdilep/*.txt") \
+                  .filter(["PDFmethod_dilepton_ll_3jets", "PDFmethod_dilepton_ll_2jets"])
+
 ttdilep_emu_pdf = files("topo_ttemu/*.txt")
+
+#
+# Fit the guys
+#
+
+#fit_ttdilep_emu_pdf = ttdilep_emu_pdf.fit("ttbar_dilep_emu_fit")
+fit_ttdilep_ll_pdf = ttdilep_ll_pdf.fit("PDFmethod_dilepton_ll_fit")
+fit_ttdilep_emu_pdf = ttdilep_emu_pdf.fit("PDFmethod_dilepton_emu_fit")
 
 #
 # Plots
 #
 
+fit_ttdilep_ll_pdf.plot("pdf_method")
 s8.plot("system8")
-
-inputs = [
-    "system8/*.txt",
-    "pdfmethod_ttdilep/*.txt",
-    "topo_ttemu/*.txt",
-
-#   "pTRel/*.txt",
-#    "DStar/*.txt",
-#    "negativetag/*.txt",
-    
-#    "defaults.txt",
-
-#    "sv0mass/*.txt",
-#    "negativetag/TrigMediumBL1/*.txt",
-#    "negativetag/TrigMediumL2M/*.txt",
-#    "negativetag/TrigTightBL1/*.txt",
-#    "negativetag/TrigTightL2M/*.txt",
-#    "KinSel_ljet/*.txt",
-#    "KinSel_dilet/*.txt",
-    
-#    "stat_correlation_inputs.txt",
-#    "cc_MV1-test.txt",
-#    "trigger_config.txt"
-    ]
 
 taggers = [
 #    ["IP3DSV1", "4.55"],
