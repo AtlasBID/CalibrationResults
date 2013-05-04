@@ -18,7 +18,7 @@ def rebin(sfObj, templateAnaName, rebinnedAnaName):
     return rf
 
 #
-# Command object to actually perform the filter.
+# Command object to actually perform the rebinning.
 #
 
 class Rebin:
@@ -38,6 +38,6 @@ class Rebin:
         errcod = dumpCommandResult(html, "FTCombineBins.exe %s" % files, "Combining bins for %s" % self._ana)
         if errcod != 0:
             print >> html, "Failed to rebin! Command line: %s" % files
-            raise BaseException("Unable to filter")
+            raise BaseException("Unable to rebin")
 
         self._ff.SetFName("%s-sf.txt" % baseOutputName)
