@@ -13,7 +13,7 @@ import comboGlobals
 def rebin(sfObj, templateAnaName, rebinnedAnaName):
     rf = FutureFile()
 
-    fc = Rebin(sfObj, templateAnaName, rebinnedAnaName)
+    fc = Rebin(sfObj, rf, templateAnaName, rebinnedAnaName)
     comboGlobals.Commands += [fc]
     return rf
 
@@ -22,10 +22,11 @@ def rebin(sfObj, templateAnaName, rebinnedAnaName):
 #
 
 class Rebin:
-    def __init__ (self, sfinfo, templateName, anaName):
+    def __init__ (self, sfinfo, futureFile, templateName, anaName):
         self._sf = sfinfo
         self._template = templateName
         self._ana = anaName
+        self._ff = futureFile
 
     def Execute (self, html, configInfo):
         files = listToString(self._sf.ResolveToFiles(html))
