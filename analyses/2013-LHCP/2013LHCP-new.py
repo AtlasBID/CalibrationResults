@@ -22,6 +22,13 @@ ttdilep_emu_pdf = files("pdfmethod_ttdilep/*.txt") \
                   .filter(["PDFmethod_dilepton_emu_3jets", "PDFmethod_dilepton_emu_2jets"])
 ttdilep_ll_pdf = files("pdfmethod_ttdilep/*.txt") \
                   .filter(["PDFmethod_dilepton_ll_3jets", "PDFmethod_dilepton_ll_2jets"])
+ttdilep_topo = files("topo_ttemu/*.txt")
+
+#
+# Some checks
+#
+
+ttdilep_topo.dump(check=True)
 
 #
 # Fit the guys
