@@ -55,7 +55,7 @@ class Fit:
             if errcod == 0:
                 shutil.move("combined.txt", outputSFName)
             else:
-                print >> html, "<b>Combination failed with error code %s</b><p>" % errcode
+                print >> html, "<b>Combination failed with error code %s</b><p>" % errcod
                 print >> html, "Command line arguments: %s" % files
                 print "The Combination failed"
                 
