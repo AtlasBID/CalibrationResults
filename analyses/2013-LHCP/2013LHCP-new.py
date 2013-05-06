@@ -50,6 +50,9 @@ ttdilep_emu_pdf = files("pdfmethod_ttdilep/*.txt") \
 ttdilep_ll_pdf = files("pdfmethod_ttdilep/*.txt") \
                  .filter(analyses = ["PDF_dilepton_ll_3jets", "PDF_dilepton_ll_2jets"]) \
                  .filter(taggers=taggers)
+ttdilep_g_rebined_pdf = files("pdfmethod_ttdilep_rebin/*.txt") \
+                        .filter(taggers=taggers)
+
 ttdilep_topo = files("topo_ttemu/*.txt") \
                .filter(taggers=taggers) \
                .filter(ignore=[".*25-pt-30.*"])
@@ -76,8 +79,10 @@ rebin_template = files("commonbinning.txt") \
 rebin_template_30 = files("commonbinning.txt") \
                     .filter(analyses=["rebin_30"])
 
-fit_ttdilep_s8_binning = (fit_ttdilep_ll_pdf + rebin_template) \
+fit_ttdilep_ll_s8_binning = (fit_ttdilep_ll_pdf + rebin_template) \
                          .rebin("rebin", "PDF_dilepton_ll_fit_rebin")
+fit_ttdilep_emu_s8_binning = (fit_ttdilep_emu_pdf + rebin_template) \
+                         .rebin("rebin", "PDF_dilepton_emu_fit_rebin")
 s8_rebinned = (rebin_template + s8) \
               .rebin("rebin", "system8_rebin")
 
@@ -91,11 +96,13 @@ tt_topo = (rebin_template_30 + ttdilep_topo) \
 (fit_ttdilep_ll_pdf + fit_ttdilep_emu_pdf).plot("pdf_method_fits")
 (ttdilep_ll_pdf + ttdilep_emu_pdf + fit_ttdilep_ll_pdf + fit_ttdilep_emu_pdf).plot("pdf_method_all")
 
+(ttdilep_g_rebined_pdf + fit_ttdilep_emu_s8_binning).plot("rebin_test")
+
 #
 # Plot the dijet and the main ttbar fit for comparison as well
 #
 
-(fit_ttdilep_s8_binning + tt_topo + s8_rebinned).plot("tts8_compare")
+(fit_ttdilep_emu_s8_binning + tt_topo + s8_rebinned).plot("tts8_compare")
 
 
 TrigTagBuilder = [
