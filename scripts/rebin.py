@@ -49,8 +49,10 @@ class Rebin:
                 raise BaseException("Unable to rebin")
 
         else:
-            dumpFile(html, cmdLog)
+            dumpFile(html, cmdLog, title)
             print >> html, "<p>Rebin previously run, and no inputs have been changed. Using results from last run.</p>"
+
+        print >> html, '<p><a href="%s">Scale Factor File</a></p>' % outputFile
 
         #
         # File used for later stages in the analysis.
