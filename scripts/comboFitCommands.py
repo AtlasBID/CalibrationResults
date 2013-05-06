@@ -14,7 +14,7 @@ import os
 def listToString (list):
     cmd = ""
     for l in list:
-        cmd += " " + l
+        cmd += " " + str(l)
     return cmd
 
 #
