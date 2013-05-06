@@ -45,10 +45,10 @@ s8 = files("system8/*.txt") \
      .filter(ignore=[".*JVF0_5.*"])
 
 ttdilep_emu_pdf = files("pdfmethod_ttdilep/*.txt") \
-                  .filter(analyses = ["PDFmethod_dilepton_emu_3jets", "PDFmethod_dilepton_emu_2jets"]) \
+                  .filter(analyses = ["PDF_dilepton_emu_3jets", "PDF_dilepton_emu_2jets"]) \
                   .filter(taggers=taggers)
 ttdilep_ll_pdf = files("pdfmethod_ttdilep/*.txt") \
-                 .filter(analyses = ["PDFmethod_dilepton_ll_3jets", "PDFmethod_dilepton_ll_2jets"]) \
+                 .filter(analyses = ["PDF_dilepton_ll_3jets", "PDF_dilepton_ll_2jets"]) \
                  .filter(taggers=taggers)
 ttdilep_topo = files("topo_ttemu/*.txt") \
                .filter(taggers=taggers)
@@ -64,15 +64,15 @@ ttdilep_topo.dump(check=True)
 #
 
 #fit_ttdilep_emu_pdf = ttdilep_emu_pdf.fit("ttbar_dilep_emu_fit")
-fit_ttdilep_ll_pdf = ttdilep_ll_pdf.fit("PDFmethod_dilepton_ll_fit")
-fit_ttdilep_emu_pdf = ttdilep_emu_pdf.fit("PDFmethod_dilepton_emu_fit")
+fit_ttdilep_ll_pdf = ttdilep_ll_pdf.fit("PDF_dilepton_ll_fit")
+fit_ttdilep_emu_pdf = ttdilep_emu_pdf.fit("PDF_dilepton_emu_fit")
 
 #
 # Put the fit_ttdilep and S8 on equal footing - for plotting purposes only.
 #
 rebin_template = files("commonbinning.txt")
 fit_ttdilep_s8_binning = (fit_ttdilep_ll_pdf + rebin_template) \
-                         .rebin("rebin", "PDFmethod_dilepton_ll_fit_rebin")
+                         .rebin("rebin", "PDF_dilepton_ll_fit_rebin")
 s8_rebinned = (rebin_template + s8) \
               .rebin("rebin", "system8_rebin")
 
