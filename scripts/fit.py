@@ -10,9 +10,9 @@ import shutil
 import os
 
 # Called from sfObject, do the fitting
-def fit (sfobj, outputName):
+def fit (sfobj, outputName, binByBin = False):
     rf = FutureFile()
-    fc = Fit(sfobj, outputName, rf)
+    fc = Fit(sfobj, outputName, binByBin, rf)
     comboGlobals.Commands += [fc]
     return rf
 
@@ -21,9 +21,10 @@ def fit (sfobj, outputName):
 # Fit the input files
 #
 class Fit:
-    def __init__ (self, sfinfo, outputAnaName, futureFile):
+    def __init__ (self, sfinfo, outputAnaName, binByBin, futureFile):
         self._sf = sfinfo
         self._fitAna = outputAnaName
+        self._bbb = binByBin
         self._ff = futureFile
 
     def Execute (self, html, configInfo):
@@ -31,11 +32,17 @@ class Fit:
         files = listToString(fList)
         files += " --combinedName %s" % self._fitAna
 
+        if self._bbb:
+            files += " --binbybin"
+
         baseOutputName = "%s-%s" % (configInfo.name, hash(files))
         outputSFName = "%s-sf.txt" % baseOutputName
         cmdLog = "%s-cmd-log.txt" % baseOutputName
 
-        title = "Fitting to %s" % self._fitAna
+        ftype = "profile"
+        if self._bbb:
+            ftype = "bin by bin"
+        title = "Fitting to %s (%s)" % (self._fitAna, ftype)
 
         #
         # Next, see if we have done this command already

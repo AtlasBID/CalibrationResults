@@ -65,8 +65,8 @@ ttdilep_topo.dump(check=True)
 #
 
 #fit_ttdilep_emu_pdf = ttdilep_emu_pdf.fit("ttbar_dilep_emu_fit")
-fit_ttdilep_ll_pdf = ttdilep_ll_pdf.fit("PDF_dilepton_ll_fit")
-fit_ttdilep_emu_pdf = ttdilep_emu_pdf.fit("PDF_dilepton_emu_fit")
+fit_ttdilep_ll_pdf = ttdilep_ll_pdf.bbb_fit("PDF_dilepton_ll_fit")
+fit_ttdilep_emu_pdf = ttdilep_emu_pdf.bbb_fit("PDF_dilepton_emu_fit")
 
 #
 # Put the fit_ttdilep and S8 on equal footing - for plotting purposes only.
