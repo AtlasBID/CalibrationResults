@@ -1,4 +1,8 @@
-from comboFitCommands import dumpCommandResult, listToString
+#
+# Filter the input for some set of criteria.
+#
+
+from comboFitCommands import dumpCommandResult, listToString, rerunCommand, dumpFile
 from FutureFile import FutureFile
 import comboGlobals
 
@@ -27,17 +31,26 @@ class Filter:
         self._ff = futureFile
 
     def Execute (self, html, configInfo):
-        files = listToString(self._sf.ResolveToFiles(html))
+        fList = self._sf.ResolveToFiles(html)
+        files = listToString(fList)
         for a in self._anas:
             files += " --analysis %s" % a
         files += " --asInput"
 
         baseOutputName = "%s-%s" % (configInfo.name, hash(files))
-        files += " output %s-sf.txt" % baseOutputName
+        outputName = "%s-sf.txt" % baseOutputName
+        cmdLog = "%s-cmd-log.txt" % baseOutputName
+        files += " output %s" % outputName
 
-        errcod = dumpCommandResult(html, "FTDump.exe %s" % files, "Filtering for %s" % self._anas)
-        if errcod != 0:
-            print >> html, "Failed to filter! Command line: %s" % files
-            raise BaseException("Unable to filter")
+        title = "Filtering for %s" % self._anas
+        if rerunCommand(fList, outputName):
+            errcod = dumpCommandResult(html, "FTDump.exe %s" % files, title, store=cmdLog)
+            if errcod != 0:
+                print >> html, "Failed to filter! Command line: %s" % files
+                raise BaseException("Unable to filter")
 
-        self._ff.SetFName("%s-sf.txt" % baseOutputName)
+        else:
+            dumpFile(html, cmdLog, title)
+            print >> html, "<p>Using results of last filter command as no inputs have changed.</p>"
+
+        self._ff.SetFName(outputName)

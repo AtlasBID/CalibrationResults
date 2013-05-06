@@ -2,7 +2,7 @@
 #  Rebin one analysis into another analysis
 #
 
-from comboFitCommands import dumpCommandResult, listToString
+from comboFitCommands import dumpCommandResult, listToString, rerunCommand, dumpFile
 from FutureFile import FutureFile
 import comboGlobals
 
@@ -29,16 +29,31 @@ class Rebin:
         self._ff = futureFile
 
     def Execute (self, html, configInfo):
-        files = listToString(self._sf.ResolveToFiles(html))
+        fList = self._sf.ResolveToFiles(html)
+        files = listToString(fList)
 
         files += " templateAna %s outputAna %s" % (self._template, self._ana)
 
         baseOutputName = "%s-%s" % (configInfo.name, hash(files))
-        files += " output %s-sf.txt" % baseOutputName
+        outputFile = "%s-sf.txt" % baseOutputName
+        cmdLog = "%s-cmd-log.txt" % baseOutputName
+        files += " output %s" % outputFile
 
-        errcod = dumpCommandResult(html, "FTCombineBins.exe %s" % files, "Combining bins for %s" % self._ana)
-        if errcod != 0:
-            print >> html, "Failed to rebin! Command line: %s" % files
-            raise BaseException("Unable to rebin")
+        title = "Combining bins for %s" % self._ana
 
-        self._ff.SetFName("%s-sf.txt" % baseOutputName)
+        if rerunCommand(fList, outputFile):
+
+            errcod = dumpCommandResult(html, "FTCombineBins.exe %s" % files, title, store=cmdLog)
+            if errcod != 0:
+                print >> html, "Failed to rebin! Command line: %s" % files
+                raise BaseException("Unable to rebin")
+
+        else:
+            dumpFile(html, cmdLog)
+            print >> html, "<p>Rebin previously run, and no inputs have been changed. Using results from last run.</p>"
+
+        #
+        # File used for later stages in the analysis.
+        #
+        
+        self._ff.SetFName("%s" % outputFile)

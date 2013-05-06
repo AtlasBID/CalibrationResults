@@ -6,6 +6,7 @@
 import subprocess
 import time
 import shutil
+import os
 
 #
 # Convert a list of strings into a single string
@@ -15,6 +16,24 @@ def listToString (list):
     for l in list:
         cmd += " " + l
     return cmd
+
+#
+# Check the list of input file dates against the output file dates. If the inputs are
+# more recent, then we must run again!
+#
+def rerunCommand (inputFiles, outputFile):
+    if not os.path.exists(outputFile):
+        return True
+
+    mod_output = os.stat(outputFile).st_mtime
+
+    for f in inputFiles:
+        if not os.path.exists(f):
+            raise BaseException("Input file %s does not exist. Not possible!" % f)
+        if os.stat(f).st_mtime > mod_output:
+            return True
+
+    return False
 
 #
 # Run a command line and return the data. Store to an output file if it is set.
@@ -100,7 +119,10 @@ def dumpResultSection (html, text,  title):
 #
 # Dump out a file into the html in a <PRE> section.
 #
-def dumpFile (html, fname):
+def dumpFile (html, fname, title=""):
+    if len(title) > 0:
+        print >> html, "<h1>%s</h1>" % title
+
     f = open(fname, 'r')
     print >> html, "<PRE>"
     for l in f:

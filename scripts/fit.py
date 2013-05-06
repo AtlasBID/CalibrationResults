@@ -2,7 +2,7 @@
 # Run a fit on the inputs. This is a new command that runs on the input files.
 #
 
-from comboFitCommands import dumpCommandResult, listToString
+from comboFitCommands import dumpCommandResult, listToString, rerunCommand, dumpFile
 from FutureFile import FutureFile
 import comboGlobals
 
@@ -27,36 +27,59 @@ class Fit:
         self._ff = futureFile
 
     def Execute (self, html, configInfo):
-        files = listToString(self._sf.ResolveToFiles(html))
+        fList = self._sf.ResolveToFiles(html)
+        files = listToString(fList)
         files += " --combinedName %s" % self._fitAna
 
         baseOutputName = "%s-%s" % (configInfo.name, hash(files))
+        outputSFName = "%s-sf.txt" % baseOutputName
+        cmdLog = "%s-cmd-log.txt" % baseOutputName
 
-        cmdout = open("%s-cmd.txt" % baseOutputName, "w")
-        print >>cmdout, files
-        cmdout.close()
+        title = "Fitting to %s" % self._fitAna
+
+        #
+        # Next, see if we have done this command already
+        #
+
+        if rerunCommand(fList, outputSFName):
+
+            cmdout = open("%s-cmd.txt" % baseOutputName, "w")
+            print >>cmdout, files
+            cmdout.close()
         
-        errcod = dumpCommandResult(html, "FTCombine.exe %s" % files, "Fitting to %s" % self._fitAna)
-        if errcod == 0:
-            if not os.path.exists("combined.txt"):
-                errcode = -1000
+            errcod = dumpCommandResult(html, "FTCombine.exe %s" % files, title, store=cmdLog)
+            if errcod == 0:
+                if not os.path.exists("combined.txt"):
+                    errcode = -1000
 
-        if errcod == 0:
-            shutil.move("combined.txt", "%s-sf.txt" % baseOutputName)
-            self._ff.SetFName("%s-sf.txt" % baseOutputName)
-            print >> html, '<a href="%s-sf.txt">Scale Factor text file</a>' % baseOutputName
-            print >> html, '<a href="%s-cmd.txt">Command Line Args</a>' % baseOutputName
-
-            if os.path.exists("output.root"):
-                shutil.move("output.root", "%s-diagnostics.root" % baseOutputName)
-                print >> html, '<a href="%s-diagnostics.root">Diagnostics root file</a>' % baseOutputName
-            if os.path.exists("combined.dot"):
-                shutil.move("combined.dot", "%s-combined.dot" % baseOutputName)
-                print >> html, '<a href="%s-combined.dot">graphviz input file</a>' % baseOutputName
-            print >> html, "<p>"
-
+            if errcod == 0:
+                shutil.move("combined.txt", outputSFName)
+            else:
+                print >> html, "<b>Combination failed with error code %s</b><p>" % errcode
+                print >> html, "Command line arguments: %s" % files
+                print "The Combination failed"
+                
         else:
-            print >> html, "<b>Combination failed with error code %s</b><p>" % errcode
-            print >> html, "Command line arguments: %s" % files
-            print "The Combination failed"
+
+            dumpFile(html, cmdLog, title)
+            print >> html, "<p>Dumping file from last run of combination and including those results in our calculations as"
+            print >> html, "the inputs have not changed since last run.</p>"
+
+
+        #
+        # Ok, regardless of having re-run, dump all the info.
+        #
+
+        self._ff.SetFName(outputSFName)
+        print >> html, '<a href="%s">Scale Factor text file</a>' % outputSFName
+        print >> html, '<a href="%s-cmd.txt">Command Line Args</a>' % baseOutputName
+
+        if os.path.exists("output.root"):
+            shutil.move("output.root", "%s-diagnostics.root" % baseOutputName)
+            print >> html, '<a href="%s-diagnostics.root">Diagnostics root file</a>' % baseOutputName
+        if os.path.exists("combined.dot"):
+            shutil.move("combined.dot", "%s-combined.dot" % baseOutputName)
+            print >> html, '<a href="%s-combined.dot">graphviz input file</a>' % baseOutputName
+        print >> html, "<p>"
+
 
