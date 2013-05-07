@@ -90,6 +90,14 @@ tt_topo = (rebin_template_30 + ttdilep_topo) \
           .rebin("rebin_30", "ttbar_topo_emu_rebin")
 
 #
+# Calculate the new D* values for charm.
+#
+
+dstar_template = files("DStar/*.txt")
+char_sf = (dstar_template + fit_ttdilep_ll_s8_binning + fit_ttdilep_emu_s8_binning).dstar("DStar_<>", "DStar")
+char_sf.plot("charm")
+
+#
 # Plot the two fits so we can compare them (well).
 #
 
