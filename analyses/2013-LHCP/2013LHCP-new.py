@@ -115,9 +115,7 @@ charm_sf.plot("charm")
 # Finally, build the list for the master CDI file.
 #
 
-master_cdi_file = s8 +
-    fit_ttdilep_emu_pdf +
-    charm_sf
+master_cdi_file = s8 + fit_ttdilep_emu_pdf + charm_sf
 
 master_cdi_file.plot("master")
 
