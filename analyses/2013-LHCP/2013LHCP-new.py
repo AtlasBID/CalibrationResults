@@ -112,10 +112,16 @@ charm_sf.plot("charm")
 (fit_ttdilep_emu_s8_binning + tt_topo + s8_rebinned).plot("tts8_compare")
 
 #
+# Light SF come from the negative tags
+#
+
+negative = files("negative/*.txt")
+
+#
 # Finally, build the list for the master CDI file.
 #
 
-master_cdi_file = s8 + fit_ttdilep_emu_pdf + charm_sf
+master_cdi_file = s8 + fit_ttdilep_emu_pdf + charm_sf + negative
 
 master_cdi_file.plot("master")
 
