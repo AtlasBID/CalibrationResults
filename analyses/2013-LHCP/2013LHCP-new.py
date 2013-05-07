@@ -41,8 +41,7 @@ taggers = [
 #
 
 s8 = files("system8/*.txt") \
-     .filter(taggers=taggers) \
-     .filter(ignore=[".*JVF0_5.*"])
+     .filter(taggers=taggers)
 
 ttdilep_emu_pdf = files("pdfmethod_ttdilep/*.txt") \
                   .filter(analyses = ["PDF_dilepton_emu_3jets", "PDF_dilepton_emu_2jets"]) \
@@ -94,8 +93,8 @@ tt_topo = (rebin_template_30 + ttdilep_topo) \
 #
 
 dstar_template = files("DStar/*.txt")
-char_sf = (dstar_template + fit_ttdilep_ll_s8_binning + fit_ttdilep_emu_s8_binning).dstar("DStar_<>", "DStar")
-char_sf.plot("charm")
+charm_sf = (dstar_template + fit_ttdilep_ll_s8_binning + fit_ttdilep_emu_s8_binning).dstar("DStar_<>", "DStar")
+charm_sf.plot("charm")
 
 #
 # Plot the two fits so we can compare them (well).
@@ -112,83 +111,15 @@ char_sf.plot("charm")
 
 (fit_ttdilep_emu_s8_binning + tt_topo + s8_rebinned).plot("tts8_compare")
 
-
-TrigTagBuilder = [
-#    ["", "-999"],
-#    ["JetFitterCOMBNN", "2.20"],
-#    ["JetFitterCOMBNN", "-1.25"],
-    ]
-
-TrigTagDataInfo = [
-#    "TrigTight%s_BE",
-#    "TrigTight%s_KL1",
-#    "TrigTight%s_L2M",
-#    "TrigMedium%s_BE",
-#    "TrigMedium%s_KL1",
-#    "TrigMedium%s_L2M",
-    ]
-
-for tt in TrigTagDataInfo:
-    for tbld in TrigTagBuilder:
-        tname = tbld[0]
-        if len(tname) != 0:
-            tname = "_%s" % tname
-        s = [tt % tname, tbld[1]]
-        taggers.append(s)
-
-DoOnlyTaggers = []
-
-for t in taggers:
-    d = {
-        "flavor":"*",
-        "tagger":t[0],
-        "op":t[1],
-        "jet":"*"
-        }
-    DoOnlyTaggers.append(d)
-    
 #
-# Analysis Groupings - how we want the combination to run
+# Finally, build the list for the master CDI file.
 #
 
-analysisGroupings = {
-    'bottom': {
-		'ttbar_dilep_emu_fit': ["PDFmethod_dilepton_emu_2jets", "PDFmethod_dilepton_emu_3jets"],
-		'ttbar_ll': ["PDFmethod_dilepton_ll_2jets", "PDFmethod_dilepton_ll_3jets"],
-	},
-}
+master_cdi_file = s8 +
+    fit_ttdilep_emu_pdf +
+    charm_sf
 
-# DO both a bin-by-bin fit and a profile fit.
-CombinationTypeInfo = [
-    { "type": "binbybin", "prefix" : "bbb_" },
-    { "type": "profile", "prefix" : "" }
-]
-
-# Use the bin-by-bin fit, and the difference in the error
-DifferenceAsError = [
-    { "ResultCalib" : "ttbar_dilep_emu",
-      "BaselineCalib" : "bbb_ttbar_dilep_emu_fit",
-      "DeltaCalib" : "ttbar_dilep_emu_fit",
-      "SystematicError" : "Correlated Uncorrelated Fit Delta"
-      }
-    ]
-
-#
-# List of guys that we are going to ignore during our
-# running
-#
-ignore_analyses = [
-# These are extra bins put in by ptrel, which we don't
-# want to use in a fit.
-    ".*:20-pt-200:.*", 
-
-# Some ttbar analyses start funny, but all bins must match, so
-# we have to ignore the half bins.
-    ".*:25-pt-30:.*",
-
-# There are a number of OPs that are in the calibration files that shouldn't be in the
-# calibration files.
-    ]
+master_cdi_file.plot("master")
 
 #
 # The root file that we start everything with.
