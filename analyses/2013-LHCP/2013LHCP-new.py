@@ -90,11 +90,12 @@ tt_topo = (rebin_template_30 + ttdilep_topo) \
 
 #
 # Calculate the new D* values for charm.
+# The tau is just an additional error on top of that.
 #
 
 dstar_template = files("DStar/*/*.txt")
 charm_sf = (dstar_template + fit_ttdilep_ll_s8_binning + fit_ttdilep_emu_s8_binning).dstar("DStar_<>", "DStar")
-charm_sf.plot("charm")
+tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
 #
 # Plot the two fits so we can compare them (well).
@@ -115,13 +116,13 @@ charm_sf.plot("charm")
 # Light SF come from the negative tags
 #
 
-negative = files("negative/*.txt")
+negative = files("negative/*.txt").dump(check=True)
 
 #
 # Finally, build the list for the master CDI file.
 #
 
-master_cdi_file = s8 + fit_ttdilep_emu_pdf + charm_sf + negative
+master_cdi_file = s8 + fit_ttdilep_emu_pdf + charm_sf + tau_sf + negative
 
 master_cdi_file.plot("master")
 
