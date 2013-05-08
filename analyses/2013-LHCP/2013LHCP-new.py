@@ -116,13 +116,13 @@ tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau
 # Light SF come from the negative tags
 #
 
-negative = files("negative/*.txt").dump(check=True)
+#negative = files("negative/*.txt").dump(check=True)
 
 #
 # Finally, build the list for the master CDI file.
 #
 
-master_cdi_file = s8 + fit_ttdilep_emu_pdf + charm_sf + tau_sf + negative
+master_cdi_file = s8 + fit_ttdilep_emu_pdf + charm_sf + tau_sf #+ negative
 
 master_cdi_file.plot("master")
 
