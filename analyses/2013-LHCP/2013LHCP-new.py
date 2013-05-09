@@ -63,12 +63,19 @@ ttdilep_topo = files("topo_ttemu/*.txt") \
 #ttdilep_topo.dump(check=True)
 
 #
-# Fit the guys
+# Giacinto provides everything split by jets. So fit them together.
 #
 
-#fit_ttdilep_emu_pdf = ttdilep_emu_pdf.fit("ttbar_dilep_emu_fit")
 fit_ttdilep_ll_pdf = ttdilep_ll_pdf.bbb_fit("PDF_dilepton_ll_fit")
 fit_ttdilep_emu_pdf = ttdilep_emu_pdf.bbb_fit("PDF_dilepton_emu_fit")
+
+#
+# Where we can, we should combine Richards ttbar and s8 results.
+#
+
+dijet = s8
+ttbar = ttdilep_topo
+all = (s8+ttbar).bbb_fit("ttbar_dijet")
 
 #
 # Put the fit_ttdilep and S8 on equal footing - for plotting purposes only.
@@ -87,7 +94,8 @@ fit_ttdilep_emu_s8_binning = (fit_ttdilep_emu_pdf + rebin_template) \
 #                        .rebin("rebin", "ttbar_topo_emu_rebin")
 s8_rebinned = (rebin_template + s8) \
               .rebin("rebin", "system8_rebin")
-
+all_rebin = (all + rebin_template)
+              .rebin("rebin", "ttbar_dijet_rebin")
 tt_topo = (rebin_template_30 + ttdilep_topo) \
           .rebin("rebin_30", "ttbar_topo_emu_rebin")
 
@@ -99,7 +107,7 @@ tt_topo = (rebin_template_30 + ttdilep_topo) \
 
 dstar_template = files("DStar/*/*.txt") \
                  .filter(taggers=taggers)
-charm_sf = (dstar_template + fit_ttdilep_ll_s8_binning + fit_ttdilep_emu_s8_binning + s8_rebinned).dstar("DStar_<>", "DStar")
+charm_sf = (dstar_template + fit_ttdilep_ll_s8_binning + fit_ttdilep_emu_s8_binning + s8_rebinned + all_rebin).dstar("DStar_<>", "DStar")
 tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
 #
@@ -130,7 +138,7 @@ negative = files("negative/*.txt").dump(check=True) \
 #
 
 master_cdi_file = \
-    s8 + fit_ttdilep_emu_pdf + ttdilep_topo \
+    s8 + fit_ttdilep_emu_pdf + ttdilep_topo + all \
     + charm_sf \
     + tau_sf \
     + negative
