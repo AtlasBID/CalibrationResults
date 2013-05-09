@@ -1,4 +1,4 @@
-Analysis(system8,bottom,MV1c,0.92,AntiKt4TopoEMnoJVF)
+Analysis(system8,bottom,MV1c,0.9237,AntiKt4TopoEMnoJVF)
 {
 	bin(20<pt<30,0<abseta<2.5)
 	{
