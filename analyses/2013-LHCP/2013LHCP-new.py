@@ -60,7 +60,7 @@ ttdilep_topo = files("topo_ttemu/*.txt") \
 # Some checks
 #
 
-ttdilep_topo.dump(check=True)
+#ttdilep_topo.dump(check=True)
 
 #
 # Fit the guys
@@ -82,19 +82,23 @@ fit_ttdilep_ll_s8_binning = (fit_ttdilep_ll_pdf + rebin_template) \
                          .rebin("rebin", "PDF_dilepton_ll_fit_rebin")
 fit_ttdilep_emu_s8_binning = (fit_ttdilep_emu_pdf + rebin_template) \
                          .rebin("rebin", "PDF_dilepton_emu_fit_rebin")
+ttdilep_topo_rebinned = (ttdilep_topo + rebin_template) \
+                        .rebin("rebin", "ttbar_topo_emu_rebin")
 s8_rebinned = (rebin_template + s8) \
               .rebin("rebin", "system8_rebin")
 
 tt_topo = (rebin_template_30 + ttdilep_topo) \
           .rebin("rebin_30", "ttbar_topo_emu_rebin")
 
+          
 #
 # Calculate the new D* values for charm.
 # The tau is just an additional error on top of that.
 #
 
-dstar_template = files("DStar/*/*.txt")
-charm_sf = (dstar_template + fit_ttdilep_ll_s8_binning + fit_ttdilep_emu_s8_binning).dstar("DStar_<>", "DStar")
+dstar_template = files("DStar/*/*.txt") \
+                 .filter(taggers=taggers)
+charm_sf = (dstar_template + fit_ttdilep_ll_s8_binning + fit_ttdilep_emu_s8_binning + s8 + ttdilep_topo_rebinned).dstar("DStar_<>", "DStar")
 tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
 #
@@ -124,7 +128,11 @@ negative = files("negative/*.txt").dump(check=True) \
 # Finally, build the list for the master CDI file.
 #
 
-master_cdi_file = s8 + fit_ttdilep_emu_pdf + charm_sf + tau_sf + negative
+master_cdi_file = \
+    s8 + fit_ttdilep_emu_pdf + ttdilep_topo \
+    + charm_sf \
+    + tau_sf \
+    + negative
 master_cdi_file.make_cdi("MC12-CDI", "defaults.txt")
 master_cdi_file.plot("MC12-CDI")
 
