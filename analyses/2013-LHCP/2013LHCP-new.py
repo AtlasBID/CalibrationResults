@@ -94,7 +94,7 @@ fit_ttdilep_emu_s8_binning = (fit_ttdilep_emu_pdf + rebin_template) \
 #                        .rebin("rebin", "ttbar_topo_emu_rebin")
 s8_rebinned = (rebin_template + s8) \
               .rebin("rebin", "system8_rebin")
-all_rebin = (all + rebin_template)
+all_rebin = (all + rebin_template) \
               .rebin("rebin", "ttbar_dijet_rebin")
 tt_topo = (rebin_template_30 + ttdilep_topo) \
           .rebin("rebin_30", "ttbar_topo_emu_rebin")
