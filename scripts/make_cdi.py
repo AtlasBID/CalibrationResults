@@ -2,6 +2,7 @@
 # Create the CDI file from the input files
 #
 
+from files import files
 from comboFitCommands import dumpCommandResult, listToString, dumpFile, rerunCommand
 import comboGlobals
 
@@ -11,7 +12,7 @@ import shutil
 # The CDI operator.
 #
 def make_cdi (sfobj, name, defaults_file = None, Check=True):
-    comboGlobals.Commands += [CDI(sfobj, name, defaults_file, Check)]
+    comboGlobals.Commands += [CDI(sfobj, name, files(defaults_file), Check)]
     return sfobj
 
 #
@@ -37,7 +38,8 @@ class CDI:
 
         lfiles = files
         if self._defaults_file:
-            lfiles += " %s" % self._defaults_file
+            lfiles += " %s" % listToString(self._defaults_file.ResolveToFiles(html))
+            fList += self._defaults_file.ResolveToFiles(html)
 
         if rerunCommand(fList, outFile):
             errcode = dumpCommandResult(html, "FTConvertToCDI.exe %s" % lfiles, title, store=cmdLog)

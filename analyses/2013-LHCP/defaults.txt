@@ -1,0 +1,6 @@
+Default(PDF_dilepton_ll_fit, bottom, *, *, *)
+
+Default(DStar, charm, *, *, *)
+Default(DStar, tau, *, *, *)
+
+Default(negative tags, light, *, *, *)
