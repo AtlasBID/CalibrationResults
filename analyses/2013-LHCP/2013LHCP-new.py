@@ -99,7 +99,7 @@ tt_topo = (rebin_template_30 + ttdilep_topo) \
 
 dstar_template = files("DStar/*/*.txt") \
                  .filter(taggers=taggers)
-charm_sf = (dstar_template + fit_ttdilep_ll_s8_binning + fit_ttdilep_emu_s8_binning + s8).dstar("DStar_<>", "DStar")
+charm_sf = (dstar_template + fit_ttdilep_ll_s8_binning + fit_ttdilep_emu_s8_binning + s8_rebinned).dstar("DStar_<>", "DStar")
 tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
 #
