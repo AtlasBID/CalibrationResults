@@ -82,8 +82,9 @@ fit_ttdilep_ll_s8_binning = (fit_ttdilep_ll_pdf + rebin_template) \
                          .rebin("rebin", "PDF_dilepton_ll_fit_rebin")
 fit_ttdilep_emu_s8_binning = (fit_ttdilep_emu_pdf + rebin_template) \
                          .rebin("rebin", "PDF_dilepton_emu_fit_rebin")
-ttdilep_topo_rebinned = (ttdilep_topo + rebin_template) \
-                        .rebin("rebin", "ttbar_topo_emu_rebin")
+# Rebinning this traditional ttbar results is hard because the low bin is 25-30, not 20-30 as the D* analysis requires
+#ttdilep_topo_rebinned = (ttdilep_topo + rebin_template) \
+#                        .rebin("rebin", "ttbar_topo_emu_rebin")
 s8_rebinned = (rebin_template + s8) \
               .rebin("rebin", "system8_rebin")
 
@@ -98,7 +99,7 @@ tt_topo = (rebin_template_30 + ttdilep_topo) \
 
 dstar_template = files("DStar/*/*.txt") \
                  .filter(taggers=taggers)
-charm_sf = (dstar_template + fit_ttdilep_ll_s8_binning + fit_ttdilep_emu_s8_binning + s8 + ttdilep_topo_rebinned).dstar("DStar_<>", "DStar")
+charm_sf = (dstar_template + fit_ttdilep_ll_s8_binning + fit_ttdilep_emu_s8_binning + s8).dstar("DStar_<>", "DStar")
 tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
 #
