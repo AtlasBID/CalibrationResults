@@ -1,4 +1,4 @@
-Analysis(DStar,charm,MV1,0.9827,AntiKt4LCTopoJVF0_25){
+Analysis(DStar,charm,MV1,0.9827,AntiKt4TopoLCJVF0_25){
   bin(20<pt<30,0<abseta<2.5)
   { 
      central_value(1.01961,0.101174)
