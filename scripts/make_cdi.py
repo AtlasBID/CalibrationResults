@@ -6,6 +6,7 @@ from files import files
 from comboFitCommands import dumpCommandResult, listToString, dumpFile, rerunCommand
 import comboGlobals
 
+import ROOT
 import shutil
 
 #
@@ -14,6 +15,30 @@ import shutil
 def make_cdi (sfobj, name, defaults_file = None, Check=True):
     comboGlobals.Commands += [CDI(sfobj, name, files(defaults_file), Check)]
     return sfobj
+
+#
+# Walk through a root tree and dump it out
+#
+def dumpROOTDir (html, dir, indent):
+    for k in dir.GetListOfKeys():
+        c = ROOT.TClass.GetClass(k.GetClassName())
+        isdir = c.InheritsFrom("TDirectory")
+        if isdir:
+            print >> html, "%s<b>%s</b>" % (indent, k.GetName())
+            dumpROOTDir(html, k.ReadObj(), "%s  " % indent)
+        else:
+            print >> html, "%s<b>%s</b> - <i>%s</i>" % (indent, k.GetName(), k.GetClassName())
+#
+# Dump out the directory contents of a root file
+# so that one can see what is going on in the ROOT file.
+#
+def dumpROOTFile (html, fname):
+    f = ROOT.TFile(fname, "READ")
+    print >> html, "<PRE>"
+    print >> html, "%s" % fname
+    dumpROOTDir (html, f, "  ")
+    f.Close()
+    print >> html, "</PRE>"
 
 #
 # Build the CDI, and run the check.
@@ -65,3 +90,4 @@ class CDI:
                 dumpFile(html, cmdLog)
                 print >> html, "<p>Inputs have not changed, resuing results from last run</p>"
             
+            dumpROOTFile(html, outFile)
