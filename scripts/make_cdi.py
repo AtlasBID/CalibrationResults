@@ -12,8 +12,11 @@ import shutil
 #
 # The CDI operator.
 #
-def make_cdi (sfobj, name, defaults_file = None, Check=True):
-    comboGlobals.Commands += [CDI(sfobj, name, files(defaults_file), Check)]
+def make_cdi (sfobj, name, defaults_file = None, eff_file = None, Check=True):
+    comboGlobals.Commands += [CDI(sfobj, name,
+                                  files(defaults_file, no_files_ok = True),
+                                  files(eff_file, no_files_ok = True),
+                                  Check)]
     return sfobj
 
 #
@@ -45,10 +48,11 @@ def dumpROOTFile (html, fname):
 #
 class CDI:
     # Plot a bunch of inputs with a certian name
-    def __init__(self, sfinfo, name, defaults_file, check):
+    def __init__(self, sfinfo, name, defaults_file, ttbar, check):
         self._sf = sfinfo
         self._name = name
         self._check = check
+        self._ttbar = ttbar
         self._defaults_file = defaults_file
 
     # Run the CDI maker
@@ -65,6 +69,10 @@ class CDI:
         if self._defaults_file:
             lfiles += " %s" % listToString(self._defaults_file.ResolveToFiles(html))
             fList += self._defaults_file.ResolveToFiles(html)
+
+        if self._ttbar:
+            lfiles += " %s" % listToString(["--copy%s" % l for l in self._ttbar.ResolveToFiles(html)])
+            fList += self._ttbar.ResolveToFiles(html)
 
         if rerunCommand(fList, outFile):
             errcode = dumpCommandResult(html, "FTConvertToCDI.exe %s" % lfiles, title, store=cmdLog)

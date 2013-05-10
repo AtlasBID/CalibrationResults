@@ -13,6 +13,8 @@ import os
 # on its own, and then relative to everythign in the sys.path variable.
 #
 def pathglob (name):
+    if name == None:
+        return []
     path_to_try = ["./"] + sys.path
     for p in path_to_try:
         flist = glob.glob(os.path.join(p, name))
@@ -26,11 +28,12 @@ def pathglob (name):
 # Class to get all the files.
 #
 class files (sfObject):
-    def __init__ (self, files):
+    def __init__ (self, files, no_files_ok=False):
         sfObject.__init__(self)
         self._file_list = [f for f in pathglob(files) if os.path.isfile(f)]
         if len(self._file_list) == 0:
-            raise BaseException("no files for %s" % files)
+            if files != None:
+                raise BaseException("no files for %s" % files)
         
     # We hold only files, so when we are called to resovle to files, it is
     # a pretty simple thing.

@@ -13,6 +13,9 @@ import os
 #
 def listToString (list):
     cmd = ""
+    if list == None:
+        return cmd
+    
     for l in list:
         cmd += " " + str(l)
     return cmd
