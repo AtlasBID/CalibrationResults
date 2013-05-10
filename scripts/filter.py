@@ -10,13 +10,13 @@ import comboGlobals
 # We will filter out input files on some criteria
 #
 
-def filter(sfObj, analyses = [], taggers=[], ignore=[]):
-    if len(analyses) == 0 and len(taggers) == 0 and len(ignore) == 0:
+def filter(sfObj, analyses = [], taggers=[], ignore=[], jets=[]):
+    if len(analyses) == 0 and len(taggers) == 0 and len(ignore) == 0 and len(jets) == 0:
         print "Filtering nothing. Will pass everythign on"
         return sfObj
     
     rf = FutureFile()
-    fc = Filter(sfObj, analyses, taggers, ignore, rf)
+    fc = Filter(sfObj, analyses, taggers, ignore, jets, rf)
     comboGlobals.Commands += [fc]
     return rf
 
@@ -25,12 +25,13 @@ def filter(sfObj, analyses = [], taggers=[], ignore=[]):
 #
 
 class Filter:
-    def __init__ (self, sfinfo, analyses, taggers, ignore, futureFile):
+    def __init__ (self, sfinfo, analyses, taggers, ignore, jets, futureFile):
         self._sf = sfinfo
         self._anas = analyses
         self._taggers = taggers
         self._ignore = ignore
         self._ff = futureFile
+        self._jets = jets
 
     def Execute (self, html, configInfo):
         fList = self._sf.ResolveToFiles(html)
@@ -45,6 +46,9 @@ class Filter:
         for i in self._ignore:
             files += " --ignore '%s'" % i
 
+        for j in self._jets:
+            files += " --jetAlgorithm %s" % j
+
         files += " --asInput"
 
         baseOutputName = "%s-%s" % (configInfo.name, hash(files))
@@ -52,7 +56,7 @@ class Filter:
         cmdLog = "%s-cmd-log.txt" % baseOutputName
         files += " output %s" % outputName
 
-        title = "Filtering for %s" % listToString(self._anas + self._taggers + self._ignore)
+        title = "Filtering for %s" % listToString(self._anas + self._taggers + self._ignore + self._jets)
 
         if rerunCommand(fList, outputName):
             errcod = dumpCommandResult(html, "FTDump.exe %s" % files, title, store=cmdLog)

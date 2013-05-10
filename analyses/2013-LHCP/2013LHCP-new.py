@@ -3,6 +3,7 @@
 #
 
 from files import files
+from sfObject import sfObject
 
 #
 # Config for doing the full combination with muon, ttbar, neg tag, and charm
@@ -36,25 +37,35 @@ taggers = [
     ["MV1c", "0.8641"], 
 	
     ]
+
+#
+# We are only looking at the following...
+#
+
+sfObject.restrict = lambda self: self.filter(
+    taggers=taggers,
+    jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"],
+    ignore=[".*25-pt-30.*"]
+    )
+
 #
 # Input arguments
 #
 
 s8 = files("system8/*.txt") \
-     .filter(taggers=taggers)
+     .restrict()
 
 ttdilep_emu_pdf = files("pdfmethod_ttdilep/*.txt") \
                   .filter(analyses = ["PDF_dilepton_emu_3jets", "PDF_dilepton_emu_2jets"]) \
-                  .filter(taggers=taggers)
+                  .restrict()
 ttdilep_ll_pdf = files("pdfmethod_ttdilep/*.txt") \
                  .filter(analyses = ["PDF_dilepton_ll_3jets", "PDF_dilepton_ll_2jets"]) \
-                 .filter(taggers=taggers)
+                 .restrict()
 ttdilep_g_rebined_pdf = files("pdfmethod_ttdilep_rebin/*.txt") \
-                        .filter(taggers=taggers)
+                        .restrict()
 
 ttdilep_topo = files("topo_ttemu/*.txt") \
-               .filter(taggers=taggers) \
-               .filter(ignore=[".*25-pt-30.*"])
+               .restrict()
 
 #
 # Some checks
@@ -106,7 +117,7 @@ tt_topo = (rebin_template_30 + ttdilep_topo) \
 #
 
 dstar_template = files("DStar/*/*.txt") \
-                 .filter(taggers=taggers)
+                 .restrict()
 charm_sf = (dstar_template + fit_ttdilep_emu_s8_binning + s8_rebinned + all_rebin).dstar("DStar_<>", "DStar")
 tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
@@ -130,7 +141,7 @@ tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau
 #
 
 negative = files("negative/*.txt").dump(check=True) \
-           .filter(taggers=taggers)
+           .restrict()
 
 
 #
