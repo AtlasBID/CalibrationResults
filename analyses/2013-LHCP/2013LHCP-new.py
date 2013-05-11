@@ -86,7 +86,7 @@ fit_ttdilep_emu_pdf = ttdilep_emu_pdf.bbb_fit("PDF_dilepton_emu_fit")
 
 dijet = s8
 ttbar = ttdilep_topo
-all = (s8+ttbar).bbb_fit("ttbar_dijet")
+all = (dijet+ttbar).bbb_fit("ttbar_dijet")
 
 #
 # Put the fit_ttdilep and S8 on equal footing - for plotting purposes only.
@@ -149,7 +149,7 @@ negative = files("negative/*.txt").dump(check=True) \
 #
 
 master_cdi_file = \
-    s8 + fit_ttdilep_emu_pdf + ttdilep_topo + all \
+    dijet + ttbar + all + fit_ttdilep_emu_pdf \
     + charm_sf \
     + tau_sf \
     + negative
