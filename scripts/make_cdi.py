@@ -74,6 +74,8 @@ class CDI:
             lfiles += " %s" % listToString(["--copy%s" % l for l in self._ttbar.ResolveToFiles(html)])
             fList += self._ttbar.ResolveToFiles(html)
 
+        lfiles += " --restrictedMC"
+
         if rerunCommand(fList, outFile):
             errcode = dumpCommandResult(html, "FTConvertToCDI.exe %s" % lfiles, title, store=cmdLog)
             if errcode == 0:

@@ -140,7 +140,7 @@ tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau
 # Light SF come from the negative tags
 #
 
-negative = files("negative/*.txt").dump(check=True) \
+negative = files("negative/*.txt") \
            .restrict()
 
 
