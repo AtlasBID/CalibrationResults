@@ -1,4 +1,4 @@
-Analysis(negative tags,light,JetFitterCOMBNNc, 0.8641, AntiKt4TopoLCJVF){ 
+Analysis(negative tags,light,JetFitterCOMBNNc, 0.8641, AntiKt4TopoLCnoJVF){ 
   bin( 20<pt< 30, 0.0<abseta<1.2)
   {
     central_value(1.2812,0.0731)
@@ -126,7 +126,7 @@ Analysis(negative tags,light,JetFitterCOMBNNc, 0.8641, AntiKt4TopoLCJVF){
     sys(d0 and z0 smearing, 4.40%)
   }
 }
-Analysis(negative tags,light,JetFitterCOMBNNc, 0.8641, AntiKt4TopoLCJVF){ 
+Analysis(negative tags,light,JetFitterCOMBNNc, 0.8641, AntiKt4TopoLCnoJVF){ 
   bin( 20<pt< 30, 1.2<abseta<2.5)
   {
     central_value(1.5753,0.0715)

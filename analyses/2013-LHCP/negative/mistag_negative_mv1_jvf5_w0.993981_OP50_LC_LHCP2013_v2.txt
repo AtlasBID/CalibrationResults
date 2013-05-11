@@ -1,4 +1,4 @@
-Analysis(negative tags,light,MV1_JVF050, 0.993981, AntiKt4TopoLCJVF){ 
+Analysis(negative tags,light,MV1, 0.993981, AntiKt4TopoLCJVF0_5){ 
   bin( 20<pt< 30, 0.0<abseta<1.2)
   {
     central_value(1.2412,0.3925)
@@ -126,7 +126,7 @@ Analysis(negative tags,light,MV1_JVF050, 0.993981, AntiKt4TopoLCJVF){
     sys(d0 and z0 smearing,-4.83%)
   }
 }
-Analysis(negative tags,light,MV1_JVF050, 0.993981, AntiKt4TopoLCJVF){ 
+Analysis(negative tags,light,MV1, 0.993981, AntiKt4TopoLCJVF0_5){ 
   bin( 20<pt< 30, 1.2<abseta<2.5)
   {
     central_value(0.2570,0.2570)
