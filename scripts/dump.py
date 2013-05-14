@@ -10,8 +10,8 @@ import comboGlobals
 # We will filter out input files on some criteria
 #
 
-def dump(sfObj, check=False, sysErrors = False):
-    fc = Dump(sfObj, check, sysErrors)
+def dump(sfObj, check=False, sysErrors = False, name=""):
+    fc = Dump(sfObj, check, sysErrors, name)
     comboGlobals.Commands += [fc]
     return sfObj
 
@@ -20,24 +20,44 @@ def dump(sfObj, check=False, sysErrors = False):
 #
 
 class Dump:
-    def __init__ (self, sfinfo, check, sysErrors):
+    def __init__ (self, sfinfo, check, sysErrors, name):
         self._sf = sfinfo
         self._check = check
         self._sysErrors = sysErrors
+        self._name = name
 
     def Execute (self, html, configInfo):
         files = listToString(self._sf.ResolveToFiles(html))
 
+        ftype = ""
+        args = ""
+        title = ""
+
         if self._check:
-            errcod = dumpCommandResult(html, "FTDump.exe --names --check %s" % files, "Checking input files.")
-            if errcod != 0:
-                print >> html, "Failed to run check! Command line: %s" % files
+            ftype = ".txt"
+            title = "Names of anslyses in input files"
+            args = "--names --check"
 
         if self._sysErrors:
-            outputName = "%s-%s.html" % (configInfo.name, hash(files))
+            ftype = ".html"
+            title = "systematic error table"
+            args = "--sysErrorTable"
             
-            errcod = dumpCommandResult(html, "FTDump.exe --sysErrorTable %s output %s" % (files, outputName), "Checking input files.")
-            if errcod != 0:
-                print >> html, "Failed to run check! Command line: %s" % files
-            else:
-                print >> html, '<p><a href="%s">Systematic Error Table</a></p>' % outputName
+        # Run it
+
+        if len(self._name) > 0:
+            title += " (%s)" % self._name
+
+        outputFileCmd = ""
+        outputFile = ""
+        if len(self._name) > 0:
+            outputFileCmd = "output %s-%s.%s" % (configInfo.name, self._name, ftype)
+            outputFile = "%s-%s.%s" % (configInfo.name, self._name, ftype)
+
+        errcod = dumpCommandResult(html, "FTDump.exe %s %s %s" % (args, files, outputFileCmd), title)
+        if errcod != 0:
+            print >> html, "Failed to run check! Command line: %s" % files
+        else:
+            if len(outputFile) > 0:
+                print >> html, '<a href="%s">%s</a>' % (outputFile, title)
+
