@@ -39,7 +39,7 @@ taggers = [
     ]
 
 #
-# We are only looking at the following...
+# We are only looking at the following (a nice way to add a function onto an object!):
 #
 
 sfObject.restrict = lambda self: self.filter(
@@ -66,6 +66,8 @@ ttdilep_g_rebined_pdf = files("pdfmethod_ttdilep_rebin/*.txt") \
 
 ttdilep_topo = files("topo_ttemu/*.txt") \
                .restrict()
+
+sources = s8 + ttdilep_emu_pdf + ttdilep_ll_pdf + ttdilep_topo
 
 #
 # Some checks
@@ -121,6 +123,8 @@ dstar_template = files("DStar/*/*.txt") \
 charm_sf = (dstar_template + fit_ttdilep_emu_s8_binning + s8_rebinned + all_rebin).dstar("DStar_<>", "DStar")
 tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
+sources += dstar_template
+
 #
 # Plot the two fits so we can compare them (well).
 #
@@ -143,6 +147,7 @@ tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau
 negative = files("negative/*.txt") \
            .restrict()
 
+sources += negative
 
 #
 # Finally, build the list for the master CDI file.
@@ -156,6 +161,7 @@ master_cdi_file = \
 master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "MCefficiencies_for_CDI_14.4.2013.root")
 master_cdi_file.plot("MC12-CDI")
 master_cdi_file.dump(sysErrors = True)
+sources.dump(sysErrors = True)
 
 #
 # The root file that we start everything with.
