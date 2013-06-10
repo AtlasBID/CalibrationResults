@@ -29,6 +29,12 @@ description = "Spring 2013 results, based on the full 2012 data, for Lepton Phot
 #
 
 taggers = [
+#MV1 30% JVF (EM, LC), noJVF (EM, LC)
+    ["MV1", "0.992670537"],
+    ["MV1", "0.994450"],
+#MV1 50% JVF (EM, LC), noJVF (EM, LC)
+    ["MV1", "0.992515446"], 
+    ["MV1", "0.993981"], 
 #MV1 60% JVF (EM, LC), noJVF (EM, LC)
     ["MV1", "0.9867"], 
     ["MV1", "0.9827 "], 
@@ -70,11 +76,11 @@ ttdilep_topo = files("topo_ttemu/*.txt") \
 
 ttbar_pdf_7_all = files("ttbar_pdf/7bins/*.txt") \
                   .restrict() \
-                  .filter(analyses = ["PDF_dilepton_7bins_emu_3jets", "PDF_dilepton_7bins_emu_2jets", "PDF_dilepton_7bins_ll_3jets", "PDF_dilepton_7bins_ll_2jets"])
+                  .filter(analyses = ["PDFmethod_dilepton_7bins_emu_3jets", "PDFmethod_dilepton_7bins_emu_2jets", "PDFmethod_dilepton_7bins_ll_3jets", "PDF_dilepton_7bins_ll_2jets"])
 
 ttbar_pdf_7_precomb = files("ttbar_pdf/7bins/*.txt") \
                       .restrict() \
-                      .filter(analyses = ["PDF_dilepton_7bins_emu_2and3jets"])
+                      .filter(analyses = ["PDFmethod_dilepton_emu_2and3jets"])
                
 sources = s8 + ttdilep_topo + ttbar_pdf_7_all
 
