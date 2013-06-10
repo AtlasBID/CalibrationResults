@@ -76,11 +76,11 @@ ttdilep_topo = files("topo_ttemu/*.txt") \
 
 ttbar_pdf_7_all = files("ttbar_pdf/7bins/*.txt") \
                   .restrict() \
-                  .filter(analyses = ["PDFmethod_dilepton_7bins_emu_3jets", "PDFmethod_dilepton_7bins_emu_2jets", "PDFmethod_dilepton_7bins_ll_3jets", "PDF_dilepton_7bins_ll_2jets"])
+                  .filter(analyses = ["PDF_dilepton_7bins_emu_3jets", "PDF_dilepton_7bins_emu_2jets", "PDF_dilepton_7bins_ll_3jets", "PDF_dilepton_7bins_ll_2jets"])
 
 ttbar_pdf_7_precomb = files("ttbar_pdf/7bins/*.txt") \
                       .restrict() \
-                      .filter(analyses = ["PDFmethod_dilepton_emu_2and3jets"])
+                      .filter(analyses = ["PDF_dilepton_emu_2and3jets"])
                
 sources = s8 + ttdilep_topo + ttbar_pdf_7_all
 
