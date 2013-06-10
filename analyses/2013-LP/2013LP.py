@@ -176,14 +176,14 @@ sources += negative
 # Plot the fit ttbar results
 #
 
-(ttbar_pdf_7_combined+ttbar_pdf_7_precomb).plot("ttdlep_pdf_compare")
+(ttbar_pdf_7_combined + ttbar_pdf_7_precomb).plot("ttdlep_pdf_compare")
 
 ####################################
 # The CDI file.
 #
 
 master_cdi_file = \
-    dijet + ttbar + all \
+    dijet + ttbar + all + ttbar_pdf_7_combined \
     + charm_sf \
     + tau_sf \
     + negative
