@@ -146,8 +146,7 @@ tt_topo = (rebin_template_30 + ttdilep_topo) \
 dstar_template = files("DStar/*/*.txt") \
                  .restrict()
 
-#charm_sf = (dstar_template + s8_rebinned + all_rebin) \
-charm_sf = (dstar_template + s8_rebinned) \
+charm_sf = (dstar_template + s8_rebinned + all_rebin) \
     .dstar("DStar_<>", "DStar")
 
 tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
