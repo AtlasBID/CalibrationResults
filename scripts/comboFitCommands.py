@@ -27,12 +27,35 @@ def listToString (list):
 def rerunCommand (inputFiles, outputFile):
     if not os.path.exists(outputFile):
         return True
+    
+    out_infile_list = "%s-infiles.txt" % outputFile
+    if not os.path.exists(out_infile_list):
+        return True
 
+    # A cache file so we can see if any input files actually
+    # changed even if the date didn't.
+    
+    lin = file(out_infile_list, "r")
+    lst = lin.readlines()
+    lin.close()
+    
+    lin = file(out_infile_list, "w")
+    for f in inputFiles:
+        print >> lin, f
+    lin.close()
+        
     mod_output = os.stat(outputFile).st_mtime
 
+    # Compare each file to see if we used it previously or if
+    # if it was in the list.
+    
     for f in inputFiles:
         if not os.path.exists(f):
             raise BaseException("Input file %s does not exist. Not possible!" % f)
+        
+        if not (f in lst):
+            return True
+        
         if os.stat(f).st_mtime > mod_output:
             return True
 
