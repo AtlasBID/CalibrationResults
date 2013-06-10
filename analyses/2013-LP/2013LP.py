@@ -68,7 +68,15 @@ s8 = files("system8/*.txt") \
 ttdilep_topo = files("topo_ttemu/*.txt") \
                .restrict()
 
-sources = s8 + ttdilep_topo
+ttbar_pdf_7_all = files("ttbar_pdf/7bins/*.txt") \
+                  .restrict() \
+                  .filter(analyses = ["PDF_dilepton_7bins_emu_3jets", "PDF_dilepton_7bins_emu_2jets", "PDF_dilepton_7bins_ll_3jets", "PDF_dilepton_7bins_ll_2jets"])
+
+ttbar_pdf_7_precomb = files("ttbar_pdf/7bins/*.txt") \
+                      .restrict() \
+                      .filter(analyses = ["PDF_dilepton_7bins_emu_2and3jets"])
+               
+sources = s8 + ttdilep_topo + ttbar_pdf_7_all
 
 #
 # Where we can, we should combine Richards ttbar and s8 results. "all" is what will go
@@ -78,6 +86,13 @@ sources = s8 + ttdilep_topo
 dijet = s8
 ttbar = ttdilep_topo
 all = (dijet+ttbar).bbb_fit("ttbar_dijet")
+
+#
+# Next, fit together the pdf ttbar results (ffit == full fit)
+#
+
+ttbar_pdf_7_combined = ttbar_pdf_7_all.bbb_fit("PDF_dilepton_fit")
+all += ttbar_pdf_7_combined
 
 #
 # Due to the binning it isn't really possible to compare these fits. So, go for the lowest common
@@ -145,6 +160,12 @@ sources += negative
 #
 
 (tt_topo + s8_rebinned).plot("tts8_compare")
+
+#
+# Plot the fit ttbar results
+#
+
+(ttbar_pdf_7_combined+ttbar_pdf_7_precomb).plot("ttdlep_pdf_compare")
 
 ####################################
 # The CDI file.
