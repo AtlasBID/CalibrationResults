@@ -127,7 +127,8 @@ s8_rebinned = (rebin_template + s8) \
               .rebin("rebin", "system8_rebin")
 all_rebin = (all + rebin_template) \
             .rebin("rebin", "ttbar_dijet_rebin")
-ttbar_pdf_7_rebin = (ttbar_pdf_7_combined + rebin_template)
+			
+ttbar_pdf_7_rebin = (ttbar_pdf_7_combined + rebin_template) \
 					.filter(ignore=[".*300-pt-400.*"]) \
 					.rebin("rebin", "PDF_dilepton_fit_rebin")
 					
