@@ -98,7 +98,6 @@ all = (dijet+ttbar).bbb_fit("ttbar_dijet")
 #
 
 ttbar_pdf_7_combined = ttbar_pdf_7_all.bbb_fit("PDF_dilepton_fit")
-all += ttbar_pdf_7_combined
 
 #
 # Due to the binning it isn't really possible to compare these fits. So, go for the lowest common
@@ -124,13 +123,14 @@ rebin_template_30 = files("commonbinning.txt") \
 #ttdilep_topo_rebinned = (ttdilep_topo + rebin_template) \
 #                        .rebin("rebin", "ttbar_topo_emu_rebin")
 #
-# TODO: the "ttbar+dijet" shoudl be replaced by all as soon as we figure out how to deal with the 300 GeV bin in
-# Giacinto's stuff.
 s8_rebinned = (rebin_template + s8) \
               .rebin("rebin", "system8_rebin")
 all_rebin = (all + rebin_template) \
-			.filter(ignore=[".*300-pt-400.*"]) \
             .rebin("rebin", "ttbar_dijet_rebin")
+ttbar_pdf_7_rebin = (ttbar_pdf_7_combined + rebin_template)
+					.filter(ignore=[".*300-pt-400.*"]) \
+					.rebin("rebin", "PDF_dilepton_fit_rebin")
+					
 tt_topo = (rebin_template_30 + ttdilep_topo) \
           .rebin("rebin_30", "ttbar_topo_emu_rebin")
 
@@ -146,7 +146,7 @@ tt_topo = (rebin_template_30 + ttdilep_topo) \
 dstar_template = files("DStar/*/*.txt") \
                  .restrict()
 
-charm_sf = (dstar_template + s8_rebinned + all_rebin) \
+charm_sf = (dstar_template + s8_rebinned + all_rebin + ttbar_pdf_7_rebin) \
     .dstar("DStar_<>", "DStar")
 
 tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
