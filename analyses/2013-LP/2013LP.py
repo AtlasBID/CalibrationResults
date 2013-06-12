@@ -60,9 +60,9 @@ taggers = [
 sfObject.restrict = lambda self: self.filter(
     taggers=taggers,
     jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"],
-    ignore=[".*25-pt-30.*"]
+    ignore=[".*25-pt-30.*",".*300-pt-400.*"]
     )
-
+	
 ####################################
 # Bottom Flavor Inputs and fits
 #  Note: sources is used to do a systematic error x-check.
@@ -129,7 +129,6 @@ all_rebin = (all + rebin_template) \
             .rebin("rebin", "ttbar_dijet_rebin")
 			
 ttbar_pdf_7_rebin = (ttbar_pdf_7_combined + rebin_template) \
-					.filter(ignore=[".*300-pt-400.*"]) \
 					.rebin("rebin", "PDF_dilepton_fit_rebin")
 					
 tt_topo = (rebin_template_30 + ttdilep_topo) \
