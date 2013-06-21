@@ -29,21 +29,25 @@ def rerunCommand (inputFiles, outputFile):
         return True
     
     out_infile_list = "%s-infiles.txt" % outputFile
-    if not os.path.exists(out_infile_list):
-        return True
+    out_infile_list_exists = os.path.exists(out_infile_list)
 
     # A cache file so we can see if any input files actually
     # changed even if the date didn't.
     
-    lin = file(out_infile_list, "r")
-    lst = lin.readlines()
-    lin.close()
+    lst = []
+    if out_infile_list_exists:
+        lin = file(out_infile_list, "r")
+        lst = [l.strip() for l in lin.readlines()]
+        lin.close()
     
     lin = file(out_infile_list, "w")
     for f in inputFiles:
         print >> lin, f
     lin.close()
         
+    if not out_infile_list_exists:
+        return True
+    
     mod_output = os.stat(outputFile).st_mtime
 
     # Compare each file to see if we used it previously or if
