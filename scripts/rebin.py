@@ -32,7 +32,7 @@ class Rebin:
         fList = self._sf.ResolveToFiles(html)
         files = listToString(fList)
 
-        files += " templateAna %s outputAna %s" % (self._template, self._ana)
+        files += ' templateAna %s outputAna "%s"' % (self._template, self._ana)
 
         baseOutputName = "%s-%s" % (configInfo.name, hash(files))
         outputFile = "%s-sf.txt" % baseOutputName
