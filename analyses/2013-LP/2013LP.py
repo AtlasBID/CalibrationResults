@@ -30,11 +30,11 @@ description = "Spring 2013 results, based on the full 2012 data, for Lepton Phot
 
 taggers = [
 #MV1 30% JVF (EM, LC), noJVF (EM, LC)
-    ["MV1", "0.992670537"],
-    ["MV1", "0.994450"],
+#    ["MV1", "0.992670537"],
+#    ["MV1", "0.994450"],
 #MV1 50% JVF (EM, LC), noJVF (EM, LC)
-    ["MV1", "0.992515446"], 
-    ["MV1", "0.993981"], 
+#    ["MV1", "0.992515446"], 
+#    ["MV1", "0.993981"], 
 #MV1 60% JVF (EM, LC), noJVF (EM, LC)
     ["MV1", "0.9867"], 
     ["MV1", "0.9827 "], 
