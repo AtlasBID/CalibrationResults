@@ -82,32 +82,47 @@ ttbar_pdf_7_precomb = files("ttbar_pdf/7bins/*.txt") \
                       .restrict() \
                       .filter(analyses = ["PDF_dilepton_emu_2and3jets"])
                
+ttbar_pdf_10_all = files("ttbar_pdf/11bins/*.txt") \
+                  .restrict()
+
 sources = s8 + ttdilep_topo + ttbar_pdf_7_all
 
 #
-# Where we can, we should combine Richards ttbar and s8 results. "all" is what will go
-# into the CDI below.
+# Build up the central dijet fits. "dijet" is our best estimate, in the end, of the dijet
+# fits.
 #
 
 dijet = s8
-ttbar = ttdilep_topo
-all = (dijet+ttbar).bbb_fit("ttbar_dijet")
 
 #
-# Next, fit together the pdf ttbar results (ffit == full fit)
+# The PDF method comes in bits. We need to put it together in order to
+# use it.
 #
 
-ttbar_pdf_7_combined = ttbar_pdf_7_all.bbb_fit("PDF_dilepton_fit")
+ttbar_pdf_7_combined = ttbar_pdf_7_all.bbb_fit("PDF_ll_7_fit")
+ttbar_pdf_10_combined = ttbar_pdf_10_all.bbb_fit("PDF_ll_10_fit")
 
 #
-# Due to the binning it isn't really possible to compare these fits. So, go for the lowest common
-# denominator - s8 binning - and refit the ttbar results to fit that model. Then we can plot them together.
-# This isn't going to be the most accurate version, but it will be close enough.
+# Do the ttbar results
+#  dijet + ttbar topo
+#  dijet + ttbar pdf method
 #
-# Some of the rebinned results below will also be used for the D* recalculation (which requires the fitting).
+# ttbar represents all the ttbar fits we are interested in using, in the end.
+#
+
+combined_ttbar_topo = (dijet+ttdilep_topo).bbb_fit("ttbar_topo_dijet")
+combined_ttbar_pdf = (dijet+ttbar_pdf_10_all).bbb_fit("ttbar_pdf_dijet")
+
+ttbar = combined_ttbar_topo + combined_ttbar_pdf
+
+#
+# Next, we need to build up the master fits that will be used to make charm and tau results.
+# This requires re-binning to match the D* input bins.
+#
 #
 # The file "commonbinning.txt" just contains some empty specifications that have the binning. They don't contain
-# any real data. :-)
+# any real data. It should have the same binning as the D*. The _30 is without the 20-30 to deal with the PDF method,
+# which has a bin we ignore from 25-30, and that bin can't really participate.
 #
 
 rebin_template = files("commonbinning.txt") \
@@ -115,26 +130,9 @@ rebin_template = files("commonbinning.txt") \
 rebin_template_30 = files("commonbinning.txt") \
                     .filter(analyses=["rebin_30"])
 
-#fit_ttdilep_ll_s8_binning = (fit_ttdilep_ll_pdf + rebin_template) \
-#    .rebin("rebin", "PDF_dilepton_ll_fit_rebin")
-#fit_ttdilep_emu_s8_binning = (fit_ttdilep_emu_pdf + rebin_template) \
-#                         .rebin("rebin", "PDF_dilepton_emu_fit_rebin")
-# Rebinning this traditional ttbar results is hard because the low bin is 25-30, not 20-30 as the D* analysis requires
-#ttdilep_topo_rebinned = (ttdilep_topo + rebin_template) \
-#                        .rebin("rebin", "ttbar_topo_emu_rebin")
-#
-s8_rebinned = (rebin_template + s8) \
-              .rebin("rebin", "system8_rebin")
-all_rebin = (all + rebin_template) \
-            .rebin("rebin", "ttbar_dijet_rebin")
-			
-ttbar_pdf_7_rebin = (ttbar_pdf_7_combined + rebin_template) \
-					.rebin("rebin", "PDF_dilepton_fit_rebin")
-					
-tt_topo = (rebin_template_30 + ttdilep_topo) \
-          .rebin("rebin_30", "ttbar_topo_emu_rebin")
+ttbar_rebin = (rebin_template + ttbar) \
+              .rebin("rebin", "<>_rebin")
 
-          
 ####################################
 # Tau and Charm
 #
@@ -146,7 +144,7 @@ tt_topo = (rebin_template_30 + ttdilep_topo) \
 dstar_template = files("DStar/*/*.txt") \
                  .restrict()
 
-charm_sf = (dstar_template + s8_rebinned + all_rebin + ttbar_pdf_7_rebin) \
+charm_sf = (dstar_template + ttbar_rebin) \
     .dstar("DStar_<>", "DStar")
 
 tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
@@ -160,6 +158,8 @@ sources += dstar_template
 negative = files("negative/*.txt") \
            .restrict()
 
+light_sf = negative
+
 sources += negative
 
 ####################################
@@ -169,23 +169,23 @@ sources += negative
 # Plot the dijet and the main ttbar fit for comparison as well
 #
 
-(tt_topo + s8_rebinned).plot("tts8_compare")
+#(tt_topo + s8_rebinned).plot("tts8_compare")
 
 #
 # Plot the fit ttbar results
 #
 
-(ttbar_pdf_7_combined + ttbar_pdf_7_precomb).plot("ttdlep_pdf_compare")
+#(ttbar_pdf_7_combined + ttbar_pdf_7_precomb).plot("ttdlep_pdf_compare")
 
 ####################################
 # The CDI file.
 #
 
 master_cdi_file = \
-    dijet + ttbar + all + ttbar_pdf_7_combined \
+    dijet + ttbar \
     + charm_sf \
     + tau_sf \
-    + negative
+    + light_sf
 master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "MCefficiencies_for_CDI_14.4.2013.root")
 master_cdi_file.plot("MC12-CDI")
 master_cdi_file.dump(sysErrors = True, name="master")
