@@ -144,9 +144,17 @@ ttbar_rebin = (rebin_template + ttbar) \
 dstar_template = files("DStar/*/*.txt") \
                  .restrict()
 
-charm_sf = (dstar_template + ttbar_rebin) \
-    .dstar("DStar_<>", "DStar")
+charm_sf_ttbar = (dstar_template + ttbar_rebin) \
+                 .dstar("DStar_<>", "DStar")
 
+dijet_for_charm = dijet
+                 .filter(jets=["AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"])
+charm_sf_dijet = (dstar_template + dijet_for_charm) \
+                 .dstar("DStar_<>", "DStar")
+
+charm_sf = charm_sf_ttbar + charm_sf_dijet
+
+                 
 tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
 sources += dstar_template
