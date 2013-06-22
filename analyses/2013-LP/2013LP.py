@@ -132,6 +132,9 @@ rebin_template_30 = files("commonbinning.txt") \
 
 ttbar_rebin = (rebin_template + ttbar) \
               .rebin("rebin", "<>_rebin")
+              
+dijet_rebin = (rebin_template + dijet) \
+              .rebin("rebin", "<>_rebin")
 
 ####################################
 # Tau and Charm
@@ -147,7 +150,7 @@ dstar_template = files("DStar/*/*.txt") \
 charm_sf_ttbar = (dstar_template + ttbar_rebin) \
                  .dstar("DStar_<>", "DStar")
 
-dijet_for_charm = dijet \
+dijet_for_charm = dijet_rebin \
                  .filter(jets=["AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"])
 charm_sf_dijet = (dstar_template + dijet_for_charm) \
                  .dstar("DStar_<>", "DStar")
