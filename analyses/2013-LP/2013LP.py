@@ -150,11 +150,9 @@ dstar_template = files("DStar/*/*.txt") \
 charm_sf_ttbar = (dstar_template + ttbar_rebin) \
                  .dstar("DStar_<>", "DStar")
 
-dijet_for_charm = dijet_rebin \
-                 .filter(jets=["AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"])
-charm_sf_dijet = (dstar_template + dijet_for_charm) \
+charm_sf_dijet = (dstar_template + dijet_rebin) \
                  .dstar("DStar_<>", "DStar")
-
+                 
 charm_sf = charm_sf_ttbar + charm_sf_dijet
 
                  
