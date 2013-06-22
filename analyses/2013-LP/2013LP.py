@@ -59,7 +59,7 @@ taggers = [
 
 sfObject.restrict = lambda self: self.filter(
     taggers=taggers,
-    jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"],
+    jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5", "AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"],
     ignore=[".*25-pt-30.*",".*300-pt-400.*"]
     )
 	
