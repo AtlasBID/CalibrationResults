@@ -10,8 +10,8 @@ import comboGlobals
 # We will filter out input files on some criteria
 #
 
-def dump(sfObj, check=False, sysErrors = False, name=""):
-    fc = Dump(sfObj, check, sysErrors, name)
+def dump(sfObj, check=False, sysErrors = False, metadata = False, name=""):
+    fc = Dump(sfObj, check, sysErrors, name, metadata)
     comboGlobals.Commands += [fc]
     return sfObj
 
@@ -20,11 +20,12 @@ def dump(sfObj, check=False, sysErrors = False, name=""):
 #
 
 class Dump:
-    def __init__ (self, sfinfo, check, sysErrors, name):
+    def __init__ (self, sfinfo, check, sysErrors, name, metadata):
         self._sf = sfinfo
         self._check = check
         self._sysErrors = sysErrors
         self._name = name
+        self._metadata = metadata
 
     def Execute (self, html, configInfo):
         files = listToString(self._sf.ResolveToFiles(html))
@@ -42,6 +43,11 @@ class Dump:
             ftype = ".html"
             title = "systematic error table"
             args = "--sysErrorTable"
+
+        if self._metadata:
+            ftype = ".txt"
+            title = "metadata"
+            args = "--meta"
             
         # Run it
 
