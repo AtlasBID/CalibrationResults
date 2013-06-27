@@ -3,7 +3,7 @@
 # Ian Connelly 
 # 4 Feb 2013
 
-for FILE in `ls *SF*new.txt`; do
+for FILE in `ls */calibSF_*.txt`; do
 
     sed -i '/Baseline/d' $FILE
     sed -i '/BJesUnc/d' $FILE
@@ -14,8 +14,8 @@ for FILE in `ls *SF*new.txt`; do
     sed -i '/Pile_Mu/d' $FILE
     sed -i '/Pile_NPV/d' $FILE
     # For future iterations, ensure these aren't in the file
-    sed -i '/res_soft_pthard' $FILE
-    sed -i '/sc_soft_pthard' $FILE
+    sed -i '/res_soft_pthard/d' $FILE
+    sed -i '/sc_soft_pthard/d' $FILE
     # New JES cpts from SMWZ setup
     sed -i '/Effective1/d' $FILE
     sed -i '/Effective2/d' $FILE
