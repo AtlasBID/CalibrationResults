@@ -85,7 +85,7 @@ ttbar_pdf_7_precomb = files("ttbar_pdf/7bins/*.txt") \
 ttbar_pdf_10_all = files("ttbar_pdf/11bins/*.txt") \
                   .restrict()
 
-ttbar_kinsel_3jet = files("ttbar_kinsel/*/*_em3j.txt")
+ttbar_kinsel_3jet = files("ttbar_kinsel/*/*_em3j.txt") \
 					.restrict()
 				  
 sources = s8 + ttdilep_topo + ttbar_pdf_7_all + ttbar_kinsel_3jet
