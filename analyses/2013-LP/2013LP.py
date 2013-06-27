@@ -85,7 +85,10 @@ ttbar_pdf_7_precomb = files("ttbar_pdf/7bins/*.txt") \
 ttbar_pdf_10_all = files("ttbar_pdf/11bins/*.txt") \
                   .restrict()
 
-sources = s8 + ttdilep_topo + ttbar_pdf_7_all
+ttbar_kinsel_3jet = files("ttbar_kinsel/*/*_em3j.txt")
+					.restrict()
+				  
+sources = s8 + ttdilep_topo + ttbar_pdf_7_all + ttbar_kinsel_3jet
 
 #
 # Build up the central dijet fits. "dijet" is our best estimate, in the end, of the dijet
@@ -110,7 +113,7 @@ ttbar_pdf_10_combined = ttbar_pdf_10_all.bbb_fit("PDF_ll_10_fit")
 # ttbar represents all the ttbar fits we are interested in using, in the end.
 #
 
-combined_ttbar_topo = (dijet+ttdilep_topo).bbb_fit("ttbar_topo_dijet")
+combined_ttbar_topo = (dijet+ttdilep_topo+ttbar_kinsel_3jet).bbb_fit("ttbar_topo_dijet")
 combined_ttbar_pdf = (dijet+ttbar_pdf_10_all).bbb_fit("ttbar_pdf_dijet")
 
 ttbar = combined_ttbar_topo + combined_ttbar_pdf
