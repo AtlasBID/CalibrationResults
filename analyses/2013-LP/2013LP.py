@@ -102,8 +102,8 @@ dijet = s8
 # use it.
 #
 
-ttbar_pdf_7_combined = ttbar_pdf_7_all.bbb_fit("PDF_ll_7_fit")
-ttbar_pdf_10_combined = ttbar_pdf_10_all.bbb_fit("PDF_ll_10_fit")
+#ttbar_pdf_7_combined = ttbar_pdf_7_all.bbb_fit("PDF_ll_7_fit")
+#ttbar_pdf_10_combined = ttbar_pdf_10_all.bbb_fit("PDF_ll_10_fit")
 
 #
 # Do the ttbar results
