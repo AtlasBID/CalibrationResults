@@ -58,6 +58,8 @@ class Filter:
 
         title = "Filtering for %s" % listToString(self._anas + self._taggers + self._ignore + self._jets)
 
+        print >> html, "<b>Command line: FTDump.exe %s</b>" % files
+
         if rerunCommand(fList, outputName):
             errcod = dumpCommandResult(html, "FTDump.exe %s" % files, title, store=cmdLog)
             if errcod != 0:

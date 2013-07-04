@@ -78,12 +78,13 @@ ttbar_pdf_7_all = files("ttbar_pdf/7bins/*.txt") \
                   .restrict() \
                   .filter(analyses = ["PDF_dilepton_7bins_emu_3jets", "PDF_dilepton_7bins_emu_2jets", "PDF_dilepton_7bins_ll_3jets", "PDF_dilepton_7bins_ll_2jets"])
 
-ttbar_pdf_7_precomb = files("ttbar_pdf/7bins/*.txt") \
-                      .restrict() \
-                      .filter(analyses = ["PDF_dilepton_emu_2and3jets"])
+#ttbar_pdf_7_precomb = files("ttbar_pdf/7bins/*.txt") \
+#                      .restrict() \
+#                      .filter(analyses = ["PDF_dilepton_emu_2and3jets"])
                
 ttbar_pdf_10_all = files("ttbar_pdf/11bins/*.txt") \
-                  .restrict()
+                   .restrict() \
+                   .filter(analyses = ["PDF_dilepton_emu_2jets", "PDF_dilepton_emu_3jets", "PDF_dilepton_ll_2jets", "PDF_dilepton_ll_3jets",])
 
 ttbar_kinsel_3jet = files("ttbar_kinsel/*/*_em3j.txt") \
 					.restrict()
