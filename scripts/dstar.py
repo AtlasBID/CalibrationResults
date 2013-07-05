@@ -41,7 +41,7 @@ class DStar:
 
         title = "Calculating D* from template %s" % self._dstar
 
-        if rerunCommand(fList, outputFile):
+        if rerunCommand(fList, outputFile, html):
 
             errcod = dumpCommandResult(html, "FTDStarCalc.exe %s" % files, title, store=cmdLog)
             if errcod != 0:

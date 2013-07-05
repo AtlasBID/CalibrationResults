@@ -47,7 +47,7 @@ class AddSys:
 
         title = "Adding systematic error %s" % self._newSys
 
-        if rerunCommand(fList, outputFile):
+        if rerunCommand(fList, outputFile, html):
 
             errcod = dumpCommandResult(html, "FTManipSys.exe %s" % files, title, store=cmdLog)
             if errcod != 0:

@@ -24,8 +24,10 @@ def listToString (list):
 # Check the list of input file dates against the output file dates. If the inputs are
 # more recent, then we must run again!
 #
-def rerunCommand (inputFiles, outputFile):
+def rerunCommand (inputFiles, outputFile, html = None):
     if not os.path.exists(outputFile):
+        if html:
+            print >> html, "<p>Rerunning command because output file can't be found</p>"
         return True
     
     out_infile_list = "%s-infiles.txt" % outputFile
@@ -46,6 +48,8 @@ def rerunCommand (inputFiles, outputFile):
     lin.close()
         
     if not out_infile_list_exists:
+        if html:
+            print >> html, "<p>Rerunning command because last-run cache file doesn't exit<p>"
         return True
     
     mod_output = os.stat(outputFile).st_mtime
@@ -58,9 +62,13 @@ def rerunCommand (inputFiles, outputFile):
             raise BaseException("Input file %s does not exist. Not possible!" % f)
         
         if not (f in lst):
+            if html:
+                print >> html, "<p>Rerunning command because file '%s' is new on the input line" % f
             return True
         
         if os.stat(f).st_mtime > mod_output:
+            if html:
+                print >> html, "<p>Rerunning command because file '%s' is newer thant he output file" % f
             return True
 
     return False

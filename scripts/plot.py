@@ -33,7 +33,7 @@ class Plot:
 
         title = "Plots for %s" % self._name
 
-        if rerunCommand(fList, outFile):
+        if rerunCommand(fList, outFile, html):
             errcode = dumpCommandResult(html, "FTPlot.exe %s" % files, title, store=cmdLog)
             if errcode == 0:
                 shutil.copy ("plots.root", outFile)

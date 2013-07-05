@@ -41,7 +41,7 @@ class Rebin:
 
         title = "Combining bins for %s" % self._ana
 
-        if rerunCommand(fList, outputFile):
+        if rerunCommand(fList, outputFile, html):
 
             errcod = dumpCommandResult(html, "FTCombineBins.exe %s" % files, title, store=cmdLog)
             if errcod != 0:

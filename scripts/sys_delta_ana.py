@@ -39,7 +39,7 @@ class DeltaAna:
 
         title = "Calculating Relative Difference between %s and %s to create %s" % (self._baseAna, self._deltaAna, self._newAna)
 
-        if rerunCommand(fList, outputFile):
+        if rerunCommand(fList, outputFile, html):
 
             errcod = dumpCommandResult(html, "FTManipSys.exe %s" % files, title, store=cmdLog)
             if errcod != 0:

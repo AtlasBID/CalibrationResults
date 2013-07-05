@@ -76,7 +76,7 @@ class CDI:
 
         lfiles += " --restrictedMC"
 
-        if rerunCommand(fList, outFile):
+        if rerunCommand(fList, outFile, html):
             errcode = dumpCommandResult(html, "FTConvertToCDI.exe %s" % lfiles, title, store=cmdLog)
             if errcode == 0:
                 shutil.copy ("output.root", outFile)
@@ -93,7 +93,7 @@ class CDI:
         cmdLog = "%s-%s-check-cmd-log.txt" % (configInfo.name, self._name)
         if self._check:
             print >> html, "<p>Running a check on the CDI file</p>"
-            if rerunCommand(fList, cmdLog):
+            if rerunCommand(fList, cmdLog, html):
                 errcode = dumpCommandResult(html, "FTCheckOutput.exe %s" % outFile, store=cmdLog)
 
             else:
