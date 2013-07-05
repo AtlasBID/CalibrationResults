@@ -7,20 +7,15 @@ Default(ttbar_topo_dijet, bottom, MV1, *, AntiKt4TopoLCJVF0_5)
 
 # MV1, noJVF
 
-Default(system8, bottom, MV1, 0.7892, AntiKt4TopoLCnoJVF)
-Default(system8, bottom, MV1, 0.3511, AntiKt4TopoLCnoJVF)
-Default(system8, bottom, MV1, 0.9827, AntiKt4TopoLCnoJVF)
+Default(ttbar_topo_dijet, bottom, MV1, *, AntiKt4TopoLCnoJVF)
 
 # MV1c, JVF0_5
 
-Default(ttbar_dijet, bottom, MV1c, *, AntiKt4TopoLCJVF0_5)
-Default(system8, bottom, MV1c, 0.8641, AntiKt4TopoLCJVF0_5)
+Default(ttbar_topo_dijet, bottom, MV1c, *, AntiKt4TopoLCJVF0_5)
 
 # MV1c, noJVF
 
-Default(system8, bottom, MV1c, 0.8674, AntiKt4TopoLCnoJVF)
-Default(system8, bottom, MV1c, 0.9237, AntiKt4TopoLCnoJVF)
-Default(system8, bottom, MV1c, 0.8641, AntiKt4TopoLCnoJVF)
+Default(ttbar_topo_dijet, bottom, MV1c, *, AntiKt4TopoLCnoJVF)
 
 ###############################################################
 # EM Jets - bottom
@@ -31,62 +26,50 @@ Default(ttbar_pdf_dijet, bottom, MV1, *, AntiKt4TopoEMJVF0_5)
 
 # MV1, noJVF
 
-Default(system8, bottom, MV1, 0.8119, AntiKt4TopoEMnoJVF)
-Default(system8, bottom, MV1, 0.3900, AntiKt4TopoEMnoJVF)
-Default(system8, bottom, MV1, 0.9867, AntiKt4TopoEMnoJVF)
+Default(system8, bottom, MV1, *, AntiKt4TopoEMnoJVF)
 
 # MV1c, JVF0_5
 
 Default(system8, bottom, MV1c, *, AntiKt4TopoEMJVF0_5)
-Default(ttbar_topo_dijet, bottom, MV1c, *, AntiKt4TopoLCJVF0_5)
 
 # MV1c, noJVF
 
 Default(system8, bottom, MV1c, *, AntiKt4TopoEMnoJVF)
-Default(system8, bottom, MV1c, *, AntiKt4TopoLCnoJVF)
 
 
 ###############################################################
 # Charm
 
+#EM
+
 Default(DStar_ttbar_pdf_dijet_rebin, charm, MV1, *, AntiKt4TopoEMJVF0_5)
-
-Default(DStar_ttbar_topo_dijet_rebin, charm, MV1, 0.9827, AntiKt4TopoLCJVF0_5)
-Default(DStar_ttbar_topo_dijet_rebin, charm, MV1, 0.7892, AntiKt4TopoLCJVF0_5)
-Default(DStar_ttbar_topo_dijet_rebin, charm, MV1, 0.3511, AntiKt4TopoLCJVF0_5)
-
 Default(DStar_system8_rebin, charm, MV1, *, AntiKt4TopoEMnoJVF)
-Default(DStar_system8_rebin, charm, MV1, *, AntiKt4TopoLCnoJVF)
-
-Default(DStar_ttbar_topo_dijet_rebin, charm, MV1c, *, AntiKt4TopoLCJVF0_5)
-Default(DStar_system8_rebin, charm, MV1c, *, AntiKt4TopoLCnoJVF)
-
 Default(DStar_system8_rebin, charm, MV1c, *, AntiKt4TopoEMnoJVF)
 Default(DStar_system8_rebin, charm, MV1c, *, AntiKt4TopoEMJVF0_5)
+
+#LC
+
+Default(DStar_ttbar_topo_dijet_rebin, charm, MV1, *, AntiKt4TopoLCJVF0_5)
+Default(DStar_ttbar_topo_dijet_rebin, charm, MV1, *, AntiKt4TopoLCnoJVF)
+Default(DStar_ttbar_topo_dijet_rebin, charm, MV1c, *, AntiKt4TopoLCJVF0_5)
+Default(DStar_ttbar_topo_dijet_rebin, charm, MV1c, *, AntiKt4TopoLCnoJVF)
 
 ###############################################################
 # Tau
 
+#EM
 Default(DStar_ttbar_pdf_dijet_rebin, tau, MV1, *, AntiKt4TopoEMJVF0_5)
-
-Default(DStar_system8_rebin, tau, MV1, 0.8119, AntiKt4TopoEMnoJVF)
-Default(DStar_system8_rebin, tau, MV1, 0.3900, AntiKt4TopoEMnoJVF)
-Default(DStar_system8_rebin, tau, MV1, 0.9867, AntiKt4TopoEMnoJVF)
-
-Default(DStar_ttbar_topo_dijet_rebin, tau, MV1, 0.9827, AntiKt4TopoLCJVF0_5)
-Default(DStar_ttbar_topo_dijet_rebin, tau, MV1, 0.7892, AntiKt4TopoLCJVF0_5)
-Default(DStar_ttbar_topo_dijet_rebin, tau, MV1, 0.3511, AntiKt4TopoLCJVF0_5)
-
-Default(DStar_system8_rebin, tau, MV1, 0.7892, AntiKt4TopoLCnoJVF)
-Default(DStar_system8_rebin, tau, MV1, 0.3511, AntiKt4TopoLCnoJVF)
-Default(DStar_system8_rebin, tau, MV1, 0.9827, AntiKt4TopoLCnoJVF)
-
-
-Default(DStar_ttbar_topo_dijet_rebin, tau, MV1c, *, AntiKt4TopoLCJVF0_5)
-Default(DStar_system8_rebin, tau, MV1c, *, AntiKt4TopoLCnoJVF)
+Default(DStar_system8_rebin, tau, MV1, *, AntiKt4TopoEMnoJVF)
 
 Default(DStar_system8_rebin, tau, MV1c, *, AntiKt4TopoEMnoJVF)
 Default(DStar_system8_rebin, tau, MV1c, *, AntiKt4TopoEMJVF0_5)
+
+#LC
+Default(DStar_ttbar_topo_dijet_rebin, tau, MV1, *, AntiKt4TopoLCJVF0_5)
+Default(DStar_ttbar_topo_dijet_rebin, tau, MV1, *, AntiKt4TopoLCnoJVF)
+
+Default(DStar_ttbar_topo_dijet_rebin, tau, MV1c, *, AntiKt4TopoLCJVF0_5)
+Default(DStar_ttbar_topo_dijet_rebin, tau, MV1c, *, AntiKt4TopoLCnoJVF)
 
 #####################################################
 # Light jets
