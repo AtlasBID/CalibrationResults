@@ -86,10 +86,15 @@ ttbar_pdf_10_all = files("ttbar_pdf/11bins/*.txt") \
                    .restrict() \
                    .filter(analyses = ["PDF_dilepton_emu_2jets", "PDF_dilepton_emu_3jets", "PDF_dilepton_ll_2jets", "PDF_dilepton_ll_3jets",])
 
+ttbar_pdf_pteta_all = files("ttbar_pdf/pTxEta/*.txt") \
+                      .restrict() \
+                      .filter(analyses = ["PDF_dilepton_14bins_emu_2jets", "PDF_dilepton_14bins_emu_3jets", "PDF_dilepton_14bins_ll_2jets", "PDF_dilepton_14bins_ll_3jets",])
+                   
+                   
 ttbar_kinsel_3jet = files("ttbar_kinsel/*/*_em3j.txt") \
 					.restrict()
 				  
-sources = s8 + ttdilep_topo + ttbar_pdf_7_all + ttbar_kinsel_3jet
+sources = s8 + ttdilep_topo + ttbar_pdf_7_all + ttbar_kinsel_3jet + ttbar_pdf_pteta_all
 
 #
 # Build up the central dijet fits. "dijet" is our best estimate, in the end, of the dijet
@@ -116,6 +121,7 @@ dijet = s8
 
 combined_ttbar_topo = (dijet+ttdilep_topo+ttbar_kinsel_3jet).bbb_fit("ttbar_topo_dijet")
 combined_ttbar_pdf = (dijet+ttbar_pdf_10_all).bbb_fit("ttbar_pdf_dijet")
+ttbar_pdf_pteta = ttbar_pdf_pteta_all.bbb_fit("PDF_14bins")
 
 ttbar = combined_ttbar_topo + combined_ttbar_pdf
 
@@ -195,10 +201,11 @@ sources += negative
 #
 
 master_cdi_file = \
-    dijet + ttbar \
+    dijet + ttbar + ttbar_pdf_pteta \
     + charm_sf \
     + tau_sf \
-    + light_sf
+    + light_sf \
+    + sources
 master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "MCefficiencies_for_CDI_14.4.2013.root")
 master_cdi_file.plot("MC12-CDI")
 master_cdi_file.dump(sysErrors = True, name="master")
