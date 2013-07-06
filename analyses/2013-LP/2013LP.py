@@ -88,7 +88,7 @@ ttbar_pdf_10_all = files("ttbar_pdf/11bins/*.txt") \
 
 ttbar_pdf_pteta_all = files("ttbar_pdf/pTxEta/*.txt") \
                       .restrict() \
-                      .filter(analyses = ["PDF_dilepton_14bins_emu_2jets", "PDF_dilepton_14bins_emu_3jets", "PDF_dilepton_14bins_ll_2jets", "PDF_dilepton_14bins_ll_3jets",])
+                      .filter(analyses = ["PDF_dl_14bins_emu_2jets", "PDF_dl_14bins_emu_3jets", "PDF_dl_14bins_ll_2jets", "PDF_dl_14bins_ll_3jets",])
                    
                    
 ttbar_kinsel_3jet = files("ttbar_kinsel/*/*_em3j.txt") \
