@@ -2,7 +2,7 @@
 # Run a fit on the inputs. This is a new command that runs on the input files.
 #
 
-from comboFitCommands import dumpCommandResult, listToString, rerunCommand, dumpFile
+from comboFitCommands import dumpCommandResult, listToString, rerunCommand, dumpFile, dumpTitle
 from FutureFile import FutureFile
 import comboGlobals
 
@@ -48,13 +48,14 @@ class Fit:
         # Next, see if we have done this command already
         #
 
-        if rerunCommand(fList, outputSFName):
+        dumpTitle(html, title)
+        if rerunCommand(fList, outputSFName, files, html):
 
             cmdout = open("%s-cmd.txt" % baseOutputName, "w")
             print >>cmdout, files
             cmdout.close()
         
-            errcod = dumpCommandResult(html, "FTCombine.exe %s" % files, title, store=cmdLog)
+            errcod = dumpCommandResult(html, "FTCombine.exe %s" % files, store=cmdLog)
             if errcod == 0:
                 if not os.path.exists("combined.txt"):
                     errcode = -1000
@@ -67,10 +68,10 @@ class Fit:
                 print "The Combination failed"
                 
         else:
-
-            dumpFile(html, cmdLog, title)
             print >> html, "<p>Dumping file from last run of combination and including those results in our calculations as"
             print >> html, "the inputs have not changed since last run.</p>"
+
+            dumpFile(html, cmdLog)
 
 
         #

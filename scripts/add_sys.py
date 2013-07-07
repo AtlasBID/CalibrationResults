@@ -2,7 +2,7 @@
 # Add a systematic to an analysis (and rename it).
 #
 
-from comboFitCommands import dumpCommandResult, listToString, rerunCommand, dumpFile
+from comboFitCommands import dumpCommandResult, listToString, rerunCommand, dumpFile, dumpTitle
 from FutureFile import FutureFile
 import comboGlobals
 
@@ -47,15 +47,16 @@ class AddSys:
 
         title = "Adding systematic error %s" % self._newSys
 
-        if rerunCommand(fList, outputFile, html):
+        dumpTitle(html, title)
+        if rerunCommand(fList, outputFile, files, html):
 
-            errcod = dumpCommandResult(html, "FTManipSys.exe %s" % files, title, store=cmdLog)
+            errcod = dumpCommandResult(html, "FTManipSys.exe %s" % files, store=cmdLog)
             if errcod != 0:
                 print >> html, "Failed to add systematice error! Command line: %s" % files
                 raise BaseException("Unable to add systematic error")
 
         else:
-            dumpFile(html, cmdLog, title)
+            dumpFile(html, cmdLog)
             print >> html, "<p>sys error previously run, and no inputs have been changed. Using results from last run.</p>"
 
         print >> html, '<p><a href="%s">Scale Factor File</a></p>' % outputFile

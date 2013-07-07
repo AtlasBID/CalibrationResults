@@ -2,7 +2,7 @@
 #  Rebin one analysis into another analysis
 #
 
-from comboFitCommands import dumpCommandResult, listToString, rerunCommand, dumpFile
+from comboFitCommands import dumpCommandResult, listToString, rerunCommand, dumpFile, dumpTitle
 from FutureFile import FutureFile
 import comboGlobals
 
@@ -41,15 +41,16 @@ class Rebin:
 
         title = "Combining bins for %s" % self._ana
 
-        if rerunCommand(fList, outputFile, html):
+        dumpTitle(html, title)
+        if rerunCommand(fList, outputFile, files, html):
 
-            errcod = dumpCommandResult(html, "FTCombineBins.exe %s" % files, title, store=cmdLog)
+            errcod = dumpCommandResult(html, "FTCombineBins.exe %s" % files, store=cmdLog)
             if errcod != 0:
                 print >> html, "Failed to rebin! Command line: %s" % files
                 raise BaseException("Unable to rebin")
 
         else:
-            dumpFile(html, cmdLog, title)
+            dumpFile(html, cmdLog)
             print >> html, "<p>Rebin previously run, and no inputs have been changed. Using results from last run.</p>"
 
         print >> html, '<p><a href="%s">Scale Factor File</a></p>' % outputFile

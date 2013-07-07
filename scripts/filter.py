@@ -2,7 +2,7 @@
 # Filter the input for some set of criteria.
 #
 
-from comboFitCommands import dumpCommandResult, listToString, rerunCommand, dumpFile
+from comboFitCommands import dumpCommandResult, listToString, rerunCommand, dumpFile, dumpTitle
 from FutureFile import FutureFile
 import comboGlobals
 
@@ -58,17 +58,17 @@ class Filter:
 
         title = "Filtering for %s" % listToString(self._anas + self._taggers + self._ignore + self._jets)
 
+        dumpTitle(html, title)
         print >> html, "<b>Command line: FTDump.exe %s</b>" % files
-
-        if rerunCommand(fList, outputName, html):
-            errcod = dumpCommandResult(html, "FTDump.exe %s" % files, title, store=cmdLog)
+        if rerunCommand(fList, outputName, files, html):
+            errcod = dumpCommandResult(html, "FTDump.exe %s" % files, store=cmdLog)
             if errcod != 0:
                 print >> html, "Failed to filter! Command line: %s" % files
                 raise BaseException("Unable to filter")
 
         else:
-            dumpFile(html, cmdLog, title)
             print >> html, "<p>Using results of last filter command as no inputs have changed.</p>"
+            dumpFile(html, cmdLog)
 
         print >> html, '<p><a href="%s">Scale Factor File</a></p>' % outputName
         

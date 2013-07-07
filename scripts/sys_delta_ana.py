@@ -2,7 +2,7 @@
 # Given two analyses, use the difference as a new systeamtic on the first analysis.
 #
 
-from comboFitCommands import dumpCommandResult, listToString, rerunCommand, dumpFile
+from comboFitCommands import dumpCommandResult, listToString, rerunCommand, dumpFile, dumpTitle
 from FutureFile import FutureFile
 import comboGlobals
 
@@ -39,15 +39,16 @@ class DeltaAna:
 
         title = "Calculating Relative Difference between %s and %s to create %s" % (self._baseAna, self._deltaAna, self._newAna)
 
-        if rerunCommand(fList, outputFile, html):
+        dumpTitle(html, title)
+        if rerunCommand(fList, outputFile, files, html):
 
-            errcod = dumpCommandResult(html, "FTManipSys.exe %s" % files, title, store=cmdLog)
+            errcod = dumpCommandResult(html, "FTManipSys.exe %s" % files, store=cmdLog)
             if errcod != 0:
                 print >> html, "Failed to calc new systematic error! Command line: %s" % files
                 raise BaseException("Unable to calculate new systematic error")
 
         else:
-            dumpFile(html, cmdLog, title)
+            dumpFile(html, cmdLog)
             print >> html, "<p>Recalc previously run, and no inputs have been changed. Using results from last run.</p>"
 
         print >> html, '<p><a href="%s">Scale Factor File</a></p>' % outputFile

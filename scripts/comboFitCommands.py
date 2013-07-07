@@ -21,21 +21,40 @@ def listToString (list):
     return cmd
 
 #
-# Check the list of input file dates against the output file dates. If the inputs are
-# more recent, then we must run again!
+# Check to see if command line options have changed.
 #
-def rerunCommand (inputFiles, outputFile, html = None):
-    if not os.path.exists(outputFile):
-        if html:
-            print >> html, "<p>Rerunning command because output file can't be found</p>"
-        return True
-    
+def rerunCheckCommandLine (commandLine, outputFile):
+    cmd_options = "%s-cmdopt.txt" % outputFile
+    cmd_options_exists = os.path.exists(cmd_options)
+
+    cmd_line = ""
+    if cmd_options_exists:
+        cmd_opt_in = file(cmd_options, "r")
+        cmd_line = cmd_opt.readlines()[0].strip()
+        cmd_opt_in.close()
+
+    cmd_opt_good = cmd_line != commandLine
+
+    if not cmd_opt_good:
+        cmd_opt_out = file(cmd_options, "w")
+        print >> cmd_opt_out, commandLine
+        cmd_opt_out.close()
+
+    return cmd_opt_good
+
+#
+# Check the dates of the input files.
+#
+def rerunCheckFileList(inputFiles, outputFile, html):
+
     out_infile_list = "%s-infiles.txt" % outputFile
     out_infile_list_exists = os.path.exists(out_infile_list)
 
-    # A cache file so we can see if any input files actually
-    # changed even if the date didn't.
-    
+    #
+    # Read in the old list, and write out the new one so we are ready
+    # for the next go-around
+    #
+
     lst = []
     if out_infile_list_exists:
         lin = file(out_infile_list, "r")
@@ -47,31 +66,62 @@ def rerunCommand (inputFiles, outputFile, html = None):
         print >> lin, f
     lin.close()
         
-    if not out_infile_list_exists:
-        if html:
-            print >> html, "<p>Rerunning command because last-run cache file doesn't exit<p>"
-        return True
+    # If the output file doesn't exist, then we really don't care about doing date
+    # checks!
+
+    if not os.path.exists(outputFile):
+        return False
     
     mod_output = os.stat(outputFile).st_mtime
 
     # Compare each file to see if we used it previously or if
     # if it was in the list.
     
+    isgood = True
     for f in inputFiles:
         if not os.path.exists(f):
             raise BaseException("Input file %s does not exist. Not possible!" % f)
         
         if not (f in lst):
             if html:
-                print >> html, "<p>Rerunning command because file '%s' is new on the input line" % f
-            return True
+                print >> html, "<p>File '%s' is a never seen before input file." % f
         
         if os.stat(f).st_mtime > mod_output:
             if html:
-                print >> html, "<p>Rerunning command because file '%s' is newer thant he output file" % f
-            return True
+                print >> html, "<p>File '%s' is newer than the output file" % f
+            isgood = False
 
-    return False
+    return isgood
+
+
+#
+# Check the list of input file dates against the output file dates. If the inputs are
+# more recent, then we must run again! Also, x-check the command line to see if any options
+# have changed!
+#
+def rerunCommand (inputFiles, outputFile, commandLine, html = None):
+
+    cmd_opt_good = rerunCheckCommandLine(commandLine, outputFile)
+    file_list_good = rerunCheckFileList(inputFiles, outputFile, html)
+    output_exists = os.path.exists(outputFile)
+
+    # If any failures, then delete the output file to make sure we have to rerun.
+
+    if cmd_opt_good and file_list_good and output_exists:
+        return False
+
+    if output_exists:
+        os.unlink(outputFile)
+
+    if html:
+        if not output_exists:
+            print >> html, "<p>Rerunning command because no previous output files exists</p>"
+        if not file_list_good:
+            print >> html, "<p>Rerunning command because of updates to the input file list.</p>"
+        if not cmd_opt_good:
+            print >> html, "<p>Rerunning command because of changes to the command line options.</p>"
+
+    return True
 
 #
 # Run a command line and return the data. Store to an output file if it is set.
@@ -166,6 +216,12 @@ def dumpFile (html, fname, title=""):
     for l in f:
         print >> html, l.rstrip()
     print >> html, "</PRE>"
+
+#
+# Dump out just a title.
+#
+def dumpTitle (html, title):
+    print >> html, "<h1>%s</h1>" % title
 
 #
 # Walk through a root tree and dump it out

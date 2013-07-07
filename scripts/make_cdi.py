@@ -3,7 +3,7 @@
 #
 
 from files import files
-from comboFitCommands import dumpCommandResult, listToString, dumpFile, rerunCommand
+from comboFitCommands import dumpCommandResult, listToString, dumpFile, rerunCommand, dumpTitle
 import comboGlobals
 
 import ROOT
@@ -76,8 +76,9 @@ class CDI:
 
         lfiles += " --restrictedMC"
 
-        if rerunCommand(fList, outFile, html):
-            errcode = dumpCommandResult(html, "FTConvertToCDI.exe %s" % lfiles, title, store=cmdLog)
+        dumpTitle(html, title)
+        if rerunCommand(fList, outFile, lfiles, html):
+            errcode = dumpCommandResult(html, "FTConvertToCDI.exe %s" % lfiles, store=cmdLog)
             if errcode == 0:
                 shutil.copy ("output.root", outFile)
             else:
@@ -85,7 +86,7 @@ class CDI:
                 print >> html, "Command line arguments: %s" % files
         
         else:
-            dumpFile(html, cmdLog, title)
+            dumpFile(html, cmdLog)
             print >> html, "<p>Inputs have not changed, resuing results from last run</p>"
 
         print >> html, '<a href="%s">CDI File</a>' % outFile
@@ -93,7 +94,7 @@ class CDI:
         cmdLog = "%s-%s-check-cmd-log.txt" % (configInfo.name, self._name)
         if self._check:
             print >> html, "<p>Running a check on the CDI file</p>"
-            if rerunCommand(fList, cmdLog, html):
+            if rerunCommand(fList, cmdLog, outFile, html):
                 errcode = dumpCommandResult(html, "FTCheckOutput.exe %s" % outFile, store=cmdLog)
 
             else:

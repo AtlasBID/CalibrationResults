@@ -2,7 +2,7 @@
 # Plot the input files
 #
 
-from comboFitCommands import dumpCommandResult, listToString, dumpFile, rerunCommand
+from comboFitCommands import dumpCommandResult, listToString, dumpFile, rerunCommand, dumpTitle
 import comboGlobals
 
 import shutil
@@ -33,8 +33,9 @@ class Plot:
 
         title = "Plots for %s" % self._name
 
-        if rerunCommand(fList, outFile, html):
-            errcode = dumpCommandResult(html, "FTPlot.exe %s" % files, title, store=cmdLog)
+        dumpTitle(html, title)
+        if rerunCommand(fList, outFile, files, html):
+            errcode = dumpCommandResult(html, "FTPlot.exe %s" % files, store=cmdLog)
             if errcode == 0:
                 shutil.copy ("plots.root", outFile)
             else:
@@ -42,7 +43,7 @@ class Plot:
                 print >> html, "Command line arguments: %s" % files
         
         else:
-            dumpFile(html, cmdLog, title)
+            dumpFile(html, cmdLog)
             print >> html, "<p>Inputs have not changed, resuing results from last run</p>"
 
         print >> html, '<a href="%s">Scale Factor Plots</a>' % outFile

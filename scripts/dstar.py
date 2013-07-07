@@ -2,7 +2,7 @@
 # Do the D* calculation (scaling template D* files to the final D* values).
 #
 
-from comboFitCommands import dumpCommandResult, listToString, rerunCommand, dumpFile
+from comboFitCommands import dumpCommandResult, listToString, rerunCommand, dumpFile, dumpTitle
 from FutureFile import FutureFile
 import comboGlobals
 
@@ -41,15 +41,16 @@ class DStar:
 
         title = "Calculating D* from template %s" % self._dstar
 
-        if rerunCommand(fList, outputFile, html):
+        dumpTitle(html, title)
+        if rerunCommand(fList, outputFile, files, html):
 
-            errcod = dumpCommandResult(html, "FTDStarCalc.exe %s" % files, title, store=cmdLog)
+            errcod = dumpCommandResult(html, "FTDStarCalc.exe %s" % files, store=cmdLog)
             if errcod != 0:
                 print >> html, "Failed to calculate D*! Command line: %s" % files
                 raise BaseException("Unable to calc D*")
 
         else:
-            dumpFile(html, cmdLog, title)
+            dumpFile(html, cmdLog)
             print >> html, "<p>D* calc previously run, and no inputs have been changed. Using results from last run.</p>"
 
         print >> html, '<p><a href="%s">Scale Factor File</a></p>' % outputFile
