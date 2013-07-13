@@ -1,4 +1,4 @@
-Analysis(KinSel_dilep_3j,bottom,SV0,5.650,AntiKt4TopoEMJVF0_5 ) {
+Analysis(KinSel_dilep_3j,bottom,SV0,5.700,AntiKt4TopoEMJVF0_5 ) {
     bin(20<pt<30,0<abseta<2.5)
     {
         central_value(1.0726,9.6636%)
