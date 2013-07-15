@@ -5,7 +5,7 @@
 #
 # take all input files and transofrm them into a target output analysis.
 #
-def bbb_fit (f, anaName):
+def bbb_fit (f, anaName, saveCHI2Fits = False, includeSources = False):
     #
     # First, do both fits
     #
@@ -21,5 +21,11 @@ def bbb_fit (f, anaName):
 
     r = (fit_comb + fit_bbb).sys_delta_ana(anaName, bbb_name, comb_name, "Correlated Fit Systematic")
 
+    if saveCHI2Fits:
+        r = r + fit_comb
+
+    if includeSources:
+        r = r + f
+        
     return r
     

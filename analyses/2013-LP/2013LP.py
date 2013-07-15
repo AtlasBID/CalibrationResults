@@ -119,11 +119,19 @@ dijet = s8
 # ttbar represents all the ttbar fits we are interested in using, in the end.
 #
 
-combined_ttbar_topo = (dijet+ttdilep_topo+ttbar_kinsel_3jet).bbb_fit("ttbar_topo_dijet")
-combined_ttbar_pdf = (dijet+ttbar_pdf_10_all).bbb_fit("ttbar_pdf_dijet")
-ttbar_pdf_pteta = ttbar_pdf_pteta_all.bbb_fit("PDF_14bins")
+combined_ttbar_topo_extra = (dijet+ttdilep_topo+ttbar_kinsel_3jet).bbb_fit("ttbar_topo_dijet", saveCHI2Fits=True, includeSources = True)
+combined_ttbar_pdf_extra = (dijet+ttbar_pdf_10_all).bbb_fit("ttbar_pdf_dijet", saveCHI2Fits=True, includeSources = True)
+ttbar_pdf_pteta_extra = ttbar_pdf_pteta_all.bbb_fit("PDF_14bins", saveCHI2Fits=True, includeSources = True)
+
+combined_ttbar_topo = combined_ttbar_topo_extra.filter(analyses = ["ttbar_topo_dijet"])
+combined_ttbar_pdf = combined_ttbar_pdf_extra.filter(analyses = ["ttbar_pdf_dijet"])
+ttbar_pdf_pteta = ttbar_pdf_pteta_extra.filter(analyses = ["PDF_14bins"])
 
 ttbar = combined_ttbar_topo + combined_ttbar_pdf
+
+#combined_ttbar_topo_chi2 = combined_ttbar_topo_extra.filter(analyses = ["comb_ttbar_topo_dijet_temp"])
+#combined_ttbar_pdf_chi2 = combined_ttbar_pdf_extra.filter(analyses = ["comb_ttbar_pdf_dijet_temp"])
+#ttbar_pdf_pteta_chi2 = ttbar_pdf_pteta_extra.filter(analyses = ["comb_PDF_14bins_temp"])
 
 #
 # Next, we need to build up the master fits that will be used to make charm and tau results.
@@ -188,7 +196,9 @@ sources += negative
 # Plot the dijet and the main ttbar fit for comparison as well
 #
 
-#(tt_topo + s8_rebinned).plot("tts8_compare")
+combined_ttbar_topo_extra.plot("ttbar_topo_chi2")
+combined_ttbar_pdf_extra.plot("ttbar_pdf_chi2")
+ttbar_pdf_pteta_extra.plot("ttbar_pdf_peta_chi2")
 
 #
 # Plot the fit ttbar results
