@@ -71,7 +71,7 @@ def doCombo(name, cleanFilesFirst=False, zipResults=False):
 
     if zipResults:
         os.system("tar -czf %s.tar.gz %s*" % (configInfo.name, configInfo.name))
-        os.system("tar -czf %s-noplots.tar.gz --exclude='*plots.root' --exclude='*.tar.gz' %s*" % (configInfo.name, configInfo.name))
+        os.system("tar -czf %s-noplots.tar.gz --exclude='*plots*.root' --exclude='*.tar.gz' %s*" % (configInfo.name, configInfo.name))
 
 #
 # When invokation occurs from the command line.
