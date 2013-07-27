@@ -93,6 +93,12 @@ ttbar_pdf_pteta_all = files("ttbar_pdf/pTxEta/*.txt") \
                    
 ttbar_kinsel_3jet = files("ttbar_kinsel/*/*_em3j.txt") \
                     .restrict()
+
+# We want the 2 jet results as well, but only where they don't overlap with
+# Richard's inputs (ttdilep_topo).
+ttbar_kinsel_2jet = files("ttbar_kinsel/*/*_em2j.txt") \
+                    .restrict()
+                    .filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"])
 				  
 sources = s8 + ttdilep_topo + ttbar_pdf_7_all + ttbar_kinsel_3jet + ttbar_pdf_pteta_all
 
@@ -119,7 +125,7 @@ dijet = s8
 # ttbar represents all the ttbar fits we are interested in using, in the end.
 #
 
-combined_ttbar_topo_extra = (dijet+ttdilep_topo+ttbar_kinsel_3jet).bbb_fit("ttbar_topo_dijet", saveCHI2Fits=True, includeSources = True)
+combined_ttbar_topo_extra = (dijet+ttdilep_topo+ttbar_kinsel_3jet+ttbar_kinsel_2jet).bbb_fit("ttbar_topo_dijet", saveCHI2Fits=True, includeSources = True)
 combined_ttbar_pdf_extra = (dijet+ttbar_pdf_10_all).bbb_fit("ttbar_pdf_dijet", saveCHI2Fits=True, includeSources = True)
 ttbar_pdf_pteta_extra = ttbar_pdf_pteta_all.bbb_fit("PDF_14bins", saveCHI2Fits=True, includeSources = True)
 
