@@ -100,7 +100,7 @@ ttbar_kinsel_2jet = files("ttbar_kinsel/*/*_em2j.txt") \
                     .restrict() \
                     .filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"])
 				  
-sources = s8 + ttdilep_topo + ttbar_pdf_7_all + ttbar_kinsel_3jet + ttbar_pdf_pteta_all
+sources = s8 + ttdilep_topo + ttbar_pdf_7_all + ttbar_kinsel_3jet + ttbar_kinsel_2jet + ttbar_pdf_pteta_all
 
 #
 # Build up the central dijet fits. "dijet" is our best estimate, in the end, of the dijet
