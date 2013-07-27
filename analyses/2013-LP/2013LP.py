@@ -97,7 +97,7 @@ ttbar_kinsel_3jet = files("ttbar_kinsel/*/*_em3j.txt") \
 # We want the 2 jet results as well, but only where they don't overlap with
 # Richard's inputs (ttdilep_topo).
 ttbar_kinsel_2jet = files("ttbar_kinsel/*/*_em2j.txt") \
-                    .restrict()
+                    .restrict() \
                     .filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"])
 				  
 sources = s8 + ttdilep_topo + ttbar_pdf_7_all + ttbar_kinsel_3jet + ttbar_pdf_pteta_all
