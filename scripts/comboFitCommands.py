@@ -83,13 +83,14 @@ def rerunCheckFileList(inputFiles, outputFile, html):
             raise BaseException("Input file %s does not exist. Not possible!" % f)
         
         if not (f in lst):
+            isgood = False
             if html:
                 print >> html, "<p>File '%s' is a never seen before input file." % f
         
         if os.stat(f).st_mtime > mod_output:
+            isgood = False
             if html:
                 print >> html, "<p>File '%s' is newer than the output file" % f
-            isgood = False
 
     return isgood
 
