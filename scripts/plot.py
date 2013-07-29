@@ -10,8 +10,8 @@ import shutil
 #
 # The plot operator, called on an sfObject
 #
-def plot(sfobj, name):
-    comboGlobals.Commands += [Plot(sfobj, name)]
+def plot(sfobj, name, byCalibEff = False):
+    comboGlobals.Commands += [Plot(sfobj, name, byCalibEff)]
     return sfobj
 
 #
@@ -19,9 +19,10 @@ def plot(sfobj, name):
 #
 class Plot:
     # Plot a bunch of inputs with a certian name
-    def __init__(self, sfinfo, name):
+    def __init__(self, sfinfo, name, byCalibEff):
         self._sf = sfinfo
         self._name = name
+        self._byCalibEff = byCalibEff
 
     # Run the plotter!
     def Execute(self, html, configInfo):
@@ -32,6 +33,9 @@ class Plot:
         cmdLog = "%s-plots-%s-cmd-log.txt" % (configInfo.name, self._name)
 
         title = "Plots for %s" % self._name
+
+        if self._byCalibEff:
+            files += " --ByCalibEff"
 
         dumpTitle(html, title)
         if rerunCommand(fList, outFile, files, html):

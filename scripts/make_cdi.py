@@ -4,6 +4,7 @@
 
 from files import files
 from comboFitCommands import dumpCommandResult, listToString, dumpFile, rerunCommand, dumpTitle
+from FutureFile import FutureFile
 import comboGlobals
 
 import ROOT
@@ -13,11 +14,12 @@ import shutil
 # The CDI operator.
 #
 def make_cdi (sfobj, name, defaults_file = None, eff_file = None, Check=True):
+    rf = FutureFile()
     comboGlobals.Commands += [CDI(sfobj, name,
                                   files(defaults_file, no_files_ok = True),
                                   files(eff_file, no_files_ok = True),
-                                  Check)]
-    return sfobj
+                                  Check, rf)]
+    return rf
 
 #
 # Walk through a root tree and dump it out
@@ -48,12 +50,13 @@ def dumpROOTFile (html, fname):
 #
 class CDI:
     # Plot a bunch of inputs with a certian name
-    def __init__(self, sfinfo, name, defaults_file, ttbar, check):
+    def __init__(self, sfinfo, name, defaults_file, ttbar, check, futurefile):
         self._sf = sfinfo
         self._name = name
         self._check = check
         self._ttbar = ttbar
         self._defaults_file = defaults_file
+        self._rf = futurefile
 
     # Run the CDI maker
     def Execute(self, html, configInfo):
@@ -61,7 +64,9 @@ class CDI:
         files = listToString(fList)
 
         outFile = "%s-%s.root" % (configInfo.name, self._name)
-        cmdLog = "%s-%s-cmd-log.txt" % (configInfo.name, self._name)
+        cmdLog = "%s-%s-cmd-make-log.txt" % (configInfo.name, self._name)
+        cmdLogCopy = "%s-%s-cmd-copy-log.txt" % (configInfo.name, self._name)
+        cmdCopyOut = "%s-%s-defaults-sf.txt" % (configInfo.name, self._name)
 
         title = "Building CDI %s" % self._name
 
@@ -84,12 +89,21 @@ class CDI:
             else:
                 print >> html, "<b>CDI building failed with error code %s</b>" % errcode
                 print >> html, "Command line arguments: %s" % files
-        
+
+            errcode = dumpCommandResult(html, "FTCopyDefaults.exe %s output %s" % (lfiles, cmdCopyOut), store=cmdLogCopy)
+            if errcode <> 0:
+                print >> html, "<b>Default building failed with error code %s</b>" % errcode
+                print >> html, "Command line arguments: %s" % files
+
         else:
             dumpFile(html, cmdLog)
+            dumpFile(html, cmdLogCopy)
             print >> html, "<p>Inputs have not changed, resuing results from last run</p>"
 
         print >> html, '<a href="%s">CDI File</a>' % outFile
+        print >> html, '<a href="%s">Defaults</a>' % cmdCopyOut
+
+        self._rf.SetFName(cmdCopyOut)
 
         cmdLog = "%s-%s-check-cmd-log.txt" % (configInfo.name, self._name)
         if self._check:
