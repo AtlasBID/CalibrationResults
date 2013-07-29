@@ -90,13 +90,17 @@ class CDI:
                 print >> html, "<b>CDI building failed with error code %s</b>" % errcode
                 print >> html, "Command line arguments: %s" % files
 
+        else:
+            dumpFile(html, cmdLog)
+            print >> html, "<p>Inputs have not changed, resuing results from last run</p>"
+
+        if rerunCommand(fList, cmdCopyOut, lfiles, html):
             errcode = dumpCommandResult(html, "FTCopyDefaults.exe %s output %s" % (lfiles, cmdCopyOut), store=cmdLogCopy)
             if errcode <> 0:
                 print >> html, "<b>Default building failed with error code %s</b>" % errcode
                 print >> html, "Command line arguments: %s" % files
 
         else:
-            dumpFile(html, cmdLog)
             dumpFile(html, cmdLogCopy)
             print >> html, "<p>Inputs have not changed, resuing results from last run</p>"
 
