@@ -26,15 +26,15 @@ Default(ttbar_pdf_dijet, bottom, MV1, *, AntiKt4TopoEMJVF0_5)
 
 # MV1, noJVF
 
-Default(system8, bottom, MV1, *, AntiKt4TopoEMnoJVF)
+Default(ttbar_topo_dijet, bottom, MV1, *, AntiKt4TopoEMnoJVF)
 
 # MV1c, JVF0_5
 
-Default(system8, bottom, MV1c, *, AntiKt4TopoEMJVF0_5)
+Default(ttbar_topo_dijet, bottom, MV1c, *, AntiKt4TopoEMJVF0_5)
 
 # MV1c, noJVF
 
-Default(system8, bottom, MV1c, *, AntiKt4TopoEMnoJVF)
+Default(ttbar_topo_dijet, bottom, MV1c, *, AntiKt4TopoEMnoJVF)
 
 
 ###############################################################
