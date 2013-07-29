@@ -64,7 +64,7 @@ class CDI:
         files = listToString(fList)
 
         outFile = "%s-%s.root" % (configInfo.name, self._name)
-        cmdLog = "%s-%s-cmd-make-log.txt" % (configInfo.name, self._name)
+        cmdLog = "%s-%s-cmd-log.txt" % (configInfo.name, self._name)
         cmdLogCopy = "%s-%s-cmd-copy-log.txt" % (configInfo.name, self._name)
         cmdCopyOut = "%s-%s-defaults-sf.txt" % (configInfo.name, self._name)
 
