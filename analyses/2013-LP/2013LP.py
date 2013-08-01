@@ -157,8 +157,9 @@ rebin_template_30 = files("commonbinning.txt") \
 ttbar_rebin = (rebin_template + ttbar) \
               .rebin("rebin", "<>_rebin")
               
-dijet_rebin = (rebin_template + dijet) \
-              .rebin("rebin", "<>_rebin")
+#Can't do a S8 only guy because the low bin is missing!
+#dijet_rebin = (rebin_template + dijet) \
+#              .rebin("rebin", "<>_rebin")
 
 ####################################
 # Tau and Charm
@@ -174,10 +175,11 @@ dstar_template = files("DStar/*/*.txt") \
 charm_sf_ttbar = (dstar_template + ttbar_rebin) \
                  .dstar("DStar_<>", "DStar")
 
-charm_sf_dijet = (dstar_template + dijet_rebin) \
-                 .dstar("DStar_<>", "DStar")
+#charm_sf_dijet = (dstar_template + dijet_rebin) \
+#                 .dstar("DStar_<>", "DStar")
                  
-charm_sf = charm_sf_ttbar + charm_sf_dijet
+charm_sf = charm_sf_ttbar
+#+ charm_sf_dijet
 
                  
 tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
