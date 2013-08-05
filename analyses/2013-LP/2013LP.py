@@ -230,6 +230,6 @@ master_cdi_file.dump(sysErrors = True, name="master")
 master_cdi_file.dump(metadata = True, name="master-metadata")
 sources.dump(sysErrors = True, name="sources")
 
-(master_cdi_file + defaultSFs).plot("MC12-ByTagger", byCalibEff = True)
+(master_cdi_file + defaultSFs).plot("MC12-ByTagger", byCalibEff = True, effOnly=True)
 
 # Done!
