@@ -23,6 +23,7 @@ inputs = [
     "ptrel/*.txt",
     "KinFit_ljet/*.txt",
     "KinSel_dilet/*.txt",
+	"ttbar_pdf/*.txt",
 
     "stat_correlation_inputs.txt",
     "defaults.txt",
@@ -86,8 +87,9 @@ for t in taggers:
 analysisGroupings = {
     'bottom': {
 		'dijet': ["pTrel", "system8"],
-		'ttbar': ["ttbarKFlepjet", "ttbar_kinsel_dilep"],
-		'all': ["ttbarKFlepjet", "ttbar_kinsel_dilep", "pTrel", "system8"],
+		'ttbar': ["ttbarKFlepjet", "ttbar_kinsel_dilep", "PDF_dilepton_emu_2jets", "PDF_dilepton_emu_3jets", "PDF_dilepton_ll_2jets", "PDF_dilepton_ll_3jets"],
+		'ttbar_pdf': ["PDF_dilepton_emu_2jets", "PDF_dilepton_emu_3jets", "PDF_dilepton_ll_2jets", "PDF_dilepton_ll_3jets"],
+		'all': ["ttbarKFlepjet", "ttbar_kinsel_dilep", "PDF_dilepton_emu_2jets", "PDF_dilepton_emu_3jets", "PDF_dilepton_ll_2jets", "PDF_dilepton_ll_3jets", "pTrel", "system8"],
 		},
 	'light': {},
 	'charm': {},
@@ -119,6 +121,12 @@ ignore_analyses = [
     "pTrel-.*-AntiKt4Topo:20-pt-200:1.8-abseta-2.5",
 
     ".*:25-pt-30:.*",
+	
+# We have ttbar_pdf for some of the points, so we want to use these instead
+# of the ones from the kinematic selection (there are overlap problems there).
+
+	"ttbar_kinsel.*-MV1-0.601713.*",
+	"ttbar_kinsel.*-MV1-0.164.*",
 	
 # left over from some folks adding stuff that shouldn't be in here.
 	".*JetProb.*",
