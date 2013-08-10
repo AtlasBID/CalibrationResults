@@ -127,7 +127,9 @@ ignore_analyses = [
 
 	"ttbar_kinsel.*-MV1-0.601713.*",
 	"ttbar_kinsel.*-MV1-0.164.*",
-	
+	"ttbarKFlepjet.*-MV1-0.601713.*",
+	"ttbarKFlepjet.*-MV1-0.164.*",
+
 # left over from some folks adding stuff that shouldn't be in here.
 	".*JetProb.*",
 	".*IP3DSV1-1.55.*",
