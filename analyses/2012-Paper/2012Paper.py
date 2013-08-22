@@ -23,7 +23,8 @@ inputs = [
     "ptrel/*.txt",
     "KinFit_ljet/*.txt",
     "KinSel_dilet/*.txt",
-	"ttbar_pdf/*.txt",
+	"ttbar_pdf/6bin/*.txt",
+	"ttbar_pdf/9bin/*.txt",
 
     "stat_correlation_inputs.txt",
     "defaults.txt",
