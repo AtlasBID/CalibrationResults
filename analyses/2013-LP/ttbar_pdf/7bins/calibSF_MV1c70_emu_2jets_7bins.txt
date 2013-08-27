@@ -1,4 +1,4 @@
-Analysis(PDF_dilepton_7bins_emu_2jets,bottom,MV1c,0.7028,AntiKt4TopoEMJVF0_5)
+Analysis(PDF_dl_7bins_emu_2jets,bottom,MV1c,0.7028,AntiKt4TopoEMJVF0_5)
 {
 
       bin(20<pt<30,0<abseta<2.5)
