@@ -100,7 +100,7 @@ ttbar_kinsel_2jet = files("ttbar_kinsel/*/*_em2j.txt") \
                     .restrict() \
                     .filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"])
 				  
-sources = s8 + ttdilep_topo + ttbar_pdf_7_all + ttbar_kinsel_3jet + ttbar_kinsel_2jet + ttbar_pdf_pteta_all
+sources = s8 + ttdilep_topo + ttbar_pdf_7_all + ttbar_kinsel_3jet + ttbar_kinsel_2jet + ttbar_pdf_pteta_all + ttbar_pdf_10_all
 
 #
 # Build up the central dijet fits. "dijet" is our best estimate, in the end, of the dijet
@@ -114,8 +114,8 @@ dijet = s8
 # use it.
 #
 
-#ttbar_pdf_7_combined = ttbar_pdf_7_all.bbb_fit("PDF_ll_7_fit")
-#ttbar_pdf_10_combined = ttbar_pdf_10_all.bbb_fit("PDF_ll_10_fit")
+ttbar_pdf_7_combined = ttbar_pdf_7_all.bbb_fit("PDF_ll_7_fit")
+ttbar_pdf_10_combined = ttbar_pdf_10_all.bbb_fit("PDF_ll_10_fit")
 
 #
 # Do the ttbar results
@@ -133,7 +133,7 @@ combined_ttbar_topo = combined_ttbar_topo_extra.filter(analyses = ["ttbar_topo_d
 combined_ttbar_pdf = combined_ttbar_pdf_extra.filter(analyses = ["ttbar_pdf_dijet"])
 ttbar_pdf_pteta = ttbar_pdf_pteta_extra.filter(analyses = ["PDF_14bins"])
 
-ttbar = combined_ttbar_topo + combined_ttbar_pdf
+ttbar = combined_ttbar_topo + combined_ttbar_pdf + ttbar_pdf_7_combined + ttbar_pdf_10_combined
 
 #combined_ttbar_topo_chi2 = combined_ttbar_topo_extra.filter(analyses = ["comb_ttbar_topo_dijet_temp"])
 #combined_ttbar_pdf_chi2 = combined_ttbar_pdf_extra.filter(analyses = ["comb_ttbar_pdf_dijet_temp"])
