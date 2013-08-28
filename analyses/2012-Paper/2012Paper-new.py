@@ -99,9 +99,25 @@ ttbar_pdf_10_all = files("ttbar_pdf/9bin/*.txt") \
                  
 ttbar_pdf_7_combined_extra = ttbar_pdf_7_all.bbb_fit("PDF_ll_7_fit", saveCHI2Fits=True)
 ttbar_pdf_10_combined_extra = ttbar_pdf_10_all.bbb_fit("PDF_ll_10_fit", saveCHI2Fits=True)
+ttbar = ttbar_pdf_10_combined_extra.filter(analysis=["PDF_ll_10_fit"])
+
+#
+# And the dijet as well
+#
+
+dijet_r = (s8 + ptrel).bbb_fit("dijet", saveCHI2Fits=True)
+dijet = dijet_r.filter(analysis=["dijet"])
+
+#
+# And combine them totally
+#
+
+all = (dijet+ttbar).bbb_fit("all", saveCHI2Fits=True)
 
 ####################################
 # Plotting
 
 (ttbar_pdf_7_all + ttbar_pdf_7_combined_extra).plot("ttbar_pdf_7", effOnly=True)
-(ttbar_pdf_10_all + ttbar_pdf_10_combined_extra).plot("ttbar_pdf_7", effOnly=True)
+(ttbar_pdf_10_all + ttbar_pdf_10_combined_extra).plot("ttbar_pdf_10", effOnly=True)
+(s8+ptrel+dijet_r).plot("dijet", effOnly=True)
+(dijet+ttbar+all).plot("all", effOnly=True)
