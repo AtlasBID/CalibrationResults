@@ -90,7 +90,7 @@ ptrel = files("ptrel/*.txt") \
 ttbar_pdf_7_all = files ("ttbar_pdf/6bin/*.txt") \
                     .restrict()
 
-ttbar_pdf_10_all = files("ttbar_pdf/9bins/*.txt") \
+ttbar_pdf_10_all = files("ttbar_pdf/9bin/*.txt") \
                    .restrict()
 
 #
