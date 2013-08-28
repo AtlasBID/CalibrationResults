@@ -99,14 +99,14 @@ ttbar_pdf_10_all = files("ttbar_pdf/9bin/*.txt") \
                  
 ttbar_pdf_7_combined_extra = ttbar_pdf_7_all.bbb_fit("PDF_ll_7_fit", saveCHI2Fits=True)
 ttbar_pdf_10_combined_extra = ttbar_pdf_10_all.bbb_fit("PDF_ll_10_fit", saveCHI2Fits=True)
-ttbar = ttbar_pdf_10_combined_extra.filter(analysis=["PDF_ll_10_fit"])
+ttbar = ttbar_pdf_10_combined_extra.filter(analyses=["PDF_ll_10_fit"])
 
 #
 # And the dijet as well
 #
 
 dijet_r = (s8 + ptrel).bbb_fit("dijet", saveCHI2Fits=True)
-dijet = dijet_r.filter(analysis=["dijet"])
+dijet = dijet_r.filter(analyses=["dijet"])
 
 #
 # And combine them totally
