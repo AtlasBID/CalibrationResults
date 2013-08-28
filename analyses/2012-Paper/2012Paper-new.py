@@ -9,7 +9,7 @@ from files import files
 from sfObject import sfObject
 
 title = "Paper 2012 B-Tagging SF Results"
-name = "2012-Paper"
+name = "2012-Paper-new"
 description = "Final 2011 results for dijet and ttbar, for the b-tagging paper"
 
 #
@@ -102,10 +102,6 @@ ttbar_pdf_10_combined_extra = ttbar_pdf_10_all.bbb_fit("PDF_ll_10_fit", saveCHI2
 
 ####################################
 # Plotting
-
-#
-# Plot the dijet and the main ttbar fit for comparison as well
-#
 
 ttbar_pdf_7_combined_extra.plot("ttbar_pdf_7", effOnly=True)
 ttbar_pdf_10_combined_extra.plot("ttbar_pdf_7", effOnly=True)
