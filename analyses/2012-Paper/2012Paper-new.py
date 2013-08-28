@@ -87,7 +87,7 @@ s8 = files("system8/*.txt") \
 ptrel = files("ptrel/*.txt") \
     .restrict()
 
-ttbar_pdf_7_all = files ("ttbar_pdf/6bin/*.txt"") \
+ttbar_pdf_7_all = files ("ttbar_pdf/6bin/*.txt") \
                     .restrict()
 
 ttbar_pdf_10_all = files("ttbar_pdf/9bins/*.txt") \
@@ -97,7 +97,7 @@ ttbar_pdf_10_all = files("ttbar_pdf/9bins/*.txt") \
 # Fit PDF results, with a mind to showing compatibility, etc.
 #
                  
-ttbar_pdf_7_combined_extra = ttbar_pdf_7_all.bbb_fit("PDF_ll_7_fit", , saveCHI2Fits=True, includeSources = True)
+ttbar_pdf_7_combined_extra = ttbar_pdf_7_all.bbb_fit("PDF_ll_7_fit", saveCHI2Fits=True, includeSources = True)
 ttbar_pdf_10_combined_extra = ttbar_pdf_10_all.bbb_fit("PDF_ll_10_fit", saveCHI2Fits=True, includeSources = True)
 
 ####################################
