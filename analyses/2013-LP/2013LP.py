@@ -210,6 +210,8 @@ ttbar_pdf_pteta_extra.plot("ttbar_pdf_peta_chi2")
 ttbar_pdf_dijet_simple_combo.plot("ttbar_pdf_dijet_simple_chi", effOnly=True)
 
 (ttbar_pdf_7_combined+ttbar_pdf_10_combined).plot("ttbar_pdf_7_10")
+ttbar_pdf_7_combined.plot("ttbar_pdf_7")
+ttbar_pdf_10_combined.plot("ttbar_pdf_10")
 
 #
 # Plot the fit ttbar results
