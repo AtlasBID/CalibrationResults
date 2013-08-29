@@ -111,7 +111,8 @@ dijet = s8
 #
 
 ttbar_pdf_7_combined = ttbar_pdf_7_all.bbb_fit("PDF_ll_7_fit")
-ttbar_pdf_10_combined = ttbar_pdf_10_all.bbb_fit("PDF_ll_10_fit")
+ttbar_pdf_10_combined_extra = ttbar_pdf_10_all.bbb_fit("PDF_ll_10_fit", saveCHI2Fits=True)
+ttbar_pdf_10_combined = ttbar_pdf_10_combined_extra.filter(analyses=["PDF_ll_10_fit"])
 
 #
 # Do the ttbar results
@@ -130,6 +131,8 @@ combined_ttbar_pdf = combined_ttbar_pdf_extra.filter(analyses = ["ttbar_pdf_dije
 ttbar_pdf_pteta = ttbar_pdf_pteta_extra.filter(analyses = ["PDF_14bins"])
 
 ttbar = combined_ttbar_topo + combined_ttbar_pdf + ttbar_pdf_7_combined + ttbar_pdf_10_combined
+
+ttbar_pdf_dijet_simple_combo = (ttbar_pdf_10_combined+dijet).bbb_fit("ttbar_pdf_dijet_simple", saveCHI2Fits=True, includeSources=True)
 
 #combined_ttbar_topo_chi2 = combined_ttbar_topo_extra.filter(analyses = ["comb_ttbar_topo_dijet_temp"])
 #combined_ttbar_pdf_chi2 = combined_ttbar_pdf_extra.filter(analyses = ["comb_ttbar_pdf_dijet_temp"])
@@ -203,6 +206,8 @@ sources += negative
 combined_ttbar_topo_extra.plot("ttbar_topo_chi2")
 combined_ttbar_pdf_extra.plot("ttbar_pdf_chi2")
 ttbar_pdf_pteta_extra.plot("ttbar_pdf_peta_chi2")
+(ttbar_pdf_10_all+ttbar_pdf_10_combined_extra).plot("ttbar_pdf_only_chi2", effOnly=True)
+ttbar_pdf_dijet_simple_combo.plot("ttbar_pdf_dijet_simple_chi", effOnly=True)
 
 #
 # Plot the fit ttbar results
