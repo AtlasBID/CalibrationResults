@@ -78,6 +78,14 @@ ttbar_pdf_7_all = files("ttbar_pdf/7bins/*.txt") \
                   .restrict() \
                   .filter(analyses = ["PDF_dl_7bins_emu_3jets", "PDF_dl_7bins_emu_2jets", "PDF_dl_7bins_ll_3jets", "PDF_dl_7bins_ll_2jets"])
 
+ttbar_pdf_7_2j = files("ttbar_pdf/7bins/*.txt") \
+                  .restrict() \
+                  .filter(analyses = ["PDF_dl_7bins_emu_2jets", "PDF_dl_7bins_ll_2jets"])
+
+ttbar_pdf_7_3j = files("ttbar_pdf/7bins/*.txt") \
+                  .restrict() \
+                  .filter(analyses = ["PDF_dl_7bins_emu_3jets", "PDF_dl_7bins_ll_3jets"])
+
 ttbar_pdf_10_all = files("ttbar_pdf/11bins/*.txt") \
                    .restrict() \
                    .filter(analyses = ["PDF_dilepton_emu_2jets", "PDF_dilepton_emu_3jets", "PDF_dilepton_ll_2jets", "PDF_dilepton_ll_3jets",])
@@ -111,6 +119,8 @@ dijet = s8
 #
 
 ttbar_pdf_7_combined = ttbar_pdf_7_all.bbb_fit("PDF_ll_7_fit")
+ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("PDF_ll_7_2j_fit")
+ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("PDF_ll_7_3j_fit")
 ttbar_pdf_10_combined_extra = ttbar_pdf_10_all.bbb_fit("PDF_ll_10_fit", saveCHI2Fits=True)
 ttbar_pdf_10_combined = ttbar_pdf_10_combined_extra.filter(analyses=["PDF_ll_10_fit"])
 
@@ -130,7 +140,7 @@ combined_ttbar_topo = combined_ttbar_topo_extra.filter(analyses = ["ttbar_topo_d
 combined_ttbar_pdf = combined_ttbar_pdf_extra.filter(analyses = ["ttbar_pdf_dijet"])
 ttbar_pdf_pteta = ttbar_pdf_pteta_extra.filter(analyses = ["PDF_14bins"])
 
-ttbar = combined_ttbar_topo + combined_ttbar_pdf + ttbar_pdf_7_combined + ttbar_pdf_10_combined
+ttbar = combined_ttbar_topo + combined_ttbar_pdf + ttbar_pdf_7_combined + ttbar_pdf_10_combined + ttbar_pdf_7_2j + ttbar_pdf_7_3j
 
 ttbar_pdf_dijet_simple_combo = (ttbar_pdf_10_combined+dijet).bbb_fit("ttbar_pdf_dijet_simple", saveCHI2Fits=True, includeSources=True)
 
