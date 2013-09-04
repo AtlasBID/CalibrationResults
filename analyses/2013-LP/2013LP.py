@@ -140,7 +140,7 @@ combined_ttbar_topo = combined_ttbar_topo_extra.filter(analyses = ["ttbar_topo_d
 combined_ttbar_pdf = combined_ttbar_pdf_extra.filter(analyses = ["ttbar_pdf_dijet"])
 ttbar_pdf_pteta = ttbar_pdf_pteta_extra.filter(analyses = ["PDF_14bins"])
 
-ttbar = combined_ttbar_topo + combined_ttbar_pdf + ttbar_pdf_7_combined + ttbar_pdf_10_combined + ttbar_pdf_7_2j + ttbar_pdf_7_3j
+ttbar = combined_ttbar_topo + combined_ttbar_pdf + ttbar_pdf_7_combined + ttbar_pdf_10_combined + ttbar_pdf_7_combined_2j + ttbar_pdf_7_combined_3j
 
 ttbar_pdf_dijet_simple_combo = (ttbar_pdf_10_combined+dijet).bbb_fit("ttbar_pdf_dijet_simple", saveCHI2Fits=True, includeSources=True)
 
