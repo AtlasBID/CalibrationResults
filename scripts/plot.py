@@ -18,7 +18,7 @@ def plot(sfobj, name, byCalibEff = False, effOnly = False, byTaggerEff = False):
 # Plot our input files
 #
 class Plot:
-    # Plot a bunch of inputs with a certian name
+    # Plot a bunch of inputs with a certain name
     def __init__(self, sfinfo, name, byCalibEff, byTaggerEff, effOnly):
         self._sf = sfinfo
         self._name = name
