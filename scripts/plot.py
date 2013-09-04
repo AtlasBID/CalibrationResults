@@ -10,8 +10,8 @@ import shutil
 #
 # The plot operator, called on an sfObject
 #
-def plot(sfobj, name, byCalibEff = False, effOnly = False):
-    comboGlobals.Commands += [Plot(sfobj, name, byCalibEff, effOnly)]
+def plot(sfobj, name, byCalibEff = False, effOnly = False, byTaggerEff = False):
+    comboGlobals.Commands += [Plot(sfobj, name, byCalibEff, byTaggerEff, effOnly)]
     return sfobj
 
 #
@@ -19,11 +19,12 @@ def plot(sfobj, name, byCalibEff = False, effOnly = False):
 #
 class Plot:
     # Plot a bunch of inputs with a certian name
-    def __init__(self, sfinfo, name, byCalibEff, effOnly):
+    def __init__(self, sfinfo, name, byCalibEff, byTaggerEff, effOnly):
         self._sf = sfinfo
         self._name = name
         self._byCalibEff = byCalibEff
         self._effOnly = effOnly
+        self._byTaggerEff = byTaggerEff
 
     # Run the plotter!
     def Execute(self, html, configInfo):
@@ -38,6 +39,9 @@ class Plot:
         if self._byCalibEff:
             files += " --ByCalibEff"
 
+        if self._byTaggerEff:
+            files += " --ByCalibTaggerJet"
+			
         if self._effOnly:
             files += " --EffOnly"
 
