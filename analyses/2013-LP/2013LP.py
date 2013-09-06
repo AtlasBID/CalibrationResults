@@ -241,6 +241,7 @@ master_cdi_file = \
     + sources
 defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "MCefficiencies_for_CDI_14.4.2013.root")
 master_cdi_file.plot("MC12-CDI")
+master_cdi_file.plot("MC12-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
 master_cdi_file.dump(sysErrors = True, name="master")
 master_cdi_file.dump(metadata = True, name="master-metadata")
 sources.dump(sysErrors = True, name="sources")
