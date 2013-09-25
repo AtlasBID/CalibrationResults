@@ -5,15 +5,15 @@
 #
 # take all input files and transofrm them into a target output analysis.
 #
-def bbb_fit (f, anaName, saveCHI2Fits = False, includeSources = False):
+def bbb_fit (f, anaName, saveCHI2Fits = False, includeSources = False, extraFiles = None):
     #
     # First, do both fits
     #
     
     bbb_name = "bbb_%s_temp" % anaName
     comb_name = "comb_%s_temp" % anaName
-    fit_comb = f.fit(comb_name)
-    fit_bbb = f.fit(bbb_name, binByBin = True)
+    fit_comb = f.fit(comb_name, extraFiles = extraFiles)
+    fit_bbb = f.fit(bbb_name, binByBin = True, extraFiles = extraFiles)
 
     #
     # Now, do the sys error difference

@@ -86,7 +86,7 @@ s8 = files("system8/*.txt") \
      
 ptrel = files("ptrel/*.txt") \
     .restrict()
-
+	
 ttbar_pdf_7_all = files ("ttbar_pdf/6bin/*.txt") \
                     .restrict()
 
@@ -105,7 +105,7 @@ ttbar = ttbar_pdf_10_combined_extra.filter(analyses=["PDF_ll_10_fit"])
 # And the dijet as well
 #
 
-dijet_r = (s8 + ptrel).bbb_fit("dijet", saveCHI2Fits=True)
+dijet_r = (s8 + ptrel).bbb_fit("dijet", saveCHI2Fits=True, extraFiles=files("stat_correlation_inputs.txt"))
 dijet = dijet_r.filter(analyses=["dijet"])
 
 #

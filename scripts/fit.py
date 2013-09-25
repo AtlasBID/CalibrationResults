@@ -10,9 +10,9 @@ import shutil
 import os
 
 # Called from sfObject, do the fitting
-def fit (sfobj, outputName, binByBin = False):
+def fit (sfobj, outputName, binByBin = False, extraFiles = None):
     rf = FutureFile()
-    fc = Fit(sfobj, outputName, binByBin, rf)
+    fc = Fit(sfobj, outputName, binByBin, rf, extraFiles)
     comboGlobals.Commands += [fc]
     return rf
 
@@ -21,14 +21,17 @@ def fit (sfobj, outputName, binByBin = False):
 # Fit the input files
 #
 class Fit:
-    def __init__ (self, sfinfo, outputAnaName, binByBin, futureFile):
+    def __init__ (self, sfinfo, outputAnaName, binByBin, futureFile, extraFiles):
         self._sf = sfinfo
         self._fitAna = outputAnaName
         self._bbb = binByBin
         self._ff = futureFile
+        self._extraFiles = extraFiles
 
     def Execute (self, html, configInfo):
         fList = self._sf.ResolveToFiles(html)
+        if not (self._extraFiles is None):
+            fList = fList + self._extraFiles.ResolveToFiles(html)
         files = listToString(fList)
         files += " --combinedName %s" % self._fitAna
 
