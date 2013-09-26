@@ -71,6 +71,9 @@ sfObject.restrict = lambda self: self.filter(
 s8 = files("system8/*.txt") \
      .restrict()
 
+ptrel = files("ptrel/*.txt") \
+	.restrict()
+	 
 ttdilep_topo = files("topo_ttemu/*.txt") \
                .restrict()
 
@@ -104,7 +107,7 @@ ttbar_kinsel_2jet = files("ttbar_kinsel/*/*_em2j.txt") \
                     .restrict() \
                     .filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"])
 				  
-sources = s8 + ttdilep_topo + ttbar_pdf_7_all + ttbar_kinsel_3jet + ttbar_kinsel_2jet + ttbar_pdf_pteta_all + ttbar_pdf_10_all
+sources = s8 + ptrel + ttdilep_topo + ttbar_pdf_7_all + ttbar_kinsel_3jet + ttbar_kinsel_2jet + ttbar_pdf_pteta_all + ttbar_pdf_10_all
 
 #
 # Build up the central dijet fits. "dijet" is our best estimate, in the end, of the dijet
@@ -222,6 +225,8 @@ ttbar_pdf_dijet_simple_combo.plot("ttbar_pdf_dijet_simple_chi", effOnly=True)
 (ttbar_pdf_7_combined+ttbar_pdf_10_combined).plot("ttbar_pdf_7_10")
 ttbar_pdf_7_combined.plot("ttbar_pdf_7")
 ttbar_pdf_10_combined.plot("ttbar_pdf_10")
+
+(ptrel + s8).plot("dijet")
 
 #
 # Plot the fit ttbar results
