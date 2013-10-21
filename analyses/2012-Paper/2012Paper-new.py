@@ -112,7 +112,8 @@ dijet = dijet_r.filter(analyses=["dijet"])
 # And combine them totally
 #
 
-all = (dijet+ttbar).bbb_fit("all", saveCHI2Fits=True)
+all = (dijet+ttbar).bbb_fit("all", saveCHI2Fits=True) \
+      .restrict()
 
 ####################################
 # Plotting
