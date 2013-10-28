@@ -92,6 +92,12 @@ ttbar_pdf_7_all = files ("ttbar_pdf/6bin/*.txt") \
 
 ttbar_pdf_10_all = files("ttbar_pdf/9bin/*.txt") \
                    .restrict()
+				   
+ttbar_kinfit = files("KinFit_ljet/*.txt") \
+					.restrict()
+					
+ttbar_kinsel = files("KinSel_dijet/*.txt") \
+					.restrict()
 
 #
 # Fit PDF results, with a mind to showing compatibility, etc.
@@ -109,17 +115,29 @@ dijet_r = (s8 + ptrel).bbb_fit("dijet", saveCHI2Fits=True, extraFiles=files("sta
 dijet = dijet_r.filter(analyses=["dijet"])
 
 #
+# The old ttbar
+#
+
+ttbar_paper_r = (ttbar_kinfit+ttbar_kinsel).fit_bbb("ttbar", saveCHI2Fits=True)
+ttbar_paper = ttbar_paper_r.filter(analyses=["ttbar"])
+
+#
 # And combine them totally
 #
 
 all_r = (dijet+ttbar).bbb_fit("all", saveCHI2Fits=True)
 all = all_r.filter(analyses=["dijet","PDF_ll_10_fit","all"])
 
+all_paper_r = (s8+ptrel+ttbar_kinfit+ttbar_kinsel).fit("all_paper", saveCHI2Fits=True)
+all_paper = all_paper_r.filter(analyses=["all_paper"])
+
 ####################################
 # Plotting
 
 (ttbar_pdf_7_all + ttbar_pdf_7_combined_extra).plot("ttbar_pdf_7", effOnly=True)
 (ttbar_pdf_10_all + ttbar_pdf_10_combined_extra).plot("ttbar_pdf_10", effOnly=True)
+(ttbar_kinfit+ttbar_kinsel+ttbar_paper_r).plot("ttbar_paper", effOnly=True)
+(s8+ptrel+ttbar_kinfit+ttbar_kinsel+all_paper_r).plot("all_paper", effOnly=True)
 (s8+ptrel+dijet_r).plot("dijet", effOnly=True)
 (dijet+ttbar+all).plot("all", effOnly=True)
 (dijet+ttbar+all).plot("all_perTagger", effOnly=True, byTaggerEff=True)
