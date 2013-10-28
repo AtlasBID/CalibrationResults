@@ -128,7 +128,7 @@ ttbar_paper = ttbar_paper_r.filter(analyses=["ttbar"])
 all_r = (dijet+ttbar).bbb_fit("all", saveCHI2Fits=True)
 all = all_r.filter(analyses=["dijet","PDF_ll_10_fit","all"])
 
-all_paper_r = (s8+ptrel+ttbar_kinfit+ttbar_kinsel).fit("all_paper", saveCHI2Fits=True)
+all_paper_r = (s8+ptrel+ttbar_kinfit+ttbar_kinsel).bbb_fit("all_paper", saveCHI2Fits=True)
 all_paper = all_paper_r.filter(analyses=["all_paper"])
 
 ####################################
