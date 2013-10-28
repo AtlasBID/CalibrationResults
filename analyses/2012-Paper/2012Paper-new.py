@@ -96,7 +96,7 @@ ttbar_pdf_10_all = files("ttbar_pdf/9bin/*.txt") \
 ttbar_kinfit = files("KinFit_ljet/*.txt") \
 					.restrict()
 					
-ttbar_kinsel = files("KinSel_dijet/*.txt") \
+ttbar_kinsel = files("KinSel_dilet/*.txt") \
 					.restrict()
 
 #
