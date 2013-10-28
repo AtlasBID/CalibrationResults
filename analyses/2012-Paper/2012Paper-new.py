@@ -118,7 +118,7 @@ dijet = dijet_r.filter(analyses=["dijet"])
 # The old ttbar
 #
 
-ttbar_paper_r = (ttbar_kinfit+ttbar_kinsel).fit_bbb("ttbar", saveCHI2Fits=True)
+ttbar_paper_r = (ttbar_kinfit+ttbar_kinsel).bbb_fit("ttbar", saveCHI2Fits=True)
 ttbar_paper = ttbar_paper_r.filter(analyses=["ttbar"])
 
 #
