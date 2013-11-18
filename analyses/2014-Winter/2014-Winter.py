@@ -19,9 +19,9 @@ from sfObject import sfObject
 # for the 2012 Lepton Photon Results.
 #
 
-title = "Spring 2013 B-Tagging SF Results - Lepton-Photon"
+title = "Winter 2014 B-Tagging SF Results"
 name = "2013-LP"
-description = "Spring 2013 results, based on the full 2012 data, for Lepton Photon"
+description = "Winter 2014 results, based on the full 2012 data"
 
 #
 # Legal taggers. These will be used lower down to filter out the inputs to make sure
