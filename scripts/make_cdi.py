@@ -9,6 +9,7 @@ import comboGlobals
 
 import ROOT
 import shutil
+import os
 
 #
 # The CDI operator.
@@ -49,7 +50,7 @@ def dumpROOTFile (html, fname):
 # Build the CDI, and run the check.
 #
 class CDI:
-    # Plot a bunch of inputs with a certian name
+    # Setup the CDI command, remember everything.
     def __init__(self, sfinfo, name, defaults_file, ttbar, check, futurefile):
         self._sf = sfinfo
         self._name = name
@@ -70,6 +71,12 @@ class CDI:
 
         title = "Building CDI %s" % self._name
 
+        versionInfo = "--config-info FileName %s" % outFile
+        if "BuildNumber" in os.environ.keys():
+            versionInfo += " --config-info BuildNumber %s" % os.environ["BuildNumber"]
+        else:
+            versionInfo += " --config-info BuildNumber Custom"
+
         lfiles = files
         if self._defaults_file:
             lfiles += " %s" % listToString(self._defaults_file.ResolveToFiles(html))
@@ -83,7 +90,7 @@ class CDI:
 
         dumpTitle(html, title)
         if rerunCommand(fList, outFile, lfiles, html):
-            errcode = dumpCommandResult(html, "FTConvertToCDI.exe %s" % lfiles, store=cmdLog)
+            errcode = dumpCommandResult(html, "FTConvertToCDI.exe %s %s" % (lfiles, versionInfo), store=cmdLog)
             if errcode == 0:
                 shutil.copy ("output.root", outFile)
             else:
