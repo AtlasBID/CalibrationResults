@@ -131,6 +131,10 @@ all = all_r.filter(analyses=["dijet","PDF_ll_10_fit","all"])
 all_paper_r = (s8+ptrel+ttbar_kinfit+ttbar_kinsel).bbb_fit("all_paper", saveCHI2Fits=True)
 all_paper = all_paper_r.filter(analyses=["all_paper"])
 
+####
+# CDI
+(dijet+ttbar+all).make_cdi("rel17_MC11b-CDI", "defaults.txt", "TopCalibrations_rel17_MC11b_Convert.root")
+
 ####################################
 # Plotting
 
