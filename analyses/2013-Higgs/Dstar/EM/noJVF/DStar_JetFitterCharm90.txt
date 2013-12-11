@@ -1,4 +1,4 @@
-Analysis(DStar,charm,JetFitterCharm,-0.9_NAN,AntiKt4TopoEMnoJVF){
+Analysis(DStar,charm,JetFitterCharm,-0.9_NONE,AntiKt4TopoEMnoJVF){
   bin(20<pt<30,0<abseta<2.5)
   { 
      central_value(1.01199,0.0469551)
