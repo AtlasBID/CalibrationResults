@@ -56,6 +56,12 @@ dijet_sources = s8
 
 # top
 
+ttbar_pdf_all = files ("ttbar_pdf/*/*/*.txt") \
+            .restrict()
+
+ttbar_pdf_all_comb = ttbar_pdf_all.bbb_fit("PDF_all_fit", saveCHI2Fits=True)
+ttbar = ttbar_pdf_all_comb.filter(analyses=["PDF_all_fit"])
+
 # What from above should end up in the official CDI?
 
 bottom = s8
