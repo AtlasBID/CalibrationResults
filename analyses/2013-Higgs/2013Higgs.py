@@ -69,10 +69,15 @@ bottom = s8
 ###############################
 # Do the extrapolation
 
+#### Warning: filtering out the 20-30 bin is because the extrapolation
+####          code can't yet handle extrapolation on both sides of an axis,
+####          or one where the error gets smaller.
+####          We will need to decide what to do about this.
 mcCalib = files("MCcalib/*.txt") \
-    .restrict()
+    .restrict() \
+    .filter(ignore=[".*20-pt-30.*"])
 
-extrapolated = (bottom) #+mcCalib).extrapolate("MCcalib")
+extrapolated = (bottom+mcCalib).extrapolate("MCcalib")
 
 ###############################
 # Put together the CDI
