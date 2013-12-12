@@ -87,5 +87,5 @@ extrapolated = (bottom+mcCalib).extrapolate("MCcalib")
 
 ###############################
 # Put together the CDI
-extrapolated.make_cdi("MC12-CDI", "defaults.txt", "MCefficiencies_for_CDI_21.11.2013.root")
-extrapolated.save("MC12-CDI-All-Inputs")
+(extrapolated+ttbar).make_cdi("MC12-CDI", "defaults.txt", "MCefficiencies_for_CDI_21.11.2013.root")
+(extrapolated+ttbar).save("MC12-CDI-All-Inputs")
