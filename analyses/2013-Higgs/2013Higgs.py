@@ -69,11 +69,21 @@ bottom = s8
 ###############################
 # Charm Inputs (taus derived from charm too)
 
+dstar_template = files("DStar/*/JVF05/*.txt") \
+        .restrict()
+
+charm_sf = (dstar_template) \
+           .dstar("DStar_<>", "DStar")
+
+tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
+
 ###############################
 # Light quark inputs
 
 negative = files("negative_tags/*/JVF05/*.txt") \
            .restrict()
+
+light_sf = negative
 
 ###############################
 # Do the extrapolation
@@ -91,9 +101,11 @@ extrapolated = (bottom+mcCalib).extrapolate("MCcalib")
 ###############################
 # Put together the CDI
 
-final_cdi_file = negative \
-                 + extrapolated \
-                 + ttbar
+final_cdi_file = extrapolated \
+                 + ttbar \
+                 + charm_sf \
+                 + tau_sf \
+                 + light_sf
 
 final_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "MCefficiencies_for_CDI_21.11.2013.root")
 final_cdi_file.save("MC12-CDI-All-Inputs")
