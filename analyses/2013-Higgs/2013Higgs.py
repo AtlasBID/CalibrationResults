@@ -56,7 +56,7 @@ dijet_sources = s8
 
 # top
 
-ttbar_pdf_all = files ("ttbar_pdf/*/*/*.txt") \
+ttbar_pdf_all = files ("ttbar_pdf/*/JVF05/*.txt") \
             .restrict()
 
 ttbar_pdf_all_comb = ttbar_pdf_all.bbb_fit("PDF_all_fit", saveCHI2Fits=True)
@@ -71,6 +71,9 @@ bottom = s8
 
 ###############################
 # Light quark inputs
+
+negative = files("negative_tags/*/JVF05/*.txt") \
+           .restrict()
 
 ###############################
 # Do the extrapolation
@@ -87,5 +90,15 @@ extrapolated = (bottom+mcCalib).extrapolate("MCcalib")
 
 ###############################
 # Put together the CDI
-(extrapolated+ttbar).make_cdi("MC12-CDI", "defaults.txt", "MCefficiencies_for_CDI_21.11.2013.root")
-(extrapolated+ttbar).save("MC12-CDI-All-Inputs")
+
+final_cdi_file = negative \
+                 + extrapolated \
+                 + ttbar
+
+final_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "MCefficiencies_for_CDI_21.11.2013.root")
+final_cdi_file.save("MC12-CDI-All-Inputs")
+
+###############################
+# Plotting
+
+ttbar.plot("PDF_all_fit", effOnly=True)
