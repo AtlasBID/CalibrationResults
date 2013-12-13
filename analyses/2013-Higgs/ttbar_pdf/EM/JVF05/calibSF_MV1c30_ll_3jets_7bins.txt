@@ -1,4 +1,4 @@
-Analysis(PDF_dl_7bins_ll_3jets,bottom,MV1c,0.9848,AntiKt4TopoEMJVF0_5)
+Analysis(ttbar_pdf_ll_3jets_7bins,bottom,MV1c,0.9848,AntiKt4TopoEMJVF0_5)
 {
 
       bin(20<pt<30,0<abseta<2.5)

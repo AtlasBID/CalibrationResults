@@ -1,4 +1,4 @@
-Analysis(PDF_dilepton_ll_2jets,bottom,MV1,0.8119,AntiKt4TopoEMJVF0_5)
+Analysis(ttbar_pdf_ll_2jets,bottom,MV1,0.8119,AntiKt4TopoEMJVF0_5)
 {
 
       bin(20<pt<30,0<abseta<2.5)
