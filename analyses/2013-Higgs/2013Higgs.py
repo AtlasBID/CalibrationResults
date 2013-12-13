@@ -56,7 +56,7 @@ dijet_sources = s8
 
 # top
 
-ttbar_pdf_all = files ("ttbar_pdf/*/JVF05/*.txt") \
+ttbar_pdf_all = files ("ttbar_pdf/*/JVF05/*7bins.txt") \
             .restrict()
 
 ttbar_pdf_all_comb = ttbar_pdf_all.bbb_fit("PDF_all_fit", saveCHI2Fits=True)
@@ -101,8 +101,7 @@ extrapolated = (bottom+mcCalib).extrapolate("MCcalib")
 ###############################
 # Put together the CDI
 
-final_cdi_file = extrapolated \
-                 + ttbar \
+final_cdi_file = ttbar \
                  + charm_sf \
                  + tau_sf \
                  + light_sf
