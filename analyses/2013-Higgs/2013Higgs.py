@@ -69,7 +69,7 @@ bottom = s8
 ###############################
 # Charm Inputs (taus derived from charm too)
 
-dstar_template = files("DStar/*/JVF05/*.txt") \
+dstar_template = files("Dstar/*/JVF05/*.txt") \
         .restrict()
 
 charm_sf = (dstar_template) \
