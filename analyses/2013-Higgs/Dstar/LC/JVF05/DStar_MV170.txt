@@ -25,7 +25,7 @@ Analysis(DStar,charm,MV1,0.7892,AntiKt4TopoLCJVF0_5){
      sys(extrap D+ to prongs,-3.40587%)
      sys(extrap Ds to prongs,0.6386%)
      sys(extrap Lambdac to prongs,0.106433%)
-     sys(extrap fragmentation,-4.04447%)
+     sys(extrap fragmentation,-1.80937%)
   } 
   bin(30<pt<60,0<abseta<2.5)
   { 
@@ -53,7 +53,7 @@ Analysis(DStar,charm,MV1,0.7892,AntiKt4TopoLCJVF0_5){
      sys(extrap D+ to prongs,-3.29303%)
      sys(extrap Ds to prongs,0.743588%)
      sys(extrap Lambdac to prongs,0.106227%)
-     sys(extrap fragmentation,-2.97435%)
+     sys(extrap fragmentation,-1.27472%)
   } 
   bin(60<pt<90,0<abseta<2.5)
   { 
@@ -81,7 +81,7 @@ Analysis(DStar,charm,MV1,0.7892,AntiKt4TopoLCJVF0_5){
      sys(extrap D+ to prongs,-2.84556%)
      sys(extrap Ds to prongs,0.875558%)
      sys(extrap Lambdac to prongs,0.218889%)
-     sys(extrap fragmentation,-2.84556%)
+     sys(extrap fragmentation,-0.766113%)
   } 
   bin(90<pt<140,0<abseta<2.5)
   { 
@@ -109,7 +109,7 @@ Analysis(DStar,charm,MV1,0.7892,AntiKt4TopoLCJVF0_5){
      sys(extrap D+ to prongs,-3.0248%)
      sys(extrap Ds to prongs,0.846945%)
      sys(extrap Lambdac to prongs,0.241984%)
-     sys(extrap fragmentation,-3.50877%)
+     sys(extrap fragmentation,-0.967937%)
   } 
   bin(140<pt<200,0<abseta<2.5)
   { 
@@ -137,7 +137,7 @@ Analysis(DStar,charm,MV1,0.7892,AntiKt4TopoLCJVF0_5){
      sys(extrap D+ to prongs,-2.30191%)
      sys(extrap Ds to prongs,0.800666%)
      sys(extrap Lambdac to prongs,0.30025%)
-     sys(extrap fragmentation,-6.20516%)
+     sys(extrap fragmentation,-0.100083%)
   } 
   bin(200<pt<300,0<abseta<2.5)
   { 
@@ -165,6 +165,6 @@ Analysis(DStar,charm,MV1,0.7892,AntiKt4TopoLCJVF0_5){
      sys(extrap D+ to prongs,-2.09549%)
      sys(extrap Ds to prongs,0.739584%)
      sys(extrap Lambdac to prongs,0.369792%)
-     sys(extrap fragmentation,-4.4375%)
+     sys(extrap fragmentation,-1.23264%)
   } 
 } 
