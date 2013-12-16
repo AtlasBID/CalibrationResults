@@ -17,7 +17,7 @@ name="2013-Higgs"
 # calibration analyses have supplied.
 
 taggers = [
-#MV1 60% JVF (EM, LC), noJVF (EM, LC)
+#MV1 60% JVF (EM, LC)
     ["MV1", "0.9867"], 
     ["MV1", "0.9827 "], 
 #MV1 70%
@@ -25,13 +25,20 @@ taggers = [
     ["MV1", "0.7892"], 
 #MV1 80%
     ["MV1", "0.3900"], 
-    ["MV1", "0.3511"], 
+    ["MV1", "0.3511"],
+#MV1 85%
+    ["MV1", "0.1644"], 
+    ["MV1", "0.1340"], 
 #MV1c 50% JVF (EM, LC)
     ["MV1c", "0.9237"], 
     ["MV1c", "0.9195"], 
 #MV1c 57% JVF (EM, LC)
     ["MV1c", "0.8674"], 
-    ["MV1c", "0.8641"], 
+    ["MV1c", "0.8641"],
+#JetFitterCharm (EM, LC)
+    ["JetFitterCharm", "-0.9_NONE"], 
+    ["JetFitterCharm", "-0.9_0.95"],
+    ["JetFitterCharm", "-0.9_2.5"]    
     ]
 
 # And the filtering of the taggers mentioned above is done by
@@ -40,31 +47,40 @@ taggers = [
 
 sfObject.restrict = lambda self: self.filter(
     taggers=taggers,
-    jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5", "AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"],
+    jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"],
     ignore=[".*25-pt-30.*",".*300-pt-400.*", ".*system8.*20-pt-30.*"]
     )
 
 ###############################
 # Bottom inputs
 
-# dijet
-
-s8 = files("system8/*.txt") \
-    .restrict()
-
-dijet_sources = s8
-
 # top
 
-ttbar_pdf_all = files ("ttbar_pdf/*/JVF05/*7bins.txt") \
-            .restrict()
+ttbar_pdf_7_all = files("ttbar_pdf/*/JVF05/*7bins.txt") \
+                  .restrict() \
+                  .filter(analyses =["ttbar_pdf_emu_2jets", "ttbar_pdf_emu_3jets", "ttbar_pdf_ll_2jets", "ttbar_pdf_ll_3jets"])
 
-ttbar_pdf_all_comb = ttbar_pdf_all.bbb_fit("PDF_all_fit", saveCHI2Fits=True)
-ttbar = ttbar_pdf_all_comb.filter(analyses=["PDF_all_fit"])
+ttbar_pdf_7_2j = files("ttbar_pdf/*/JVF05/*7bins.txt") \
+                 .restrict() \
+                 .filter(analyses =["ttbar_pdf_emu_2jets", "ttbar_pdf_ll_2jets"])
 
-# What from above should end up in the official CDI?
+ttbar_pdf_7_3j = files("ttbar_pdf/*/JVF05/*7bins.txt") \
+                 .restrict() \
+                 .filter(analyses =["ttbar_pdf_emu_3jets", "ttbar_pdf_ll_3jets"])
 
-bottom = s8
+ttbar_pdf_7_combined = ttbar_pdf_7_all.bbb_fit("ttbar_pdf_7_fit", saveCHI2Fits=True)
+ttbar_pdf_7_combined_2j = ttbar_pdf_7_all.bbb_fit("ttbar_pdf_7_2j_fit", saveCHI2Fits=True)
+ttbar_pdf_7_combined_3j = ttbar_pdf_7_all.bbb_fit("ttbar_pdf_7_3j_fit", saveCHI2Fits=True)
+
+ttbar = ttbar_pdf_7_combined + ttbar_pdf_7_combined_2j + ttbar_pdf_7_combined_3j
+
+rebin_template = files("commonbinning.txt") \
+                 .filter(analyses=["rebin"])
+
+ttbar_rebin = (rebin_template + ttbar) \
+              .rebin("rebin", "<>_rebin")
+
+sources = ttbar_rebin
 
 ###############################
 # Charm Inputs (taus derived from charm too)
@@ -72,10 +88,12 @@ bottom = s8
 dstar_template = files("Dstar/*/JVF05/*.txt") \
         .restrict()
 
-charm_sf = (dstar_template) \
+charm_sf = (dstar_template + ttbar_rebin) \
            .dstar("DStar_<>", "DStar")
 
 tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
+
+sources += dstar_template
 
 ###############################
 # Light quark inputs
@@ -85,6 +103,8 @@ negative = files("negative_tags/*/JVF05/*.txt") \
 
 light_sf = negative
 
+sources += negative
+
 ###############################
 # Do the extrapolation
 
@@ -92,24 +112,28 @@ light_sf = negative
 ####          code can't yet handle extrapolation on both sides of an axis,
 ####          or one where the error gets smaller.
 ####          We will need to decide what to do about this.
-mcCalib = files("MCcalib/*.txt") \
-    .restrict() \
-    .filter(ignore=[".*20-pt-30.*"])
+#mcCalib = files("MCcalib/*.txt") \
+#    .restrict() \
+#    .filter(ignore=[".*20-pt-30.*"])
 
-extrapolated = (bottom+mcCalib).extrapolate("MCcalib")
+#extrapolated = (bottom+mcCalib).extrapolate("MCcalib")
 
 ###############################
 # Put together the CDI
 
-final_cdi_file = ttbar \
+master_cdi_file = ttbar_rebin \
                  + charm_sf \
                  + tau_sf \
-                 + light_sf
-
-final_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "MCefficiencies_for_CDI_21.11.2013.root")
-final_cdi_file.save("MC12-CDI-All-Inputs")
+                 + light_sf \
+                 + sources
+defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "MCefficiencies_for_CDI_21.11.2013.root")
+master_cdi_file.plot("MC12-CDI")
+master_cdi_file.plot("MC12-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
+master_cdi_file.dump(sysErrors = True, name="master")
+master_cdi_file.dump(metadata = True, name="master-metadata")
+sources.dump(sysErrors = True, name="sources")
 
 ###############################
 # Plotting
 
-ttbar.plot("PDF_all_fit", effOnly=True)
+(master_cdi_file + defaultSFs).plot("MC12-ByTagger", byCalibEff = True, effOnly=True)

@@ -1,0 +1,77 @@
+###############################################################
+# LC Jets - bottom
+
+# MV1, JVF0_5
+
+Default(ttbar_topo_dijet, bottom, MV1, *, AntiKt4TopoLCJVF0_5)
+
+# MV1, noJVF
+
+Default(ttbar_topo_dijet, bottom, MV1, *, AntiKt4TopoLCnoJVF)
+
+# MV1c, JVF0_5
+
+Default(ttbar_topo_dijet, bottom, MV1c, *, AntiKt4TopoLCJVF0_5)
+
+# MV1c, noJVF
+
+Default(ttbar_topo_dijet, bottom, MV1c, *, AntiKt4TopoLCnoJVF)
+
+###############################################################
+# EM Jets - bottom
+
+# MV1, JVF0_5
+
+Default(ttbar_pdf_dijet, bottom, MV1, *, AntiKt4TopoEMJVF0_5)
+
+# MV1, noJVF
+
+Default(ttbar_topo_dijet, bottom, MV1, *, AntiKt4TopoEMnoJVF)
+
+# MV1c, JVF0_5
+
+Default(ttbar_topo_dijet, bottom, MV1c, *, AntiKt4TopoEMJVF0_5)
+
+# MV1c, noJVF
+
+Default(ttbar_topo_dijet, bottom, MV1c, *, AntiKt4TopoEMnoJVF)
+
+
+###############################################################
+# Charm
+
+#EM
+
+Default(DStar_ttbar_pdf_dijet_rebin, charm, MV1, *, AntiKt4TopoEMJVF0_5)
+Default(DStar_system8_rebin, charm, MV1, *, AntiKt4TopoEMnoJVF)
+Default(DStar_system8_rebin, charm, MV1c, *, AntiKt4TopoEMnoJVF)
+Default(DStar_system8_rebin, charm, MV1c, *, AntiKt4TopoEMJVF0_5)
+
+#LC
+
+Default(DStar_ttbar_topo_dijet_rebin, charm, MV1, *, AntiKt4TopoLCJVF0_5)
+Default(DStar_ttbar_topo_dijet_rebin, charm, MV1, *, AntiKt4TopoLCnoJVF)
+Default(DStar_ttbar_topo_dijet_rebin, charm, MV1c, *, AntiKt4TopoLCJVF0_5)
+Default(DStar_ttbar_topo_dijet_rebin, charm, MV1c, *, AntiKt4TopoLCnoJVF)
+
+###############################################################
+# Tau
+
+#EM
+Default(DStar_ttbar_pdf_dijet_rebin, tau, MV1, *, AntiKt4TopoEMJVF0_5)
+Default(DStar_system8_rebin, tau, MV1, *, AntiKt4TopoEMnoJVF)
+
+Default(DStar_system8_rebin, tau, MV1c, *, AntiKt4TopoEMnoJVF)
+Default(DStar_system8_rebin, tau, MV1c, *, AntiKt4TopoEMJVF0_5)
+
+#LC
+Default(DStar_ttbar_topo_dijet_rebin, tau, MV1, *, AntiKt4TopoLCJVF0_5)
+Default(DStar_ttbar_topo_dijet_rebin, tau, MV1, *, AntiKt4TopoLCnoJVF)
+
+Default(DStar_ttbar_topo_dijet_rebin, tau, MV1c, *, AntiKt4TopoLCJVF0_5)
+Default(DStar_ttbar_topo_dijet_rebin, tau, MV1c, *, AntiKt4TopoLCnoJVF)
+
+#####################################################
+# Light jets
+
+Default(negative tags, light, *, *, *)
