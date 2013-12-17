@@ -31,10 +31,10 @@ taggers = [
     ["MV1", "0.1340"], 
 #MV1c 50% JVF (EM, LC)
     ["MV1c", "0.9237"], 
-    ["MV1c", "0.9195"], 
+#    ["MV1c", "0.9195"], 
 #MV1c 57% JVF (EM, LC)
     ["MV1c", "0.8674"], 
-    ["MV1c", "0.8641"],
+#    ["MV1c", "0.8641"],
 #JetFitterCharm (EM, LC)
     ["JetFitterCharm", "-0.9_NONE"], 
     ["JetFitterCharm", "-0.9_0.95"],
