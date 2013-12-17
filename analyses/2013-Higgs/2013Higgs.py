@@ -60,30 +60,21 @@ ttbar_pdf_7_all = files("ttbar_pdf/*/JVF05/*7bins.txt") \
                   .restrict() \
                   .filter(analyses =["ttbar_pdf_emu_2jets", "ttbar_pdf_emu_3jets", "ttbar_pdf_ll_2jets", "ttbar_pdf_ll_3jets"])
 
-ttbar_pdf_7_2j = files("ttbar_pdf/*/JVF05/*7bins.txt") \
-                 .restrict() \
-                 .filter(analyses =["ttbar_pdf_emu_2jets", "ttbar_pdf_ll_2jets"])
+ttbar_pdf_7_combined = ttbar_pdf_7_all.bbb_fit("ttbar_pdf_7_fit")
 
-ttbar_pdf_7_3j = files("ttbar_pdf/*/JVF05/*7bins.txt") \
-                 .restrict() \
-                 .filter(analyses =["ttbar_pdf_emu_3jets", "ttbar_pdf_ll_3jets"])
+ttbar = ttbar_pdf_7_combined
 
-ttbar_pdf_7_combined = ttbar_pdf_7_all.bbb_fit("ttbar_pdf_7_fit", saveCHI2Fits=True)
-ttbar_pdf_7_combined_2j = ttbar_pdf_7_all.bbb_fit("ttbar_pdf_7_2j_fit", saveCHI2Fits=True)
-ttbar_pdf_7_combined_3j = ttbar_pdf_7_all.bbb_fit("ttbar_pdf_7_3j_fit", saveCHI2Fits=True)
+sources = ttbar_pdf_7_all
 
-ttbar = ttbar_pdf_7_combined + ttbar_pdf_7_combined_2j + ttbar_pdf_7_combined_3j
+###############################
+# Charm Inputs (taus derived from charm too)
+
 
 rebin_template = files("commonbinning.txt") \
                  .filter(analyses=["rebin"])
 
 ttbar_rebin = (rebin_template + ttbar) \
               .rebin("rebin", "<>_rebin")
-
-sources = ttbar_rebin
-
-###############################
-# Charm Inputs (taus derived from charm too)
 
 dstar_template = files("Dstar/*/JVF05/*.txt") \
         .restrict()
@@ -121,7 +112,7 @@ sources += negative
 ###############################
 # Put together the CDI
 
-master_cdi_file = ttbar_rebin \
+master_cdi_file = ttbar \
                  + charm_sf \
                  + tau_sf \
                  + light_sf \
