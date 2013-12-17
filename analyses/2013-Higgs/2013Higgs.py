@@ -58,7 +58,7 @@ sfObject.restrict = lambda self: self.filter(
 
 ttbar_pdf_7_all = files("ttbar_pdf/*/JVF05/*7bins.txt") \
                   .restrict() \
-                  .filter(analyses =["ttbar_pdf_emu_2jets", "ttbar_pdf_emu_3jets", "ttbar_pdf_ll_2jets", "ttbar_pdf_ll_3jets"])
+                  .filter(analyses =["ttbar_pdf_emu_2jets_7bins", "ttbar_pdf_emu_3jets_7bins", "ttbar_pdf_ll_2jets_7bins", "ttbar_pdf_ll_3jets_7bins"])
 
 ttbar_pdf_7_combined = ttbar_pdf_7_all.bbb_fit("ttbar_pdf_7_fit")
 
