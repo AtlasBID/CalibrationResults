@@ -29,11 +29,11 @@ taggers = [
 #MV1 85%
 #    ["MV1", "0.1644"], 
     ["MV1", "0.1340"], 
-MV1c 60% JVF (EM)
+#MV1c 60% JVF (EM)
     ["MV1c", "0.8353"],
-MV1c 70% JVF (EM)
+#MV1c 70% JVF (EM)
     ["MV1c", "0.7028"], 
-MV1c 80% JVF (EM)
+#MV1c 80% JVF (EM)
     ["MV1c", "0.4050"],    
 #JetFitterCharm (EM, LC)
     ["JetFitterCharm", "-0.9_NONE"], 
