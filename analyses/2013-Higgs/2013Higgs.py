@@ -58,13 +58,19 @@ sfObject.restrict = lambda self: self.filter(
 
 ttbar_pdf_7_all = files("ttbar_pdf/*/JVF05/*7bins.txt") \
                   .restrict() \
-                  .filter(analyses =["ttbar_pdf_emu_2jets_7bins", "ttbar_pdf_emu_3jets_7bins", "ttbar_pdf_ll_2jets_7bins", "ttbar_pdf_ll_3jets_7bins",  "PDF_dl_7bins_ll_2jets",  "PDF_dl_7bins_ll_3jets", "PDF_dl_7bins_emu_2jets", "PDF_dl_7bins_emu_3jets"])
+                  .filter(analyses =["ttbar_pdf_emu_2jets_7bins", "ttbar_pdf_emu_3jets_7bins", "ttbar_pdf_ll_2jets_7bins", "ttbar_pdf_ll_3jets_7bins", "PDF_dl_7bins_ll_2jets", "PDF_dl_7bins_ll_3jets", "PDF_dl_7bins_emu_2jets", "PDF_dl_7bins_emu_3jets"])
+
+ttbar_pdf_7_2j = files("ttbar_pdf/*/JVF05/*7bins.txt") \
+                 .restrict() \
+                 .filter(analyses =["ttbar_pdf_emu_2jets_7bins", "ttbar_pdf_ll_2jets_7bins", "PDF_dl_7bins_ll_2jets", "PDF_dl_7bins_emu_2jets"])
 
 ttbar_pdf_7_combined = ttbar_pdf_7_all.bbb_fit("ttbar_pdf_7_fit")
 
-ttbar = ttbar_pdf_7_combined
+ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("ttbar_pdf_7_2j_fit")
 
-sources = ttbar_pdf_7_all
+ttbar = ttbar_pdf_7_combined + ttbar_pdf_7_combined_2j
+
+sources = ttbar_pdf_7_all + ttbar_pdf_7_2j
 
 ###############################
 # Charm Inputs (taus derived from charm too)
