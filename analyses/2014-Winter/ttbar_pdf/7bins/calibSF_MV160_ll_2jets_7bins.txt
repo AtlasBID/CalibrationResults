@@ -1,5 +1,6 @@
 Analysis(PDF_dl_7bins_ll_2jets,bottom,MV1,0.9867,AntiKt4TopoEMJVF0_5)
 {
+    meta_data_s (Hadronization, Pythia6)
 
       bin(20<pt<30,0<abseta<2.5)
       {

@@ -1,4 +1,5 @@
 Analysis(KinSel_dilep_3j,bottom,SV0,5.700,AntiKt4TopoEMnoJVF ) {
+    meta_data_s (Hadronization, Pythia6)
     bin(20<pt<30,0<abseta<2.5)
     {
         central_value(1.0143,8.8626%)

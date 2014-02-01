@@ -1,5 +1,6 @@
 Analysis(PDF_dilepton_emu_2and3jets,bottom,MV1,0.8119,AntiKt4TopoEMJVF0_5)
 {
+    meta_data_s (Hadronization, Pythia6)
 
       bin(20<pt<30,0<abseta<2.5)
       {
