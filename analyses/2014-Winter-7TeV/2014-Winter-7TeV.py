@@ -48,9 +48,9 @@ ttbar_pdf_6_all = files("ttbar_pdf/6bins/*6bins.txt") \
 ttbar_kinsel = files("ttbar_kinsel/*.txt") \
                .restrict()
 
-ttbar_pdf_6_all = ttbar_pdf_6_all.bbb_fit("ttbar_pdf_6_all")
+ttbar_pdf_6_all = ttbar_pdf_6_all.bbb_fit("ttbar_pdf_6_all_fit")
 
-ttbar = (ttbar_pdf_6_all+ttbar_kinsel).bbb_fit("ttbar_pdf_6_all")
+ttbar = (ttbar_pdf_6_all+ttbar_kinsel).bbb_fit("ttbar_pdf_6_all_fit")
 
 sources = ttbar
 
