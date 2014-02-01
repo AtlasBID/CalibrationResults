@@ -16,11 +16,11 @@ from sfObject import sfObject
 
 #
 # Config for doing the full combination with muon, ttbar, neg tag, and charm
-# for the 2012 Lepton Photon Results.
+# for the 2014 Lepton Photon Results.
 #
 
 title = "Winter 2014 B-Tagging SF Results"
-name = "2013-LP"
+name = "2014-Winter"
 description = "Winter 2014 results, based on the full 2012 data"
 
 #
@@ -234,15 +234,31 @@ ttbar_pdf_10_combined.plot("ttbar_pdf_10")
 
 #(ttbar_pdf_7_combined + ttbar_pdf_7_precomb).plot("ttdlep_pdf_compare")
 
+#
+# Extrapolate everything
+#
+
+mcCalib = files("MCcalib/*.txt") \
+    .restrict() \
+    .filter(ignore=[".*20-pt-30.*"])
+
+all_extrapolated = (\
+        dijet \
+        + mcCalib \
+        ) \
+        .extrapolate("MCcalib")
+
 ####################################
 # The CDI file.
 #
 
 master_cdi_file = \
-    dijet + ttbar + ttbar_pdf_pteta \
-    + charm_sf \
-    + tau_sf \
-    + light_sf \
+    ttbar_pdf_pteta \
+        + ttbar\
+        + charm_sf \
+        + tau_sf \
+        + light_sf \
+    + all_extrapolated \
     + sources
 defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "MCefficiencies_for_CDI_14.4.2013.root")
 master_cdi_file.plot("MC12-CDI")
