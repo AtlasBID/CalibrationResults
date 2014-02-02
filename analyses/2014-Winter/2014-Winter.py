@@ -143,7 +143,11 @@ combined_ttbar_topo = combined_ttbar_topo_extra.filter(analyses = ["ttbar_topo_d
 combined_ttbar_pdf = combined_ttbar_pdf_extra.filter(analyses = ["ttbar_pdf_dijet"])
 ttbar_pdf_pteta = ttbar_pdf_pteta_extra.filter(analyses = ["PDF_14bins"])
 
-ttbar = combined_ttbar_topo + combined_ttbar_pdf + ttbar_pdf_7_combined + ttbar_pdf_10_combined + ttbar_pdf_7_combined_2j + ttbar_pdf_7_combined_3j
+# keep seperate because different binning means extrapolation below has to be different.
+ttbar_10bin = combined_ttbar_topo + combined_ttbar_pdf + ttbar_pdf_10_combined
+ttbar_7bin = ttbar_pdf_7_combined + ttbar_pdf_7_combined_2j + ttbar_pdf_7_combined_3j
+
+ttbar = ttbar_10bin + ttbar_7bin
 
 ttbar_pdf_dijet_simple_combo = (ttbar_pdf_10_combined+dijet).bbb_fit("ttbar_pdf_dijet_simple", saveCHI2Fits=True, includeSources=True)
 
@@ -161,8 +165,12 @@ ttbar_pdf_dijet_simple_combo = (ttbar_pdf_10_combined+dijet).bbb_fit("ttbar_pdf_
 # which has a bin we ignore from 25-30, and that bin can't really participate.
 #
 
-rebin_template = files("commonbinning.txt") \
+rebin_template_all = files("commonbinning.txt") \
                  .filter(analyses=["rebin"])
+
+rebin_template = rebin_template_all \
+    .filter(ignore=[".*300-pt-500.*"])
+
 rebin_template_30 = files("commonbinning.txt") \
                     .filter(analyses=["rebin_30"])
 
@@ -242,11 +250,32 @@ mcCalib = files("MCcalib/*.txt") \
     .restrict() \
     .filter(ignore=[".*20-pt-30.*"])
 
-all_extrapolated = (\
+rebin_template_high = rebin_template_all \
+    .filter(ignore=[".*20-pt-30.*"])
+
+mcCalib_rebin = (rebin_template_high + mcCalib) \
+    .rebin("rebin", "<>_rebin")
+
+
+default_extrapolated = (\
         dijet \
         + mcCalib \
+        + ttbar_10bin \
         ) \
         .extrapolate("MCcalib")
+
+rebin_extrapolated = (\
+    charm_sf \
+    + tau_sf \
+    + mcCalib_rebin \
+    + ttbar_7bin
+    ) \
+    .extrapolate("MCcalib_rebin")
+
+all_extrapolated = default_extrapolated + rebin_extrapolated
+
+# Currently can't extrapolate:
+#  neg tags - because they are split in eta, and the extrapolation isn't.
 
 ####################################
 # The CDI file.
@@ -254,10 +283,7 @@ all_extrapolated = (\
 
 master_cdi_file = \
     ttbar_pdf_pteta \
-        + ttbar\
-        + charm_sf \
-        + tau_sf \
-        + light_sf \
+    + light_sf \
     + all_extrapolated \
     + sources
 defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "MCefficiencies_for_CDI_14.4.2013.root")
