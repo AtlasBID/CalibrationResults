@@ -29,28 +29,23 @@ description = "Winter 2014 results, based on the full 2012 data"
 #
 
 taggers = [
-#MV1 30% JVF (EM, LC), noJVF (EM, LC)
-#    ["MV1", "0.992670537"],
-#    ["MV1", "0.994450"],
-#MV1 50% JVF (EM, LC), noJVF (EM, LC)
-#    ["MV1", "0.992515446"], 
-#    ["MV1", "0.993981"], 
-#MV1 60% JVF (EM, LC), noJVF (EM, LC)
+#MV1 60% JVF (EM, LC)
     ["MV1", "0.9867"], 
     ["MV1", "0.9827 "], 
-#MV1 70%
+#MV1 70% JVF (EM, LC)
     ["MV1", "0.8119"], 
     ["MV1", "0.7892"], 
-#MV1 80%
+#MV1 80% JVF (EM, LC)
     ["MV1", "0.3900"], 
-    ["MV1", "0.3511"], 
+    ["MV1", "0.3511"],
+#MV1 85% JVF (LC)
+    ["MV1", "0.1340"],     
 #MV1c 50% JVF (EM, LC)
     ["MV1c", "0.9237"], 
     ["MV1c", "0.9195"], 
 #MV1c 57% JVF (EM, LC)
     ["MV1c", "0.8674"], 
-    ["MV1c", "0.8641"], 
-	
+    ["MV1c", "0.8641"],
     ]
 
 #
@@ -77,7 +72,7 @@ ptrel = files("ptrel/*.txt") \
 ttdilep_topo = files("topo_ttemu/*.txt") \
                .restrict()
 
-ttbar_pdf_7_all = files("ttbar_pdf/7bins/*.txt") \
+ttbar_pdf_7_all = files("ttbar_pdf/*/JVF05/*7bins.txt") \
                   .restrict() \
                   .filter(analyses = ["PDF_dl_7bins_emu_3jets", "PDF_dl_7bins_emu_2jets", "PDF_dl_7bins_ll_3jets", "PDF_dl_7bins_ll_2jets"])
 
