@@ -1,6 +1,6 @@
 Analysis(ttbar_pdf_emu_2jets,bottom,MV1,0.905363,AntiKt4Topo)
 {
-
+      meta_data_s (Hadronization, Pythia6)
       bin(20<pt<30,0<abseta<2.5)
       {
          central_value(1.029738,0.065942)

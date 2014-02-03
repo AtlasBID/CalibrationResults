@@ -1,4 +1,5 @@
 Analysis(negative_tags,light,JetFitterCOMBNNc,1.33,AntiKt4Topo){ 
+  meta_data_s (Hadronization, Pythia6)
   bin( 20<pt< 30, 0.0<abseta<1.2)
   {
     central_value(1.7158,0.0597)
