@@ -189,7 +189,7 @@ ttbar_rebin = (rebin_template + ttbar) \
 # The tau is just an additional error on top of that.
 #
 
-dstar_template = files("DStar/*/*.txt") \
+dstar_template = files("Dstar/*/JVF05/*.txt") \
                  .restrict()
 
 charm_sf_ttbar = (dstar_template + ttbar_rebin) \
