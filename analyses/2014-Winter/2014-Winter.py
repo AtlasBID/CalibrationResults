@@ -210,7 +210,7 @@ sources += dstar_template
 # Light SF come from the negative tags
 #
 
-negative = files("negative/*.txt") \
+negative = files("negative_tags/*/JVF05/*.txt") \
            .restrict()
 
 light_sf = negative
