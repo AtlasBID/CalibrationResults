@@ -1,6 +1,6 @@
 #
 # This file runs the fitting for the b-tag combination. Uses a slightly functional syntax to track files
-# throught the system.
+# through out the system.
 #
 # The system is intelligent about how it deals with file dates - so it won't re-run if the inputs are older than the
 # outputs. However, it doesn't currently detect when an executable has been updated - so it will fail to run in those
@@ -65,33 +65,20 @@ sfObject.restrict = lambda self: self.filter(
 
 s8 = files("system8/*.txt") \
      .restrict()
-
-ptrel = files("ptrel/*.txt") \
-	.restrict()
 	 
+# the topo are also known as the T&P ttbar analysis.
 ttdilep_topo = files("topo_ttemu/*.txt") \
                .restrict()
 
-ttbar_pdf_7_all = files("ttbar_pdf/*/JVF05/*7bins.txt") \
+ttbar_pdf_7_all = files("ttbar_pdf/*/*/*7bins.txt") \
                   .restrict() \
                   .filter(analyses = ["PDF_dl_7bins_emu_3jets", "PDF_dl_7bins_emu_2jets", "PDF_dl_7bins_ll_3jets", "PDF_dl_7bins_ll_2jets"])
 
-ttbar_pdf_7_2j = files("ttbar_pdf/7bins/*.txt") \
-                  .restrict() \
+ttbar_pdf_7_2j = ttbar_pdf_7_all \
                   .filter(analyses = ["PDF_dl_7bins_emu_2jets", "PDF_dl_7bins_ll_2jets"])
 
-ttbar_pdf_7_3j = files("ttbar_pdf/7bins/*.txt") \
-                  .restrict() \
+ttbar_pdf_7_3j = ttbar_pdf_7_all \
                   .filter(analyses = ["PDF_dl_7bins_emu_3jets", "PDF_dl_7bins_ll_3jets"])
-
-ttbar_pdf_10_all = files("ttbar_pdf/11bins/*.txt") \
-                   .restrict() \
-                   .filter(analyses = ["PDF_dilepton_emu_2jets", "PDF_dilepton_emu_3jets", "PDF_dilepton_ll_2jets", "PDF_dilepton_ll_3jets",])
-
-ttbar_pdf_pteta_all = files("ttbar_pdf/pTxEta/*.txt") \
-                      .restrict() \
-                      .filter(analyses = ["PDF_dl_14bins_emu_2jets", "PDF_dl_14bins_emu_3jets", "PDF_dl_14bins_ll_2jets", "PDF_dl_14bins_ll_3jets",])
-                   
                    
 ttbar_kinsel_3jet = files("ttbar_kinsel/*/*_em3j.txt") \
                     .restrict()
@@ -102,7 +89,7 @@ ttbar_kinsel_2jet = files("ttbar_kinsel/*/*_em2j.txt") \
                     .restrict() \
                     .filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"])
 				  
-sources = s8 + ptrel + ttdilep_topo + ttbar_pdf_7_all + ttbar_kinsel_3jet + ttbar_kinsel_2jet + ttbar_pdf_pteta_all + ttbar_pdf_10_all
+sources = s8 + ttdilep_topo + ttbar_pdf_7_all + ttbar_kinsel_3jet + ttbar_kinsel_2jet
 
 #
 # Build up the central dijet fits. "dijet" is our best estimate, in the end, of the dijet
@@ -112,48 +99,50 @@ sources = s8 + ptrel + ttdilep_topo + ttbar_pdf_7_all + ttbar_kinsel_3jet + ttba
 dijet = s8
 
 #
-# The PDF method comes in bits. We need to put it together in order to
-# use it.
+# We want several versions of the pdf fit to end up in the
+# final file. This is for specialized use.
 #
 
-ttbar_pdf_7_combined = ttbar_pdf_7_all.bbb_fit("PDF_ll_7_fit")
-ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("PDF_ll_7_2j_fit")
-ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("PDF_ll_7_3j_fit")
-ttbar_pdf_10_combined_extra = ttbar_pdf_10_all.bbb_fit("PDF_ll_10_fit", saveCHI2Fits=True)
-ttbar_pdf_10_combined = ttbar_pdf_10_combined_extra.filter(analyses=["PDF_ll_10_fit"])
+ttbar_pdf_7_combined = ttbar_pdf_7_all.bbb_fit("ttbar_PDF_7b")
+ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("ttbar_PDF_7b_2j")
+ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("ttbar_PDF_7b_3j")
 
 #
 # Do the ttbar results
-#  dijet + ttbar topo
-#  dijet + ttbar pdf method
-#
-# ttbar represents all the ttbar fits we are interested in using, in the end.
+# Several different fits are required, so this gets
+# a bit complex, unfortunately.
 #
 
-combined_ttbar_topo_extra = (dijet+ttdilep_topo+ttbar_kinsel_3jet+ttbar_kinsel_2jet).bbb_fit("ttbar_topo_dijet", saveCHI2Fits=True, includeSources = True)
-combined_ttbar_pdf_extra = (dijet+ttbar_pdf_10_all).bbb_fit("ttbar_pdf_dijet", saveCHI2Fits=True, includeSources = True)
-ttbar_pdf_pteta_extra = ttbar_pdf_pteta_all.bbb_fit("PDF_14bins", saveCHI2Fits=True, includeSources = True)
+# JVF05 is s8 + ttbar pdf
+ttbar_dijet_jvf05 = (\
+		s8.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
+		+ ttbar_pdf_7_all.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
+		).bbb_fit("combined_pdf_dijet")
 
-combined_ttbar_topo = combined_ttbar_topo_extra.filter(analyses = ["ttbar_topo_dijet"])
-combined_ttbar_pdf = combined_ttbar_pdf_extra.filter(analyses = ["ttbar_pdf_dijet"])
-ttbar_pdf_pteta = ttbar_pdf_pteta_extra.filter(analyses = ["PDF_14bins"])
+ttbar_dijet_topo = (\
+		s8.filter(jets=["AntiKt4TopoLCJVF0_5"]) \
+		+ ttdilep_topo.filter(jets=["AntiKt4TopoLCJVF0_5"]) \
+		+ ttbar_kinsel_3jet.filter(jets=["AntiKt4TopoLCJVF0_5"]) \
+		).bbb_fit("ttbar_dijet_topo_ks")
 
-# keep seperate because different binning means extrapolation below has to be different.
-ttbar_10bin = combined_ttbar_topo + combined_ttbar_pdf + ttbar_pdf_10_combined
-ttbar_7bin = ttbar_pdf_7_combined + ttbar_pdf_7_combined_2j + ttbar_pdf_7_combined_3j
+ttbar_dijet_novjf = (\
+		s8.filter(jets=["AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"]) \
+		+ ttbar_kinsel_3jet.filter(jets=["AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"]) \
+		+ ttbar_kinsel_2jet.filter(jets=["AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"]) \
+        ).bbb_fit("ttbar_dijet_nojvf")
 
-ttbar = ttbar_10bin + ttbar_7bin
-
-ttbar_pdf_dijet_simple_combo = (ttbar_pdf_10_combined+dijet).bbb_fit("ttbar_pdf_dijet_simple", saveCHI2Fits=True, includeSources=True)
-
-#combined_ttbar_topo_chi2 = combined_ttbar_topo_extra.filter(analyses = ["comb_ttbar_topo_dijet_temp"])
-#combined_ttbar_pdf_chi2 = combined_ttbar_pdf_extra.filter(analyses = ["comb_ttbar_pdf_dijet_temp"])
-#ttbar_pdf_pteta_chi2 = ttbar_pdf_pteta_extra.filter(analyses = ["comb_PDF_14bins_temp"])
+# one ring to rule them all...
+ttbar_fits = ttbar_pdf_7_combined \
+        + ttbar_pdf_7_combined_2j \
+		+ ttbar_pdf_7_combined_3j \
+		+ ttbar_dijet_jvf05 \
+		+ ttbar_dijet_topo \
+		+ ttbar_dijet_novjf
 
 #
 # Next, we need to build up the master fits that will be used to make charm and tau results.
-# This requires re-binning to match the D* input bins.
-#
+# This requires re-binning to match the D* input bins (for both charm and tau, as they
+# are just versions of each other).
 #
 # The file "commonbinning.txt" just contains some empty specifications that have the binning. They don't contain
 # any real data. It should have the same binning as the D*. The _30 is without the 20-30 to deal with the PDF method,
@@ -169,7 +158,7 @@ rebin_template = rebin_template_all \
 rebin_template_30 = files("commonbinning.txt") \
                     .filter(analyses=["rebin_30"])
 
-ttbar_rebin = (rebin_template + ttbar) \
+ttbar_rebin = (rebin_template + ttbar_fits) \
               .rebin("rebin", "<>_rebin")
               
 #Can't do a S8 only guy because the low bin is missing!
@@ -216,28 +205,6 @@ sources += negative
 # Plotting
 
 #
-# Plot the dijet and the main ttbar fit for comparison as well
-#
-
-combined_ttbar_topo_extra.plot("ttbar_topo_chi2")
-combined_ttbar_pdf_extra.plot("ttbar_pdf_chi2")
-ttbar_pdf_pteta_extra.plot("ttbar_pdf_peta_chi2")
-(ttbar_pdf_10_all+ttbar_pdf_10_combined_extra).plot("ttbar_pdf_only_chi2", effOnly=True)
-ttbar_pdf_dijet_simple_combo.plot("ttbar_pdf_dijet_simple_chi", effOnly=True)
-
-(ttbar_pdf_7_combined+ttbar_pdf_10_combined).plot("ttbar_pdf_7_10")
-ttbar_pdf_7_combined.plot("ttbar_pdf_7")
-ttbar_pdf_10_combined.plot("ttbar_pdf_10")
-
-(ptrel + s8).plot("dijet")
-
-#
-# Plot the fit ttbar results
-#
-
-#(ttbar_pdf_7_combined + ttbar_pdf_7_precomb).plot("ttdlep_pdf_compare")
-
-#
 # Extrapolate everything
 #
 
@@ -255,7 +222,6 @@ mcCalib_rebin = (rebin_template_high + mcCalib) \
 default_extrapolated = (\
         dijet \
         + mcCalib \
-        + ttbar_10bin \
         ) \
         .extrapolate("MCcalib")
 
@@ -263,7 +229,7 @@ rebin_extrapolated = (\
     charm_sf \
     + tau_sf \
     + mcCalib_rebin \
-    + ttbar_7bin
+    + ttbar_fits
     ) \
     .extrapolate("MCcalib_rebin")
 
