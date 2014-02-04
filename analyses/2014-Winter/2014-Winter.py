@@ -115,8 +115,8 @@ ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("ttbar_PDF_7b_3j")
 
 # JVF05 is s8 + ttbar pdf
 ttbar_dijet_jvf05 = (\
-		s8.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
-		+ ttbar_pdf_7_all.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
+		ttbar_pdf_7_all.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
+                + s8.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
 		).bbb_fit("combined_pdf_dijet")
 
 ttbar_dijet_topo = (\
