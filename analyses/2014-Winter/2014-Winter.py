@@ -98,6 +98,20 @@ sources = s8 + ttdilep_topo + ttbar_pdf_7_all + ttbar_kinsel_3jet + ttbar_kinsel
 
 dijet = s8
 
+# The file "commonbinning.txt" just contains some empty specifications that have the binning. They don't contain
+# any real data. It should have the same binning as the D*. The _30 is without the 20-30 to deal with the PDF method,
+# which has a bin we ignore from 25-30, and that bin can't really participate.
+#
+
+rebin_template_all = files("commonbinning.txt") \
+    .filter(analyses=["rebin"])
+
+rebin_template = rebin_template_all \
+    .filter(ignore=[".*300-pt-500.*"])
+
+rebin_template_30 = files("commonbinning.txt") \
+    .filter(analyses=["rebin_30"]) \
+    .filter(ignore=[".*300-pt-500.*"])
 #
 # We want several versions of the pdf fit to end up in the
 # final file. This is for specialized use.
@@ -113,10 +127,12 @@ ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("ttbar_PDF_7b_3j")
 # a bit complex, unfortunately.
 #
 
-# JVF05 is s8 + ttbar pdf
+# JVF05 is s8 + ttbar pdf. The s8 needs to be re-binned for this.
+s8_pdf_rebin = (s8 + rebin_template_30).rebin("rebin_30", "<>_rebin")
+
 ttbar_dijet_jvf05 = (\
 		ttbar_pdf_7_all.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
-                + s8.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
+                + s8_pdf_rebin.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
 		).bbb_fit("combined_pdf_dijet")
 
 ttbar_dijet_topo = (\
@@ -133,30 +149,17 @@ ttbar_dijet_novjf = (\
 
 # one ring to rule them all...
 ttbar_fits = ttbar_pdf_7_combined \
-        + ttbar_pdf_7_combined_2j \
-		+ ttbar_pdf_7_combined_3j \
-		+ ttbar_dijet_jvf05 \
-		+ ttbar_dijet_topo \
-		+ ttbar_dijet_novjf
+    + ttbar_pdf_7_combined_2j \
+    + ttbar_pdf_7_combined_3j \
+    + ttbar_dijet_jvf05 \
+    + ttbar_dijet_topo \
+    + ttbar_dijet_novjf
 
 #
 # Next, we need to build up the master fits that will be used to make charm and tau results.
 # This requires re-binning to match the D* input bins (for both charm and tau, as they
 # are just versions of each other).
 #
-# The file "commonbinning.txt" just contains some empty specifications that have the binning. They don't contain
-# any real data. It should have the same binning as the D*. The _30 is without the 20-30 to deal with the PDF method,
-# which has a bin we ignore from 25-30, and that bin can't really participate.
-#
-
-rebin_template_all = files("commonbinning.txt") \
-                 .filter(analyses=["rebin"])
-
-rebin_template = rebin_template_all \
-    .filter(ignore=[".*300-pt-500.*"])
-
-rebin_template_30 = files("commonbinning.txt") \
-                    .filter(analyses=["rebin_30"])
 
 ttbar_rebin = (rebin_template + ttbar_fits) \
               .rebin("rebin", "<>_rebin")
