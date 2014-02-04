@@ -243,8 +243,7 @@ all_extrapolated = default_extrapolated + rebin_extrapolated
 #
 
 master_cdi_file = \
-    ttbar_pdf_pteta \
-    + light_sf \
+    light_sf \
     + all_extrapolated \
     + sources
 defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "MCefficiencies_for_CDI_14.4.2013.root")
