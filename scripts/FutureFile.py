@@ -16,6 +16,6 @@ class FutureFile (sfObject):
     # Return the one file
     def ResolveToFiles (self, html):
         if not os.path.exists(self._fname):
-            raise "File '%s' was to be set but never was seen" % self._fname
+            raise Exception("File '%s' was to be set but never was seen" % self._fname)
         return [self._fname]
     
