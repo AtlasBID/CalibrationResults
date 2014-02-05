@@ -141,19 +141,22 @@ ttbar_dijet_topo = (\
 		+ ttbar_kinsel_3jet.filter(jets=["AntiKt4TopoLCJVF0_5"]) \
 		).bbb_fit("ttbar_dijet_topo_ks")
 
-ttbar_dijet_novjf = (\
+ttbar_dijet_nojvf = (\
 		s8.filter(jets=["AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"]) \
 		+ ttbar_kinsel_3jet.filter(jets=["AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"]) \
 		+ ttbar_kinsel_2jet.filter(jets=["AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"]) \
         ).bbb_fit("ttbar_dijet_nojvf")
 
 # one ring to rule them all...
-ttbar_fits = ttbar_pdf_7_combined \
+ttbar_fits_7 = ttbar_pdf_7_combined \
     + ttbar_pdf_7_combined_2j \
     + ttbar_pdf_7_combined_3j \
     + ttbar_dijet_jvf05 \
-    + ttbar_dijet_topo \
-    + ttbar_dijet_novjf
+    + ttbar_dijet_topo
+
+ttbar_fits_10 = ttbar_dijet_nojvf
+
+ttbar_fits = ttbar_fits_7 + ttbar_fits_10
 
 #
 # Next, we need to build up the master fits that will be used to make charm and tau results.
@@ -224,6 +227,7 @@ mcCalib_rebin = (rebin_template_high + mcCalib) \
 
 default_extrapolated = (\
         dijet \
+        + ttbar_fits_10 \
         + mcCalib \
         ) \
         .extrapolate("MCcalib")
@@ -232,7 +236,7 @@ rebin_extrapolated = (\
     charm_sf \
     + tau_sf \
     + mcCalib_rebin \
-    + ttbar_fits
+    + ttbar_fits_7
     ) \
     .extrapolate("MCcalib_rebin")
 
