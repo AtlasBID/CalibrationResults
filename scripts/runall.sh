@@ -6,6 +6,6 @@
 
 #
 #./scripts/combine.py --zip analyses/2014-Winter-7TeV/2014-Winter-7TeV.py || true
-./scripts/combine.py --zip analyses/2014-Winter/2014-Winter.py || true
+./scripts/combine.py --zip analyses/2014-Winter/2014-Winter.py
 #./scripts/combine.py --zip analyses/2013-Higgs/2013Higgs.py || true
 #./scripts/combine.py --zip analyses/2012-Paper/2012Paper-new.py || true
