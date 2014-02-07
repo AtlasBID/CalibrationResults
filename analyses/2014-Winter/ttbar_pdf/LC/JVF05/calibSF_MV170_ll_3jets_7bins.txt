@@ -1,4 +1,4 @@
-Analysis(ttbar_pdf_ll_3jets_7bins,bottom,MV1,0.7892,AntiKt4TopoLCJVF0_5)
+Analysis(PDF_ll_3jets_7bins,bottom,MV1,0.7892,AntiKt4TopoLCJVF0_5)
 {
       meta_data_s (Hadronization, Pythia6)
       bin(20<pt<30,0<abseta<2.5)

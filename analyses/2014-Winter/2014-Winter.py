@@ -132,7 +132,7 @@ s8_pdf_rebin = (s8 + rebin_template_30).rebin("rebin_30", "<>_rebin")
 
 ttbar_dijet_jvf05 = (\
 		ttbar_pdf_7_all.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
-                + s8_pdf_rebin.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
+         + s8_pdf_rebin.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
 		).bbb_fit("combined_pdf_dijet")
 
 ttbar_dijet_topo = (\
