@@ -70,16 +70,19 @@ s8 = files("system8/*.txt") \
 ttdilep_topo = files("topo_ttemu/*.txt") \
                .restrict()
 
+# PDF are from Giacinto, who can't keep the names straight, which makes for a mess here.
 ttbar_pdf_7_all = files("ttbar_pdf/*/*/*7bins.txt") \
                   .restrict() \
-                  .filter(analyses = ["PDF_dl_7bins_emu_3jets", "PDF_dl_7bins_emu_2jets", "PDF_dl_7bins_ll_3jets", "PDF_dl_7bins_ll_2jets"])
-
+                  .filter(analyses = ["PDF_dl_7bins_emu_3jets", "PDF_dl_7bins_emu_2jets", "PDF_dl_7bins_ll_3jets", "PDF_dl_7bins_ll_2jets", \
+				                      "PDF_emu_7bins_3jets",    "PDF_emu_7bins_2jets",    "PDF_ll_7bins_3jets",    "PDF_ll_7bins_2jets"])
+				  
 ttbar_pdf_7_2j = ttbar_pdf_7_all \
-                  .filter(analyses = ["PDF_dl_7bins_emu_2jets", "PDF_dl_7bins_ll_2jets"])
+                  .filter(analyses = ["PDF_dl_7bins_emu_2jets", "PDF_dl_7bins_ll_2jets", "PDF_emu_7bins_2jets", "PDF_ll_7bins_2jets"])
 
 ttbar_pdf_7_3j = ttbar_pdf_7_all \
-                  .filter(analyses = ["PDF_dl_7bins_emu_3jets", "PDF_dl_7bins_ll_3jets"])
-                   
+                  .filter(analyses = ["PDF_dl_7bins_emu_3jets", "PDF_dl_7bins_ll_3jets", "PDF_emu_7bins_3jets", "PDF_ll_7bins_3jets"])
+
+# Kinematic selection				  
 ttbar_kinsel_3jet = files("ttbar_kinsel/*/*_em3j.txt") \
                     .restrict()
 
