@@ -182,7 +182,7 @@ ttbar_rebin = (rebin_template + ttbar_fits) \
 # The tau is just an additional error on top of that.
 #
 
-dstar_template = files("Dstar/*/JVF05/*.txt") \
+dstar_template = (files("Dstar/*/JVF05/*.txt") + files("Dstar/*/noJVF/*.txt")) \
                  .restrict()
 
 charm_sf_ttbar = (dstar_template + ttbar_rebin) \
@@ -203,7 +203,7 @@ sources += dstar_template
 # Light SF come from the negative tags
 #
 
-negative = files("negative_tags/*/JVF05/*.txt") \
+negative = (files("negative_tags/*/JVF05/*.txt") + files("negative_tags/*/noJVF/*.txt")) \
            .restrict()
 
 light_sf = negative
@@ -226,7 +226,6 @@ rebin_template_high = rebin_template_all \
 
 mcCalib_rebin = (rebin_template_high + mcCalib) \
     .rebin("rebin", "<>_rebin")
-
 
 default_extrapolated = (\
         dijet \

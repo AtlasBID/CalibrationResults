@@ -3,11 +3,11 @@
 
 # MV1, JVF0_5
 
-Default(ttbar_topo_dijet, bottom, MV1, *, AntiKt4TopoLCJVF0_5)
+Default(combined_pdf_dijet, bottom, MV1, *, AntiKt4TopoLCJVF0_5)
 
 # MV1, noJVF
 
-Default(ttbar_topo_dijet, bottom, MV1, *, AntiKt4TopoLCnoJVF)
+Default(ttbar_dijet_nojvf, bottom, MV1, *, AntiKt4TopoLCnoJVF)
 
 # MV1c, JVF0_5
 
@@ -22,11 +22,11 @@ Default(ttbar_topo_dijet, bottom, MV1c, *, AntiKt4TopoLCnoJVF)
 
 # MV1, JVF0_5
 
-Default(ttbar_pdf_dijet, bottom, MV1, *, AntiKt4TopoEMJVF0_5)
+Default(combined_pdf_dijet, bottom, MV1, *, AntiKt4TopoEMJVF0_5)
 
 # MV1, noJVF
 
-Default(ttbar_topo_dijet, bottom, MV1, *, AntiKt4TopoEMnoJVF)
+Default(ttbar_dijet_nojvf, bottom, MV1, *, AntiKt4TopoEMnoJVF)
 
 # MV1c, JVF0_5
 
