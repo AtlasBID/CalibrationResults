@@ -74,13 +74,20 @@ ttdilep_topo = files("topo_ttemu/*.txt") \
 ttbar_pdf_7_all = files("ttbar_pdf/*/*/*/*6bins.txt") \
                   .restrict() \
                   .filter(analyses = ["PDF_6bins_emu_2jets", "PDF_6bins_emu_3jets", \
-									  "PDF_6bins_ll_2jets", "PDF_6bins_ll_3jets"])
+									  "PDF_6bins_ll_2jets", "PDF_6bins_ll_3jets", \
+									  "PDF_emu_7bins_2jets", "PDF_emu_7bins_3jets", \
+									  "PDF_ll_7bins_2jets", "PDF_ll_7bins_3jets", \
+									  ])
 
 ttbar_pdf_7_2j = ttbar_pdf_7_all \
-                  .filter(analyses = ["PDF_6bins_ll_2jets", "PDF_6bins_emu_2jets"])
+                  .filter(analyses = ["PDF_6bins_ll_2jets", "PDF_6bins_emu_2jets", \
+									  "PDF_ll_7bins_2jets", "PDF_emu_7bins_2jets", \
+				  ])
 
 ttbar_pdf_7_3j = ttbar_pdf_7_all \
-                  .filter(analyses = ["PDF_6bins_ll_3jets", "PDF_6bins_emu_3jets"])
+                  .filter(analyses = ["PDF_6bins_ll_3jets", "PDF_6bins_emu_3jets", \
+									  "PDF_ll_7bins_3jets", "PDF_emu_7bins_3jets", \
+									])
 				  
 
 
