@@ -1,4 +1,4 @@
-Analysis(PDF_dilepton_6bins_emu_2jets,bottom,MV1,0.992515446,AntiKt4TopoEMJVF0_5)
+Analysis(PDF_6bins_emu_2jets,bottom,MV1,0.992515446,AntiKt4TopoEMJVF0_5)
 {
       meta_data_s (Hadronization, Pythia6)
 
