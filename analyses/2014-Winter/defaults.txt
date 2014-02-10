@@ -74,4 +74,4 @@ Default(DStar_ttbar_topo_dijet_rebin, tau, MV1c, *, AntiKt4TopoLCnoJVF)
 #####################################################
 # Light jets
 
-Default(negative tags, light, *, *, *)
+Default(negative_tags, light, *, *, *)
