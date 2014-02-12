@@ -46,6 +46,8 @@ taggers = [
 #MV1c 57% JVF (EM, LC)
     ["MV1c", "0.8674"], 
     ["MV1c", "0.8641"],
+#MV1c 60%, JVF (EM, LC)
+    ["MV1c", "0.8353"], 
     ]
 
 #
