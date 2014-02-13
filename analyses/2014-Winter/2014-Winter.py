@@ -77,18 +77,18 @@ ttbar_pdf_7_all = (files("ttbar_pdf/EM/*/*/*6bins.txt") + files("ttbar_pdf/LC/*/
                   .restrict() \
                   .filter(analyses = ["PDF_6bins_emu_2jets", "PDF_6bins_emu_3jets", \
 									  "PDF_6bins_ll_2jets", "PDF_6bins_ll_3jets", \
-									  "PDF_emu_7bins_2jets", "PDF_emu_7bins_3jets", \
-									  "PDF_ll_7bins_2jets", "PDF_ll_7bins_3jets", \
+									  "PDF_emu_2jets_7bins", "PDF_emu_3jets_7bins", \
+									  "PDF_ll_2jets_7bins", "PDF_ll_3jets_7bins", \
 									  ])
 
 ttbar_pdf_7_2j = ttbar_pdf_7_all \
                   .filter(analyses = ["PDF_6bins_ll_2jets", "PDF_6bins_emu_2jets", \
-									  "PDF_ll_7bins_2jets", "PDF_emu_7bins_2jets", \
+									  "PDF_ll_2jets_7bins", "PDF_emu_2jets_7bins", \
 				  ])
 
 ttbar_pdf_7_3j = ttbar_pdf_7_all \
                   .filter(analyses = ["PDF_6bins_ll_3jets", "PDF_6bins_emu_3jets", \
-									  "PDF_ll_7bins_3jets", "PDF_emu_7bins_3jets", \
+									  "PDF_ll_3jets_7bins", "PDF_emu_3jets_7bins", \
 									])
 				  
 
