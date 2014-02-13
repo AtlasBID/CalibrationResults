@@ -165,10 +165,9 @@ ttbar_dijet_nojvf = (\
 ttbar_fits_7 = ttbar_pdf_7_combined \
     + ttbar_pdf_7_combined_2j \
     + ttbar_pdf_7_combined_3j \
-    + ttbar_dijet_jvf05 \
-    + ttbar_dijet_topo
+    + ttbar_dijet_jvf05
 
-ttbar_fits_10 = ttbar_dijet_nojvf
+ttbar_fits_10 = ttbar_dijet_nojvf + ttbar_dijet_topo
 
 ttbar_fits = ttbar_fits_7 + ttbar_fits_10
 
