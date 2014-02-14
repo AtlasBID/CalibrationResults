@@ -100,12 +100,12 @@ ttbar_pdf_10_all = (files("ttbar_pdf/*/*/*/*2jets.txt") + files("ttbar_pdf/*/*/*
 									  "ttbar_pdf_ll_2jets", "ttbar_pdf_ll_3jets", \
 									  ])
 
-ttbar_pdf_10_2j = ttbar_pdf_7_all \
+ttbar_pdf_10_2j = ttbar_pdf_10_all \
                   .filter(analyses = ["PDF_ll_2jets", "PDF_emu_2jets", \
 									  "ttbar_pdf_emu_2jets", "ttbar_pdf_ll_2jets", \
 				  ])
 
-ttbar_pdf_10_3j = ttbar_pdf_7_all \
+ttbar_pdf_10_3j = ttbar_pdf_10_all \
                   .filter(analyses = ["PDF_emu_3jets", "PDF_ll_3jets", \
 									  "ttbar_pdf_emu_3jets", "ttbar_pdf_ll_3jets", \
 									])
@@ -195,6 +195,7 @@ ttbar_fits_7 = ttbar_pdf_7_combined \
 
 ttbar_fits_10 = ttbar_dijet_nojvf \
 	+ ttbar_dijet_topo \
+	+ ttbar_pdf_10_combined \
 	+ ttbar_pdf_10_combined_2j \
 	+ ttbar_pdf_10_combined_3j \
     + ttbar_dijet_jvf05_10
@@ -253,9 +254,6 @@ light_sf = negative
 sources += negative
 
 ####################################
-# Plotting
-
-#
 # Extrapolate everything
 #
 
