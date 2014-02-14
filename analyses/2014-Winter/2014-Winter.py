@@ -187,19 +187,13 @@ ttbar_dijet_ks = (\
 		+ ttbar_kinsel_2jet \
 		).bbb_fit("ttbar_dijet_ks")
 
-ttbar_ks_dijet = (\
-		s8 \
-		+ ttbar_kinsel_3jet \
-		+ ttbar_kinsel_2jet \
-        ).bbb_fit("ttbar_dijet")
-
 # one ring to rule them all...
 ttbar_fits_7 = ttbar_pdf_7_combined \
     + ttbar_pdf_7_combined_2j \
     + ttbar_pdf_7_combined_3j \
     + ttbar_dijet_jvf05_7
 
-ttbar_fits_10 = ttbar_ks_dijet \
+ttbar_fits_10 = \
 	+ ttbar_dijet_topo \
 	+ ttbar_dijet_ks \
 	+ ttbar_pdf_10_combined \
