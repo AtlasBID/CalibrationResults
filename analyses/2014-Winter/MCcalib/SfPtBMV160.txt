@@ -1,5 +1,5 @@
 Analysis(MCcalib,bottom,MV1,0.9867,AntiKt4TopoEMnoJVF){
-bin(20<pt<30,0<abseta<2.5)
+  bin(20<pt<30,0<abseta<2.5)
     {
         central_value(1.0,0.0013)
         sys(JetStat1,0.0019%)
