@@ -181,11 +181,11 @@ ttbar_dijet_topo = (\
 		+ ttbar_kinsel_3jet.filter(jets=["AntiKt4TopoLCJVF0_5"]) \
 		).bbb_fit("ttbar_dijet_topo_ks")
 
-ttbar_dijet_nojvf = (\
-		s8.filter(jets=["AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"]) \
-		+ ttbar_kinsel_3jet.filter(jets=["AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"]) \
-		+ ttbar_kinsel_2jet.filter(jets=["AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"]) \
-        ).bbb_fit("ttbar_dijet_nojvf")
+ttbar_ks_dijet = (\
+		s8 \
+		+ ttbar_kinsel_3jet \
+		+ ttbar_kinsel_2jet \
+        ).bbb_fit("ttbar_dijet")
 
 # one ring to rule them all...
 ttbar_fits_7 = ttbar_pdf_7_combined \
@@ -193,7 +193,7 @@ ttbar_fits_7 = ttbar_pdf_7_combined \
     + ttbar_pdf_7_combined_3j \
     + ttbar_dijet_jvf05_7
 
-ttbar_fits_10 = ttbar_dijet_nojvf \
+ttbar_fits_10 = ttbar_ks_dijet \
 	+ ttbar_dijet_topo \
 	+ ttbar_pdf_10_combined \
 	+ ttbar_pdf_10_combined_2j \
