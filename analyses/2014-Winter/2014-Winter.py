@@ -91,7 +91,24 @@ ttbar_pdf_7_3j = ttbar_pdf_7_all \
 									  "PDF_ll_3jets_7bins", "PDF_emu_3jets_7bins", \
 									])
 				  
+# 10 bin results, which don't have 10 bin in the names
+ttbar_pdf_10_all = (files("ttbar_pdf/*/*/*/*2jets.txt") + files("ttbar_pdf/*/*/*3jets.txt")) \
+                  .restrict() \
+                  .filter(analyses = ["PDF_emu_2jets", "PDF_emu_3jets", \
+									  "PDF_ll_2jets", "PDF_ll_3jets", \
+									  "ttbar_pdf_emu_2jets", "ttbar_pdf_emu_3jets", \
+									  "ttbar_pdf_ll_2jets", "ttbar_pdf_ll_3jets", \
+									  ])
 
+ttbar_pdf_10_2j = ttbar_pdf_7_all \
+                  .filter(analyses = ["PDF_ll_2jets", "PDF_emu_2jets", \
+									  "ttbar_pdf_emu_2jets", "ttbar_pdf_ll_2jets", \
+				  ])
+
+ttbar_pdf_10_3j = ttbar_pdf_7_all \
+                  .filter(analyses = ["PDF_emu_3jets", "PDF_ll_3jets", \
+									  "ttbar_pdf_emu_3jets", "ttbar_pdf_ll_3jets", \
+									])
 
 # Kinematic selection				  
 ttbar_kinsel_3jet = files("ttbar_kinsel/*/*_em3j.txt") \
@@ -135,6 +152,10 @@ ttbar_pdf_7_combined = ttbar_pdf_7_all.bbb_fit("ttbar_PDF_7b")
 ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("ttbar_PDF_7b_2j")
 ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("ttbar_PDF_7b_3j")
 
+ttbar_pdf_10_combined = ttbar_pdf_10_all.bbb_fit("ttbar_PDF_10b")
+ttbar_pdf_10_combined_2j = ttbar_pdf_10_2j.bbb_fit("ttbar_PDF_10b_2j")
+ttbar_pdf_10_combined_3j = ttbar_pdf_10_3j.bbb_fit("ttbar_PDF_10b_3j")
+
 #
 # Do the ttbar results
 # Several different fits are required, so this gets
@@ -144,9 +165,14 @@ ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("ttbar_PDF_7b_3j")
 # JVF05 is s8 + ttbar pdf. The s8 needs to be re-binned for this.
 s8_pdf_rebin = (s8 + rebin_template_30).rebin("rebin_30", "<>_rebin")
 
-ttbar_dijet_jvf05 = (\
+ttbar_dijet_jvf05_7 = (\
 		ttbar_pdf_7_all.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
          + s8_pdf_rebin.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
+		).bbb_fit("combined_pdf_dijet")
+
+ttbar_dijet_jvf05_10 = (\
+		ttbar_pdf_10_all.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
+         + s8.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
 		).bbb_fit("combined_pdf_dijet")
 
 ttbar_dijet_topo = (\
@@ -165,9 +191,14 @@ ttbar_dijet_nojvf = (\
 ttbar_fits_7 = ttbar_pdf_7_combined \
     + ttbar_pdf_7_combined_2j \
     + ttbar_pdf_7_combined_3j \
-    + ttbar_dijet_jvf05
+    + ttbar_dijet_jvf05_7
 
-ttbar_fits_10 = ttbar_dijet_nojvf + ttbar_dijet_topo
+ttbar_fits_10 = ttbar_dijet_nojvf \
+	+ ttbar_dijet_topo \
+	+ ttbar_pdf_10_combined_2j \
+	+ ttbar_pdf_10_combined_3j \
+    + ttbar_dijet_jvf05_10
+	
 
 ttbar_fits = ttbar_fits_7 + ttbar_fits_10
 
