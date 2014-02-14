@@ -194,7 +194,7 @@ ttbar_fits_7 = ttbar_pdf_7_combined \
     + ttbar_dijet_jvf05_7
 
 ttbar_fits_10 = \
-	+ ttbar_dijet_topo \
+	ttbar_dijet_topo \
 	+ ttbar_dijet_ks \
 	+ ttbar_pdf_10_combined \
 	+ ttbar_pdf_10_combined_2j \
