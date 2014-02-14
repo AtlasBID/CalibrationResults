@@ -180,6 +180,12 @@ ttbar_dijet_topo = (\
 		+ ttdilep_topo.filter(jets=["AntiKt4TopoLCJVF0_5"]) \
 		+ ttbar_kinsel_3jet.filter(jets=["AntiKt4TopoLCJVF0_5"]) \
 		).bbb_fit("ttbar_dijet_topo_ks")
+		
+ttbar_dijet_ks = (\
+		s8 \
+		+ ttbar_kinsel_3jet \
+		+ ttbar_kinsel_2jet \
+		).bbb_fit("ttbar_dijet_ks")
 
 ttbar_ks_dijet = (\
 		s8 \
@@ -195,6 +201,7 @@ ttbar_fits_7 = ttbar_pdf_7_combined \
 
 ttbar_fits_10 = ttbar_ks_dijet \
 	+ ttbar_dijet_topo \
+	+ ttbar_dijet_ks \
 	+ ttbar_pdf_10_combined \
 	+ ttbar_pdf_10_combined_2j \
 	+ ttbar_pdf_10_combined_3j \
