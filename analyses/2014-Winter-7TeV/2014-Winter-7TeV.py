@@ -146,7 +146,7 @@ master_cdi_file = sources \
                   + charm_sf \
                   + tau_sf \
                   + light_sf
-defaultSFs = master_cdi_file.make_cdi("MC11-CDI", "defaults.txt", "MCefficiencies_for_CDI_7TeV_21.2.2014.root")
+defaultSFs = master_cdi_file.make_cdi("MC11-CDI", "defaults.txt", "MCefficiencies_for_CDI_7TeV_23.2.2014.root")
 master_cdi_file.plot("MC11-CDI")
 master_cdi_file.plot("MC11-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
 master_cdi_file.dump(sysErrors = True, name="master")
