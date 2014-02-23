@@ -1,5 +1,5 @@
 Analysis(ttbar_kinsel,bottom,JetFitterCOMBNN,-1.25,AntiKt4Topo){
-bin(25<pt<30,0<eta<2.5)
+bin(25<pt<30,0<abseta<2.5)
 {
 central_value(0.746551 , 0.105395)
 sys(ISR/FSR ,+1.38809%)
@@ -21,7 +21,7 @@ sys(top mass ,-0.74535%)
 sys(chi2 cut normalisation ,+7.38463%)
 sys(pretag ,-1.35148%)
 }
-bin(30<pt<40,0<eta<2.5)
+bin(30<pt<40,0<abseta<2.5)
 {
 central_value(0.989679 , 0.0791002)
 sys(ISR/FSR ,+1.46069%)
@@ -43,7 +43,7 @@ sys(top mass ,-0.199618%)
 sys(chi2 cut normalisation ,+15.7347%)
 sys(pretag ,-3.18525%)
 }
-bin(40<pt<50,0<eta<2.5)
+bin(40<pt<50,0<abseta<2.5)
 {
 central_value(0.950544 , 0.0685101)
 sys(ISR/FSR ,+1.50473%)
@@ -65,7 +65,7 @@ sys(top mass ,-1.14736%)
 sys(chi2 cut normalisation ,-6.01655%)
 sys(pretag ,-0.166067%)
 }
-bin(50<pt<60,0<eta<2.5)
+bin(50<pt<60,0<abseta<2.5)
 {
 central_value(0.974242 , 0.0629497)
 sys(ISR/FSR ,+1.6443%)
@@ -87,7 +87,7 @@ sys(top mass ,-0.43579%)
 sys(chi2 cut normalisation ,+9.74157%)
 sys(pretag ,+1.31523%)
 }
-bin(60<pt<75,0<eta<2.5)
+bin(60<pt<75,0<abseta<2.5)
 {
 central_value(1.05292 , 0.0418048)
 sys(ISR/FSR ,+1.51257%)
@@ -109,7 +109,7 @@ sys(top mass ,-0.501143%)
 sys(chi2 cut normalisation ,+3.98567%)
 sys(pretag ,-4.19011%)
 }
-bin(75<pt<90,0<eta<2.5)
+bin(75<pt<90,0<abseta<2.5)
 {
 central_value(0.949646 , 0.0564826)
 sys(ISR/FSR ,+1.88808%)
@@ -131,7 +131,7 @@ sys(top mass ,-0.221549%)
 sys(chi2 cut normalisation ,+10.7035%)
 sys(pretag ,-4.21504%)
 }
-bin(90<pt<110,0<eta<2.5)
+bin(90<pt<110,0<abseta<2.5)
 {
 central_value(0.969974 , 0.0498853)
 sys(ISR/FSR ,+1.63294%)
@@ -153,7 +153,7 @@ sys(top mass ,+0.437748%)
 sys(chi2 cut normalisation ,+4.45954%)
 sys(pretag ,+3.49401%)
 }
-bin(110<pt<140,0<eta<2.5)
+bin(110<pt<140,0<abseta<2.5)
 {
 central_value(1.00185 , 0.0466506)
 sys(ISR/FSR ,+1.51511%)
@@ -175,7 +175,7 @@ sys(top mass ,-0.267556%)
 sys(chi2 cut normalisation ,+6.56057%)
 sys(pretag ,+0.979444%)
 }
-bin(140<pt<200,0<eta<2.5)
+bin(140<pt<200,0<abseta<2.5)
 {
 central_value(1.03941 , 0.0517866)
 sys(ISR/FSR ,+1.63445%)
