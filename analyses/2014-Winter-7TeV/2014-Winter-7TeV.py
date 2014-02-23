@@ -142,9 +142,9 @@ sources += negative
 ###############################
 #### Put together the CDI
 
+#				  + ttbar_kinsel_dijet \
 master_cdi_file = sources \
 				  + dijet_combined \
-				  + ttbar_kinsel_dijet \
 				  + dijet \
                   + charm_sf \
                   + tau_sf \
