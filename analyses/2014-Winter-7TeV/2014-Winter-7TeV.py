@@ -34,6 +34,7 @@ taggers = [
 sfObject.restrict = lambda self: self.filter(
     taggers=taggers,
     jets=["AntiKt4Topo"],
+    ignore=[".*25-pt-30.*"]
     )
 
 ###############################
