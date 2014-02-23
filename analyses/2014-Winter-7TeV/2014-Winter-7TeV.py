@@ -109,7 +109,7 @@ ttbar_kinsel_dijet = (ttbar_kinsel + dijet).bbb_fit("ttbar_kinsel_dijet", extraF
 ttbar_dijet = (ttbar_kinsel + dijet + ttbar_pdf_10_all).bbb_fit("ttbar_kinsel_pdf_dijet", extraFiles=files("stat_correlation_inputs.txt"))
 
 # rebinned results used to make charm and tau results 
-ttbar_rebin = (rebin_template + ttbar_pdf_10_combined) \
+ttbar_rebin = (rebin_template + ttbar_pdf_10_combined + ttbar_dijet) \
               .rebin("rebin", "<>_rebin")
 dijet_rebin = (rebin_template + dijet) \
               .rebin("rebin", "<>_rebin")
@@ -122,7 +122,7 @@ dijet_rebin = (rebin_template + dijet) \
 dstar_template = files("Dstar/*.txt") \
                  .restrict()
 
-charm_sf_ttbar = (dstar_template + ttbar_rebin) \
+charm_sf_ttbar = (dstar_template + ttbar_rebin + dijet_rebin) \
                  .dstar("DStar_<>", "DStar")
 
 charm_sf_dijet = (dstar_template + dijet_rebin) \
