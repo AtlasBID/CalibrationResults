@@ -1,5 +1,6 @@
 Analysis(system8,bottom,SV0,5.65,AntiKt4Topo)
 {
+    meta_data_s (Hadronization, Pythia6)
 	bin(20<pt<30,0<abseta<2.5)
 	{
 		central_value(0.8543,0.0270)

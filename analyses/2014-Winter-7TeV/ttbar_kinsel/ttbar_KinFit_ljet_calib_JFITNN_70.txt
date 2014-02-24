@@ -1,4 +1,5 @@
 Analysis(ttbar_kinsel,bottom,JetFitterCOMBNN,0.35,AntiKt4Topo){
+    meta_data_s (Hadronization, HerwigJimmy)
 bin(25<pt<30,0<abseta<2.5)
 {
 central_value(0.763825 , 0.130373)

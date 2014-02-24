@@ -1,5 +1,6 @@
 Analysis(pTrel,bottom,JetFitterCOMBNNc,0.98,AntiKt4Topo)
 {
+    meta_data_s (Hadronization, Pythia6)
 	bin(20<pt<200,0.0<abseta<0.6)
 	{
 		central_value(1.0144,0.0092)
