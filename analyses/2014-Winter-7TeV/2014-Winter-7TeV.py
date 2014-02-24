@@ -165,6 +165,8 @@ master_cdi_file.plot("MC11-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
 master_cdi_file.dump(sysErrors = True, name="master")
 master_cdi_file.dump(metadata = True, name="master-metadata")
 sources.dump(sysErrors = True, name="sources")
+ttbar_pdf_combined.plot("ttbar_pdf", effOnly=True)
+(ttbar_kinsel_dijet+ttbar_pdf_combined+ttbar_dijet).plot("ttbar_all", effOnly=True)
 
 ###############################
 # Plotting
