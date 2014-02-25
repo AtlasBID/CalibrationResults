@@ -306,4 +306,11 @@ sources.dump(sysErrors = True, name="sources")
 
 (master_cdi_file + defaultSFs).plot("MC12-ByTagger", byCalibEff = True, effOnly=True)
 
+####################################
+# Rebinned inputs for the continuous tagging
+#
+rebin_for_cont = files("continuousbinning.txt")
+
+(light_sf + charm_sf + tau_sf).rebin("rebin_cont", "<>_continuous")
+
 # Done!
