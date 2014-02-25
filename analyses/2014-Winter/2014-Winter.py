@@ -311,6 +311,6 @@ sources.dump(sysErrors = True, name="sources")
 #
 rebin_for_cont = files("continuousbinning.txt")
 
-(light_sf + charm_sf + tau_sf).rebin("rebin_cont", "<>_continuous")
+(light_sf + charm_sf + tau_sf + rebin_for_cont).rebin("rebin_cont", "<>_continuous")
 
 # Done!
