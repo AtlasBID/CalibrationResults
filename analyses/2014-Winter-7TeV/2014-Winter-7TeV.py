@@ -150,6 +150,40 @@ light_sf = negative
 
 sources += negative
 
+################################
+# Extrapolation
+#  - Extrapolate everything
+#  - Make sure the extrapolation is properly binned!
+#  - Negative tags can't be extrapolated b.c. they have two eta divisions,
+#    and the extrapolations do not. But that doesn't matter as the negative tags
+#    go to a much higher value.
+
+mcCalib = files("MCcalib/*.txt") \
+    .restrict()
+
+rebin_template_high = rebin_template_all
+
+mcCalib_rebin = (rebin_template_high + mcCalib) \
+    .rebin("rebin", "<>_rebin")
+
+default_extrapolated = (\
+        dijet_combined \
+		+ ttbar_kinsel_dijet \
+        + ttbar_pdf_10_combined \
+		+ ttbar_dijet \
+        + mcCalib \
+        ) \
+        .extrapolate("MCcalib")
+
+rebin_extrapolated = (\
+    charm_sf \
+    + tau_sf \
+    + mcCalib_rebin \
+    + ttbar_pdf_6_combined
+    ) \
+    .extrapolate("MCcalib_rebin")
+
+all_extrapolated = default_extrapolated + rebin_extrapolated
 
 ###############################
 #### Put together the CDI
