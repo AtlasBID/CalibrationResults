@@ -106,7 +106,11 @@ ttbar_kinsel_dijet = (ttbar_kinsel + dijet).bbb_fit("ttbar_kinsel_dijet", extraF
 
 # ttbar kinematic selection (l+jets), ttbar pdf (dilep), and dijet
 
-ttbar_dijet = (ttbar_kinsel + dijet + ttbar_pdf_10_all).bbb_fit("ttbar_kinsel_pdf_dijet", extraFiles=files("stat_correlation_inputs.txt"))
+ttbar_all_dijet = (ttbar_kinsel + dijet + ttbar_pdf_10_all).bbb_fit("ttbar_kinsel_pdf_dijet", extraFiles=files("stat_correlation_inputs.txt"))
+
+ttbar_pdf_dijet = (dijet + ttbar_pdf_10_all).bbb_fit("ttbar_pdf_dijet", extraFiles=files("stat_correlation_inputs.txt"))
+
+ttbar_dijet = ttbar_all_dijet + ttbar_pdf_dijet
 
 # rebinned results used to make charm and tau results 
 ttbar_rebin = (rebin_template + ttbar_pdf_10_combined + ttbar_dijet) \
