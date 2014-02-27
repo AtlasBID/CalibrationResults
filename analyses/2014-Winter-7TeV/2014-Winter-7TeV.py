@@ -189,11 +189,7 @@ all_extrapolated = default_extrapolated + rebin_extrapolated
 #### Put together the CDI
 
 master_cdi_file = sources \
-				  + dijet_combined \
-				  + ttbar_kinsel_dijet \
-				  + ttbar_pdf_combined \
-				  + ttbar_dijet \
-				  + dijet \
+				  + all_extrapolated \
                   + charm_sf \
                   + tau_sf \
                   + light_sf
