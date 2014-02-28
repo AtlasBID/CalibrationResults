@@ -139,11 +139,11 @@ rebin_template_all = files("commonbinning.txt") \
     .filter(analyses=["rebin"])
 
 rebin_template = rebin_template_all \
-    .filter(ignore=[".*300-pt-500.*"])
+                 .filter(ignore=[".*300-pt-500.*", ".*500-pt-800.*", ".*800-pt-1200.*", ".*1200-pt-2000.*"])
 
 rebin_template_30 = files("commonbinning.txt") \
-    .filter(analyses=["rebin_30"]) \
-    .filter(ignore=[".*300-pt-500.*"])
+                    .filter(analyses=["rebin_30"]) \
+                    .filter(ignore=[".*300-pt-500.*", ".*500-pt-800.*", ".*800-pt-1200.*", ".*1200-pt-2000.*"])
 #
 # We want several versions of the pdf fit to end up in the
 # final file. This is for specialized use.
