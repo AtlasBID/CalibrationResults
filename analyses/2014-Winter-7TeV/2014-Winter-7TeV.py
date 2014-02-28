@@ -81,11 +81,11 @@ rebin_template_all = files("commonbinning.txt") \
                      .filter(analyses=["rebin"])
 					 
 rebin_template = rebin_template_all \
-                 .filter(ignore=[".*300-pt-500.*"])
+                 .filter(ignore=[".*300-pt-500.*", ".*500-pt-800.*"])
 				 
 rebin_template_30 = files("commonbinning.txt") \
                     .filter(analyses=["rebin_30"]) \
-                    .filter(ignore=[".*300-pt-500.*"])
+                    .filter(ignore=[".*300-pt-500.*", ".*500-pt-800.*"])
 
 # various top-based combination using 6-bin inputs 
 ttbar_pdf_6_combined = ttbar_pdf_6_all.bbb_fit("ttbar_PDF_6b")
