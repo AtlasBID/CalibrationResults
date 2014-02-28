@@ -1,4 +1,4 @@
-Analysis(MCcalib,bottom,MV1,0.0714225,AntiKt4TopoEM){
+Analysis(MCcalib,bottom,MV1,0.0714225,AntiKt4Topo){
 bin(0<pt<15,0<abseta<2.5)
     {
         central_value(1.0,0.0012)
