@@ -159,7 +159,8 @@ sources += negative
 #    go to a much higher value.
 
 mcCalib = files("MCcalib/*.txt") \
-    .restrict()
+    .restrict() \
+	.filter(ignore=[".*0-pt-15.*", ".*15-pt-20.*"])
 
 rebin_template_high = rebin_template_all
 
