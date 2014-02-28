@@ -30,6 +30,11 @@ Analysis(rebin,bottom,MV1,0.905363,AntiKt4Topo)
       {
          central_value(0.999499,0.069147)
       }
+	  
+      bin(300<pt<500,0.0<abseta<2.5)
+      {
+         central_value(0.999499,0.069147)
+      }
 }
 
 Analysis(rebin_30,bottom,MV1,0.905363,AntiKt4Topo)
@@ -55,6 +60,11 @@ Analysis(rebin_30,bottom,MV1,0.905363,AntiKt4Topo)
       }
 
       bin(200<pt<300,0.0<abseta<2.5)
+      {
+         central_value(0.999499,0.069147)
+      }
+
+      bin(300<pt<500,0.0<abseta<2.5)
       {
          central_value(0.999499,0.069147)
       }

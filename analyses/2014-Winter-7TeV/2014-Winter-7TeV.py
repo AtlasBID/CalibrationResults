@@ -79,8 +79,10 @@ dijet = s8 + ptrel
 # rebin should have the same binning as D*
 rebin_template_all = files("commonbinning.txt") \
                      .filter(analyses=["rebin"])
+					 
 rebin_template = rebin_template_all \
                  .filter(ignore=[".*300-pt-500.*"])
+				 
 rebin_template_30 = files("commonbinning.txt") \
                     .filter(analyses=["rebin_30"]) \
                     .filter(ignore=[".*300-pt-500.*"])
