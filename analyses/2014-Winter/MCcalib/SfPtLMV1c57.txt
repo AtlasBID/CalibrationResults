@@ -1,4 +1,4 @@
-Analysis(MCcalib,l,MV1c,0.8674,AntiKt4TopoEMnoJVF){
+Analysis(MCcalib,light,MV1c,0.8674,AntiKt4TopoEMnoJVF){
 bin(20<pt<30,0<abseta<2.5)
     {
         central_value(1.0,0.0072)
@@ -481,7 +481,7 @@ bin(800<pt<1200,0<abseta<2.5)
         sys(FakeRa,51.0028%)
     }
 }
-Analysis(MCcalib,l,MV1c,0.8641,AntiKt4TopoLCnoJVF){
+Analysis(MCcalib,light,MV1c,0.8641,AntiKt4TopoLCnoJVF){
 bin(20<pt<30,0<abseta<2.5)
     {
         central_value(1.0,0.0072)
