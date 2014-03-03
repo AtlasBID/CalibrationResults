@@ -147,7 +147,7 @@ Analysis(negative_tags,light,JetFitterCharm,-0.9_2.5,AntiKt4TopoLCJVF0_5){
     sys(trigger bias,-29.23%)
     sys(negative tag epsilon b, 0.00%)
     sys(negative tag epsilon c, 0.00%)
-    sys(negative tag run period dependence,  nan%)
+    sys(negative tag run period dependence,  0%)
     sys(d0 and z0 smearing,-6.09%)
   }
   bin( 30<pt< 60, 1.2<abseta<2.5)

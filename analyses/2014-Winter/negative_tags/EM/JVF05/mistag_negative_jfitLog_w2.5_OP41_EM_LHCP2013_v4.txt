@@ -18,7 +18,7 @@ Analysis(negative_tags,light,JetFitterCharm,-0.9_2.5,AntiKt4TopoEMJVF0_5){
     sys(trigger bias,-16.24%)
     sys(negative tag epsilon b, 0.00%)
     sys(negative tag epsilon c, 4.16%)
-    sys(negative tag run period dependence,  nan%)
+    sys(negative tag run period dependence,  0%)
     sys(d0 and z0 smearing,-2.04%)
   }
   bin( 30<pt< 60, 0.0<abseta<1.2)
@@ -147,7 +147,7 @@ Analysis(negative_tags,light,JetFitterCharm,-0.9_2.5,AntiKt4TopoEMJVF0_5){
     sys(trigger bias,36.45%)
     sys(negative tag epsilon b, 0.00%)
     sys(negative tag epsilon c, 0.00%)
-    sys(negative tag run period dependence,  nan%)
+    sys(negative tag run period dependence,  0%)
     sys(d0 and z0 smearing,-6.09%)
   }
   bin( 30<pt< 60, 1.2<abseta<2.5)
@@ -231,7 +231,7 @@ Analysis(negative_tags,light,JetFitterCharm,-0.9_2.5,AntiKt4TopoEMJVF0_5){
     sys(trigger bias, 0.00%)
     sys(negative tag epsilon b, 0.00%)
     sys(negative tag epsilon c, 0.00%)
-    sys(negative tag run period dependence,  nan%)
+    sys(negative tag run period dependence,  0%)
     sys(d0 and z0 smearing,-8.19%)
   }
   bin(450<pt<750, 1.2<abseta<2.5)
@@ -252,7 +252,7 @@ Analysis(negative_tags,light,JetFitterCharm,-0.9_2.5,AntiKt4TopoEMJVF0_5){
     sys(trigger bias, 0.00%)
     sys(negative tag epsilon b, 0.00%)
     sys(negative tag epsilon c, 0.00%)
-    sys(negative tag run period dependence,  nan%)
+    sys(negative tag run period dependence,  0%)
     sys(d0 and z0 smearing,-8.19%)
   }
 }
