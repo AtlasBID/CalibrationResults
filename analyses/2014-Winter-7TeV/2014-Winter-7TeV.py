@@ -54,21 +54,21 @@ ttbar_kinsel = files("ttbar_kinsel/*.txt") \
 
 # top input - PDF with different final states and 6 bins
 ttbar_pdf_6_all = files("ttbar_pdf/6bins/*6bins.txt") \
-                  .restrict() \
-                  .filter(analyses =["ttbar_pdf_emu_2jets_6bins","ttbar_pdf_emu_3jets_6bins","ttbar_pdf_ll_2jets_6bins","ttbar_pdf_ll_3jets_6bins"])
+                  .restrict()
+                  
 ttbar_pdf_6_2j = ttbar_pdf_6_all \
-                 .filter(analyses =["ttbar_pdf_emu_2jets_6bins","ttbar_pdf_ll_2jets_6bins"])
+                 .filter(analyses =["TopPDF_6bins_emu2J", "TopPDF_6bins_ll2J"])
 ttbar_pdf_6_3j = ttbar_pdf_6_all \
-                 .filter(analyses =["ttbar_pdf_emu_3jets_6bins","ttbar_pdf_ll_3jets_6bins"])
+                 .filter(analyses =["TopPDF_6bins_emu3J", "TopPDF_6bins_ll3J"])
 
 # top input - PDF with different final states and 10 bins
 ttbar_pdf_10_all = files("ttbar_pdf/10bins/*.txt") \
-                  .restrict() \
-                  .filter(analyses =["ttbar_pdf_emu_2jets","ttbar_pdf_emu_3jets","ttbar_pdf_ll_2jets","ttbar_pdf_ll_3jets"])
+                  .restrict()
+                  
 ttbar_pdf_10_2j = ttbar_pdf_10_all \
-                 .filter(analyses =["ttbar_pdf_emu_2jets","ttbar_pdf_ll_2jets"])
+                 .filter(analyses =["TopPDF_10bins_emu2J", "TopPDF_10bins_ll2J"])
 ttbar_pdf_10_3j = ttbar_pdf_10_all \
-                 .filter(analyses =["ttbar_pdf_emu_3jets","ttbar_pdf_ll_3jets"])
+                 .filter(analyses =["TopPDF_10bins_emu3J", "TopPDF_10bins_ll3J"])
 
 # defining sources
 sources = ttbar_pdf_6_all + ttbar_pdf_10_all + ttbar_kinsel
@@ -88,14 +88,14 @@ rebin_template_30 = files("commonbinning.txt") \
                     .filter(ignore=[".*300-pt-500.*", ".*500-pt-800.*", ".*800-pt-1200.*", ".*1200-pt-2000.*"])
 
 # various top-based combination using 6-bin inputs 
-ttbar_pdf_6_combined = ttbar_pdf_6_all.bbb_fit("ttbar_PDF_6b")
-ttbar_pdf_6_combined_2j = ttbar_pdf_6_2j.bbb_fit("ttbar_PDF_6b_2j")
-ttbar_pdf_6_combined_3j = ttbar_pdf_6_3j.bbb_fit("ttbar_PDF_6b_3j")
+ttbar_pdf_6_combined = ttbar_pdf_6_all.bbb_fit("TopPDF_6bins_emu")
+ttbar_pdf_6_combined_2j = ttbar_pdf_6_2j.bbb_fit("TopPDF_6bins_2J")
+ttbar_pdf_6_combined_3j = ttbar_pdf_6_3j.bbb_fit("TopPDF_10bins_3J")
 
 # various top-based combination using 10-bin inputs 
-ttbar_pdf_10_combined = ttbar_pdf_10_all.bbb_fit("ttbar_PDF_10b")
-ttbar_pdf_10_combined_2j = ttbar_pdf_10_2j.bbb_fit("ttbar_PDF_10b_2j")
-ttbar_pdf_10_combined_3j = ttbar_pdf_10_3j.bbb_fit("ttbar_PDF_10b_3j")
+ttbar_pdf_10_combined = ttbar_pdf_10_all.bbb_fit("TopPDF_6bins_emu")
+ttbar_pdf_10_combined_2j = ttbar_pdf_10_2j.bbb_fit("TopPDF_10bins_2J")
+ttbar_pdf_10_combined_3j = ttbar_pdf_10_3j.bbb_fit("TopPDF_10bins_3J")
 
 ttbar_pdf_combined = ttbar_pdf_6_combined + ttbar_pdf_6_combined_2j + ttbar_pdf_6_combined_3j \
 	+ ttbar_pdf_10_combined + ttbar_pdf_10_combined_2j + ttbar_pdf_10_combined_3j
