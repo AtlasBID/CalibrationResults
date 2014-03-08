@@ -53,7 +53,7 @@ ttbar_kinsel = files("ttbar_kinsel/*.txt") \
                .restrict()
 
 # top input - PDF with different final states and 6 bins
-ttbar_pdf_6_all = files("ttbar_pdf/6bins/*6bins.txt") \
+ttbar_pdf_6_all = files("ttbar_pdf/6bins/*.txt") \
                   .restrict()
                   
 ttbar_pdf_6_2j = ttbar_pdf_6_all \
