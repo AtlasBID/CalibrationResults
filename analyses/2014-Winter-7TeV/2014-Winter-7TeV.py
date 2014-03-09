@@ -88,12 +88,12 @@ rebin_template_30 = files("commonbinning.txt") \
                     .filter(ignore=[".*300-pt-500.*", ".*500-pt-800.*", ".*800-pt-1200.*", ".*1200-pt-2000.*"])
 
 # various top-based combination using 6-bin inputs 
-ttbar_pdf_6_combined = ttbar_pdf_6_all.bbb_fit("TopPDF_6bins_emu")
+ttbar_pdf_6_combined = ttbar_pdf_6_all.bbb_fit("TopPDF_6bins")
 ttbar_pdf_6_combined_2j = ttbar_pdf_6_2j.bbb_fit("TopPDF_6bins_2J")
 ttbar_pdf_6_combined_3j = ttbar_pdf_6_3j.bbb_fit("TopPDF_10bins_3J")
 
 # various top-based combination using 10-bin inputs 
-ttbar_pdf_10_combined = ttbar_pdf_10_all.bbb_fit("TopPDF_6bins_emu")
+ttbar_pdf_10_combined = ttbar_pdf_10_all.bbb_fit("TopPDF_10bins")
 ttbar_pdf_10_combined_2j = ttbar_pdf_10_2j.bbb_fit("TopPDF_10bins_2J")
 ttbar_pdf_10_combined_3j = ttbar_pdf_10_3j.bbb_fit("TopPDF_10bins_3J")
 
