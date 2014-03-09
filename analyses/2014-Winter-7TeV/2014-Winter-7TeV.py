@@ -115,7 +115,7 @@ ttbar_pdf_dijet = (dijet + ttbar_pdf_10_all).bbb_fit("ttbar_pdf_dijet", extraFil
 ttbar_dijet = ttbar_all_dijet + ttbar_pdf_dijet
 
 # rebinned results used to make charm and tau results 
-ttbar_rebin = (rebin_template + ttbar_pdf_10_combined + ttbar_dijet) \
+ttbar_rebin = (rebin_template + ttbar_pdf_10_combined + ttbar_dijet + ttbar_kinsel) \
               .rebin("rebin", "<>_rebin")
 dijet_rebin = (rebin_template + dijet) \
               .rebin("rebin", "<>_rebin")
@@ -171,6 +171,7 @@ mcCalib_rebin = (rebin_template_high + mcCalib) \
 
 default_extrapolated = (\
         dijet_combined \
+		+ ttbar_kinsel \
 		+ ttbar_kinsel_dijet \
         + ttbar_pdf_10_combined \
 		+ ttbar_dijet \

@@ -16,5 +16,5 @@ Default(DStar_ttbar_pdf_dijet_rebin, tau, MV1, 0.0714225, AntiKt4Topo)
 Default(negative_tags, light, MV1, 0.905363, AntiKt4Topo)
 Default(negative_tags, light, MV1, 0.601713, AntiKt4Topo)
 Default(negative_tags, light, MV1, 0.404219, AntiKt4Topo)
-Default(negative_tags, light, MV1, 0.0714225, AntiKt4Topo)
+Default(negative_tags, light, MV1, 0.0714225, AntiKt4Topo) 
 
