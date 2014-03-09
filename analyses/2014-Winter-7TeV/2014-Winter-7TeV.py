@@ -66,9 +66,9 @@ ttbar_pdf_10_all = files("ttbar_pdf/10bins/*.txt") \
                   .restrict()
                   
 ttbar_pdf_10_2j = ttbar_pdf_10_all \
-                 .filter(analyses =["TopPDF_10bins_emu2J", "TopPDF_10bins_ll2J"])
+                 .filter(analyses =["TopPDF_emu2J", "TopPDF_ll2J"])
 ttbar_pdf_10_3j = ttbar_pdf_10_all \
-                 .filter(analyses =["TopPDF_10bins_emu3J", "TopPDF_10bins_ll3J"])
+                 .filter(analyses =["TopPDF_emu3J", "TopPDF_ll3J"])
 
 # defining sources
 sources = ttbar_pdf_6_all + ttbar_pdf_10_all + ttbar_kinsel
