@@ -123,11 +123,12 @@ ttbar_kinsel_3jet = files("ttbar_kinsel/*/*_em3j.txt") \
 
 # We want the 2 jet results as well, but only where they don't overlap with
 # Richard's inputs (ttdilep_topo).
-ttbar_kinsel_2jet = files("ttbar_kinsel/*/*_em2j.txt") \
-                    .restrict() \
+ttbar_kinsel_2jet_all = files("ttbar_kinsel/*/*_em2j.txt") \
+                        .restrict()
+ttbar_kinsel_2jet = ttbar_kinsel_2jet_all
                     .filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"])
 				  
-sources = s8 + ttdilep_topo + ttbar_pdf_7_all + ttbar_pdf_10_all + ttbar_kinsel_3jet + ttbar_kinsel_2jet
+sources = s8 + ttdilep_topo + ttbar_pdf_7_all + ttbar_pdf_10_all + ttbar_kinsel_3jet + ttbar_kinsel_2jet_all
 
 #
 # Build up the central dijet fits. "dijet" is our best estimate, in the end, of the dijet
@@ -191,12 +192,12 @@ ttbar_dijet_topo = (\
 ttbar_dijet_ks = (\
 		s8 \
 		+ ttbar_kinsel_3jet \
-		+ ttbar_kinsel_2jet \
+		+ ttbar_kinsel_2jet_all \
 		).bbb_fit("ttbar_dijet_ks")
 		
 ttbar_ks = (\
 		ttbar_kinsel_3jet \
-		+ ttbar_kinsel_2jet \
+		+ ttbar_kinsel_2jet_all \
 		).bbb_fit("KinSel_dilep")
 
 # one ring to rule them all...
