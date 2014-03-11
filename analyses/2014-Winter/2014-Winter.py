@@ -125,7 +125,7 @@ ttbar_kinsel_3jet = files("ttbar_kinsel/*/*_em3j.txt") \
 # Richard's inputs (ttdilep_topo).
 ttbar_kinsel_2jet_all = files("ttbar_kinsel/*/*_em2j.txt") \
                         .restrict()
-ttbar_kinsel_2jet = ttbar_kinsel_2jet_all
+ttbar_kinsel_2jet = ttbar_kinsel_2jet_all \
                     .filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"])
 				  
 sources = s8 + ttdilep_topo + ttbar_pdf_7_all + ttbar_pdf_10_all + ttbar_kinsel_3jet + ttbar_kinsel_2jet_all
