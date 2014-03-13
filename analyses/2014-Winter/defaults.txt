@@ -90,13 +90,12 @@ Default(DStar_ttbar_dijet_ks_rebin, tau, MV1c, *, AntiKt4TopoEMnoJVF)
 Default(DStar_combined_pdf_dijet_7_rebin, tau, MV1, *, AntiKt4TopoLCJVF0_5)
 Default(DStar_ttbar_dijet_ks_rebin, tau, MV1, *, AntiKt4TopoLCnoJVF)
 
+Default(DStar_ttbar_dijet_ks_rebin, tau, MV1c, *, AntiKt4TopoLCnoJVF)
+
 Default(DStar_ttbar_dijet_topo_ks_rebin, tau, MV1c, 0.8641, AntiKt4TopoLCJVF0_5)
 Default(DStar_ttbar_dijet_topo_ks_rebin, tau, MV1c, 0.9195, AntiKt4TopoLCJVF0_5)
-Default(DStar_KinSel_diplep_rebin, tau, MV1c, 0.7068, AntiKt4TopoLCJVF0_5)
-Default(DStar_KinSel_diplep_rebin, tau, MV1c, 0.4051, AntiKt4TopoLCJVF0_5)
-
-#Default(DStar_combined_pdf_dijet_7_rebin, tau, MV1c, *, AntiKt4TopoLCJVF0_5)
-#Default(DStar_ttbar_dijet_ks_rebin, tau, MV1c, *, AntiKt4TopoLCnoJVF)
+Default(DStar_KinSel_dilep_rebin, tau, MV1c, 0.7068, AntiKt4TopoLCJVF0_5)
+Default(DStar_KinSel_dilep_rebin, tau, MV1c, 0.4051, AntiKt4TopoLCJVF0_5)
 
 #####################################################
 # Light jets
