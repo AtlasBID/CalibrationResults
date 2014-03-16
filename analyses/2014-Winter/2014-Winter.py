@@ -64,7 +64,9 @@ taggers = [
 sfObject.restrict = lambda self: self.filter(
     taggers=taggers,
     jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5", "AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"],
-    ignore=[".*25-pt-30.*",".*300-pt-400.*", ".*system8.*20-pt-30.*", ".*MV1-0.1340-AntiKt4TopoLCnoJVF.*", ".*MV1c-0.8353-AntiKt4TopoEMnoJVF.*", ".*0.1644-AntiKt4TopoEMnoJVF.*"]
+    ignore=[".*25-pt-30.*",".*300-pt-400.*", ".*system8.*20-pt-30.*", ".*MV1-0.1340-AntiKt4TopoLCnoJVF.*", ".*MV1c-0.8353-AntiKt4TopoEMnoJVF.*", ".*0.1644-AntiKt4TopoEMnoJVF.*", # No b calibration results (85%)
+	".*0.1340-AntiKt4TopoLCJVF0_5.*" # No B calibration results (85%)
+	]
     )
 	
 ####################################
@@ -100,7 +102,7 @@ ttbar_pdf_7_3j = ttbar_pdf_7_all \
 									])
 				  
 # 10 bin results, which don't have 10 bin in the names
-ttbar_pdf_10_all = (files("ttbar_pdf/EM/*/10PT*/*jets.txt") + files("ttbar_pdf/LC/*/*jets.txt")) \
+# + files("ttbar_pdf/LC/*/*jets.txt")ttbar_pdf_10_all = (files("ttbar_pdf/EM/*/10PT*/*jets.txt")) \
                   .restrict() \
                   .filter(analyses = ["PDF_emu_2jets", "PDF_emu_3jets", \
 									  "PDF_ll_2jets", "PDF_ll_3jets", \
