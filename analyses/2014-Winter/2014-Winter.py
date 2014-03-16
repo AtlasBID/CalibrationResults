@@ -102,7 +102,8 @@ ttbar_pdf_7_3j = ttbar_pdf_7_all \
 									])
 				  
 # 10 bin results, which don't have 10 bin in the names
-# + files("ttbar_pdf/LC/*/*jets.txt")ttbar_pdf_10_all = (files("ttbar_pdf/EM/*/10PT*/*jets.txt")) \
+# + files("ttbar_pdf/LC/*/*jets.txt")
+ttbar_pdf_10_all = (files("ttbar_pdf/EM/*/10PT*/*jets.txt")) \
                   .restrict() \
                   .filter(analyses = ["PDF_emu_2jets", "PDF_emu_3jets", \
 									  "PDF_ll_2jets", "PDF_ll_3jets", \
