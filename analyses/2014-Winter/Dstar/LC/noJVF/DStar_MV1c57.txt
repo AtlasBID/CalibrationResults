@@ -124,7 +124,7 @@ Analysis(DStar,charm,MV1c,0.8641,AntiKt4TopoLCnoJVF){
      sys(b SF,-3.77358%)
      sys(bkg. param,0.943396%)
      sys(peak width,9.43396%)
-     sys(jet energy scale,-2.33065%)
+     sys(jet energy scale,2.97044%)
      sys(jet energy resolution,-0.548388%)
      sys(jet vertex fraction,0%)
      sys(pile-up,0.137097%)

@@ -12,7 +12,7 @@ Analysis(DStar,charm,JetFitterCharm,-0.9_2.5,AntiKt4TopoEMJVF0_5){
      sys(b SF,-1.0989%)
      sys(bkg. param,3.2967%)
      sys(peak width,5.49451%)
-     sys(jet energy scale,0.760588%)
+     sys(jet energy scale,-0.898876%)
      sys(jet energy resolution,-2.76577%)
      sys(jet vertex fraction,-0.138289%)
      sys(pile-up,0.276577%)

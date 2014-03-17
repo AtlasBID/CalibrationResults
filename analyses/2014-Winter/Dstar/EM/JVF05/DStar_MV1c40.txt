@@ -42,7 +42,7 @@ Analysis(DStar,charm,MV1c,0.9662,AntiKt4TopoEMJVF0_5){
      sys(peak width,12%)
      sys(jet energy scale,5.34502%)
      sys(jet energy resolution,2.13801%)
-     sys(jet vertex fraction,0.10181%)
+     sys(jet vertex fraction,0.20362%)
      sys(pile-up,0.050905%)
      sys(extrap c to Lambdac,2.29072%)
      sys(extrap c to D+,1.32353%)
