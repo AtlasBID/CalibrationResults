@@ -20,8 +20,8 @@ from sfObject import sfObject
 #
 
 title = "Winter 2014 B-Tagging SF Results"
-name = "2014-Winter"
-description = "Winter 2014 results, based on the full 2012 data"
+name = "2014-Winter-8TeV"
+description = "Winter 2014 results, based on the full 2012 8 TeV data"
 
 #
 # Legal taggers. These will be used lower down to filter out the inputs to make sure
@@ -132,7 +132,9 @@ ttbar_kinsel_2jet_all = files("ttbar_kinsel/*/*_em2j.txt") \
 ttbar_kinsel_2jet = ttbar_kinsel_2jet_all \
                     .filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"])
 				  
-sources = s8 + ttdilep_topo + ttbar_pdf_7_all + ttbar_pdf_10_all + ttbar_kinsel_3jet + ttbar_kinsel_2jet_all
+sources_7  = ttbar_pdf_7_all
+sources_10 = s8 + ttdilep_topo + ttbar_pdf_10_all + ttbar_kinsel_3jet + ttbar_kinsel_2jet_all
+
 
 #
 # Build up the central dijet fits. "dijet" is our best estimate, in the end, of the dijet
@@ -259,7 +261,7 @@ charm_sf = charm_sf_ttbar + charm_sf_dijet
                  
 tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
-sources += dstar_template
+sources_7 += dstar_template
 
 ####################################
 # Light SF come from the negative tags
@@ -270,7 +272,7 @@ negative = (files("negative_tags/*/JVF05/*.txt") + files("negative_tags/*/noJVF/
 
 light_sf = negative
 
-sources += negative
+sources_10 += negative
 
 ####################################
 # Extrapolate everything
@@ -290,6 +292,7 @@ default_extrapolated = (\
         dijet \
         + ttbar_fits_10 \
         + mcCalib \
+		+ sources_10
         ) \
         .extrapolate("MCcalib")
 
@@ -297,7 +300,8 @@ rebin_extrapolated = (\
     charm_sf \
     + tau_sf \
     + mcCalib_rebin \
-    + ttbar_fits_7
+    + ttbar_fits_7 \
+	+ sources_7 \
     ) \
     .extrapolate("MCcalib_rebin")
 
@@ -312,8 +316,7 @@ all_extrapolated = default_extrapolated + rebin_extrapolated
 
 master_cdi_file = \
     light_sf \
-    + all_extrapolated \
-    + sources
+    + all_extrapolated
 defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "MCefficiencies_for_CDI_8TeV_5.3.2014.root")
 master_cdi_file.plot("MC12-CDI")
 master_cdi_file.plot("MC12-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
