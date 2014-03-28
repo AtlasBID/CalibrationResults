@@ -272,7 +272,8 @@ negative = (files("negative_tags/*/JVF05/*.txt") + files("negative_tags/*/noJVF/
 
 light_sf = negative
 
-sources_10 += negative
+# We'd like to do this, but we can't extrapolate accross bin boundaries.
+#sources_10 += negative
 
 ####################################
 # Extrapolate everything
