@@ -109,7 +109,7 @@ ttbar_pdf_7_3j = ttbar_pdf_7_all \
 # + files("ttbar_pdf/LC/*/*jets.txt")
 ttbar_pdf_10_LC = files("ttbar_pdf/LC/*/*jets.txt") \
 					.restrict() \
-					.filter(taggers=["JetFitterCharm"])
+					.filter(taggers=[["JetFitterCharm", "-0_9_0_95"],["JetFitterCharm", "-0_9_NONE"]])
 					
 ttbar_pdf_10_all = (files("ttbar_pdf/EM/*/10PT*/*jets.txt")) \
                   .restrict() \
