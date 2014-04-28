@@ -53,7 +53,7 @@ class Dump:
         if self._cnames:
             title = "Check OPs"
             ftype = ".txt"
-            args = "--cnames --inputfile %s" % self._cnames
+            args = "--cnames --inputfile=%s" % self._cnames
 
         # Run it
 
