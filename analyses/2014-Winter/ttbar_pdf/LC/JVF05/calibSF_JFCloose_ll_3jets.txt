@@ -1,4 +1,4 @@
-Analysis(PDF_dilepton_ll_3jets,bottom,JetFitterCharm,-0_9_NONE,AntiKt4TopoLCJVF0_5)
+Analysis(PDF_dilepton_ll_3jets,bottom,JetFitterCharm,-0.9_NONE,AntiKt4TopoLCJVF0_5)
 {
       meta_data_s (Hadronization, Pythia6)
 
