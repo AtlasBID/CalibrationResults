@@ -55,6 +55,10 @@ taggers = [
 #MV1c 80%
     ["MV1c", "0.4050"], 
     ["MV1c", "0.4051"],
+#JetFitterCharm Medium
+	["JetFitterCharm", "-0_9_0_95"],
+#JetFitterCharm Loose
+	["JetFitterCharm", "-0_9_NONE"]
     ]
 
 #
@@ -103,22 +107,29 @@ ttbar_pdf_7_3j = ttbar_pdf_7_all \
 				  
 # 10 bin results, which don't have 10 bin in the names
 # + files("ttbar_pdf/LC/*/*jets.txt")
+ttbar_pdf_10_LC = files("ttbar_pdf/LC/*/*jets.txt") \
+					.restrict() \
+					.filter(taggers=["JetFitterCharm"])
+					
 ttbar_pdf_10_all = (files("ttbar_pdf/EM/*/10PT*/*jets.txt")) \
                   .restrict() \
                   .filter(analyses = ["PDF_emu_2jets", "PDF_emu_3jets", \
 									  "PDF_ll_2jets", "PDF_ll_3jets", \
 									  "ttbar_pdf_emu_2jets", "ttbar_pdf_emu_3jets", \
 									  "ttbar_pdf_ll_2jets", "ttbar_pdf_ll_3jets", \
-									  ])
+									  ]) \
+					+ ttbar_pdf_10_LC
 
 ttbar_pdf_10_2j = ttbar_pdf_10_all \
                   .filter(analyses = ["PDF_ll_2jets", "PDF_emu_2jets", \
 									  "ttbar_pdf_emu_2jets", "ttbar_pdf_ll_2jets", \
+									  "PDF_dilepton_ll_2jets", "PDF_dilepton_emu_2jets", \
 				  ])
 
 ttbar_pdf_10_3j = ttbar_pdf_10_all \
                   .filter(analyses = ["PDF_emu_3jets", "PDF_ll_3jets", \
 									  "ttbar_pdf_emu_3jets", "ttbar_pdf_ll_3jets", \
+									  "PDF_dilepton_ll_3jets", "PDF_dilepton_emu_3jets", \
 									])
 
 # Kinematic selection				  
