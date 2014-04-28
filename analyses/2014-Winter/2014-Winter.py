@@ -67,7 +67,7 @@ sfObject.restrict = lambda self: self.filter(
     ignore=[".*25-pt-30.*",".*300-pt-400.*", ".*system8.*20-pt-30.*", ".*MV1-0.1340-AntiKt4TopoLCnoJVF.*", ".*MV1c-0.8353-AntiKt4TopoEMnoJVF.*", ".*0.1644-AntiKt4TopoEMnoJVF.*", # No b calibration results (85%)
 	".*0.1340-AntiKt4TopoLCJVF0_5.*" # No B calibration results (85%)
 	]
-    )
+    ).verify_OPs("8TeV")
 	
 ####################################
 # Bottom Flavor Inputs and fits
