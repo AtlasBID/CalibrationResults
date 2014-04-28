@@ -123,13 +123,11 @@ ttbar_pdf_10_all = (files("ttbar_pdf/EM/*/10PT*/*jets.txt")) \
 ttbar_pdf_10_2j = ttbar_pdf_10_all \
                   .filter(analyses = ["PDF_ll_2jets", "PDF_emu_2jets", \
 									  "ttbar_pdf_emu_2jets", "ttbar_pdf_ll_2jets", \
-									  "PDF_dilepton_ll_2jets", "PDF_dilepton_emu_2jets", \
 				  ])
 
 ttbar_pdf_10_3j = ttbar_pdf_10_all \
                   .filter(analyses = ["PDF_emu_3jets", "PDF_ll_3jets", \
 									  "ttbar_pdf_emu_3jets", "ttbar_pdf_ll_3jets", \
-									  "PDF_dilepton_ll_3jets", "PDF_dilepton_emu_3jets", \
 									])
 
 # Kinematic selection				  
