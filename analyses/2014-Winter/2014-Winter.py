@@ -327,7 +327,7 @@ all_extrapolated = default_extrapolated + rebin_extrapolated
 master_cdi_file = \
     light_sf \
     + all_extrapolated
-defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "MCefficiencies_for_CDI_8TeV_5.3.2014.root")
+defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "MCefficiencies_for_CDI_8TeV_3.5.2014.root")
 master_cdi_file.plot("MC12-CDI")
 master_cdi_file.plot("MC12-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
 master_cdi_file.dump(sysErrors = True, name="master")
