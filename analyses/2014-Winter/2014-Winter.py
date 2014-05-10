@@ -106,9 +106,9 @@ ttbar_pdf_7_3j = ttbar_pdf_7_all \
 				  
 # 10 bin results, which don't have 10 bin in the names
 # + files("ttbar_pdf/LC/*/*jets.txt")
-ttbar_pdf_10_LC = files("ttbar_pdf/LC/*/*jets.txt") \
-					.restrict() \
-					.filter(taggers=[["JetFitterCharm", "-0.9_0.95"],["JetFitterCharm", "-0.9_NONE"]])
+#ttbar_pdf_10_LC = files("ttbar_pdf/LC/*/*jets.txt") \
+#					.restrict() \
+#					.filter(taggers=[["JetFitterCharm", "-0.9_0.95"],["JetFitterCharm", "-0.9_NONE"]])
 					
 ttbar_pdf_10_all = (files("ttbar_pdf/EM/*/10PT*/*jets.txt")) \
                   .restrict() \
@@ -117,7 +117,7 @@ ttbar_pdf_10_all = (files("ttbar_pdf/EM/*/10PT*/*jets.txt")) \
 									  "ttbar_pdf_emu_2jets", "ttbar_pdf_emu_3jets", \
 									  "ttbar_pdf_ll_2jets", "ttbar_pdf_ll_3jets", \
 									  ]) \
-					+ ttbar_pdf_10_LC
+#					+ ttbar_pdf_10_LC
 
 ttbar_pdf_10_2j = ttbar_pdf_10_all \
                   .filter(analyses = ["PDF_ll_2jets", "PDF_emu_2jets", \
