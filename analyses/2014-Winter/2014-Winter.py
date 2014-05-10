@@ -86,8 +86,7 @@ ttdilep_topo = files("topo_ttemu/*.txt") \
                .restrict()
 
 # PDF are from Giacinto, who can't keep the names straight, which makes for a mess here.
-# + files("ttbar_pdf/LC/*/*7bins.txt"))
-ttbar_pdf_7_all = (files("ttbar_pdf/EM/*/*/*6bins.txt")) \
+ttbar_pdf_7_all = (files("ttbar_pdf/EM/*/*/*6bins.txt") + files("ttbar_pdf/LC/*/*7bins.txt")) \
                   .restrict() \
                   .filter(analyses = ["PDF_6bins_emu_2jets", "PDF_6bins_emu_3jets", \
 									  "PDF_6bins_ll_2jets", "PDF_6bins_ll_3jets", \
