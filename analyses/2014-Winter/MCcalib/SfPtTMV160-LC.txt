@@ -406,12 +406,4 @@ bin(300<pt<500,0<abseta<2.5)
         sys(SmearZ0,2.0768%)
         sys(FakeRate,-8.9693%)
     }
-bin(500<pt<800,0<abseta<2.5)
-    {
-        central_value(999.0,0.0)
-    }
-bin(800<pt<1200,0<abseta<2.5)
-    {
-        central_value(999.0,0.0)
-    }
 }
