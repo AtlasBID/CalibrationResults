@@ -29,9 +29,12 @@ description = "Winter 2014 results, based on the full 2012 8 TeV data"
 #
 
 taggers = [
+#MV1 50% JVF (EM, LC)
+    ["MV1", "0.992515446"], 
+    ["MV1", "0.993981"], 
 #MV1 60% JVF (EM, LC)
     ["MV1", "0.9867"], 
-    ["MV1", "0.9827 "], 
+    ["MV1", "0.9827"], 
 #MV1 70% JVF (EM, LC)
     ["MV1", "0.8119"], 
     ["MV1", "0.7892"], 
