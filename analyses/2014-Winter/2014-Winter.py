@@ -68,11 +68,16 @@ taggers = [
 # We are only looking at the following (a nice way to add a function onto an object!):
 #
 
-sfObject.restrict = lambda self: self.filter(
+sfObject.restrict_good = lambda self: self.filter(
     taggers=taggers,
     jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5", "AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"],
-    ignore=[".*25-pt-30.*",".*300-pt-400.*", ".*system8.*20-pt-30.*", ".*MV1-0.1340-AntiKt4TopoLCnoJVF.*", ".*MV1c-0.8353-AntiKt4TopoEMnoJVF.*", ".*0.1644-AntiKt4TopoEMnoJVF.*"]
     ).verify_OPs("8TeV")
+
+sfObject.restrict_ignore = lambda self: self.filter_ignore(
+    ignore=[".*25-pt-30.*",".*300-pt-400.*", ".*system8.*20-pt-30.*", ".*MV1-0.1340-AntiKt4TopoLCnoJVF.*", ".*MV1c-0.8353-AntiKt4TopoEMnoJVF.*", ".*0.1644-AntiKt4TopoEMnoJVF.*"]
+    )
+	
+sfObject.restrict = lambda self: self.restrict_good().restrict_filter()
 	
 ####################################
 # Bottom Flavor Inputs and fits
@@ -289,7 +294,7 @@ light_sf = negative
 #
 
 mcCalib = files("MCcalib/*.txt") \
-    .restrict() \
+    .restrict_good() \
     .filter(ignore=[".*20-pt-30.*"])
 
 rebin_template_high = rebin_template_all \
@@ -306,13 +311,13 @@ default_extrapolated = (\
         ) \
         .extrapolate("MCcalib")
 
+#	+ light_sf \
 rebin_extrapolated = (\
     charm_sf \
     + tau_sf \
     + mcCalib_rebin \
     + ttbar_fits_7 \
 	+ sources_7 \
-	+ light_sf \
     ) \
     .extrapolate("MCcalib_rebin")
 
