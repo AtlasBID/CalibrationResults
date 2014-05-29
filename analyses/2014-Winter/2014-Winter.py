@@ -312,6 +312,7 @@ rebin_extrapolated = (\
     + mcCalib_rebin \
     + ttbar_fits_7 \
 	+ sources_7 \
+	+ light_sf \
     ) \
     .extrapolate("MCcalib_rebin")
 
@@ -325,8 +326,7 @@ all_extrapolated = default_extrapolated + rebin_extrapolated
 #
 
 master_cdi_file = \
-    light_sf \
-    + all_extrapolated
+    all_extrapolated
 defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "StandardTag_8TeV_ttbar_140527141929.root")
 master_cdi_file.plot("MC12-CDI")
 master_cdi_file.plot("MC12-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
