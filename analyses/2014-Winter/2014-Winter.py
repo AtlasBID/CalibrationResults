@@ -77,7 +77,7 @@ sfObject.restrict_ignore = lambda self: self.filter_ignore(
     ignore=[".*25-pt-30.*",".*300-pt-400.*", ".*system8.*20-pt-30.*", ".*MV1-0.1340-AntiKt4TopoLCnoJVF.*", ".*MV1c-0.8353-AntiKt4TopoEMnoJVF.*", ".*0.1644-AntiKt4TopoEMnoJVF.*"]
     )
 	
-sfObject.restrict = lambda self: self.restrict_good().restrict_filter()
+sfObject.restrict = lambda self: self.restrict_good().restrict_ignore()
 	
 ####################################
 # Bottom Flavor Inputs and fits
