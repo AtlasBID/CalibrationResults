@@ -51,6 +51,9 @@ ptrel = files ("ptrel/*txt") \
 # top input - kinematic selection in di-lepton channel
 ttbar_kinsel = files("ttbar_kinsel/*.txt") \
                .restrict()
+			   
+ttbar_kinfit = files("ttbar_kinfit/*.txt") \
+               .restrict()
 
 # top input - PDF with different final states and 6 bins
 ttbar_pdf_6_all = files("ttbar_pdf/6bins/*.txt") \
@@ -113,6 +116,10 @@ ttbar_all_dijet = (ttbar_kinsel + dijet + ttbar_pdf_10_all).bbb_fit("ttbar_kinse
 ttbar_pdf_dijet = (dijet + ttbar_pdf_10_all).bbb_fit("ttbar_pdf_dijet", extraFiles=files("stat_correlation_inputs.txt"))
 
 ttbar_dijet = ttbar_all_dijet + ttbar_pdf_dijet
+
+# Extra plots for the paper and comparisons. Not to go into the main CDI file.
+extra_paper_plots = (ttbar_pdf_10_all + ttbar_kinsel).bbb_fit("ttbar_pdf_kinsel") \
+	+ (ttbar_pdf_10_all + ttbar_kinfit).bbb_fit("ttbar_pdf_kinfit")
 
 # rebinned results used to make charm and tau results 
 ttbar_rebin = (rebin_template + ttbar_pdf_10_combined + ttbar_dijet + ttbar_kinsel) \
@@ -206,7 +213,14 @@ sources.dump(sysErrors = True, name="sources")
 ttbar_pdf_combined.plot("ttbar_pdf", effOnly=True)
 (ttbar_kinsel_dijet+ttbar_pdf_combined+ttbar_dijet).plot("ttbar_all", effOnly=True)
 
+# Extra plots for the paper and comparisons. Not to go into the main CDI file.
+extra_paper_plots = (ttbar_pdf_10_all + ttbar_kinsel).bbb_fit("ttbar_pdf_kinsel") \
+	+ (ttbar_pdf_10_all + ttbar_kinfit).bbb_fit("ttbar_pdf_kinfit")
+
+extra_paper_plots.make_cdi("MC11-Paper-Comparison-CDI", "defaults.txt", "MCefficiencies_for_CDI_7TeV_5.3.2014.root")
+extra_paper_plots.plot("MC11-Paper-Compare-Trends", effOnly=True, byTaggerEff=True)
+
 ###############################
-# Plotting
+# Nice trend file of exactly what went into this.
 
 (master_cdi_file + defaultSFs).plot("MC11-ByTagger", byCalibEff = True, effOnly=True)
