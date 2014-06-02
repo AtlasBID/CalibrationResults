@@ -52,7 +52,7 @@ ptrel = files ("ptrel/*txt") \
 ttbar_kinsel = files("ttbar_kinsel/*.txt") \
                .restrict()
 			   
-ttbar_kinfit = files("ttbar_kinfit/*.txt") \
+ttbar_kinfit = files("KinFit_ljet/*.txt") \
                .restrict()
 
 # top input - PDF with different final states and 6 bins
