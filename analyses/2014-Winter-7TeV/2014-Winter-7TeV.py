@@ -219,6 +219,7 @@ extra_paper_plots = (ttbar_pdf_10_all + ttbar_kinsel).bbb_fit("ttbar_pdf_kinsel"
 
 extra_paper_plots.make_cdi("MC11-Paper-Comparison-CDI", "defaults.txt", "MCefficiencies_for_CDI_7TeV_5.3.2014.root")
 extra_paper_plots.plot("MC11-Paper-Compare-Trends", effOnly=True, byTaggerEff=True)
+extra_paper_plots.plot("MC11-Paper-Compare", effOnly=True)
 
 ###############################
 # Nice trend file of exactly what went into this.
