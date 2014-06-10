@@ -248,10 +248,10 @@ ttbar_fits = ttbar_fits_7 + ttbar_fits_10
 dstar_rebin_template = files("Dstar/EM/JVF05/DStar_MV170.txt")
 
 ttbar_rebin = (dstar_rebin_template + ttbar_fits) \
-              .rebin("rebin", "<>_rebin")
+              .rebin("DStar", "<>_rebin")
 			  
 dijet_rebin = (dstar_rebin_template + dijet) \
-			  .rebin("rebin", "<>_rebin")
+			  .rebin("DStar", "<>_rebin")
               
 #Can't do a S8 only guy because the low bin is missing!
 #dijet_rebin = (rebin_template + dijet) \
