@@ -245,7 +245,7 @@ ttbar_fits = ttbar_fits_7 + ttbar_fits_10
 # Use one of the D* results as the rebin template.
 #
 
-dstar_rebin_template = file("Dstar/EM/JVF05/DStar_MV170.*")
+dstar_rebin_template = files("Dstar/EM/JVF05/DStar_MV170.txt")
 
 ttbar_rebin = (dstar_rebin_template + ttbar_fits) \
               .rebin("rebin", "<>_rebin")
