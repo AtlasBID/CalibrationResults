@@ -242,12 +242,15 @@ ttbar_fits = ttbar_fits_7 + ttbar_fits_10
 # Next, we need to build up the master fits that will be used to make charm and tau results.
 # This requires re-binning to match the D* input bins (for both charm and tau, as they
 # are just versions of each other).
+# Use one of the D* results as the rebin template.
 #
 
-ttbar_rebin = (rebin_template + ttbar_fits) \
+dstar_rebin_template = file("Dstar/EM/JVF05/DStar_MV170.txt")
+
+ttbar_rebin = (dstar_rebin_template + ttbar_fits) \
               .rebin("rebin", "<>_rebin")
 			  
-dijet_rebin = (rebin_template + dijet) \
+dijet_rebin = (dstar_rebin_template + dijet) \
 			  .rebin("rebin", "<>_rebin")
               
 #Can't do a S8 only guy because the low bin is missing!
