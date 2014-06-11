@@ -312,7 +312,7 @@ rebin_template_high = rebin_template_all \
 mcCalib_rebin = (rebin_template_high + mcCalib) \
     .rebin("rebin", "<>_rebin")
 
-dstar_rebin = (rebin_template_dstar + dstar_template) \
+mcCalib_rebin_dstar = (rebin_template_dstar + mcCalib) \
     .rebin("rebin_dstar", "<>_rebin")
 
 default_extrapolated = (\
@@ -334,8 +334,7 @@ rebin_extrapolated = (\
 rebin_dstar_extrapolated = (\
     charm_sf \
     + tau_sf \
-    + dstar_rebin \
-    + mcCalib \
+    + mcCalib_rebin_dstar \
 	) \
 	.extrapolate("MCcalib_rebin")
 
