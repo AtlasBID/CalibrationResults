@@ -279,7 +279,7 @@ charm_sf = charm_sf_ttbar + charm_sf_dijet
                  
 tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
-sources_7 += dstar_template
+sources_4 = dstar_template
 
 ####################################
 # Light SF come from the negative tags
@@ -352,7 +352,7 @@ master_cdi_file.plot("MC12-CDI")
 master_cdi_file.plot("MC12-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
 master_cdi_file.dump(sysErrors = True, name="master")
 master_cdi_file.dump(metadata = True, name="master-metadata")
-(sources_7+sources_10).dump(sysErrors = True, name="sources")
+(sources_7+sources_10+sources_4).dump(sysErrors = True, name="sources")
 
 (master_cdi_file + defaultSFs).plot("MC12-ByTagger", byCalibEff = True, effOnly=True)
 
