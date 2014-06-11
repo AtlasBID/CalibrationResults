@@ -307,7 +307,7 @@ mcCalib_rebin = (rebin_template_high + mcCalib) \
     .rebin("rebin", "<>_rebin")
 	
 mcCalib_Dstar_rebin = (dstar_template + mcCalib) \
-    .rebin("DStar", "<>_rebin")
+    .rebin("rebin_dstar", "<>_rebin")
 
 default_extrapolated = (\
         dijet \
