@@ -305,6 +305,9 @@ rebin_template_high = rebin_template_all \
 
 mcCalib_rebin = (rebin_template_high + mcCalib) \
     .rebin("rebin", "<>_rebin")
+	
+mcCalib_Dstar_rebin = (dstar_template + mcCalib) \
+    .rebin("Dstar", "<>_rebin")
 
 default_extrapolated = (\
         dijet \
@@ -316,15 +319,20 @@ default_extrapolated = (\
 
 #	+ light_sf \
 rebin_extrapolated = (\
-    charm_sf \
-    + tau_sf \
-    + mcCalib_rebin \
+    mcCalib_rebin \
     + ttbar_fits_7 \
 	+ sources_7 \
     ) \
     .extrapolate("MCcalib_rebin")
+	
+rebin_dstar_extrapolated = (\
+    charm_sf \
+    + tau_sf \
+	+ mcCalib_Dstar_rebin \
+	) \
+	.extrapolate("MCcalib_rebin")
 
-all_extrapolated = default_extrapolated + rebin_extrapolated
+all_extrapolated = default_extrapolated + rebin_extrapolated + rebin_dstar_extrapolated
 
 # Currently can't extrapolate:
 #  neg tags - because they are split in eta, and the extrapolation isn't.
