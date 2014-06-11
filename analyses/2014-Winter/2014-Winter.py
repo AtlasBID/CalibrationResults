@@ -171,6 +171,12 @@ rebin_template = rebin_template_all \
 rebin_template_30 = files("commonbinning.txt") \
                     .filter(analyses=["rebin_30"]) \
                     .filter(ignore=[".*300-pt-500.*", ".*500-pt-800.*", ".*800-pt-1200.*", ".*1200-pt-2000.*"])
+
+rebin_template_dstar = files("commonbinning.txt") \
+                       .filter(analyses=["rebin_dstar"]) \
+                       .filter(ignore=[".*300-pt-500.*", ".*500-pt-800.*", ".*800-pt-1200.*", ".*1200-pt-2000.*"])
+
+
 #
 # We want several versions of the pdf fit to end up in the
 # final file. This is for specialized use.
@@ -305,8 +311,8 @@ rebin_template_high = rebin_template_all \
 
 mcCalib_rebin = (rebin_template_high + mcCalib) \
     .rebin("rebin", "<>_rebin")
-	
-mcCalib_Dstar_rebin = (dstar_template + mcCalib) \
+
+dstar_rebin = (rebin_template_dstar + dstar_template) \
     .rebin("rebin_dstar", "<>_rebin")
 
 default_extrapolated = (\
@@ -328,7 +334,8 @@ rebin_extrapolated = (\
 rebin_dstar_extrapolated = (\
     charm_sf \
     + tau_sf \
-	+ mcCalib_Dstar_rebin \
+    + dtart_rebin \
+    + mcCalib \
 	) \
 	.extrapolate("MCcalib_rebin")
 
