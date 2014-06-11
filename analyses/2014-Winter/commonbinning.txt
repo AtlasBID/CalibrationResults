@@ -11,6 +11,50 @@ Analysis(rebin,bottom,MV1,0.8119,AntiKt4TopoEMJVF)
          central_value(1.004855,0.014825)
       }
 
+      bin(60<pt<140,0.0<abseta<2.5)
+      {
+         central_value(1.004855,0.014825)
+      }
+
+      bin(140<pt<300,0.0<abseta<2.5)
+      {
+         central_value(0.956283,0.039947)
+      }
+
+      bin(300<pt<500,0.0<abseta<2.5)
+      {
+         central_value(0.999499,0.069147)
+      }
+
+      bin(500<pt<800,0.0<abseta<2.5)
+      {
+         central_value(0.999499,0.069147)
+      }
+
+      bin(800<pt<1200,0.0<abseta<2.5)
+      {
+         central_value(0.999499,0.069147)
+      }
+
+      bin(1200<pt<2000,0.0<abseta<2.5)
+      {
+         central_value(0.999499,0.069147)
+      }
+}
+
+Analysis(rebin_old,bottom,MV1,0.8119,AntiKt4TopoEMJVF)
+{
+
+      bin(20<pt<30,0.0<abseta<2.5)
+      {
+         central_value(0.997762,0.025649)
+      }
+
+      bin(30<pt<60,0.0<abseta<2.5)
+      {
+         central_value(1.004855,0.014825)
+      }
+
       bin(60<pt<90,0.0<abseta<2.5)
       {
          central_value(1.004855,0.014825)
