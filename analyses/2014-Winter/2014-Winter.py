@@ -334,7 +334,7 @@ rebin_extrapolated = (\
 rebin_dstar_extrapolated = (\
     charm_sf \
     + tau_sf \
-    + dtart_rebin \
+    + dstar_rebin \
     + mcCalib \
 	) \
 	.extrapolate("MCcalib_rebin")
