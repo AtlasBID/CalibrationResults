@@ -1,5 +1,5 @@
 Analysis(DStar,charm,JetFitterCharm,-0.9_2.5,AntiKt4TopoEMnoJVF){
-  meta_data_s(Hadronization,Pythia8EvtGen)
+  meta_data_s(Hadronization,Pythia8)
   bin(20<pt<30,0<abseta<2.5)
   { 
      central_value(0.627730,0.050604)

@@ -1,5 +1,5 @@
 Analysis(DStar,charm,MV1,0.1644,AntiKt4TopoEMJVF0_5){
-  meta_data_s(Hadronization,Pythia8EvtGen)
+  meta_data_s(Hadronization,Pythia8)
   bin(20<pt<30,0<abseta<2.5)
   { 
      central_value(0.964612,0.064506)
