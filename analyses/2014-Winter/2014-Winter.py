@@ -359,8 +359,8 @@ master_cdi_file.dump(metadata = True, name="master-metadata")
 ####################################
 # Rebinned inputs for the continuous tagging
 #
-rebin_for_cont = files("continuousbinning.txt")
+#rebin_for_cont = files("continuousbinning.txt")
 
-(charm_sf + tau_sf + rebin_for_cont).rebin("rebin_cont", "<>_continuous")
+#(charm_sf + tau_sf + rebin_for_cont).rebin("rebin_cont", "<>_continuous")
 
 # Done!
