@@ -346,7 +346,8 @@ all_extrapolated = default_extrapolated + rebin_extrapolated + rebin_dstar_extra
 #
 
 master_cdi_file = \
-    all_extrapolated
+    all_extrapolated \
+	+ light_sf
 defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "StandardTag_8TeV_ttbar_140527141929.root")
 master_cdi_file.plot("MC12-CDI")
 master_cdi_file.plot("MC12-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
