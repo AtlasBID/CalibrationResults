@@ -1,4 +1,4 @@
-Analysis(KinSel_dilep_3j,bottom,JetFitterCOMBCharm,-1.0_-0.82,AntiKt4TopoEMJVF0_5 ) {
+Analysis(KinSel_dilep_3j,bottom,JetFitterCharm,-1.0_-0.82,AntiKt4TopoEMJVF0_5 ) {
     meta_data_s (Hadronization, Pythia6)
     bin(20<pt<30,0<abseta<2.5)
     {
