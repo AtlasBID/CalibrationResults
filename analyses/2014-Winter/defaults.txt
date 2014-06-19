@@ -65,7 +65,7 @@ Default(DStar_combined_pdf_dijet_7_rebin, charm, MV1c, 0.4050, AntiKt4TopoEMJVF0
 
 #LC
 Default(DStar_ttbar_dijet_ks_rebin, charm, MV1, *, AntiKt4TopoLCJVF0_5)
-Default(DStar_combined_pdf_dijet_7, charm, MV1, 0.1340, AntiKt4TopoLCJVF0_5)
+Default(DStar_combined_pdf_dijet_7_rebin, charm, MV1, 0.1340, AntiKt4TopoLCJVF0_5)
 Default(DStar_ttbar_dijet_ks_rebin, charm, MV1, *, AntiKt4TopoLCnoJVF)
 
 Default(DStar_ttbar_dijet_topo_ks_rebin, charm, MV1c, 0.8641, AntiKt4TopoLCJVF0_5)
@@ -85,7 +85,7 @@ Default(DStar_ttbar_dijet_ks_rebin, charm, MV1c, *, AntiKt4TopoLCnoJVF)
 Default(DStar_combined_pdf_dijet_7_rebin, tau, MV1, *, AntiKt4TopoEMJVF0_5)
 Default(DStar_ttbar_dijet_ks_rebin, tau, MV1, *, AntiKt4TopoEMnoJVF)
 
-Default(DStar_combined_pdf_dijet_7, tau, MV1, 0.1340, AntiKt4TopoLCJVF0_5)
+Default(DStar_combined_pdf_dijet_7_rebin, tau, MV1, 0.1340, AntiKt4TopoLCJVF0_5)
 Default(DStar_ttbar_dijet_ks_rebin, tau, MV1c, 0.8674, AntiKt4TopoEMJVF0_5)
 Default(DStar_combined_pdf_dijet_7_rebin, tau, MV1c, 0.8353, AntiKt4TopoEMJVF0_5)
 Default(DStar_combined_pdf_dijet_7_rebin, tau, MV1c, 0.9237, AntiKt4TopoEMJVF0_5)
