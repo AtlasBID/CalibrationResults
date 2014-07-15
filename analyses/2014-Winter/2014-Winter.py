@@ -95,45 +95,30 @@ ttdilep_topo = files("topo_ttemu/*.txt") \
 ttbar_pdf_7_all = (files("ttbar_pdf/EM/*/*/*6bins.txt") + files("ttbar_pdf/LC/*/*7bins.txt")) \
                   .restrict() \
                   .filter(analyses = ["PDF_6bins_emu_2jets", "PDF_6bins_emu_3jets", \
-									  "PDF_6bins_ll_2jets", "PDF_6bins_ll_3jets", \
-									  "PDF_emu_2jets_7bins", "PDF_emu_3jets_7bins", \
-									  "PDF_ll_2jets_7bins", "PDF_ll_3jets_7bins", \
-									  ])
+                                      "PDF_6bins_ll_2jets", "PDF_6bins_ll_3jets", \
+                                      ])
 
 ttbar_pdf_7_2j = ttbar_pdf_7_all \
-                  .filter(analyses = ["PDF_6bins_ll_2jets", "PDF_6bins_emu_2jets", \
-									  "PDF_ll_2jets_7bins", "PDF_emu_2jets_7bins", \
-				  ])
+                 .filter(analyses = ["PDF_6bins_ll_2jets", "PDF_6bins_emu_2jets", \
+                                     ])
 
 ttbar_pdf_7_3j = ttbar_pdf_7_all \
-                  .filter(analyses = ["PDF_6bins_ll_3jets", "PDF_6bins_emu_3jets", \
-									  "PDF_ll_3jets_7bins", "PDF_emu_3jets_7bins", \
-									])
-				  
-# 10 bin results, which don't have 10 bin in the names
-# + files("ttbar_pdf/LC/*/*jets.txt")
-#ttbar_pdf_10_LC = files("ttbar_pdf/LC/*/*jets.txt") \
-#					.restrict() \
-#					.filter(taggers=[["JetFitterCharm", "-0.9_0.95"],["JetFitterCharm", "-0.9_NONE"]])
-					
-ttbar_pdf_10_all = (files("ttbar_pdf/EM/*/10PT*/*jets.txt")) \
-                  .restrict() \
-                  .filter(analyses = ["PDF_emu_2jets", "PDF_emu_3jets", \
-									  "PDF_ll_2jets", "PDF_ll_3jets", \
-									  "ttbar_pdf_emu_2jets", "ttbar_pdf_emu_3jets", \
-									  "ttbar_pdf_ll_2jets", "ttbar_pdf_ll_3jets", \
-									  ]) \
-#					+ ttbar_pdf_10_LC
+                 .filter(analyses = ["PDF_6bins_ll_3jets", "PDF_6bins_emu_3jets", \
+                                     ])
+				  					
+ttbar_pdf_10_all = (files("ttbar_pdf/EM/*/10PT*/*jets.txt") + files("ttbar_pdf/LC/*/10PT*/*jets.txt")) \
+                   .restrict() \
+                   .filter(analyses = ["PDF_emu_2jets", "PDF_emu_3jets", \
+                                       "PDF_ll_2jets", "PDF_ll_3jets", \
+                                       ]) \
 
 ttbar_pdf_10_2j = ttbar_pdf_10_all \
                   .filter(analyses = ["PDF_ll_2jets", "PDF_emu_2jets", \
-									  "ttbar_pdf_emu_2jets", "ttbar_pdf_ll_2jets", \
-				  ])
+                                      ])
 
 ttbar_pdf_10_3j = ttbar_pdf_10_all \
                   .filter(analyses = ["PDF_emu_3jets", "PDF_ll_3jets", \
-									  "ttbar_pdf_emu_3jets", "ttbar_pdf_ll_3jets", \
-									])
+                                      ])
 
 # Kinematic selection				  
 ttbar_kinsel_3jet = files("ttbar_kinsel/*/*_em3j.txt") \
