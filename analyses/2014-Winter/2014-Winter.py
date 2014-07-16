@@ -340,7 +340,7 @@ master_cdi_file.dump(sysErrors = True, name="master")
 master_cdi_file.dump(metadata = True, name="master-metadata")
 (sources_7+sources_10+sources_4).dump(sysErrors = True, name="sources")
 
-(master_cdi_file + defaultSFs).plot("MC12-ByTagger", byCalibEff = True, effOnly=True)
+#(master_cdi_file + defaultSFs).plot("MC12-ByTagger", byCalibEff = True, effOnly=True)
 
 ####################################
 # Rebinned inputs for the continuous tagging
