@@ -282,33 +282,36 @@ light_sf = negative
 # Extrapolate everything
 #
 
-mcCalib = (files("MCcalib/SfPtB*.txt") + files("MCcalib/SfPtC*.txt") + files("MCcalib/SfPtT*.txt") + files("MCcalib/EtaBins/SfPtL*.txt")) \
+mcCalib_bct = (files("MCcalib/SfPtB*.txt") + files("MCcalib/SfPtC*.txt") + files("MCcalib/SfPtT*.txt")) \
     .restrict_good() \
     .filter(ignore=[".*20-pt-30.*",".*15-pt-20.*"])
+	
+mcCalib_l =  + files("MCcalib/EtaBins/SfPtL*.txt") \
+	.restrict_good()
 
 rebin_template_high = rebin_template_all \
     .filter(ignore=[".*20-pt-30.*"])
 
-mcCalib_rebin = (rebin_template_high + mcCalib) \
+mcCalib_rebin_bct = (rebin_template_high + mcCalib_bct) \
     .rebin("rebin", "<>_rebin")
 
 rebin_for_extrap_dstar = files("commonbinning.txt") \
                        .filter(analyses=["rebin_dstar"])
 
-mcCalib_rebin_dstar = (rebin_for_extrap_dstar + mcCalib) \
+mcCalib_rebin_dstar_bct = (rebin_for_extrap_dstar + mcCalib_bct) \
     .rebin("rebin_dstar", "<>_rebin")
 
 default_extrapolated = (\
         dijet \
         + ttbar_fits_10 \
-        + mcCalib \
+        + mcCalib_bct \
 		+ sources_10
         ) \
         .extrapolate("MCcalib")
 
 #	+ light_sf \
 rebin_extrapolated = (\
-    mcCalib_rebin \
+    mcCalib_rebin_bct
     + ttbar_fits_7 \
 	+ sources_7 \
     ) \
@@ -317,11 +320,13 @@ rebin_extrapolated = (\
 rebin_dstar_extrapolated = (\
     charm_sf \
     + tau_sf \
-    + mcCalib_rebin_dstar \
+    + mcCalib_rebin_dstar_bct \
 	) \
 	.extrapolate("MCcalib_rebin")
+	
+light_extrapolated = (light_sf + mcCalib_l).extrapolate("MCcalib")
 
-all_extrapolated = default_extrapolated + rebin_extrapolated + rebin_dstar_extrapolated
+all_extrapolated = default_extrapolated + rebin_extrapolated + rebin_dstar_extrapolated + light_extrapolated
 
 # Currently can't extrapolate:
 #  neg tags - because they are split in eta, and the extrapolation isn't.
