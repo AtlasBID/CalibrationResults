@@ -282,7 +282,7 @@ light_sf = negative
 # Extrapolate everything
 #
 
-mcCalib = (files("MCcalib/SfPtB*.txt") + files("MCcalib/SfPtC*.txt") + files("MCcalib/SfPtT*.txt") + files("MCcalib/EtaBins/SfPtL*.txt")) \
+mcCalib = (files("MCcalib/SfPtB*.txt") + files("MCcalib/SfPtC*.txt") + files("MCcalib/SfPtT*.txt") + files("MCcalib/SfPtL*.txt")) \
     .restrict_good() \
     .filter(ignore=[".*20-pt-30.*"])
 
