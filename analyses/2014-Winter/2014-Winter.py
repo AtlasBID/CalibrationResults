@@ -74,7 +74,7 @@ sfObject.restrict_good = lambda self: self.filter(
     ).verify_OPs("8TeV")
 
 sfObject.restrict_ignore = lambda self: self.filter(
-    ignore=[".*15-pt-20.*",".*25-pt-30.*",".*300-pt-400.*", ".*system8.*20-pt-30.*", ".*MV1-0.1340-AntiKt4TopoLCnoJVF.*", ".*MV1c-0.8353-AntiKt4TopoEMnoJVF.*", ".*0.1644-AntiKt4TopoEMnoJVF.*"]
+    ignore=[".*25-pt-30.*",".*300-pt-400.*", ".*system8.*20-pt-30.*", ".*MV1-0.1340-AntiKt4TopoLCnoJVF.*", ".*MV1c-0.8353-AntiKt4TopoEMnoJVF.*", ".*0.1644-AntiKt4TopoEMnoJVF.*"]
     )
 	
 sfObject.restrict = lambda self: self.restrict_good().restrict_ignore()
@@ -284,7 +284,7 @@ light_sf = negative
 
 mcCalib = (files("MCcalib/SfPtB*.txt") + files("MCcalib/SfPtC*.txt") + files("MCcalib/SfPtT*.txt") + files("MCcalib/EtaBins/SfPtL*.txt")) \
     .restrict_good() \
-    .filter(ignore=[".*20-pt-30.*"])
+    .filter(ignore=[".*20-pt-30.*",".*15-pt-20.*"])
 
 rebin_template_high = rebin_template_all \
     .filter(ignore=[".*20-pt-30.*"])
