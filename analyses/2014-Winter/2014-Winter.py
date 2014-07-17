@@ -286,7 +286,7 @@ mcCalib_bct = (files("MCcalib/SfPtB*.txt") + files("MCcalib/SfPtC*.txt") + files
     .restrict_good() \
     .filter(ignore=[".*20-pt-30.*",".*15-pt-20.*"])
 	
-mcCalib_l =  + files("MCcalib/EtaBins/SfPtL*.txt") \
+mcCalib_l =  files("MCcalib/EtaBins/SfPtL*.txt") \
 	.restrict_good()
 
 rebin_template_high = rebin_template_all \
