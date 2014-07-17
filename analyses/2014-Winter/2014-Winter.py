@@ -74,7 +74,7 @@ sfObject.restrict_good = lambda self: self.filter(
     ).verify_OPs("8TeV")
 
 sfObject.restrict_ignore = lambda self: self.filter(
-    ignore=[".*25-pt-30.*",".*300-pt-400.*", ".*system8.*20-pt-30.*", ".*MV1-0.1340-AntiKt4TopoLCnoJVF.*", ".*MV1c-0.8353-AntiKt4TopoEMnoJVF.*", ".*0.1644-AntiKt4TopoEMnoJVF.*"]
+    ignore=[".*15-pt-20.*",".*25-pt-30.*",".*300-pt-400.*", ".*system8.*20-pt-30.*", ".*MV1-0.1340-AntiKt4TopoLCnoJVF.*", ".*MV1c-0.8353-AntiKt4TopoEMnoJVF.*", ".*0.1644-AntiKt4TopoEMnoJVF.*"]
     )
 	
 sfObject.restrict = lambda self: self.restrict_good().restrict_ignore()
