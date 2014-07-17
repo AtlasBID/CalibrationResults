@@ -1,5 +1,5 @@
 Analysis(MCcalib,light,MV1c,0.9237,AntiKt4TopoEMnoJVF){
-bin(15<pt<20,abseta>1.2)
+bin(15<pt<20,1.2<abseta<2.5)
     {
         central_value(1.0,0.1983)
         sys(JetStat1,1.3313%)
@@ -36,7 +36,7 @@ bin(15<pt<20,abseta>1.2)
         sys(SmearZ0,-12.2218%)
         sys(FakeRate,61.2316%)
     }
-bin(20<pt<30,abseta>1.2)
+bin(20<pt<30,1.2<abseta<2.5)
     {
         central_value(1.0,0.1587)
         sys(JetStat1,0.3652%)
@@ -73,7 +73,7 @@ bin(20<pt<30,abseta>1.2)
         sys(SmearZ0,-1.8669%)
         sys(FakeRate,60.9094%)
     }
-bin(30<pt<40,abseta>1.2)
+bin(30<pt<40,1.2<abseta<2.5)
     {
         central_value(1.0,0.2313)
         sys(JetStat1,-1.4806%)
@@ -110,7 +110,7 @@ bin(30<pt<40,abseta>1.2)
         sys(SmearZ0,12.7998%)
         sys(FakeRate,48.9203%)
     }
-bin(40<pt<50,abseta>1.2)
+bin(40<pt<50,1.2<abseta<2.5)
     {
         central_value(1.0,0.3037)
         sys(JetStat1,0.8378%)
@@ -147,7 +147,7 @@ bin(40<pt<50,abseta>1.2)
         sys(SmearZ0,-8.9319%)
         sys(FakeRate,28.89%)
     }
-bin(50<pt<60,abseta>1.2)
+bin(50<pt<60,1.2<abseta<2.5)
     {
         central_value(1.0,0.436)
         sys(JetStat1,3.6254%)
@@ -184,7 +184,7 @@ bin(50<pt<60,abseta>1.2)
         sys(SmearZ0,-52.7841%)
         sys(FakeRate,9.9877%)
     }
-bin(60<pt<75,abseta>1.2)
+bin(60<pt<75,1.2<abseta<2.5)
     {
         central_value(1.0,0.3029)
         sys(JetStat1,-2.9838%)
@@ -221,7 +221,7 @@ bin(60<pt<75,abseta>1.2)
         sys(SmearZ0,-41.1869%)
         sys(FakeRate,13.0249%)
     }
-bin(75<pt<90,abseta>1.2)
+bin(75<pt<90,1.2<abseta<2.5)
     {
         central_value(1.0,0.3465)
         sys(JetStat1,0.1621%)
@@ -258,7 +258,7 @@ bin(75<pt<90,abseta>1.2)
         sys(SmearZ0,8.786%)
         sys(FakeRate,31.8841%)
     }
-bin(90<pt<110,abseta>1.2)
+bin(90<pt<110,1.2<abseta<2.5)
     {
         central_value(1.0,0.3029)
         sys(JetStat1,-1.0314%)
@@ -295,7 +295,7 @@ bin(90<pt<110,abseta>1.2)
         sys(SmearZ0,-8.9392%)
         sys(FakeRate,23.7816%)
     }
-bin(110<pt<140,abseta>1.2)
+bin(110<pt<140,1.2<abseta<2.5)
     {
         central_value(1.0,0.3059)
         sys(JetStat1,2.2343%)
@@ -332,7 +332,7 @@ bin(110<pt<140,abseta>1.2)
         sys(SmearZ0,-14.5163%)
         sys(FakeRate,19.954%)
     }
-bin(140<pt<200,abseta>1.2)
+bin(140<pt<200,1.2<abseta<2.5)
     {
         central_value(1.0,0.1728)
         sys(JetStat1,-0.9478%)
@@ -369,7 +369,7 @@ bin(140<pt<200,abseta>1.2)
         sys(SmearZ0,-32.3523%)
         sys(FakeRate,6.8121%)
     }
-bin(200<pt<300,abseta>1.2)
+bin(200<pt<300,1.2<abseta<2.5)
     {
         central_value(1.0,0.1424)
         sys(JetStat1,0.8396%)
@@ -406,7 +406,7 @@ bin(200<pt<300,abseta>1.2)
         sys(SmearZ0,-0.2622%)
         sys(FakeRate,21.539%)
     }
-bin(300<pt<500,abseta>1.2)
+bin(300<pt<500,1.2<abseta<2.5)
     {
         central_value(1.0,0.0919)
         sys(JetStat1,-0.8927%)
@@ -443,7 +443,7 @@ bin(300<pt<500,abseta>1.2)
         sys(SmearZ0,-17.2878%)
         sys(FakeRate,29.3024%)
     }
-bin(500<pt<750,abseta>1.2)
+bin(500<pt<750,1.2<abseta<2.5)
     {
         central_value(1.0,0.1317)
         sys(JetStat1,1.2369%)
@@ -480,7 +480,7 @@ bin(500<pt<750,abseta>1.2)
         sys(SmearZ0,-22.1464%)
         sys(FakeRate,34.0486%)
     }
-bin(750<pt<1200,abseta>1.2)
+bin(750<pt<1200,1.2<abseta<2.5)
     {
         central_value(1.0,0.2077)
         sys(JetStat1,-0.4353%)
@@ -517,7 +517,7 @@ bin(750<pt<1200,abseta>1.2)
         sys(SmearZ0,-46.9547%)
         sys(FakeRate,50.091%)
     }
-bin(1200<pt<2000,abseta>1.2)
+bin(1200<pt<2000,1.2<abseta<2.5)
     {
         central_value(1.0,1.2253)
         sys(JetStat1,7.9595%)
