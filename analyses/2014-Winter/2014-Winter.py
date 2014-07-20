@@ -323,8 +323,14 @@ rebin_dstar_extrapolated = (\
     + mcCalib_rebin_dstar_bct \
 	) \
 	.extrapolate("MCcalib_rebin")
-	
-light_extrapolated = (light_sf + mcCalib_l).extrapolate("MCcalib")
+
+rebin_for_extrap_l = files("commonbinning.txt") \
+                     .filter(analyses=["rebin"])
+
+mcCalib_rebin_l = (rebin_for_extrap_l + mcCalib_l) \
+    .rebin("rebin_light", "<>_rebin")
+
+light_extrapolated = (mcCalib_rebin_l).extrapolate("MCcalib")
 
 all_extrapolated = default_extrapolated + rebin_extrapolated + rebin_dstar_extrapolated + light_extrapolated
 
