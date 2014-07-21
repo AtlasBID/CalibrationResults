@@ -284,7 +284,7 @@ light_sf = negative
 
 mcCalib_bct = (files("MCcalib/SfPtB*.txt") + files("MCcalib/SfPtC*.txt") + files("MCcalib/SfPtT*.txt")) \
               .restrict_good() \
-              .filter(ignore=[".*15-pt-20.*",".*20-pt-30.*",".*30-pt-40.*"])
+              .filter(ignore=[".*15-pt-20.*",".*20-pt-30.*",".*30-pt-40.*",".*40-pt-50.*",".*50-pt-60.*"])
 	
 mcCalib_l =  files("MCcalib/EtaBins/SfPtL*.txt") \
             .restrict_good() \
