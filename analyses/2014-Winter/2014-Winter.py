@@ -284,11 +284,11 @@ light_sf = negative
 
 mcCalib_bct = (files("MCcalib/SfPtB*.txt") + files("MCcalib/SfPtC*.txt") + files("MCcalib/SfPtT*.txt")) \
               .restrict_good() \
-              .filter(ignore=["*.20-pt-30.*","*.15-pt-20.*"])
+              .filter(ignore=[".*20-pt-30.*",".*15-pt-20.*"])
 	
 mcCalib_l =  files("MCcalib/EtaBins/SfPtL*.txt") \
             .restrict_good() \
-            .filter(ignore=["*.15-pt-20.*","*.20-pt-30.*","*.30-pt-40.*","*.40-pt-50.*","*.50-pt-60.*","*.60-pt-75.*","*.75-pt-90.*","*.90-pt-110.*","*.110-pt-140.*","*.140-pt-200.*","*.200-pt-300.*"])
+            .filter(ignore=[".*15-pt-20.*",".*20-pt-30.*",".*30-pt-40.*",".*40-pt-50.*",".*50-pt-60.*",".*60-pt-75.*",".*75-pt-90.*",".*90-pt-110.*",".*110-pt-140.*",".*140-pt-200.*",".*200-pt-300.*"])
  
 rebin_template_high = rebin_template_all \
     .filter(ignore=[".*20-pt-30.*"])
