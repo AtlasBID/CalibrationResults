@@ -406,7 +406,7 @@ bin(200<pt<300,0<abseta<1.2)
         sys(SmearZ0,-6.3796%)
         sys(FakeRate,11.2564%)
     }
-bin(300<pt<500,0<abseta<1.2)
+bin(300<pt<450,0<abseta<1.2)
     {
         central_value(1.0,0.0395)
         sys(JetStat1,0.0004%)
@@ -443,7 +443,7 @@ bin(300<pt<500,0<abseta<1.2)
         sys(SmearZ0,-8.9367%)
         sys(FakeRate,16.326%)
     }
-bin(500<pt<750,0<abseta<1.2)
+bin(450<pt<750,0<abseta<1.2)
     {
         central_value(1.0,0.0371)
         sys(JetStat1,-1.3689%)
