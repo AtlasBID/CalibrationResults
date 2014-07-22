@@ -10,8 +10,8 @@ import comboGlobals
 # We will filter out input files on some criteria
 #
 
-def dump(sfObj, check=False, sysErrors = False, metadata = False, name="", cnames=None):
-    fc = Dump(sfObj, check, sysErrors, name, metadata, cnames)
+def dump(sfObj, check=False, linage=False, sysErrors = False, metadata = False, name="", cnames=None):
+    fc = Dump(sfObj, check, linage, sysErrors, name, metadata, cnames)
     comboGlobals.Commands += [fc]
     return sfObj
 
@@ -20,8 +20,9 @@ def dump(sfObj, check=False, sysErrors = False, metadata = False, name="", cname
 #
 
 class Dump:
-    def __init__ (self, sfinfo, check, sysErrors, name, metadata, cnames):
+    def __init__ (self, sfinfo, check, linage, sysErrors, name, metadata, cnames):
         self._sf = sfinfo
+        self._linage = linage
         self._check = check
         self._sysErrors = sysErrors
         self._name = name
@@ -50,6 +51,11 @@ class Dump:
             title = "metadata"
             args = "--meta"
 			
+        if self._linage:
+            ftype = "txt"
+            title = "linage"
+            args = "--linage"
+
         if self._cnames:
             title = "Check OPs"
             ftype = ".txt"
