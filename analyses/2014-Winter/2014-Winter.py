@@ -303,18 +303,17 @@ mcCalib_rebin_dstar_bct = (rebin_for_extrap_dstar + mcCalib_bct) \
     .rebin("rebin_dstar", "<>_rebin")
 
 default_extrapolated = (\
-        dijet \
-        + ttbar_fits_10 \
-        + mcCalib_bct \
-		+ sources_10
-        ) \
-        .extrapolate("MCcalib")
+    ttbar_fits_10 \
+    + mcCalib_bct \
+    + sources_10
+    ) \
+    .extrapolate("MCcalib")
 
 #	+ light_sf \
 rebin_extrapolated = (\
     mcCalib_rebin_bct
     + ttbar_fits_7 \
-	+ sources_7 \
+    + sources_7 \
     ) \
     .extrapolate("MCcalib_rebin")
 	
