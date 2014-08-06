@@ -27,7 +27,7 @@ def extrapolate(sfObj, extrapAnaNames):
     return rf
 
 #
-# Command object to actually perform the D* calculation
+# Command object to actually perform the extrapolation calculation
 #
 
 class Extrapolate:
@@ -62,7 +62,7 @@ class Extrapolate:
 
         else:
             dumpFile(html, cmdLog)
-            print >> html, "<p>D* calc previously run, and no inputs have been changed. Using results from last run.</p>"
+            print >> html, "<p>Extrapolation previously run, and no inputs have been changed. Using results from last run.</p>"
 
         print >> html, '<p><a href="%s">Scale Factor File</a></p>' % outputFile
 
