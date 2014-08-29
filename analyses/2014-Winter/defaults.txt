@@ -21,8 +21,8 @@ Default(KinSel_dilep, bottom, MV1c, 0.4051, AntiKt4TopoLCJVF0_5)
 
 Default(ttbar_dijet_ks, bottom, MV1c, *, AntiKt4TopoLCnoJVF)
 
-# JetFitterCharm
-Default(ttbar_PDF_10b, bottom, JetFitterCharm, *, AntiKt4TopoLCJVF0_5)
+# JFC
+Default(ttbar_PDF_10b, bottom, JFC, *, AntiKt4TopoLCJVF0_5)
 
 ###############################################################
 # EM Jets - bottom
@@ -73,7 +73,7 @@ Default(DStar_ttbar_dijet_topo_ks_rebin, charm, MV1c, 0.9195, AntiKt4TopoLCJVF0_
 Default(DStar_KinSel_dilep_rebin, charm, MV1c, 0.7068, AntiKt4TopoLCJVF0_5)
 Default(DStar_KinSel_dilep_rebin, charm, MV1c, 0.4051, AntiKt4TopoLCJVF0_5)
 
-Default(DStar_ttbar_PDF_10b_rebin, charm, JetFitterCharm, *, AntiKt4TopoLCJVF0_5)
+Default(DStar_ttbar_PDF_10b_rebin, charm, JFC, *, AntiKt4TopoLCJVF0_5)
 
 #Default(DStar_combined_pdf_dijet_7_rebin, charm, MV1c, *, AntiKt4TopoLCJVF0_5)
 Default(DStar_ttbar_dijet_ks_rebin, charm, MV1c, *, AntiKt4TopoLCnoJVF)
@@ -100,7 +100,7 @@ Default(DStar_ttbar_dijet_ks_rebin, tau, MV1, *, AntiKt4TopoLCnoJVF)
 
 Default(DStar_ttbar_dijet_ks_rebin, tau, MV1c, *, AntiKt4TopoLCnoJVF)
 
-Default(DStar_ttbar_PDF_10b_rebin, tau, JetFitterCharm, *, AntiKt4TopoLCJVF0_5)
+Default(DStar_ttbar_PDF_10b_rebin, tau, JFC, *, AntiKt4TopoLCJVF0_5)
 
 Default(DStar_ttbar_dijet_topo_ks_rebin, tau, MV1c, 0.8641, AntiKt4TopoLCJVF0_5)
 Default(DStar_ttbar_dijet_topo_ks_rebin, tau, MV1c, 0.9195, AntiKt4TopoLCJVF0_5)

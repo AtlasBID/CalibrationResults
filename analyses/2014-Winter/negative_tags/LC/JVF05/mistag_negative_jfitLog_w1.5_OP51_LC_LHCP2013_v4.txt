@@ -1,4 +1,4 @@
-Analysis(negative_tags,light,JetFitterCharm,-0.9_0.95,AntiKt4TopoLCJVF0_5){ 
+Analysis(negative_tags,light,JFC,-0.9_0.95,AntiKt4TopoLCJVF0_5){ 
   meta_data_s (Hadronization, Pythia8EvtGen)
   bin( 20<pt< 30, 0.0<abseta<1.2)
   {
@@ -127,7 +127,7 @@ Analysis(negative_tags,light,JetFitterCharm,-0.9_0.95,AntiKt4TopoLCJVF0_5){
     sys(d0 and z0 smearing, 0.99%)
   }
 }
-Analysis(negative_tags,light,JetFitterCharm,-0.9_0.95,AntiKt4TopoLCJVF0_5){ 
+Analysis(negative_tags,light,JFC,-0.9_0.95,AntiKt4TopoLCJVF0_5){ 
   meta_data_s (Hadronization, Pythia8EvtGen)
   bin( 20<pt< 30, 1.2<abseta<2.5)
   {

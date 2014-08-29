@@ -1,4 +1,4 @@
-Analysis(MCcalib,charm,JetFitterCharm,-0.9_NONE,AntiKt4TopoEMnoJVF){
+Analysis(MCcalib,charm,JFC,-0.9_NONE,AntiKt4TopoEMnoJVF){
 bin(20<pt<30,0<abseta<2.5)
     {
         central_value(1.0,0.0024)

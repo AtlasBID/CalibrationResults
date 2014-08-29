@@ -59,9 +59,9 @@ taggers = [
     ["MV1c", "0.4050"], 
     ["MV1c", "0.4051"],
 #JetFitterCharm Medium
-	["JetFitterCharm", "-0.9_0.95"],
+    ["JFC", "-0.9_0.95"],
 #JetFitterCharm Loose
-	["JetFitterCharm", "-0.9_NONE"]
+    ["JFC", "-0.9_NONE"]
     ]
 
 #
