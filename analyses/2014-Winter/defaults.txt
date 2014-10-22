@@ -3,8 +3,11 @@
 
 # MV1, JVF0_5
 
-Default(ttbar_dijet_ks, bottom, MV1, *, AntiKt4TopoLCJVF0_5)
-Default(combined_pdf_dijet_7, bottom, MV1, 0.1340, AntiKt4TopoLCJVF0_5)
+Default(ttbar_dijet_ks, bottom, MV1, 0.993981, AntiKt4TopoLCJVF0_5)
+Default(combined_pdf_dijet_7, bottom, MV1, 0.9827, AntiKt4TopoLCJVF0_5)
+Default(combined_pdf_dijet_7, bottom, MV1, 0.7892, AntiKt4TopoLCJVF0_5)
+Default(combined_pdf_dijet_7, bottom, MV1, 0.3511, AntiKt4TopoLCJVF0_5)
+Default(ttbar_dijet_ks, bottom, MV1, 0.1340, AntiKt4TopoLCJVF0_5)
 
 # MV1, noJVF
 
@@ -13,9 +16,9 @@ Default(ttbar_dijet_ks, bottom, MV1, *, AntiKt4TopoLCnoJVF)
 # MV1c, JVF0_5
 
 Default(ttbar_dijet_topo_ks, bottom, MV1c, 0.8641, AntiKt4TopoLCJVF0_5)
-Default(ttbar_dijet_topo_ks, bottom, MV1c, 0.9195, AntiKt4TopoLCJVF0_5)
-Default(KinSel_dilep, bottom, MV1c, 0.7068, AntiKt4TopoLCJVF0_5)
-Default(KinSel_dilep, bottom, MV1c, 0.4051, AntiKt4TopoLCJVF0_5)
+Default(combined_pdf_dijet_7, bottom, MV1c, 0.9195, AntiKt4TopoLCJVF0_5)
+Default(combined_pdf_dijet_7, bottom, MV1c, 0.7068, AntiKt4TopoLCJVF0_5)
+Default(combined_pdf_dijet_7, bottom, MV1c, 0.4051, AntiKt4TopoLCJVF0_5)
 Default(combined_pdf_dijet_7, bottom, MV1c, 0.8349, AntiKt4TopoLCJVF0_5)
 
 # MV1c, noJVF
