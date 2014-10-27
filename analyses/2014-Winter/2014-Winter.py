@@ -163,7 +163,8 @@ rebin_template_30 = files("commonbinning.txt") \
 # final file. This is for specialized use.
 #
 
-ttbar_pdf_7_combined = ttbar_pdf_7_all.bbb_fit("ttbar_PDF_7b")
+ttbar_pdf_7_combined_withchi2 = ttbar_pdf_7_all.bbb_fit("ttbar_PDF_7b", saveCHI2Fits=True)
+ttbar_pdf_7_combined = ttbar_pdf_7_combined_withchi2.filter(analyses=["ttbar_PDF_7b"])
 ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("ttbar_PDF_7b_2j")
 ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("ttbar_PDF_7b_3j")
 
@@ -180,10 +181,11 @@ ttbar_pdf_10_combined_3j = ttbar_pdf_10_3j.bbb_fit("ttbar_PDF_10b_3j")
 # JVF05 is s8 + ttbar pdf. The s8 needs to be re-binned for this.
 s8_pdf_rebin = (s8 + rebin_template_30).rebin("rebin_30", "<>_rebin")
 
-ttbar_dijet_jvf05_7 = (\
+ttbar_dijet_jvf05_7_withchi2 = (\
 		ttbar_pdf_7_all.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
                 + s8_pdf_rebin.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
-		).bbb_fit("combined_pdf_dijet_7")
+		).bbb_fit("combined_pdf_dijet_7", saveCHI2Fits=True)
+ttbar_dijet_jvf05_7 = ttbar_dijet_jvf05_7_withchi2.filter(analyses=["combined_pdf_dijet_7"])
 
 ttbar_dijet_jvf05_10 = (\
 		ttbar_pdf_10_all.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
@@ -344,6 +346,7 @@ master_cdi_file.dump(linage=True, name="master-cdi-linage")
 master_cdi_file.plot("MC12-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
 master_cdi_file.dump(sysErrors = True, name="master")
 master_cdi_file.dump(metadata = True, name="master-metadata")
+(ttbar_pdf_7_combined_withchi2 + ttbar_dijet_jvf05_7_withchi2).plot("MC12-CHi2-Errors")
 (sources_7+sources_10+sources_4).dump(sysErrors = True, name="sources")
 
 #(master_cdi_file + defaultSFs).plot("MC12-ByTagger", byCalibEff = True, effOnly=True)
