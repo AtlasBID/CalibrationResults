@@ -6,5 +6,5 @@
 #
 #
 #./scripts/combine.py --zip analyses/2014-Winter-7TeV/2014-Winter-7TeV.py
-./scripts/combo.py --zip --clean analyses/2012-Paper/2012-Paper.py
+./scripts/combo.py --zip --clean analyses/2012-Paper/2012Paper.py
 #./scripts/combine.py --zip analyses/2014-Winter/2014-Winter.py
