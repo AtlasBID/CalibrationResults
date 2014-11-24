@@ -90,7 +90,7 @@ analysisGroupings = {
 		'dijet': ["pTrel", "system8"],
 		'ttbar': ["ttbarKFlepjet", "ttbar_kinsel_dilep", "PDF_dilepton_emu_2jets", "PDF_dilepton_emu_3jets", "PDF_dilepton_ll_2jets", "PDF_dilepton_ll_3jets"],
 		'ttbar_pdf': ["PDF_dilepton_emu_2jets", "PDF_dilepton_emu_3jets", "PDF_dilepton_ll_2jets", "PDF_dilepton_ll_3jets"],
-        "ttbar_pdf_dijet" : ["PDF_dilepton_emu_2jets", "PDF_dilepton_emu_3jets", "PDF_dilepton_ll_2jets", "PDF_dilepton_ll_3jets", "pTrel", "system8"]
+        "ttbar_pdf_dijet" : ["PDF_dilepton_emu_2jets", "PDF_dilepton_emu_3jets", "PDF_dilepton_ll_2jets", "PDF_dilepton_ll_3jets", "pTrel", "system8"],
 		'all': ["ttbarKFlepjet", "ttbar_kinsel_dilep", "PDF_dilepton_emu_2jets", "PDF_dilepton_emu_3jets", "PDF_dilepton_ll_2jets", "PDF_dilepton_ll_3jets", "pTrel", "system8"],
 		},
 	'light': {},
