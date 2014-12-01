@@ -35,11 +35,7 @@ taggers = [
     ]
 
 ignore_analyses = [
-    "pTrel-.*-AntiKt4Topo:20-pt-200:0-abseta-0.6", 
-    "pTrel-.*-AntiKt4Topo:20-pt-200:0.6-abseta-1.2",
-    "pTrel-.*-AntiKt4Topo:20-pt-200:1.2-abseta-1.8",
-    "pTrel-.*-AntiKt4Topo:20-pt-200:1.8-abseta-2.5",
-
+    "pTrel-.*20-pt-200.*", 
     ".*:25-pt-30:.*",
 	
 # We have ttbar_pdf for some of the points, so we want to use these instead
@@ -73,7 +69,7 @@ ignore_analyses = [
 
 sfObject.restrict = lambda self: self.filter(
     taggers=taggers,
-    ignore=taggers
+    ignore=ignore_analyses
     )
 	
 ####################################
@@ -131,17 +127,31 @@ all = all_r.filter(analyses=["dijet","PDF_ll_10_fit","all"])
 all_paper_r = (s8+ptrel+ttbar_kinfit+ttbar_kinsel).bbb_fit("all_paper", saveCHI2Fits=True)
 all_paper = all_paper_r.filter(analyses=["all_paper"])
 
+#
+# Now the negative tags
+#
+
+light = (files("negativetag/*.txt") + files("sv0mass/*.txt"))
+	.restrict()
+	
+#
+# Charm and tau
+#
+
+charmtau = files("DStar/*.txt")
+	.restrict()
+
 ####
 # CDI
-(dijet+ttbar+all).make_cdi("rel17_MC11b-CDI", "defaults.txt", "TopCalibrations_rel17_MC11b_Convert.root")
+(dijet+ttbar+all+light+charmtau).make_cdi("rel17_MC11b-CDI", "defaults.txt", "TopCalibrations_rel17_MC11b_Convert.root")
 
 ####################################
 # Plotting
 
-(ttbar_pdf_7_all + ttbar_pdf_7_combined_extra).plot("ttbar_pdf_7", effOnly=True)
-(ttbar_pdf_10_all + ttbar_pdf_10_combined_extra).plot("ttbar_pdf_10", effOnly=True)
-(ttbar_kinfit+ttbar_kinsel+ttbar_paper_r).plot("ttbar_paper", effOnly=True)
-(s8+ptrel+ttbar_kinfit+ttbar_kinsel+all_paper_r).plot("all_paper", effOnly=True)
-(s8+ptrel+dijet_r).plot("dijet", effOnly=True)
-(dijet+ttbar+all).plot("all", effOnly=True)
-(dijet+ttbar+all).plot("all_perTagger", effOnly=True, byTaggerEff=True)
+#(ttbar_pdf_7_all + ttbar_pdf_7_combined_extra).plot("ttbar_pdf_7", effOnly=True)
+#(ttbar_pdf_10_all + ttbar_pdf_10_combined_extra).plot("ttbar_pdf_10", effOnly=True)
+#(ttbar_kinfit+ttbar_kinsel+ttbar_paper_r).plot("ttbar_paper", effOnly=True)
+#(s8+ptrel+ttbar_kinfit+ttbar_kinsel+all_paper_r).plot("all_paper", effOnly=True)
+#(s8+ptrel+dijet_r).plot("dijet", effOnly=True)
+#(dijet+ttbar+all).plot("all", effOnly=True)
+#(dijet+ttbar+all).plot("all_perTagger", effOnly=True, byTaggerEff=True)
