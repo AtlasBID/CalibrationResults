@@ -117,10 +117,7 @@ DifferenceAsError = [
 # running
 #
 ignore_analyses = [
-    "pTrel-.*-AntiKt4Topo:20-pt-200:0-abseta-0.6", 
-    "pTrel-.*-AntiKt4Topo:20-pt-200:0.6-abseta-1.2",
-    "pTrel-.*-AntiKt4Topo:20-pt-200:1.2-abseta-1.8",
-    "pTrel-.*-AntiKt4Topo:20-pt-200:1.8-abseta-2.5",
+    "pTrel-.*-AntiKt4Topo:.*:20-pt-200", 
 
     ".*:25-pt-30:.*",
 	
