@@ -131,15 +131,15 @@ all_paper = all_paper_r.filter(analyses=["all_paper"])
 # Now the negative tags
 #
 
-light = (files("negativetag/*.txt") + files("sv0mass/*.txt"))
-	.restrict()
+light = (files("negativetag/*.txt") + files("sv0mass/*.txt")) \
+	    .restrict()
 	
 #
 # Charm and tau
 #
 
-charmtau = files("DStar/*.txt")
-	.restrict()
+charmtau = files("DStar/*.txt") \
+		   .restrict()
 
 ####
 # CDI
