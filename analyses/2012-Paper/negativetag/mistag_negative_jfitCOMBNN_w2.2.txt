@@ -119,6 +119,7 @@ Analysis(negative tags,light,JetFitterCOMBNN, 2.2000000, AntiKt4Topo){
     sys(negative tag run period dependence, 4.89%)
     sys(d0 and z0 smearing,-3.32%)
   }
+}
 Analysis(negative tags,light,JetFitterCOMBNN, 2.2000000, AntiKt4Topo){ 
   bin( 20<pt< 30, 1.2<abseta<2.5)
   {

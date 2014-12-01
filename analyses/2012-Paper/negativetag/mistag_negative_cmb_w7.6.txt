@@ -119,6 +119,7 @@ Analysis(negative tags,light,IP3DSV1, 7.6000000, AntiKt4Topo){
     sys(negative tag run period dependence, 3.32%)
     sys(d0 and z0 smearing,10.87%)
   }
+}
 Analysis(negative tags,light,IP3DSV1, 7.6000000, AntiKt4Topo){ 
   bin( 20<pt< 30, 1.2<abseta<2.5)
   {
@@ -240,3 +241,4 @@ Analysis(negative tags,light,IP3DSV1, 7.6000000, AntiKt4Topo){
     sys(negative tag run period dependence, 5.49%)
     sys(d0 and z0 smearing,11.14%)
   }
+}
