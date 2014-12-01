@@ -117,9 +117,9 @@ DifferenceAsError = [
 # running
 #
 ignore_analyses = [
-    ".*20-pt-200", 
+    ".*20-pt-200.*", 
 
-    ".*:25-pt-30:.*",
+    ".*25-pt-30.*",
 	
 # We have ttbar_pdf for some of the points, so we want to use these instead
 # of the ones from the kinematic selection (there are overlap problems there).
@@ -137,7 +137,7 @@ ignore_analyses = [
 # Some other things that should be left out because it was easy to put the files
 # in.
 
-    "pTrel-system8-bottom-.*-AntiKt4Topo:200-pt-250:0-abseta-2.5",
+    "pTrel-system8-bottom-.*-AntiKt4Topo:0-abseta-2.5:200-pt-250",
     "sv0mass-light-MV1-0.601713-AntiKt4Topo.*",
     "negative.*-light-TrigTight_JetFitterCOMBNN_.*-0.35-AntiKt4Topo:.*",
     "negative.*-light-TrigMedium_JetFitterCOMBNN_.*-0.35-AntiKt4Topo:.*",
