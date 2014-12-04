@@ -36,7 +36,7 @@ taggers = [
 
 ignore_analyses = [
     "pTrel-.*20-pt-200", 
-    ".*:25-pt-30:.*",
+    ".*:25-pt-30.*",
 	
 # We have ttbar_pdf for some of the points, so we want to use these instead
 # of the ones from the kinematic selection (there are overlap problems there).
