@@ -143,7 +143,9 @@ charmtau = files("DStar/*.txt") \
 
 ####
 # CDI
-(dijet+ptrel+s8+ttbar+all+light+charmtau).make_cdi("rel17_MC11b-CDI", "defaults.txt", "TopCalibrations_rel17_MC11b_Convert.root")
+forthefile = (dijet+ptrel+s8+ttbar+all+light+charmtau)
+forthefile.make_cdi("rel17_MC11b-CDI", "defaults.txt", "TopCalibrations_rel17_MC11b_Convert.root")
+forthefile.dump(linage=True, name="master-cdi-linage")
 
 ####################################
 # Plotting
