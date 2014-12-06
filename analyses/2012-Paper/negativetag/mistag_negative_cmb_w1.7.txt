@@ -1,4 +1,4 @@
-Analysis(negative tags,light,IP3DSV1, 1.7000000, AntiKt4Topo){ 
+Analysis(negative tags,light,IP3DSV1, 1.7, AntiKt4Topo){ 
   bin( 20<pt< 30, 0.0<abseta<1.2)
   {
     central_value(1.1916,0.0179)
