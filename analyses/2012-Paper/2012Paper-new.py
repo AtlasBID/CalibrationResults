@@ -25,8 +25,8 @@ taggers = [
     ["JetFitterCOMBNN", "1.80"],
     ["JetFitterCOMBNN", "0.35"],
     ["JetFitterCOMBNN", "-1.25"],
-    ["JetFitterCOMBNNc", "1.33"],
-    ["JetFitterCOMBNNc", "0.98"],
+#    ["JetFitterCOMBNNc", "1.33"],
+#    ["JetFitterCOMBNNc", "0.98"],
     ["MV1", "0.905363"], 
     ["MV1", "0.601713"], 
     ["MV1", "0.404219"],
@@ -143,7 +143,7 @@ charmtau = files("DStar/*.txt") \
 
 ####
 # CDI
-(dijet+ttbar+all+light+charmtau).make_cdi("rel17_MC11b-CDI", "defaults.txt", "TopCalibrations_rel17_MC11b_Convert.root")
+(dijet+ptrel+s8+ttbar+all+light+charmtau).make_cdi("rel17_MC11b-CDI", "defaults.txt", "TopCalibrations_rel17_MC11b_Convert.root")
 
 ####################################
 # Plotting
