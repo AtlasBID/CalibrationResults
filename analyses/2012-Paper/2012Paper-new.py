@@ -151,7 +151,7 @@ forthefile.dump(linage=True, name="master-cdi-linage")
 ####################################
 # Plotting
 
-forthefile.plot("master_cdi", effOnly=True)
+forthefile.plot("master_cdi")
 #(ttbar_pdf_7_all + ttbar_pdf_7_combined_extra).plot("ttbar_pdf_7", effOnly=True)
 #(ttbar_pdf_10_all + ttbar_pdf_10_combined_extra).plot("ttbar_pdf_10", effOnly=True)
 #(ttbar_kinfit+ttbar_kinsel+ttbar_paper_r).plot("ttbar_paper", effOnly=True)
