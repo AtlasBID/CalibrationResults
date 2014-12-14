@@ -64,7 +64,7 @@ taggers = [
 #JetFitterCharm Loose
     ["JFC", "-0.9_NONE"],
 #Trig_anything
-	["Trig*", "*"]
+	["Trig.*", ".*"]
     ]
 
 #
