@@ -62,7 +62,9 @@ taggers = [
 #JetFitterCharm Medium
     ["JFC", "-0.9_0.95"],
 #JetFitterCharm Loose
-    ["JFC", "-0.9_NONE"]
+    ["JFC", "-0.9_NONE"],
+#Trig_anything
+	["Trig*", "*"]
     ]
 
 #
@@ -281,6 +283,13 @@ light_sf = negative
 # We'd like to do this, but we can't extrapolate accross bin boundaries.
 #sources_10 += negative
 
+
+#####################################
+# Trigger Stuff
+
+trigger = files("trigger/*/*.txt") \
+		  .restrict()
+
 ####################################
 # Extrapolate everything
 #
@@ -339,7 +348,8 @@ all_extrapolated = default_extrapolated + rebin_extrapolated + rebin_dstar_extra
 #
 
 master_cdi_file = \
-    all_extrapolated
+    all_extrapolated \
+	+ trigger
 defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "StandardTag_8TeV_ttbar_140613151009.root")
 master_cdi_file.plot("MC12-CDI")
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
