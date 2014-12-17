@@ -83,10 +83,10 @@ s8 = files("system8/*.txt") \
 ptrel = files("ptrel/*.txt") \
     .restrict()
 	
-ttbar_pdf_7_all = files ("ttbar_pdf/6bin/*.txt") \
+ttbar_pdf_7_all = files ("ttbar_pdf/6bins/*.txt") \
                     .restrict()
 
-ttbar_pdf_10_all = files("ttbar_pdf/9bin/*.txt") \
+ttbar_pdf_10_all = files("ttbar_pdf/9bins/*.txt") \
                    .restrict()
 				   
 ttbar_kinfit = files("KinFit_ljet/*.txt") \
