@@ -351,7 +351,7 @@ master_cdi_file = \
     all_extrapolated \
 	+ trigger
 defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "StandardTag_8TeV_ttbar_140613151009.root")
-master_cdi_file.plot("MC12-CDI")
+master_cdi_file.plot("MC12-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
 master_cdi_file.plot("MC12-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
 master_cdi_file.dump(sysErrors = True, name="master")
