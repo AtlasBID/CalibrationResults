@@ -38,16 +38,16 @@ class Filter:
         files = listToString(fList)
 
         for a in self._anas:
-            files += " --analysis %s" % a
+            files += " --analysis '%s'" % a
 
         for t in self._taggers:
-            files += " --tagger %s --operatingPoint %s" % (t[0], t[1])
+            files += " --tagger '%s' --operatingPoint '%s'" % (t[0], t[1])
 
         for i in self._ignore:
             files += " --ignore '%s'" % i
 
         for j in self._jets:
-            files += " --jetAlgorithm %s" % j
+            files += " --jetAlgorithm '%s'" % j
 
         files += " --asInput"
 
