@@ -167,12 +167,12 @@ rebin_template_30 = files("commonbinning.txt") \
 
 ttbar_pdf_7_combined_withchi2 = ttbar_pdf_7_all.bbb_fit("ttbar_PDF_7b", saveCHI2Fits=True)
 ttbar_pdf_7_combined = ttbar_pdf_7_combined_withchi2.filter(analyses=["ttbar_PDF_7b"])
-ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("ttbar_PDF_7b_2j")
-ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("ttbar_PDF_7b_3j")
+ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("ttbarPDF7b2j")
+ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("ttbarPDF7b3j")
 
 ttbar_pdf_10_combined = ttbar_pdf_10_all.bbb_fit("ttbar_PDF_10b")
-ttbar_pdf_10_combined_2j = ttbar_pdf_10_2j.bbb_fit("ttbar_PDF_10b_2j")
-ttbar_pdf_10_combined_3j = ttbar_pdf_10_3j.bbb_fit("ttbar_PDF_10b_3j")
+ttbar_pdf_10_combined_2j = ttbar_pdf_10_2j.bbb_fit("ttbarPDF10b2j")
+ttbar_pdf_10_combined_3j = ttbar_pdf_10_3j.bbb_fit("ttbarPDF10b3j")
 
 #
 # Do the ttbar results
