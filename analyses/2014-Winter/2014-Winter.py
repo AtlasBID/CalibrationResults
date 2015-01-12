@@ -198,7 +198,7 @@ ttbar_dijet_topo = (\
 		s8.filter(jets=["AntiKt4TopoLCJVF0_5"]) \
 		+ ttdilep_topo.filter(jets=["AntiKt4TopoLCJVF0_5"]) \
 		+ ttbar_kinsel_3jet.filter(jets=["AntiKt4TopoLCJVF0_5"]) \
-		).bbb_fit("ttbar_dijet_topo_ks")
+		).bbb_fit("ttbar_dijettopoks")
 		
 ttbar_dijet_ks = (\
 		s8 \
