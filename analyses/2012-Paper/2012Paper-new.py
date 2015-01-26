@@ -121,10 +121,10 @@ ttbar_paper = ttbar_paper_r.filter(analyses=["ttbar"])
 # And combine them totally
 #
 
-all_r = (s8+ptrel+ttbar_pdf_10_all+ttbar_kinfit).bbb_fit("all", saveCHI2Fits=True)
+all_r = (s8+ptrel+ttbar_pdf_10_all+ttbar_kinfit).bbb_fit("all", saveCHI2Fits=True, extraFiles=files("stat_correlation_inputs.txt"))
 all = all_r.filter(analyses=["dijet","PDF_ll_10_fit","all"])
 
-ttbar_pdf_dijet = (s8+ptrel+ttbar_pdf_10_all).bbb_fit("ttbar_pdf_dijet")
+ttbar_pdf_dijet = (s8+ptrel+ttbar_pdf_10_all).bbb_fit("ttbar_pdf_dijet", extraFiles=files("stat_correlation_inputs.txt"))
 
 #
 # Now the negative tags
