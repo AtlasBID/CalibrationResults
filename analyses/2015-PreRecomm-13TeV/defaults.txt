@@ -1,0 +1,119 @@
+###############################################################
+# LC Jets - bottom
+
+# MV1, JVF0_5
+
+Default(ttbar_dijet_ks, bottom, MV1, 0.993981, AntiKt4TopoLCJVF0_5)
+Default(combined_pdf_dijet_7, bottom, MV1, 0.9827, AntiKt4TopoLCJVF0_5)
+Default(combined_pdf_dijet_7, bottom, MV1, 0.7892, AntiKt4TopoLCJVF0_5)
+Default(combined_pdf_dijet_7, bottom, MV1, 0.3511, AntiKt4TopoLCJVF0_5)
+Default(ttbar_PDF_7b, bottom, MV1, 0.1340, AntiKt4TopoLCJVF0_5)
+
+# MV1, noJVF
+
+Default(ttbar_dijet_ks, bottom, MV1, *, AntiKt4TopoLCnoJVF)
+
+# MV1c, JVF0_5
+
+Default(ttbar_dijet_topo_ks, bottom, MV1c, 0.8641, AntiKt4TopoLCJVF0_5)
+Default(combined_pdf_dijet_7, bottom, MV1c, 0.9195, AntiKt4TopoLCJVF0_5)
+Default(combined_pdf_dijet_7, bottom, MV1c, 0.7068, AntiKt4TopoLCJVF0_5)
+Default(combined_pdf_dijet_7, bottom, MV1c, 0.4051, AntiKt4TopoLCJVF0_5)
+Default(combined_pdf_dijet_7, bottom, MV1c, 0.8349, AntiKt4TopoLCJVF0_5)
+
+# MV1c, noJVF
+
+Default(ttbar_dijet_ks, bottom, MV1c, *, AntiKt4TopoLCnoJVF)
+
+# JFC
+Default(ttbar_PDF_10b, bottom, JFC, *, AntiKt4TopoLCJVF0_5)
+
+###############################################################
+# EM Jets - bottom
+
+# MV1, JVF0_5
+
+Default(combined_pdf_dijet_7, bottom, MV1, *, AntiKt4TopoEMJVF0_5)
+
+# MV1, noJVF
+
+Default(ttbar_dijet_ks, bottom, MV1, *, AntiKt4TopoEMnoJVF)
+
+# MV1c, JVF0_5
+
+Default(ttbar_dijet_ks, bottom, MV1c, 0.8674, AntiKt4TopoEMJVF0_5)
+Default(combined_pdf_dijet_7, bottom, MV1c, 0.8353, AntiKt4TopoEMJVF0_5)
+Default(combined_pdf_dijet_7, bottom, MV1c, 0.9237, AntiKt4TopoEMJVF0_5)
+Default(combined_pdf_dijet_7, bottom, MV1c, 0.7028, AntiKt4TopoEMJVF0_5)
+Default(combined_pdf_dijet_7, bottom, MV1c, 0.4050, AntiKt4TopoEMJVF0_5)
+
+# MV1c, noJVF
+
+Default(ttbar_dijet_ks, bottom, MV1c, *, AntiKt4TopoEMnoJVF)
+
+
+###############################################################
+# Charm
+
+#EM
+
+Default(DStar_combined_pdf_dijet_7_rebin, charm, MV1, *, AntiKt4TopoEMJVF0_5)
+Default(DStar_ttbar_dijet_ks_rebin, charm, MV1, *, AntiKt4TopoEMnoJVF)
+Default(DStar_ttbar_dijet_ks_rebin, charm, MV1c, *, AntiKt4TopoEMnoJVF)
+
+Default(DStar_ttbar_dijet_ks_rebin, charm, MV1c, 0.8674, AntiKt4TopoEMJVF0_5)
+Default(DStar_combined_pdf_dijet_7_rebin, charm, MV1c, 0.8353, AntiKt4TopoEMJVF0_5)
+Default(DStar_combined_pdf_dijet_7_rebin, charm, MV1c, 0.9237, AntiKt4TopoEMJVF0_5)
+Default(DStar_combined_pdf_dijet_7_rebin, charm, MV1c, 0.7028, AntiKt4TopoEMJVF0_5)
+Default(DStar_combined_pdf_dijet_7_rebin, charm, MV1c, 0.4050, AntiKt4TopoEMJVF0_5)
+
+#LC
+Default(DStar_ttbar_dijet_ks_rebin, charm, MV1, *, AntiKt4TopoLCJVF0_5)
+Default(DStar_combined_pdf_dijet_7_rebin, charm, MV1, 0.1340, AntiKt4TopoLCJVF0_5)
+Default(DStar_ttbar_dijet_ks_rebin, charm, MV1, *, AntiKt4TopoLCnoJVF)
+
+Default(DStar_ttbar_dijet_topo_ks_rebin, charm, MV1c, 0.8641, AntiKt4TopoLCJVF0_5)
+Default(DStar_ttbar_dijet_topo_ks_rebin, charm, MV1c, 0.9195, AntiKt4TopoLCJVF0_5)
+Default(DStar_KinSel_dilep_rebin, charm, MV1c, 0.7068, AntiKt4TopoLCJVF0_5)
+Default(DStar_KinSel_dilep_rebin, charm, MV1c, 0.4051, AntiKt4TopoLCJVF0_5)
+Default(DStar_combined_pdf_dijet_7_rebin, charm, MV1c, 0.8349, AntiKt4TopoLCJVF0_5)
+
+Default(DStar_ttbar_PDF_10b_rebin, charm, JFC, *, AntiKt4TopoLCJVF0_5)
+
+#Default(DStar_combined_pdf_dijet_7_rebin, charm, MV1c, *, AntiKt4TopoLCJVF0_5)
+Default(DStar_ttbar_dijet_ks_rebin, charm, MV1c, *, AntiKt4TopoLCnoJVF)
+
+###############################################################
+# Tau
+
+#EM
+Default(DStar_combined_pdf_dijet_7_rebin, tau, MV1, *, AntiKt4TopoEMJVF0_5)
+Default(DStar_ttbar_dijet_ks_rebin, tau, MV1, *, AntiKt4TopoEMnoJVF)
+
+Default(DStar_combined_pdf_dijet_7_rebin, tau, MV1, 0.1340, AntiKt4TopoLCJVF0_5)
+Default(DStar_ttbar_dijet_ks_rebin, tau, MV1c, 0.8674, AntiKt4TopoEMJVF0_5)
+Default(DStar_combined_pdf_dijet_7_rebin, tau, MV1c, 0.8353, AntiKt4TopoEMJVF0_5)
+Default(DStar_combined_pdf_dijet_7_rebin, tau, MV1c, 0.9237, AntiKt4TopoEMJVF0_5)
+Default(DStar_combined_pdf_dijet_7_rebin, tau, MV1c, 0.7028, AntiKt4TopoEMJVF0_5)
+Default(DStar_combined_pdf_dijet_7_rebin, tau, MV1c, 0.4050, AntiKt4TopoEMJVF0_5)
+
+Default(DStar_ttbar_dijet_ks_rebin, tau, MV1c, *, AntiKt4TopoEMnoJVF)
+
+#LC
+Default(DStar_ttbar_dijet_ks_rebin, tau, MV1, *, AntiKt4TopoLCJVF0_5)
+Default(DStar_ttbar_dijet_ks_rebin, tau, MV1, *, AntiKt4TopoLCnoJVF)
+
+Default(DStar_ttbar_dijet_ks_rebin, tau, MV1c, *, AntiKt4TopoLCnoJVF)
+
+Default(DStar_ttbar_PDF_10b_rebin, tau, JFC, *, AntiKt4TopoLCJVF0_5)
+
+Default(DStar_ttbar_dijet_topo_ks_rebin, tau, MV1c, 0.8641, AntiKt4TopoLCJVF0_5)
+Default(DStar_ttbar_dijet_topo_ks_rebin, tau, MV1c, 0.9195, AntiKt4TopoLCJVF0_5)
+Default(DStar_KinSel_dilep_rebin, tau, MV1c, 0.7068, AntiKt4TopoLCJVF0_5)
+Default(DStar_KinSel_dilep_rebin, tau, MV1c, 0.4051, AntiKt4TopoLCJVF0_5)
+Default(DStar_combined_pdf_dijet_7_rebin, tau, MV1c, 0.8349, AntiKt4TopoLCJVF0_5)
+
+#####################################################
+# Light jets
+
+Default(negative_tags, light, *, *, *)
