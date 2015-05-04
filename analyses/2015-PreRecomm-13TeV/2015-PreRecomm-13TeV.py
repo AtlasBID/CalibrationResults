@@ -70,23 +70,8 @@ ttbar_pdf_7_2j = ttbar_pdf_7_all \
 ttbar_pdf_7_3j = ttbar_pdf_7_all \
                  .filter(analyses = ["PDF_6bins_ll_3jets", "PDF_6bins_emu_3jets", \
                                      ])
-				  					
-ttbar_pdf_10_all = files("ttbar_pdf/EM/JVF05/10PT/*jets.txt") \
-                   .restrict() \
-                   .filter(analyses = ["PDF_emu_2jets", "PDF_emu_3jets", \
-                                       "PDF_ll_2jets", "PDF_ll_3jets", \
-                                       ]) \
-
-ttbar_pdf_10_2j = ttbar_pdf_10_all \
-                  .filter(analyses = ["PDF_ll_2jets", "PDF_emu_2jets", \
-                                      ])
-
-ttbar_pdf_10_3j = ttbar_pdf_10_all \
-                  .filter(analyses = ["PDF_emu_3jets", "PDF_ll_3jets", \
-                                      ])
 
 sources_7  = ttbar_pdf_7_all
-sources_10 = ttbar_pdf_10_all
 
 
 # The file "commonbinning.txt" just contains some empty specifications that have the binning. They don't contain
@@ -113,10 +98,6 @@ ttbar_pdf_7_combined_withchi2 = ttbar_pdf_7_all.bbb_fit("ttbar_PDF_7b", saveCHI2
 ttbar_pdf_7_combined = ttbar_pdf_7_combined_withchi2.filter(analyses=["ttbar_PDF_7b"])
 ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("ttbarPDF7b2j")
 ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("ttbarPDF7b3j")
-
-ttbar_pdf_10_combined = ttbar_pdf_10_all.bbb_fit("ttbar_PDF_10b")
-ttbar_pdf_10_combined_2j = ttbar_pdf_10_2j.bbb_fit("ttbarPDF10b2j")
-ttbar_pdf_10_combined_3j = ttbar_pdf_10_3j.bbb_fit("ttbarPDF10b3j")
 
 # one ring to rule them all...
 ttbar_fits_7 = ttbar_pdf_7_combined \
@@ -164,10 +145,6 @@ negative = files("negative_tags/EM/JVF05/*.txt") \
            .restrict()
 
 light_sf = negative
-
-# We'd like to do this, but we can't extrapolate accross bin boundaries.
-#sources_10 += negative
-
 
 ####################################
 # Extrapolate everything
@@ -226,7 +203,7 @@ master_cdi_file.plot("MC12-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
 master_cdi_file.dump(sysErrors = True, name="master")
 master_cdi_file.dump(metadata = True, name="master-metadata")
 (ttbar_pdf_7_combined_withchi2).plot("MC12-CHi2-Errors")
-(sources_7+sources_10+sources_4).dump(sysErrors = True, name="sources")
+(sources_7+sources_4).dump(sysErrors = True, name="sources")
 
 #(master_cdi_file + defaultSFs).plot("MC12-ByTagger", byCalibEff = True, effOnly=True)
 
