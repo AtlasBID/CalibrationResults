@@ -57,7 +57,7 @@ sfObject.restrict = lambda self: self.restrict_good().restrict_ignore()
 #
 
 
-ttbar_pdf_7_all = (files("ttbar_pdf/EM/*/*/*6bins.txt")) \
+ttbar_pdf_7_all = files("ttbar_pdf/EM/JVF05/6PT/*6bins.txt") \
                   .restrict() \
                   .filter(analyses = ["PDF_6bins_emu_2jets", "PDF_6bins_emu_3jets", \
                                       "PDF_6bins_ll_2jets", "PDF_6bins_ll_3jets", \
@@ -71,7 +71,7 @@ ttbar_pdf_7_3j = ttbar_pdf_7_all \
                  .filter(analyses = ["PDF_6bins_ll_3jets", "PDF_6bins_emu_3jets", \
                                      ])
 				  					
-ttbar_pdf_10_all = (files("ttbar_pdf/EM/*/10PT*/*jets.txt")) \
+ttbar_pdf_10_all = files("ttbar_pdf/EM/JVF05/10PT/*jets.txt") \
                    .restrict() \
                    .filter(analyses = ["PDF_emu_2jets", "PDF_emu_3jets", \
                                        "PDF_ll_2jets", "PDF_ll_3jets", \
@@ -146,7 +146,7 @@ ttbar_rebin = (dstar_rebin_template + ttbar_fits) \
 # The tau is just an additional error on top of that.
 #
 
-dstar_template = (files("Dstar/*/JVF05/*.txt") + files("Dstar/*/noJVF/*.txt")) \
+dstar_template = files("Dstar/EM/JVF05/*.txt")\
                  .restrict()
 
 charm_sf = (dstar_template + ttbar_rebin) \
@@ -160,7 +160,7 @@ sources_4 = dstar_template
 # Light SF come from the negative tags
 #
 
-negative = (files("negative_tags/*/JVF05/*.txt")) \
+negative = files("negative_tags/EM/JVF05/*.txt") \
            .restrict()
 
 light_sf = negative
