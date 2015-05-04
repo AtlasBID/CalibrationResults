@@ -123,12 +123,7 @@ ttbar_fits_7 = ttbar_pdf_7_combined \
     + ttbar_pdf_7_combined_2j \
     + ttbar_pdf_7_combined_3j
 
-ttbar_fits_10 = \
-	+ ttbar_pdf_10_combined \
-	+ ttbar_pdf_10_combined_2j \
-	+ ttbar_pdf_10_combined_3j
-
-ttbar_fits = ttbar_fits_7 + ttbar_fits_10
+ttbar_fits = ttbar_fits_7
 
 #
 # Next, we need to build up the master fits that will be used to make charm and tau results.
@@ -198,14 +193,6 @@ rebin_for_extrap_dstar = files("commonbinning.txt") \
 mcCalib_rebin_dstar_bct = (rebin_for_extrap_dstar + mcCalib_bct) \
     .rebin("rebin_dstar", "<>_rebin")
 
-default_extrapolated = (\
-    ttbar_fits_10 \
-    + mcCalib_bct \
-    + sources_10
-    ) \
-    .extrapolate("MCcalib")
-
-#	+ light_sf \
 rebin_extrapolated = (\
     mcCalib_rebin_bct
     + ttbar_fits_7 \
