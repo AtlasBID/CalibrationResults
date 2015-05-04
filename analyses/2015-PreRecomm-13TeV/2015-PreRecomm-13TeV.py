@@ -209,7 +209,7 @@ rebin_dstar_extrapolated = (\
 
 light_extrapolated = (light_sf + mcCalib_l).extrapolate("MCcalib")
 
-all_extrapolated = default_extrapolated + rebin_extrapolated + rebin_dstar_extrapolated + light_extrapolated
+all_extrapolated = rebin_extrapolated + rebin_dstar_extrapolated + light_extrapolated
 
 # Currently can't extrapolate:
 #  neg tags - because they are split in eta, and the extrapolation isn't.
@@ -218,9 +218,7 @@ all_extrapolated = default_extrapolated + rebin_extrapolated + rebin_dstar_extra
 # The CDI file.
 #
 
-master_cdi_file = \
-    all_extrapolated \
-	+ trigger
+master_cdi_file = all_extrapolated 
 defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "StandardTag_8TeV_ttbar_140613151009.root")
 master_cdi_file.plot("MC12-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
