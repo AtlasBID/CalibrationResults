@@ -71,7 +71,7 @@ ttbar_pdf_7_3j = ttbar_pdf_7_all \
                  .filter(analyses = ["PDF_6bins_ll_3jets", "PDF_6bins_emu_3jets", \
                                      ])
 				  					
-ttbar_pdf_10_all = (files("ttbar_pdf/EM/*/10PT*/*jets.txt") + files("ttbar_pdf/LC/*/10PT*/*jets.txt")) \
+ttbar_pdf_10_all = (files("ttbar_pdf/EM/*/10PT*/*jets.txt")) \
                    .restrict() \
                    .filter(analyses = ["PDF_emu_2jets", "PDF_emu_3jets", \
                                        "PDF_ll_2jets", "PDF_ll_3jets", \
