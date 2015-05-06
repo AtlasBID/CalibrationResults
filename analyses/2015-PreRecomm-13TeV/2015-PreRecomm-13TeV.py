@@ -57,7 +57,7 @@ sfObject.restrict = lambda self: self.restrict_good().restrict_ignore()
 #
 
 
-ttbar_pdf_7_all = files("ttbar_pdf/EM/JVF05/6PT_MV2c20/*6bins.txt") \
+ttbar_pdf_7_all = files("ttbar_pdf/EM/JVF05/6PT_MV1c/*6bins.txt") \
                   .restrict() \
                   .filter(analyses = ["PDF_6bins_emu_2jets", "PDF_6bins_emu_3jets", \
                                       "PDF_6bins_ll_2jets", "PDF_6bins_ll_3jets", \
@@ -113,7 +113,7 @@ ttbar_fits = ttbar_fits_7
 # Use one of the D* results as the rebin template.
 #
 
-dstar_rebin_template = files("Dstar/EM/JVF05/DStar_MV2c2070.txt")
+dstar_rebin_template = files("Dstar/EM/JVF05/DStar_MV1c70.txt")
 
 ttbar_rebin = (dstar_rebin_template + ttbar_fits) \
               .rebin("DStar", "<>_rebin")
