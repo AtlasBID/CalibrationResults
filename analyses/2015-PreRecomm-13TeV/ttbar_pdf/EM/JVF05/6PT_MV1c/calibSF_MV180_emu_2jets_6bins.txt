@@ -1,4 +1,4 @@
-Analysis(PDF_6bins_emu_2jets,bottom,MV1c,0.4050,AntiKt4TopoEMJVF0_5)
+Analysis(PDF_6bins_emu_2jets,bottom,MV2c20,0.4050,AntiKt4TopoEMJVF0_5)
 {
       meta_data_s (Hadronization, Pythia6)
 

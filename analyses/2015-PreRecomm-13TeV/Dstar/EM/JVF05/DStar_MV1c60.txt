@@ -1,4 +1,4 @@
-Analysis(DStar,charm,MV1c,0.8353,AntiKt4TopoEMJVF0_5){
+Analysis(DStar,charm,MV2c20,0.8353,AntiKt4TopoEMJVF0_5){
   meta_data_s(Hadronization,Pythia8)
   bin(20<pt<30,0<abseta<2.5)
   { 

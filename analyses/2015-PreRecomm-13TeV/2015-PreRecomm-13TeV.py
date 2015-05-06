@@ -24,16 +24,16 @@ description = "Flavor tagging pre-recommendations based on 8 TeV and simulation 
 #
 
 taggers = [
-#MV1c 50% (EM)
-    ["MV1c", "0.9237"],
-#MV1c 57% (EM)
-    ["MV1c", "0.8674"],
-#MV1c 60%, (EM)
-    ["MV1c", "0.8353"],
-#MV1c 70% (EM)
-    ["MV1c", "0.7028"],
-#MV1c 80% (EM)
-    ["MV1c", "0.4050"],
+#MV2c20 50% (EM)
+    ["MV2c20", "0.9237"],
+#MV2c20 57% (EM)
+    ["MV2c20", "0.8674"],
+#MV2c20 60%, (EM)
+    ["MV2c20", "0.8353"],
+#MV2c20 70% (EM)
+    ["MV2c20", "0.7028"],
+#MV2c20 80% (EM)
+    ["MV2c20", "0.4050"],
     ]
 
 #
@@ -57,7 +57,7 @@ sfObject.restrict = lambda self: self.restrict_good().restrict_ignore()
 #
 
 
-ttbar_pdf_7_all = files("ttbar_pdf/EM/JVF05/6PT_MV1c/*6bins.txt") \
+ttbar_pdf_7_all = files("ttbar_pdf/EM/JVF05/6PT_MV2c20/*6bins.txt") \
                   .restrict() \
                   .filter(analyses = ["PDF_6bins_emu_2jets", "PDF_6bins_emu_3jets", \
                                       "PDF_6bins_ll_2jets", "PDF_6bins_ll_3jets", \
@@ -113,7 +113,7 @@ ttbar_fits = ttbar_fits_7
 # Use one of the D* results as the rebin template.
 #
 
-dstar_rebin_template = files("Dstar/EM/JVF05/DStar_MV1c70.txt")
+dstar_rebin_template = files("Dstar/EM/JVF05/DStar_MV2c2070.txt")
 
 ttbar_rebin = (dstar_rebin_template + ttbar_fits) \
               .rebin("DStar", "<>_rebin")
