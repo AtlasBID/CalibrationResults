@@ -64,7 +64,7 @@ taggers = [
 #JetFitterCharm Loose
     ["JFC", "-0.9_NONE"],
 #Trig_anything
-	["L15_Trig.*", ".*"]
+    ["L15_Trig.*", ".*"]
     ]
 
 #
@@ -79,9 +79,9 @@ sfObject.restrict_good = lambda self: self.filter(
 sfObject.restrict_ignore = lambda self: self.filter(
     ignore=[".*25-pt-30.*",".*300-pt-400.*", ".*system8.*20-pt-30.*", ".*MV1-0.1340-AntiKt4TopoLCnoJVF.*", ".*MV1c-0.8353-AntiKt4TopoEMnoJVF.*", ".*0.1644-AntiKt4TopoEMnoJVF.*"]
     )
-	
+    
 sfObject.restrict = lambda self: self.restrict_good().restrict_ignore()
-	
+    
 ####################################
 # Bottom Flavor Inputs and fits
 #  Note: sources is used to do a systematic error x-check.
@@ -89,7 +89,7 @@ sfObject.restrict = lambda self: self.restrict_good().restrict_ignore()
 
 s8 = files("system8/*.txt") \
      .restrict()
-	 
+     
 # the topo are also known as the T&P ttbar analysis.
 ttdilep_topo = files("topo_ttemu/*.txt") \
                .restrict()
@@ -108,7 +108,7 @@ ttbar_pdf_7_2j = ttbar_pdf_7_all \
 ttbar_pdf_7_3j = ttbar_pdf_7_all \
                  .filter(analyses = ["PDF_6bins_ll_3jets", "PDF_6bins_emu_3jets", \
                                      ])
-				  					
+                                    
 ttbar_pdf_10_all = (files("ttbar_pdf/EM/*/10PT*/*jets.txt") + files("ttbar_pdf/LC/*/10PT*/*jets.txt")) \
                    .restrict() \
                    .filter(analyses = ["PDF_emu_2jets", "PDF_emu_3jets", \
@@ -133,7 +133,7 @@ ttbar_kinsel_2jet_all = files("ttbar_kinsel/*/*_em2j.txt") \
                         .restrict()
 ttbar_kinsel_2jet = ttbar_kinsel_2jet_all \
                     .filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"])
-				  
+                  
 sources_7  = ttbar_pdf_7_all
 sources_10 = s8 + ttdilep_topo + ttbar_pdf_10_all + ttbar_kinsel_3jet + ttbar_kinsel_2jet_all
 
@@ -184,32 +184,32 @@ ttbar_pdf_10_combined_3j = ttbar_pdf_10_3j.bbb_fit("ttbarPDF10b3j")
 s8_pdf_rebin = (s8 + rebin_template_30).rebin("rebin_30", "<>_rebin")
 
 ttbar_dijet_jvf05_7_withchi2 = (\
-		ttbar_pdf_7_all.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
+        ttbar_pdf_7_all.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
                 + s8_pdf_rebin.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
-		).bbb_fit("pdf_dijet_7", saveCHI2Fits=True)
+        ).bbb_fit("pdf_dijet_7", saveCHI2Fits=True)
 ttbar_dijet_jvf05_7 = ttbar_dijet_jvf05_7_withchi2.filter(analyses=["pdf_dijet_7"])
 
 ttbar_dijet_jvf05_10 = (\
-		ttbar_pdf_10_all.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
+        ttbar_pdf_10_all.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
                 + s8.filter(jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5"]) \
-		).bbb_fit("pdf_dijet_10")
+        ).bbb_fit("pdf_dijet_10")
 
 ttbar_dijet_topo = (\
-		s8.filter(jets=["AntiKt4TopoLCJVF0_5"]) \
-		+ ttdilep_topo.filter(jets=["AntiKt4TopoLCJVF0_5"]) \
-		+ ttbar_kinsel_3jet.filter(jets=["AntiKt4TopoLCJVF0_5"]) \
-		).bbb_fit("ttbar_dijettopoks")
-		
+        s8.filter(jets=["AntiKt4TopoLCJVF0_5"]) \
+        + ttdilep_topo.filter(jets=["AntiKt4TopoLCJVF0_5"]) \
+        + ttbar_kinsel_3jet.filter(jets=["AntiKt4TopoLCJVF0_5"]) \
+        ).bbb_fit("ttbar_dijettopoks")
+        
 ttbar_dijet_ks = (\
-		s8 \
-		+ ttbar_kinsel_3jet \
-		+ ttbar_kinsel_2jet_all \
-		).bbb_fit("ttbar_dijet_ks")
-		
+        s8 \
+        + ttbar_kinsel_3jet \
+        + ttbar_kinsel_2jet_all \
+        ).bbb_fit("ttbar_dijet_ks")
+        
 ttbar_ks = (\
-		ttbar_kinsel_3jet \
-		+ ttbar_kinsel_2jet_all \
-		).bbb_fit("KinSel_dilep")
+        ttbar_kinsel_3jet \
+        + ttbar_kinsel_2jet_all \
+        ).bbb_fit("KinSel_dilep")
 
 # one ring to rule them all...
 ttbar_fits_7 = ttbar_pdf_7_combined \
@@ -218,14 +218,14 @@ ttbar_fits_7 = ttbar_pdf_7_combined \
     + ttbar_dijet_jvf05_7
 
 ttbar_fits_10 = \
-	ttbar_dijet_topo \
-	+ ttbar_dijet_ks \
-	+ ttbar_ks \
-	+ ttbar_pdf_10_combined \
-	+ ttbar_pdf_10_combined_2j \
-	+ ttbar_pdf_10_combined_3j \
+    ttbar_dijet_topo \
+    + ttbar_dijet_ks \
+    + ttbar_ks \
+    + ttbar_pdf_10_combined \
+    + ttbar_pdf_10_combined_2j \
+    + ttbar_pdf_10_combined_3j \
     + ttbar_dijet_jvf05_10
-	
+    
 
 ttbar_fits = ttbar_fits_7 + ttbar_fits_10
 
@@ -240,9 +240,9 @@ dstar_rebin_template = files("Dstar/EM/JVF05/DStar_MV170.txt")
 
 ttbar_rebin = (dstar_rebin_template + ttbar_fits) \
               .rebin("DStar", "<>_rebin")
-			  
+              
 dijet_rebin = (dstar_rebin_template + dijet) \
-			  .rebin("DStar", "<>_rebin")
+              .rebin("DStar", "<>_rebin")
               
 #Can't do a S8 only guy because the low bin is missing!
 #dijet_rebin = (rebin_template + dijet) \
@@ -288,7 +288,7 @@ light_sf = negative
 # Trigger Stuff
 
 trigger = files("trigger/*/*.txt") \
-		  .restrict()
+          .restrict()
 
 ####################################
 # Extrapolate everything
@@ -297,7 +297,7 @@ trigger = files("trigger/*/*.txt") \
 mcCalib_bct = (files("MCcalib/SfPtB*.txt") + files("MCcalib/SfPtC*.txt") + files("MCcalib/SfPtT*.txt")) \
               .restrict_good() \
               .filter(ignore=[".*15-pt-20.*",".*20-pt-30.*",".*30-pt-40.*",".*40-pt-50.*",".*50-pt-60.*"])
-	
+    
 mcCalib_l =  files("MCcalib/EtaBins/SfPtL*.txt") \
             .restrict_good() \
             .filter(ignore=[".*15-pt-20.*",".*20-pt-30.*",".*30-pt-40.*",".*40-pt-50.*",".*50-pt-60.*",".*60-pt-75.*",".*75-pt-90.*",".*90-pt-110.*",".*110-pt-140.*",".*140-pt-200.*",".*200-pt-300.*"])
@@ -328,13 +328,13 @@ rebin_extrapolated = (\
     + sources_7 \
     ) \
     .extrapolate("MCcalib_rebin")
-	
+    
 rebin_dstar_extrapolated = (\
     charm_sf \
     + tau_sf \
     + mcCalib_rebin_dstar_bct \
-	) \
-	.extrapolate("MCcalib_rebin")
+    ) \
+    .extrapolate("MCcalib_rebin")
 
 light_extrapolated = (light_sf + mcCalib_l).extrapolate("MCcalib")
 
@@ -349,7 +349,7 @@ all_extrapolated = default_extrapolated + rebin_extrapolated + rebin_dstar_extra
 
 master_cdi_file = \
     all_extrapolated \
-	+ trigger
+    + trigger
 defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "StandardTag_8TeV_ttbar_140613151009.root")
 master_cdi_file.plot("MC12-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
