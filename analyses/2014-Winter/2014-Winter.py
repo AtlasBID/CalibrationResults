@@ -347,10 +347,12 @@ all_extrapolated = default_extrapolated + rebin_extrapolated + rebin_dstar_extra
 # The CDI file.
 #
 
+eff_files = files("StandardTag_8TeV_ttbar_140613151009.root") + files("StandardTag-8TeV-triggerEff-150427153948.root")
+
 master_cdi_file = \
     all_extrapolated \
     + trigger
-defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "StandardTag_8TeV_ttbar_140613151009.root")
+defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", eff_files)
 master_cdi_file.plot("MC12-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
 master_cdi_file.plot("MC12-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
