@@ -23,17 +23,31 @@ description = "Flavor tagging pre-recommendations based on 8 TeV and simulation 
 # we are dealing only with what we want to deal with.
 #
 
+#!! pre-recommendations are based on Run-I results
+
+# mapping of the Run-I => Run-II working points for the b-jet SFs
+# 
+# MV1c@60 => MV2c20@60
+# MV1c@70 => MV2c20@70
+# MV1c@80 => MV2c20@77
+# MV1c@80 => MV2c20@85
+
+# mapping of the Run-I => Run-II working points for the c- and light jets SFs
+#
+# MV1c@50 => MV2c20@60
+# MV1c@60 => MV2c20@70
+# MV1c@70 => MV2c20@77
+# MV1c@80 => MV2c20@85
+
 taggers = [
-#MV2c20 50% (EM)
-    ["MV2c20", "0.9237"],
-#MV2c20 57% (EM)
-    ["MV2c20", "0.8674"],
-#MV2c20 60%, (EM)
-    ["MV2c20", "0.8353"],
+#MV2c20 60% (EM)
+    ["MV2c20", "0.8263"],
 #MV2c20 70% (EM)
-    ["MV2c20", "0.7028"],
-#MV2c20 80% (EM)
-    ["MV2c20", "0.4050"],
+    ["MV2c20", "0.5470"],
+#MV2c20 77%, (EM)
+    ["MV2c20", "0.1182"],
+#MV2c20 85% (EM)
+    ["MV2c20", "-0.5362"],
     ]
 
 #
