@@ -57,7 +57,7 @@ taggers = [
 sfObject.restrict_good = lambda self: self.filter(
     taggers=taggers,
     jets=["AntiKt4TopoEMJVF0_5"],
-    ).verify_OPs("8TeV")
+    ).verify_OPs("13TeV")
 
 sfObject.restrict_ignore = lambda self: self.filter(
     ignore=[".*25-pt-30.*",".*300-pt-400.*"]
