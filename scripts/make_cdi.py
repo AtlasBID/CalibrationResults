@@ -18,11 +18,11 @@ def make_cdi (sfobj, name, defaults_file = None, eff_file = None, Check=True):
     rf = FutureFile()
 
     df = defaults_file
-    if not isinstance(df, files):
+    if not isinstance(df, sfObject):
         df = files(df, no_files_ok = True)
 
     ef = eff_file
-    if not isinstance(ef, files):
+    if not isinstance(ef, sfObject):
         ef = files(ef, no_files_ok = True)
 
     comboGlobals.Commands += [CDI(sfobj, name, df, ef, Check, rf)]
