@@ -27,6 +27,9 @@ class sfObject:
     def __add__ (self, other):
         return CombinedFiles ([self, other])
 
+    # Useful for debugging - print out something nice
+    def __str__ (self):
+        return "sfObject[%s]" % self.ResolveToFiles(1)
 
 # more than one guy
 class CombinedFiles (sfObject):

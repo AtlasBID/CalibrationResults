@@ -16,10 +16,16 @@ import os
 #
 def make_cdi (sfobj, name, defaults_file = None, eff_file = None, Check=True):
     rf = FutureFile()
-    comboGlobals.Commands += [CDI(sfobj, name,
-                                  files(defaults_file, no_files_ok = True),
-                                  files(eff_file, no_files_ok = True),
-                                  Check, rf)]
+
+    df = defaults_file
+    if not isinstance(df, files):
+        df = files(df, no_files_ok = True)
+
+    ef = eff_file
+    if not isinstance(ef, files):
+        ef = files(ef, no_files_ok = True)
+
+    comboGlobals.Commands += [CDI(sfobj, name, df, ef, Check, rf)]
     return rf
 
 #
