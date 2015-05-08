@@ -10,6 +10,7 @@ import comboGlobals
 import ROOT
 import shutil
 import os
+from sfObject import sfObject
 
 #
 # The CDI operator.
