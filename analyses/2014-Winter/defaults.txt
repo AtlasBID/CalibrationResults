@@ -51,6 +51,12 @@ Default(combined_pdf_dijet_7, bottom, MV1c, 0.4050, AntiKt4TopoEMJVF0_5)
 
 Default(ttbar_dijet_ks, bottom, MV1c, *, AntiKt4TopoEMnoJVF)
 
+###############################################################
+# Bottom, trigger jets
+Default(pTrel, bottom, L15_TrigLoose_MV1, *, *)
+Default(pTrel, bottom, L15_TrigMedium_MV1, *, *)
+Default(pTrel, bottom, L15_TrigLoose_MV1c, *, *)
+Default(pTrel, bottom, L15_TrigMedium_MV1c, *, *)
 
 ###############################################################
 # Charm
