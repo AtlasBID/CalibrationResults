@@ -1,4 +1,4 @@
-Analysis(negative_tags,light,MV2c20,0.5470, AntiKt4TopoEMJVF0_5){ 
+Analysis(negative_tags,light,MV2c20,0.5470, AntiKt4EMTopoJets){ 
   meta_data_s (Hadronization, Pythia8) 
   bin( 20<pt< 30, 0.0<abseta<1.2)
   {
@@ -133,7 +133,7 @@ Analysis(negative_tags,light,MV2c20,0.5470, AntiKt4TopoEMJVF0_5){
     sys(Run1ToRun2 extrap,20%)
   }
 }
-Analysis(negative_tags,light,MV2c20, 0.8353, AntiKt4TopoEMJVF0_5){ 
+Analysis(negative_tags,light,MV2c20, 0.8353, AntiKt4EMTopoJets){ 
   meta_data_s (Hadronization, Pythia8) 
   bin( 20<pt< 30, 1.2<abseta<2.5)
   {
