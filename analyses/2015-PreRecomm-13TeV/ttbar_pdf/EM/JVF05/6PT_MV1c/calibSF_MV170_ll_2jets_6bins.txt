@@ -54,6 +54,7 @@ Analysis(PDF_6bins_ll_2jets,bottom,MV2c20,0.5470,AntiKt4TopoEMJVF0_5)
          sys(stop,0.009440)
          sys(Z,0.028955)
          sys(Mistag,-0.009440)
+         sys(Run1ToRun2 extrap,0.05)
       }
 
       bin(30<pt<60,0<abseta<2.5)
@@ -108,6 +109,7 @@ Analysis(PDF_6bins_ll_2jets,bottom,MV2c20,0.5470,AntiKt4TopoEMJVF0_5)
          sys(stop,0.003900)
          sys(Z,0.021927)
          sys(Mistag,-0.001945)
+         sys(Run1ToRun2 extrap,0.05)
       }
 
       bin(60<pt<90,0<abseta<2.5)
@@ -162,6 +164,7 @@ Analysis(PDF_6bins_ll_2jets,bottom,MV2c20,0.5470,AntiKt4TopoEMJVF0_5)
          sys(stop,0.001892)
          sys(Z,0.014261)
          sys(Mistag,-0.001049)
+         sys(Run1ToRun2 extrap,0.05)
       }
 
       bin(90<pt<140,0<abseta<2.5)
@@ -216,6 +219,7 @@ Analysis(PDF_6bins_ll_2jets,bottom,MV2c20,0.5470,AntiKt4TopoEMJVF0_5)
          sys(stop,0.002132)
          sys(Z,0.013623)
          sys(Mistag,-0.001318)
+         sys(Run1ToRun2 extrap,0.05)
       }
 
       bin(140<pt<200,0<abseta<2.5)
@@ -270,6 +274,7 @@ Analysis(PDF_6bins_ll_2jets,bottom,MV2c20,0.5470,AntiKt4TopoEMJVF0_5)
          sys(stop,0.002568)
          sys(Z,0.017189)
          sys(Mistag,-0.000879)
+         sys(Run1ToRun2 extrap,0.05)
       }
 
       bin(200<pt<300,0<abseta<2.5)
@@ -324,5 +329,6 @@ Analysis(PDF_6bins_ll_2jets,bottom,MV2c20,0.5470,AntiKt4TopoEMJVF0_5)
          sys(stop,-0.000432)
          sys(Z,0.024140)
          sys(Mistag,-0.004419)
+         sys(Run1ToRun2 extrap,0.05)
       }
 }
