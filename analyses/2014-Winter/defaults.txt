@@ -58,6 +58,11 @@ Default(pTrel, bottom, L15_TrigMedium_MV1, *, *)
 Default(pTrel, bottom, L15_TrigLoose_MV1c, *, *)
 Default(pTrel, bottom, L15_TrigMedium_MV1c, *, *)
 
+Default(pTrel, bottom, L15_TrigLoose_MV1_noofftag, *, *)
+Default(pTrel, bottom, L15_TrigMedium_MV1_noofftag, *, *)
+Default(pTrel, bottom, L15_TrigLoose_MV1c_noofftag, *, *)
+Default(pTrel, bottom, L15_TrigMedium_MV1c_noofftag, *, *)
+
 ###############################################################
 # Charm
 
