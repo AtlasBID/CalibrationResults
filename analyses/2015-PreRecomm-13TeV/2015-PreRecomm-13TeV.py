@@ -56,7 +56,7 @@ taggers = [
 
 sfObject.restrict_good = lambda self: self.filter(
     taggers=taggers,
-    jets=["AntiKt4EMTopoJets"],
+    jets=["AntiKt4EMTopoJets","AntiKt3PV0TrackJets"],
     ).verify_OPs("13TeV")
 
 sfObject.restrict_ignore = lambda self: self.filter(
@@ -202,6 +202,14 @@ light_extrapolated = (light_sf + mcCalib_l).extrapolate("MCcalib")
 
 all_extrapolated = rebin_extrapolated + rebin_dstar_extrapolated + light_extrapolated
 
+####################################
+# Track-jets - only one input
+#
+
+ttbar_topo_trackjets = files("ttbar_topo/*.txt") \
+                       .restrict_good() \
+                       .filter(analyses = ["ttbar_topo_dijet"])
+
 # Currently can't extrapolate:
 #  neg tags - because they are split in eta, and the extrapolation isn't.
 
@@ -209,7 +217,7 @@ all_extrapolated = rebin_extrapolated + rebin_dstar_extrapolated + light_extrapo
 # The CDI file.
 #
 
-master_cdi_file = all_extrapolated 
+master_cdi_file = all_extrapolated+ttbar_topo_trackjets
 defaultSFs = master_cdi_file.make_cdi("CDI", "defaults.txt", "StandardTag_13TeV_PreRecomm_150514150821.root")
 master_cdi_file.plot("CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
