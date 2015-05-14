@@ -1,9 +1,15 @@
 ###############################################################
-# bottom
-Default(ttbar_pdf_7b, bottom, MV1c, *, AntiKt4TopoEMJVF0_5)
+### calo-jets
+# bottom 
+Default(ttbar_pdf_7b, bottom, MV2c20, *, AntiKt4EMTopoJets)
 # charm
-Default(DStar_ttbar_pdf_7b_rebin, charm, MV1c, *, AntiKt4TopoEMJVF0_5)
+Default(DStar_ttbar_pdf_7b_rebin, charm, MV2c20, *, AntiKt4EMTopoJets)
 # tau
-Default(DStar_ttbar_pdf_7b_rebin, tau, MV1c, *, AntiKt4TopoEMJVF0_5)
+Default(DStar_ttbar_pdf_7b_rebin, tau, MV2c20, *, AntiKt4EMTopoJets)
 # light
-Default(negative_tags, light, MV1c, *, AntiKt4TopoEMJVF0_5)
+Default(negative_tags, light, MV2c20, *, AntiKt4EMTopoJets)
+
+###############################################################
+### track-jets
+# bottom 
+Default(ttbar_topo_dijet, bottom, MV2c20, *, AntiKt3PV0TrackJets)
