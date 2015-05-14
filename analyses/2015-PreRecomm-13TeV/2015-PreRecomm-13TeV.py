@@ -210,7 +210,7 @@ all_extrapolated = rebin_extrapolated + rebin_dstar_extrapolated + light_extrapo
 #
 
 master_cdi_file = all_extrapolated 
-defaultSFs = master_cdi_file.make_cdi("CDI", "defaults.txt", "StandardTag_8TeV_ttbar_140613151009.root")
+defaultSFs = master_cdi_file.make_cdi("CDI", "defaults.txt", "StandardTag_13TeV_PreRecomm_150514150821.root")
 master_cdi_file.plot("CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
 master_cdi_file.plot("CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
