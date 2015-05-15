@@ -35,6 +35,7 @@ bin(20<pt<30,0<abseta<2.5)
         sys(SmearD0,0.2903%)
         sys(SmearZ0,-0.2352%)
         sys(FakeRate,4.1542%)
+        sys(Run1ToRun2 extrap,10%)
     }
 bin(30<pt<40,0<abseta<2.5)
     {
@@ -72,6 +73,7 @@ bin(30<pt<40,0<abseta<2.5)
         sys(SmearD0,0.6887%)
         sys(SmearZ0,0.2091%)
         sys(FakeRate,4.2583%)
+        sys(Run1ToRun2 extrap,10%)
     }
 bin(40<pt<50,0<abseta<2.5)
     {
@@ -109,6 +111,7 @@ bin(40<pt<50,0<abseta<2.5)
         sys(SmearD0,0.0712%)
         sys(SmearZ0,-0.331%)
         sys(FakeRate,3.0529%)
+        sys(Run1ToRun2 extrap,10%)
     }
 bin(50<pt<60,0<abseta<2.5)
     {
@@ -146,6 +149,7 @@ bin(50<pt<60,0<abseta<2.5)
         sys(SmearD0,-0.1843%)
         sys(SmearZ0,-0.8873%)
         sys(FakeRate,3.666%)
+        sys(Run1ToRun2 extrap,10%)
     }
 bin(60<pt<75,0<abseta<2.5)
     {
@@ -183,6 +187,7 @@ bin(60<pt<75,0<abseta<2.5)
         sys(SmearD0,-0.7619%)
         sys(SmearZ0,-0.8795%)
         sys(FakeRate,2.8582%)
+        sys(Run1ToRun2 extrap,10%)
     }
 bin(75<pt<90,0<abseta<2.5)
     {
@@ -220,6 +225,7 @@ bin(75<pt<90,0<abseta<2.5)
         sys(SmearD0,-1.1023%)
         sys(SmearZ0,-1.5908%)
         sys(FakeRate,3.2381%)
+        sys(Run1ToRun2 extrap,10%)
     }
 bin(90<pt<110,0<abseta<2.5)
     {
@@ -257,6 +263,7 @@ bin(90<pt<110,0<abseta<2.5)
         sys(SmearD0,-1.1518%)
         sys(SmearZ0,-0.5689%)
         sys(FakeRate,3.9387%)
+        sys(Run1ToRun2 extrap,10%)
     }
 bin(110<pt<140,0<abseta<2.5)
     {
@@ -294,6 +301,7 @@ bin(110<pt<140,0<abseta<2.5)
         sys(SmearD0,-1.8123%)
         sys(SmearZ0,-1.8521%)
         sys(FakeRate,2.4292%)
+        sys(Run1ToRun2 extrap,10%)
     }
 bin(140<pt<200,0<abseta<2.5)
     {
@@ -331,6 +339,7 @@ bin(140<pt<200,0<abseta<2.5)
         sys(SmearD0,-0.9422%)
         sys(SmearZ0,-0.547%)
         sys(FakeRate,1.8477%)
+        sys(Run1ToRun2 extrap,10%)
     }
 bin(200<pt<300,0<abseta<2.5)
     {
@@ -368,6 +377,7 @@ bin(200<pt<300,0<abseta<2.5)
         sys(SmearD0,-5.275%)
         sys(SmearZ0,-5.3799%)
         sys(FakeRate,-6.1534%)
+        sys(Run1ToRun2 extrap,10%)
     }
 bin(300<pt<500,0<abseta<2.5)
     {
@@ -405,6 +415,7 @@ bin(300<pt<500,0<abseta<2.5)
         sys(SmearD0,6.4254%)
         sys(SmearZ0,3.1444%)
         sys(FakeRate,3.9851%)
+        sys(Run1ToRun2 extrap,10%)
     }
 bin(500<pt<800,0<abseta<2.5)
     {
@@ -442,5 +453,6 @@ bin(500<pt<800,0<abseta<2.5)
         sys(SmearD0,29.6848%)
         sys(SmearZ0,12.6602%)
         sys(FakeRate,36.2363%)
+        sys(Run1ToRun2 extrap,10%)
     }
 }

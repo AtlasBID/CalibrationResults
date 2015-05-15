@@ -35,6 +35,7 @@ bin(20<pt<30,0<abseta<2.5)
         sys(SmearD0,-1.2419%)
         sys(SmearZ0,-0.891%)
         sys(FakeRate,-0.7232%)
+        sys(Run1ToRun2 extrap,5%)
     }
 bin(30<pt<40,0<abseta<2.5)
     {
@@ -72,6 +73,7 @@ bin(30<pt<40,0<abseta<2.5)
         sys(SmearD0,-0.7546%)
         sys(SmearZ0,-0.5966%)
         sys(FakeRate,-0.2796%)
+        sys(Run1ToRun2 extrap,5%)
     }
 bin(40<pt<50,0<abseta<2.5)
     {
@@ -109,6 +111,7 @@ bin(40<pt<50,0<abseta<2.5)
         sys(SmearD0,-0.3285%)
         sys(SmearZ0,-0.455%)
         sys(FakeRate,-0.0003%)
+        sys(Run1ToRun2 extrap,5%)
     }
 bin(50<pt<60,0<abseta<2.5)
     {
@@ -146,6 +149,7 @@ bin(50<pt<60,0<abseta<2.5)
         sys(SmearD0,-0.6496%)
         sys(SmearZ0,-0.6364%)
         sys(FakeRate,-0.0934%)
+        sys(Run1ToRun2 extrap,5%)
     }
 bin(60<pt<75,0<abseta<2.5)
     {
@@ -183,6 +187,7 @@ bin(60<pt<75,0<abseta<2.5)
         sys(SmearD0,-0.4166%)
         sys(SmearZ0,-0.2474%)
         sys(FakeRate,0.1208%)
+        sys(Run1ToRun2 extrap,5%)
     }
 bin(75<pt<90,0<abseta<2.5)
     {
@@ -220,6 +225,7 @@ bin(75<pt<90,0<abseta<2.5)
         sys(SmearD0,-0.4602%)
         sys(SmearZ0,-0.4376%)
         sys(FakeRate,-0.1038%)
+        sys(Run1ToRun2 extrap,5%)
     }
 bin(90<pt<110,0<abseta<2.5)
     {
@@ -257,6 +263,7 @@ bin(90<pt<110,0<abseta<2.5)
         sys(SmearD0,-0.4159%)
         sys(SmearZ0,-0.615%)
         sys(FakeRate,-0.1106%)
+        sys(Run1ToRun2 extrap,5%)
     }
 bin(110<pt<140,0<abseta<2.5)
     {
@@ -294,6 +301,7 @@ bin(110<pt<140,0<abseta<2.5)
         sys(SmearD0,-0.6278%)
         sys(SmearZ0,-0.6469%)
         sys(FakeRate,-0.1456%)
+        sys(Run1ToRun2 extrap,5%)
     }
 bin(140<pt<200,0<abseta<2.5)
     {
@@ -331,6 +339,7 @@ bin(140<pt<200,0<abseta<2.5)
         sys(SmearD0,-1.3021%)
         sys(SmearZ0,-1.0389%)
         sys(FakeRate,-0.425%)
+        sys(Run1ToRun2 extrap,5%)
     }
 bin(200<pt<300,0<abseta<2.5)
     {
@@ -368,6 +377,7 @@ bin(200<pt<300,0<abseta<2.5)
         sys(SmearD0,-0.044%)
         sys(SmearZ0,-0.2906%)
         sys(FakeRate,0.4679%)
+        sys(Run1ToRun2 extrap,5%)
     }
 bin(300<pt<500,0<abseta<2.5)
     {
@@ -405,6 +415,7 @@ bin(300<pt<500,0<abseta<2.5)
         sys(SmearD0,-0.2695%)
         sys(SmearZ0,-0.5401%)
         sys(FakeRate,1.0131%)
+        sys(Run1ToRun2 extrap,5%)
     }
 bin(500<pt<800,0<abseta<2.5)
     {
@@ -442,6 +453,7 @@ bin(500<pt<800,0<abseta<2.5)
         sys(SmearD0,-0.8318%)
         sys(SmearZ0,0.0393%)
         sys(FakeRate,2.3629%)
+        sys(Run1ToRun2 extrap,5%)
     }
 bin(800<pt<1200,0<abseta<2.5)
     {
@@ -479,5 +491,6 @@ bin(800<pt<1200,0<abseta<2.5)
         sys(SmearD0,-2.9642%)
         sys(SmearZ0,-0.5148%)
         sys(FakeRate,3.8943%)
+        sys(Run1ToRun2 extrap,5%)
     }
 }
