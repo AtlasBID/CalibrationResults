@@ -218,7 +218,7 @@ ttbar_topo_trackjets = files("ttbar_topo/*.txt") \
 #
 
 master_cdi_file = all_extrapolated+ttbar_topo_trackjets
-defaultSFs = master_cdi_file.make_cdi("CDI", "defaults.txt", "StandardTag_13TeV_PreRecomm_150514150821.root")
+defaultSFs = master_cdi_file.make_cdi("CDI", "defaults.txt", "StandardTag-13TeV-prerecommendationCalibrationFile-150514150821.root")
 master_cdi_file.plot("CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
 master_cdi_file.plot("CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
