@@ -1,4 +1,4 @@
-Analysis(negative_tags,light,MV2c20,0.8263, AntiKt4EMTopoJets){ 
+Analysis(negative_tags,light,MV2c20,0.5102,AntiKt4EMTopoJets){ 
   meta_data_s (Hadronization, Pythia8) 
   bin( 20<pt< 30, 0.0<abseta<1.2)
   {

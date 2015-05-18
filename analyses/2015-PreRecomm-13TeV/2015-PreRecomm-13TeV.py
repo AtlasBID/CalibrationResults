@@ -41,13 +41,14 @@ description = "Flavor tagging pre-recommendations based on 8 TeV and simulation 
 
 taggers = [
 #MV2c20 60% (EM)
-    ["MV2c20", "0.8263"],
-#MV2c20 70% (EM)
-    ["MV2c20", "0.5470"],
+    ["MV2c20", "0.5102"],
+#MV2c20 70% (calo EM, track EM)
+    ["MV2c20", "0.0314"],
+    ["MV2c20", "-0.2134"],
 #MV2c20 77%, (EM)
-    ["MV2c20", "0.1182"],
+    ["MV2c20", "-0.3867"],
 #MV2c20 85% (EM)
-    ["MV2c20", "-0.5362"],
+    ["MV2c20", "-0.7682"],
     ]
 
 #

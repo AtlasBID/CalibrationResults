@@ -1,4 +1,4 @@
-Analysis(MCcalib,light,MV2c20,-0.5362,AntiKt4EMTopoJets){
+Analysis(MCcalib,light,MV2c20,-0.7682,AntiKt4EMTopoJets){
 bin(15<pt<20,1.2<abseta<2.5)
     {
         central_value(1.0,0.0244)
