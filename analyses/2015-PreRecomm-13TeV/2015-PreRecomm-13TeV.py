@@ -218,13 +218,13 @@ ttbar_topo_trackjets = files("ttbar_topo/*.txt") \
 #
 
 master_cdi_file = all_extrapolated+ttbar_topo_trackjets
-defaultSFs = master_cdi_file.make_cdi("CDI", "defaults.txt", "StandardTag-13TeV-prerecommendationCalibrationFile-150514150821.root")
-master_cdi_file.plot("CDI", effOnly=True)
+defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "StandardTag-13TeV-prerecommendationCalibrationFile-150514150821.root")
+master_cdi_file.plot("MC12-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
-master_cdi_file.plot("CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
+master_cdi_file.plot("MC12-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
 master_cdi_file.dump(sysErrors = True, name="master")
 master_cdi_file.dump(metadata = True, name="master-metadata")
-(ttbar_pdf_7_combined_withchi2).plot("CHi2-Errors")
+(ttbar_pdf_7_combined_withchi2).plot("MC12-CHi2-Errors")
 (sources_7+sources_4).dump(sysErrors = True, name="sources")
 
 # Done!
