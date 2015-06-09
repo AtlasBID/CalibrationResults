@@ -340,6 +340,14 @@ light_extrapolated = (light_sf + mcCalib_l).extrapolate("MCcalib")
 
 all_extrapolated = default_extrapolated + rebin_extrapolated + rebin_dstar_extrapolated + light_extrapolated
 
+####################################
+# Track-jets - only one input
+#
+
+ttbar_topo_trackjets = files("ttbar_topo/*.txt") \
+                       .restrict_good() \
+                       .filter(analyses = ["ttbar_topo_dijet"])
+
 # Currently can't extrapolate:
 #  neg tags - because they are split in eta, and the extrapolation isn't.
 
@@ -351,7 +359,8 @@ eff_files = files("StandardTag_8TeV_ttbar_140613151009.root") + files("StandardT
 
 master_cdi_file = \
     all_extrapolated \
-    + trigger
+    + trigger \
+    + ttbar_topo_trackjets
 defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", eff_files)
 master_cdi_file.plot("MC12-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
