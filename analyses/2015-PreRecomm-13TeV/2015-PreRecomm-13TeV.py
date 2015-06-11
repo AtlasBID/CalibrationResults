@@ -40,15 +40,18 @@ description = "Flavor tagging pre-recommendations based on 8 TeV and simulation 
 # MV1c@80 => MV2c20@85
 
 taggers = [
-#MV2c20 60% (EM)
+#MV2c20 60% (calo-jet)
     ["MV2c20", "0.5102"],
-#MV2c20 70% (calo EM, track EM)
+#MV2c20 70% (calo-jet)
     ["MV2c20", "0.0314"],
-    ["MV2c20", "-0.2134"],
-#MV2c20 77%, (EM)
+#MV2c20 77%, (calo-jet)
     ["MV2c20", "-0.3867"],
-#MV2c20 85% (EM)
+#MV2c20 85% (calo-jet)
     ["MV2c20", "-0.7682"],
+#MV2c20 70% (track-jet d=0.2)
+    ["MV2c20", "-0.6492"],
+#MV2c20 70% (track-jet d=0.3)
+    ["MV2c20", "-0.2134"]
     ]
 
 #
@@ -57,7 +60,7 @@ taggers = [
 
 sfObject.restrict_good = lambda self: self.filter(
     taggers=taggers,
-    jets=["AntiKt4EMTopoJets","AntiKt3PV0TrackJets"],
+    jets=["AntiKt4EMTopoJets","AntiKt2PV0TrackJets","AntiKt3PV0TrackJets"],
     ).verify_OPs("13TeV")
 
 sfObject.restrict_ignore = lambda self: self.filter(
