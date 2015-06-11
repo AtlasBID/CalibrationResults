@@ -64,7 +64,10 @@ taggers = [
 #JetFitterCharm Loose
     ["JFC", "-0.9_NONE"],
 #Trig_anything
-    ["L15_Trig.*", ".*"]
+    ["L15_Trig.*", ".*"],
+#MV1 track-jets
+    ["MV1", "0.7"],
+    ["MV1", "0.8780"]
     ]
 
 #
@@ -73,7 +76,7 @@ taggers = [
 
 sfObject.restrict_good = lambda self: self.filter(
     taggers=taggers,
-    jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5", "AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF"],
+    jets=["AntiKt4TopoEMJVF0_5", "AntiKt4TopoLCJVF0_5", "AntiKt4TopoEMnoJVF", "AntiKt4TopoLCnoJVF","AntiKt2Track","AntiKt3Track"],
     ).verify_OPs("8TeV")
 
 sfObject.restrict_ignore = lambda self: self.filter(
