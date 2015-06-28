@@ -40,18 +40,18 @@ description = "Flavor tagging pre-recommendations based on 8 TeV and simulation 
 # MV1c@80 => MV2c20@85
 
 taggers = [
-#MV2c20 60% (calo-jet)
-    ["MV2c20", "0.5102"],
-#MV2c20 70% (calo-jet)
-    ["MV2c20", "0.0314"],
-#MV2c20 77%, (calo-jet)
-    ["MV2c20", "-0.3867"],
-#MV2c20 85% (calo-jet)
-    ["MV2c20", "-0.7682"],
-#MV2c20 70% (track-jet d=0.2)
-    ["MV2c20", "-0.6492"],
-#MV2c20 70% (track-jet d=0.3)
-    ["MV2c20", "-0.2134"]
+#MV2c20 60% (calo-jet) // 0.5102
+    ["MV2c20", "0.4496"],
+#MV2c20 70% (calo-jet) // 0.0314
+    ["MV2c20", "-0.0436"],
+#MV2c20 77%, (calo-jet) // -0.4434
+    ["MV2c20", "-0.4434"],
+#MV2c20 85% (calo-jet) // -0.7682
+    ["MV2c20", "-0.7887"],
+#MV2c20 70% (track-jet d=0.2) // -0.6492
+    ["MV2c20", "-0.3098"],
+#MV2c20 70% (track-jet d=0.3) // -0.2134
+    ["MV2c20", "-0.2343"]
     ]
 
 #

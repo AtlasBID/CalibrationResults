@@ -1,4 +1,4 @@
-Analysis(ttbar_topo_dijet,bottom,MV2c20,-0.6492,AntiKt2Track){
+Analysis(ttbar_topo_dijet,bottom,MV2c20,-0.3098,AntiKt2Track){
 
         meta_data_s (Hadronization, Pythia8)
 

@@ -1,4 +1,4 @@
-Analysis(MCcalib,bottom,MV2c20,0.0314,AntiKt4EMTopoJets){
+Analysis(MCcalib,bottom,MV2c20,-0.0436,AntiKt4EMTopoJets){
 bin(20<pt<30,0<abseta<2.5)
     {
         central_value(1.0,0.0076)
@@ -105,7 +105,7 @@ bin(40<pt<50,0<abseta<2.5)
         sys(FT_EFF_JVF,0.0%)
         sys(FT_EFF_JetEResol,0.4044%)
         sys(FT_EFF_Pile,-0.3648%)
-        sys(FT_EFF_EtaSmear,-0.7682%)
+        sys(FT_EFF_EtaSmear,-0.7887%)
         sys(FT_EFF_PhiSmear,-1.1892%)
         sys(FT_EFF_Shared,0.0942%)
         sys(FT_EFF_SmearD0,-0.4917%)
