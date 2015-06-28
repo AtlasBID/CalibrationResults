@@ -74,7 +74,7 @@ Analysis(DStar,charm,MV2c20,0.4496,AntiKt4EMTopoJets){
      meta_data(N_jets total,2208.4,66.5)
      meta_data(N_jets tagged,281.1,20.4)
      usys(FT_EFF_b purity,-11.4173%)
-     sys(FT_EFF_pythia8E/pythia8 extrap ratio,-0.043615%)
+     sys(FT_EFF_pythia8E/pythia8 extrap ratio,0.031415%)
      sys(FT_EFF_b SF,-6.29921%)
      sys(FT_EFF_bkg. param,3.93701%)
      sys(FT_EFF_peak width,6.29921%)
