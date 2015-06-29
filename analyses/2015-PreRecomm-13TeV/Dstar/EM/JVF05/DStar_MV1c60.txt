@@ -29,7 +29,7 @@ Analysis(DStar,charm,MV2c20,-0.0436,AntiKt4EMTopoJets){
      sys(FT_EFF_extrap Ds to prongs,1.43809%)
      sys(FT_EFF_extrap Lambdac to prongs,0.221245%)
      sys(FT_EFF_extrap fragmentation,-1.10622%)
-     sys(FT_EFF_Run1ToRun2 extrap,10%)
+     sys(FT_EFF_Run1ToRun2 extrap,4.7%)
   } 
   bin(30<pt<60,0<abseta<2.5)
   { 
@@ -60,7 +60,7 @@ Analysis(DStar,charm,MV2c20,-0.0436,AntiKt4EMTopoJets){
      sys(FT_EFF_extrap Ds to prongs,1.57727%)
      sys(FT_EFF_extrap Lambdac to prongs,0.112662%)
      sys(FT_EFF_extrap fragmentation,-0.675973%)
-     sys(FT_EFF_Run1ToRun2 extrap,10%)
+     sys(FT_EFF_Run1ToRun2 extrap,7.7%)
   } 
   bin(60<pt<140,0<abseta<2.5)
   { 
@@ -91,7 +91,7 @@ Analysis(DStar,charm,MV2c20,-0.0436,AntiKt4EMTopoJets){
      sys(FT_EFF_extrap Ds to prongs,1.70675%)
      sys(FT_EFF_extrap Lambdac to prongs,0.34135%)
      sys(FT_EFF_extrap fragmentation,0.568917%)
-     sys(FT_EFF_Run1ToRun2 extrap,10%)
+     sys(FT_EFF_Run1ToRun2 extrap,13.9%)
   } 
   bin(140<pt<300,0<abseta<2.5)
   { 
@@ -122,6 +122,6 @@ Analysis(DStar,charm,MV2c20,-0.0436,AntiKt4EMTopoJets){
      sys(FT_EFF_extrap Ds to prongs,1.61178%)
      sys(FT_EFF_extrap Lambdac to prongs,0.214903%)
      sys(FT_EFF_extrap fragmentation,1.18197%)
-     sys(FT_EFF_Run1ToRun2 extrap,10%)
-  } 
+     sys(FT_EFF_Run1ToRun2 extrap,18.9%)
+  }
 } 
