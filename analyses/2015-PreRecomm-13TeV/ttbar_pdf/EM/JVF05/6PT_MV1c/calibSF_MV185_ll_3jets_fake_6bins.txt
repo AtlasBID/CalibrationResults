@@ -54,7 +54,7 @@ Analysis(PDF_6bins_ll_3jets,bottom,MV2c20,-0.7887,AntiKt4EMTopoJets)
          sys(FT_EFF_stop,0.003099)
          sys(FT_EFF_Z,0.013299)
          sys(FT_EFF_Mistag,-0.016783)
-         sys(FT_EFF_Run1ToRun2 extrap,1.0%)
+         sys(FT_EFF_Run1ToRun2 extrap,0.9%)
       }
 
       bin(30<pt<60,0<abseta<2.5)
@@ -108,7 +108,7 @@ Analysis(PDF_6bins_ll_3jets,bottom,MV2c20,-0.7887,AntiKt4EMTopoJets)
          sys(FT_EFF_stop,0.003578)
          sys(FT_EFF_Z,0.010067)
          sys(FT_EFF_Mistag,-0.003933)
-         sys(FT_EFF_Run1ToRun2 extrap,0.9%)
+         sys(FT_EFF_Run1ToRun2 extrap,0.7%)
       }
 
       bin(60<pt<90,0<abseta<2.5)
@@ -163,7 +163,7 @@ Analysis(PDF_6bins_ll_3jets,bottom,MV2c20,-0.7887,AntiKt4EMTopoJets)
          sys(FT_EFF_stop,0.003410)
          sys(FT_EFF_Z,0.008788)
          sys(FT_EFF_Mistag,-0.003383)
-         sys(FT_EFF_Run1ToRun2 extrap,0.9%)
+         sys(FT_EFF_Run1ToRun2 extrap,0.6%)
       }
 
       bin(90<pt<140,0<abseta<2.5)
@@ -218,7 +218,7 @@ Analysis(PDF_6bins_ll_3jets,bottom,MV2c20,-0.7887,AntiKt4EMTopoJets)
          sys(FT_EFF_stop,0.002224)
          sys(FT_EFF_Z,0.008193)
          sys(FT_EFF_Mistag,-0.003302)
-         sys(FT_EFF_Run1ToRun2 extrap,1.1%)
+         sys(FT_EFF_Run1ToRun2 extrap,0.7%)
       }
 
       bin(140<pt<200,0<abseta<2.5)
@@ -273,7 +273,7 @@ Analysis(PDF_6bins_ll_3jets,bottom,MV2c20,-0.7887,AntiKt4EMTopoJets)
          sys(FT_EFF_stop,0.000102)
          sys(FT_EFF_Z,0.011354)
          sys(FT_EFF_Mistag,-0.005976)
-         sys(FT_EFF_Run1ToRun2 extrap,1.4%)
+         sys(FT_EFF_Run1ToRun2 extrap,0.8%)
       }
 
       bin(200<pt<300,0<abseta<2.5)
@@ -328,6 +328,6 @@ Analysis(PDF_6bins_ll_3jets,bottom,MV2c20,-0.7887,AntiKt4EMTopoJets)
          sys(FT_EFF_stop,-0.006033)
          sys(FT_EFF_Z,0.018012)
          sys(FT_EFF_Mistag,-0.014789)
-         sys(FT_EFF_Run1ToRun2 extrap,1.8%)
+         sys(FT_EFF_Run1ToRun2 extrap,1.1%)
       }
 }
