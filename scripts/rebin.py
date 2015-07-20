@@ -39,7 +39,7 @@ class Rebin:
         cmdLog = "%s-cmd-log.txt" % baseOutputName
         files += " output %s" % outputFile
 
-        title = "Combining bins for %s" % self._ana
+        title = "Combining bins for %s (%s)" % (self._ana, self._template)
 
         dumpTitle(html, title)
         if rerunCommand(fList, outputFile, files, html):

@@ -47,7 +47,9 @@ class Extrapolate:
 
         anaListFlat = ""
         for name in self._extraps:
-            anaListFlat += "," + name
+            if len(anaListFlat) > 0:
+                anaListFlat += ", "
+            anaListFlat += name
             files += " --extrapolation %s" % name
 
         title = "Extrapolating analyses from from %s" % anaListFlat
