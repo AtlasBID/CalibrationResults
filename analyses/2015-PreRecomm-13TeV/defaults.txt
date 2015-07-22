@@ -12,4 +12,5 @@ Default(negative_tags, light, MV2c20, *, AntiKt4EMTopoJets)
 ###############################################################
 ### track-jets
 # bottom 
+Default(ttbar_topo_dijet, bottom, MV2c20, *, AntiKt2PV0TrackJets)
 Default(ttbar_topo_dijet, bottom, MV2c20, *, AntiKt3PV0TrackJets)
