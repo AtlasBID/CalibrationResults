@@ -32,7 +32,7 @@ Analysis(ttbar_topo_dijet,bottom,MV2c20,-0.2343,AntiKt3PV0TrackJets){
                 sys(FT_EFF_TRKHIGHPTEFFnominal, 0.077%)
                 sys(FT_EFF_MUSCALEUPnominal, 0.001%)
                 sys(FT_EFF_HighPT_EX, 0.0%)
-                sys(FT_EFF_Run1ToRun2 extrap,5%)
+                sys(FT_EFF_Run1ToRun2_extrap,5%)
         }
         bin(20<pt<30,0<abseta<2.5)
         {
@@ -64,7 +64,7 @@ Analysis(ttbar_topo_dijet,bottom,MV2c20,-0.2343,AntiKt3PV0TrackJets){
                 sys(FT_EFF_TRKHIGHPTEFFnominal, -0.022%)
                 sys(FT_EFF_MUSCALEUPnominal, -0.023%)
                 sys(FT_EFF_HighPT_EX, 0.0%)
-                sys(FT_EFF_Run1ToRun2 extrap,5%)
+                sys(FT_EFF_Run1ToRun2_extrap,5%)
         }
         bin(30<pt<60,0<abseta<2.5)
         {
@@ -96,7 +96,7 @@ Analysis(ttbar_topo_dijet,bottom,MV2c20,-0.2343,AntiKt3PV0TrackJets){
                 sys(FT_EFF_TRKHIGHPTEFFnominal, 0.041%)
                 sys(FT_EFF_MUSCALEUPnominal, 0.072%)
                 sys(FT_EFF_HighPT_EX, 0.0%)
-                sys(FT_EFF_Run1ToRun2 extrap,5%)
+                sys(FT_EFF_Run1ToRun2_extrap,5%)
         }
         bin(60<pt<100,0<abseta<2.5)
         {
@@ -128,7 +128,7 @@ Analysis(ttbar_topo_dijet,bottom,MV2c20,-0.2343,AntiKt3PV0TrackJets){
                 sys(FT_EFF_TRKHIGHPTEFFnominal, -0.053%)
                 sys(FT_EFF_MUSCALEUPnominal, -0.090%)
                 sys(FT_EFF_HighPT_EX, 0.0%)
-                sys(FT_EFF_Run1ToRun2 extrap,5%)
+                sys(FT_EFF_Run1ToRun2_extrap,5%)
         }
         bin(100<pt<250,0<abseta<2.5)
         {
@@ -160,7 +160,7 @@ Analysis(ttbar_topo_dijet,bottom,MV2c20,-0.2343,AntiKt3PV0TrackJets){
                 sys(FT_EFF_TRKHIGHPTEFFnominal, 0.008%)
                 sys(FT_EFF_MUSCALEUPnominal, 0.134%)
                 sys(FT_EFF_HighPT_EX, 0.0%)
-                sys(FT_EFF_Run1ToRun2 extrap,5%)
+                sys(FT_EFF_Run1ToRun2_extrap,5%)
         }
         bin(250<pt<400,0<abseta<2.5)
         {
@@ -192,7 +192,7 @@ Analysis(ttbar_topo_dijet,bottom,MV2c20,-0.2343,AntiKt3PV0TrackJets){
                 sys(FT_EFF_TRKHIGHPTEFFnominal, 0.008%)
                 sys(FT_EFF_MUSCALEUPnominal, 0.134%)
         	sys(FT_EFF_HighPT_EX, 7.6%)
-                sys(FT_EFF_Run1ToRun2 extrap,5%)
+                sys(FT_EFF_Run1ToRun2_extrap,5%)
         }
         bin(400<pt<600,0<abseta<2.5)
         {
@@ -224,7 +224,7 @@ Analysis(ttbar_topo_dijet,bottom,MV2c20,-0.2343,AntiKt3PV0TrackJets){
                 sys(FT_EFF_TRKHIGHPTEFFnominal, 0.008%)
                 sys(FT_EFF_MUSCALEUPnominal, 0.134%)
                 sys(FT_EFF_HighPT_EX, 11.4%)
-                sys(FT_EFF_Run1ToRun2 extrap,5%)
+                sys(FT_EFF_Run1ToRun2_extrap,5%)
         }
         bin(600<pt<900,0<abseta<2.5)
         {
@@ -256,6 +256,6 @@ Analysis(ttbar_topo_dijet,bottom,MV2c20,-0.2343,AntiKt3PV0TrackJets){
                 sys(FT_EFF_TRKHIGHPTEFFnominal, 0.008%)
                 sys(FT_EFF_MUSCALEUPnominal, 0.134%)
                 sys(FT_EFF_HighPT_EX, 19.6%)
-                sys(FT_EFF_Run1ToRun2 extrap,5%)
+                sys(FT_EFF_Run1ToRun2_extrap,5%)
         }
 }
