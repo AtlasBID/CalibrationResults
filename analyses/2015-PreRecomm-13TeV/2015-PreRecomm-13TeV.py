@@ -25,19 +25,31 @@ description = "Flavor tagging pre-recommendations based on 8 TeV and simulation 
 
 #!! pre-recommendations are based on Run-I results
 
-# mapping of the Run-I => Run-II working points for the b-jet SFs
+# mapping of the Run-I => Run-II working points for the b-jet SFs for calo-jets
 # 
 # MV1c@60 => MV2c20@60
 # MV1c@70 => MV2c20@70
 # MV1c@80 => MV2c20@77
 # MV1c@80 => MV2c20@85
 
-# mapping of the Run-I => Run-II working points for the c- and light jets SFs
+# mapping of the Run-I => Run-II working points for the c- and light jets SFs for calo-jets
 #
 # MV1c@50 => MV2c20@60
 # MV1c@60 => MV2c20@70
 # MV1c@70 => MV2c20@77
 # MV1c@80 => MV2c20@85
+
+# mapping of the Run-I => Run-II working points for the track-jets gets tricky as we don't always have Run-I results
+#
+# b-jet SF
+# MV1c@70 => MV2c20@70 (d=0.2)
+# MV1c@77 => MV2c20@70 (d=0.3)
+#
+# c-jet SF
+# MV1c@60 => MV2c20@70 (from calo-jet to d=0.2,0.3)
+#
+# light-jet SF
+#
 
 # MC15 working points derived on June 22nd, 2015 and available at BTaggingBenchmarks twiki
 
@@ -220,6 +232,22 @@ ttbar_topo_trackjets = files("ttbar_topo/*.txt") \
                        .restrict_good() \
                        .filter(analyses = ["ttbar_topo_dijet"])
 
+dstar_rebin_template_trackjets = files("commonbinning.txt") \
+                                 .filter(analyses=["rebin_dstar_trackjet"])
+
+ttbar_topo_rebin_trackjets = (dstar_rebin_template_trackjets + ttbar_topo_trackjets) \
+                             .rebin("rebin_dstar_trackjet", "<>_rebin")
+
+dstar_trackjets = files("Dstar/EM/JVF05/AntiKt*.txt") \
+                       .restrict_good()
+
+charm_trackjets = (dstar_trackjets + ttbar_topo_trackjets) \
+                  .dstar("DStar_<>", "DStar")
+                 
+tau_trackjets = charm_trackjets.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
+
+sf_trackjets = ttbar_topo_trackjets + charm_trackjets + tau_trackjets
+
 # Currently can't extrapolate:
 #  neg tags - because they are split in eta, and the extrapolation isn't.
 
@@ -227,7 +255,7 @@ ttbar_topo_trackjets = files("ttbar_topo/*.txt") \
 # The CDI file.
 #
 
-master_cdi_file = all_extrapolated+ttbar_topo_trackjets
+master_cdi_file = all_extrapolated+sf_trackjets
 defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "StandardTag-13TeV-prerecommendationCalibrationFile2-150628155513.root")
 master_cdi_file.plot("MC12-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
