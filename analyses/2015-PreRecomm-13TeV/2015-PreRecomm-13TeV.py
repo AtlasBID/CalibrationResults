@@ -225,12 +225,16 @@ light_extrapolated = (light_sf + mcCalib_l).extrapolate("MCcalib")
 all_extrapolated = rebin_extrapolated + rebin_dstar_extrapolated + light_extrapolated
 
 ####################################
-# Track-jets - only one input
+# Track-jets - b jets
 #
 
 ttbar_topo_trackjets = files("ttbar_topo/*.txt") \
                        .restrict_good() \
                        .filter(analyses = ["ttbar_topo_dijet"])
+
+####################################
+# Track-jets - c jets
+#
 
 dstar_rebin_template_trackjets = files("commonbinning.txt") \
                                  .filter(analyses=["rebin_dstar_trackjet"])
@@ -241,15 +245,36 @@ ttbar_topo_rebin_trackjets = (dstar_rebin_template_trackjets + ttbar_topo_trackj
 dstar_trackjets = files("Dstar/EM/JVF05/AntiKt*.txt") \
                        .restrict_good()
 
-charm_trackjets = (dstar_trackjets + ttbar_topo_trackjets) \
+charm_trackjets = (dstar_trackjets + ttbar_topo_rebin_trackjets) \
                   .dstar("DStar_<>", "DStar")
                  
 tau_trackjets = charm_trackjets.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
-sf_trackjets = ttbar_topo_trackjets + charm_trackjets + tau_trackjets
+mcCalib_ct_trackjets = files("MCcalib/AntiKt*.txt") \
+                       .restrict_good() \
 
-# Currently can't extrapolate:
-#  neg tags - because they are split in eta, and the extrapolation isn't.
+ct_trackjets_extrap = (charm_trackjets + tau_trackjets + mcCalib_ct_trackjets) \
+                       .extrapolate("MCcalib")
+
+####################################
+# Track-jets - light jets
+#
+
+negative_trackjets = files("negative_tags/EM/JVF05/AntiKt*.txt") \
+                     .restrict_good() \
+                     .filter(analyses = ["negative_tags"])
+
+mcCalib_l_trackjets = files("MCcalib/EtaBins/AntiKt*.txt") \
+                      .restrict_good() \
+
+negative_trackjets_extrap = (negative_trackjets + mcCalib_l_trackjets).extrapolate("MCcalib")
+
+
+####################################
+# Track-jets - altogether
+#
+
+sf_trackjets = ttbar_topo_trackjets + ct_trackjets_extrap + negative_trackjets_extrap
 
 ####################################
 # The CDI file.
