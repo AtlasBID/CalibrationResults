@@ -21,6 +21,7 @@ Analysis(negative_tags,light,MV2c20,-0.3098,AntiKt2PV0TrackJets){
     sys(FT_EFF_negative tag run period dependence,10.67%)
     sys(FT_EFF_d0_and_z0_smearing, 6.57%)
     sys(FT_EFF_Run1ToRun2_extrap,8.0%)
+    sys(FT_EFF_CaloJet_extrap,50%)
   }
   bin(17<pt<35,0.0<abseta<1.2)
   {
@@ -43,6 +44,7 @@ Analysis(negative_tags,light,MV2c20,-0.3098,AntiKt2PV0TrackJets){
     sys(FT_EFF_negative tag run period dependence, 3.87%)
     sys(FT_EFF_d0_and_z0_smearing, 6.57%)
     sys(FT_EFF_Run1ToRun2_extrap,15.5%)
+    sys(FT_EFF_CaloJet_extrap,50%)
   }
   bin(35<pt<80,0.0<abseta<1.2)
   {
@@ -65,6 +67,7 @@ Analysis(negative_tags,light,MV2c20,-0.3098,AntiKt2PV0TrackJets){
     sys(FT_EFF_negative tag run period dependence, 1.70%)
     sys(FT_EFF_d0_and_z0_smearing, 9.77%)
     sys(FT_EFF_Run1ToRun2_extrap,30.6%)
+    sys(FT_EFF_CaloJet_extrap,50%)
   }
   bin(80<pt<170,0.0<abseta<1.2)
   {
@@ -87,6 +90,7 @@ Analysis(negative_tags,light,MV2c20,-0.3098,AntiKt2PV0TrackJets){
     sys(FT_EFF_negative tag run period dependence, 1.05%)
     sys(FT_EFF_d0_and_z0_smearing, 9.77%)
     sys(FT_EFF_Run1ToRun2_extrap,38%)
+    sys(FT_EFF_CaloJet_extrap,50%)
   }
   bin(170<pt<260,0.0<abseta<1.2)
   {
@@ -109,6 +113,7 @@ Analysis(negative_tags,light,MV2c20,-0.3098,AntiKt2PV0TrackJets){
     sys(FT_EFF_negative tag run period dependence, 1.05%)
     sys(FT_EFF_d0_and_z0_smearing,-4.83%)
     sys(FT_EFF_Run1ToRun2_extrap,41%)
+    sys(FT_EFF_CaloJet_extrap,50%)
   }
   bin(260<pt<400,0.0<abseta<1.2)
   {
@@ -131,6 +136,7 @@ Analysis(negative_tags,light,MV2c20,-0.3098,AntiKt2PV0TrackJets){
     sys(FT_EFF_negative tag run period dependence, 0.85%)
     sys(FT_EFF_d0_and_z0_smearing,-4.83%)
     sys(FT_EFF_Run1ToRun2_extrap,36%)
+    sys(FT_EFF_CaloJet_extrap,50%)
   }
 }
 Analysis(negative_tags,light,MV2c20,-0.3098,AntiKt2PV0TrackJets){
@@ -156,6 +162,7 @@ Analysis(negative_tags,light,MV2c20,-0.3098,AntiKt2PV0TrackJets){
     sys(FT_EFF_negative tag run period dependence,14.86%)
     sys(FT_EFF_d0_and_z0_smearing,-13.50%)
     sys(FT_EFF_Run1ToRun2_extrap,8.0%)
+    sys(FT_EFF_CaloJet_extrap,50%)
   }
   bin(17<pt<35,1.2<abseta<2.5)
   {
@@ -178,6 +185,7 @@ Analysis(negative_tags,light,MV2c20,-0.3098,AntiKt2PV0TrackJets){
     sys(FT_EFF_negative tag run period dependence, 5.62%)
     sys(FT_EFF_d0_and_z0_smearing,-13.50%)
     sys(FT_EFF_Run1ToRun2_extrap,15.5%)
+    sys(FT_EFF_CaloJet_extrap,50%)
   }
   bin(35<pt<80,1.2<abseta<2.5)
   {
@@ -200,6 +208,7 @@ Analysis(negative_tags,light,MV2c20,-0.3098,AntiKt2PV0TrackJets){
     sys(FT_EFF_negative tag run period dependence, 2.67%)
     sys(FT_EFF_d0_and_z0_smearing,-2.28%)
     sys(FT_EFF_Run1ToRun2_extrap,30.6%)
+    sys(FT_EFF_CaloJet_extrap,50%)
   }
   bin(80<pt<170,1.2<abseta<2.5)
   {
@@ -222,6 +231,7 @@ Analysis(negative_tags,light,MV2c20,-0.3098,AntiKt2PV0TrackJets){
     sys(FT_EFF_negative tag run period dependence, 1.86%)
     sys(FT_EFF_d0_and_z0_smearing,-2.28%)
     sys(FT_EFF_Run1ToRun2_extrap,38%)
+    sys(FT_EFF_CaloJet_extrap,50%)
   }
   bin(170<pt<260,1.2<abseta<2.5)
   {
@@ -244,6 +254,7 @@ Analysis(negative_tags,light,MV2c20,-0.3098,AntiKt2PV0TrackJets){
     sys(FT_EFF_negative tag run period dependence, 2.14%)
     sys(FT_EFF_d0_and_z0_smearing,-21.88%)
     sys(FT_EFF_Run1ToRun2_extrap,41%)
+    sys(FT_EFF_CaloJet_extrap,50%)
   }
   bin(260<pt<400,1.2<abseta<2.5)
   {
@@ -266,5 +277,6 @@ Analysis(negative_tags,light,MV2c20,-0.3098,AntiKt2PV0TrackJets){
     sys(FT_EFF_negative tag run period dependence, 1.87%)
     sys(FT_EFF_d0_and_z0_smearing,-21.88%)
     sys(FT_EFF_Run1ToRun2_extrap,36%)
+    sys(FT_EFF_CaloJet_extrap,50%)
   }
 }
