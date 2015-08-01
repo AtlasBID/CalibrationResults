@@ -1,4 +1,4 @@
-Analysis(MCcalib,tau,MV2c20,-0.0436,AntiKt4EMTopoJets){
+Analysis(MCcalib,tau,MV2c20,-0.3098,AntiKt2PV0TrackJets){
 bin(100<pt<250,0<abseta<2.5)
     {
         central_value(1.0,0.0879)
