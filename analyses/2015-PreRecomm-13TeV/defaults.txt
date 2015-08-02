@@ -15,8 +15,8 @@ Default(negative_tags, light, MV2c20, *, AntiKt4EMTopoJets)
 Default(ttbar_topo_dijet, bottom, MV2c20, *, AntiKt2PV0TrackJets)
 Default(ttbar_topo_dijet, bottom, MV2c20, *, AntiKt3PV0TrackJets)
 # charm
-Default(DStar, bottom, MV2c20, *, AntiKt2PV0TrackJets)
-Default(DStar, bottom, MV2c20, *, AntiKt3PV0TrackJets)
+Default(DStar, charm, MV2c20, *, AntiKt2PV0TrackJets)
+Default(DStar, charm, MV2c20, *, AntiKt3PV0TrackJets)
 # light
-Default(negative_tags, bottom, MV2c20, *, AntiKt2PV0TrackJets)
-Default(negative_tags, bottom, MV2c20, *, AntiKt3PV0TrackJets)
+Default(negative_tags, light, MV2c20, *, AntiKt2PV0TrackJets)
+Default(negative_tags, light, MV2c20, *, AntiKt3PV0TrackJets)
