@@ -15,7 +15,7 @@ from sfObject import sfObject
 #
 # The CDI operator.
 #
-def make_cdi (sfobj, name, defaults_file = None, eff_file = None, Check=True):
+def make_cdi (sfobj, name, defaults_file = None, eff_file = None, wp_file = None, Check=True):
     rf = FutureFile()
 
     df = defaults_file
@@ -26,7 +26,11 @@ def make_cdi (sfobj, name, defaults_file = None, eff_file = None, Check=True):
     if not isinstance(ef, sfObject):
         ef = files(ef, no_files_ok = True)
 
-    comboGlobals.Commands += [CDI(sfobj, name, df, ef, Check, rf)]
+    wp = wp_file
+    if not isinstance(wp, sfObject):
+        wp = files(wp, no_files_ok = True)
+
+    comboGlobals.Commands += [CDI(sfobj, name, df, ef, wp, Check, rf)]
     return rf
 
 #
@@ -58,11 +62,12 @@ def dumpROOTFile (html, fname):
 #
 class CDI:
     # Setup the CDI command, remember everything.
-    def __init__(self, sfinfo, name, defaults_file, ttbar, check, futurefile):
+    def __init__(self, sfinfo, name, defaults_file, ttbar, wp, check, futurefile):
         self._sf = sfinfo
         self._name = name
         self._check = check
         self._ttbar = ttbar
+        self._wp = wp
         self._defaults_file = defaults_file
         self._rf = futurefile
 
@@ -76,7 +81,7 @@ class CDI:
         cmdLogCopy = "%s-%s-cmd-copy-log.txt" % (configInfo.name, self._name)
         cmdCopyOut = "%s-%s-defaults-sf.txt" % (configInfo.name, self._name)
 
-        title = "Building CDI AACC %s" % self._name
+        title = "Building CDI %s" % self._name
 
         versionInfo = "--config-info FileName %s" % outFile
         if "BuildNumber" in os.environ.keys():
@@ -92,6 +97,10 @@ class CDI:
         if self._ttbar:
             lfiles += " %s" % listToString(["--copy%s" % l for l in self._ttbar.ResolveToFiles(html)])
             fList += self._ttbar.ResolveToFiles(html)
+
+        if self._wp:
+            lfiles += " %s" % listToString(["--copy%s" % l for l in self._wp.ResolveToFiles(html)])
+            fList += self._wp.ResolveToFiles(html)
 
         lfiles += " --restrictedMC"
 
