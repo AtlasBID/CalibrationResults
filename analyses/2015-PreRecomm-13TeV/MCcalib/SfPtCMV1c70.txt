@@ -368,7 +368,7 @@ bin(200<pt<300,0<abseta<2.5)
         sys(FT_EFF_SmearD0,-0.7471%)
         sys(FT_EFF_SmearZ0,-1.9147%)
         sys(FT_EFF_FakeRate,3.4216%)
-        sys(FT_EFF_Run1ToRun2_extrap,8.3%)
+        sys(FT_EFF_Run1ToRun2_extrap,10%)
     }
 bin(300<pt<500,0<abseta<2.5)
     {

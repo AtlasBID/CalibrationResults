@@ -20,7 +20,7 @@ Analysis(negative_tags,light,MV2c20,0.4496,AntiKt4EMTopoJets){
     sys(FT_EFF_negative_tag_epsilon_c, 2.10%)
     sys(FT_EFF_negative tag run period dependence,21.61%)
     sys(FT_EFF_d0_and_z0_smearing, 6.57%)
-    sys(FT_EFF_Run1ToRun2_extrap,5.4%)
+    sys(FT_EFF_Run1ToRun2_extrap,40%)
   }
   bin( 30<pt< 60, 0.0<abseta<1.2)
   {
@@ -42,7 +42,7 @@ Analysis(negative_tags,light,MV2c20,0.4496,AntiKt4EMTopoJets){
     sys(FT_EFF_negative_tag_epsilon_c, 6.60%)
     sys(FT_EFF_negative tag run period dependence, 7.71%)
     sys(FT_EFF_d0_and_z0_smearing, 6.57%)
-    sys(FT_EFF_Run1ToRun2_extrap,16.4%)
+    sys(FT_EFF_Run1ToRun2_extrap,40%)
   }
   bin( 60<pt<140, 0.0<abseta<1.2)
   {
@@ -64,7 +64,7 @@ Analysis(negative_tags,light,MV2c20,0.4496,AntiKt4EMTopoJets){
     sys(FT_EFF_negative_tag_epsilon_c, 8.19%)
     sys(FT_EFF_negative tag run period dependence, 3.11%)
     sys(FT_EFF_d0_and_z0_smearing, 9.77%)
-    sys(FT_EFF_Run1ToRun2_extrap,32%)
+    sys(FT_EFF_Run1ToRun2_extrap,40%)
   }
   bin(140<pt<300, 0.0<abseta<1.2)
   {
@@ -86,7 +86,7 @@ Analysis(negative_tags,light,MV2c20,0.4496,AntiKt4EMTopoJets){
     sys(FT_EFF_negative_tag_epsilon_c, 5.50%)
     sys(FT_EFF_negative tag run period dependence, 1.70%)
     sys(FT_EFF_d0_and_z0_smearing, 9.77%)
-    sys(FT_EFF_Run1ToRun2_extrap,32%)
+    sys(FT_EFF_Run1ToRun2_extrap,40%)
   }
   bin(300<pt<450, 0.0<abseta<1.2)
   {
@@ -155,7 +155,7 @@ Analysis(negative_tags,light,MV2c20,0.4496, AntiKt4EMTopoJets){
     sys(FT_EFF_negative_tag_epsilon_c, 6.40%)
     sys(FT_EFF_negative tag run period dependence,23.19%)
     sys(FT_EFF_d0_and_z0_smearing,-13.50%)
-    sys(FT_EFF_Run1ToRun2_extrap,5.4%)
+    sys(FT_EFF_Run1ToRun2_extrap,40%)
   }
   bin( 30<pt< 60, 1.2<abseta<2.5)
   {
@@ -177,7 +177,7 @@ Analysis(negative_tags,light,MV2c20,0.4496, AntiKt4EMTopoJets){
     sys(FT_EFF_negative_tag_epsilon_c, 3.34%)
     sys(FT_EFF_negative tag run period dependence,10.86%)
     sys(FT_EFF_d0_and_z0_smearing,-13.50%)
-    sys(FT_EFF_Run1ToRun2_extrap,16.4%)
+    sys(FT_EFF_Run1ToRun2_extrap,40%)
   }
   bin( 60<pt<140, 1.2<abseta<2.5)
   {
@@ -199,7 +199,7 @@ Analysis(negative_tags,light,MV2c20,0.4496, AntiKt4EMTopoJets){
     sys(FT_EFF_negative_tag_epsilon_c, 4.23%)
     sys(FT_EFF_negative tag run period dependence, 4.39%)
     sys(FT_EFF_d0_and_z0_smearing,-2.28%)
-    sys(FT_EFF_Run1ToRun2_extrap,32%)
+    sys(FT_EFF_Run1ToRun2_extrap,40%)
   }
   bin(140<pt<300, 1.2<abseta<2.5)
   {
@@ -221,7 +221,7 @@ Analysis(negative_tags,light,MV2c20,0.4496, AntiKt4EMTopoJets){
     sys(FT_EFF_negative_tag_epsilon_c, 4.10%)
     sys(FT_EFF_negative tag run period dependence, 2.45%)
     sys(FT_EFF_d0_and_z0_smearing,-2.28%)
-    sys(FT_EFF_Run1ToRun2_extrap,32%)
+    sys(FT_EFF_Run1ToRun2_extrap,40%)
   }
   bin(300<pt<450, 1.2<abseta<2.5)
   {

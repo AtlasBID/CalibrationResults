@@ -36,7 +36,7 @@ bin(260<pt<400,0<abseta<1.2)
         sys(FT_EFF_SmearD0,-9.4422%)
         sys(FT_EFF_SmearZ0,-0.0837%)
         sys(FT_EFF_FakeRate,24.3957%)
-        sys(FT_EFF_Run1ToRun2_extrap,36%)
+        sys(FT_EFF_Run1ToRun2_extrap,40%)
         sys(FT_EFF_CaloJet_extrap,50%)
     }
 bin(400<pt<700,0<abseta<1.2)

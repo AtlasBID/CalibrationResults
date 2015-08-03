@@ -20,7 +20,7 @@ Analysis(negative_tags,light,MV2c20,-0.7887, AntiKt4EMTopoJets){
     sys(FT_EFF_negative_tag_epsilon_c, 3.21%)
     sys(FT_EFF_negative tag run period dependence, 2.00%)
     sys(FT_EFF_d0_and_z0_smearing,-2.04%)
-    sys(FT_EFF_Run1ToRun2_extrap,7.2%)
+    sys(FT_EFF_Run1ToRun2_extrap,40%)
   }
   bin( 30<pt< 60, 0.0<abseta<1.2)
   {
@@ -42,7 +42,7 @@ Analysis(negative_tags,light,MV2c20,-0.7887, AntiKt4EMTopoJets){
     sys(FT_EFF_negative_tag_epsilon_c, 4.17%)
     sys(FT_EFF_negative tag run period dependence, 0.86%)
     sys(FT_EFF_d0_and_z0_smearing,-2.04%)
-    sys(FT_EFF_Run1ToRun2_extrap,12.6%)
+    sys(FT_EFF_Run1ToRun2_extrap,40%)
   }
   bin( 60<pt<140, 0.0<abseta<1.2)
   {
@@ -64,7 +64,7 @@ Analysis(negative_tags,light,MV2c20,-0.7887, AntiKt4EMTopoJets){
     sys(FT_EFF_negative_tag_epsilon_c, 6.53%)
     sys(FT_EFF_negative tag run period dependence, 0.36%)
     sys(FT_EFF_d0_and_z0_smearing, 5.59%)
-    sys(FT_EFF_Run1ToRun2_extrap,24%)
+    sys(FT_EFF_Run1ToRun2_extrap,40%)
   }
   bin(140<pt<300, 0.0<abseta<1.2)
   {
@@ -155,7 +155,7 @@ Analysis(negative_tags,light,MV2c20,-0.7887, AntiKt4EMTopoJets){
     sys(FT_EFF_negative_tag_epsilon_c, 2.73%)
     sys(FT_EFF_negative tag run period dependence, 2.45%)
     sys(FT_EFF_d0_and_z0_smearing,-6.09%)
-    sys(FT_EFF_Run1ToRun2_extrap,7.2%)
+    sys(FT_EFF_Run1ToRun2_extrap,40%)
   }
   bin( 30<pt< 60, 1.2<abseta<2.5)
   {
@@ -177,7 +177,7 @@ Analysis(negative_tags,light,MV2c20,-0.7887, AntiKt4EMTopoJets){
     sys(FT_EFF_negative_tag_epsilon_c, 3.28%)
     sys(FT_EFF_negative tag run period dependence, 1.11%)
     sys(FT_EFF_d0_and_z0_smearing,-6.09%)
-    sys(FT_EFF_Run1ToRun2_extrap,12.6%)
+    sys(FT_EFF_Run1ToRun2_extrap,40%)
   }
   bin( 60<pt<140, 1.2<abseta<2.5)
   {
@@ -199,7 +199,7 @@ Analysis(negative_tags,light,MV2c20,-0.7887, AntiKt4EMTopoJets){
     sys(FT_EFF_negative_tag_epsilon_c, 4.63%)
     sys(FT_EFF_negative tag run period dependence, 0.51%)
     sys(FT_EFF_d0_and_z0_smearing,-7.97%)
-    sys(FT_EFF_Run1ToRun2_extrap,24%)
+    sys(FT_EFF_Run1ToRun2_extrap,40%)
   }
   bin(140<pt<300, 1.2<abseta<2.5)
   {

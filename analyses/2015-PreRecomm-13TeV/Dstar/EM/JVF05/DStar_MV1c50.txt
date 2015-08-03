@@ -30,7 +30,7 @@ Analysis(DStar,charm,MV2c20,0.4496,AntiKt4EMTopoJets){
      sys(FT_EFF_extrap_Lambdac_to_prongs,0.197726%)
      sys(FT_EFF_extrap_fragmentation,-1.28522%)
      sys(FT_EFF_extrap_fragmentation,-1.28522%)
-     sys(FT_EFF_Run1ToRun2_extrap,6.4%)
+     sys(FT_EFF_Run1ToRun2_extrap,10%)
   } 
   bin(30<pt<60,0<abseta<2.5)
   { 
@@ -61,7 +61,7 @@ Analysis(DStar,charm,MV2c20,0.4496,AntiKt4EMTopoJets){
      sys(FT_EFF_extrap_Ds_to_prongs,2.06869%)
      sys(FT_EFF_extrap_Lambdac_to_prongs,0.108878%)
      sys(FT_EFF_extrap_fragmentation,0.435514%)
-     sys(FT_EFF_Run1ToRun2_extrap,7.3%)
+     sys(FT_EFF_Run1ToRun2_extrap,10%)
   } 
   bin(60<pt<140,0<abseta<2.5)
   { 

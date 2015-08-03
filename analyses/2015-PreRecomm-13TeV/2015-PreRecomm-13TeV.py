@@ -23,7 +23,7 @@ description = "Flavor tagging pre-recommendations based on 8 TeV and simulation 
 # we are dealing only with what we want to deal with.
 #
 
-#!! pre-recommendations are based on Run-I results
+#!! pre-recommendations are based on Run-I results plus extrapolation systematic
 
 # mapping of the Run-I => Run-II working points for the b-jet SFs for calo-jets
 # 
