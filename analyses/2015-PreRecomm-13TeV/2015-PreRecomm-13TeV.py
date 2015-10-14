@@ -232,6 +232,12 @@ ttbar_topo_trackjets = files("ttbar_topo/*.txt") \
                        .restrict_good() \
                        .filter(analyses = ["ttbar_topo_dijet"])
 
+mcCalib_b_trackjets = files("MCcalib/AntiKt*SfPtB*.txt") \
+                      .restrict_good() \
+
+b_trackjets_extrap = (ttbar_topo_trackjets + mcCalib_b_trackjets) \
+                     .extrapolate("MCcalib")
+
 ####################################
 # Track-jets - c jets
 #
@@ -250,7 +256,7 @@ charm_trackjets = (dstar_trackjets + ttbar_topo_rebin_trackjets) \
                  
 tau_trackjets = charm_trackjets.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
-mcCalib_ct_trackjets = files("MCcalib/AntiKt*.txt") \
+mcCalib_ct_trackjets = (files("MCcalib/AntiKt*SfPtC*.txt") + files("MCcalib/AntiKt*SfPtT*.txt")) \
                        .restrict_good() \
 
 ct_trackjets_extrap = (charm_trackjets + tau_trackjets + mcCalib_ct_trackjets) \
@@ -274,7 +280,7 @@ negative_trackjets_extrap = (negative_trackjets + mcCalib_l_trackjets).extrapola
 # Track-jets - altogether
 #
 
-sf_trackjets = ttbar_topo_trackjets + ct_trackjets_extrap + negative_trackjets_extrap
+sf_trackjets = b_trackjets_extrap + ct_trackjets_extrap + negative_trackjets_extrap
 
 ####################################
 # The CDI file.
