@@ -281,7 +281,7 @@ sf_trackjets = ttbar_topo_trackjets + ct_trackjets_extrap + negative_trackjets_e
 #
 
 master_cdi_file = all_extrapolated+sf_trackjets
-defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "StandardTag-13TeV-prerecommendationCalibrationFile2-150628155513.root","cutprofiles_22072015.root")
+defaultSFs = master_cdi_file.make_cdi("MC12-CDI", "defaults.txt", "StandardTag-13TeV-prerecommendationCalibrationFile3-151011184534.root","cutprofiles_22072015.root")
 master_cdi_file.plot("MC12-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
 master_cdi_file.plot("MC12-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
