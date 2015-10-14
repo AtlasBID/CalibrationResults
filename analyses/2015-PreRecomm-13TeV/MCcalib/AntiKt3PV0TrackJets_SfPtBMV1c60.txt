@@ -28,7 +28,8 @@ bin(250<pt<400,0<abseta<2.5)
         sys(FT_EFF_ELSCALEUPnominal, 0.119%)
         sys(FT_EFF_TRKHIGHPTEFFnominal, 0.008%)
         sys(FT_EFF_MUSCALEUPnominal, 0.134%)
-        sys(FT_EFF_Run1ToRun2_extrap,7.6%)
+	sys(FT_EFF_HighPT_EX,7.6%)
+        sys(FT_EFF_Run1ToRun2_extrap,5%)
    }
 bin(400<pt<600,0<abseta<2.5)
    {
@@ -59,7 +60,8 @@ bin(400<pt<600,0<abseta<2.5)
         sys(FT_EFF_ELSCALEUPnominal, 0.119%)
         sys(FT_EFF_TRKHIGHPTEFFnominal, 0.008%)
         sys(FT_EFF_MUSCALEUPnominal, 0.134%)
-        sys(FT_EFF_Run1ToRun2_extrap,11.4%)
+	sys(FT_EFF_HighPT_EX,11.4%)
+        sys(FT_EFF_Run1ToRun2_extrap,5%)
    }
 bin(600<pt<900,0<abseta<2.5)
    {
@@ -90,6 +92,7 @@ bin(600<pt<900,0<abseta<2.5)
         sys(FT_EFF_ELSCALEUPnominal, 0.119%)
         sys(FT_EFF_TRKHIGHPTEFFnominal, 0.008%)
         sys(FT_EFF_MUSCALEUPnominal, 0.134%)
-        sys(FT_EFF_Run1ToRun2_extrap,19.6%)
+	sys(FT_EFF_HighPT_EX,19.6%)
+        sys(FT_EFF_Run1ToRun2_extrap,5%)
    }
 }
