@@ -1,4 +1,4 @@
-Analysis(MCcalib,tau,MV2c20,FixCutBEff_60,AntiKt4EMTopoJets){
+Analysis(MCcalib,tau,MV2c20,FixedCutBEff_60,AntiKt4EMTopoJets){
 bin(20<pt<30,0<abseta<2.5)
     {
         central_value(1.0,0.0133)
