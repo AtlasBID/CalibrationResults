@@ -1,4 +1,4 @@
-Analysis(MCcalib,light,MV2c20,-0.3098,AntiKt2PV0TrackJets){
+Analysis(MCcalib,light,MV2c20,FixedCutBEff_70,AntiKt2PV0TrackJets){
 bin(260<pt<400,1.2<abseta<2.5)
     {
         central_value(1.0,0.0768)

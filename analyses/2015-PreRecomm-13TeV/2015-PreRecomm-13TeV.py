@@ -64,18 +64,14 @@ taggers = [
 #MV2c20 85% (calo-jet)
 #    ["MV2c20", "-0.7887"],
 # NEW WAY!
-#MV2c20 60% (calo-jet)
-    ["MV2c20", "FixCutBEff_60"],
-#MV2c20 70% (calo-jet)
-    ["MV2c20", "FixCutBEff_70"],
-#MV2c20 77%, (calo-jet)
-    ["MV2c20", "FixCutBEff_77"],
-#MV2c20 85% (calo-jet)
-    ["MV2c20", "FixCutBEff_85"],
-#MV2c20 70% (track-jet d=0.2)
-    ["MV2c20", "-0.3098"],
-#MV2c20 70% (track-jet d=0.3)
-    ["MV2c20", "-0.2343"]
+#MV2c20 60%
+    ["MV2c20", "FixedCutBEff_60"],
+#MV2c20 70%
+    ["MV2c20", "FixedCutBEff_70"],
+#MV2c20 77%
+    ["MV2c20", "FixedCutBEff_77"],
+#MV2c20 85%
+    ["MV2c20", "FixedCutBEff_85"]
     ]
 
 #
