@@ -54,14 +54,24 @@ description = "Flavor tagging pre-recommendations based on 8 TeV and simulation 
 # MC15 working points derived on June 22nd, 2015 and available at BTaggingBenchmarks twiki
 
 taggers = [
+# OLD WAY!
 #MV2c20 60% (calo-jet)
-    ["MV2c20", "0.4496"],
+#    ["MV2c20", "0.4496"],
 #MV2c20 70% (calo-jet)
-    ["MV2c20", "-0.0436"],
+#    ["MV2c20", "-0.0436"],
 #MV2c20 77%, (calo-jet)
-    ["MV2c20", "-0.4434"],
+#    ["MV2c20", "-0.4434"],
 #MV2c20 85% (calo-jet)
-    ["MV2c20", "-0.7887"],
+#    ["MV2c20", "-0.7887"],
+# NEW WAY!
+#MV2c20 60% (calo-jet)
+    ["MV2c20", "FixedCutBEff_60"],
+#MV2c20 70% (calo-jet)
+    ["MV2c20", "FixedCutBEff_70"],
+#MV2c20 77%, (calo-jet)
+    ["MV2c20", "FixedCutBEff_77"],
+#MV2c20 85% (calo-jet)
+    ["MV2c20", "FixedCutBEff_85"],
 #MV2c20 70% (track-jet d=0.2)
     ["MV2c20", "-0.3098"],
 #MV2c20 70% (track-jet d=0.3)
