@@ -101,16 +101,16 @@ sfObject.restrict = lambda self: self.restrict_good().restrict_ignore()
 
 ttbar_pdf_7_all = files("ttbar_pdf/EM/JVF05/6PT_MV1c/*6bins.txt") \
                   .restrict() \
-                  .filter(analyses = ["PDF_6bins_emu_2jets", "PDF_6bins_emu_3jets", \
-                                      "PDF_6bins_ll_2jets", "PDF_6bins_ll_3jets", \
+                  .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j", \
+                                      "PDF_6bins_ll_2j", "PDF_6bins_ll_3j", \
                                       ])
 
 ttbar_pdf_7_2j = ttbar_pdf_7_all \
-                 .filter(analyses = ["PDF_6bins_ll_2jets", "PDF_6bins_emu_2jets", \
+                 .filter(analyses = ["PDF_6bins_ll_2j", "PDF_6bins_emu_2j", \
                                      ])
 
 ttbar_pdf_7_3j = ttbar_pdf_7_all \
-                 .filter(analyses = ["PDF_6bins_ll_3jets", "PDF_6bins_emu_3jets", \
+                 .filter(analyses = ["PDF_6bins_ll_3j", "PDF_6bins_emu_3j", \
                                      ])
 
 sources_7  = ttbar_pdf_7_all
