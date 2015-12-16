@@ -109,15 +109,15 @@ rebin_template_30 = files("commonbinning.txt") \
 # final file. This is for specialized use.
 #
 
-ttbar_pdf_7_combined_withchi2 = ttbar_pdf_7_all.bbb_fit("pre_ttbar_PDF_7b", saveCHI2Fits=True)
-ttbar_pdf_7_combined = ttbar_pdf_7_combined_withchi2.filter(analyses=["pre_ttbar_PDF_7b"])
-ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("pre_ttbarPDF7b2j")
-ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("pre_ttbarPDF7b3j")
-
-ttbar_tp_combined_withchi2 = ttbar_tp_all.bbb_fit("ttbar_tp", saveCHI2Fits=True)
-ttbar_tp_combined = ttbar_tp_combined_withchi2.filter(analyses=["ttbar_tb"])
+ttbar_tp_combined_withchi2 = ttbar_tp_all.bbb_fit("ttbar_tp_2j3j", saveCHI2Fits=True)
+ttbar_tp_combined = ttbar_tp_combined_withchi2.filter(analyses=["ttbar_tb_2j3j"])
 ttbar_tp_combined_2j = ttbar_tp_2j.bbb_fit("ttbar_tp_2j")
 ttbar_tp_combined_3j = ttbar_tp_3j.bbb_fit("ttbar_tp_3j")
+
+ttbar_pdf_7_combined_withchi2 = ttbar_pdf_7_all.bbb_fit("pre_ttbar_PDF_7b", saveCHI2Fits=True)
+ttbar_pdf_7_combined = ttbar_pdf_7_combined_withchi2.filter(analyses=["pre_ttbar_PDF_7b"])
+ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("pre_ttbar_PDF_7b_2j")
+ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("pre_ttbar_PDF_7b_3j")
 
 # one ring to rule them all...
 ttbar_pdf_fits = ttbar_pdf_7_combined \
