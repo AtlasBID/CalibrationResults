@@ -59,7 +59,7 @@ sfObject.restrict = lambda self: self.restrict_good().restrict_ignore()
 #  Note: sources is used to do a systematic error x-check.
 #
 
-
+# PDF pre-recommendations
 ttbar_pdf_7_all = files("ttbar_pdf/EM/JVF05/6PT_MV1c/*6bins.txt") \
                   .restrict() \
                   .filter(analyses = ["pre_PDF_6bins_emu_2j", "pre_PDF_6bins_emu_3j", \
@@ -73,8 +73,20 @@ ttbar_pdf_7_2j = ttbar_pdf_7_all \
 ttbar_pdf_7_3j = ttbar_pdf_7_all \
                  .filter(analyses = ["pre_PDF_6bins_ll_3j", "pre_PDF_6bins_emu_3j", \
                                      ])
+# T&P recommendations
+ttbar_tp_all = files("ttbar_topo/TandP*.txt") \
+                 .restrict() \
+                 .filter(analyses = ["TandP_6bins_emu_2j","TandP_6bins_emu_3j"])
 
-sources_7  = ttbar_pdf_7_all
+ttbar_tp_2j = files("ttbar_topo/TandP*.txt") \
+                .restrict() \
+                .filter(analyses = ["TandP_6bins_emu_2j"])
+
+ttbar_tp_3j = files("ttbar_topo/TandP*.txt") \
+                .restrict() \
+                .filter(analyses = ["TandP_6bins_emu_3j"])
+
+sources_ttbar  = ttbar_pdf_7_all + ttbar_tp_all
 
 
 # The file "commonbinning.txt" just contains some empty specifications that have the binning. They don't contain
@@ -102,12 +114,21 @@ ttbar_pdf_7_combined = ttbar_pdf_7_combined_withchi2.filter(analyses=["pre_ttbar
 ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("pre_ttbarPDF7b2j")
 ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("pre_ttbarPDF7b3j")
 
+ttbar_tp_combined_withchi2 = ttbar_tp_all.bbb_fit("ttbar_tp", saveCHI2Fits=True)
+ttbar_tp_combined = ttbar_tp_combined_withchi2.filter(analyses=["ttbar_tb"])
+ttbar_tp_combined_2j = ttbar_tp_2j.bbb_fit("ttbar_tp_2j")
+ttbar_tp_combined_3j = ttbar_tp_3j.bbb_fit("ttbar_tp_3j")
+
 # one ring to rule them all...
-ttbar_fits_7 = ttbar_pdf_7_combined \
+ttbar_pdf_fits = ttbar_pdf_7_combined \
     + ttbar_pdf_7_combined_2j \
     + ttbar_pdf_7_combined_3j
 
-ttbar_fits = ttbar_fits_7
+ttbar_tp_fits = ttbar_tp_combined \
+    + ttbar_tp_combined_2j \
+    + ttbar_tp_combined_3j
+
+ttbar_fits = ttbar_pdf_fits + ttbar_tp_fits
 
 #
 # Next, we need to build up the master fits that will be used to make charm and tau results.
@@ -138,7 +159,7 @@ charm_sf = (dstar_template + ttbar_rebin) \
                  
 tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
-sources_4 = dstar_template
+sources_dstar = dstar_template
 
 ####################################
 # Light SF come from the negative tags
@@ -179,8 +200,8 @@ mcCalib_rebin_dstar_bct = (rebin_for_extrap_dstar + mcCalib_bct) \
 
 rebin_extrapolated = (\
     mcCalib_rebin_bct
-    + ttbar_fits_7 \
-    + sources_7 \
+    + ttbar_fits \
+    + sources_ttbar \
     ) \
     .extrapolate("MCcalib_rebin")
 	
@@ -199,7 +220,7 @@ all_extrapolated = rebin_extrapolated + rebin_dstar_extrapolated + light_extrapo
 # Track-jets - b jets
 #
 
-ttbar_topo_trackjets = files("ttbar_topo/*.txt") \
+ttbar_topo_trackjets = files("ttbar_topo/pre/*.txt") \
                        .restrict_good() \
                        .filter(analyses = ["pre_ttbar_topo_dijet"])
 
@@ -265,7 +286,7 @@ master_cdi_file.plot("MC15-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
 master_cdi_file.dump(sysErrors = True, name="master")
 master_cdi_file.dump(metadata = True, name="master-metadata")
 (ttbar_pdf_7_combined_withchi2).plot("MC15-CHi2-Errors")
-(sources_7+sources_4).dump(sysErrors = True, name="sources")
+(sources_ttbar+sources_dstar).dump(sysErrors = True, name="sources")
 (mcCalib_bct_all+mcCalib_l_all).plot("MC15-MCExtrapolations")
 
 # Done!
