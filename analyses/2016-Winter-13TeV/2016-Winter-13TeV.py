@@ -60,17 +60,17 @@ sfObject.restrict = lambda self: self.restrict_good().restrict_ignore()
 #
 
 # PDF pre-recommendations
-ttbar_pdf_7_all = files("ttbar_pdf/EM/JVF05/6PT_MV1c/*6bins.txt") \
+pre_ttbar_pdf_7_all = files("ttbar_pdf/pre/*6bins.txt") \
                   .restrict() \
                   .filter(analyses = ["pre_PDF_6bins_emu_2j", "pre_PDF_6bins_emu_3j", \
                                       "pre_PDF_6bins_ll_2j", "pre_PDF_6bins_ll_3j", \
                                       ])
 
-ttbar_pdf_7_2j = ttbar_pdf_7_all \
+pre_ttbar_pdf_7_2j = pre_ttbar_pdf_7_all \
                  .filter(analyses = ["pre_PDF_6bins_ll_2j", "pre_PDF_6bins_emu_2j", \
                                      ])
 
-ttbar_pdf_7_3j = ttbar_pdf_7_all \
+pre_ttbar_pdf_7_3j = pre_ttbar_pdf_7_all \
                  .filter(analyses = ["pre_PDF_6bins_ll_3j", "pre_PDF_6bins_emu_3j", \
                                      ])
 # T&P recommendations
@@ -86,7 +86,7 @@ ttbar_tp_3j = files("ttbar_topo/TandP*.txt") \
                 .restrict() \
                 .filter(analyses = ["TandP_6bins_emu_3j"])
 
-sources_ttbar  = ttbar_pdf_7_all + ttbar_tp_all
+sources_ttbar  = pre_ttbar_pdf_7_all + ttbar_tp_all
 
 
 # The file "commonbinning.txt" just contains some empty specifications that have the binning. They don't contain
@@ -114,15 +114,15 @@ ttbar_tp_combined = ttbar_tp_combined_withchi2.filter(analyses=["ttbar_tb_2j3j"]
 ttbar_tp_combined_2j = ttbar_tp_2j.bbb_fit("ttbar_tp_2j")
 ttbar_tp_combined_3j = ttbar_tp_3j.bbb_fit("ttbar_tp_3j")
 
-ttbar_pdf_7_combined_withchi2 = ttbar_pdf_7_all.bbb_fit("pre_ttbar_PDF_7b", saveCHI2Fits=True)
-ttbar_pdf_7_combined = ttbar_pdf_7_combined_withchi2.filter(analyses=["pre_ttbar_PDF_7b"])
-ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("pre_ttbar_PDF_7b_2j")
-ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("pre_ttbar_PDF_7b_3j")
+pre_ttbar_pdf_7_combined_withchi2 = ttbar_pdf_7_all.bbb_fit("pre_ttbar_PDF_7b", saveCHI2Fits=True)
+pre_ttbar_pdf_7_combined = ttbar_pdf_7_combined_withchi2.filter(analyses=["pre_ttbar_PDF_7b"])
+pre_ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("pre_ttbar_PDF_7b_2j")
+pre_ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("pre_ttbar_PDF_7b_3j")
 
 # one ring to rule them all...
-ttbar_pdf_fits = ttbar_pdf_7_combined \
-    + ttbar_pdf_7_combined_2j \
-    + ttbar_pdf_7_combined_3j
+ttbar_pdf_fits = pre_ttbar_pdf_7_combined \
+    + pre_ttbar_pdf_7_combined_2j \
+    + pre_ttbar_pdf_7_combined_3j
 
 ttbar_tp_fits = ttbar_tp_combined \
     + ttbar_tp_combined_2j \
