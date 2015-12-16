@@ -59,21 +59,31 @@ sfObject.restrict = lambda self: self.restrict_good().restrict_ignore()
 #  Note: sources is used to do a systematic error x-check.
 #
 
-# PDF pre-recommendations
+# Run-I PDF pre-recommendations
 pre_ttbar_pdf_7_all = files("ttbar_pdf/pre/*6bins.txt") \
                   .restrict() \
                   .filter(analyses = ["pre_PDF_6bins_emu_2j", "pre_PDF_6bins_emu_3j", \
-                                      "pre_PDF_6bins_ll_2j", "pre_PDF_6bins_ll_3j", \
-                                      ])
+                                      "pre_PDF_6bins_ll_2j", "pre_PDF_6bins_ll_3j"])
 
 pre_ttbar_pdf_7_2j = pre_ttbar_pdf_7_all \
-                 .filter(analyses = ["pre_PDF_6bins_ll_2j", "pre_PDF_6bins_emu_2j", \
-                                     ])
+                 .filter(analyses = ["pre_PDF_6bins_ll_2j", "pre_PDF_6bins_emu_2j"])
 
 pre_ttbar_pdf_7_3j = pre_ttbar_pdf_7_all \
-                 .filter(analyses = ["pre_PDF_6bins_ll_3j", "pre_PDF_6bins_emu_3j", \
-                                     ])
-# T&P recommendations
+                 .filter(analyses = ["pre_PDF_6bins_ll_3j", "pre_PDF_6bins_emu_3j"])
+
+# Run-II PDF recommendations
+ttbar_pdf_7_all = files("ttbar_pdf/*7bins.txt") + files("ttbar_pdf/*7bins_FLAT.txt") \
+                  .restrict() \
+                  .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j", \
+                                      "PDF_6bins_ll_2j", "PDF_6bins_ll_3j"])
+
+ttbar_pdf_7_2j = ttbar_pdf_7_all \
+                 .filter(analyses = ["PDF_6bins_ll_2j", "PDF_6bins_emu_2j"])
+
+ttbar_pdf_7_3j = ttbar_pdf_7_all \
+                 .filter(analyses = ["PDF_6bins_ll_3j", "PDF_6bins_emu_3j"])
+
+# Run-II T&P recommendations
 ttbar_tp_all = files("ttbar_topo/TandP*.txt") \
                  .restrict() \
                  .filter(analyses = ["TandP_6bins_emu_2j","TandP_6bins_emu_3j"])
@@ -86,7 +96,7 @@ ttbar_tp_3j = files("ttbar_topo/TandP*.txt") \
                 .restrict() \
                 .filter(analyses = ["TandP_6bins_emu_3j"])
 
-sources_ttbar  = pre_ttbar_pdf_7_all + ttbar_tp_all
+sources_ttbar  = pre_ttbar_pdf_7_all + ttbar_pdf_7_all + ttbar_tp_all
 
 
 # The file "commonbinning.txt" just contains some empty specifications that have the binning. They don't contain
@@ -119,10 +129,18 @@ pre_ttbar_pdf_7_combined = pre_ttbar_pdf_7_combined_withchi2.filter(analyses=["p
 pre_ttbar_pdf_7_combined_2j = pre_ttbar_pdf_7_2j.bbb_fit("pre_ttbar_PDF_7b_2j")
 pre_ttbar_pdf_7_combined_3j = pre_ttbar_pdf_7_3j.bbb_fit("pre_ttbar_PDF_7b_3j")
 
+ttbar_pdf_7_combined_withchi2 = ttbar_pdf_7_all.bbb_fit("ttbar_PDF_7b", saveCHI2Fits=True)
+ttbar_pdf_7_combined = ttbar_pdf_7_combined_withchi2.filter(analyses=["ttbar_PDF_7b"])
+ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("ttbar_PDF_7b_2j")
+ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("ttbar_PDF_7b_3j")
+
 # one ring to rule them all...
 ttbar_pdf_fits = pre_ttbar_pdf_7_combined \
     + pre_ttbar_pdf_7_combined_2j \
-    + pre_ttbar_pdf_7_combined_3j
+    + pre_ttbar_pdf_7_combined_3j \
+    + ttbar_pdf_7_combined \
+    + ttbar_pdf_7_combined_2j \
+    + ttbar_pdf_7_combined_3j
 
 ttbar_tp_fits = ttbar_tp_combined \
     + ttbar_tp_combined_2j \
@@ -285,7 +303,7 @@ master_cdi_file.dump(linage=True, name="master-cdi-linage")
 master_cdi_file.plot("MC15-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
 master_cdi_file.dump(sysErrors = True, name="master")
 master_cdi_file.dump(metadata = True, name="master-metadata")
-(pre_ttbar_pdf_7_combined_withchi2).plot("MC15-CHi2-Errors")
+(pre_ttbar_pdf_7_combined_withchi2+ttbar_pdf_7_combined_withchi2+ttbar_tp_combined_withchi2).plot("MC15-CHi2-Errors")
 (sources_ttbar+sources_dstar).dump(sysErrors = True, name="sources")
 (mcCalib_bct_all+mcCalib_l_all).plot("MC15-MCExtrapolations")
 
