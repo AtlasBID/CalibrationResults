@@ -31,12 +31,16 @@ description = "Flavor tagging recommendations based on 13 TeV and simulation for
 taggers = [
 #MV2c20 60%
     ["MV2c20", "FixedCutBEff_60"],
+    ["MV2c20", "FlatCutBEff_60"],
 #MV2c20 70%
     ["MV2c20", "FixedCutBEff_70"],
+    ["MV2c20", "FlatCutBEff_70"],
 #MV2c20 77%
     ["MV2c20", "FixedCutBEff_77"],
+    ["MV2c20", "FlatCutBEff_77"],
 #MV2c20 85%
-    ["MV2c20", "FixedCutBEff_85"]
+    ["MV2c20", "FixedCutBEff_85"],
+    ["MV2c20", "FlatCutBEff_85"]
     ]
 
 #
