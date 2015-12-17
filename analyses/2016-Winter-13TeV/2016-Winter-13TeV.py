@@ -74,14 +74,13 @@ pre_ttbar_pdf_7_3j = pre_ttbar_pdf_7_all \
 # Run-II PDF recommendations
 ttbar_pdf_7_all = files("ttbar_pdf/*7bins.txt") + files("ttbar_pdf/*7bins_FLAT.txt") \
                   .restrict() \
-                  .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j", \
-                                      "PDF_6bins_ll_2j", "PDF_6bins_ll_3j"])
+                  .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j"])
 
 ttbar_pdf_7_2j = ttbar_pdf_7_all \
-                 .filter(analyses = ["PDF_6bins_ll_2j", "PDF_6bins_emu_2j"])
+                 .filter(analyses = ["PDF_6bins_emu_2j"])
 
 ttbar_pdf_7_3j = ttbar_pdf_7_all \
-                 .filter(analyses = ["PDF_6bins_ll_3j", "PDF_6bins_emu_3j"])
+                 .filter(analyses = ["PDF_6bins_emu_3j"])
 
 # Run-II T&P recommendations
 ttbar_tp_all = files("ttbar_topo/TandP*.txt") \
