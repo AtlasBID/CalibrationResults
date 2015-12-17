@@ -3,9 +3,9 @@
 # bottom 
 Default(ttbar_tp_2j, bottom, MV2c20, *, AntiKt4EMTopoJets)
 # charm
-Default(DStar_pre_ttbar_PDF_7b_rebin, charm, MV2c20, *, AntiKt4EMTopoJets)
+Default(DStar_ttbar_tp_2j_rebin, charm, MV2c20, *, AntiKt4EMTopoJets)
 # tau
-Default(DStar_pre_ttbar_PDF_7b_rebin, tau, MV2c20, *, AntiKt4EMTopoJets)
+Default(DStar_ttbar_tp_2j_rebin, tau, MV2c20, *, AntiKt4EMTopoJets)
 # light
 Default(negative_tags, light, MV2c20, *, AntiKt4EMTopoJets)
 
