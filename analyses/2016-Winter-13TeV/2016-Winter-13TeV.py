@@ -123,7 +123,7 @@ rebin_template_30 = files("commonbinning.txt") \
 #
 
 ttbar_tp_combined_withchi2 = ttbar_tp_all.bbb_fit("ttbar_tp_2j3j", saveCHI2Fits=True)
-ttbar_tp_combined = ttbar_tp_combined_withchi2.filter(analyses=["ttbar_tb_2j3j"])
+ttbar_tp_combined = ttbar_tp_combined_withchi2.filter(analyses=["ttbar_tp_2j3j"])
 ttbar_tp_combined_2j = ttbar_tp_2j.bbb_fit("ttbar_tp_2j")
 ttbar_tp_combined_3j = ttbar_tp_3j.bbb_fit("ttbar_tp_3j")
 
