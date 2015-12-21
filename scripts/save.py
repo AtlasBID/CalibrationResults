@@ -47,7 +47,7 @@ class SaveOutput:
         dumpTitle(html, title)
         if rerunCommand(fList, self._outputName, files, html):
 
-            errcod = dumpCommandResult(html, "FTDump.exe %s" % files, store=cmdLog)
+            errcod = dumpCommandResult(html, "FTDump %s" % files, store=cmdLog)
             if errcod != 0:
                 print >> html, "Failed to dump output files. Command line: %s" % files
                 raise BaseException("Unable to dump SF's")

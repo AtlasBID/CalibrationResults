@@ -59,9 +59,9 @@ class Filter:
         title = "Filtering for %s" % listToString(self._anas + self._taggers + self._ignore + self._jets)
 
         dumpTitle(html, title)
-        print >> html, "<b>Command line: FTDump.exe %s</b>" % files
+        print >> html, "<b>Command line: FTDump %s</b>" % files
         if rerunCommand(fList, outputName, files, html):
-            errcod = dumpCommandResult(html, "FTDump.exe %s" % files, store=cmdLog)
+            errcod = dumpCommandResult(html, "FTDump %s" % files, store=cmdLog)
             if errcod != 0:
                 print >> html, "Failed to filter! Command line: %s" % files
                 raise BaseException("Unable to filter")

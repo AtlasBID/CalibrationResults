@@ -44,7 +44,7 @@ class DStar:
         dumpTitle(html, title)
         if rerunCommand(fList, outputFile, files, html):
 
-            errcod = dumpCommandResult(html, "FTDStarCalc.exe %s" % files, store=cmdLog)
+            errcod = dumpCommandResult(html, "FTDStarCalc %s" % files, store=cmdLog)
             if errcod != 0:
                 print >> html, "Failed to calculate D*! Command line: %s" % files
                 raise BaseException("Unable to calc D*")

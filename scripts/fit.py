@@ -58,7 +58,7 @@ class Fit:
             print >>cmdout, files
             cmdout.close()
         
-            errcod = dumpCommandResult(html, "FTCombine.exe %s" % files, store=cmdLog)
+            errcod = dumpCommandResult(html, "FTCombine %s" % files, store=cmdLog)
             if errcod == 0:
                 if not os.path.exists("combined.txt"):
                     errcode = -1000

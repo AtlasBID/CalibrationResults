@@ -133,7 +133,7 @@ def buildArgs(config):
     if "analysisGroupings" in config.__dict__:
         analysisGroups = config.analysisGroupings
 
-    allAnalysisNames = getCommandResult("FTDump.exe %s --qnames" % cmdfile.GetFullConfig())
+    allAnalysisNames = getCommandResult("FTDump %s --qnames" % cmdfile.GetFullConfig())
 
     # Check this for errors first - this is where it will show up
 
@@ -310,7 +310,7 @@ def doComboImpl (configInfo, html):
     # Get a list of the names
     #
 
-    errcode = dumpCommandResult (html, "FTDump.exe %s --names" % stdCmdArgs.GetFullConfig(), "All analyses to be processed", printtime = False)
+    errcode = dumpCommandResult (html, "FTDump %s --names" % stdCmdArgs.GetFullConfig(), "All analyses to be processed", printtime = False)
 
     #
     # First job is to "check" the file to make sure it is ok.
@@ -322,7 +322,7 @@ def doComboImpl (configInfo, html):
     doConsistencyCheck = True
     if doConsistencyCheck:
         for cmd in stdCmdArgs:
-            errcode = dumpCommandResult(html, "FTDump.exe %s --check" % cmd)
+            errcode = dumpCommandResult(html, "FTDump %s --check" % cmd)
             if errcode <> 0:
                 success = False
     else:
@@ -385,7 +385,7 @@ def doComboImpl (configInfo, html):
 
                 # Run the combo
         
-                errcode = dumpCommandResult(html, "FTCombine.exe %s" % cmd, store=cmdLog)
+                errcode = dumpCommandResult(html, "FTCombine %s" % cmd, store=cmdLog)
 
                 # If no output file appeared, then we also failed.
                 if errcode == 0:
@@ -424,7 +424,7 @@ def doComboImpl (configInfo, html):
             sysCmdError = "outputAna %s calcRelDiff %s %s \"%s\" %s" % (spec["ResultCalib"], spec["BaselineCalib"], spec["DeltaCalib"], spec["SystematicError"], stdCmdArgs.GetBaseConfig())
             baseOutputName = "%s-%s" % (configInfo.name, hash(sysCmdError))
             outputFilename = "%s-sf.txt" % baseOutputName
-            dumpCommandResult(html, "FTManipSys.exe %s output %s" % (sysCmdError, outputFilename), "Delta Fit Errors to %s" % spec["ResultCalib"])
+            dumpCommandResult(html, "FTManipSys %s output %s" % (sysCmdError, outputFilename), "Delta Fit Errors to %s" % spec["ResultCalib"])
             stdCmdArgs.addToStandard(outputFilename)
             
     
@@ -432,14 +432,14 @@ def doComboImpl (configInfo, html):
     # Generate the meta data
     #
 
-    dumpCommandResult(html, "FTDump.exe --meta --metaBins %s" % stdCmdArgs.GetBaseConfig(), "SF Metadata", store="%s-metadata.txt"%configInfo.name, printoutput=False, printtime=False)
+    dumpCommandResult(html, "FTDump --meta --metaBins %s" % stdCmdArgs.GetBaseConfig(), "SF Metadata", store="%s-metadata.txt"%configInfo.name, printoutput=False, printtime=False)
     print >> html, '<a href="%s-metadata.txt">Metadata</a>' % configInfo.name
 
     #
     # Generate plots for everyone we've done.
     #
 
-    dumpCommandResult(html, "FTPlot.exe %s" % stdCmdArgs.GetBaseConfig(), "SF Plots")
+    dumpCommandResult(html, "FTPlot %s" % stdCmdArgs.GetBaseConfig(), "SF Plots")
     shutil.copy ("plots.root", "%s-plots.root" % configInfo.name)
     print >> html, '<a href="%s-plots.root">Scale Factor Plots</a>' % configInfo.name
 
@@ -462,7 +462,7 @@ def doComboImpl (configInfo, html):
     for f in mcEffFilesGood:
         addF += "--copy%s " % f
         
-    errcode = dumpCommandResult(html, "FTConvertToCDI.exe %s %s" % (stdCmdArgs.GetBaseConfig(), addF), "Convert to CDI")
+    errcode = dumpCommandResult(html, "FTConvertToCDI %s %s" % (stdCmdArgs.GetBaseConfig(), addF), "Convert to CDI")
 
     if errcode <> 0:
         print "Failed to build CDI"
@@ -475,7 +475,7 @@ def doComboImpl (configInfo, html):
     print >> html, "<h2>File Contents</h2>"
     dumpROOTFile(html, outputROOT)
     
-    dumpCommandResult(html, "FTCheckOutput.exe %s" % outputROOT, "Output File Contents Check");
+    dumpCommandResult(html, "FTCheckOutput %s" % outputROOT, "Output File Contents Check");
 
     # Finally, some info about when this was generated so it can be re-created.
 

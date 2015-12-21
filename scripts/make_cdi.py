@@ -105,7 +105,7 @@ class CDI:
         dumpTitle(html, title)
         print >> html, "Command line arguments: %s" % files
         if rerunCommand(fList, outFile, lfiles, html):
-            errcode = dumpCommandResult(html, "FTConvertToCDI.exe %s %s" % (lfiles, versionInfo), store=cmdLog)
+            errcode = dumpCommandResult(html, "FTConvertToCDI %s %s" % (lfiles, versionInfo), store=cmdLog)
             if errcode == 0:
                 shutil.copy ("output.root", outFile)
             else:
@@ -117,7 +117,7 @@ class CDI:
 
         print >> html, "Command line arguments: %s" % files
         if rerunCommand(fList, cmdCopyOut, lfiles, html):
-            errcode = dumpCommandResult(html, "FTCopyDefaults.exe %s output %s" % (lfiles, cmdCopyOut), store=cmdLogCopy)
+            errcode = dumpCommandResult(html, "FTCopyDefaults %s output %s" % (lfiles, cmdCopyOut), store=cmdLogCopy)
             if errcode <> 0:
                 print >> html, "<b>Default building failed with error code %s</b>" % errcode
 
@@ -134,7 +134,7 @@ class CDI:
         if self._check:
             print >> html, "<p>Running a check on the CDI file</p>"
             if rerunCommand(fList, cmdLog, outFile, html):
-                errcode = dumpCommandResult(html, "FTCheckOutput.exe %s" % outFile, store=cmdLog)
+                errcode = dumpCommandResult(html, "FTCheckOutput %s" % outFile, store=cmdLog)
 
             else:
                 dumpFile(html, cmdLog)

@@ -44,7 +44,7 @@ class Rebin:
         dumpTitle(html, title)
         if rerunCommand(fList, outputFile, files, html):
 
-            errcod = dumpCommandResult(html, "FTCombineBins.exe %s" % files, store=cmdLog)
+            errcod = dumpCommandResult(html, "FTCombineBins %s" % files, store=cmdLog)
             if errcod != 0:
                 print >> html, "Failed to rebin! Command line: %s" % files
                 raise BaseException("Unable to rebin")

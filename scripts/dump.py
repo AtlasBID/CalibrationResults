@@ -72,7 +72,7 @@ class Dump:
             outputFileCmd = "output %s-%s.%s" % (configInfo.name, self._name, ftype)
             outputFile = "%s-%s.%s" % (configInfo.name, self._name, ftype)
 
-        errcod = dumpCommandResult(html, "FTDump.exe %s %s %s" % (args, files, outputFileCmd), title)
+        errcod = dumpCommandResult(html, "FTDump %s %s %s" % (args, files, outputFileCmd), title)
         if errcod != 0:
             print >> html, "Failed to run check! Command line: %s" % files
         else:

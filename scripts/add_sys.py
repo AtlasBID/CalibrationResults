@@ -50,7 +50,7 @@ class AddSys:
         dumpTitle(html, title)
         if rerunCommand(fList, outputFile, files, html):
 
-            errcod = dumpCommandResult(html, "FTManipSys.exe %s" % files, store=cmdLog)
+            errcod = dumpCommandResult(html, "FTManipSys %s" % files, store=cmdLog)
             if errcod != 0:
                 print >> html, "Failed to add systematice error! Command line: %s" % files
                 raise BaseException("Unable to add systematic error")

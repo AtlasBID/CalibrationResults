@@ -42,7 +42,7 @@ class DeltaAna:
         dumpTitle(html, title)
         if rerunCommand(fList, outputFile, files, html):
 
-            errcod = dumpCommandResult(html, "FTManipSys.exe %s" % files, store=cmdLog)
+            errcod = dumpCommandResult(html, "FTManipSys %s" % files, store=cmdLog)
             if errcod != 0:
                 print >> html, "Failed to calc new systematic error! Command line: %s" % files
                 raise BaseException("Unable to calculate new systematic error")

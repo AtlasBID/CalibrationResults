@@ -57,7 +57,7 @@ class Extrapolate:
         dumpTitle(html, title)
         if rerunCommand(fList, outputFile, files, html):
 
-            errcod = dumpCommandResult(html, "FTExtrapolateAnalyses.exe %s" % files, store=cmdLog)
+            errcod = dumpCommandResult(html, "FTExtrapolateAnalyses %s" % files, store=cmdLog)
             if errcod != 0:
                 print >> html, "Failed to extrapolate! Command line: %s" % files
                 raise BaseException("Unable to extrapolate")
