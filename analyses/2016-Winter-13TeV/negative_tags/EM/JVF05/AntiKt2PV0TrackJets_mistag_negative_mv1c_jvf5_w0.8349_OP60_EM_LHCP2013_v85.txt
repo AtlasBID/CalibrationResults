@@ -1,7 +1,5 @@
 Analysis(negative_tags,light,MV2c20,FixedCutBEff_70,AntiKt2PV0TrackJets){
-
   meta_data_s (Hadronization, Pythia8) 
-
   bin(7<pt<17,0.0<abseta<1.2)
   {
     central_value(1.6400,0.1699)
