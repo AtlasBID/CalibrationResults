@@ -55,8 +55,14 @@ sfObject.restrict_good = lambda self: self.filter(
 sfObject.restrict_ignore = lambda self: self.filter(
     ignore=[".*25-pt-30.*",".*300-pt-400.*"]
     )
-	
+
+sfObject.restrict_ignore_tight = lambda self: self.filter(
+    ignore=[".*25-pt-30.*",".*200-pt-300.*",".*300-pt-400.*"]
+    )
+
 sfObject.restrict = lambda self: self.restrict_good().restrict_ignore()
+
+sfObject.restrict_tight = lambda self: self.restrict_good().restrict_ignore_tight()
 	
 ####################################
 # Bottom Flavor Inputs and fits
@@ -76,8 +82,8 @@ pre_ttbar_pdf_7_3j = pre_ttbar_pdf_7_all \
                  .filter(analyses = ["pre_PDF_6bins_ll_3j", "pre_PDF_6bins_emu_3j"])
 
 # Run-II PDF recommendations
-ttbar_pdf_7_all = files("ttbar_pdf/*7bins.txt") + files("ttbar_pdf/*7bins_FLAT.txt") \
-                  .restrict() \
+ttbar_pdf_7_all = files("ttbar_pdf/*7bins.txt") \
+                  .restrict_tight() \
                   .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j"])
 
 ttbar_pdf_7_2j = ttbar_pdf_7_all \
@@ -86,20 +92,22 @@ ttbar_pdf_7_2j = ttbar_pdf_7_all \
 ttbar_pdf_7_3j = ttbar_pdf_7_all \
                  .filter(analyses = ["PDF_6bins_emu_3j"])
 
+ttbar_pdf_7_flat = files("ttbar_pdf/*7bins_FLAT.txt") \
+                  .restrict() \
+                  .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j"])
+
 # Run-II T&P recommendations
 ttbar_tp_all = files("ttbar_topo/TandP*.txt") \
-                 .restrict() \
+                 .restrict_tight() \
                  .filter(analyses = ["TandP_6bins_emu_2j","TandP_6bins_emu_3j"])
 
-ttbar_tp_2j = files("ttbar_topo/TandP*.txt") \
-                .restrict() \
-                .filter(analyses = ["TandP_6bins_emu_2j"])
+ttbar_tp_2j = ttbar_tp_all \
+                 .filter(analyses = ["TandP_6bins_emu_2j"])
 
-ttbar_tp_3j = files("ttbar_topo/TandP*.txt") \
-                .restrict() \
+ttbar_tp_3j = ttbar_tp_all \
                 .filter(analyses = ["TandP_6bins_emu_3j"])
 
-sources_ttbar  = pre_ttbar_pdf_7_all + ttbar_pdf_7_all + ttbar_tp_all
+sources_ttbar  = pre_ttbar_pdf_7_all + ttbar_pdf_7_all + ttbar_pdf_7_flat + ttbar_tp_all
 
 
 # The file "commonbinning.txt" just contains some empty specifications that have the binning. They don't contain
@@ -138,10 +146,11 @@ ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("ttbar_PDF_7b_2j")
 ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("ttbar_PDF_7b_3j")
 
 # one ring to rule them all...
-ttbar_pdf_fits = pre_ttbar_pdf_7_combined \
+ttbar_pre_pdf_fits = pre_ttbar_pdf_7_combined \
     + pre_ttbar_pdf_7_combined_2j \
-    + pre_ttbar_pdf_7_combined_3j \
-    + ttbar_pdf_7_combined \
+    + pre_ttbar_pdf_7_combined_3j
+
+ttbar_pdf_fits = ttbar_pdf_7_combined \
     + ttbar_pdf_7_combined_2j \
     + ttbar_pdf_7_combined_3j
 
@@ -149,7 +158,7 @@ ttbar_tp_fits = ttbar_tp_combined \
     + ttbar_tp_combined_2j \
     + ttbar_tp_combined_3j
 
-ttbar_fits = ttbar_pdf_fits + ttbar_tp_fits
+ttbar_fits = ttbar_pre_pdf_fits + ttbar_pdf_fits + ttbar_tp_fits
 
 #
 # Next, we need to build up the master fits that will be used to make charm and tau results.
@@ -160,7 +169,7 @@ ttbar_fits = ttbar_pdf_fits + ttbar_tp_fits
 
 dstar_rebin_template = files("Dstar/EM/JVF05/DStar_MV1c70.txt")
 
-ttbar_rebin = (dstar_rebin_template + ttbar_fits) \
+ttbar_rebin = (dstar_rebin_template + ttbar_pre_pdf_fits) \
               .rebin("DStar", "<>_rebin")
 
 
