@@ -99,10 +99,10 @@ ttbar_pdf_7_flat = files("ttbar_pdf/*7bins_FLAT.txt") \
 # Run-II T&P recommendations
 ttbar_tp_all = files("ttbar_topo/TandP*.txt") \
                  .restrict_tight() \
-                 .filter(analyses = ["TandP_6bins_emu_2j","TandP_6bins_emu_3j"])
+                 .filter(analyses = ["TandP_6bins_emu_2jmva","TandP_6bins_emu_3j"])
 
 ttbar_tp_2j = ttbar_tp_all \
-                 .filter(analyses = ["TandP_6bins_emu_2j"])
+                 .filter(analyses = ["TandP_6bins_emu_2jmva"])
 
 ttbar_tp_3j = ttbar_tp_all \
                 .filter(analyses = ["TandP_6bins_emu_3j"])
