@@ -136,14 +136,14 @@ ttbar_tp_combined_2j = ttbar_tp_2j.bbb_fit("ttbar_tp_2j")
 ttbar_tp_combined_3j = ttbar_tp_3j.bbb_fit("ttbar_tp_3j")
 
 pre_ttbar_pdf_7_combined_withchi2 = pre_ttbar_pdf_7_all.bbb_fit("pre_ttbar_PDF_7b", saveCHI2Fits=True)
-pre_ttbar_pdf_7_combined = pre_ttbar_pdf_7_combined_withchi2.filter(analyses=["pre_ttbar_PDF_7b"])
+pre_ttbar_pdf_7_combined = pre_ttbar_pdf_7_combined_withchi2.filter(analyses=["pre_ttbar_PDF_7b_2j3j"])
 pre_ttbar_pdf_7_combined_2j = pre_ttbar_pdf_7_2j.bbb_fit("pre_ttbar_PDF_7b_2j")
 pre_ttbar_pdf_7_combined_3j = pre_ttbar_pdf_7_3j.bbb_fit("pre_ttbar_PDF_7b_3j")
 
 ttbar_pdf_7_combined_withchi2 = ttbar_pdf_7_all.bbb_fit("ttbar_PDF_7b", saveCHI2Fits=True)
-ttbar_pdf_7_combined = ttbar_pdf_7_combined_withchi2.filter(analyses=["ttbar_PDF_7b"])
-ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("ttbar_PDF_7b_2j")
-ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("ttbar_PDF_7b_3j")
+ttbar_pdf_7_combined = ttbar_pdf_7_combined_withchi2.filter(analyses=["ttbar_PDF_7b_emu_2j3j"])
+ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("ttbar_PDF_7b_emu_2j")
+ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("ttbar_PDF_7b_emu_3j")
 
 # one ring to rule them all...
 ttbar_pre_pdf_fits = pre_ttbar_pdf_7_combined \
