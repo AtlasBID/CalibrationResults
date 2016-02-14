@@ -1,6 +1,6 @@
 Analysis(PDF_6bins_emu_3j,bottom,MV2c20,FlatBEff_77,AntiKt4EMTopoJets)
 {
-      meta_data_s (Hadronization, PythiaEvtGen)
+      meta_data_s (Hadronization, Pythia8EvtGen)
 
       bin(20<pt<30,0<abseta<2.5)
       {
