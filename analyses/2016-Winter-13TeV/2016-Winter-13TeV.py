@@ -309,7 +309,7 @@ sf_trackjets = b_trackjets_extrap + ct_trackjets_extrap + negative_trackjets_ext
 #
 
 master_cdi_file = all_extrapolated+sf_trackjets
-defaultSFs = master_cdi_file.make_cdi("MC15-CDI", "defaults.txt","StandardTag-13TeV-prerecommendationCalibrationFile4-160209224836.root","BtagWP-Feb2016.root")
+defaultSFs = master_cdi_file.make_cdi("MC15-CDI", "defaults.txt","StandardTag-13TeV-prerecommendationCalibrationFile4-160209224836.root","BtagWP-Feb2016-V2.root")
 master_cdi_file.plot("MC15-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
 master_cdi_file.plot("MC15-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
