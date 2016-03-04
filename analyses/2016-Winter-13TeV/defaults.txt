@@ -19,7 +19,7 @@ Default(negative_tags, light, MV2c20, *, AntiKt4EMTopoJets)
 ###############################################################
 ### track-jets
 # bottom 
-Default(ttbar_PDF_7b_emu_2j, bottom, MV2c20, *, AntiKt2PV0TrackJets)
+Default(PDF_6bins_emu_2j, bottom, MV2c20, *, AntiKt2PV0TrackJets)
 Default(pre_ttbar_topo_dijet, bottom, MV2c20, *, AntiKt4PV0TrackJets)
 # charm
 Default(DStar_pre_ttbar_topo_dijet_rebin, charm, MV2c20, *, AntiKt2PV0TrackJets)
