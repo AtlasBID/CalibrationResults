@@ -143,6 +143,40 @@ Analysis(rebin_30,bottom,MV1,0.8119,AntiKt4TopoEMJVF)
       }
 }
 
+Analysis(rebin_dstar_r02_trackjet,bottom,MV1,0.8119,AntiKt2PV0TrackJets)
+{
+
+      bin(10<pt<20,0.0<abseta<2.5)
+      {
+         central_value(0.997762,0.025649)
+      }
+
+      bin(20<pt<30,0.0<abseta<2.5)
+      {
+         central_value(0.997762,0.025649)
+      }
+
+      bin(30<pt<100,0.0<abseta<2.5)
+      {
+         central_value(1.004855,0.014825)
+      }
+
+      bin(100<pt<250,0.0<abseta<2.5)
+      {
+         central_value(1.004855,0.014825)
+      }
+
+      bin(250<pt<400,0.0<abseta<2.5)
+      {
+         central_value(0.956283,0.039947)
+      }
+
+      bin(400<pt<900,0.0<abseta<2.5)
+      {
+         central_value(0.999499,0.069147)
+      }
+}
+
 Analysis(rebin_dstar_trackjet,bottom,MV1,0.8119,AntiKt2PV0TrackJets)
 {
 
