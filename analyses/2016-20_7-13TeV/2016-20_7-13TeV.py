@@ -84,8 +84,7 @@ sfObject.restrict_tight = lambda self: self.restrict_good().restrict_ignore_tigh
 # Run-II PDF recommendations
 ttbar_pdf_7_all = files("ttbar_pdf/*7bins.txt") \
                   .restrict_tight() \
-                  .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j"]) \
-                  .filter(jets=["AntiKt4EMTopoJets"])
+                  .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j"])
 
 ttbar_pdf_7_2j = ttbar_pdf_7_all \
                  .filter(analyses = ["PDF_6bins_emu_2j"])
@@ -242,12 +241,15 @@ all_extrapolated = rebin_extrapolated + rebin_dstar_extrapolated + light_extrapo
 # The CDI file.
 #
 
-master_cdi_file = sources_ttbar
+master_cdi_file = all_extrapolated
 defaultSFs = master_cdi_file.make_cdi("MC15-CDI", "defaults.txt","ToMerge_AntiKt4EMTopoJets_20160505.root","ToMerge_StandardTag-13TeV-release20.7-160511140113.root")
 master_cdi_file.plot("MC15-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
 master_cdi_file.plot("MC15-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
 master_cdi_file.dump(sysErrors = True, name="master")
 master_cdi_file.dump(metadata = True, name="master-metadata")
+(ttbar_pdf_7_combined_withchi2+ttbar_tp_combined_withchi2).plot("MC15-CHi2-Errors")
+(sources_ttbar+sources_dstar).dump(sysErrors = True, name="sources")
+(mcCalib_bct_all+mcCalib_l_all).plot("MC15-MCExtrapolations")
 
 # Done!

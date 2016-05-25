@@ -1,4 +1,4 @@
-Analysis(PDF_6bins_ll_2j,bottom,MV2c20,FixedCutBEff_77,AntiKt2PV0TrackJets)
+Analysis(PDF_6bins_ll_2j,bottom,MV2c10,FixedCutBEff_77,AntiKt2PV0TrackJets)
 {
       meta_data_s (Hadronization, Pythia6EvtGen)
       meta_data_s (OperatingPoint,-0.6134)

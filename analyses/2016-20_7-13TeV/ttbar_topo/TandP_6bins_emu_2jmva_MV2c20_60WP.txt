@@ -1,4 +1,4 @@
-Analysis(TandP_6bins_emu_2jmva,bottom,MV2c20,FixedCutBEff_60,AntiKt4EMTopoJets)
+Analysis(TandP_6bins_emu_2jmva,bottom,MV2c10,FixedCutBEff_60,AntiKt4EMTopoJets)
 {
 	meta_data_s (Hadronization,Pythia6EvtGen)
 	meta_data_s (OperatingPoint,0.4496)
