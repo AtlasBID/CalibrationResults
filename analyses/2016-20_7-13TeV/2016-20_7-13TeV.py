@@ -28,19 +28,19 @@ description = "Flavor tagging recommendations based on 13 TeV and simulation for
 # points and the efficiency maps for the MV2c10 and MV2c20
 
 taggers = [
-#MV2c20 60%
-    ["MV2c20", "FixedCutBEff_60"],
-    ["MV2c20", "FlatBEff_60"],
-#MV2c20 70%
-    ["MV2c20", "FixedCutBEff_70"],
-    ["MV2c20", "FlatBEff_70"],
-#MV2c20 77%
-    ["MV2c20", "FixedCutBEff_77"],
-    ["MV2c20", "FlatBEff_77"],
+##MV2c20 60%
+#    ["MV2c20", "FixedCutBEff_60"],
+#    ["MV2c20", "FlatBEff_60"],
+##MV2c20 70%
+#    ["MV2c20", "FixedCutBEff_70"],
+#    ["MV2c20", "FlatBEff_70"],
+##MV2c20 77%
+#    ["MV2c20", "FixedCutBEff_77"],
+#    ["MV2c20", "FlatBEff_77"],
 ##MV2c20 85%
-    ["MV2c20", "FixedCutBEff_85"],
-    ["MV2c20", "FlatBEff_85"],
-##MV2c10 60%
+#    ["MV2c20", "FixedCutBEff_85"],
+#    ["MV2c20", "FlatBEff_85"],
+#MV2c10 60%
     ["MV2c10", "FixedCutBEff_60"],
     ["MV2c10", "FlatBEff_60"],
 #MV2c10 70%
@@ -60,10 +60,8 @@ taggers = [
 
 sfObject.restrict_good = lambda self: self.filter(
     taggers=taggers,
-    #jets=["AntiKt4EMTopoJets","AntiKt2PV0TrackJets","AntiKt4PV0TrackJets"],
-    # initial hack to exclude any calibration from a CDI file
-    jets=["AntiKtEMTopoJets"],
-    ).verify_OPs("13TeV")
+    jets=["AntiKt4EMTopoJets","AntiKt2PV0TrackJets","AntiKt4PV0TrackJets"],
+    ).verify_OPs("20_7")
 
 sfObject.restrict_ignore = lambda self: self.filter(
     ignore=[".*25-pt-30.*",".*300-pt-400.*"]
@@ -83,13 +81,162 @@ sfObject.restrict_tight = lambda self: self.restrict_good().restrict_ignore_tigh
 #  Note: sources is used to do a systematic error x-check.
 #
 
-# Run-I PDF pre-recommendations
-pre_ttbar_pdf_7_all = files("../2016-Winter-13TeV/ttbar_pdf/pre/*6bins.txt") \
-                  .restrict() \
-                  .filter(analyses = ["pre_PDF_6bins_emu_2j", "pre_PDF_6bins_emu_3j", \
-                                      "pre_PDF_6bins_ll_2j", "pre_PDF_6bins_ll_3j"])
+# Run-II PDF recommendations
+ttbar_pdf_7_all = files("ttbar_pdf/*7bins.txt") \
+                  .restrict_tight() \
+                  .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j"]) \
+                  .filter(jets=["AntiKt4EMTopoJets"])
 
-sources_ttbar  = pre_ttbar_pdf_7_all
+ttbar_pdf_7_2j = ttbar_pdf_7_all \
+                 .filter(analyses = ["PDF_6bins_emu_2j"])
+
+ttbar_pdf_7_3j = ttbar_pdf_7_all \
+                 .filter(analyses = ["PDF_6bins_emu_3j"])
+
+ttbar_pdf_7_flat = files("ttbar_pdf/*7bins_FLAT.txt") \
+                  .restrict() \
+                  .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j"])
+
+# Run-II T&P recommendations
+ttbar_tp_all = files("ttbar_topo/TandP*.txt") \
+                 .restrict_tight() \
+                 .filter(analyses = ["TandP_6bins_emu_2jmva","TandP_6bins_emu_3j"])
+
+ttbar_tp_2j = ttbar_tp_all \
+                 .filter(analyses = ["TandP_6bins_emu_2jmva"])
+
+ttbar_tp_3j = ttbar_tp_all \
+                .filter(analyses = ["TandP_6bins_emu_3j"])
+
+sources_ttbar  = ttbar_pdf_7_all + ttbar_pdf_7_flat + ttbar_tp_all
+
+# The file "commonbinning.txt" just contains some empty specifications that have the binning. They don't contain
+# any real data. It should have the same binning as the D*. The _30 is without the 20-30 to deal with the PDF method,
+# which has a bin we ignore from 25-30, and that bin can't really participate.
+#
+
+rebin_template_all = files("commonbinning.txt") \
+    .filter(analyses=["rebin"])
+
+rebin_template = rebin_template_all \
+                 .filter(ignore=[".*300-pt-500.*", ".*500-pt-800.*", ".*800-pt-1200.*", ".*1200-pt-2000.*"])
+
+rebin_template_30 = files("commonbinning.txt") \
+                    .filter(analyses=["rebin_30"]) \
+                    .filter(ignore=[".*300-pt-500.*", ".*500-pt-800.*", ".*800-pt-1200.*", ".*1200-pt-2000.*"])
+
+#
+# We want several versions of the pdf fit to end up in the
+# final file. This is for specialized use.
+#
+
+ttbar_tp_combined_withchi2 = ttbar_tp_all.bbb_fit("ttbar_tp_2j3j", saveCHI2Fits=True)
+ttbar_tp_combined = ttbar_tp_combined_withchi2.filter(analyses=["ttbar_tp_2j3j"])
+ttbar_tp_combined_2j = ttbar_tp_2j.bbb_fit("ttbar_tp_2j")
+ttbar_tp_combined_3j = ttbar_tp_3j.bbb_fit("ttbar_tp_3j")
+
+ttbar_pdf_7_combined_withchi2 = (ttbar_pdf_7_all+ttbar_pdf_7_flat).bbb_fit("ttbar_PDF_7b_emu", saveCHI2Fits=True)
+ttbar_pdf_7_combined = ttbar_pdf_7_combined_withchi2.filter(analyses=["ttbar_PDF_7b_emu"])
+ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("ttbar_PDF_7b_emu_2j")
+ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("ttbar_PDF_7b_emu_3j")
+
+# one ring to rule them all...
+ttbar_pdf_fits = ttbar_pdf_7_combined \
+    + ttbar_pdf_7_combined_2j \
+    + ttbar_pdf_7_combined_3j
+
+ttbar_tp_fits = ttbar_tp_combined \
+    + ttbar_tp_combined_2j \
+    + ttbar_tp_combined_3j
+
+ttbar_fits = ttbar_pdf_fits + ttbar_tp_fits
+
+#
+# Next, we need to build up the master fits that will be used to make charm and tau results.
+# This requires re-binning to match the D* input bins (for both charm and tau, as they
+# are just versions of each other).
+# Use one of the D* results as the rebin template.
+#
+
+dstar_rebin_template = files("Dstar/EM/JVF05/DStar_MV1c70.txt")
+
+ttbar_rebin = (dstar_rebin_template + ttbar_pdf_fits) \
+              .rebin("DStar", "<>_rebin")
+
+
+####################################
+# Tau and Charm
+#
+
+# Calculate the new D* values for charm. Use the algorithm provided by Fabrizio.
+# The tau is just an additional error on top of that.
+#
+
+dstar_template = files("Dstar/EM/JVF05/*.txt")\
+                 .restrict()
+
+charm_sf = (dstar_template + ttbar_rebin) \
+           .dstar("DStar_<>", "DStar")
+                 
+tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
+
+sources_dstar = dstar_template
+
+####################################
+# Light SF come from the negative tags
+#
+
+negative = files("negative_tags/EM/JVF05/mistag*.txt") \
+           .restrict()
+
+light_sf = negative
+
+####################################
+# Extrapolate everything
+#
+
+mcCalib_bct_all = (files("MCcalib/SfPtB*.txt") + files("MCcalib/SfPtC*.txt") + files("MCcalib/SfPtT*.txt")) \
+              .restrict_good()
+	
+mcCalib_l_all = files("MCcalib/EtaBins/SfPtL*.txt") \
+            .restrict_good()
+
+mcCalib_bct = mcCalib_bct_all \
+			  .filter(ignore=[".*15-pt-20.*",".*20-pt-30.*",".*30-pt-40.*",".*40-pt-50.*",".*50-pt-60.*"])
+
+mcCalib_l = mcCalib_l_all \
+            .filter(ignore=[".*15-pt-20.*",".*20-pt-30.*",".*30-pt-40.*",".*40-pt-50.*",".*50-pt-60.*",".*60-pt-75.*",".*75-pt-90.*",".*90-pt-110.*",".*110-pt-140.*",".*140-pt-200.*",".*200-pt-300.*"])
+			
+rebin_template_high = rebin_template_all \
+    .filter(ignore=[".*20-pt-30.*"])
+
+mcCalib_rebin_bct = (rebin_template_high + mcCalib_bct) \
+    .rebin("rebin", "<>_rebin")
+
+rebin_for_extrap_dstar = files("commonbinning.txt") \
+                       .filter(analyses=["rebin_dstar"])
+
+mcCalib_rebin_dstar_bct = (rebin_for_extrap_dstar + mcCalib_bct) \
+    .rebin("rebin_dstar", "<>_rebin")
+
+rebin_extrapolated = (\
+    mcCalib_rebin_bct
+    + ttbar_fits \
+    + sources_ttbar \
+    ) \
+    .extrapolate("MCcalib_rebin")
+	
+rebin_dstar_extrapolated = (\
+    charm_sf \
+    + tau_sf \
+    + mcCalib_rebin_dstar_bct \
+	) \
+	.extrapolate("MCcalib_rebin")
+
+light_extrapolated = (light_sf + mcCalib_l).extrapolate("MCcalib")
+
+all_extrapolated = rebin_extrapolated + rebin_dstar_extrapolated + light_extrapolated
+
 
 ####################################
 # The CDI file.
