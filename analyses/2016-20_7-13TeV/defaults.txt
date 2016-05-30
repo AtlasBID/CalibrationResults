@@ -1,32 +1,32 @@
 ###############################################################
 ### calo-jets
 # bottom 
-Default(ttbar_tp_2j, bottom, MV2c20, FixedCutBEff_60, AntiKt4EMTopoJets)
-Default(ttbar_tp_2j, bottom, MV2c20, FixedCutBEff_70, AntiKt4EMTopoJets)
-Default(ttbar_tp_2j, bottom, MV2c20, FixedCutBEff_77, AntiKt4EMTopoJets)
-Default(ttbar_tp_2j, bottom, MV2c20, FixedCutBEff_85, AntiKt4EMTopoJets)
-Default(ttbar_PDF_7b_emu, bottom, MV2c20, FlatBEff_60, AntiKt4EMTopoJets)
-Default(ttbar_PDF_7b_emu, bottom, MV2c20, FlatBEff_70, AntiKt4EMTopoJets)
-Default(ttbar_PDF_7b_emu, bottom, MV2c20, FlatBEff_77, AntiKt4EMTopoJets)
-Default(ttbar_PDF_7b_emu, bottom, MV2c20, FlatBEff_85, AntiKt4EMTopoJets)
+Default(ttbar_tp_2j, bottom, MV2c10, FixedCutBEff_60, AntiKt4EMTopoJets)
+Default(ttbar_tp_2j, bottom, MV2c10, FixedCutBEff_70, AntiKt4EMTopoJets)
+Default(ttbar_tp_2j, bottom, MV2c10, FixedCutBEff_77, AntiKt4EMTopoJets)
+Default(ttbar_tp_2j, bottom, MV2c10, FixedCutBEff_85, AntiKt4EMTopoJets)
+Default(ttbar_PDF_7b_emu, bottom, MV2c10, FlatBEff_60, AntiKt4EMTopoJets)
+Default(ttbar_PDF_7b_emu, bottom, MV2c10, FlatBEff_70, AntiKt4EMTopoJets)
+Default(ttbar_PDF_7b_emu, bottom, MV2c10, FlatBEff_77, AntiKt4EMTopoJets)
+Default(ttbar_PDF_7b_emu, bottom, MV2c10, FlatBEff_85, AntiKt4EMTopoJets)
 # charm
-Default(DStar_pre_ttbar_PDF_7b_rebin, charm, MV2c20, *, AntiKt4EMTopoJets)
+Default(DStar_pre_ttbar_PDF_7b_rebin, charm, MV2c10, *, AntiKt4EMTopoJets)
 # tau
-Default(DStar_pre_ttbar_PDF_7b_rebin, tau, MV2c20, *, AntiKt4EMTopoJets)
+Default(DStar_pre_ttbar_PDF_7b_rebin, tau, MV2c10, *, AntiKt4EMTopoJets)
 # light
-Default(negative_tags, light, MV2c20, *, AntiKt4EMTopoJets)
+Default(negative_tags, light, MV2c10, *, AntiKt4EMTopoJets)
 
 ###############################################################
 ### track-jets
 # bottom 
-Default(PDF_6bins_emu_2j, bottom, MV2c20, *, AntiKt2PV0TrackJets)
-Default(pre_ttbar_topo_dijet, bottom, MV2c20, *, AntiKt4PV0TrackJets)
+Default(PDF_6bins_emu_2j, bottom, MV2c10, *, AntiKt2PV0TrackJets)
+Default(pre_ttbar_topo_dijet, bottom, MV2c10, *, AntiKt4PV0TrackJets)
 # charm
-Default(DStar_pre_ttbar_topo_dijet_rebin, charm, MV2c20, *, AntiKt2PV0TrackJets)
-Default(DStar_pre_ttbar_topo_dijet_rebin, charm, MV2c20, *, AntiKt4PV0TrackJets)
+Default(DStar_pre_ttbar_topo_dijet_rebin, charm, MV2c10, *, AntiKt2PV0TrackJets)
+Default(DStar_pre_ttbar_topo_dijet_rebin, charm, MV2c10, *, AntiKt4PV0TrackJets)
 # tau
-Default(DStar_pre_ttbar_topo_dijet_rebin, tau, MV2c20, *, AntiKt2PV0TrackJets)
-Default(DStar_pre_ttbar_topo_dijet_rebin, tau, MV2c20, *, AntiKt4PV0TrackJets)
+Default(DStar_pre_ttbar_topo_dijet_rebin, tau, MV2c10, *, AntiKt2PV0TrackJets)
+Default(DStar_pre_ttbar_topo_dijet_rebin, tau, MV2c10, *, AntiKt4PV0TrackJets)
 # light
-Default(negative_tags, light, MV2c20, *, AntiKt2PV0TrackJets)
-Default(negative_tags, light, MV2c20, *, AntiKt4PV0TrackJets)
+Default(negative_tags, light, MV2c10, *, AntiKt2PV0TrackJets)
+Default(negative_tags, light, MV2c10, *, AntiKt4PV0TrackJets)

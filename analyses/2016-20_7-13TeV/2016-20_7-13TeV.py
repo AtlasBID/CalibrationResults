@@ -15,7 +15,7 @@ from files import files
 from sfObject import sfObject
 
 title = "Recommendations of flavor tagging results for 13 TeV collisions"
-name = "2016-Winter-13TeV"
+name = "2016-20_7-13TeV"
 description = "Flavor tagging recommendations based on 13 TeV and simulation for the 2016 Run-II analysis"
 
 #
@@ -68,8 +68,13 @@ sfObject.restrict_tight = lambda self: self.restrict_good().restrict_ignore_tigh
 #
 
 # Run-I PDF pre-recommendations
-pre_ttbar_pdf_7 = files("ttbar_pdf/pre/calibSF_MV170_emu_2jets_6bins.txt") \
+# these are needed for the c-jet calibration since
+# we want the high-pT extrapolation to kick in at 200 GeV
+# for the b-jet calibration
+pre_ttbar_pdf_7_all = files("ttbar_pdf/pre/*6bins.txt") \
                   .restrict() \
+                  .filter(analyses = ["pre_PDF_6bins_emu_2j", "pre_PDF_6bins_emu_3j", \
+                                      "pre_PDF_6bins_ll_2j", "pre_PDF_6bins_ll_3j"])
 
 # Run-II PDF recommendations
 ttbar_pdf_7_all = files("ttbar_pdf/*7bins.txt") \
@@ -126,6 +131,9 @@ ttbar_tp_combined = ttbar_tp_combined_withchi2.filter(analyses=["ttbar_tp_2j3j"]
 ttbar_tp_combined_2j = ttbar_tp_2j.bbb_fit("ttbar_tp_2j")
 ttbar_tp_combined_3j = ttbar_tp_3j.bbb_fit("ttbar_tp_3j")
 
+pre_ttbar_pdf_7_combined_withchi2 = pre_ttbar_pdf_7_all.bbb_fit("pre_ttbar_PDF_7b", saveCHI2Fits=True)
+pre_ttbar_pdf_7_combined = pre_ttbar_pdf_7_combined_withchi2.filter(analyses=["pre_ttbar_PDF_7b"])
+
 ttbar_pdf_7_combined_withchi2 = (ttbar_pdf_7_all+ttbar_pdf_7_flat).bbb_fit("ttbar_PDF_7b_emu", saveCHI2Fits=True)
 ttbar_pdf_7_combined = ttbar_pdf_7_combined_withchi2.filter(analyses=["ttbar_PDF_7b_emu"])
 ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("ttbar_PDF_7b_emu_2j")
@@ -151,7 +159,7 @@ ttbar_fits = ttbar_pdf_fits + ttbar_tp_fits
 
 dstar_rebin_template = files("Dstar/EM/JVF05/DStar_MV1c70.txt")
 
-ttbar_rebin = (dstar_rebin_template + pre_ttbar_pdf_7) \
+ttbar_rebin = (dstar_rebin_template + pre_ttbar_pdf_7_combined) \
               .rebin("DStar", "<>_rebin")
 
 
@@ -239,7 +247,6 @@ master_cdi_file.dump(linage=True, name="master-cdi-linage")
 master_cdi_file.plot("MC15-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
 master_cdi_file.dump(sysErrors = True, name="master")
 master_cdi_file.dump(metadata = True, name="master-metadata")
-#(pre_ttbar_pdf_7_combined_withchi2+ttbar_pdf_7_combined_withchi2+ttbar_tp_combined_withchi2).plot("MC15-CHi2-Errors")
 (ttbar_pdf_7_combined_withchi2+ttbar_tp_combined_withchi2).plot("MC15-CHi2-Errors")
 (sources_ttbar+sources_dstar).dump(sysErrors = True, name="sources")
 (mcCalib_bct_all+mcCalib_l_all).plot("MC15-MCExtrapolations")
