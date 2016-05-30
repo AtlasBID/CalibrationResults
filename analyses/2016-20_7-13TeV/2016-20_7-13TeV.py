@@ -241,7 +241,7 @@ all_extrapolated = rebin_extrapolated + rebin_dstar_extrapolated + light_extrapo
 #
 
 master_cdi_file = all_extrapolated
-defaultSFs = master_cdi_file.make_cdi("MC15-CDI", "defaults.txt","StandardTag-13TeV-release20.7-160524222719.root","AntiKt4EMTopoJets_20160528.root")
+defaultSFs = master_cdi_file.make_cdi("MC15-CDI", "defaults.txt","StandardTag-13TeV-release20.7-160524222719.root","BtagWP-May2016-V1.root")
 master_cdi_file.plot("MC15-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
 master_cdi_file.plot("MC15-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
