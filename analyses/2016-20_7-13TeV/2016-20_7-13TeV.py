@@ -236,11 +236,93 @@ light_extrapolated = (light_sf + mcCalib_l).extrapolate("MCcalib")
 
 all_extrapolated = rebin_extrapolated + rebin_dstar_extrapolated + light_extrapolated
 
+
+####################################
+# Track-jets pre-recommendations - b jets
+#
+
+ttbar_pre_r02_trackjets = files("ttbar_topo/pre/*.txt") \
+                       .restrict_good() \
+                       .filter(analyses = ["pre_ttbar_topo_dijet"]) \
+                       .filter(jets=["AntiKt2PV0TrackJets"])
+
+ttbar_r02_trackjets = files("ttbar_pdf/*tracks*.txt") \
+                       .restrict_tight() \
+                       .filter(analyses = ["PDF_6bins_emu_2j","PDF_6bins_emu_3j"]) \
+                       .filter(jets=["AntiKt2PV0TrackJets"])
+
+ttbar_pre_trackjets = files("ttbar_topo/pre/*.txt") \
+                       .restrict_good() \
+                       .filter(analyses = ["pre_ttbar_topo_dijet"]) \
+                       .filter(jets=["AntiKt4PV0TrackJets"])
+
+ttbar_trackjets = files("ttbar_pdf/*tracks*.txt") \
+                       .restrict_tight() \
+                       .filter(analyses = ["PDF_6bins_emu_2j","PDF_6bins_emu_3j"]) \
+                       .filter(jets=["AntiKt4PV0TrackJets"])
+
+mcCalib_b_trackjets = files("MCcalib/AntiKt*SfPtB*.txt") \
+                      .restrict_good() \
+
+b_trackjets_extrap = (ttbar_pre_r02_trackjets + ttbar_r02_trackjets + ttbar_pre_trackjets + ttbar_trackjets + mcCalib_b_trackjets) \
+                     .extrapolate("MCcalib")
+
+####################################
+# Track-jets pre-recommendations - c jets
+#
+
+dstar_rebin_template_r02_trackjets = files("commonbinning.txt") \
+                                 .filter(analyses=["rebin_dstar_r02_trackjet"])
+
+dstar_rebin_template_trackjets = files("commonbinning.txt") \
+                                 .filter(analyses=["rebin_dstar_trackjet"])
+
+ttbar_topo_rebin_r02_trackjets = (dstar_rebin_template_r02_trackjets + ttbar_pre_r02_trackjets + ttbar_r02_trackjets) \
+                             .rebin("rebin_dstar_r02_trackjet", "<>_rebin")
+
+ttbar_topo_rebin_trackjets = (dstar_rebin_template_trackjets + ttbar_pre_trackjets + ttbar_trackjets) \
+                             .rebin("rebin_dstar_trackjet", "<>_rebin")
+
+dstar_trackjets = files("Dstar/EM/JVF05/AntiKt*.txt") \
+                       .restrict_good()
+
+charm_trackjets = (dstar_trackjets + ttbar_topo_rebin_r02_trackjets + ttbar_topo_rebin_trackjets) \
+                  .dstar("DStar_<>", "DStar")
+                 
+tau_trackjets = charm_trackjets.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
+
+mcCalib_ct_trackjets = (files("MCcalib/AntiKt*SfPtC*.txt") + files("MCcalib/AntiKt*SfPtT*.txt")) \
+                       .restrict_good() \
+
+ct_trackjets_extrap = (charm_trackjets + tau_trackjets + mcCalib_ct_trackjets) \
+                       .extrapolate("MCcalib")
+
+####################################
+# Track-jets pre-recommendations - light jets
+#
+
+negative_trackjets = files("negative_tags/EM/JVF05/AntiKt*.txt") \
+                     .restrict_good() \
+                     .filter(analyses = ["negative_tags"])
+
+mcCalib_l_trackjets = files("MCcalib/EtaBins/AntiKt*.txt") \
+                      .restrict_good() \
+
+negative_trackjets_extrap = (negative_trackjets + mcCalib_l_trackjets).extrapolate("MCcalib")
+
+
+####################################
+# Track-jets - altogether
+#
+
+sf_trackjets = b_trackjets_extrap + ct_trackjets_extrap + negative_trackjets_extrap
+
+
 ####################################
 # The CDI file.
 #
 
-master_cdi_file = all_extrapolated
+master_cdi_file = all_extrapolated+sf_trackjets
 defaultSFs = master_cdi_file.make_cdi("MC15-CDI", "defaults.txt","StandardTag-13TeV-release20.7-160524222719.root","BtagWP-May2016-V1.root")
 master_cdi_file.plot("MC15-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
