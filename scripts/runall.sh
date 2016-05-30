@@ -9,5 +9,5 @@
 #./scripts/combine.py --zip analyses/2012-Paper/2012Paper-new.py
 #./scripts/combine.py --zip analyses/2014-Winter/2014-Winter.py
 #./scripts/combine.py --zip analyses/2015-PreRecomm-13TeV/2015-PreRecomm-13TeV.py
-./scripts/combine.py --zip analyses/2016-Winter-13TeV/2016-Winter-13TeV.py
+#./scripts/combine.py --zip analyses/2016-Winter-13TeV/2016-Winter-13TeV.py
 ./scripts/combine.py --zip analyses/2016-20_7-13TeV/2016-20_7-13TeV.py
