@@ -14,32 +14,18 @@
 from files import files
 from sfObject import sfObject
 
-title = "Recommendations of flavor tagging results for 13 TeV collisions on 20.7 release"
-name = "2016-20_7-13TeV"
-description = "Flavor tagging recommendations based on 13 TeV and simulation for the 2016 Run-II analysis on 20.7 release"
+title = "Recommendations of flavor tagging results for 13 TeV collisions"
+name = "2016-Winter-13TeV"
+description = "Flavor tagging recommendations based on 13 TeV and simulation for the 2016 Run-II analysis"
 
 #
 # Legal taggers. These will be used lower down to filter out the inputs to make sure
 # we are dealing only with what we want to deal with.
 #
 
-# Master file for the recommendations on release 20.7 
-# we start with just the definition of the working
-# points and the efficiency maps for the MV2c10 and MV2c20
+# MC15 working points derived on May 2nd, 2016 and available at BTaggingBenchmarks twiki
 
 taggers = [
-##MV2c20 60%
-#    ["MV2c20", "FixedCutBEff_60"],
-#    ["MV2c20", "FlatBEff_60"],
-##MV2c20 70%
-#    ["MV2c20", "FixedCutBEff_70"],
-#    ["MV2c20", "FlatBEff_70"],
-##MV2c20 77%
-#    ["MV2c20", "FixedCutBEff_77"],
-#    ["MV2c20", "FlatBEff_77"],
-##MV2c20 85%
-#    ["MV2c20", "FixedCutBEff_85"],
-#    ["MV2c20", "FlatBEff_85"],
 #MV2c10 60%
     ["MV2c10", "FixedCutBEff_60"],
     ["MV2c10", "FlatBEff_60"],
@@ -81,10 +67,15 @@ sfObject.restrict_tight = lambda self: self.restrict_good().restrict_ignore_tigh
 #  Note: sources is used to do a systematic error x-check.
 #
 
+# Run-I PDF pre-recommendations
+pre_ttbar_pdf_7 = files("ttbar_pdf/pre/calibSF_MV170_emu_2jets_6bins.txt") \
+                  .restrict() \
+
 # Run-II PDF recommendations
 ttbar_pdf_7_all = files("ttbar_pdf/*7bins.txt") \
                   .restrict_tight() \
-                  .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j"])
+                  .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j"]) \
+                  .filter(jets=["AntiKt4EMTopoJets"])
 
 ttbar_pdf_7_2j = ttbar_pdf_7_all \
                  .filter(analyses = ["PDF_6bins_emu_2j"])
@@ -107,7 +98,8 @@ ttbar_tp_2j = ttbar_tp_all \
 ttbar_tp_3j = ttbar_tp_all \
                 .filter(analyses = ["TandP_6bins_emu_3j"])
 
-sources_ttbar  = ttbar_pdf_7_all + ttbar_pdf_7_flat + ttbar_tp_all
+sources_ttbar = ttbar_pdf_7_all + ttbar_pdf_7_flat + ttbar_tp_all
+
 
 # The file "commonbinning.txt" just contains some empty specifications that have the binning. They don't contain
 # any real data. It should have the same binning as the D*. The _30 is without the 20-30 to deal with the PDF method,
@@ -159,7 +151,7 @@ ttbar_fits = ttbar_pdf_fits + ttbar_tp_fits
 
 dstar_rebin_template = files("Dstar/EM/JVF05/DStar_MV1c70.txt")
 
-ttbar_rebin = (dstar_rebin_template + ttbar_pdf_fits) \
+ttbar_rebin = (dstar_rebin_template + pre_ttbar_pdf_7) \
               .rebin("DStar", "<>_rebin")
 
 
@@ -236,18 +228,18 @@ light_extrapolated = (light_sf + mcCalib_l).extrapolate("MCcalib")
 
 all_extrapolated = rebin_extrapolated + rebin_dstar_extrapolated + light_extrapolated
 
-
 ####################################
 # The CDI file.
 #
 
 master_cdi_file = all_extrapolated
-defaultSFs = master_cdi_file.make_cdi("MC15-CDI", "defaults.txt","ToMerge_AntiKt4EMTopoJets_20160505.root","ToMerge_StandardTag-13TeV-release20.7-160511140113.root")
+defaultSFs = master_cdi_file.make_cdi("MC15-CDI", "defaults.txt","StandardTag-13TeV-prerecommendationCalibrationFile5-160308081826.root","BtagWP-Feb2016-V2.root")
 master_cdi_file.plot("MC15-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
 master_cdi_file.plot("MC15-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
 master_cdi_file.dump(sysErrors = True, name="master")
 master_cdi_file.dump(metadata = True, name="master-metadata")
+#(pre_ttbar_pdf_7_combined_withchi2+ttbar_pdf_7_combined_withchi2+ttbar_tp_combined_withchi2).plot("MC15-CHi2-Errors")
 (ttbar_pdf_7_combined_withchi2+ttbar_tp_combined_withchi2).plot("MC15-CHi2-Errors")
 (sources_ttbar+sources_dstar).dump(sysErrors = True, name="sources")
 (mcCalib_bct_all+mcCalib_l_all).plot("MC15-MCExtrapolations")
