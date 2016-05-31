@@ -88,12 +88,8 @@ ttbar_pdf_7_2j = ttbar_pdf_7_all \
 ttbar_pdf_7_3j = ttbar_pdf_7_all \
                  .filter(analyses = ["PDF_6bins_emu_3j"])
 
-ttbar_pdf_7_flat = files("ttbar_pdf/*7bins_FLAT.txt") \
-                  .restrict() \
-                  .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j"])
-
 # Run-II T&P recommendations
-ttbar_tp_all = files("ttbar_topo/TandP*.txt") \
+ttbar_tp_all = files("ttbar_topo/TandP*WP.txt") \
                  .restrict_tight() \
                  .filter(analyses = ["TandP_6bins_emu_2jmva","TandP_6bins_emu_3j"])
 
@@ -103,7 +99,7 @@ ttbar_tp_2j = ttbar_tp_all \
 ttbar_tp_3j = ttbar_tp_all \
                 .filter(analyses = ["TandP_6bins_emu_3j"])
 
-sources_ttbar = ttbar_pdf_7_all + ttbar_pdf_7_flat + ttbar_tp_all
+sources_ttbar = ttbar_pdf_7_all + ttbar_tp_all
 
 
 # The file "commonbinning.txt" just contains some empty specifications that have the binning. They don't contain
@@ -134,7 +130,7 @@ ttbar_tp_combined_3j = ttbar_tp_3j.bbb_fit("ttbar_tp_3j")
 pre_ttbar_pdf_7_combined_withchi2 = pre_ttbar_pdf_7_all.bbb_fit("pre_ttbar_PDF_7b", saveCHI2Fits=True)
 pre_ttbar_pdf_7_combined = pre_ttbar_pdf_7_combined_withchi2.filter(analyses=["pre_ttbar_PDF_7b"])
 
-ttbar_pdf_7_combined_withchi2 = (ttbar_pdf_7_all+ttbar_pdf_7_flat).bbb_fit("ttbar_PDF_7b_emu", saveCHI2Fits=True)
+ttbar_pdf_7_combined_withchi2 = (ttbar_pdf_7_all).bbb_fit("ttbar_PDF_7b_emu", saveCHI2Fits=True)
 ttbar_pdf_7_combined = ttbar_pdf_7_combined_withchi2.filter(analyses=["ttbar_PDF_7b_emu"])
 ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("ttbar_PDF_7b_emu_2j")
 ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("ttbar_PDF_7b_emu_3j")
