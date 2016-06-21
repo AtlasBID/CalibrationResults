@@ -37,7 +37,11 @@ taggers = [
     ["MV2c10", "FlatBEff_77"],
 #MV2c10 85%
     ["MV2c10", "FixedCutBEff_85"],
-    ["MV2c10", "FlatBEff_85"]
+    ["MV2c10", "FlatBEff_85"],
+#MV2c00_MV2c100 70%
+    ["MV2c00_MV2c100", "2DFixedCutBEff_70"],
+#MV2c00_MV2c100 77%
+    ["MV2c00_MV2c100", "2DFixedCutBEff_77"]
     ]
 
 #
@@ -319,7 +323,7 @@ sf_trackjets = b_trackjets_extrap + ct_trackjets_extrap + negative_trackjets_ext
 #
 
 master_cdi_file = all_extrapolated+sf_trackjets
-defaultSFs = master_cdi_file.make_cdi("MC15-CDI", "defaults.txt","StandardTag-13TeV-release20.7-160620105611.root","BtagWP-May2016-V1.root")
+defaultSFs = master_cdi_file.make_cdi("MC15-CDI", "defaults.txt","StandardTag-13TeV-release20.7-160620105611.root","BtagWP-June2016-V1.root")
 master_cdi_file.plot("MC15-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
 master_cdi_file.plot("MC15-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
