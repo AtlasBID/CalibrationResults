@@ -30,3 +30,14 @@ Default(DStar_pre_ttbar_topo_dijet_rebin, tau, MV2c10, *, AntiKt4PV0TrackJets)
 # light
 Default(negative_tags, light, MV2c10, *, AntiKt2PV0TrackJets)
 Default(negative_tags, light, MV2c10, *, AntiKt4PV0TrackJets)
+
+###############################################################
+### track-jets with MV2c00_MV2c100
+# bottom 
+Default(PDF_6bins_emu_2j, bottom, MV2c00_MV2c100, *, AntiKt2PV0TrackJets)
+# charm
+Default(DStar_pre_ttbar_topo_dijet_rebin, charm, MV2c00_MV2c100, *, AntiKt2PV0TrackJets)
+# tau
+Default(DStar_pre_ttbar_topo_dijet_rebin, tau, MV2c00_MV2c100, *, AntiKt2PV0TrackJets)
+# light
+Default(negative_tags, light, MV2c00_MV2c100, *, AntiKt2PV0TrackJets)
