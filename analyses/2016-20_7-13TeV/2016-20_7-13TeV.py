@@ -39,9 +39,9 @@ taggers = [
     ["MV2c10", "FixedCutBEff_85"],
     ["MV2c10", "FlatBEff_85"],
 #MV2c00_MV2c100 70%
-    ["MV2c00_MV2c100", "2DFixedCutBEff_70"],
+#    ["MV2c00_MV2c100", "2DFixedCutBEff_70"],
 #MV2c00_MV2c100 77%
-    ["MV2c00_MV2c100", "2DFixedCutBEff_77"]
+#    ["MV2c00_MV2c100", "2DFixedCutBEff_77"]
     ]
 
 #
@@ -176,8 +176,12 @@ dstar_template = files("Dstar/EM/JVF05/*.txt")\
 
 charm_sf = (dstar_template + ttbar_rebin) \
            .dstar("DStar_<>", "DStar")
+
+charm_sf_extrap = (dstar_template + ttbar_rebin) \
+           .dstar("DStar_extrap_<>", "DStar_extrap")
                  
 tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
+tau_sf_extrap = charm_sf_extrap.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
 sources_dstar = dstar_template
 
@@ -227,7 +231,9 @@ rebin_extrapolated = (\
 	
 rebin_dstar_extrapolated = (\
     charm_sf \
+    + charm_sf_extrap \
     + tau_sf \
+    + tau_sf_extrap \
     + mcCalib_rebin_dstar_bct \
 	) \
 	.extrapolate("MCcalib_rebin")
