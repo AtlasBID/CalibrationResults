@@ -103,7 +103,7 @@ class CDI:
             fList += self._wp.ResolveToFiles(html)
 
         dumpTitle(html, title)
-        print >> html, "Command line arguments: %s" % files
+        print >> html, "Command line: FTConvertToCDI %s" % lfiles
         if rerunCommand(fList, outFile, lfiles, html):
             errcode = dumpCommandResult(html, "FTConvertToCDI %s %s" % (lfiles, versionInfo), store=cmdLog)
             if errcode == 0:
