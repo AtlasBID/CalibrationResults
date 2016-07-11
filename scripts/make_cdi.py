@@ -108,7 +108,7 @@ class CDI:
 
         dumpTitle(html, title)
         print >> html, "Command line: FTConvertToCDI %s" % lfiles
-        if rerunCommand(fList, outFile, lfiles, html):
+        if rerunCommand(fList, "output.root", lfiles, html):
             errcode = dumpCommandResult(html, "FTConvertToCDI %s %s" % (lfiles, versionInfo), store=cmdLog)
             if errcode == 0:
                 shutil.copy ("output.root", outFile)
@@ -117,9 +117,9 @@ class CDI:
 
         else:
             dumpFile(html, cmdLog)
-            print >> html, "<p>Inputs have not changed, resuing results from last run</p>"
+            print >> html, "<p>Inputs have not changed, reusing results from last run</p>"
 
-        print >> html, "Command line arguments: %s" % files
+        print >> html, "Command line: FTCopyDefaults %s" % files
         if rerunCommand(fList, cmdCopyOut, lfiles, html):
             errcode = dumpCommandResult(html, "FTCopyDefaults %s output %s" % (lfiles, cmdCopyOut), store=cmdLogCopy)
             if errcode <> 0:
@@ -127,7 +127,7 @@ class CDI:
 
         else:
             dumpFile(html, cmdLogCopy)
-            print >> html, "<p>Inputs have not changed, resuing results from last run</p>"
+            print >> html, "<p>Inputs have not changed, reusing results from last run</p>"
 
         print >> html, '<a href="%s">CDI File</a>' % outFile
         print >> html, '<a href="%s">Defaults</a>' % cmdCopyOut
@@ -142,6 +142,6 @@ class CDI:
 
             else:
                 dumpFile(html, cmdLog)
-                print >> html, "<p>Inputs have not changed, resuing results from last run</p>"
+                print >> html, "<p>Inputs have not changed, reusing results from last run</p>"
             
             dumpROOTFile(html, outFile)
