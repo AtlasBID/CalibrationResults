@@ -38,10 +38,6 @@ taggers = [
 #MV2c10 85%
     ["MV2c10", "FixedCutBEff_85"],
     ["MV2c10", "FlatBEff_85"],
-#MV2c00_MV2c100 70%
-#    ["MV2c00_MV2c100", "2DFixedCutBEff_70"],
-#MV2c00_MV2c100 77%
-#    ["MV2c00_MV2c100", "2DFixedCutBEff_77"]
     ]
 
 #
