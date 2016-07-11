@@ -52,10 +52,11 @@ class Plot:
                 shutil.copy ("plots.root", outFile)
             else:
                 print >> html, "<b>Plotting failed with error code %s</b>" % errcode
-                print >> html, "Command line arguments: %s" % files
+                print >> html, "Command line: FTPlot %s" % files
         
         else:
             dumpFile(html, cmdLog)
             print >> html, "<p>Inputs have not changed, resuing results from last run</p>"
+            print >> html, "Command line: FTPlot %s" % files
 
         print >> html, '<a href="%s">Scale Factor Plots</a>' % outFile
