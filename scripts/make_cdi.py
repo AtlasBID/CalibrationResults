@@ -15,7 +15,7 @@ from sfObject import sfObject
 #
 # The CDI operator.
 #
-def make_cdi (sfobj, name, defaults_file = None, eff_file = None, wp_file = None, Check=True):
+def make_cdi (sfobj, name, defaults_file = None, eff_file = None, wp_file = None, slim = None, Check=True):
     rf = FutureFile()
 
     df = defaults_file
@@ -30,7 +30,7 @@ def make_cdi (sfobj, name, defaults_file = None, eff_file = None, wp_file = None
     if not isinstance(wp, sfObject):
         wp = files(wp, no_files_ok = True)
 
-    comboGlobals.Commands += [CDI(sfobj, name, df, ef, wp, Check, rf)]
+    comboGlobals.Commands += [CDI(sfobj, name, df, ef, wp, slim, Check, rf)]
     return rf
 
 #
@@ -62,12 +62,13 @@ def dumpROOTFile (html, fname):
 #
 class CDI:
     # Setup the CDI command, remember everything.
-    def __init__(self, sfinfo, name, defaults_file, ttbar, wp, check, futurefile):
+    def __init__(self, sfinfo, name, defaults_file, ttbar, wp, slim, check, futurefile):
         self._sf = sfinfo
         self._name = name
         self._check = check
         self._ttbar = ttbar
         self._wp = wp
+        self._slim = slim
         self._defaults_file = defaults_file
         self._rf = futurefile
 
@@ -101,6 +102,9 @@ class CDI:
         if self._wp:
             lfiles += " %s" % listToString(["--copy%s" % l for l in self._wp.ResolveToFiles(html)])
             fList += self._wp.ResolveToFiles(html)
+
+        if self._slim:
+            lfiles += " %s" % listToString(["--inputSlim../Combination/inputdata/FTCopySlim-%s.txt" %self._slim])
 
         dumpTitle(html, title)
         print >> html, "Command line: FTConvertToCDI %s" % lfiles
