@@ -251,23 +251,29 @@ ttbar_pre_r02_trackjets = files("ttbar_topo/pre/*.txt") \
 
 ttbar_r02_trackjets = files("ttbar_pdf/*tracks*.txt") \
                        .restrict_tight() \
-                       .filter(analyses = ["PDF_6bins_emu_2j","PDF_6bins_emu_3j"]) \
+                       .filter(analyses = ["PDF_6bins_emu_2j","PDF_6bins_emu_3j", \
+                                           "PDF_6bins_ll_2j", "PDF_6bins_ll_3j"]) \
                        .filter(jets=["AntiKt2PV0TrackJets"])
 
-ttbar_pre_trackjets = files("ttbar_topo/pre/*.txt") \
+ttbar_pre_r04_trackjets = files("ttbar_topo/pre/*.txt") \
                        .restrict_good() \
                        .filter(analyses = ["pre_ttbar_topo_dijet"]) \
                        .filter(jets=["AntiKt4PV0TrackJets"])
 
-ttbar_trackjets = files("ttbar_pdf/*tracks*.txt") \
+ttbar_r04_trackjets = files("ttbar_pdf/*tracks*.txt") \
                        .restrict_tight() \
                        .filter(analyses = ["PDF_6bins_emu_2j","PDF_6bins_emu_3j"]) \
                        .filter(jets=["AntiKt4PV0TrackJets"])
 
 mcCalib_b_trackjets = files("MCcalib/AntiKt*SfPtB*.txt") \
-                      .restrict_good() \
+                      .restrict_good()
 
-b_trackjets_extrap = (ttbar_pre_r02_trackjets + ttbar_r02_trackjets + ttbar_pre_trackjets + ttbar_trackjets + mcCalib_b_trackjets) \
+
+ttbar_r02_trackjets_combined_withchi2 = (ttbar_r02_trackjets).bbb_fit("ttbar_PDF_7b", saveCHI2Fits=True)
+ttbar_r02_trackjets_combined = ttbar_r02_trackjets_combined_withchi2.filter(analyses=["ttbar_PDF_7b"])
+
+b_trackjets_extrap = (ttbar_r02_trackjets_combined + ttbar_pre_r02_trackjets + ttbar_r02_trackjets + \
+                      ttbar_pre_r04_trackjets + ttbar_r04_trackjets + mcCalib_b_trackjets) \
                      .extrapolate("MCcalib")
 
 ####################################
@@ -281,15 +287,15 @@ dstar_rebin_template_trackjets = files("commonbinning.txt") \
                                  .filter(analyses=["rebin_dstar_trackjet"])
 
 ttbar_topo_rebin_r02_trackjets = (dstar_rebin_template_r02_trackjets + ttbar_pre_r02_trackjets + ttbar_r02_trackjets) \
-                             .rebin("rebin_dstar_r02_trackjet", "<>_rebin")
+                                 .rebin("rebin_dstar_r02_trackjet", "<>_rebin")
 
-ttbar_topo_rebin_trackjets = (dstar_rebin_template_trackjets + ttbar_pre_trackjets + ttbar_trackjets) \
-                             .rebin("rebin_dstar_trackjet", "<>_rebin")
+ttbar_topo_rebin_r04_trackjets = (dstar_rebin_template_trackjets + ttbar_pre_r04_trackjets + ttbar_r04_trackjets) \
+                                 .rebin("rebin_dstar_trackjet", "<>_rebin")
 
 dstar_trackjets = files("Dstar/EM/JVF05/AntiKt*.txt") \
                        .restrict_good()
 
-charm_trackjets = (dstar_trackjets + ttbar_topo_rebin_r02_trackjets + ttbar_topo_rebin_trackjets) \
+charm_trackjets = (dstar_trackjets + ttbar_topo_rebin_r02_trackjets + ttbar_topo_rebin_r04_trackjets) \
                   .dstar("DStar_<>", "DStar")
                  
 tau_trackjets = charm_trackjets.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
