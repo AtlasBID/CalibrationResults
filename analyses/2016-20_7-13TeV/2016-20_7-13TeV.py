@@ -78,19 +78,20 @@ sfObject.restrict_tight = lambda self: self.restrict_good().restrict_ignore_tigh
 pre_ttbar_pdf_7_all = files("ttbar_pdf/pre/*6bins.txt") \
                   .restrict() \
                   .filter(analyses = ["pre_PDF_6bins_emu_2j", "pre_PDF_6bins_emu_3j", \
-                                      "pre_PDF_6bins_ll_2j", "pre_PDF_6bins_ll_3j"])
+                                      "pre_PDF_6bins_ll_2j",  "pre_PDF_6bins_ll_3j"])
 
 # Run-II PDF recommendations
 ttbar_pdf_7_all = files("ttbar_pdf/*7bins.txt") \
                   .restrict_tight() \
-                  .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j"]) \
+                  .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j", \
+                                      "PDF_6bins_ll_2j",  "PDF_6bins_ll_3j"]) \
                   .filter(jets=["AntiKt4EMTopoJets"])
 
 ttbar_pdf_7_2j = ttbar_pdf_7_all \
-                 .filter(analyses = ["PDF_6bins_emu_2j"])
+                 .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_ll_2j"])
 
 ttbar_pdf_7_3j = ttbar_pdf_7_all \
-                 .filter(analyses = ["PDF_6bins_emu_3j"])
+                 .filter(analyses = ["PDF_6bins_emu_3j", "PDF_6bins_ll_3j"])
 
 # Run-II T&P recommendations
 ttbar_tp_all = files("ttbar_topo/TandP*WP.txt") \
