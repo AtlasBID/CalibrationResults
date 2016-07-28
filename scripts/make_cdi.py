@@ -96,11 +96,11 @@ class CDI:
             fList += self._defaults_file.ResolveToFiles(html)
 
         if self._ttbar:
-            lfiles += " %s" % listToString(["--copySlim%s" % l for l in self._ttbar.ResolveToFiles(html)])
+            lfiles += " %s" % listToString(["--copy%s" % l for l in self._ttbar.ResolveToFiles(html)])
             fList += self._ttbar.ResolveToFiles(html)
 
         if self._wp:
-            lfiles += " %s" % listToString(["--copy%s" % l for l in self._wp.ResolveToFiles(html)])
+            lfiles += " %s" % listToString(["--copySlim%s" % l for l in self._wp.ResolveToFiles(html)])
             fList += self._wp.ResolveToFiles(html)
 
         if self._slim:
