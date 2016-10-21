@@ -60,9 +60,9 @@ taggers = [
     ["MV1c", "0.4050"], 
     ["MV1c", "0.4051"],
 #JetFitterCharm Medium
-    ["JFC", "-0.9_0.95"],
+    ["JetFitterCharm", "-0.9_0.95"],
 #JetFitterCharm Loose
-    ["JFC", "-0.9_NONE"],
+    ["JetFitterCharm", "-0.9_NONE"],
 #Trig_anything
     ["L15_Trig.*", ".*"],
 #MV1 track-jets

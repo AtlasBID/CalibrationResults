@@ -1,4 +1,4 @@
-Analysis(PDF_6bins_emu_3jets,bottom,JFC,-0.9_NONE,AntiKt4TopoLCJVF0_5)
+Analysis(PDF_6bins_emu_3jets,bottom,JetFitterCharm,-0.9_NONE,AntiKt4TopoLCJVF0_5)
 {
       meta_data_s (Hadronization, Pythia6)
       bin(20<pt<30,0<abseta<2.5)
