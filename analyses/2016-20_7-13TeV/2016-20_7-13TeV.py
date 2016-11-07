@@ -77,7 +77,7 @@ pre_ttbar_pdf_7_all = files("ttbar_pdf/pre/*6bins.txt") \
                                       "pre_PDF_6bins_ll_2j",  "pre_PDF_6bins_ll_3j"])
 
 # Run-II PDF recommendations
-ttbar_pdf_7_all = files("ttbar_pdf/*7bins.txt") \
+ttbar_pdf_7_all = (files("ttbar_pdf/*emu*7bins.txt") + files("ttbar_pdf/*ll*7bins.txt")) \
                   .restrict_tight() \
                   .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j", \
                                       "PDF_6bins_ll_2j",  "PDF_6bins_ll_3j"]) \
@@ -250,7 +250,7 @@ ttbar_pre_r02_trackjets = files("ttbar_topo/pre/*.txt") \
                        .filter(analyses = ["pre_ttbar_topo_dijet"]) \
                        .filter(jets=["AntiKt2PV0TrackJets"])
 
-ttbar_r02_trackjets = files("ttbar_pdf/*tracks*.txt") \
+ttbar_r02_trackjets = (files("ttbar_pdf/*tracks*emu*.txt") + files("ttbar_pdf/*tracks*ll*.txt")) \
                        .restrict_tight() \
                        .filter(analyses = ["PDF_6bins_emu_2j","PDF_6bins_emu_3j", \
                                            "PDF_6bins_ll_2j", "PDF_6bins_ll_3j"]) \
@@ -333,7 +333,7 @@ sf_trackjets = b_trackjets_extrap + ct_trackjets_extrap + negative_trackjets_ext
 #
 
 master_cdi_file = all_extrapolated+sf_trackjets
-defaultSFs = master_cdi_file.make_cdi("MC15-CDI", "defaults.txt","StandardTag-13TeV-release20.7-160620105611.root","BtagWP-May2016-V1.root","20.7")
+defaultSFs = master_cdi_file.make_cdi("MC15-CDI", "defaults.txt","StandardTag-13TeV-release20.7-160620105611.root","BtagWP-20161021.root","20.7")
 master_cdi_file.plot("MC15-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
 master_cdi_file.plot("MC15-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
