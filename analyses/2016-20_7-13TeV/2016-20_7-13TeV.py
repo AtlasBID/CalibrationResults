@@ -57,10 +57,15 @@ sfObject.restrict_ignore_tight = lambda self: self.filter(
     ignore=[".*25-pt-30.*",".*200-pt-300.*",".*250-pt-300.*",".*300-pt-400.*"]
     )
 
+sfObject.restrict_ignore_trackjets = lambda self: self.filter(
+    ignore=[".*250-pt-300.*"]
+    )
+
 sfObject.restrict = lambda self: self.restrict_good().restrict_ignore()
 
 sfObject.restrict_tight = lambda self: self.restrict_good().restrict_ignore_tight()
 
+sfObject.restrict_trackjets = lambda self: self.restrict_good().restrict_ignore_trackjets()
 	
 ####################################
 # Bottom Flavor Inputs and fits
@@ -77,11 +82,11 @@ pre_ttbar_pdf_7_all = files("ttbar_pdf/pre/*6bins.txt") \
                                       "pre_PDF_6bins_ll_2j",  "pre_PDF_6bins_ll_3j"])
 
 # Run-II PDF recommendations
-ttbar_pdf_7_all = (files("ttbar_pdf/*emu*7bins.txt") + files("ttbar_pdf/*ll*7bins.txt")) \
-                  .restrict_tight() \
+ttbar_pdf_7_all = (files("ttbar_pdf/*emu*7bins*.txt") + files("ttbar_pdf/*ll*7bins*.txt")) \
+                  .restrict() \
                   .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j", \
                                       "PDF_6bins_ll_2j",  "PDF_6bins_ll_3j"]) \
-                  .filter(jets=["AntiKt4EMTopoJets"])
+                  .filter(jets=["AntiKt4EMTopoJets", "AntiKt2PV0TrackJets"])
 
 ttbar_pdf_7_2j = ttbar_pdf_7_all \
                  .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_ll_2j"])
@@ -89,6 +94,11 @@ ttbar_pdf_7_2j = ttbar_pdf_7_all \
 ttbar_pdf_7_3j = ttbar_pdf_7_all \
                  .filter(analyses = ["PDF_6bins_emu_3j", "PDF_6bins_ll_3j"])
 
+#ttbar_pdf_flat = (files("ttbar_pdf/*emu*7bins_FLAT.txt") + files("ttbar_pdf/*ll*7bins_FLAT.txt")) \
+ #                 .restrict() \
+  #                .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j", \
+   #                                   "PDF_6bins_ll_2j",  "PDF_6bins_ll_3j"]) \
+    #              .filter(jets=["AntiKt4EMTopoJets"])
 
 # Run-II T&P recommendations
 ttbar_tp_all = files("ttbar_topo/TandP*WP.txt") \
@@ -136,6 +146,9 @@ ttbar_pdf_7_combined_withchi2 = (ttbar_pdf_7_all).bbb_fit("ttbar_PDF_7b", saveCH
 ttbar_pdf_7_combined = ttbar_pdf_7_combined_withchi2.filter(analyses=["ttbar_PDF_7b"])
 ttbar_pdf_7_combined_2j = ttbar_pdf_7_2j.bbb_fit("ttbar_PDF_7b_2j")
 ttbar_pdf_7_combined_3j = ttbar_pdf_7_3j.bbb_fit("ttbar_PDF_7b_3j")
+
+#ttbar_pdf_flat_combined_withchi2 = (ttbar_pdf_flat).bbb_fit("ttbar_PDF_flat", saveCHI2Fits=True)
+#ttbar_pdf_flat_combined = ttbar_pdf_flat_combined_withchi2.filter(analyses=["ttbar_PDF_flat"])
 
 # one ring to rule them all...
 ttbar_pdf_fits = ttbar_pdf_7_combined \
@@ -251,7 +264,7 @@ ttbar_pre_r02_trackjets = files("ttbar_topo/pre/*.txt") \
                        .filter(jets=["AntiKt2PV0TrackJets"])
 
 ttbar_r02_trackjets = (files("ttbar_pdf/*tracks*emu*.txt") + files("ttbar_pdf/*tracks*ll*.txt")) \
-                       .restrict_tight() \
+                       .restrict_trackjets() \
                        .filter(analyses = ["PDF_6bins_emu_2j","PDF_6bins_emu_3j", \
                                            "PDF_6bins_ll_2j", "PDF_6bins_ll_3j"]) \
                        .filter(jets=["AntiKt2PV0TrackJets"])
@@ -262,7 +275,7 @@ ttbar_pre_r04_trackjets = files("ttbar_topo/pre/*.txt") \
                        .filter(jets=["AntiKt4PV0TrackJets"])
 
 ttbar_r04_trackjets = files("ttbar_pdf/*tracks*.txt") \
-                       .restrict_tight() \
+                       .restrict_trackjets() \
                        .filter(analyses = ["PDF_6bins_emu_2j","PDF_6bins_emu_3j"]) \
                        .filter(jets=["AntiKt4PV0TrackJets"])
 
