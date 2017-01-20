@@ -146,6 +146,7 @@ class CDI:
         cmdLog = "%s-%s-check-cmd-log.txt" % (configInfo.name, self._name)
         if self._check:
             print >> html, "<p>Running a check on the CDI file</p>"
+            print >> html, "Command line: FTCheckOutput %s" % outFile
             if rerunCommand(fList, cmdLog, outFile, html):
                 errcode = dumpCommandResult(html, "FTCheckOutput %s" % outFile, store=cmdLog)
 
