@@ -23,7 +23,7 @@ class smooth:
     def Execute(self, html, configInfo):
         fList = self._sf.ResolveToFiles(html)
 
-        inputFile = "%s-%s_smooth.root" % (configInfo.name, self._name)
+        inputFile = "%s-%s.root" % (configInfo.name, self._name)
         cmdLog = "%s-%s-cmd-log.txt" % (configInfo.name, self._name)
         cmdLogCopy = "%s-%s-cmd-copy-log.txt" % (configInfo.name, self._name)
         cmdCopyOut = "%s-%s-defaults-sf.txt" % (configInfo.name, self._name)
@@ -34,5 +34,5 @@ class smooth:
                                    (inputFile, self._order, self._smoothing, self._ptbins), store=cmdLog)
         if errcode == 0:
             output = inputFile[:-5]+"_order_"+self._order+"_smoothing_"+self._smoothing+"_ptbins_"+self._ptbins+".root"
-            shutil.move (output, inputFile[:-5]+"_final.root")
+            shutil.move (output, inputFile[:-5]+"_smooth.root")
 

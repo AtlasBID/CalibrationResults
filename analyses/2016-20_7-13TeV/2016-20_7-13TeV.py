@@ -347,6 +347,7 @@ master_cdi_file.dump(metadata = True, name="master-metadata")
 (sources_ttbar+sources_dstar).dump(sysErrors = True, name="sources")
 (mcCalib_bct_all+mcCalib_l_all).plot("MC15-MCExtrapolations")
 
-master_cdi_file.make_continuous("MC15-CDI","1","0.4","100")
+master_cdi_file.make_smooth("MC15-CDI","1","0.4","100")
+master_cdi_file.make_nuisance_parameters("MC15-CDI")
 
 # Done!
