@@ -26,7 +26,7 @@ class nuisance_parameters:
         cmdCopyOut = "%s-%s-defaults-sf.txt" % (configInfo.name, self._name)
 
         print >> html, "<p>Nuisance parameters in the CDI file</p>"
-        print >> html, "Command line: RUN_EIGEN_ANALYSIS %s %s %s %s" % (inputFile)
+        print >> html, "Command line: RUN_EIGEN_ANALYSIS %s" % (inputFile)
         errcode = dumpCommandResult(html, "source ../NPandSmoothingTools/scripts/RUN_EIGEN_ANALYSIS.sh %s" % \
                                    (inputFile), store=cmdLog)
 
