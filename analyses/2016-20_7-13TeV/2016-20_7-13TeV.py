@@ -76,13 +76,13 @@ sfObject.restrict_trackjets = lambda self: self.restrict_good().restrict_ignore_
 # these are needed for the c-jet calibration since
 # we want the high-pT extrapolation to kick in at 200 GeV
 # for the b-jet calibration
-pre_ttbar_pdf_7_all = files("ttbar_pdf/pre/*6bins.txt") \
+pre_ttbar_pdf_7_all = files("bjets/ttbar_pdf/pre/*6bins.txt") \
                   .restrict() \
                   .filter(analyses = ["pre_PDF_6bins_emu_2j", "pre_PDF_6bins_emu_3j", \
                                       "pre_PDF_6bins_ll_2j",  "pre_PDF_6bins_ll_3j"])
 
 # Run-II PDF recommendations
-ttbar_pdf_7_all = (files("ttbar_pdf/*emu*7bins*.txt") + files("ttbar_pdf/*ll*7bins*.txt")) \
+ttbar_pdf_7_all = (files("bjets/ttbar_pdf/*emu*7bins*.txt") + files("bjets/ttbar_pdf/*ll*7bins*.txt")) \
                   .restrict() \
                   .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j", \
                                       "PDF_6bins_ll_2j",  "PDF_6bins_ll_3j"]) \
@@ -95,7 +95,7 @@ ttbar_pdf_7_3j = ttbar_pdf_7_all \
                  .filter(analyses = ["PDF_6bins_emu_3j", "PDF_6bins_ll_3j"])
 
 # Run-II T&P recommendations
-ttbar_tp_all = files("ttbar_topo/TandP*WP.txt") \
+ttbar_tp_all = files("bjets/ttbar_topo/TandP*WP.txt") \
                  .restrict_tight() \
                  .filter(analyses = ["TandP_6bins_emu_2jmva","TandP_6bins_emu_3j"])
 
@@ -151,6 +151,11 @@ ttbar_tp_fits = ttbar_tp_combined \
     + ttbar_tp_combined_3j
 
 ttbar_fits = ttbar_pdf_fits + ttbar_tp_fits
+
+# Run-II pT-rel recommendations
+pTrel = files("bjets/pT_rel/MV2c10*.txt") \
+              .filter(analyses = ["pTrel"])
+
 
 #
 # Next, we need to build up the master fits that will be used to make charm and tau results.
@@ -242,30 +247,30 @@ rebin_dstar_extrapolated = (\
 
 light_extrapolated = (light_sf + mcCalib_l).extrapolate("MCcalib")
 
-all_extrapolated = rebin_extrapolated + rebin_dstar_extrapolated + light_extrapolated
+all_calojets_extrapolated = rebin_extrapolated + pTrel + rebin_dstar_extrapolated + light_extrapolated
 
 
 ####################################
 # Track-jets pre-recommendations - b jets
 #
 
-ttbar_pre_r02_trackjets = files("ttbar_topo/pre/*.txt") \
+ttbar_pre_r02_trackjets = files("bjets/ttbar_topo/pre/*.txt") \
                        .restrict_good() \
                        .filter(analyses = ["pre_ttbar_topo_dijet"]) \
                        .filter(jets=["AntiKt2PV0TrackJets"])
 
-ttbar_r02_trackjets = (files("ttbar_pdf/*tracks*emu*.txt") + files("ttbar_pdf/*tracks*ll*.txt")) \
+ttbar_r02_trackjets = (files("bjets/ttbar_pdf/*tracks*emu*.txt") + files("bjets/ttbar_pdf/*tracks*ll*.txt")) \
                        .restrict_trackjets() \
                        .filter(analyses = ["PDF_6bins_emu_2j","PDF_6bins_emu_3j", \
                                            "PDF_6bins_ll_2j", "PDF_6bins_ll_3j"]) \
                        .filter(jets=["AntiKt2PV0TrackJets"])
 
-ttbar_pre_r04_trackjets = files("ttbar_topo/pre/*.txt") \
+ttbar_pre_r04_trackjets = files("bjets/ttbar_topo/pre/*.txt") \
                        .restrict_good() \
                        .filter(analyses = ["pre_ttbar_topo_dijet"]) \
                        .filter(jets=["AntiKt4PV0TrackJets"])
 
-ttbar_r04_trackjets = files("ttbar_pdf/*tracks*.txt") \
+ttbar_r04_trackjets = files("bjets/ttbar_pdf/*tracks*.txt") \
                        .restrict_trackjets() \
                        .filter(analyses = ["PDF_6bins_emu_2j","PDF_6bins_emu_3j"]) \
                        .filter(jets=["AntiKt4PV0TrackJets"])
@@ -336,7 +341,7 @@ sf_trackjets = b_trackjets_extrap + ct_trackjets_extrap + negative_trackjets_ext
 # The CDI file.
 #
 
-master_cdi_file = all_extrapolated+sf_trackjets
+master_cdi_file = all_calojets_extrapolated+sf_trackjets
 defaultSFs = master_cdi_file.make_cdi("MC15-CDI", "defaults.txt","StandardTag-13TeV-prerecommendationCalibrationFile8-161120141852.root","BtagWP-20161021.root","Continuous_2016-11-17.root","20.7")
 master_cdi_file.plot("MC15-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
