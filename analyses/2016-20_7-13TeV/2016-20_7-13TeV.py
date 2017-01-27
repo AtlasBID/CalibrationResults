@@ -199,10 +199,10 @@ wc_sf = files("cjets/Wc/W*70.txt") + files("cjets/Wc/W*77.txt") + files("cjets/W
 
 tau_wc_sf = wc_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
-charm_sf = dstar_sf + wc_sf
+charm_sf = dstar_sf
 charm_sf_extrap = dstar_sf_extrap
 
-tau_sf = tau_dstar_sf + tau_wc_sf
+tau_sf = tau_dstar_sf
 tau_sf_extrap = tau_dstar_sf_extrap
 
 sources_dstar = dstar_template
@@ -260,9 +260,17 @@ rebin_dstar_extrapolated = (\
 	) \
 	.extrapolate("MCcalib_rebin")
 
+mcCalib_c_all = files("extrap/MCcalibCDI_Zprimebb5000_c*") \
+              .restrict()
+
+wc_extrapolated = (\
+        wc_sf \
+            ) \
+            .extrapolate("MCcalib_rebin")
+
 light_extrapolated = (light_sf + mcCalib_l).extrapolate("MCcalib")
 
-all_calojets_extrapolated = rebin_extrapolated + pTrel + rebin_dstar_extrapolated + light_extrapolated
+all_calojets_extrapolated = rebin_extrapolated + pTrel + rebin_dstar_extrapolated + wc_extrapolated + light_extrapolated
 
 
 ####################################
