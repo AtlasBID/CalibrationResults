@@ -266,7 +266,7 @@ mcCalib_c_all = files("extrap/MCcalibCDI_Zprimebb5000_c*") \
 wc_extrapolated = (\
         wc_sf \
             ) \
-            .extrapolate("MCcalib_rebin")
+            .extrapolate("Run2MCcalib")
 
 light_extrapolated = (light_sf + mcCalib_l).extrapolate("MCcalib")
 
