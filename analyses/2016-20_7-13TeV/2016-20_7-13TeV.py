@@ -157,38 +157,53 @@ pTrel = files("bjets/pT_rel/MV2c10*.txt") \
               .filter(analyses = ["pTrel"])
 
 
+####################################
+# Tau and Charm
 #
-# Next, we need to build up the master fits that will be used to make charm and tau results.
+
+#
+# We need to build up the master fits that will be used to make charm and tau results.
 # This requires re-binning to match the D* input bins (for both charm and tau, as they
 # are just versions of each other).
 # Use one of the D* results as the rebin template.
 #
 
-dstar_rebin_template = files("Dstar/EM/JVF05/DStar_MV1c70.txt")
+dstar_rebin_template = files("cjets/Dstar/EM/JVF05/DStar_MV1c70.txt")
 
 ttbar_rebin = (dstar_rebin_template + pre_ttbar_pdf_7_combined) \
               .rebin("DStar", "<>_rebin")
 
-
-####################################
-# Tau and Charm
 #
-
 # Calculate the new D* values for charm. Use the algorithm provided by Fabrizio.
 # The tau is just an additional error on top of that.
 #
 
-dstar_template = files("Dstar/EM/JVF05/*.txt")\
+dstar_template = files("cjets/Dstar/EM/JVF05/*.txt")\
                  .restrict()
 
-charm_sf = (dstar_template + ttbar_rebin) \
+dstar_sf = (dstar_template + ttbar_rebin) \
            .dstar("DStar_<>", "DStar")
 
-charm_sf_extrap = (dstar_template + ttbar_rebin) \
+dstar_sf_extrap = (dstar_template + ttbar_rebin) \
            .dstar("DStar_extrap_<>", "DStar_extrap")
                  
-tau_sf = charm_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
-tau_sf_extrap = charm_sf_extrap.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
+tau_dstar_sf = dstar_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
+tau_dstar_sf_extrap = dstar_sf_extrap.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
+
+#
+# W+c calibration doesn't require the special treatment reserved for D*
+#
+
+wc_sf = files("cjets/Wc/W*70.txt") + files("cjets/Wc/W*77.txt") + files("cjets/Wc/W*85.txt") \
+                 .restrict()
+
+tau_wc_sf = wc_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
+
+charm_sf = dstar_sf + wc_sf
+charm_sf_extrap = dstar_sf_extrap
+
+tau_sf = tau_dstar_sf + tau_wc_sf
+tau_sf_extrap = tau_dstar_sf_extrap
 
 sources_dstar = dstar_template
 
@@ -302,7 +317,7 @@ ttbar_topo_rebin_r02_trackjets = (dstar_rebin_template_r02_trackjets + ttbar_pre
 ttbar_topo_rebin_r04_trackjets = (dstar_rebin_template_trackjets + ttbar_pre_r04_trackjets + ttbar_r04_trackjets) \
                                  .rebin("rebin_dstar_trackjet", "<>_rebin")
 
-dstar_trackjets = files("Dstar/EM/JVF05/AntiKt*.txt") \
+dstar_trackjets = files("cjets/Dstar/EM/JVF05/AntiKt*.txt") \
                        .restrict_good()
 
 charm_trackjets = (dstar_trackjets + ttbar_topo_rebin_r02_trackjets + ttbar_topo_rebin_r04_trackjets) \
