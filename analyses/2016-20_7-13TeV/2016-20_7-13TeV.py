@@ -244,29 +244,24 @@ rebin_for_extrap_dstar = files("commonbinning.txt") \
 mcCalib_rebin_dstar_bct = (rebin_for_extrap_dstar + mcCalib_bct) \
     .rebin("rebin_dstar", "<>_rebin")
 
-rebin_extrapolated = (\
-    mcCalib_rebin_bct
-    + ttbar_fits \
-    + sources_ttbar \
-    ) \
-    .extrapolate("MCcalib_rebin")
+rebin_extrapolated = (mcCalib_rebin_bct \
+                      + ttbar_fits \
+                      + sources_ttbar) \
+                      .extrapolate("MCcalib_rebin")
 	
-rebin_dstar_extrapolated = (\
-    charm_sf \
-    + charm_sf_extrap \
-    + tau_sf \
-    + tau_sf_extrap \
-    + mcCalib_rebin_dstar_bct \
-	) \
-	.extrapolate("MCcalib_rebin")
+rebin_dstar_extrapolated = (charm_sf \
+                            + charm_sf_extrap \
+                            + tau_sf \
+                            + tau_sf_extrap \
+                            + mcCalib_rebin_dstar_bct) \
+	                    .extrapolate("MCcalib_rebin")
 
-mcCalib_c_all = files("extrap/MCcalibCDI_Zprimebb5000_c*") \
+mcCalib_c_all = files("extrap/MCcalibCDI_ttbar_c*") \
               .restrict()
 
-wc_extrapolated = (\
-        wc_sf \
-            ) \
-            .extrapolate("Run2MCcalib")
+wc_extrapolated = (mcCalib_c_all \
+                   + wc_sf) \
+                  .extrapolate("Run2MCcalib")
 
 light_extrapolated = (light_sf + mcCalib_l).extrapolate("MCcalib")
 
