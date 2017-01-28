@@ -1,6 +1,6 @@
 Analysis(negative_tags,light,MV2c10,FixedCutBEff_70,AntiKt4EMTopoJets){
 
-        meta_data_s (Hadronization, PythiaEvtGen)
+        meta_data_s (Hadronization, Pythia8EvtGen)
         meta_data_s (OperatingPoint, 0.824427)
 
         bin(20<pt<60,0.0<abseta<1.2)
