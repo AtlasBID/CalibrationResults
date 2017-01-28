@@ -197,7 +197,14 @@ tau_dstar_sf_extrap = dstar_sf_extrap.add_sys("extrapolation from charm", "22%",
 wc_sf = files("cjets/Wc/W*70.txt") + files("cjets/Wc/W*77.txt") + files("cjets/Wc/W*85.txt") \
                  .restrict()
 
-tau_wc_sf = wc_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
+mcCalib_c_all = files("extrap/MCcalibCDI_ttbar_c*") \
+              .restrict()
+
+charm_extrapolated = (mcCalib_c_all \
+                   + wc_sf) \
+                  .extrapolate("Run2MCcalib")
+
+tau_extrapolated = charm_extrapolated.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
 charm_sf = dstar_sf
 charm_sf_extrap = dstar_sf_extrap
@@ -263,15 +270,13 @@ rebin_dstar_extrapolated = (charm_sf \
                             + mcCalib_rebin_dstar_bct) \
 	                    .extrapolate("MCcalib_rebin")
 
-mcCalib_c_all = files("extrap/MCcalibCDI_ttbar_c*") \
-              .restrict()
+####################################
+# Calo-jets - all together
+#
 
-wc_extrapolated = (mcCalib_c_all \
-                   + wc_sf) \
-                  .extrapolate("Run2MCcalib")
-
-all_calojets_extrapolated = rebin_extrapolated + pTrel + rebin_dstar_extrapolated + wc_extrapolated + light_sf_pre + light_sf
-
+all_calojets_extrapolated = rebin_extrapolated + pTrel \
+                            + rebin_dstar_extrapolated + charm_extrapolated + tau_extrapolated \
+                            + light_sf_pre + light_sf
 
 ####################################
 # Track-jets pre-recommendations - b jets
