@@ -214,6 +214,15 @@ sources_dstar = dstar_template
 light_sf = files("ljets/negative_tags/negtag*.txt") \
            .restrict()
 
+negative_pre = files("ljets/negative_tags/pre/mistag*.txt") \
+           .restrict()
+
+mcCalib_l_pre = files("MCcalib/EtaBins/SfPtL*.txt") \
+                .restrict_good() \
+                .filter(ignore=[".*15-pt-20.*",".*20-pt-30.*",".*30-pt-40.*",".*40-pt-50.*",".*50-pt-60.*",".*60-pt-75.*",".*75-pt-90.*",".*90-pt-110.*",".*110-pt-140.*",".*140-pt-200.*",".*200-pt-300.*"])
+
+light_sf_pre = (negative_pre + mcCalib_l_pre).extrapolate("MCcalib")
+
 ####################################
 # Extrapolate everything
 #
@@ -261,7 +270,7 @@ wc_extrapolated = (mcCalib_c_all \
                    + wc_sf) \
                   .extrapolate("Run2MCcalib")
 
-all_calojets_extrapolated = rebin_extrapolated + pTrel + rebin_dstar_extrapolated + wc_extrapolated + light_sf
+all_calojets_extrapolated = rebin_extrapolated + pTrel + rebin_dstar_extrapolated + wc_extrapolated + light_sf_pre + light_sf
 
 
 ####################################
@@ -334,15 +343,28 @@ ct_trackjets_extrap = (charm_trackjets + tau_trackjets + mcCalib_ct_trackjets) \
 # Track-jets pre-recommendations - light jets
 #
 
+negative_trackjets_pre = files("ljets/negative_tags/pre/AntiKt*.txt") \
+                         .restrict_good() \
+                         .filter(analyses = ["negative_tags_prerecomm"])
+
+mcCalib_l_trackjets_pre = files("MCcalib/EtaBins/AntiKt*.txt") \
+                          .restrict_good() \
+
+light_sf_trackjets_pre = (negative_trackjets_pre + mcCalib_l_trackjets_pre).extrapolate("MCcalib")
+
+####################################
+# Track-jets recommendations - light jets
+#
+
 light_sf_trackjets = files("ljets/negative_tags/AntiKt2PV0TrackJets_negtag*.txt") \
                      .restrict_good() \
                      .filter(analyses = ["negative_tags"])
 
 ####################################
-# Track-jets - altogether
+# Track-jets - all together
 #
 
-sf_trackjets = b_trackjets_extrap + ct_trackjets_extrap + light_sf_trackjets
+sf_trackjets = b_trackjets_extrap + ct_trackjets_extrap + light_sf_trackjets_pre + light_sf_trackjets
 
 
 ####################################
