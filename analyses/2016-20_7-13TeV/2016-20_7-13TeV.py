@@ -211,10 +211,8 @@ sources_dstar = dstar_template
 # Light SF come from the negative tags
 #
 
-negative = files("ljets/negative_tags/negtag*.txt") \
+light_sf = files("ljets/negative_tags/negtag*.txt") \
            .restrict()
-
-light_sf = negative
 
 ####################################
 # Extrapolate everything
@@ -336,21 +334,15 @@ ct_trackjets_extrap = (charm_trackjets + tau_trackjets + mcCalib_ct_trackjets) \
 # Track-jets pre-recommendations - light jets
 #
 
-negative_trackjets = files("ljets/negative_tags/pre/AntiKt*.txt") \
+light_sf_trackjets = files("ljets/negative_tags/AntiKt2PV0TrackJets_negtag*.txt") \
                      .restrict_good() \
                      .filter(analyses = ["negative_tags"])
-
-mcCalib_l_trackjets = files("MCcalib/EtaBins/AntiKt*.txt") \
-                      .restrict_good() \
-
-negative_trackjets_extrap = (negative_trackjets + mcCalib_l_trackjets).extrapolate("MCcalib")
-
 
 ####################################
 # Track-jets - altogether
 #
 
-sf_trackjets = b_trackjets_extrap + ct_trackjets_extrap + negative_trackjets_extrap
+sf_trackjets = b_trackjets_extrap + ct_trackjets_extrap + light_sf_trackjets
 
 
 ####################################
