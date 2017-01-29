@@ -184,11 +184,7 @@ dstar_template = files("cjets/Dstar/EM/JVF05/*.txt")\
 dstar_sf = (dstar_template + ttbar_rebin) \
            .dstar("DStar_<>", "DStar")
 
-dstar_sf_extrap = (dstar_template + ttbar_rebin) \
-                  .dstar("DStar_extrap_<>", "DStar_extrap")
-                 
 tau_dstar_sf = dstar_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
-tau_dstar_sf_extrap = dstar_sf_extrap.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
 #
 # W+c calibration doesn't require the special treatment reserved for D*
@@ -197,14 +193,16 @@ tau_dstar_sf_extrap = dstar_sf_extrap.add_sys("extrapolation from charm", "22%",
 wc_sf = files("cjets/Wc/W*70.txt") + files("cjets/Wc/W*77.txt") + files("cjets/Wc/W*85.txt") \
                  .restrict()
 
-mcCalib_c_all = files("extrap/MCcalibCDI_ttbar_c*") \
+tau_sf = wc_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
+
+mcCalib_ct_all = files("extrap/MCcalibCDI_ttbar_c*") + files("extrap/MCcalibCDI_ttbar_t*") \
                 .restrict()
 
-charm_extrapolated = (mcCalib_c_all \
-                     + wc_sf) \
+charm_sf_extrapolated = (mcCalib_ct_all + wc_sf) \
                      .extrapolate("Run2MCcalib")
 
-tau_extrapolated = charm_extrapolated.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
+tau_sf_extrapolated = (mcCalib_ct_all + tau_sf) \
+                     .extrapolate("Run2MCcalib")
 
 sources_dstar = dstar_template
 
@@ -260,9 +258,7 @@ rebin_extrapolated = (mcCalib_b_all \
 #                          .extrapolate("MCcalib_rebin")
 	
 rebin_dstar_extrapolated = (dstar_sf \
-                            + dstar_sf_extrap \
                             + tau_dstar_sf \
-                            + tau_dstar_sf_extrap \
                             + mcCalib_rebin_dstar_bct_pre) \
 	                    .extrapolate("MCcalib_rebin")
 
@@ -271,7 +267,7 @@ rebin_dstar_extrapolated = (dstar_sf \
 #
 
 all_calojets_extrapolated = rebin_extrapolated + pTrel \
-                            + rebin_dstar_extrapolated + charm_extrapolated + tau_extrapolated \
+                            + rebin_dstar_extrapolated + charm_sf_extrapolated + tau_sf_extrapolated \
                             + light_sf_pre + light_sf
 
 ####################################
