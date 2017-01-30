@@ -162,31 +162,6 @@ pTrel = files("bjets/pT_rel/MV2c10*.txt") \
 #
 
 #
-# We need to build up the master fits that will be used to make charm and tau results.
-# This requires re-binning to match the D* input bins (for both charm and tau, as they
-# are just versions of each other).
-# Use one of the D* results as the rebin template.
-#
-
-dstar_rebin_template = files("cjets/Dstar/EM/JVF05/DStar_MV1c70.txt")
-
-ttbar_rebin = (dstar_rebin_template + pre_ttbar_pdf_7_combined) \
-              .rebin("DStar", "<>_rebin")
-
-#
-# Calculate the new D* values for charm. Use the algorithm provided by Fabrizio.
-# The tau is just an additional error on top of that.
-#
-
-dstar_template = files("cjets/Dstar/EM/JVF05/*.txt")\
-                 .restrict()
-
-dstar_sf = (dstar_template + ttbar_rebin) \
-           .dstar("DStar_<>", "DStar")
-
-tau_dstar_sf = dstar_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
-
-#
 # W+c calibration doesn't require the special treatment reserved for D*
 #
 
@@ -204,7 +179,7 @@ charm_sf_extrapolated = (mcCalib_ct_all + wc_sf) \
 tau_sf_extrapolated = (mcCalib_ct_all + tau_sf) \
                      .extrapolate("Run2MCcalib")
 
-sources_dstar = dstar_template
+sources_wc = wc_sf
 
 ####################################
 # Light SF come from the negative tags
@@ -229,45 +204,17 @@ light_sf_pre = (negative_pre + mcCalib_l_pre).extrapolate("MCcalib")
 mcCalib_b_all = files("extrap/MCcalibCDI_Zprimebb5000_b*.txt") \
                 .restrict()
 
-mcCalib_bct_all_pre = (files("MCcalib/SfPtB*.txt") + files("MCcalib/SfPtC*.txt") + files("MCcalib/SfPtT*.txt")) \
-                       .restrict_good()
-
-mcCalib_bct_pre = mcCalib_bct_all_pre \
-		  .filter(ignore=[".*15-pt-20.*",".*20-pt-30.*",".*30-pt-40.*",".*40-pt-50.*",".*50-pt-60.*"])
-			
-rebin_template_high = rebin_template_all \
-    .filter(ignore=[".*20-pt-30.*"])
-
-mcCalib_rebin_bct_pre = (rebin_template_high + mcCalib_bct_pre) \
-    .rebin("rebin", "<>_rebin")
-
-rebin_for_extrap_dstar = files("commonbinning.txt") \
-                         .filter(analyses=["rebin_dstar"])
-
-mcCalib_rebin_dstar_bct_pre = (rebin_for_extrap_dstar + mcCalib_bct_pre) \
-                              .rebin("rebin_dstar", "<>_rebin")
-
 rebin_extrapolated = (mcCalib_b_all \
                       + ttbar_fits \
                       + sources_ttbar) \
                       .extrapolate("Run2MCcalib")
-
-#rebin_extrapolated_pre = (mcCalib_rebin_bct_pre \
-#                          + ttbar_fits \
-#                          + sources_ttbar) \
-#                          .extrapolate("MCcalib_rebin")
-	
-rebin_dstar_extrapolated = (dstar_sf \
-                            + tau_dstar_sf \
-                            + mcCalib_rebin_dstar_bct_pre) \
-	                    .extrapolate("MCcalib_rebin")
 
 ####################################
 # Calo-jets - all together
 #
 
 all_calojets_extrapolated = rebin_extrapolated + pTrel \
-                            + rebin_dstar_extrapolated + charm_sf_extrapolated + tau_sf_extrapolated \
+                            + charm_sf_extrapolated + tau_sf_extrapolated \
                             + light_sf_pre + light_sf
 
 ####################################
@@ -376,8 +323,8 @@ master_cdi_file.plot("MC15-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
 master_cdi_file.dump(sysErrors = True, name="master")
 master_cdi_file.dump(metadata = True, name="master-metadata")
 (ttbar_pdf_7_combined_withchi2+ttbar_tp_combined_withchi2).plot("MC15-CHi2-Errors")
-(sources_ttbar+sources_dstar).dump(sysErrors = True, name="sources")
-(mcCalib_bct_all_pre+mcCalib_l_pre).plot("MC15-MCExtrapolations")
+(sources_ttbar+sources_wc).dump(sysErrors = True, name="sources")
+(mcCalib_b_all+mcCalib_ct_all).plot("MC15-MCExtrapolations")
 
 master_cdi_file.make_smooth("MC15-CDI","1","0.4","100")
 master_cdi_file.make_nuisance_parameters("MC15-CDI")
