@@ -165,8 +165,8 @@ pTrel = files("bjets/pT_rel/MV2c10*.txt") \
 # W+c calibration doesn't require the special treatment reserved for D*
 #
 
-wc_sf = files("cjets/Wc/W*70.txt") + files("cjets/Wc/W*77.txt") + files("cjets/Wc/W*85.txt") \
-                 .restrict()
+wc_sf = files("cjets/Wc/W*.txt") \
+              .restrict()
 
 tau_sf = wc_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
@@ -256,6 +256,16 @@ b_trackjets_extrap = (ttbar_r02_trackjets_combined + ttbar_pre_r02_trackjets + t
 ####################################
 # Track-jets pre-recommendations - c jets
 #
+
+wc_sf_r02_trackjets = files("cjets/Wc/AntiKt2PV0TrackJets_W*.txt") \
+                      .restrict()
+
+wc_sf_r04_trackjets = files("cjets/Wc/AntiKt4PV0TrackJets_W*.txt") \
+                      .restrict()
+
+charm_trackjets = wc_sf_r02_trackjets + wc_sf_r04_trackjets
+                 
+tau_trackjets = charm_trackjets.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
 dstar_rebin_template_r02_trackjets = files("commonbinning.txt") \
                                  .filter(analyses=["rebin_dstar_r02_trackjet"])
