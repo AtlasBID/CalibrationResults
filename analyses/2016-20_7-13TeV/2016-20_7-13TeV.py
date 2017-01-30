@@ -50,7 +50,7 @@ sfObject.restrict_good = lambda self: self.filter(
     ).verify_OPs("20_7")
 
 sfObject.restrict_ignore = lambda self: self.filter(
-    ignore=[".*25-pt-30.*",".*300-pt-400.*"]
+    ignore=[".*25-pt-30.*"]
     )
 
 sfObject.restrict_ignore_tight = lambda self: self.filter(
@@ -204,7 +204,7 @@ light_sf_pre = (negative_pre + mcCalib_l_pre).extrapolate("MCcalib")
 mcCalib_b_all = files("extrap/MCcalibCDI_Zprimebb5000_b*.txt") \
                 .restrict()
 
-rebin_extrapolated = (mcCalib_b_all \
+ttbar_extrapolated = (mcCalib_b_all \
                       + ttbar_fits \
                       + sources_ttbar) \
                       .extrapolate("Run2MCcalib")
@@ -213,7 +213,7 @@ rebin_extrapolated = (mcCalib_b_all \
 # Calo-jets - all together
 #
 
-all_calojets_extrapolated = rebin_extrapolated + pTrel \
+all_calojets_extrapolated = ttbar_extrapolated + pTrel \
                             + charm_sf_extrapolated + tau_sf_extrapolated \
                             + light_sf_pre + light_sf
 
