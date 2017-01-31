@@ -298,7 +298,7 @@ light_sf_trackjets_pre = (negative_trackjets_pre + mcCalib_l_trackjets_pre).extr
 # Track-jets recommendations - light jets
 #
 
-light_sf_trackjets = files("ljets/negative_tags/AntiKt2PV0TrackJets_negtag*.txt") \
+light_sf_trackjets = files("ljets/negative_tags/AntiKt*.txt") \
                      .restrict_good() \
                      .filter(analyses = ["negative_tags"])
 
