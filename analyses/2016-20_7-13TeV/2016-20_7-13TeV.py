@@ -156,6 +156,12 @@ ttbar_fits = ttbar_pdf_fits + ttbar_tp_fits
 pTrel = files("bjets/pT_rel/MV2c10*.txt") \
               .filter(analyses = ["pTrel"])
 
+mcCalib_b_all = files("extrap/MCcalibCDI_Zprimebb5000_b*.txt") \
+                .restrict()
+
+ttbar_extrapolated = (mcCalib_b_all \
+                      + ttbar_fits ) \
+                      .extrapolate("Run2MCcalib")
 
 ####################################
 # Tau and Charm
@@ -198,18 +204,6 @@ mcCalib_l_pre = files("MCcalib/EtaBins/SfPtL*.txt") \
 light_sf_pre = (negative_pre + mcCalib_l_pre).extrapolate("MCcalib")
 
 ####################################
-# Extrapolate everything
-#
-
-mcCalib_b_all = files("extrap/MCcalibCDI_Zprimebb5000_b*.txt") \
-                .restrict()
-
-ttbar_extrapolated = (mcCalib_b_all \
-                      + ttbar_fits \
-                      + sources_ttbar) \
-                      .extrapolate("Run2MCcalib")
-
-####################################
 # Calo-jets - all together
 #
 
@@ -242,6 +236,7 @@ ttbar_r04_trackjets = files("bjets/ttbar_pdf/*tracks*.txt") \
                        .filter(analyses = ["PDF_6bins_emu_2j","PDF_6bins_emu_3j"]) \
                        .filter(jets=["AntiKt4PV0TrackJets"])
 
+#mcCalib_b_trackjets = files("extrap/AntiKt*Zprimebb*b*.txt") \
 mcCalib_b_trackjets = files("MCcalib/AntiKt*SfPtB*.txt") \
                       .restrict_good()
 
@@ -257,15 +252,18 @@ b_trackjets_extrap = (ttbar_r02_trackjets_combined + ttbar_pre_r02_trackjets + t
 # Track-jets pre-recommendations - c jets
 #
 
-wc_sf_r02_trackjets = files("cjets/Wc/AntiKt2PV0TrackJets_W*.txt") \
-                      .restrict()
+## to be added
+#wc_sf_r02_trackjets = files("cjets/Wc/AntiKt2PV0TrackJets_W*.txt") \
+#                      .restrict()
+#wc_sf_r04_trackjets = files("cjets/Wc/AntiKt4PV0TrackJets_W*.txt") \
+#                      .restrict()
+#charm_trackjets_wc = wc_sf_r02_trackjets + wc_sf_r04_trackjets
+#tau_trackjets_wc = charm_trackjets.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
+#mcCalib_ct_trackjets_wc = (files("MCcalib/AntiKt*SfPtC*.txt") + files("MCcalib/AntiKt*SfPtT*.txt")) \
+#                          .restrict_good() \
+#ct_trackjets_extrap = (charm_trackjets_wc + tau_trackjets_wc + mcCalib_ct_trackjets_wc) \
+#                      .extrapolate("Run2MCcalib")
 
-wc_sf_r04_trackjets = files("cjets/Wc/AntiKt4PV0TrackJets_W*.txt") \
-                      .restrict()
-
-charm_trackjets = wc_sf_r02_trackjets + wc_sf_r04_trackjets
-                 
-tau_trackjets = charm_trackjets.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
 dstar_rebin_template_r02_trackjets = files("commonbinning.txt") \
                                  .filter(analyses=["rebin_dstar_r02_trackjet"])
