@@ -50,5 +50,6 @@ Analysis(Wc, charm, MV2c10, FixedCutBEff_60, AntiKt4EMTopoJets){
 	   sys(FT_EFF_Luminosity_Tag_13TeV_005,-2.84189%)
 	   sys(FT_EFF_Multijet_bkg_1,-0.0781466%)
 	   sys(FT_EFF_Multijet_bkg_2,-3.33971%)
+	   sys(FT_EFF_Closure_ttbar,0.83)
 	}
 }

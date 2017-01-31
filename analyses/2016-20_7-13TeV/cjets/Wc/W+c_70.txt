@@ -50,6 +50,7 @@ Analysis(Wc, charm, MV2c10, FixedCutBEff_70, AntiKt4EMTopoJets){
 	   sys(FT_EFF_Luminosity_Tag_13TeV_005,-0.685651%)
 	   sys(FT_EFF_Multijet_bkg_1,-0.0258043%)
 	   sys(FT_EFF_Multijet_bkg_2,-0.765352%)
+	   sys(FT_EFF_Closure_ttbar,0.35)
 	}
 	bin(30<pt<60,0<abseta<2.5)
 	{
@@ -98,6 +99,7 @@ Analysis(Wc, charm, MV2c10, FixedCutBEff_70, AntiKt4EMTopoJets){
 	   sys(FT_EFF_Luminosity_Tag_13TeV_005,-0.361413%)
 	   sys(FT_EFF_Multijet_bkg_1,-0.00827973%)
 	   sys(FT_EFF_Multijet_bkg_2,-0.861801%)
+	   sys(FT_EFF_Closure_ttbar,0.35)
 	}
 	bin(60<pt<90,0<abseta<2.5)
 	{
@@ -146,6 +148,7 @@ Analysis(Wc, charm, MV2c10, FixedCutBEff_70, AntiKt4EMTopoJets){
 	   sys(FT_EFF_Luminosity_Tag_13TeV_005,0.544013%)
 	   sys(FT_EFF_Multijet_bkg_1,0.0349528%)
 	   sys(FT_EFF_Multijet_bkg_2,-0.910243%)
+	   sys(FT_EFF_Closure_ttbar,0.35)
 	}
 	bin(90<pt<140,0<abseta<2.5)
 	{
@@ -194,5 +197,6 @@ Analysis(Wc, charm, MV2c10, FixedCutBEff_70, AntiKt4EMTopoJets){
 	   sys(FT_EFF_Luminosity_Tag_13TeV_005,-0.352831%)
 	   sys(FT_EFF_Multijet_bkg_1,-0.00299443%)
 	   sys(FT_EFF_Multijet_bkg_2,-0.200212%)
+	   sys(FT_EFF_Closure_ttbar,0.35)
 	}
 }
