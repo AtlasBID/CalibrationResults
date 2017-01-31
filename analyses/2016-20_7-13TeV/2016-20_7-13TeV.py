@@ -82,7 +82,10 @@ pre_ttbar_pdf_7_all = files("bjets/ttbar_pdf/pre/*6bins.txt") \
                                       "pre_PDF_6bins_ll_2j",  "pre_PDF_6bins_ll_3j"])
 
 # Run-II PDF recommendations
-ttbar_pdf_7_all = (files("bjets/ttbar_pdf/*emu*7bins*.txt") + files("bjets/ttbar_pdf/*ll*7bins*.txt")) \
+ttbar_pdf_7_all = (files("bjets/ttbar_pdf/*emu*7bins*.txt") \
+                   + files("bjets/ttbar_pdf/*ll*7bins*.txt") \
+                   + files("bjets/ttbar_pdf/VR_trackjets/*emu*7bins*.txt") \
+                   + files("bjets/ttbar_pdf/VR_trackjets/*ll*7bins*.txt")) \
                   .restrict() \
                   .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j", \
                                       "PDF_6bins_ll_2j",  "PDF_6bins_ll_3j"]) \
