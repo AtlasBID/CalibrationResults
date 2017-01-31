@@ -107,22 +107,6 @@ ttbar_tp_3j = ttbar_tp_all \
 
 sources_ttbar = ttbar_pdf_7_all + ttbar_tp_all
 
-
-# The file "commonbinning.txt" just contains some empty specifications that have the binning. They don't contain
-# any real data. It should have the same binning as the D*. The _30 is without the 20-30 to deal with the PDF method,
-# which has a bin we ignore from 25-30, and that bin can't really participate.
-#
-
-rebin_template_all = files("commonbinning.txt") \
-    .filter(analyses=["rebin"])
-
-rebin_template = rebin_template_all \
-                 .filter(ignore=[".*300-pt-500.*", ".*500-pt-800.*", ".*800-pt-1200.*", ".*1200-pt-2000.*"])
-
-rebin_template_30 = files("commonbinning.txt") \
-                    .filter(analyses=["rebin_30"]) \
-                    .filter(ignore=[".*300-pt-500.*", ".*500-pt-800.*", ".*800-pt-1200.*", ".*1200-pt-2000.*"])
-
 #
 # We want several versions of the pdf fit to end up in the
 # final file. This is for specialized use.
