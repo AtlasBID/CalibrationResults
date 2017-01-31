@@ -1,0 +1,147 @@
+Analysis(MCbased_light,light,MV2c10,FixedCutBEff_70,AntiKt4EMTopoJets){
+meta_data_s (Hadronization, PythiaEvtGen)
+meta_data_s (OperatingPoint, 0.824427)
+bin(20.0<pt<60.0,0.00<abseta<1.20)
+{
+    central_value(1.575,0.024)
+    sys(FT_EFF_generator_sys,1.13%)
+    sys(FT_EFF_d0_smearing,11.07%)
+    sys(FT_EFF_z0_smearing,5.72%)
+    sys(FT_EFF_fake,-1.61%)
+    sys(FT_EFF_correl,1.34%)
+}
+bin(20.0<pt<60.0,1.20<abseta<2.50)
+{
+    central_value(1.511,0.023)
+    sys(FT_EFF_generator_sys,-2.20%)
+    sys(FT_EFF_d0_smearing,5.69%)
+    sys(FT_EFF_z0_smearing,4.00%)
+    sys(FT_EFF_fake,-1.78%)
+    sys(FT_EFF_correl,1.59%)
+}
+bin(60.0<pt<100.0,0.00<abseta<1.20)
+{
+    central_value(1.579,0.044)
+    sys(FT_EFF_generator_sys,1.60%)
+    sys(FT_EFF_d0_smearing,16.98%)
+    sys(FT_EFF_z0_smearing,9.21%)
+    sys(FT_EFF_fake,-2.19%)
+    sys(FT_EFF_correl,2.10%)
+}
+bin(60.0<pt<100.0,1.20<abseta<2.50)
+{
+    central_value(1.633,0.049)
+    sys(FT_EFF_generator_sys,0.83%)
+    sys(FT_EFF_d0_smearing,12.01%)
+    sys(FT_EFF_z0_smearing,8.77%)
+    sys(FT_EFF_fake,-3.08%)
+    sys(FT_EFF_correl,1.14%)
+}
+bin(100.0<pt<200.0,0.00<abseta<1.20)
+{
+    central_value(1.486,0.050)
+    sys(FT_EFF_generator_sys,-4.92%)
+    sys(FT_EFF_d0_smearing,21.63%)
+    sys(FT_EFF_z0_smearing,7.71%)
+    sys(FT_EFF_fake,-3.15%)
+    sys(FT_EFF_correl,1.30%)
+}
+bin(100.0<pt<200.0,1.20<abseta<2.50)
+{
+    central_value(1.526,0.055)
+    sys(FT_EFF_generator_sys,-2.32%)
+    sys(FT_EFF_d0_smearing,18.58%)
+    sys(FT_EFF_z0_smearing,10.13%)
+    sys(FT_EFF_fake,-4.49%)
+    sys(FT_EFF_correl,0.82%)
+}
+bin(200.0<pt<300.0,0.00<abseta<1.20)
+{
+    central_value(1.270,0.086)
+    sys(FT_EFF_generator_sys,-10.17%)
+    sys(FT_EFF_d0_smearing,23.30%)
+    sys(FT_EFF_z0_smearing,8.96%)
+    sys(FT_EFF_fake,-3.19%)
+    sys(FT_EFF_correl,-1.75%)
+}
+bin(200.0<pt<300.0,1.20<abseta<2.50)
+{
+    central_value(1.500,0.112)
+    sys(FT_EFF_generator_sys,-11.78%)
+    sys(FT_EFF_d0_smearing,26.00%)
+    sys(FT_EFF_z0_smearing,10.34%)
+    sys(FT_EFF_fake,-7.36%)
+    sys(FT_EFF_correl,-0.80%)
+}
+bin(300.0<pt<500.0,0.00<abseta<1.20)
+{
+    central_value(1.372,0.140)
+    sys(FT_EFF_generator_sys,3.44%)
+    sys(FT_EFF_d0_smearing,25.41%)
+    sys(FT_EFF_z0_smearing,8.53%)
+    sys(FT_EFF_fake,-4.04%)
+    sys(FT_EFF_correl,0.44%)
+}
+bin(300.0<pt<500.0,1.20<abseta<2.50)
+{
+    central_value(1.498,0.170)
+    sys(FT_EFF_generator_sys,-17.17%)
+    sys(FT_EFF_d0_smearing,24.71%)
+    sys(FT_EFF_z0_smearing,7.66%)
+    sys(FT_EFF_fake,-10.60%)
+    sys(FT_EFF_correl,4.11%)
+}
+bin(500.0<pt<750.0,0.00<abseta<1.20)
+{
+    central_value(1.251,0.279)
+    sys(FT_EFF_generator_sys,1.68%)
+    sys(FT_EFF_d0_smearing,29.00%)
+    sys(FT_EFF_z0_smearing,2.13%)
+    sys(FT_EFF_fake,-7.22%)
+    sys(FT_EFF_correl,2.45%)
+}
+bin(500.0<pt<750.0,1.20<abseta<2.50)
+{
+    central_value(1.389,0.424)
+    sys(FT_EFF_generator_sys,-24.42%)
+    sys(FT_EFF_d0_smearing,19.67%)
+    sys(FT_EFF_z0_smearing,24.53%)
+    sys(FT_EFF_fake,-10.53%)
+    sys(FT_EFF_correl,-5.35%)
+}
+bin(750.0<pt<1000.0,0.00<abseta<1.20)
+{
+    central_value(1.205,0.438)
+    sys(FT_EFF_generator_sys,9.56%)
+    sys(FT_EFF_d0_smearing,20.69%)
+    sys(FT_EFF_z0_smearing,0.00%)
+    sys(FT_EFF_fake,-26.32%)
+    sys(FT_EFF_correl,12.64%)
+}
+bin(750.0<pt<1000.0,1.20<abseta<2.50)
+{
+    central_value(2.240,2.486)
+    sys(FT_EFF_generator_sys,-267.41%)
+    sys(FT_EFF_d0_smearing,20.00%)
+    sys(FT_EFF_z0_smearing,-25.00%)
+    sys(FT_EFF_fake,-28.57%)
+    sys(FT_EFF_correl,-12.50%)
+}
+bin(1000.0<pt<3000.0,0.00<abseta<1.20)
+{
+    central_value(2.299,1.626)
+    sys(FT_EFF_generator_sys,-61.34%)
+    sys(FT_EFF_d0_smearing,-20.00%)
+    sys(FT_EFF_z0_smearing,100.00%)
+    sys(FT_EFF_fake,-35.29%)
+    sys(FT_EFF_correl,3.89%)
+}
+bin(1000.0<pt<3000.0,1.20<abseta<2.50)
+{
+    central_value(2.299,1.626)
+    sys(FT_EFF_generator_sys,-61.34%)
+    sys(FT_EFF_d0_smearing,-20.00%)
+    sys(FT_EFF_z0_smearing,100.00%)
+    sys(FT_EFF_fake,-35.29%)
+    sys(FT_EFF_correl,3.89%)
+}

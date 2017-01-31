@@ -175,17 +175,20 @@ sources_wc = wc_sf
 # Light SF come from the negative tags
 #
 
-light_sf = files("ljets/negative_tags/negtag*.txt") \
-           .restrict()
+negative_sf = files("ljets/negative_tags/negtag*.txt") \
+              .restrict()
 
-negative_pre = files("ljets/negative_tags/pre/mistag*.txt") \
+mcbased_sf = files("ljets/mc_based/MCBased*.txt") \
+             .restrict()
+
+negative_sf_pre = files("ljets/negative_tags/pre/mistag*.txt") \
            .restrict()
 
 mcCalib_l_pre = files("MCcalib/EtaBins/SfPtL*.txt") \
                 .restrict_good() \
                 .filter(ignore=[".*15-pt-20.*",".*20-pt-30.*",".*30-pt-40.*",".*40-pt-50.*",".*50-pt-60.*",".*60-pt-75.*",".*75-pt-90.*",".*90-pt-110.*",".*110-pt-140.*",".*140-pt-200.*",".*200-pt-300.*"])
 
-light_sf_pre = (negative_pre + mcCalib_l_pre).extrapolate("MCcalib")
+light_sf_pre = (negative_sf_pre + mcCalib_l_pre).extrapolate("MCcalib")
 
 ####################################
 # Calo-jets - all together
@@ -193,7 +196,7 @@ light_sf_pre = (negative_pre + mcCalib_l_pre).extrapolate("MCcalib")
 
 all_calojets_extrapolated = ttbar_extrapolated + pTrel \
                             + charm_sf_extrapolated + tau_sf_extrapolated \
-                            + light_sf_pre + light_sf
+                            + light_sf_pre + negative_sf + mcbased_sf
 
 ####################################
 # Track-jets pre-recommendations - b jets
