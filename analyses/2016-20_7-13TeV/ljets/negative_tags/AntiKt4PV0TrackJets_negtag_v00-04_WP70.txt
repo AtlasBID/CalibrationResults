@@ -37,7 +37,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_70,AntiKt4PV0TrackJets){
                 usys(FT_EFF_fracb,4.69%)
                 sys(FT_EFF_eps_c_neg,-7.11%)
                 sys(FT_EFF_eps_b_neg,-8.24%)
-                sys(FT_EFF_Run1ToRun2_extrap,50%)
+                sys(FT_EFF_CaloJet_extrap,50%)
         }
         bin(60<pt<100,0.0<abseta<1.2)
         {
@@ -73,7 +73,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_70,AntiKt4PV0TrackJets){
                 usys(FT_EFF_fracb,16.57%)
                 sys(FT_EFF_eps_c_neg,-4.44%)
                 sys(FT_EFF_eps_b_neg,-11.14%)
-                sys(FT_EFF_Run1ToRun2_extrap,50%)
+                sys(FT_EFF_CaloJet_extrap,50%)
         }
         bin(100<pt<200,0.0<abseta<1.2)
         {
@@ -109,7 +109,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_70,AntiKt4PV0TrackJets){
                 usys(FT_EFF_fracb,-6.74%)
                 sys(FT_EFF_eps_c_neg,-5.26%)
                 sys(FT_EFF_eps_b_neg,-10.99%)
-                sys(FT_EFF_Run1ToRun2_extrap,50%)
+                sys(FT_EFF_CaloJet_extrap,50%)
         }
         bin(200<pt<300,0.0<abseta<1.2)
         {
@@ -145,7 +145,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_70,AntiKt4PV0TrackJets){
                 usys(FT_EFF_fracb,-2.15%)
                 sys(FT_EFF_eps_c_neg,-6.16%)
                 sys(FT_EFF_eps_b_neg,-10.50%)
-                sys(FT_EFF_Run1ToRun2_extrap,50%)
+                sys(FT_EFF_CaloJet_extrap,50%)
         }
         bin(300<pt<500,0.0<abseta<1.2)
         {
@@ -181,7 +181,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_70,AntiKt4PV0TrackJets){
                 usys(FT_EFF_fracb,-0.36%)
                 sys(FT_EFF_eps_c_neg,-6.73%)
                 sys(FT_EFF_eps_b_neg,-9.85%)
-                sys(FT_EFF_Run1ToRun2_extrap,50%)
+                sys(FT_EFF_CaloJet_extrap,50%)
         }
         bin(500<pt<750,0.0<abseta<1.2)
         {
@@ -217,7 +217,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_70,AntiKt4PV0TrackJets){
                 usys(FT_EFF_fracb,3.76%)
                 sys(FT_EFF_eps_c_neg,-7.00%)
                 sys(FT_EFF_eps_b_neg,-9.39%)
-                sys(FT_EFF_Run1ToRun2_extrap,50%)
+                sys(FT_EFF_CaloJet_extrap,50%)
         }
         bin(750<pt<1000,0.0<abseta<1.2)
         {
@@ -253,7 +253,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_70,AntiKt4PV0TrackJets){
                 usys(FT_EFF_fracb,3.29%)
                 sys(FT_EFF_eps_c_neg,-7.37%)
                 sys(FT_EFF_eps_b_neg,-8.13%)
-                sys(FT_EFF_Run1ToRun2_extrap,50%)
+                sys(FT_EFF_CaloJet_extrap,50%)
         }
         bin(1000<pt<3000,0.0<abseta<1.2)
         {
@@ -289,7 +289,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_70,AntiKt4PV0TrackJets){
                 usys(FT_EFF_fracb,3.29%)
                 sys(FT_EFF_eps_c_neg,-6.69%)
                 sys(FT_EFF_eps_b_neg,-6.95%)
-                sys(FT_EFF_Run1ToRun2_extrap,50%)
+                sys(FT_EFF_CaloJet_extrap,50%)
         }
         bin(20<pt<60,1.2<abseta<2.5)
         {
@@ -325,7 +325,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_70,AntiKt4PV0TrackJets){
                 usys(FT_EFF_fracb,16.54%)
                 sys(FT_EFF_eps_c_neg,-8.31%)
                 sys(FT_EFF_eps_b_neg,-7.56%)
-                sys(FT_EFF_Run1ToRun2_extrap,50%)
+                sys(FT_EFF_CaloJet_extrap,50%)
         }
         bin(60<pt<100,1.2<abseta<2.5)
         {
@@ -361,7 +361,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_70,AntiKt4PV0TrackJets){
                 usys(FT_EFF_fracb,20.90%)
                 sys(FT_EFF_eps_c_neg,-4.60%)
                 sys(FT_EFF_eps_b_neg,-10.84%)
-                sys(FT_EFF_Run1ToRun2_extrap,50%)
+                sys(FT_EFF_CaloJet_extrap,50%)
         }
         bin(100<pt<200,1.2<abseta<2.5)
         {
@@ -397,7 +397,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_70,AntiKt4PV0TrackJets){
                 usys(FT_EFF_fracb,2.15%)
                 sys(FT_EFF_eps_c_neg,-5.14%)
                 sys(FT_EFF_eps_b_neg,-10.71%)
-                sys(FT_EFF_Run1ToRun2_extrap,50%)
+                sys(FT_EFF_CaloJet_extrap,50%)
         }
         bin(200<pt<300,1.2<abseta<2.5)
         {
@@ -433,7 +433,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_70,AntiKt4PV0TrackJets){
                 usys(FT_EFF_fracb,3.62%)
                 sys(FT_EFF_eps_c_neg,-5.33%)
                 sys(FT_EFF_eps_b_neg,-10.10%)
-                sys(FT_EFF_Run1ToRun2_extrap,50%)
+                sys(FT_EFF_CaloJet_extrap,50%)
         }
         bin(300<pt<500,1.2<abseta<2.5)
         {
@@ -469,7 +469,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_70,AntiKt4PV0TrackJets){
                 usys(FT_EFF_fracb,8.94%)
                 sys(FT_EFF_eps_c_neg,-5.87%)
                 sys(FT_EFF_eps_b_neg,-9.21%)
-                sys(FT_EFF_Run1ToRun2_extrap,50%)
+                sys(FT_EFF_CaloJet_extrap,50%)
         }
         bin(500<pt<750,1.2<abseta<2.5)
         {
@@ -505,7 +505,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_70,AntiKt4PV0TrackJets){
                 usys(FT_EFF_fracb,12.01%)
                 sys(FT_EFF_eps_c_neg,-6.04%)
                 sys(FT_EFF_eps_b_neg,-8.65%)
-                sys(FT_EFF_Run1ToRun2_extrap,50%)
+                sys(FT_EFF_CaloJet_extrap,50%)
         }
         bin(750<pt<1000,1.2<abseta<2.5)
         {
@@ -541,7 +541,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_70,AntiKt4PV0TrackJets){
                 usys(FT_EFF_fracb,22.72%)
                 sys(FT_EFF_eps_c_neg,-6.71%)
                 sys(FT_EFF_eps_b_neg,-6.78%)
-                sys(FT_EFF_Run1ToRun2_extrap,50%)
+                sys(FT_EFF_CaloJet_extrap,50%)
         }
         bin(1000<pt<3000,1.2<abseta<2.5)
         {
@@ -577,6 +577,6 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_70,AntiKt4PV0TrackJets){
                 usys(FT_EFF_fracb,24.15%)
                 sys(FT_EFF_eps_c_neg,-5.81%)
                 sys(FT_EFF_eps_b_neg,-5.56%)
-                sys(FT_EFF_Run1ToRun2_extrap,50%)
+                sys(FT_EFF_CaloJet_extrap,50%)
         }
 }

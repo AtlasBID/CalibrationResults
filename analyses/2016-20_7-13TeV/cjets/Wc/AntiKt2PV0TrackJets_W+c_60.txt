@@ -1,9 +1,9 @@
-Analysis(Wc, charm, MV2c10, FixedCutBEff_60, AntiKt4EMTopoJets){
+Analysis(Wc, charm, MV2c10, FixedCutBEff_60, AntiKt2PV0TrackJets){
  
         meta_data_s (Hadronization, Pythia8EvtGen)
         meta_data_s (OperatingPoint,0.934906)
  
-	bin(20<pt<140,0<abseta<2.5)
+	bin(7<pt<100,0<abseta<2.5)
 	{
 	   central_value(0.744174,0.194753)
 	   sys(FT_EFF_Extrapolation_from_semilep_cjet,4.20225%)
@@ -50,5 +50,7 @@ Analysis(Wc, charm, MV2c10, FixedCutBEff_60, AntiKt4EMTopoJets){
 	   sys(FT_EFF_Luminosity_Tag_13TeV_005,-2.84189%)
 	   sys(FT_EFF_Multijet_bkg_1,-0.0781466%)
 	   sys(FT_EFF_Multijet_bkg_2,-3.33971%)
+	   sys(FT_EFF_Closure_ttbar,0.83)
+	   sys(FT_EFF_CaloJet_extrap,20%)
 	}
 }

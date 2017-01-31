@@ -1,9 +1,9 @@
-Analysis(Wc, charm, MV2c10, FixedCutBEff_85, AntiKt4EMTopoJets){
+Analysis(Wc, charm, MV2c10, FixedCutBEff_85, AntiKt2PV0TrackJets){
  
         meta_data_s (Hadronization, Pythia8EvtGen)
         meta_data_s (OperatingPoint,0.1758475)
  
-	bin(20<pt<30,0<abseta<2.5)
+	bin(7<pt<20,0<abseta<2.5)
 	{
 	   central_value(1.09225,0.0642885)
 	   sys(FT_EFF_Extrapolation_from_semilep_cjet,3.0266%)
@@ -50,8 +50,10 @@ Analysis(Wc, charm, MV2c10, FixedCutBEff_85, AntiKt4EMTopoJets){
 	   sys(FT_EFF_Luminosity_Tag_13TeV_005,0.350317%)
 	   sys(FT_EFF_Multijet_bkg_1,0.00763799%)
 	   sys(FT_EFF_Multijet_bkg_2,-0.08624%)
+	   sys(FT_EFF_Closure_ttbar,0.17)
+	   sys(FT_EFF_CaloJet_extrap,20%)
 	}
-	bin(30<pt<60,0<abseta<2.5)
+	bin(20<pt<40,0<abseta<2.5)
 	{
 	   central_value(0.974074,0.0338397)
 	   sys(FT_EFF_Extrapolation_from_semilep_cjet,2.42704%)
@@ -98,8 +100,10 @@ Analysis(Wc, charm, MV2c10, FixedCutBEff_85, AntiKt4EMTopoJets){
 	   sys(FT_EFF_Luminosity_Tag_13TeV_005,-0.0279274%)
 	   sys(FT_EFF_Multijet_bkg_1,0.000109167%)
 	   sys(FT_EFF_Multijet_bkg_2,-0.137037%)
+	   sys(FT_EFF_Closure_ttbar,0.17)
+	   sys(FT_EFF_CaloJet_extrap,20%)
 	}
-	bin(60<pt<90,0<abseta<2.5)
+	bin(40<pt<70,0<abseta<2.5)
 	{
 	   central_value(1.02924,0.0845522)
 	   sys(FT_EFF_Extrapolation_from_semilep_cjet,2.8553%)
@@ -146,8 +150,10 @@ Analysis(Wc, charm, MV2c10, FixedCutBEff_85, AntiKt4EMTopoJets){
 	   sys(FT_EFF_Luminosity_Tag_13TeV_005,0.126812%)
 	   sys(FT_EFF_Multijet_bkg_1,0.00780305%)
 	   sys(FT_EFF_Multijet_bkg_2,-0.213033%)
+	   sys(FT_EFF_Closure_ttbar,0.17)
+	   sys(FT_EFF_CaloJet_extrap,20%)
 	}
-	bin(90<pt<140,0<abseta<2.5)
+	bin(70<pt<100,0<abseta<2.5)
 	{
 	   central_value(1.02957,0.120223)
 	   sys(FT_EFF_Extrapolation_from_semilep_cjet,2.95382%)
@@ -194,5 +200,7 @@ Analysis(Wc, charm, MV2c10, FixedCutBEff_85, AntiKt4EMTopoJets){
 	   sys(FT_EFF_Luminosity_Tag_13TeV_005,0.016302%)
 	   sys(FT_EFF_Multijet_bkg_1,0.00459739%)
 	   sys(FT_EFF_Multijet_bkg_2,-0.0640307%)
+	   sys(FT_EFF_Closure_ttbar,0.17)
+	   sys(FT_EFF_CaloJet_extrap,20%)
 	}
 }
