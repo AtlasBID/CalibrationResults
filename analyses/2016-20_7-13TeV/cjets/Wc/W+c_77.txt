@@ -6,6 +6,8 @@ Analysis(Wc, charm, MV2c10, FixedCutBEff_77, AntiKt4EMTopoJets){
 	bin(20<pt<30,0<abseta<2.5)
 	{
 	   central_value(1.06369,0.104444)
+	   meta_data(N_jets tagged,4401.64,212.831)
+	   meta_data(N_jets total,21305.7,616.706)
 	   sys(FT_EFF_Extrapolation_from_semilep_cjet,3.68772%)
 	   sys(FT_EFF_JET_RelativeNonClosure_MC15,0%)
 	   sys(FT_EFF_JET_BJES_Response,0.0345313%)
@@ -55,6 +57,8 @@ Analysis(Wc, charm, MV2c10, FixedCutBEff_77, AntiKt4EMTopoJets){
 	bin(30<pt<60,0<abseta<2.5)
 	{
 	   central_value(1.02364,0.0657431)
+	   meta_data(N_jets tagged,5379.19,198.301)
+	   meta_data(N_jets total,30394,510.97)
 	   sys(FT_EFF_Extrapolation_from_semilep_cjet,2.80123%)
 	   sys(FT_EFF_JET_RelativeNonClosure_MC15,0%)
 	   sys(FT_EFF_JET_BJES_Response,0.0042083%)
@@ -104,6 +108,8 @@ Analysis(Wc, charm, MV2c10, FixedCutBEff_77, AntiKt4EMTopoJets){
 	bin(60<pt<90,0<abseta<2.5)
 	{
 	   central_value(1.1564,0.169294)
+	   meta_data(N_jets tagged,1162.94,104.275)
+	   meta_data(N_jets total,7280.75,362.477)
 	   sys(FT_EFF_Extrapolation_from_semilep_cjet,3.46442%)
 	   sys(FT_EFF_JET_RelativeNonClosure_MC15,0%)
 	   sys(FT_EFF_JET_BJES_Response,0%)
@@ -153,6 +159,8 @@ Analysis(Wc, charm, MV2c10, FixedCutBEff_77, AntiKt4EMTopoJets){
 	bin(90<pt<140,0<abseta<2.5)
 	{
 	   central_value(1.0768,0.220656)
+	   meta_data(N_jets tagged,522.887,62.9508)
+	   meta_data(N_jets total,2881.49,166.072)
 	   sys(FT_EFF_Extrapolation_from_semilep_cjet,2.70355%)
 	   sys(FT_EFF_JET_RelativeNonClosure_MC15,0%)
 	   sys(FT_EFF_JET_BJES_Response,0%)

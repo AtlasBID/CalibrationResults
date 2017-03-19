@@ -6,6 +6,8 @@ Analysis(Wc, charm, MV2c10, FixedCutBEff_60, AntiKt4EMTopoJets){
 	bin(20<pt<140,0<abseta<2.5)
 	{
 	   central_value(0.744174,0.194753)
+	   meta_data(N_jets tagged,1147.23,236.72)
+	   meta_data(N_jets total,62246.1,903.629)
 	   sys(FT_EFF_Extrapolation_from_semilep_cjet,4.20225%)
 	   sys(FT_EFF_JET_RelativeNonClosure_MC15,0%)
 	   sys(FT_EFF_JET_BJES_Response,0.123459%)

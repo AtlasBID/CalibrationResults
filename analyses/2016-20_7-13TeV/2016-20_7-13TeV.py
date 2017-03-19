@@ -83,9 +83,7 @@ pre_ttbar_pdf_7_all = files("bjets/ttbar_pdf/pre/*6bins.txt") \
 
 # Run-II PDF recommendations
 ttbar_pdf_7_all = (files("bjets/ttbar_pdf/*emu*7bins*.txt") \
-                   + files("bjets/ttbar_pdf/*ll*7bins*.txt") \
-                   + files("bjets/ttbar_pdf/VR_trackjets/*emu*7bins*.txt") \
-                   + files("bjets/ttbar_pdf/VR_trackjets/*ll*7bins*.txt")) \
+                   + files("bjets/ttbar_pdf/*ll*7bins*.txt")) \
                   .restrict() \
                   .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j", \
                                       "PDF_6bins_ll_2j",  "PDF_6bins_ll_3j"]) \
@@ -225,6 +223,12 @@ ttbar_r04_trackjets = files("bjets/ttbar_pdf/*tracks*.txt") \
                        .restrict_trackjets() \
                        .filter(analyses = ["PDF_6bins_emu_2j","PDF_6bins_emu_3j"]) \
                        .filter(jets=["AntiKt4PV0TrackJets"])
+
+#ttbar_vr_trackjets = files("bjets/ttbar_pdf/VR_trackjets/*tracks*.txt") \
+#                     .restrict_trackjets() \
+#                     .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j", \
+#                                         "PDF_6bins_ll_2j",  "PDF_6bins_ll_3j"]) \
+#                     .filter(jets=["AntiKtVR30Rmax4Rmin0TrackJets"])
 
 #mcCalib_b_trackjets = files("extrap/AntiKt*Zprimebb*b*.txt") \
 mcCalib_b_trackjets = files("MCcalib/AntiKt*SfPtB*.txt") \
