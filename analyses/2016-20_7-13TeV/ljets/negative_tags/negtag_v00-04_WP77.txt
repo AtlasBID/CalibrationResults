@@ -7,7 +7,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_77,AntiKt4EMTopoJets){
         {
                 central_value(1.22,5.93%)
                 meta_data(N_jets total,674607.00,810)
-                meta_data(N_jets tagged,6501.34,3120)
+                meta_data(N_jets tagged,6501.34,316)
                 sys(FT_EFF_JET_EffectiveNP_1,9.95%)
                 sys(FT_EFF_JET_EffectiveNP_2,7.87%)
                 sys(FT_EFF_JET_EffectiveNP_3,0.87%)
@@ -44,7 +44,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_77,AntiKt4EMTopoJets){
         {
                 central_value(0.99,5.40%)
                 meta_data(N_jets total,130876.00,366)
-                meta_data(N_jets tagged,780.68,344)
+                meta_data(N_jets tagged,780.68,43)
                 sys(FT_EFF_JET_EffectiveNP_1,1.75%)
                 sys(FT_EFF_JET_EffectiveNP_2,0.30%)
                 sys(FT_EFF_JET_EffectiveNP_3,0.50%)
@@ -81,7 +81,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_77,AntiKt4EMTopoJets){
         {
                 central_value(1.24,3.72%)
                 meta_data(N_jets total,2150672.00,1506)
-                meta_data(N_jets tagged,16503.62,7592)
+                meta_data(N_jets tagged,16503.62,495)
                 sys(FT_EFF_JET_EffectiveNP_1,1.89%)
                 sys(FT_EFF_JET_EffectiveNP_2,1.01%)
                 sys(FT_EFF_JET_EffectiveNP_3,0.59%)
@@ -118,7 +118,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_77,AntiKt4EMTopoJets){
         {
                 central_value(1.27,2.03%)
                 meta_data(N_jets total,877530.00,965)
-                meta_data(N_jets tagged,8171.17,3514)
+                meta_data(N_jets tagged,8171.17,130.6)
                 sys(FT_EFF_JET_EffectiveNP_1,0.53%)
                 sys(FT_EFF_JET_EffectiveNP_2,0.38%)
                 sys(FT_EFF_JET_EffectiveNP_3,0.33%)
@@ -155,7 +155,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_77,AntiKt4EMTopoJets){
         {
                 central_value(1.39,1.57%)
                 meta_data(N_jets total,1053968.00,1054)
-                meta_data(N_jets tagged,13107.61,4325)
+                meta_data(N_jets tagged,13107.61,148)
                 sys(FT_EFF_JET_EffectiveNP_1,0.26%)
                 sys(FT_EFF_JET_EffectiveNP_2,0.51%)
                 sys(FT_EFF_JET_EffectiveNP_3,0.22%)
@@ -192,7 +192,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_77,AntiKt4EMTopoJets){
         {
                 central_value(1.56,1.53%)
                 meta_data(N_jets total,17747828.00,3550)
-                meta_data(N_jets tagged,229746.85,78114)
+                meta_data(N_jets tagged,229746.85,2253)
                 sys(FT_EFF_JET_EffectiveNP_1,0.82%)
                 sys(FT_EFF_JET_EffectiveNP_2,1.43%)
                 sys(FT_EFF_JET_EffectiveNP_3,0.37%)
@@ -229,7 +229,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_77,AntiKt4EMTopoJets){
         {
                 central_value(1.71,1.58%)
                 meta_data(N_jets total,1678011.00,1342)
-                meta_data(N_jets tagged,41302.45,13216)
+                meta_data(N_jets tagged,41302.45,382)
                 sys(FT_EFF_JET_EffectiveNP_1,0.97%)
                 sys(FT_EFF_JET_EffectiveNP_2,1.79%)
                 sys(FT_EFF_JET_EffectiveNP_3,0.11%)
@@ -266,7 +266,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_77,AntiKt4EMTopoJets){
         {
                 central_value(1.81,2.08%)
                 meta_data(N_jets total,332953.00,566)
-                meta_data(N_jets tagged,12732.49,3565)
+                meta_data(N_jets tagged,12732.49,146)
                 sys(FT_EFF_JET_EffectiveNP_1,0.41%)
                 sys(FT_EFF_JET_EffectiveNP_2,1.24%)
                 sys(FT_EFF_JET_EffectiveNP_3,0.01%)
@@ -303,7 +303,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_77,AntiKt4EMTopoJets){
         {
                 central_value(1.49,7.11%)
                 meta_data(N_jets total,674607.00,810)
-                meta_data(N_jets tagged,9865.59,5525)
+                meta_data(N_jets tagged,9865.59,470)
                 sys(FT_EFF_JET_EffectiveNP_1,12.34%)
                 sys(FT_EFF_JET_EffectiveNP_2,2.82%)
                 sys(FT_EFF_JET_EffectiveNP_3,0.80%)
@@ -340,7 +340,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_77,AntiKt4EMTopoJets){
         {
                 central_value(1.15,7.14%)
                 meta_data(N_jets total,130876.00,367)
-                meta_data(N_jets tagged,1175.77,564)
+                meta_data(N_jets tagged,1175.77,73)
                 sys(FT_EFF_JET_EffectiveNP_1,1.72%)
                 sys(FT_EFF_JET_EffectiveNP_2,1.47%)
                 sys(FT_EFF_JET_EffectiveNP_3,1.12%)
@@ -377,7 +377,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_77,AntiKt4EMTopoJets){
         {
                 central_value(1.20,3.75%)
                 meta_data(N_jets total,2150672.00,1506)
-                meta_data(N_jets tagged,21810.16,11123)
+                meta_data(N_jets tagged,21810.16,682)
                 sys(FT_EFF_JET_EffectiveNP_1,0.79%)
                 sys(FT_EFF_JET_EffectiveNP_2,0.65%)
                 sys(FT_EFF_JET_EffectiveNP_3,0.78%)
@@ -414,7 +414,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_77,AntiKt4EMTopoJets){
         {
                 central_value(1.29,2.48%)
                 meta_data(N_jets total,877530.00,965)
-                meta_data(N_jets tagged,12550.28,5146)
+                meta_data(N_jets tagged,12550.28,241)
                 sys(FT_EFF_JET_EffectiveNP_1,0.57%)
                 sys(FT_EFF_JET_EffectiveNP_2,0.62%)
                 sys(FT_EFF_JET_EffectiveNP_3,0.42%)
@@ -451,7 +451,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_77,AntiKt4EMTopoJets){
         {
                 central_value(1.29,2.03%)
                 meta_data(N_jets total,1053968.00,1054)
-                meta_data(N_jets tagged,17199.34,6364)
+                meta_data(N_jets tagged,17199.34,271)
                 sys(FT_EFF_JET_EffectiveNP_1,0.52%)
                 sys(FT_EFF_JET_EffectiveNP_2,0.59%)
                 sys(FT_EFF_JET_EffectiveNP_3,0.22%)
@@ -488,7 +488,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_77,AntiKt4EMTopoJets){
         {
                 central_value(1.66,2.88%)
                 meta_data(N_jets total,17747828.00,3550)
-                meta_data(N_jets tagged,294538.72,126651)
+                meta_data(N_jets tagged,294538.72,5110)
                 sys(FT_EFF_JET_EffectiveNP_1,1.02%)
                 sys(FT_EFF_JET_EffectiveNP_2,1.95%)
                 sys(FT_EFF_JET_EffectiveNP_3,0.84%)
@@ -525,7 +525,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_77,AntiKt4EMTopoJets){
         {
                 central_value(1.80,3.66%)
                 meta_data(N_jets total,1678011.00,1342)
-                meta_data(N_jets tagged,53424.61,21370)
+                meta_data(N_jets tagged,53424.61,1086)
                 sys(FT_EFF_JET_EffectiveNP_1,0.82%)
                 sys(FT_EFF_JET_EffectiveNP_2,1.27%)
                 sys(FT_EFF_JET_EffectiveNP_3,0.11%)
@@ -562,7 +562,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_77,AntiKt4EMTopoJets){
         {
                 central_value(1.88,6.34%)
                 meta_data(N_jets total,332953.00,566)
-                meta_data(N_jets tagged,15566.08,6071)
+                meta_data(N_jets tagged,15566.08,525)
                 sys(FT_EFF_JET_EffectiveNP_1,0.04%)
                 sys(FT_EFF_JET_EffectiveNP_2,0.68%)
                 sys(FT_EFF_JET_EffectiveNP_3,0.06%)
