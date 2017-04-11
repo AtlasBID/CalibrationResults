@@ -3,7 +3,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_70,AntiKt2PV0TrackJets){
         meta_data_s (Hadronization, Pythia8EvtGen)
         meta_data_s (OperatingPoint, 0.824427)
 
-        bin(20<pt<60,0.0<abseta<1.2)
+        bin(10<pt<60,0.0<abseta<1.2)
         {
                 central_value(1.11,9.16%)
                 sys(FT_EFF_JET_EffectiveNP_1,15.22%)
@@ -291,7 +291,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_70,AntiKt2PV0TrackJets){
                 sys(FT_EFF_eps_b_neg,-6.95%)
                 sys(FT_EFF_CaloJet_extrap,50%)
         }
-        bin(20<pt<60,1.2<abseta<2.5)
+        bin(10<pt<60,1.2<abseta<2.5)
         {
                 central_value(1.35,10.76%)
                 sys(FT_EFF_JET_EffectiveNP_1,20.90%)
