@@ -159,18 +159,27 @@ ttbar_extrapolated = (mcCalib_b_all \
 wc_sf = files("cjets/Wc/W*.txt") \
               .restrict()
 
+ttc_sf = files("cjets/ttbarC/*.txt") \
+              .restrict()
+
 tau_sf = wc_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
 mcCalib_ct_all = files("extrap/MCcalibCDI_ttbar_c*") + files("extrap/MCcalibCDI_ttbar_t*") \
                 .restrict()
 
 charm_sf_extrapolated = (mcCalib_ct_all + wc_sf) \
-                     .extrapolate("Run2MCcalib")
+                       .extrapolate("Run2MCcalib")
 
 tau_sf_extrapolated = (mcCalib_ct_all + tau_sf) \
                      .extrapolate("Run2MCcalib")
 
-sources_wc = wc_sf
+mcCalib_ttc = files("extrap/ttC_MCcalibCDI_ttbar_c*") \
+              .restrict()
+
+ttc_sf_extrapolated = (mcCalib_ttc + ttc_sf) \
+                       .extrapolate("Run2MCcalib_ttC")
+
+sources_wc = wc_sf+ttc_sf
 
 ####################################
 # Light SF come from the negative tags
@@ -197,6 +206,7 @@ light_sf_pre = (negative_sf_pre + mcCalib_l_pre).extrapolate("MCcalib")
 
 all_calojets_extrapolated = ttbar_extrapolated + pTrel \
                             + charm_sf_extrapolated + tau_sf_extrapolated \
+                            + ttc_sf_extrapolated \
                             + light_sf_pre + negative_sf + mcbased_sf
 
 ####################################
