@@ -175,7 +175,7 @@ ttc_sf = files("cjets/ttbarC/*.txt") \
 
 tau_ttc_sf = ttc_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
-mcCalib_ttc = files("extrap/ttC_MCcalibCDI_ttbar_c*") \
+mcCalib_ttc = files("extrap/ttC_MCcalibCDI_ttbar_c*") + files("extrap/ttC_MCcalibCDI_ttbar_t*") \
               .restrict()
 
 ttc_sf_extrapolated = (mcCalib_ttc + ttc_sf) \
