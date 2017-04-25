@@ -1,4 +1,4 @@
-Analysis(Run2MCcalib_ttC,charm,MV2c10,FixedCutBEff_60,AntiKt4EMTopoJets){
+Analysis(Run2MCcalib_ttC,tau,MV2c10,FixedCutBEff_60,AntiKt4EMTopoJets){
 bin(65<pt<140,0<abseta<2.5)
 { 
    central_value(1.0,0.0255)
@@ -23,7 +23,7 @@ bin(65<pt<140,0<abseta<2.5)
    sys(FT_EFF_JET_GroupedNP_31down,0.4%)
    sys(FT_EFF_TRK_BIAS_D0_WM,1.2%)
    sys(FT_EFF_JET_Angular,0.4%)
-}  
+} 
 bin(140<pt<300,0<abseta<2.5)
 { 
    central_value(1.0,0.0255)
@@ -150,6 +150,5 @@ bin(1200<pt<2000,0<abseta<2.5)
    sys(FT_EFF_JET_Angular,47.5%)
 } 
 } 
-
  
  
