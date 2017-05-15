@@ -46,7 +46,7 @@ taggers = [
 
 sfObject.restrict_good = lambda self: self.filter(
     taggers=taggers,
-    jets=["AntiKt4EMTopoJets","AntiKt2PV0TrackJets","AntiKt4PV0TrackJets","AntiKtVR30Rmax4Rmin0TrackJets"],
+    jets=["AntiKt4EMTopoJets","AntiKt2PV0TrackJets","AntiKt4PV0TrackJets","AntiKtVR30Rmax4Rmin02TrackJets"],
     ).verify_OPs("20_7")
 
 sfObject.restrict_ignore = lambda self: self.filter(
@@ -239,11 +239,11 @@ ttbar_r04_trackjets = files("bjets/ttbar_pdf/*tracks*.txt") \
                        .filter(analyses = ["PDF_6bins_emu_2j","PDF_6bins_emu_3j"]) \
                        .filter(jets=["AntiKt4PV0TrackJets"])
 
-#ttbar_vr_trackjets = files("bjets/ttbar_pdf/VR_trackjets/*tracks*.txt") \
-#                     .restrict_trackjets() \
-#                     .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j", \
-#                                         "PDF_6bins_ll_2j",  "PDF_6bins_ll_3j"]) \
-#                     .filter(jets=["AntiKtVR30Rmax4Rmin0TrackJets"])
+ttbar_vr_trackjets = files("bjets/ttbar_pdf/VR_trackjets/*tracks*.txt") \
+                     .restrict_trackjets() \
+                     .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j", \
+                                         "PDF_6bins_ll_2j",  "PDF_6bins_ll_3j"]) \
+                     .filter(jets=["AntiKtVR30Rmax4Rmin02TrackJets"])
 
 #mcCalib_b_trackjets = files("extrap/AntiKt*Zprimebb*b*.txt") \
 mcCalib_b_trackjets = files("MCcalib/AntiKt*SfPtB*.txt") \
@@ -253,8 +253,12 @@ mcCalib_b_trackjets = files("MCcalib/AntiKt*SfPtB*.txt") \
 ttbar_r02_trackjets_combined_withchi2 = (ttbar_r02_trackjets).bbb_fit("ttbar_PDF_7b", saveCHI2Fits=True)
 ttbar_r02_trackjets_combined = ttbar_r02_trackjets_combined_withchi2.filter(analyses=["ttbar_PDF_7b"])
 
+ttbar_vr_trackjets_combined_withchi2 = (ttbar_vr_trackjets).bbb_fit("ttbar_PDF_7b", saveCHI2Fits=True)
+ttbar_vr_trackjets_combined = ttbar_vr_trackjets_combined_withchi2.filter(analyses=["ttbar_PDF_7b"])
+
 b_trackjets_extrap = (ttbar_r02_trackjets_combined + ttbar_pre_r02_trackjets + ttbar_r02_trackjets + \
-                      ttbar_pre_r04_trackjets + ttbar_r04_trackjets + mcCalib_b_trackjets) \
+                      ttbar_pre_r04_trackjets + ttbar_r04_trackjets + 
+                      ttbar_vr_trackjets + ttbar_vr_trackjets_combined + mcCalib_b_trackjets) \
                      .extrapolate("MCcalib")
 
 ####################################
