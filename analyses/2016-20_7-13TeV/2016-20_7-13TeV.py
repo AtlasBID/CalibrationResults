@@ -245,10 +245,8 @@ ttbar_vr_trackjets = files("bjets/ttbar_pdf/VR_trackjets/*tracks*.txt") \
                                          "PDF_6bins_ll_2j",  "PDF_6bins_ll_3j"]) \
                      .filter(jets=["AntiKtVR30Rmax4Rmin02TrackJets"])
 
-#mcCalib_b_trackjets = files("extrap/AntiKt*Zprimebb*b*.txt") \
-mcCalib_b_trackjets = files("MCcalib/AntiKt*SfPtB*.txt") \
+mcCalib_b_trackjets = files("extrap/AntiKt*Zprimebb*b*.txt") \
                       .restrict_good()
-
 
 ttbar_r02_trackjets_combined_withchi2 = (ttbar_r02_trackjets).bbb_fit("ttbar_PDF_7b", saveCHI2Fits=True)
 ttbar_r02_trackjets_combined = ttbar_r02_trackjets_combined_withchi2.filter(analyses=["ttbar_PDF_7b"])
@@ -259,7 +257,7 @@ ttbar_vr_trackjets_combined = ttbar_vr_trackjets_combined_withchi2.filter(analys
 b_trackjets_extrap = (ttbar_r02_trackjets_combined + ttbar_pre_r02_trackjets + ttbar_r02_trackjets + \
                       ttbar_pre_r04_trackjets + ttbar_r04_trackjets + 
                       ttbar_vr_trackjets + ttbar_vr_trackjets_combined + mcCalib_b_trackjets) \
-                     .extrapolate("MCcalib")
+                     .extrapolate("Run2MCcalib")
 
 ####################################
 # Track-jets pre-recommendations - c jets
