@@ -1,5 +1,5 @@
 Analysis(Run2MCcalib,charm,MV2c10,FixedCutBEff_77,AntiKt2PV0TrackJets){
-bin(70<pt<100,0<abseta<2.5)
+bin(60<pt<100,0<abseta<2.5)
 { 
    central_value(1.0,0.0255)
    sys(FT_EFF_TRK_SAGITTA_WM,0.4%)

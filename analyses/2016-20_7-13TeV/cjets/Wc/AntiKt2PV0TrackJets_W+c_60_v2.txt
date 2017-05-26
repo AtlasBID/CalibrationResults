@@ -1,0 +1,38 @@
+Analysis(Wc, charm, MV2c10, FixedCutBEff_60, AntiKt2PV0TrackJets){
+ 
+        meta_data_s (Hadronization, Pythia8EvtGen)
+        meta_data_s (OperatingPoint,0.934906)
+ 
+	bin(10<pt<100,0<abseta<2.5)
+	{
+	   central_value(1.01069,0.13286)
+	   meta_data(N_jets tagged,3269.66,274.925)
+	   meta_data(N_jets total,72813.8,941.746)
+	   sys(FT_EFF_Extrapolation_from_semilep_cjet,3.83325%)
+	   sys(FT_EFF_TrackJet_TrackEfficiency,5%)
+	   sys(FT_EFF_MUONS_SCALE,0%)
+	   sys(FT_EFF_MUONS_ID,0%)
+	   sys(FT_EFF_MUONS_MS,0%)
+	   sys(FT_EFF_MUON_EFF_STAT,0.0273495%)
+	   sys(FT_EFF_MUON_EFF_SYS,0.0866244%)
+	   sys(FT_EFF_MUON_ISO_STAT,0%)
+	   sys(FT_EFF_MUON_ISO_SYS,0%)
+	   sys(FT_EFF_EG_RESOLUTION_ALL,-0.208825%)
+	   sys(FT_EFF_EG_SCALE_ALL,0.0820303%)
+	   sys(FT_EFF_EL_EFF_ID_TotalCorrUncertainty,0%)
+	   sys(FT_EFF_EL_EFF_Trigger_TotalCorrUncertainty,0%)
+	   sys(FT_EFF_EL_EFF_Reco_TotalCorrUncertainty,0%)
+	   sys(FT_EFF_EL_EFF_Iso_TotalCorrUncertainty,0%)
+	   sys(FT_EFF_MET_SoftTrk_Scale,0.39241%)
+	   sys(FT_EFF_MET_SoftTrk_ResoPara,-4.48547%)
+	   sys(FT_EFF_MET_SoftTrk_ResoPerp,-1.86457%)
+	   sys(FT_EFF_PU_weight_sys,-5.56602%)
+	   sys(FT_EFF_MC_stat,-10.3907%)
+	   sys(FT_EFF_MC_cross_section,-0.240426%)
+	   sys(FT_EFF_Luminosity_Tag_13TeV_008,-0.0872295%)
+	   sys(FT_EFF_Multijet_method,-2.05887%)
+	   sys(FT_EFF_Multijet_FF_1,-0.195858%)
+	   sys(FT_EFF_Multijet_FF_2,0.149208%)
+	   sys(FT_EFF_Multijet_FF_3,2.06555%)
+	}
+}

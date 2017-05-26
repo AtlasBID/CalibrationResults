@@ -156,7 +156,7 @@ ttbar_extrapolated = (mcCalib_b_all \
 # W+c calibration doesn't require the special treatment reserved for D*
 #
 
-wc_sf = files("cjets/Wc/W*.txt") \
+wc_sf = files("cjets/Wc/W*v2.txt") \
               .restrict()
 
 tau_sf = wc_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
@@ -263,10 +263,10 @@ b_trackjets_extrap = (ttbar_r02_trackjets_combined + ttbar_pre_r02_trackjets + t
 # Track-jets pre-recommendations - c jets
 #
 
-wc_sf_r02_trackjets = files("cjets/Wc/AntiKt2PV0TrackJets_W*.txt") \
+wc_sf_r02_trackjets = files("cjets/Wc/AntiKt2PV0TrackJets_W*v2.txt") \
                       .restrict()
 
-wc_sf_r04_trackjets = files("cjets/Wc/AntiKt4PV0TrackJets_W*.txt") \
+wc_sf_r04_trackjets = files("cjets/Wc/AntiKt4PV0TrackJets_W*v1.txt") \
                       .restrict()
 
 charm_trackjets = wc_sf_r02_trackjets + wc_sf_r04_trackjets
