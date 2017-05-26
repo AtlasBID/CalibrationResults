@@ -192,7 +192,7 @@ Analysis(negative_tags,light,MV2c10,FixedCutBEff_85,AntiKt4EMTopoJets){
         {
                 central_value(1.61,0.86%)
                 meta_data(N_jets total,17747828.00,3550)
-                meta_data(N_jets taggued,861850.62,4604)
+                meta_data(N_jets tagged,861850.62,4604)
                 sys(FT_EFF_JET_EffectiveNP_1,0.52%)
                 sys(FT_EFF_JET_EffectiveNP_2,1.15%)
                 sys(FT_EFF_JET_EffectiveNP_3,0.25%)
