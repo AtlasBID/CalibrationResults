@@ -190,7 +190,7 @@ sources_wc = wc_sf+ttc_sf
 # Light SF come from the negative tags
 #
 
-negative_sf = files("ljets/negative_tags/negtag*.txt") \
+negative_sf = files("ljets/negative_tags/negtag*v00-07*.txt") \
               .restrict()
 
 mcbased_sf = files("ljets/mc_based/MCBased*.txt") \
@@ -296,7 +296,7 @@ light_sf_trackjets_pre = (negative_trackjets_pre + mcCalib_l_trackjets_pre).extr
 # Track-jets recommendations - light jets
 #
 
-light_sf_trackjets = files("ljets/negative_tags/AntiKt*.txt") \
+light_sf_trackjets = files("ljets/negative_tags/AntiKt*v00-07*.txt") \
                      .restrict_good() \
                      .filter(analyses = ["negative_tags"])
 
