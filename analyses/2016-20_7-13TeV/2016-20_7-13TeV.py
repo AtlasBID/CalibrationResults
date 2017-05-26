@@ -191,10 +191,10 @@ sources_wc = wc_sf+ttc_sf
 #
 
 negative_sf = files("ljets/negative_tags/negtag*v00-07*.txt") \
-              .restrict()
+              .restrict_good()
 
-mcbased_sf = files("ljets/mc_based/MCBased*.txt") \
-             .restrict()
+mcbased_sf = files("ljets/mc_based/SF_wp*v2.txt") \
+             .restrict_good()
 
 negative_sf_pre = files("ljets/negative_tags/pre/mistag*.txt") \
            .restrict()
