@@ -1,0 +1,148 @@
+Analysis(MCbased_light,light,MV2c10,FixedCutBEff_77,AntiKt2PV0TrackJets){
+meta_data_s (Hadronization, PythiaEvtGen)
+meta_data_s (OperatingPoint, 0.645925)
+bin(10.0<pt<60.0,0.00<abseta<1.20)
+{
+    central_value(1.344,0.006)
+    sys(FT_EFF_generator_sys,3.91%)
+    sys(FT_EFF_d0_smearing,7.76%)
+    sys(FT_EFF_z0_smearing,4.32%)
+    sys(FT_EFF_fake,-1.36%)
+    sys(FT_EFF_correl,1.25%)
+}
+bin(10.0<pt<60.0,1.20<abseta<2.50)
+{
+    central_value(1.398,0.007)
+    sys(FT_EFF_generator_sys,1.68%)
+    sys(FT_EFF_d0_smearing,4.90%)
+    sys(FT_EFF_z0_smearing,4.29%)
+    sys(FT_EFF_fake,-2.35%)
+    sys(FT_EFF_correl,1.05%)
+}
+bin(60.0<pt<100.0,0.00<abseta<1.20)
+{
+    central_value(1.513,0.023)
+    sys(FT_EFF_generator_sys,-1.29%)
+    sys(FT_EFF_d0_smearing,24.18%)
+    sys(FT_EFF_z0_smearing,9.35%)
+    sys(FT_EFF_fake,-3.88%)
+    sys(FT_EFF_correl,2.16%)
+}
+bin(60.0<pt<100.0,1.20<abseta<2.50)
+{
+    central_value(1.604,0.028)
+    sys(FT_EFF_generator_sys,-0.30%)
+    sys(FT_EFF_d0_smearing,22.79%)
+    sys(FT_EFF_z0_smearing,13.20%)
+    sys(FT_EFF_fake,-5.45%)
+    sys(FT_EFF_correl,1.09%)
+}
+bin(100.0<pt<200.0,0.00<abseta<1.20)
+{
+    central_value(1.446,0.031)
+    sys(FT_EFF_generator_sys,1.78%)
+    sys(FT_EFF_d0_smearing,34.76%)
+    sys(FT_EFF_z0_smearing,9.23%)
+    sys(FT_EFF_fake,-5.35%)
+    sys(FT_EFF_correl,1.17%)
+}
+bin(100.0<pt<200.0,1.20<abseta<2.50)
+{
+    central_value(1.526,0.036)
+    sys(FT_EFF_generator_sys,-3.45%)
+    sys(FT_EFF_d0_smearing,32.38%)
+    sys(FT_EFF_z0_smearing,12.88%)
+    sys(FT_EFF_fake,-7.66%)
+    sys(FT_EFF_correl,1.92%)
+}
+bin(200.0<pt<300.0,0.00<abseta<1.20)
+{
+    central_value(1.359,0.059)
+    sys(FT_EFF_generator_sys,-2.17%)
+    sys(FT_EFF_d0_smearing,32.32%)
+    sys(FT_EFF_z0_smearing,6.09%)
+    sys(FT_EFF_fake,-8.57%)
+    sys(FT_EFF_correl,0.65%)
+}
+bin(200.0<pt<300.0,1.20<abseta<2.50)
+{
+    central_value(1.458,0.070)
+    sys(FT_EFF_generator_sys,-11.32%)
+    sys(FT_EFF_d0_smearing,37.08%)
+    sys(FT_EFF_z0_smearing,9.00%)
+    sys(FT_EFF_fake,-9.97%)
+    sys(FT_EFF_correl,-0.33%)
+}
+bin(300.0<pt<500.0,0.00<abseta<1.20)
+{
+    central_value(1.216,0.093)
+    sys(FT_EFF_generator_sys,5.58%)
+    sys(FT_EFF_d0_smearing,27.08%)
+    sys(FT_EFF_z0_smearing,2.00%)
+    sys(FT_EFF_fake,-7.56%)
+    sys(FT_EFF_correl,7.56%)
+}
+bin(300.0<pt<500.0,1.20<abseta<2.50)
+{
+    central_value(1.365,0.118)
+    sys(FT_EFF_generator_sys,-6.30%)
+    sys(FT_EFF_d0_smearing,23.21%)
+    sys(FT_EFF_z0_smearing,6.08%)
+    sys(FT_EFF_fake,-9.20%)
+    sys(FT_EFF_correl,-4.02%)
+}
+bin(500.0<pt<750.0,0.00<abseta<1.20)
+{
+    central_value(1.233,0.174)
+    sys(FT_EFF_generator_sys,-22.51%)
+    sys(FT_EFF_d0_smearing,-1.54%)
+    sys(FT_EFF_z0_smearing,10.05%)
+    sys(FT_EFF_fake,-9.80%)
+    sys(FT_EFF_correl,-2.39%)
+}
+bin(500.0<pt<750.0,1.20<abseta<2.50)
+{
+    central_value(1.418,0.222)
+    sys(FT_EFF_generator_sys,-32.43%)
+    sys(FT_EFF_d0_smearing,6.44%)
+    sys(FT_EFF_z0_smearing,13.57%)
+    sys(FT_EFF_fake,-8.29%)
+    sys(FT_EFF_correl,-5.70%)
+}
+bin(750.0<pt<1000.0,0.00<abseta<1.20)
+{
+    central_value(1.252,0.264)
+    sys(FT_EFF_generator_sys,8.37%)
+    sys(FT_EFF_d0_smearing,1.89%)
+    sys(FT_EFF_z0_smearing,-1.02%)
+    sys(FT_EFF_fake,-11.82%)
+    sys(FT_EFF_correl,-7.56%)
+}
+bin(750.0<pt<1000.0,1.20<abseta<2.50)
+{
+    central_value(1.193,0.251)
+    sys(FT_EFF_generator_sys,81.66%)
+    sys(FT_EFF_d0_smearing,3.81%)
+    sys(FT_EFF_z0_smearing,1.90%)
+    sys(FT_EFF_fake,-5.71%)
+    sys(FT_EFF_correl,-4.82%)
+}
+bin(1000.0<pt<3000.0,0.00<abseta<1.20)
+{
+    central_value(1.011,0.172)
+    sys(FT_EFF_generator_sys,18.30%)
+    sys(FT_EFF_d0_smearing,-3.70%)
+    sys(FT_EFF_z0_smearing,11.30%)
+    sys(FT_EFF_fake,-9.09%)
+    sys(FT_EFF_correl,18.90%)
+}
+bin(1000.0<pt<3000.0,1.20<abseta<2.50)
+{
+    central_value(1.413,0.240)
+    sys(FT_EFF_generator_sys,188.00%)
+    sys(FT_EFF_d0_smearing,-2.09%)
+    sys(FT_EFF_z0_smearing,0.50%)
+    sys(FT_EFF_fake,-7.07%)
+    sys(FT_EFF_correl,-8.69%)
+}
+}

@@ -1,0 +1,148 @@
+Analysis(MCbased_light,light,MV2c10,FixedCutBEff_60,AntiKt2PV0TrackJets){
+meta_data_s (Hadronization, PythiaEvtGen)
+meta_data_s (OperatingPoint, 0.934906)
+bin(10.0<pt<60.0,0.00<abseta<1.20)
+{
+    central_value(1.118,0.009)
+    sys(FT_EFF_generator_sys,6.25%)
+    sys(FT_EFF_d0_smearing,3.19%)
+    sys(FT_EFF_z0_smearing,1.63%)
+    sys(FT_EFF_fake,-0.69%)
+    sys(FT_EFF_correl,1.25%)
+}
+bin(10.0<pt<60.0,1.20<abseta<2.50)
+{
+    central_value(1.215,0.013)
+    sys(FT_EFF_generator_sys,6.53%)
+    sys(FT_EFF_d0_smearing,2.53%)
+    sys(FT_EFF_z0_smearing,3.07%)
+    sys(FT_EFF_fake,-1.49%)
+    sys(FT_EFF_correl,1.86%)
+}
+bin(60.0<pt<100.0,0.00<abseta<1.20)
+{
+    central_value(1.386,0.051)
+    sys(FT_EFF_generator_sys,-2.60%)
+    sys(FT_EFF_d0_smearing,17.48%)
+    sys(FT_EFF_z0_smearing,9.93%)
+    sys(FT_EFF_fake,-2.96%)
+    sys(FT_EFF_correl,3.71%)
+}
+bin(60.0<pt<100.0,1.20<abseta<2.50)
+{
+    central_value(1.600,0.072)
+    sys(FT_EFF_generator_sys,4.10%)
+    sys(FT_EFF_d0_smearing,19.95%)
+    sys(FT_EFF_z0_smearing,10.18%)
+    sys(FT_EFF_fake,-5.46%)
+    sys(FT_EFF_correl,-0.81%)
+}
+bin(100.0<pt<200.0,0.00<abseta<1.20)
+{
+    central_value(1.286,0.063)
+    sys(FT_EFF_generator_sys,-3.51%)
+    sys(FT_EFF_d0_smearing,30.53%)
+    sys(FT_EFF_z0_smearing,6.53%)
+    sys(FT_EFF_fake,-4.24%)
+    sys(FT_EFF_correl,0.28%)
+}
+bin(100.0<pt<200.0,1.20<abseta<2.50)
+{
+    central_value(1.461,0.080)
+    sys(FT_EFF_generator_sys,-4.71%)
+    sys(FT_EFF_d0_smearing,22.81%)
+    sys(FT_EFF_z0_smearing,11.55%)
+    sys(FT_EFF_fake,-8.00%)
+    sys(FT_EFF_correl,-1.04%)
+}
+bin(200.0<pt<300.0,0.00<abseta<1.20)
+{
+    central_value(1.122,0.103)
+    sys(FT_EFF_generator_sys,-1.26%)
+    sys(FT_EFF_d0_smearing,28.14%)
+    sys(FT_EFF_z0_smearing,12.40%)
+    sys(FT_EFF_fake,-6.29%)
+    sys(FT_EFF_correl,9.96%)
+}
+bin(200.0<pt<300.0,1.20<abseta<2.50)
+{
+    central_value(1.568,0.182)
+    sys(FT_EFF_generator_sys,-8.19%)
+    sys(FT_EFF_d0_smearing,37.38%)
+    sys(FT_EFF_z0_smearing,1.70%)
+    sys(FT_EFF_fake,-14.16%)
+    sys(FT_EFF_correl,-3.18%)
+}
+bin(300.0<pt<500.0,0.00<abseta<1.20)
+{
+    central_value(1.084,0.187)
+    sys(FT_EFF_generator_sys,-7.39%)
+    sys(FT_EFF_d0_smearing,35.20%)
+    sys(FT_EFF_z0_smearing,-2.82%)
+    sys(FT_EFF_fake,-8.84%)
+    sys(FT_EFF_correl,8.71%)
+}
+bin(300.0<pt<500.0,1.20<abseta<2.50)
+{
+    central_value(1.557,0.438)
+    sys(FT_EFF_generator_sys,-11.26%)
+    sys(FT_EFF_d0_smearing,3.53%)
+    sys(FT_EFF_z0_smearing,12.50%)
+    sys(FT_EFF_fake,-5.56%)
+    sys(FT_EFF_correl,-12.00%)
+}
+bin(500.0<pt<750.0,0.00<abseta<1.20)
+{
+    central_value(1.613,0.758)
+    sys(FT_EFF_generator_sys,-39.30%)
+    sys(FT_EFF_d0_smearing,-8.11%)
+    sys(FT_EFF_z0_smearing,0.00%)
+    sys(FT_EFF_fake,3.85%)
+    sys(FT_EFF_correl,-38.08%)
+}
+bin(500.0<pt<750.0,1.20<abseta<2.50)
+{
+    central_value(1.331,0.582)
+    sys(FT_EFF_generator_sys,193.94%)
+    sys(FT_EFF_d0_smearing,4.00%)
+    sys(FT_EFF_z0_smearing,8.33%)
+    sys(FT_EFF_fake,-14.81%)
+    sys(FT_EFF_correl,-11.83%)
+}
+bin(750.0<pt<1000.0,0.00<abseta<1.20)
+{
+    central_value(1.320,0.867)
+    sys(FT_EFF_generator_sys,-36.00%)
+    sys(FT_EFF_d0_smearing,10.00%)
+    sys(FT_EFF_z0_smearing,-18.18%)
+    sys(FT_EFF_fake,-16.67%)
+    sys(FT_EFF_correl,-27.27%)
+}
+bin(750.0<pt<1000.0,1.20<abseta<2.50)
+{
+    central_value(1.248,0.922)
+    sys(FT_EFF_generator_sys,-100.00%)
+    sys(FT_EFF_d0_smearing,14.29%)
+    sys(FT_EFF_z0_smearing,0.00%)
+    sys(FT_EFF_fake,-10.00%)
+    sys(FT_EFF_correl,18.68%)
+}
+bin(1000.0<pt<3000.0,0.00<abseta<1.20)
+{
+    central_value(0.985,0.498)
+    sys(FT_EFF_generator_sys,433.33%)
+    sys(FT_EFF_d0_smearing,23.08%)
+    sys(FT_EFF_z0_smearing,0.00%)
+    sys(FT_EFF_fake,-12.50%)
+    sys(FT_EFF_correl,49.11%)
+}
+bin(1000.0<pt<3000.0,1.20<abseta<2.50)
+{
+    central_value(2.726,1.997)
+    sys(FT_EFF_generator_sys,433.33%)
+    sys(FT_EFF_d0_smearing,10.00%)
+    sys(FT_EFF_z0_smearing,4.55%)
+    sys(FT_EFF_fake,-17.65%)
+    sys(FT_EFF_correl,-33.18%)
+}
+}

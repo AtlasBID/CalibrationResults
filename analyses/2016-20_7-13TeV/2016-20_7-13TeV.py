@@ -300,13 +300,17 @@ light_sf_trackjets = files("ljets/negative_tags/AntiKt*.txt") \
                      .restrict_good() \
                      .filter(analyses = ["negative_tags"])
 
+mcbased_sf_trackjets = files("ljets/mc_based/eta*.txt") \
+                     .restrict_good() \
+                     .filter(analyses = ["MCbased_light"])
+
 ####################################
 # Track-jets - all together
 #
 
 sf_trackjets = b_trackjets_extrap \
                + ct_trackjets_extrap \
-               + light_sf_trackjets_pre + light_sf_trackjets
+               + light_sf_trackjets_pre + light_sf_trackjets + mcbased_sf_trackjets
 
 ####################################
 # The CDI file.
