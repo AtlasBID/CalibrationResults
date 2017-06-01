@@ -170,7 +170,7 @@ charm_sf_extrapolated = (mcCalib_ct_all + wc_sf) \
 tau_sf_extrapolated = (mcCalib_ct_all + tau_sf) \
                      .extrapolate("Run2MCcalib")
 
-ttc_sf = files("cjets/ttbarC/*.txt") \
+ttc_sf = files("cjets/ttbarC/CDI*.txt") \
               .restrict()
 
 tau_ttc_sf = ttc_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")

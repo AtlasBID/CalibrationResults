@@ -3,9 +3,9 @@
 # bottom 
 Default(ttbar_PDF_7b, bottom, MV2c10, *, AntiKt4EMTopoJets)
 # charm
-Default(Wc, charm, MV2c10, *, AntiKt4EMTopoJets)
+Default(ttbarC, charm, MV2c10, *, AntiKt4EMTopoJets)
 # tau
-Default(Wc, tau, MV2c10, *, AntiKt4EMTopoJets)
+Default(ttbarC, tau, MV2c10, *, AntiKt4EMTopoJets)
 # light
 Default(negative_tags, light, MV2c10, *, AntiKt4EMTopoJets)
 
