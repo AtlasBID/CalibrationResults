@@ -18,10 +18,13 @@ Default(ttbar_PDF_7b, bottom, MV2c10, *, AntiKtVR30Rmax4Rmin02TrackJets)
 # charm
 Default(Wc, charm, MV2c10, *, AntiKt2PV0TrackJets)
 Default(Wc, charm, MV2c10, *, AntiKt4PV0TrackJets)
+Default(Wc, charm, MV2c10, *, AntiKtVR30Rmax4Rmin02TrackJets)
 # tau
 Default(Wc, tau, MV2c10, *, AntiKt2PV0TrackJets)
 Default(Wc, tau, MV2c10, *, AntiKt4PV0TrackJets)
+Default(Wc, tau, MV2c10, *, AntiKtVR30Rmax4Rmin02TrackJets)
 # light
 Default(negative_tags, light, MV2c10, *, AntiKt2PV0TrackJets)
 Default(negative_tags, light, MV2c10, *, AntiKt4PV0TrackJets)
+Default(negative_tags, light, MV2c10, *, AntiKtVR30Rmax4Rmin02TrackJets)
 

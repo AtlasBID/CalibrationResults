@@ -269,11 +269,15 @@ wc_sf_r02_trackjets = files("cjets/Wc/AntiKt2PV0TrackJets_W*v2.txt") \
 wc_sf_r04_trackjets = files("cjets/Wc/AntiKt4PV0TrackJets_W*v1.txt") \
                       .restrict()
 
-charm_trackjets = wc_sf_r02_trackjets + wc_sf_r04_trackjets
+wc_sf_vr_trackjets = files("cjets/Wc/VRTrackJets_W*v2.txt") \
+                      .restrict()
+
+charm_trackjets = wc_sf_r02_trackjets + wc_sf_r04_trackjets + wc_sf_vr_trackjets
 
 tau_trackjets = charm_trackjets.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
-mcCalib_ct_trackjets = (files("extrap/AntiKt*ttbar*c*Fixed*.txt") + files("extrap/AntiKt*ttbar*t*Fixed*.txt")) \
+mcCalib_ct_trackjets = (files("extrap/AntiKt*ttbar*c*Fixed*.txt") + files("extrap/AntiKt*ttbar*t*Fixed*.txt") + \
+                        files("extrap/VR*ttbar*c*Fixed*.txt") + files("extrap/VR*ttbar*t*Fixed*.txt")) \
                        .restrict_good()
 
 ct_trackjets_extrap = (charm_trackjets + tau_trackjets + mcCalib_ct_trackjets) \
@@ -296,7 +300,7 @@ light_sf_trackjets_pre = (negative_trackjets_pre + mcCalib_l_trackjets_pre).extr
 # Track-jets recommendations - light jets
 #
 
-light_sf_trackjets = files("ljets/negative_tags/AntiKt*v00-07*.txt") \
+light_sf_trackjets = (files("ljets/negative_tags/AntiKt*v00-07*.txt") + files("ljets/negative_tags/VR*v00-07*.txt")) \
                      .restrict_good() \
                      .filter(analyses = ["negative_tags"])
 
