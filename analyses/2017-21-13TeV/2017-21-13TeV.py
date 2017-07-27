@@ -128,7 +128,7 @@ all_calojets = pre_ttbar_pdf_extrap \
 # The CDI file.
 
 master_cdi_file = all_calojets
-defaultSFs = master_cdi_file.make_cdi("MC16-CDI", "defaults.txt","StandardTag-13TeV-CalibrationFile-05-06-2017.root","BtagWP-20170514.root","21")
+defaultSFs = master_cdi_file.make_cdi("MC16-CDI", "defaults.txt","StandardTag-13TeV-CalibrationFile-05-06-2017.root","2017-13TeV-WorkingPointsOnly-Release21-AntiKt4EMTopoJets-July26.root","21")
 master_cdi_file.plot("MC16-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
 master_cdi_file.plot("MC16-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
