@@ -1,0 +1,11 @@
+###############################################################
+### calo-jets
+# bottom 
+Default(pre_ttbar_PDF_7b, bottom, MV2c10, *, AntiKt4EMTopoJets)
+# charm
+Default(ttbarC, charm, MV2c10, *, AntiKt4EMTopoJets)
+# tau
+Default(ttbarC, tau, MV2c10, *, AntiKt4EMTopoJets)
+# light
+Default(negative_tags, light, MV2c10, *, AntiKt4EMTopoJets)
+
