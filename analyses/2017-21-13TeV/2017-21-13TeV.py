@@ -24,14 +24,58 @@ description = "Flavor tagging recommendations for release 21"
 #
 
 taggers = [
-#MV2c10 60%
-    ["MV2c10", "FixedCutBEff_60"],
-#MV2c10 70%
-    ["MV2c10", "FixedCutBEff_70"],
-#MV2c10 77%
-    ["MV2c10", "FixedCutBEff_77"],
-#MV2c10 85%
-    ["MV2c10", "FixedCutBEff_85"],
+#60%
+    ["MV2c10",    "FixedCutBEff_60"],
+    ["MV2c10mu",  "FixedCutBEff_60"],
+    ["MV2c10rnn", "FixedCutBEff_60"],
+    ["DL1",       "FixedCutBEff_60"],
+    ["DL1mu",     "FixedCutBEff_60"],
+    ["DL1rnn",    "FixedCutBEff_60"],
+    ["MV2c10",    "HybBEff_60"],
+    ["MV2c10mu",  "HybBEff_60"],
+    ["MV2c10rnn", "HybBEff_60"],
+    ["DL1",       "HybBEff_60"],
+    ["DL1mu",     "HybBEff_60"],
+    ["DL1rnn",    "HybBEff_60"],
+#70%
+    ["MV2c10",    "FixedCutBEff_70"],
+    ["MV2c10mu",  "FixedCutBEff_70"],
+    ["MV2c10rnn", "FixedCutBEff_70"],
+    ["DL1",       "FixedCutBEff_70"],
+    ["DL1mu",     "FixedCutBEff_70"],
+    ["DL1rnn",    "FixedCutBEff_70"],
+    ["MV2c10",    "HybBEff_70"],
+    ["MV2c10mu",  "HybBEff_70"],
+    ["MV2c10rnn", "HybBEff_70"],
+    ["DL1",       "HybBEff_70"],
+    ["DL1mu",     "HybBEff_70"],
+    ["DL1rnn",    "HybBEff_70"],
+#77%
+    ["MV2c10",    "FixedCutBEff_77"],
+    ["MV2c10mu",  "FixedCutBEff_77"],
+    ["MV2c10rnn", "FixedCutBEff_77"],
+    ["DL1",       "FixedCutBEff_77"],
+    ["DL1mu",     "FixedCutBEff_77"],
+    ["DL1rnn",    "FixedCutBEff_77"],
+    ["MV2c10",    "HybBEff_77"],
+    ["MV2c10mu",  "HybBEff_77"],
+    ["MV2c10rnn", "HybBEff_77"],
+    ["DL1",       "HybBEff_77"],
+    ["DL1mu",     "HybBEff_77"],
+    ["DL1rnn",    "HybBEff_77"],
+#85%
+    ["MV2c10",    "FixedCutBEff_85"],
+    ["MV2c10mu",  "FixedCutBEff_85"],
+    ["MV2c10rnn", "FixedCutBEff_85"],
+    ["DL1",       "FixedCutBEff_85"],
+    ["DL1mu",     "FixedCutBEff_85"],
+    ["DL1rnn",    "FixedCutBEff_85"],
+    ["MV2c10",    "HybBEff_85"],
+    ["MV2c10mu",  "HybBEff_85"],
+    ["MV2c10rnn", "HybBEff_85"],
+    ["DL1",       "HybBEff_85"],
+    ["DL1mu",     "HybBEff_85"],
+    ["DL1rnn",    "HybBEff_85"],
 
 #DL1 c-tagger
 #     ["DL1rnn", "CTag_Tight"],
