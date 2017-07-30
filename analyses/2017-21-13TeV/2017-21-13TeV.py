@@ -78,12 +78,12 @@ taggers = [
     ["DL1rnn",    "HybBEff_85"],
 
 #DL1 c-tagger
-#     ["DL1rnn", "CTag_Tight"],
-#     ["DL1rnn", "CTag_Loose"],
+    ["DL1rnn", "CTag_Tight"],
+    ["DL1rnn", "CTag_Loose"],
 
-# #MV2 c-tagger
-#     ["MV2cl100_MV2c100", "CTag_Tight"],
-#     ["MV2cl100_MV2c100", "CTag_Loose"],
+#MV2 c-tagger
+    ["MV2cl100_MV2c100", "CTag_Tight"],
+    ["MV2cl100_MV2c100", "CTag_Loose"],
     ]
 
 #
@@ -170,56 +170,56 @@ sources_ljets = pre_negative_sf
 
 ###### c-tagger ##########
 
-# cTag_ttbar_pdf_7_all = (files("ctagger/bjets/ttbar_pdf/*emu*7bins*.txt") \
-#                    + files("ctagger/bjets/ttbar_pdf/*ll*7bins*.txt")) \
-#                   .restrict() \
-#                   .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j", \
-#                                       "PDF_6bins_ll_2j",  "PDF_6bins_ll_3j"])
+cTag_ttbar_pdf_7_all = (files("ctagger/bjets/ttbar_pdf/*emu*7bins*.txt") \
+                   + files("ctagger/bjets/ttbar_pdf/*ll*7bins*.txt")) \
+                  .restrict() \
+                  .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j", \
+                                      "PDF_6bins_ll_2j",  "PDF_6bins_ll_3j"])
 
-# cTag_ttbar_pdf_7_2j = cTag_ttbar_pdf_7_all \
-#                  .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_ll_2j"])
+cTag_ttbar_pdf_7_2j = cTag_ttbar_pdf_7_all \
+                 .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_ll_2j"])
 
-# cTag_ttbar_pdf_7_3j = cTag_ttbar_pdf_7_all \
-#                  .filter(analyses = ["PDF_6bins_emu_3j", "PDF_6bins_ll_3j"])
+cTag_ttbar_pdf_7_3j = cTag_ttbar_pdf_7_all \
+                 .filter(analyses = ["PDF_6bins_emu_3j", "PDF_6bins_ll_3j"])
 
-# cTag_ttbar_pdf_7_combined_withchi2 = (cTag_ttbar_pdf_7_all).bbb_fit("ttbar_PDF_7b", saveCHI2Fits=True)
-# cTag_ttbar_pdf_7_combined = cTag_ttbar_pdf_7_combined_withchi2.filter(analyses=["ttbar_PDF_7b"])
-# cTag_ttbar_pdf_7_combined_2j = cTag_ttbar_pdf_7_2j.bbb_fit("ttbar_PDF_7b_2j")
-# cTag_ttbar_pdf_7_combined_3j = cTag_ttbar_pdf_7_3j.bbb_fit("ttbar_PDF_7b_3j")
+cTag_ttbar_pdf_7_combined_withchi2 = (cTag_ttbar_pdf_7_all).bbb_fit("ttbar_PDF_7b", saveCHI2Fits=True)
+cTag_ttbar_pdf_7_combined = cTag_ttbar_pdf_7_combined_withchi2.filter(analyses=["ttbar_PDF_7b"])
+cTag_ttbar_pdf_7_combined_2j = cTag_ttbar_pdf_7_2j.bbb_fit("ttbar_PDF_7b_2j")
+cTag_ttbar_pdf_7_combined_3j = cTag_ttbar_pdf_7_3j.bbb_fit("ttbar_PDF_7b_3j")
 
-# cTag_ttbar_pdf_fits = cTag_ttbar_pdf_7_combined \
-#     + cTag_ttbar_pdf_7_combined_2j \
-#     + cTag_ttbar_pdf_7_combined_3j
+cTag_ttbar_pdf_fits = cTag_ttbar_pdf_7_combined \
+    + cTag_ttbar_pdf_7_combined_2j \
+    + cTag_ttbar_pdf_7_combined_3j
 
-# cTag_mcCalib_b_all = files("ctagger/extrapolate/MCcalibCDI*Zprimebb5000_b*.txt") \
-#                 .restrict()
+cTag_mcCalib_b_all = files("ctagger/extrapolate/MCcalibCDI*Zprimebb5000_b*.txt") \
+                .restrict()
 
-# cTag_ttbar_extrapolated = (cTag_mcCalib_b_all \
-#                       + cTag_ttbar_pdf_fits ) \
-#                       .extrapolate("Run2MCcalib")
+cTag_ttbar_extrapolated = (cTag_mcCalib_b_all \
+                      + cTag_ttbar_pdf_fits ) \
+                      .extrapolate("Run2MCcalib")
 
-# ### light jets
-# cTag_mcbased_sf = files("ctagger/lightjets/MCBased*.txt") \
-#              .restrict()
+### light jets
+cTag_mcbased_sf = files("ctagger/lightjets/MCBased*.txt") \
+             .restrict()
 
-# # charm jets
+# charm jets
 
-# cTag_ttc_sf = files("ctagger/cjets/ttbarC/*.txt") \
-#               .restrict()
+cTag_ttc_sf = files("ctagger/cjets/ttbarC/*.txt") \
+              .restrict()
 
-# cTag_tau_ttc_sf = cTag_ttc_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
+cTag_tau_ttc_sf = cTag_ttc_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
 
 
-# cTag_mcCalib_ttc = files("ctagger/extrapolate/ttC_MCcalibCDI*ttbar_c*") + files("ctagger/extrapolate/ttC_MCcalibCDI*ttbar_t*") \
-#               .restrict()
+cTag_mcCalib_ttc = files("ctagger/extrapolate/ttC_MCcalibCDI*ttbar_c*") + files("ctagger/extrapolate/ttC_MCcalibCDI*ttbar_t*") \
+              .restrict()
 
-# cTag_ttc_sf_extrapolated = (cTag_mcCalib_ttc + cTag_ttc_sf) \
-#                        .extrapolate("Run2MCcalib_ttC")
+cTag_ttc_sf_extrapolated = (cTag_mcCalib_ttc + cTag_ttc_sf) \
+                       .extrapolate("Run2MCcalib_ttC")
 
-# cTag_tau_ttc_sf_extrapolated = (cTag_mcCalib_ttc + cTag_tau_ttc_sf) \
-#                            .extrapolate("Run2MCcalib_ttC")
+cTag_tau_ttc_sf_extrapolated = (cTag_mcCalib_ttc + cTag_tau_ttc_sf) \
+                           .extrapolate("Run2MCcalib_ttC")
 
-# all_cTag_calojets =  cTag_ttbar_extrapolated + cTag_mcbased_sf + cTag_ttc_sf_extrapolated + cTag_tau_ttc_sf_extrapolated
+all_cTag_calojets =  cTag_ttbar_extrapolated + cTag_mcbased_sf + cTag_ttc_sf_extrapolated + cTag_tau_ttc_sf_extrapolated
 
 ####################################
 # all together for calo-jets
@@ -227,14 +227,14 @@ sources_ljets = pre_negative_sf
 all_calojets = pre_ttbar_pdf_extrap \
                + pre_ttc_sf_extrap \
                + pre_ttc_tau_sf_extrap \
-               + pre_negative_sf ##+ all_cTag_calojets
+               + pre_negative_sf + all_cTag_calojets
 
 
 ####################################
 # The CDI file.
 
 master_cdi_file = all_calojets
-defaultSFs = master_cdi_file.make_cdi("MC16-CDI", "defaults.txt","StandardTag-13TeV-CalibrationFile-05-06-2017.root","2017-13TeV-WorkingPointsOnly-Release21-AntiKt4EMTopoJets-July27.root","21")
+defaultSFs = master_cdi_file.make_cdi("MC16-CDI", "defaults.txt","2017-13TeV-EfficiencyMapsOnly-Release21-AntiKt4EMTopoJets-July30.root","2017-13TeV-WorkingPointsOnly-Release21-AntiKt4EMTopoJets-July27.root","21")
 master_cdi_file.plot("MC16-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
 master_cdi_file.plot("MC16-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
