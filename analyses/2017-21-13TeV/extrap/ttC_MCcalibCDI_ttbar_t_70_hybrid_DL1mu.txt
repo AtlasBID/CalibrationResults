@@ -1,4 +1,4 @@
-Analysis(Run2MCcalib_ttC,tau,DL1mu,HybBEFF_70,AntiKt4EMTopoJets){
+Analysis(Run2MCcalib_ttC,tau,DL1mu,HybBEff_70,AntiKt4EMTopoJets){
 bin(65<pt<140,0<abseta<2.5)
 { 
    central_value(1.0,0.0255)

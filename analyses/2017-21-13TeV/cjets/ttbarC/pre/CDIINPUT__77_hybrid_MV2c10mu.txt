@@ -1,5 +1,5 @@
 
-Analysis(ttbarC,charm,MV2c10mu,HybBEFF_77,AntiKt4EMTopoJets){ 
+Analysis(ttbarC,charm,MV2c10mu,HybBEff_77,AntiKt4EMTopoJets){ 
    meta_data_s(Hadronization, Pythia8EvtGen) 
    meta_data_s (OperatingPoint, 0.645925) 
    

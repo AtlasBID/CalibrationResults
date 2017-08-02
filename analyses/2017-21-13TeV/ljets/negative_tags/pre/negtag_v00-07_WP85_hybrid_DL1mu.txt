@@ -1,4 +1,4 @@
-Analysis(negative_tags,light,DL1mu,HybBEFF_85,AntiKt4EMTopoJets){
+Analysis(negative_tags,light,DL1mu,HybBEff_85,AntiKt4EMTopoJets){
 
         meta_data_s (Hadronization, Pythia8EvtGen)
         meta_data_s (OperatingPoint, 0.175847)

@@ -1,4 +1,4 @@
-Analysis(PDF_6bins_ll_2j,bottom,DL1mu,HybBEFF_70,AntiKt4EMTopoJets)
+Analysis(PDF_6bins_ll_2j,bottom,DL1mu,HybBEff_70,AntiKt4EMTopoJets)
 {
       meta_data_s (Hadronization, Pythia6EvtGen)
       meta_data_s (OperatingPoint,0.8244)
