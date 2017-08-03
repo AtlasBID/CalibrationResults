@@ -1,4 +1,4 @@
-Analysis(MCbased,light,DL1rnn,CTag_Loose,AntiKt4EMTopoJets){
+Analysis(AdjustedMC,light,DL1rnn,CTag_Loose,AntiKt4EMTopoJets){
 meta_data_s (Hadronization, Pythia8EvtGen)
 meta_data_s (OperatingPoint, 0.0)
 bin(20.0<pt<60.0,0.00<abseta<1.20)

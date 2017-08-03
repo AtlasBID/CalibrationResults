@@ -182,14 +182,10 @@ cTag_ttbar_pdf_7_2j = cTag_ttbar_pdf_7_all \
 cTag_ttbar_pdf_7_3j = cTag_ttbar_pdf_7_all \
                  .filter(analyses = ["PDF_6bins_emu_3j", "PDF_6bins_ll_3j"])
 
-cTag_ttbar_pdf_7_combined_withchi2 = (cTag_ttbar_pdf_7_all).bbb_fit("ttbar_PDF_7b", saveCHI2Fits=True)
-cTag_ttbar_pdf_7_combined = cTag_ttbar_pdf_7_combined_withchi2.filter(analyses=["ttbar_PDF_7b"])
-cTag_ttbar_pdf_7_combined_2j = cTag_ttbar_pdf_7_2j.bbb_fit("ttbar_PDF_7b_2j")
-cTag_ttbar_pdf_7_combined_3j = cTag_ttbar_pdf_7_3j.bbb_fit("ttbar_PDF_7b_3j")
+cTag_ttbar_pdf_7_combined_withchi2 = (cTag_ttbar_pdf_7_all).bbb_fit("pre_ttbar_PDF_7b", saveCHI2Fits=True)
+cTag_ttbar_pdf_7_combined = cTag_ttbar_pdf_7_combined_withchi2.filter(analyses=["pre_ttbar_PDF_7b"])
 
-cTag_ttbar_pdf_fits = cTag_ttbar_pdf_7_combined \
-    + cTag_ttbar_pdf_7_combined_2j \
-    + cTag_ttbar_pdf_7_combined_3j
+cTag_ttbar_pdf_fits = cTag_ttbar_pdf_7_combined
 
 cTag_mcCalib_b_all = files("ctagger/extrapolate/MCcalibCDI*Zprimebb5000_b*.txt") \
                 .restrict()
