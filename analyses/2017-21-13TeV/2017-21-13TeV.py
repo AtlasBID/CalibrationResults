@@ -76,11 +76,9 @@ taggers = [
     ["DL1",       "HybBEff_85"],
     ["DL1mu",     "HybBEff_85"],
     ["DL1rnn",    "HybBEff_85"],
-
 #DL1 c-tagger
     ["DL1rnn", "CTag_Tight"],
     ["DL1rnn", "CTag_Loose"],
-
 #MV2 c-tagger
     ["MV2cl100_MV2c100", "CTag_Tight"],
     ["MV2cl100_MV2c100", "CTag_Loose"],
@@ -230,7 +228,7 @@ all_calojets = pre_ttbar_pdf_extrap \
 # The CDI file.
 
 master_cdi_file = all_calojets
-defaultSFs = master_cdi_file.make_cdi("MC16-CDI", "defaults.txt","2017-13TeV-EfficiencyMapsOnly-Release21-AntiKt4EMTopoJets-Aug3.root","2017-13TeV-WorkingPointsOnly-Release21-AntiKt4EMTopoJets-July27.root","21")
+defaultSFs = master_cdi_file.make_cdi("MC16-CDI", "defaults.txt","2017-13TeV-EfficiencyMapsOnly-Release21-AntiKt4EMTopoJets-July30.root","2017-13TeV-WorkingPointsOnly-Release21-AntiKt4EMTopoJets-July27.root","21")
 master_cdi_file.plot("MC16-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
 master_cdi_file.plot("MC16-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
