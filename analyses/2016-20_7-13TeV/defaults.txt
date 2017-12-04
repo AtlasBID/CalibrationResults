@@ -1,6 +1,6 @@
 ###############################################################
 ### calo-jets
-# bottom 
+# bottom
 Default(ttbar_PDF_7b, bottom, MV2c10, *, AntiKt4EMTopoJets)
 # charm
 Default(ttbarC, charm, MV2c10, *, AntiKt4EMTopoJets)
@@ -11,7 +11,7 @@ Default(negative_tags, light, MV2c10, *, AntiKt4EMTopoJets)
 
 ###############################################################
 ### track-jets
-# bottom 
+# bottom
 Default(ttbar_PDF_7b, bottom, MV2c10, *, AntiKt2PV0TrackJets)
 Default(pre_ttbar_topo_dijet, bottom, MV2c10, *, AntiKt4PV0TrackJets)
 Default(ttbar_PDF_7b, bottom, MV2c10, *, AntiKtVR30Rmax4Rmin02TrackJets)
@@ -28,3 +28,11 @@ Default(negative_tags, light, MV2c10, *, AntiKt2PV0TrackJets)
 Default(negative_tags, light, MV2c10, *, AntiKt4PV0TrackJets)
 Default(negative_tags, light, MV2c10, *, AntiKtVR30Rmax4Rmin02TrackJets)
 
+### c-tagger ######
+# bottom
+Default(ttbar_PDF_7b, bottom, MV2cl100_MV2c100, *, AntiKt4EMTopoJets)
+# light
+Default(MCbased, light, MV2cl100_MV2c100, *, AntiKt4EMTopoJets)
+# charm
+Default(ttbar, charm, MV2cl100_MV2c100, *, AntiKt4EMTopoJets)
+Default(ttbar, tau, MV2cl100_MV2c100, *, AntiKt4EMTopoJets)

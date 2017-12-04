@@ -38,6 +38,9 @@ taggers = [
 #MV2c10 85%
     ["MV2c10", "FixedCutBEff_85"],
     ["MV2c10", "FlatBEff_85"],
+# c-tagger
+    ["MV2cl100_MV2c100", "CTag_Tight"],
+    ["MV2cl100_MV2c100", "CTag_Loose"]
     ]
 
 #
@@ -66,7 +69,7 @@ sfObject.restrict = lambda self: self.restrict_good().restrict_ignore()
 sfObject.restrict_tight = lambda self: self.restrict_good().restrict_ignore_tight()
 
 sfObject.restrict_trackjets = lambda self: self.restrict_good().restrict_ignore_trackjets()
-	
+
 ####################################
 # Bottom Flavor Inputs and fits
 #  Note: sources is used to do a systematic error x-check.
@@ -255,7 +258,7 @@ ttbar_vr_trackjets_combined_withchi2 = (ttbar_vr_trackjets).bbb_fit("ttbar_PDF_7
 ttbar_vr_trackjets_combined = ttbar_vr_trackjets_combined_withchi2.filter(analyses=["ttbar_PDF_7b"])
 
 b_trackjets_extrap = (ttbar_r02_trackjets_combined + ttbar_pre_r02_trackjets + ttbar_r02_trackjets + \
-                      ttbar_pre_r04_trackjets + ttbar_r04_trackjets + 
+                      ttbar_pre_r04_trackjets + ttbar_r04_trackjets +
                       ttbar_vr_trackjets + ttbar_vr_trackjets_combined + mcCalib_b_trackjets) \
                      .extrapolate("Run2MCcalib")
 
@@ -316,12 +319,71 @@ sf_trackjets = b_trackjets_extrap \
                + ct_trackjets_extrap \
                + light_sf_trackjets_pre + light_sf_trackjets + mcbased_sf_trackjets
 
+
+###### c -tagger inputs MV2cl100_MV2c100 ####################################################################
+#############################################################################################################
+### b-jets
+
+cTag_ttbar_pdf_7_all = (files("ctagger/bjets/ttbar_pdf/*emu*7bins*.txt") \
+                   + files("ctagger/bjets/ttbar_pdf/*ll*7bins*.txt")) \
+                  .restrict() \
+                  .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j", \
+                                      "PDF_6bins_ll_2j",  "PDF_6bins_ll_3j"])
+
+cTag_ttbar_pdf_7_2j = cTag_ttbar_pdf_7_all \
+                 .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_ll_2j"])
+
+cTag_ttbar_pdf_7_3j = cTag_ttbar_pdf_7_all \
+                 .filter(analyses = ["PDF_6bins_emu_3j", "PDF_6bins_ll_3j"])
+
+cTag_ttbar_pdf_7_combined_withchi2 = (cTag_ttbar_pdf_7_all).bbb_fit("ttbar_PDF_7b", saveCHI2Fits=True)
+cTag_ttbar_pdf_7_combined = cTag_ttbar_pdf_7_combined_withchi2.filter(analyses=["ttbar_PDF_7b"])
+cTag_ttbar_pdf_7_combined_2j = cTag_ttbar_pdf_7_2j.bbb_fit("ttbar_PDF_7b_2j")
+cTag_ttbar_pdf_7_combined_3j = cTag_ttbar_pdf_7_3j.bbb_fit("ttbar_PDF_7b_3j")
+
+cTag_ttbar_pdf_fits = cTag_ttbar_pdf_7_combined \
+    + cTag_ttbar_pdf_7_combined_2j \
+    + cTag_ttbar_pdf_7_combined_3j
+
+cTag_mcCalib_b_all = files("ctagger/extrapolate/MCcalibCDI_Zprimebb5000_b*.txt") \
+                .restrict()
+
+cTag_ttbar_extrapolated = (cTag_mcCalib_b_all \
+                      + cTag_ttbar_pdf_fits ) \
+                      .extrapolate("Run2MCcalib")
+
+### light jets
+cTag_mcbased_sf = files("ctagger/lightjets/MCBased*.txt") \
+             .restrict()
+
+# charm jets
+
+cTag_ttc_sf = files("ctagger/cjets/ttbarC/*.txt") \
+              .restrict()
+
+cTag_tau_ttc_sf = cTag_ttc_sf.add_sys("extrapolation from charm", "22%", changeToFlavor="tau")
+
+
+cTag_mcCalib_ttc = files("ctagger/extrapolate/ttC_MCcalibCDI_ttbar_c*") + files("ctagger/extrapolate/ttC_MCcalibCDI_ttbar_t*") \
+              .restrict()
+
+cTag_ttc_sf_extrapolated = (cTag_mcCalib_ttc + cTag_ttc_sf) \
+                       .extrapolate("Run2MCcalib_ttC")
+
+cTag_tau_ttc_sf_extrapolated = (cTag_mcCalib_ttc + cTag_tau_ttc_sf) \
+                           .extrapolate("Run2MCcalib_ttC")
+
+
+###### end of c-tagger inputs ###############
+all_ctag_calojets_extrapolated =  cTag_ttbar_extrapolated + cTag_mcbased_sf + cTag_ttc_sf_extrapolated + cTag_tau_ttc_sf_extrapolated
+############################################################
+
 ####################################
 # The CDI file.
 #
 
-master_cdi_file = all_calojets_extrapolated+sf_trackjets
-defaultSFs = master_cdi_file.make_cdi("MC15-CDI", "defaults.txt","StandardTag-13TeV-CalibrationFile-05-06-2017.root","BtagWP-20170514.root","Continuous_06june2017_v2.root","20.7")
+master_cdi_file = all_calojets_extrapolated+sf_trackjets+all_ctag_calojets_extrapolated
+defaultSFs = master_cdi_file.make_cdi("MC15-CDI", "defaults.txt","StandardTag-13TeV-CalibrationFile-04-12-2017.root","BtagWP-Dec2017.root","Continuous_06june2017_v2.root","20.7")
 master_cdi_file.plot("MC15-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
 master_cdi_file.plot("MC15-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
