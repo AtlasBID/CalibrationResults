@@ -119,8 +119,8 @@ ttbar_pdf_7_sf = files("bjets/ttbar_pdf/btag*.txt") \
 mcCalib_b = files("extrap/MCcalibCDI_Zprimebb5000_b*.txt") \
             .restrict()
 
-#pre_ttbar_pdf_extrap = (mcCalib_b + pre_ttbar_pdf_7_combined) \
-#                       .extrapolate("Run2MCcalib")
+ttbar_pdf_extrap = (mcCalib_b + ttbar_pdf_7_sf) \
+                    .extrapolate("Run2MCcalib")
 
 sources_bjets = ttbar_pdf_7_sf
 
@@ -213,7 +213,7 @@ all_cTag_calojets =  cTag_ttbar_extrapolated + cTag_mcbased_sf + cTag_ttc_sf_ext
 ####################################
 # all together for calo-jets
 
-all_calojets = ttbar_pdf_7_sf \
+all_calojets = ttbar_pdf_extrap \
                + pre_ttc_sf_extrap \
                + pre_ttc_tau_sf_extrap \
                + pre_negative_sf + all_cTag_calojets
