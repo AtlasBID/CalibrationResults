@@ -110,6 +110,11 @@ sfObject.restrict_tight = lambda self: self.restrict_good().restrict_ignore_tigh
 ####################################
 # b-jets
 
+# recommendations from release 21
+ttbar_pdf_7_sf = files("bjets/ttbar_pdf/btag*.txt") \
+                 .restrict() \
+                 .filter(analyses = ["ttbar_PDF"])
+
 # pre-recommendations from release 20.7
 pre_ttbar_pdf_7_sf = files("bjets/ttbar_pdf/pre/*.txt") \
                      .restrict() \
@@ -127,7 +132,7 @@ mcCalib_b = files("extrap/MCcalibCDI_Zprimebb5000_b*.txt") \
 pre_ttbar_pdf_extrap = (mcCalib_b + pre_ttbar_pdf_7_combined) \
                        .extrapolate("Run2MCcalib")
 
-sources_bjets = pre_ttbar_pdf_7_sf
+sources_bjets = pre_ttbar_pdf_7_sf + ttbar_pdf_7_sf
 
 
 ####################################
@@ -219,6 +224,7 @@ all_cTag_calojets =  cTag_ttbar_extrapolated + cTag_mcbased_sf + cTag_ttc_sf_ext
 # all together for calo-jets
 
 all_calojets = pre_ttbar_pdf_extrap \
+               + ttbar_pdf_7_sf \
                + pre_ttc_sf_extrap \
                + pre_ttc_tau_sf_extrap \
                + pre_negative_sf + all_cTag_calojets
