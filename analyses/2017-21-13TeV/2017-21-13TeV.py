@@ -115,24 +115,14 @@ ttbar_pdf_7_sf = files("bjets/ttbar_pdf/btag*.txt") \
                  .restrict() \
                  .filter(analyses = ["ttbar_PDF"])
 
-# pre-recommendations from release 20.7
-pre_ttbar_pdf_7_sf = files("bjets/ttbar_pdf/pre/*.txt") \
-                     .restrict() \
-                     .filter(analyses = ["PDF_6bins_emu_2j", "PDF_6bins_emu_3j", \
-                                         "PDF_6bins_ll_2j",  "PDF_6bins_ll_3j"])
-
-# combination
-pre_ttbar_pdf_7_combined_withchi2 = (pre_ttbar_pdf_7_sf).bbb_fit("pre_ttbar_PDF_7b", saveCHI2Fits=True)
-pre_ttbar_pdf_7_combined = pre_ttbar_pdf_7_combined_withchi2.filter(analyses=["pre_ttbar_PDF_7b"])
-
 # extrapolation
 mcCalib_b = files("extrap/MCcalibCDI_Zprimebb5000_b*.txt") \
             .restrict()
 
-pre_ttbar_pdf_extrap = (mcCalib_b + pre_ttbar_pdf_7_combined) \
-                       .extrapolate("Run2MCcalib")
+#pre_ttbar_pdf_extrap = (mcCalib_b + pre_ttbar_pdf_7_combined) \
+#                       .extrapolate("Run2MCcalib")
 
-sources_bjets = pre_ttbar_pdf_7_sf + ttbar_pdf_7_sf
+sources_bjets = ttbar_pdf_7_sf
 
 
 ####################################
@@ -185,8 +175,8 @@ cTag_ttbar_pdf_7_2j = cTag_ttbar_pdf_7_all \
 cTag_ttbar_pdf_7_3j = cTag_ttbar_pdf_7_all \
                  .filter(analyses = ["PDF_6bins_emu_3j", "PDF_6bins_ll_3j"])
 
-cTag_ttbar_pdf_7_combined_withchi2 = (cTag_ttbar_pdf_7_all).bbb_fit("pre_ttbar_PDF_7b", saveCHI2Fits=True)
-cTag_ttbar_pdf_7_combined = cTag_ttbar_pdf_7_combined_withchi2.filter(analyses=["pre_ttbar_PDF_7b"])
+cTag_ttbar_pdf_7_combined_withchi2 = (cTag_ttbar_pdf_7_all).bbb_fit("cTag_ttbar_pdf_7b", saveCHI2Fits=True)
+cTag_ttbar_pdf_7_combined = cTag_ttbar_pdf_7_combined_withchi2.filter(analyses=["cTag_ttbar_pdf_7b"])
 
 cTag_ttbar_pdf_fits = cTag_ttbar_pdf_7_combined
 
@@ -223,8 +213,7 @@ all_cTag_calojets =  cTag_ttbar_extrapolated + cTag_mcbased_sf + cTag_ttc_sf_ext
 ####################################
 # all together for calo-jets
 
-all_calojets = pre_ttbar_pdf_extrap \
-               + ttbar_pdf_7_sf \
+all_calojets = ttbar_pdf_7_sf \
                + pre_ttc_sf_extrap \
                + pre_ttc_tau_sf_extrap \
                + pre_negative_sf + all_cTag_calojets
