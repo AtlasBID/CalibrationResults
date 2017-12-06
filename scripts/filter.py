@@ -5,7 +5,7 @@
 from comboFitCommands import dumpCommandResult, listToString, rerunCommand, dumpFile, dumpTitle
 from FutureFile import FutureFile
 import comboGlobals
-
+import os # For AFT186
 #
 # We will filter out input files on some criteria
 #
@@ -36,7 +36,14 @@ class Filter:
     def Execute (self, html, configInfo):
         fList = self._sf.ResolveToFiles(html)
         files = listToString(fList)
-
+#
+# Implementation of AFT-186: If input list is empty, print Warning message
+#
+        if files == "":                
+            print >> html, "<p><b> Warning: empty list of input files passed to the function filter.</b></p>"
+#
+# End of modification
+#
         for a in self._anas:
             files += " --analysis '%s'" % a
 
@@ -69,6 +76,15 @@ class Filter:
         else:
             print >> html, "<p>Using results of last filter command as no inputs have changed.</p>"
             dumpFile(html, cmdLog)
+#
+# Implemtnation of AFT-186: If output file doesn't exist or has a size less or equal to 1B (corresponding to 1 character inside the file), then print a warning message.
+#
+        if not (os.path.isfile(outputName) and os.path.getsize(outputName) > 1):
+            print >> html, "<p><b> Warning: output file of the filtering doesn't exsit or is empty.</b></p>"
+#
+# End of modification
+#
+
 
         print >> html, '<p><a href="%s">Scale Factor File</a></p>' % outputName
         
