@@ -132,14 +132,20 @@ sources_bjets = ttbar_pdf_7_sf
 pre_ttc_sf = files("cjets/ttbarC/pre/*txt") \
             .restrict()
 
+# recommendations from release 21
+ttc_sf = files("cjets/ttbarC/ctag_*") \
+         .restrict() \
+         .filter(analyses = ['ttbarC'])
+
+
 # extrapolation to high pT
 mcCalib_c = files("extrap/ttC_MCcalibCDI_ttbar_c*") + files("extrap/ttC_MCcalibCDI_ttbar_t*") \
             .restrict()
 
-pre_ttc_sf_extrap = (mcCalib_c + pre_ttc_sf) \
+ttc_sf_extrap = (mcCalib_c + ttc_sf) \
                     .extrapolate("Run2MCcalib_ttC")
 
-sources_cjets = pre_ttc_sf
+sources_cjets = ttc_sf
 
 ####################################
 # tau-jets
@@ -225,7 +231,7 @@ all_cTag_calojets =  cTag_ttbar_extrapolated + cTag_mcbased_sf + cTag_ttc_sf_ext
 # all together for calo-jets
 
 all_calojets = ttbar_pdf_extrap \
-               + pre_ttc_sf_extrap \
+               + ttc_sf_extrap \
                + pre_ttc_tau_sf_extrap \
                + negative_tag_Zjet_sf + negative_tags_sf + all_cTag_calojets
 
