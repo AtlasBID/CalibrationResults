@@ -157,15 +157,15 @@ pre_ttc_tau_sf_extrap = (mcCalib_c + pre_ttc_tau_sf) \
 
 # recommendations from release 21
 
-negative_sf = files("ljets/negative_tags/*.txt") \
-              .restrict() \
-              .filter(analyses = ["negative_tag_Zjet"])  
+negative_tag_Zjet_sf = files("ljets/negative_tags/NegTagZjets*.txt") \
+                       .restrict() \
+                       .filter(analyses = ["negative_tag_Zjet"])  
 
 # pre-recommendations from release 20.7
 #pre_negative_sf = files("ljets/negative_tags/pre/*txt") \
 #              .restrict_good()
 
-sources_ljets = negative_sf
+sources_ljets = negative_tag_Zjet_sf
 
 
 ###### c-tagger ##########
@@ -223,7 +223,7 @@ all_cTag_calojets =  cTag_ttbar_extrapolated + cTag_mcbased_sf + cTag_ttc_sf_ext
 all_calojets = ttbar_pdf_extrap \
                + pre_ttc_sf_extrap \
                + pre_ttc_tau_sf_extrap \
-               + negative_sf + all_cTag_calojets
+               + negative_tag_Zjet_sf + all_cTag_calojets
 
 
 ####################################
