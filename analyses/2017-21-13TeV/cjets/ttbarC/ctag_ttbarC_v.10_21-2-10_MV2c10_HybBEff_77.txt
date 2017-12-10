@@ -1,7 +1,7 @@
 
-Analysis(ttbarC,charm,MV2c10,HybridCutBEff_77,AntiKt4EMTopoJets){ 
+Analysis(ttbarC,charm,MV2c10,HybBEff_77,AntiKt4EMTopoJets){ 
    meta_data_s(Hadronization, Pythia8EvtGen) 
-   meta_data_s (OperatingPoint, ??) 
+   meta_data_s (OperatingPoint, 0.0) 
    
    bin(25<pt<40,0<abseta<2.5) 
    { 
