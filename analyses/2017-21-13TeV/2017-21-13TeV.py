@@ -90,7 +90,7 @@ taggers = [
 
 sfObject.restrict_good = lambda self: self.filter(
     taggers=taggers,
-    jets=["AntiKt4EMTopoJets"],
+    jets=["AntiKt4EMTopoJets","AntiKt2PV0TrackJets","AntiKtVR30Rmax4Rmin02TrackJets","AntiKt4EMPFlowJets"],
     ).verify_OPs("21")
 
 sfObject.restrict_ignore = lambda self: self.filter(
