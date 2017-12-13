@@ -169,12 +169,7 @@ negative_tag_Zjet_sf = files("ljets/negative_tags/NegTagZjets*.txt") \
 
 negative_tags_sf = files("ljets/negative_tags/negtag*.txt") \
                        .restrict() \
-                       .filter(analyses = ["negative_tags"])  
-
-
-# pre-recommendations from release 20.7
-#pre_negative_sf = files("ljets/negative_tags/pre/*txt") \
-#              .restrict_good()
+                       .filter(analyses = ["negative_tags"]) 
 
 sources_ljets = negative_tag_Zjet_sf + negative_tags_sf 
 
