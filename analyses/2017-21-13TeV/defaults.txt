@@ -24,7 +24,7 @@ Default(ttbarC, tau, MV2c10, *, AntiKt2PV0TrackJets)
 Default(ttbarC, tau, MV2c10, *, AntiKtVR30Rmax4Rmin02TrackJets)
 Default(ttbarC, tau, MV2c10, *, AntiKt4EMPFlowJets)
 Default(ttbarC, tau, DL1, *, AntiKt4EMTopoJets)
-Default(ttbarC, tau, DL1, *, AntiKt4EMTopoJets)
+Default(ttbarC, tau, DL1, *, AntiKt2PV0TrackJets)
 Default(ttbarC, tau, DL1, *, AntiKtVR30Rmax4Rmin02TrackJets)
 Default(ttbarC, tau, DL1, *, AntiKt4EMPFlowJets)
 # light
