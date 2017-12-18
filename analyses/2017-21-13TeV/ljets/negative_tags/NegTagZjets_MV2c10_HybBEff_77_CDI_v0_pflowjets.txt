@@ -1,0 +1,183 @@
+Analysis(negative_tag_Zjet,light,MV2c10,HybBEff_77,AntiKt4EMPFlowJets) {
+
+meta_data_s(Hadronization, Pythia8EvtGen)
+meta_data_s(OperatingPoint, 0)
+
+
+bin(20<pt<40,0.0<abseta<2.5)
+{
+
+central_value(1.15,1.91%)
+meta_data(N_jets total,336836.00,580.38)
+meta_data(N_jets tagged,2563.00,50.63)
+usys(FT_EFF_Stat_MC,8.31%)
+sys(FT_EFF_Syst_Frac_B,10.24%)
+sys(FT_EFF_Syst_Frac_C,4.40%)
+sys(FT_EFF_Syst_Eff_B,2.35%)
+sys(FT_EFF_Syst_Eff_C,2.75%)
+sys(FT_EFF_Syst_Eff_L,26.44%)
+
+}
+
+
+bin(40<pt<60,0.0<abseta<2.5)
+{
+
+central_value(1.11,1.78%)
+meta_data(N_jets total,502959.00,709.20)
+meta_data(N_jets tagged,3060.00,55.32)
+usys(FT_EFF_Stat_MC,6.38%)
+sys(FT_EFF_Syst_Frac_B,12.87%)
+sys(FT_EFF_Syst_Frac_C,2.43%)
+sys(FT_EFF_Syst_Eff_B,2.93%)
+sys(FT_EFF_Syst_Eff_C,2.08%)
+sys(FT_EFF_Syst_Eff_L,25.33%)
+
+}
+
+
+bin(60<pt<80,0.0<abseta<2.5)
+{
+
+central_value(1.12,2.05%)
+meta_data(N_jets total,410418.00,640.64)
+meta_data(N_jets tagged,2215.00,47.06)
+usys(FT_EFF_Stat_MC,6.30%)
+sys(FT_EFF_Syst_Frac_B,11.92%)
+sys(FT_EFF_Syst_Frac_C,2.66%)
+sys(FT_EFF_Syst_Eff_B,2.68%)
+sys(FT_EFF_Syst_Eff_C,2.09%)
+sys(FT_EFF_Syst_Eff_L,26.90%)
+
+}
+
+
+bin(80<pt<100,0.0<abseta<2.5)
+{
+
+central_value(1.09,2.66%)
+meta_data(N_jets total,247716.00,497.71)
+meta_data(N_jets tagged,1396.00,37.36)
+usys(FT_EFF_Stat_MC,4.14%)
+sys(FT_EFF_Syst_Frac_B,18.41%)
+sys(FT_EFF_Syst_Frac_C,5.81%)
+sys(FT_EFF_Syst_Eff_B,3.64%)
+sys(FT_EFF_Syst_Eff_C,3.23%)
+sys(FT_EFF_Syst_Eff_L,24.38%)
+
+}
+
+
+bin(100<pt<120,0.0<abseta<2.5)
+{
+
+central_value(1.18,3.27%)
+meta_data(N_jets total,144189.00,379.72)
+meta_data(N_jets tagged,912.00,30.20)
+usys(FT_EFF_Stat_MC,4.29%)
+sys(FT_EFF_Syst_Frac_B,20.82%)
+sys(FT_EFF_Syst_Frac_C,6.44%)
+sys(FT_EFF_Syst_Eff_B,3.96%)
+sys(FT_EFF_Syst_Eff_C,3.36%)
+sys(FT_EFF_Syst_Eff_L,28.42%)
+
+}
+
+
+bin(120<pt<160,0.0<abseta<2.5)
+{
+
+central_value(1.22,3.30%)
+meta_data(N_jets total,142999.00,378.15)
+meta_data(N_jets tagged,911.00,30.18)
+usys(FT_EFF_Stat_MC,3.21%)
+sys(FT_EFF_Syst_Frac_B,25.94%)
+sys(FT_EFF_Syst_Frac_C,6.71%)
+sys(FT_EFF_Syst_Eff_B,4.46%)
+sys(FT_EFF_Syst_Eff_C,3.46%)
+sys(FT_EFF_Syst_Eff_L,26.62%)
+
+}
+
+
+bin(160<pt<200,0.0<abseta<2.5)
+{
+
+central_value(1.06,4.78%)
+meta_data(N_jets total,60276.00,245.51)
+meta_data(N_jets tagged,461.00,21.47)
+usys(FT_EFF_Stat_MC,2.70%)
+sys(FT_EFF_Syst_Frac_B,23.63%)
+sys(FT_EFF_Syst_Frac_C,6.99%)
+sys(FT_EFF_Syst_Eff_B,4.02%)
+sys(FT_EFF_Syst_Eff_C,3.60%)
+sys(FT_EFF_Syst_Eff_L,28.17%)
+
+}
+
+
+bin(200<pt<250,0.0<abseta<2.5)
+{
+
+central_value(1.15,5.92%)
+meta_data(N_jets total,32054.00,179.04)
+meta_data(N_jets tagged,299.00,17.29)
+usys(FT_EFF_Stat_MC,3.20%)
+sys(FT_EFF_Syst_Frac_B,21.51%)
+sys(FT_EFF_Syst_Frac_C,7.44%)
+sys(FT_EFF_Syst_Eff_B,3.82%)
+sys(FT_EFF_Syst_Eff_C,3.63%)
+sys(FT_EFF_Syst_Eff_L,28.30%)
+
+}
+
+
+bin(250<pt<300,0.0<abseta<2.5)
+{
+
+central_value(1.19,7.99%)
+meta_data(N_jets total,14204.00,119.18)
+meta_data(N_jets tagged,143.00,11.96)
+usys(FT_EFF_Stat_MC,4.38%)
+sys(FT_EFF_Syst_Frac_B,23.27%)
+sys(FT_EFF_Syst_Frac_C,6.28%)
+sys(FT_EFF_Syst_Eff_B,4.34%)
+sys(FT_EFF_Syst_Eff_C,3.32%)
+sys(FT_EFF_Syst_Eff_L,29.38%)
+
+}
+
+
+bin(300<pt<400,0.0<abseta<2.5)
+{
+
+central_value(1.29,6.40%)
+meta_data(N_jets total,10225.00,101.12)
+meta_data(N_jets tagged,226.00,15.03)
+usys(FT_EFF_Stat_MC,2.90%)
+sys(FT_EFF_Syst_Frac_B,13.45%)
+sys(FT_EFF_Syst_Frac_C,5.83%)
+sys(FT_EFF_Syst_Eff_B,3.02%)
+sys(FT_EFF_Syst_Eff_C,3.27%)
+sys(FT_EFF_Syst_Eff_L,25.09%)
+
+}
+
+
+bin(400<pt<500,0.0<abseta<2.5)
+{
+
+central_value(1.19,7.86%)
+meta_data(N_jets total,3002.00,54.79)
+meta_data(N_jets tagged,143.00,11.96)
+usys(FT_EFF_Stat_MC,3.04%)
+sys(FT_EFF_Syst_Frac_B,8.15%)
+sys(FT_EFF_Syst_Frac_C,3.43%)
+sys(FT_EFF_Syst_Eff_B,1.85%)
+sys(FT_EFF_Syst_Eff_C,2.46%)
+sys(FT_EFF_Syst_Eff_L,24.74%)
+
+}
+
+
+}

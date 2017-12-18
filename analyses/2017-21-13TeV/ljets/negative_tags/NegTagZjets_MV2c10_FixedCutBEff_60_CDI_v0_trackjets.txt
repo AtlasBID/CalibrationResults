@@ -1,0 +1,194 @@
+Analysis(negative_tag_Zjet,light,MV2c10,FixedCutBEff_60,AntiKt2PV0TrackJets) {
+
+meta_data_s(Hadronization, Pythia8EvtGen)
+meta_data_s(OperatingPoint, 0.939)
+
+
+bin(10<pt<40,0.0<abseta<2.5)
+{
+
+central_value(2.11,8.74%)
+		sys(FT_EFF_CaloJet_extrap,40%)
+meta_data(N_jets total,336836.00,580.38)
+meta_data(N_jets tagged,135.00,11.62)
+usys(FT_EFF_Stat_MC,40.57%)
+sys(FT_EFF_Syst_Frac_B,39.20%)
+sys(FT_EFF_Syst_Frac_C,5.82%)
+sys(FT_EFF_Syst_Eff_B,7.74%)
+sys(FT_EFF_Syst_Eff_C,2.37%)
+sys(FT_EFF_Syst_Eff_L,29.07%)
+
+}
+
+
+bin(40<pt<60,0.0<abseta<2.5)
+{
+
+central_value(1.26,7.32%)
+		sys(FT_EFF_CaloJet_extrap,40%)
+meta_data(N_jets total,502959.00,709.20)
+meta_data(N_jets tagged,175.00,13.23)
+usys(FT_EFF_Stat_MC,26.03%)
+sys(FT_EFF_Syst_Frac_B,36.66%)
+sys(FT_EFF_Syst_Frac_C,3.90%)
+sys(FT_EFF_Syst_Eff_B,5.58%)
+sys(FT_EFF_Syst_Eff_C,2.09%)
+sys(FT_EFF_Syst_Eff_L,28.21%)
+
+}
+
+
+bin(60<pt<80,0.0<abseta<2.5)
+{
+
+central_value(1.31,8.94%)
+		sys(FT_EFF_CaloJet_extrap,40%)
+meta_data(N_jets total,410418.00,640.64)
+meta_data(N_jets tagged,117.00,10.82)
+usys(FT_EFF_Stat_MC,19.89%)
+sys(FT_EFF_Syst_Frac_B,45.39%)
+sys(FT_EFF_Syst_Frac_C,0.06%)
+sys(FT_EFF_Syst_Eff_B,6.54%)
+sys(FT_EFF_Syst_Eff_C,0.55%)
+sys(FT_EFF_Syst_Eff_L,26.88%)
+
+}
+
+
+bin(80<pt<100,0.0<abseta<2.5)
+{
+
+central_value(1.25,10.00%)
+		sys(FT_EFF_CaloJet_extrap,40%)
+meta_data(N_jets total,247716.00,497.71)
+meta_data(N_jets tagged,95.00,9.75)
+usys(FT_EFF_Stat_MC,11.69%)
+sys(FT_EFF_Syst_Frac_B,40.84%)
+sys(FT_EFF_Syst_Frac_C,5.81%)
+sys(FT_EFF_Syst_Eff_B,6.42%)
+sys(FT_EFF_Syst_Eff_C,2.85%)
+sys(FT_EFF_Syst_Eff_L,31.71%)
+
+}
+
+
+bin(100<pt<120,0.0<abseta<2.5)
+{
+
+central_value(1.22,11.58%)
+		sys(FT_EFF_CaloJet_extrap,40%)
+meta_data(N_jets total,144189.00,379.72)
+meta_data(N_jets tagged,76.00,8.72)
+usys(FT_EFF_Stat_MC,11.21%)
+sys(FT_EFF_Syst_Frac_B,46.10%)
+sys(FT_EFF_Syst_Frac_C,9.58%)
+sys(FT_EFF_Syst_Eff_B,7.03%)
+sys(FT_EFF_Syst_Eff_C,3.91%)
+sys(FT_EFF_Syst_Eff_L,32.05%)
+
+}
+
+
+bin(120<pt<160,0.0<abseta<2.5)
+{
+
+central_value(1.48,9.68%)
+		sys(FT_EFF_CaloJet_extrap,40%)
+meta_data(N_jets total,142999.00,378.15)
+meta_data(N_jets tagged,96.00,9.80)
+usys(FT_EFF_Stat_MC,12.81%)
+sys(FT_EFF_Syst_Frac_B,44.90%)
+sys(FT_EFF_Syst_Frac_C,7.15%)
+sys(FT_EFF_Syst_Eff_B,6.62%)
+sys(FT_EFF_Syst_Eff_C,3.13%)
+sys(FT_EFF_Syst_Eff_L,29.28%)
+
+}
+
+
+bin(160<pt<200,0.0<abseta<2.5)
+{
+
+central_value(1.00,19.65%)
+		sys(FT_EFF_CaloJet_extrap,40%)
+meta_data(N_jets total,60276.00,245.51)
+meta_data(N_jets tagged,26.00,5.10)
+usys(FT_EFF_Stat_MC,10.43%)
+sys(FT_EFF_Syst_Frac_B,54.86%)
+sys(FT_EFF_Syst_Frac_C,6.26%)
+sys(FT_EFF_Syst_Eff_B,7.32%)
+sys(FT_EFF_Syst_Eff_C,2.69%)
+sys(FT_EFF_Syst_Eff_L,29.92%)
+
+}
+
+
+bin(200<pt<250,0.0<abseta<2.5)
+{
+
+central_value(1.40,29.60%)
+		sys(FT_EFF_CaloJet_extrap,40%)
+meta_data(N_jets total,32054.00,179.04)
+meta_data(N_jets tagged,11.00,3.32)
+usys(FT_EFF_Stat_MC,13.49%)
+sys(FT_EFF_Syst_Frac_B,54.94%)
+sys(FT_EFF_Syst_Frac_C,2.10%)
+sys(FT_EFF_Syst_Eff_B,9.71%)
+sys(FT_EFF_Syst_Eff_C,0.87%)
+sys(FT_EFF_Syst_Eff_L,32.74%)
+
+}
+
+
+bin(250<pt<300,0.0<abseta<2.5)
+{
+
+central_value(0.78,54.36%)
+		sys(FT_EFF_CaloJet_extrap,40%)
+meta_data(N_jets total,14204.00,119.18)
+meta_data(N_jets tagged,2.00,1.41)
+usys(FT_EFF_Stat_MC,30.93%)
+sys(FT_EFF_Syst_Frac_B,62.19%)
+sys(FT_EFF_Syst_Frac_C,6.47%)
+sys(FT_EFF_Syst_Eff_B,7.02%)
+sys(FT_EFF_Syst_Eff_C,2.70%)
+sys(FT_EFF_Syst_Eff_L,25.79%)
+
+}
+
+
+bin(300<pt<400,0.0<abseta<2.5)
+{
+
+central_value(0.54,62.38%)
+		sys(FT_EFF_CaloJet_extrap,40%)
+meta_data(N_jets total,10225.00,101.12)
+meta_data(N_jets tagged,1.00,1.00)
+usys(FT_EFF_Stat_MC,22.12%)
+sys(FT_EFF_Syst_Frac_B,57.68%)
+sys(FT_EFF_Syst_Frac_C,1.84%)
+sys(FT_EFF_Syst_Eff_B,5.83%)
+sys(FT_EFF_Syst_Eff_C,1.06%)
+sys(FT_EFF_Syst_Eff_L,22.35%)
+
+}
+
+
+bin(400<pt<500,0.0<abseta<2.5)
+{
+
+central_value(1.60,62.21%)
+		sys(FT_EFF_CaloJet_extrap,40%)
+meta_data(N_jets total,3002.00,54.79)
+meta_data(N_jets tagged,1.00,1.00)
+usys(FT_EFF_Stat_MC,35.68%)
+sys(FT_EFF_Syst_Frac_B,42.30%)
+sys(FT_EFF_Syst_Frac_C,0.37%)
+sys(FT_EFF_Syst_Eff_B,7.19%)
+sys(FT_EFF_Syst_Eff_C,0.00%)
+sys(FT_EFF_Syst_Eff_L,23.18%)
+
+}
+
+
+}
