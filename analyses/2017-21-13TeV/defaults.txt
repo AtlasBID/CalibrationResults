@@ -1,34 +1,41 @@
 ###############################################################
-### calo-jets
+### 
 # bottom
 Default(ttbar_PDF, bottom, MV2c10, *, AntiKt4EMTopoJets)
-#Default(pre_ttbar_PDF_7b, bottom, MV2c10mu, *, AntiKt4EMTopoJets)
-#Default(pre_ttbar_PDF_7b, bottom, MV2c10rnn, *, AntiKt4EMTopoJets)
+Default(ttbar_PDF, bottom, MV2c10, *, AntiKt2PV0TrackJets)
+Default(ttbar_PDF, bottom, MV2c10, *, AntiKtVR30Rmax4Rmin02TrackJets)
+Default(ttbar_PDF, bottom, MV2c10, *, AntiKt4EMPFlowJets)
 Default(ttbar_PDF, bottom, DL1, *, AntiKt4EMTopoJets)
-#Default(pre_ttbar_PDF_7b, bottom, DL1mu, *, AntiKt4EMTopoJets)
-#Default(pre_ttbar_PDF_7b, bottom, DL1rnn, *, AntiKt4EMTopoJets)
+Default(ttbar_PDF, bottom, DL1, *, AntiKt2PV0TrackJets)
+Default(ttbar_PDF, bottom, DL1, *, AntiKtVR30Rmax4Rmin02TrackJets)
+Default(ttbar_PDF, bottom, DL1, *, AntiKt4EMPFlowJets)
 # charm
 Default(ttbarC, charm, MV2c10, *, AntiKt4EMTopoJets)
-#Default(ttbarC, charm, MV2c10mu, *, AntiKt4EMTopoJets)
-#Default(ttbarC, charm, MV2c10rnn, *, AntiKt4EMTopoJets)
+Default(ttbarC, charm, MV2c10, *, AntiKt2PV0TrackJets)
+Default(ttbarC, charm, MV2c10, *, AntiKtVR30Rmax4Rmin02TrackJets)
+Default(ttbarC, charm, MV2c10, *, AntiKt4EMPFlowJets)
 Default(ttbarC, charm, DL1, *, AntiKt4EMTopoJets)
-#Default(ttbarC, charm, DL1mu, *, AntiKt4EMTopoJets)
-#Default(ttbarC, charm, DL1rnn, *, AntiKt4EMTopoJets)
+Default(ttbarC, charm, DL1, *, AntiKt2PV0TrackJets)
+Default(ttbarC, charm, DL1, *, AntiKtVR30Rmax4Rmin02TrackJets)
+Default(ttbarC, charm, DL1, *, AntiKt4EMPFlowJets)
 # tau
 Default(ttbarC, tau, MV2c10, *, AntiKt4EMTopoJets)
-#Default(ttbarC, tau, MV2c10mu, *, AntiKt4EMTopoJets)
-#Default(ttbarC, tau, MV2c10rnn, *, AntiKt4EMTopoJets)
+Default(ttbarC, tau, MV2c10, *, AntiKt2PV0TrackJets)
+Default(ttbarC, tau, MV2c10, *, AntiKtVR30Rmax4Rmin02TrackJets)
+Default(ttbarC, tau, MV2c10, *, AntiKt4EMPFlowJets)
 Default(ttbarC, tau, DL1, *, AntiKt4EMTopoJets)
-#Default(ttbarC, tau, DL1mu, *, AntiKt4EMTopoJets)
-#Default(ttbarC, tau, DL1rnn, *, AntiKt4EMTopoJets)
+Default(ttbarC, tau, DL1, *, AntiKt4EMTopoJets)
+Default(ttbarC, tau, DL1, *, AntiKtVR30Rmax4Rmin02TrackJets)
+Default(ttbarC, tau, DL1, *, AntiKt4EMPFlowJets)
 # light
 Default(negative_tags, light, MV2c10, *, AntiKt4EMTopoJets)
-#Default(negative_tags, light, MV2c10mu, *, AntiKt4EMTopoJets)
-#Default(negative_tags, light, MV2c10rnn, *, AntiKt4EMTopoJets)
+Default(negative_tags, light, MV2c10, *, AntiKt2PV0TrackJets)
+Default(negative_tags, light, MV2c10, *, AntiKtVR30Rmax4Rmin02TrackJets)
+Default(negative_tags, light, MV2c10, *, AntiKt4EMPFlowJets)
 Default(negative_tags, light, DL1, *, AntiKt4EMTopoJets)
-#Default(negative_tags, light, DL1mu, *, AntiKt4EMTopoJets)
-#Default(negative_tags, light, DL1rnn, *, AntiKt4EMTopoJets)
-
+Default(negative_tags, light, DL1, *, AntiKt2PV0TrackJets)
+Default(negative_tags, light, DL1, *, AntiKtVR30Rmax4Rmin02TrackJets)
+Default(negative_tags, light, DL1, *, AntiKt4EMPFlowJets)
 
 ### c-tagger ######
 # bottom
