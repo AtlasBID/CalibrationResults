@@ -90,7 +90,8 @@ def checkAll(pflowjets,trackjets,VRtrackjets):
 
 # Convert the files
 
-for f in glob.glob("*jets/*/*.txt"): # Fetch all the files in the directory
+#for f in glob.glob("*jets/*/*.txt"): # Fetch all the files in the directory
+for f in glob.glob("extrap/*/*.txt"): # Fetch all the files in the directory
     if not any(extension in f for extension in extended): # Read only the TopoJets we base our conversion on
 
         namePFlowJets = f.replace('.txt','_' + 'pflowjets'  + '.txt')
