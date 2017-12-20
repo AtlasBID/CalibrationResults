@@ -231,7 +231,7 @@ all_calojets = ttbar_pdf_extrap \
 # The CDI file.
 
 master_cdi_file = all_calojets
-defaultSFs = master_cdi_file.make_cdi("MC16-CDI", "defaults.txt","cdi_eff_maps_Dec_8_2017.root","BTag_WP_Dec_8_2017.root","21")
+defaultSFs = master_cdi_file.make_cdi("MC16-CDI", "defaults.txt","cdi_eff_maps_Dec_20_2017.root","BTag_WP_Dec_8_2017.root","21")
 master_cdi_file.plot("MC16-CDI", effOnly=True)
 master_cdi_file.dump(linage=True, name="master-cdi-linage")
 master_cdi_file.plot("MC16-CDI-Tagger-Trends", effOnly=True, byTaggerEff=True)
